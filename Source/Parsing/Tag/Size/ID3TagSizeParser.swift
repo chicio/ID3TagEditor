@@ -1,9 +1,8 @@
 //
 //  ID3TagSizeParser.swift
-//  ID3Edit
 //
-//  Created by Fabrizio Duroni on 21.02.18.
-//  Copyright © 2018 Hardy Creations. All rights reserved.
+//  Created by Fabrizio Duroni on 26/02/2018.
+//  2018 Fabrizio Duroni.
 //
 
 import Foundation

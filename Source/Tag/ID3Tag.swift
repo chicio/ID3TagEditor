@@ -1,8 +1,7 @@
 //
 //  ID3Tag.swift
-//  ID3Edit
 //
-//  Created by Fabrizio Duroni on 21/02/2018.
+//  Created by Fabrizio Duroni on 26/02/2018.
 //  2018 Fabrizio Duroni.
 //
 
