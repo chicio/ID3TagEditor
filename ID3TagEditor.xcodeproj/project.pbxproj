@@ -1,0 +1,1127 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		452831CF2044C40700458375 /* ID3TagEditor_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452831C52044C40700458375 /* ID3TagEditor_macOS.framework */; };
+		452831D62044C40700458375 /* ID3TagEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 452831C82044C40700458375 /* ID3TagEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		452831EE2044C4F500458375 /* ID3TagEditor_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452831E52044C4F500458375 /* ID3TagEditor_iOS.framework */; };
+		452831FD2044C77F00458375 /* ID3TagEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 452831C82044C40700458375 /* ID3TagEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		452832442044C7BE00458375 /* ID3TagEditorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452831FE2044C7BE00458375 /* ID3TagEditorError.swift */; };
+		452832452044C7BE00458375 /* ID3TagEditorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452831FE2044C7BE00458375 /* ID3TagEditorError.swift */; };
+		452832462044C7BE00458375 /* AlbumFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832032044C7BE00458375 /* AlbumFrameContentParsingOperation.swift */; };
+		452832472044C7BE00458375 /* AlbumFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832032044C7BE00458375 /* AlbumFrameContentParsingOperation.swift */; };
+		452832482044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832042044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift */; };
+		452832492044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832042044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift */; };
+		4528324A2044C7BE00458375 /* FrameStringContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832052044C7BE00458375 /* FrameStringContentParsingOperation.swift */; };
+		4528324B2044C7BE00458375 /* FrameStringContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832052044C7BE00458375 /* FrameStringContentParsingOperation.swift */; };
+		4528324C2044C7BE00458375 /* TitleFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832062044C7BE00458375 /* TitleFrameContentParsingOperation.swift */; };
+		4528324D2044C7BE00458375 /* TitleFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832062044C7BE00458375 /* TitleFrameContentParsingOperation.swift */; };
+		4528324E2044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832072044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift */; };
+		4528324F2044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832072044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift */; };
+		452832502044C7BE00458375 /* FrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832082044C7BE00458375 /* FrameContentParsingOperation.swift */; };
+		452832512044C7BE00458375 /* FrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832082044C7BE00458375 /* FrameContentParsingOperation.swift */; };
+		452832522044C7BE00458375 /* ID3StringContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832092044C7BE00458375 /* ID3StringContentParsingOperation.swift */; };
+		452832532044C7BE00458375 /* ID3StringContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832092044C7BE00458375 /* ID3StringContentParsingOperation.swift */; };
+		452832542044C7BE00458375 /* ArtistFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320A2044C7BE00458375 /* ArtistFrameContentParsingOperation.swift */; };
+		452832552044C7BE00458375 /* ArtistFrameContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320A2044C7BE00458375 /* ArtistFrameContentParsingOperation.swift */; };
+		452832562044C7BE00458375 /* ID3FrameContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320B2044C7BE00458375 /* ID3FrameContentParser.swift */; };
+		452832572044C7BE00458375 /* ID3FrameContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320B2044C7BE00458375 /* ID3FrameContentParser.swift */; };
+		452832582044C7BE00458375 /* FrameContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320C2044C7BE00458375 /* FrameContentParser.swift */; };
+		452832592044C7BE00458375 /* FrameContentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320C2044C7BE00458375 /* FrameContentParser.swift */; };
+		4528325A2044C7BE00458375 /* FrameContentSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320E2044C7BE00458375 /* FrameContentSizeParser.swift */; };
+		4528325B2044C7BE00458375 /* FrameContentSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320E2044C7BE00458375 /* FrameContentSizeParser.swift */; };
+		4528325C2044C7BE00458375 /* ID3FrameContentSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320F2044C7BE00458375 /* ID3FrameContentSizeParser.swift */; };
+		4528325D2044C7BE00458375 /* ID3FrameContentSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528320F2044C7BE00458375 /* ID3FrameContentSizeParser.swift */; };
+		4528325E2044C7BE00458375 /* ID3FrameSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832112044C7BE00458375 /* ID3FrameSizeParser.swift */; };
+		4528325F2044C7BE00458375 /* ID3FrameSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832112044C7BE00458375 /* ID3FrameSizeParser.swift */; };
+		452832602044C7BE00458375 /* FrameSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832122044C7BE00458375 /* FrameSizeParser.swift */; };
+		452832612044C7BE00458375 /* FrameSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832122044C7BE00458375 /* FrameSizeParser.swift */; };
+		452832622044C7BE00458375 /* ID3TagParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832142044C7BE00458375 /* ID3TagParserFactory.swift */; };
+		452832632044C7BE00458375 /* ID3TagParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832142044C7BE00458375 /* ID3TagParserFactory.swift */; };
+		452832642044C7BE00458375 /* ID3TagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832152044C7BE00458375 /* ID3TagParser.swift */; };
+		452832652044C7BE00458375 /* ID3TagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832152044C7BE00458375 /* ID3TagParser.swift */; };
+		452832662044C7BE00458375 /* ID3TagVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832172044C7BE00458375 /* ID3TagVersionParser.swift */; };
+		452832672044C7BE00458375 /* ID3TagVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832172044C7BE00458375 /* ID3TagVersionParser.swift */; };
+		452832682044C7BE00458375 /* TagVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832182044C7BE00458375 /* TagVersionParser.swift */; };
+		452832692044C7BE00458375 /* TagVersionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832182044C7BE00458375 /* TagVersionParser.swift */; };
+		4528326A2044C7BE00458375 /* ID3TagSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321A2044C7BE00458375 /* ID3TagSizeParser.swift */; };
+		4528326B2044C7BE00458375 /* ID3TagSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321A2044C7BE00458375 /* ID3TagSizeParser.swift */; };
+		4528326C2044C7BE00458375 /* TagSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321B2044C7BE00458375 /* TagSizeParser.swift */; };
+		4528326D2044C7BE00458375 /* TagSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321B2044C7BE00458375 /* TagSizeParser.swift */; };
+		4528326E2044C7BE00458375 /* ID3FrameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321D2044C7BE00458375 /* ID3FrameConfiguration.swift */; };
+		4528326F2044C7BE00458375 /* ID3FrameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321D2044C7BE00458375 /* ID3FrameConfiguration.swift */; };
+		452832702044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321F2044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift */; };
+		452832712044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321F2044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift */; };
+		452832722044C7BE00458375 /* UInt32ToByteArrayAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832202044C7BE00458375 /* UInt32ToByteArrayAdapter.swift */; };
+		452832732044C7BE00458375 /* UInt32ToByteArrayAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832202044C7BE00458375 /* UInt32ToByteArrayAdapter.swift */; };
+		452832742044C7BE00458375 /* ID3Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832222044C7BE00458375 /* ID3Tag.swift */; };
+		452832752044C7BE00458375 /* ID3Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832222044C7BE00458375 /* ID3Tag.swift */; };
+		452832762044C7BE00458375 /* TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832232044C7BE00458375 /* TagPresence.swift */; };
+		452832772044C7BE00458375 /* TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832232044C7BE00458375 /* TagPresence.swift */; };
+		452832782044C7BE00458375 /* ID3TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832242044C7BE00458375 /* ID3TagPresence.swift */; };
+		452832792044C7BE00458375 /* ID3TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832242044C7BE00458375 /* ID3TagPresence.swift */; };
+		4528327A2044C7BE00458375 /* ID3TagConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832252044C7BE00458375 /* ID3TagConfiguration.swift */; };
+		4528327B2044C7BE00458375 /* ID3TagConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832252044C7BE00458375 /* ID3TagConfiguration.swift */; };
+		4528327C2044C7BE00458375 /* Mp3WithID3TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832272044C7BE00458375 /* Mp3WithID3TagBuilder.swift */; };
+		4528327D2044C7BE00458375 /* Mp3WithID3TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832272044C7BE00458375 /* Mp3WithID3TagBuilder.swift */; };
+		4528327E2044C7BE00458375 /* ID3TagEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832282044C7BE00458375 /* ID3TagEditor.swift */; };
+		4528327F2044C7BE00458375 /* ID3TagEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832282044C7BE00458375 /* ID3TagEditor.swift */; };
+		452832802044C7BE00458375 /* PaddingRemoverUsingTrimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322B2044C7BE00458375 /* PaddingRemoverUsingTrimming.swift */; };
+		452832812044C7BE00458375 /* PaddingRemoverUsingTrimming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322B2044C7BE00458375 /* PaddingRemoverUsingTrimming.swift */; };
+		452832822044C7BE00458375 /* PaddingRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322C2044C7BE00458375 /* PaddingRemover.swift */; };
+		452832832044C7BE00458375 /* PaddingRemover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322C2044C7BE00458375 /* PaddingRemover.swift */; };
+		452832842044C7BE00458375 /* PaddingAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322E2044C7BE00458375 /* PaddingAdder.swift */; };
+		452832852044C7BE00458375 /* PaddingAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322E2044C7BE00458375 /* PaddingAdder.swift */; };
+		452832862044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322F2044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift */; };
+		452832872044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528322F2044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift */; };
+		452832882044C7BE00458375 /* ID3FrameFlagsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832332044C7BE00458375 /* ID3FrameFlagsCreator.swift */; };
+		452832892044C7BE00458375 /* ID3FrameFlagsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832332044C7BE00458375 /* ID3FrameFlagsCreator.swift */; };
+		4528328A2044C7BE00458375 /* FrameFlagsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832342044C7BE00458375 /* FrameFlagsCreator.swift */; };
+		4528328B2044C7BE00458375 /* FrameFlagsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832342044C7BE00458375 /* FrameFlagsCreator.swift */; };
+		4528328C2044C7BE00458375 /* FrameFromStringContentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832362044C7BE00458375 /* FrameFromStringContentCreator.swift */; };
+		4528328D2044C7BE00458375 /* FrameFromStringContentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832362044C7BE00458375 /* FrameFromStringContentCreator.swift */; };
+		4528328E2044C7BE00458375 /* ID3ArtistFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832372044C7BE00458375 /* ID3ArtistFrameCreator.swift */; };
+		4528328F2044C7BE00458375 /* ID3ArtistFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832372044C7BE00458375 /* ID3ArtistFrameCreator.swift */; };
+		452832902044C7BE00458375 /* ID3TitleFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832382044C7BE00458375 /* ID3TitleFrameCreator.swift */; };
+		452832912044C7BE00458375 /* ID3TitleFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832382044C7BE00458375 /* ID3TitleFrameCreator.swift */; };
+		452832922044C7BE00458375 /* ID3FrameFromStringContentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832392044C7BE00458375 /* ID3FrameFromStringContentCreator.swift */; };
+		452832932044C7BE00458375 /* ID3FrameFromStringContentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832392044C7BE00458375 /* ID3FrameFromStringContentCreator.swift */; };
+		452832942044C7BE00458375 /* ID3ArtworkFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323A2044C7BE00458375 /* ID3ArtworkFrameCreator.swift */; };
+		452832952044C7BE00458375 /* ID3ArtworkFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323A2044C7BE00458375 /* ID3ArtworkFrameCreator.swift */; };
+		452832962044C7BE00458375 /* ID3FrameCreatorsChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323B2044C7BE00458375 /* ID3FrameCreatorsChain.swift */; };
+		452832972044C7BE00458375 /* ID3FrameCreatorsChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323B2044C7BE00458375 /* ID3FrameCreatorsChain.swift */; };
+		452832982044C7BE00458375 /* ID3AlbumFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323C2044C7BE00458375 /* ID3AlbumFrameCreator.swift */; };
+		452832992044C7BE00458375 /* ID3AlbumFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323C2044C7BE00458375 /* ID3AlbumFrameCreator.swift */; };
+		4528329A2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323D2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift */; };
+		4528329B2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323D2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift */; };
+		4528329C2044C7BE00458375 /* FrameContentSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323F2044C7BE00458375 /* FrameContentSizeCalculator.swift */; };
+		4528329D2044C7BE00458375 /* FrameContentSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528323F2044C7BE00458375 /* FrameContentSizeCalculator.swift */; };
+		4528329E2044C7BE00458375 /* ID3FrameContentSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832402044C7BE00458375 /* ID3FrameContentSizeCalculator.swift */; };
+		4528329F2044C7BE00458375 /* ID3FrameContentSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832402044C7BE00458375 /* ID3FrameContentSizeCalculator.swift */; };
+		452832A02044C7BE00458375 /* ID3TagCreatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832422044C7BE00458375 /* ID3TagCreatorFactory.swift */; };
+		452832A12044C7BE00458375 /* ID3TagCreatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832422044C7BE00458375 /* ID3TagCreatorFactory.swift */; };
+		452832A22044C7BE00458375 /* ID3TagCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832432044C7BE00458375 /* ID3TagCreator.swift */; };
+		452832A32044C7BE00458375 /* ID3TagCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832432044C7BE00458375 /* ID3TagCreator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		452831D02044C40700458375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 452831BC2044C40700458375 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 452831C42044C40700458375;
+			remoteInfo = ID3TagEditor;
+		};
+		452831EF2044C4F500458375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 452831BC2044C40700458375 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 452831E42044C4F500458375;
+			remoteInfo = "ID3TagEditor iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		452831C52044C40700458375 /* ID3TagEditor_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		452831C82044C40700458375 /* ID3TagEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ID3TagEditor.h; sourceTree = "<group>"; };
+		452831C92044C40700458375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452831CE2044C40700458375 /* ID3TagEditor macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ID3TagEditor macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		452831D52044C40700458375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		452831E52044C4F500458375 /* ID3TagEditor_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		452831ED2044C4F500458375 /* ID3TagEditor iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ID3TagEditor iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		452831FE2044C7BE00458375 /* ID3TagEditorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagEditorError.swift; sourceTree = "<group>"; };
+		452832032044C7BE00458375 /* AlbumFrameContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumFrameContentParsingOperation.swift; sourceTree = "<group>"; };
+		452832042044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
+		452832052044C7BE00458375 /* FrameStringContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameStringContentParsingOperation.swift; sourceTree = "<group>"; };
+		452832062044C7BE00458375 /* TitleFrameContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleFrameContentParsingOperation.swift; sourceTree = "<group>"; };
+		452832072044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkFrameContentParsingOperation.swift; sourceTree = "<group>"; };
+		452832082044C7BE00458375 /* FrameContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameContentParsingOperation.swift; sourceTree = "<group>"; };
+		452832092044C7BE00458375 /* ID3StringContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3StringContentParsingOperation.swift; sourceTree = "<group>"; };
+		4528320A2044C7BE00458375 /* ArtistFrameContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistFrameContentParsingOperation.swift; sourceTree = "<group>"; };
+		4528320B2044C7BE00458375 /* ID3FrameContentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameContentParser.swift; sourceTree = "<group>"; };
+		4528320C2044C7BE00458375 /* FrameContentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameContentParser.swift; sourceTree = "<group>"; };
+		4528320E2044C7BE00458375 /* FrameContentSizeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameContentSizeParser.swift; sourceTree = "<group>"; };
+		4528320F2044C7BE00458375 /* ID3FrameContentSizeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameContentSizeParser.swift; sourceTree = "<group>"; };
+		452832112044C7BE00458375 /* ID3FrameSizeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameSizeParser.swift; sourceTree = "<group>"; };
+		452832122044C7BE00458375 /* FrameSizeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameSizeParser.swift; sourceTree = "<group>"; };
+		452832142044C7BE00458375 /* ID3TagParserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagParserFactory.swift; sourceTree = "<group>"; };
+		452832152044C7BE00458375 /* ID3TagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagParser.swift; sourceTree = "<group>"; };
+		452832172044C7BE00458375 /* ID3TagVersionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagVersionParser.swift; sourceTree = "<group>"; };
+		452832182044C7BE00458375 /* TagVersionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagVersionParser.swift; sourceTree = "<group>"; };
+		4528321A2044C7BE00458375 /* ID3TagSizeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagSizeParser.swift; sourceTree = "<group>"; };
+		4528321B2044C7BE00458375 /* TagSizeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSizeParser.swift; sourceTree = "<group>"; };
+		4528321D2044C7BE00458375 /* ID3FrameConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameConfiguration.swift; sourceTree = "<group>"; };
+		4528321F2044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt32ToByteArrayAdapterUsingUnsafePointer.swift; sourceTree = "<group>"; };
+		452832202044C7BE00458375 /* UInt32ToByteArrayAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt32ToByteArrayAdapter.swift; sourceTree = "<group>"; };
+		452832222044C7BE00458375 /* ID3Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3Tag.swift; sourceTree = "<group>"; };
+		452832232044C7BE00458375 /* TagPresence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagPresence.swift; sourceTree = "<group>"; };
+		452832242044C7BE00458375 /* ID3TagPresence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagPresence.swift; sourceTree = "<group>"; };
+		452832252044C7BE00458375 /* ID3TagConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagConfiguration.swift; sourceTree = "<group>"; };
+		452832272044C7BE00458375 /* Mp3WithID3TagBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mp3WithID3TagBuilder.swift; sourceTree = "<group>"; };
+		452832282044C7BE00458375 /* ID3TagEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagEditor.swift; sourceTree = "<group>"; };
+		4528322B2044C7BE00458375 /* PaddingRemoverUsingTrimming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingRemoverUsingTrimming.swift; sourceTree = "<group>"; };
+		4528322C2044C7BE00458375 /* PaddingRemover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingRemover.swift; sourceTree = "<group>"; };
+		4528322E2044C7BE00458375 /* PaddingAdder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingAdder.swift; sourceTree = "<group>"; };
+		4528322F2044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingAdderForContentUsingNullChar.swift; sourceTree = "<group>"; };
+		452832332044C7BE00458375 /* ID3FrameFlagsCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameFlagsCreator.swift; sourceTree = "<group>"; };
+		452832342044C7BE00458375 /* FrameFlagsCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameFlagsCreator.swift; sourceTree = "<group>"; };
+		452832362044C7BE00458375 /* FrameFromStringContentCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameFromStringContentCreator.swift; sourceTree = "<group>"; };
+		452832372044C7BE00458375 /* ID3ArtistFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ArtistFrameCreator.swift; sourceTree = "<group>"; };
+		452832382044C7BE00458375 /* ID3TitleFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TitleFrameCreator.swift; sourceTree = "<group>"; };
+		452832392044C7BE00458375 /* ID3FrameFromStringContentCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameFromStringContentCreator.swift; sourceTree = "<group>"; };
+		4528323A2044C7BE00458375 /* ID3ArtworkFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ArtworkFrameCreator.swift; sourceTree = "<group>"; };
+		4528323B2044C7BE00458375 /* ID3FrameCreatorsChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameCreatorsChain.swift; sourceTree = "<group>"; };
+		4528323C2044C7BE00458375 /* ID3AlbumFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3AlbumFrameCreator.swift; sourceTree = "<group>"; };
+		4528323D2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameCreatorsChainFactory.swift; sourceTree = "<group>"; };
+		4528323F2044C7BE00458375 /* FrameContentSizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameContentSizeCalculator.swift; sourceTree = "<group>"; };
+		452832402044C7BE00458375 /* ID3FrameContentSizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameContentSizeCalculator.swift; sourceTree = "<group>"; };
+		452832422044C7BE00458375 /* ID3TagCreatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagCreatorFactory.swift; sourceTree = "<group>"; };
+		452832432044C7BE00458375 /* ID3TagCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagCreator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		452831C12044C40700458375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831CB2044C40700458375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452831CF2044C40700458375 /* ID3TagEditor_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831E12044C4F500458375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831EA2044C4F500458375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452831EE2044C4F500458375 /* ID3TagEditor_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		452831BB2044C40700458375 = {
+			isa = PBXGroup;
+			children = (
+				452831C72044C40700458375 /* Source */,
+				452831D22044C40700458375 /* Tests */,
+				452831C62044C40700458375 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		452831C62044C40700458375 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				452831C52044C40700458375 /* ID3TagEditor_macOS.framework */,
+				452831CE2044C40700458375 /* ID3TagEditor macOS Tests.xctest */,
+				452831E52044C4F500458375 /* ID3TagEditor_iOS.framework */,
+				452831ED2044C4F500458375 /* ID3TagEditor iOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		452831C72044C40700458375 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				452831C82044C40700458375 /* ID3TagEditor.h */,
+				452832282044C7BE00458375 /* ID3TagEditor.swift */,
+				452831FE2044C7BE00458375 /* ID3TagEditorError.swift */,
+				452832302044C7BE00458375 /* Creation */,
+				4528321C2044C7BE00458375 /* Frame */,
+				452832262044C7BE00458375 /* Mp3 */,
+				452832292044C7BE00458375 /* Padding */,
+				452831FF2044C7BE00458375 /* Parsing */,
+				452832212044C7BE00458375 /* Tag */,
+				4528321E2044C7BE00458375 /* UInt32ToByteArrayAdapter */,
+				452831C92044C40700458375 /* Info.plist */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		452831D22044C40700458375 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				452831D52044C40700458375 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		452831FF2044C7BE00458375 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				452832002044C7BE00458375 /* Frame */,
+				452832132044C7BE00458375 /* Tag */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		452832002044C7BE00458375 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				452832012044C7BE00458375 /* Content */,
+				452832102044C7BE00458375 /* Size */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		452832012044C7BE00458375 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				452832022044C7BE00458375 /* Operation */,
+				4528320B2044C7BE00458375 /* ID3FrameContentParser.swift */,
+				4528320C2044C7BE00458375 /* FrameContentParser.swift */,
+				4528320D2044C7BE00458375 /* Size */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		452832022044C7BE00458375 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				452832032044C7BE00458375 /* AlbumFrameContentParsingOperation.swift */,
+				452832042044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift */,
+				452832052044C7BE00458375 /* FrameStringContentParsingOperation.swift */,
+				452832062044C7BE00458375 /* TitleFrameContentParsingOperation.swift */,
+				452832072044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift */,
+				452832082044C7BE00458375 /* FrameContentParsingOperation.swift */,
+				452832092044C7BE00458375 /* ID3StringContentParsingOperation.swift */,
+				4528320A2044C7BE00458375 /* ArtistFrameContentParsingOperation.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		4528320D2044C7BE00458375 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				4528320E2044C7BE00458375 /* FrameContentSizeParser.swift */,
+				4528320F2044C7BE00458375 /* ID3FrameContentSizeParser.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		452832102044C7BE00458375 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				452832112044C7BE00458375 /* ID3FrameSizeParser.swift */,
+				452832122044C7BE00458375 /* FrameSizeParser.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		452832132044C7BE00458375 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				452832142044C7BE00458375 /* ID3TagParserFactory.swift */,
+				452832152044C7BE00458375 /* ID3TagParser.swift */,
+				452832162044C7BE00458375 /* Version */,
+				452832192044C7BE00458375 /* Size */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		452832162044C7BE00458375 /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				452832172044C7BE00458375 /* ID3TagVersionParser.swift */,
+				452832182044C7BE00458375 /* TagVersionParser.swift */,
+			);
+			path = Version;
+			sourceTree = "<group>";
+		};
+		452832192044C7BE00458375 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				4528321A2044C7BE00458375 /* ID3TagSizeParser.swift */,
+				4528321B2044C7BE00458375 /* TagSizeParser.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		4528321C2044C7BE00458375 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				4528321D2044C7BE00458375 /* ID3FrameConfiguration.swift */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		4528321E2044C7BE00458375 /* UInt32ToByteArrayAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				4528321F2044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift */,
+				452832202044C7BE00458375 /* UInt32ToByteArrayAdapter.swift */,
+			);
+			path = UInt32ToByteArrayAdapter;
+			sourceTree = "<group>";
+		};
+		452832212044C7BE00458375 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				452832222044C7BE00458375 /* ID3Tag.swift */,
+				452832232044C7BE00458375 /* TagPresence.swift */,
+				452832242044C7BE00458375 /* ID3TagPresence.swift */,
+				452832252044C7BE00458375 /* ID3TagConfiguration.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		452832262044C7BE00458375 /* Mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				452832272044C7BE00458375 /* Mp3WithID3TagBuilder.swift */,
+			);
+			path = Mp3;
+			sourceTree = "<group>";
+		};
+		452832292044C7BE00458375 /* Padding */ = {
+			isa = PBXGroup;
+			children = (
+				4528322A2044C7BE00458375 /* Remove */,
+				4528322D2044C7BE00458375 /* Add */,
+			);
+			path = Padding;
+			sourceTree = "<group>";
+		};
+		4528322A2044C7BE00458375 /* Remove */ = {
+			isa = PBXGroup;
+			children = (
+				4528322B2044C7BE00458375 /* PaddingRemoverUsingTrimming.swift */,
+				4528322C2044C7BE00458375 /* PaddingRemover.swift */,
+			);
+			path = Remove;
+			sourceTree = "<group>";
+		};
+		4528322D2044C7BE00458375 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				4528322E2044C7BE00458375 /* PaddingAdder.swift */,
+				4528322F2044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		452832302044C7BE00458375 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				452832312044C7BE00458375 /* Frame */,
+				452832412044C7BE00458375 /* Tag */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		452832312044C7BE00458375 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				452832322044C7BE00458375 /* Flags */,
+				452832352044C7BE00458375 /* Content */,
+				4528323E2044C7BE00458375 /* Size */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		452832322044C7BE00458375 /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				452832332044C7BE00458375 /* ID3FrameFlagsCreator.swift */,
+				452832342044C7BE00458375 /* FrameFlagsCreator.swift */,
+			);
+			path = Flags;
+			sourceTree = "<group>";
+		};
+		452832352044C7BE00458375 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				452832362044C7BE00458375 /* FrameFromStringContentCreator.swift */,
+				452832372044C7BE00458375 /* ID3ArtistFrameCreator.swift */,
+				452832382044C7BE00458375 /* ID3TitleFrameCreator.swift */,
+				452832392044C7BE00458375 /* ID3FrameFromStringContentCreator.swift */,
+				4528323A2044C7BE00458375 /* ID3ArtworkFrameCreator.swift */,
+				4528323B2044C7BE00458375 /* ID3FrameCreatorsChain.swift */,
+				4528323C2044C7BE00458375 /* ID3AlbumFrameCreator.swift */,
+				4528323D2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		4528323E2044C7BE00458375 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				4528323F2044C7BE00458375 /* FrameContentSizeCalculator.swift */,
+				452832402044C7BE00458375 /* ID3FrameContentSizeCalculator.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		452832412044C7BE00458375 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				452832422044C7BE00458375 /* ID3TagCreatorFactory.swift */,
+				452832432044C7BE00458375 /* ID3TagCreator.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		452831C22044C40700458375 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452831D62044C40700458375 /* ID3TagEditor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831E22044C4F500458375 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452831FD2044C77F00458375 /* ID3TagEditor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		452831C42044C40700458375 /* ID3TagEditor macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452831D92044C40700458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor macOS" */;
+			buildPhases = (
+				452831C02044C40700458375 /* Sources */,
+				452831C12044C40700458375 /* Frameworks */,
+				452831C22044C40700458375 /* Headers */,
+				452831C32044C40700458375 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ID3TagEditor macOS";
+			productName = ID3TagEditor;
+			productReference = 452831C52044C40700458375 /* ID3TagEditor_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		452831CD2044C40700458375 /* ID3TagEditor macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452831DC2044C40700458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor macOS Tests" */;
+			buildPhases = (
+				452831CA2044C40700458375 /* Sources */,
+				452831CB2044C40700458375 /* Frameworks */,
+				452831CC2044C40700458375 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				452831D12044C40700458375 /* PBXTargetDependency */,
+			);
+			name = "ID3TagEditor macOS Tests";
+			productName = ID3TagEditorTests;
+			productReference = 452831CE2044C40700458375 /* ID3TagEditor macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		452831E42044C4F500458375 /* ID3TagEditor iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452831F62044C4F500458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor iOS" */;
+			buildPhases = (
+				452831E02044C4F500458375 /* Sources */,
+				452831E12044C4F500458375 /* Frameworks */,
+				452831E22044C4F500458375 /* Headers */,
+				452831E32044C4F500458375 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ID3TagEditor iOS";
+			productName = "ID3TagEditor iOS";
+			productReference = 452831E52044C4F500458375 /* ID3TagEditor_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		452831EC2044C4F500458375 /* ID3TagEditor iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452831F92044C4F500458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor iOS Tests" */;
+			buildPhases = (
+				452831E92044C4F500458375 /* Sources */,
+				452831EA2044C4F500458375 /* Frameworks */,
+				452831EB2044C4F500458375 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				452831F02044C4F500458375 /* PBXTargetDependency */,
+			);
+			name = "ID3TagEditor iOS Tests";
+			productName = "ID3TagEditor iOSTests";
+			productReference = 452831ED2044C4F500458375 /* ID3TagEditor iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		452831BC2044C40700458375 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Fabrizio Duroni";
+				TargetAttributes = {
+					452831C42044C40700458375 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					452831CD2044C40700458375 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					452831E42044C4F500458375 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					452831EC2044C4F500458375 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 452831BF2044C40700458375 /* Build configuration list for PBXProject "ID3TagEditor" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 452831BB2044C40700458375;
+			productRefGroup = 452831C62044C40700458375 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				452831C42044C40700458375 /* ID3TagEditor macOS */,
+				452831CD2044C40700458375 /* ID3TagEditor macOS Tests */,
+				452831E42044C4F500458375 /* ID3TagEditor iOS */,
+				452831EC2044C4F500458375 /* ID3TagEditor iOS Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		452831C32044C40700458375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831CC2044C40700458375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831E32044C4F500458375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831EB2044C4F500458375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		452831C02044C40700458375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4528327A2044C7BE00458375 /* ID3TagConfiguration.swift in Sources */,
+				452832522044C7BE00458375 /* ID3StringContentParsingOperation.swift in Sources */,
+				4528328C2044C7BE00458375 /* FrameFromStringContentCreator.swift in Sources */,
+				4528326A2044C7BE00458375 /* ID3TagSizeParser.swift in Sources */,
+				452832502044C7BE00458375 /* FrameContentParsingOperation.swift in Sources */,
+				4528326E2044C7BE00458375 /* ID3FrameConfiguration.swift in Sources */,
+				452832782044C7BE00458375 /* ID3TagPresence.swift in Sources */,
+				452832822044C7BE00458375 /* PaddingRemover.swift in Sources */,
+				452832702044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
+				4528327C2044C7BE00458375 /* Mp3WithID3TagBuilder.swift in Sources */,
+				452832922044C7BE00458375 /* ID3FrameFromStringContentCreator.swift in Sources */,
+				4528325E2044C7BE00458375 /* ID3FrameSizeParser.swift in Sources */,
+				4528328A2044C7BE00458375 /* FrameFlagsCreator.swift in Sources */,
+				452832962044C7BE00458375 /* ID3FrameCreatorsChain.swift in Sources */,
+				452832642044C7BE00458375 /* ID3TagParser.swift in Sources */,
+				452832842044C7BE00458375 /* PaddingAdder.swift in Sources */,
+				4528327E2044C7BE00458375 /* ID3TagEditor.swift in Sources */,
+				4528326C2044C7BE00458375 /* TagSizeParser.swift in Sources */,
+				452832862044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift in Sources */,
+				452832462044C7BE00458375 /* AlbumFrameContentParsingOperation.swift in Sources */,
+				452832762044C7BE00458375 /* TagPresence.swift in Sources */,
+				452832562044C7BE00458375 /* ID3FrameContentParser.swift in Sources */,
+				452832622044C7BE00458375 /* ID3TagParserFactory.swift in Sources */,
+				4528324A2044C7BE00458375 /* FrameStringContentParsingOperation.swift in Sources */,
+				4528325A2044C7BE00458375 /* FrameContentSizeParser.swift in Sources */,
+				4528329E2044C7BE00458375 /* ID3FrameContentSizeCalculator.swift in Sources */,
+				452832A22044C7BE00458375 /* ID3TagCreator.swift in Sources */,
+				452832662044C7BE00458375 /* ID3TagVersionParser.swift in Sources */,
+				4528329A2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift in Sources */,
+				4528325C2044C7BE00458375 /* ID3FrameContentSizeParser.swift in Sources */,
+				452832A02044C7BE00458375 /* ID3TagCreatorFactory.swift in Sources */,
+				452832742044C7BE00458375 /* ID3Tag.swift in Sources */,
+				452832602044C7BE00458375 /* FrameSizeParser.swift in Sources */,
+				452832482044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift in Sources */,
+				4528324C2044C7BE00458375 /* TitleFrameContentParsingOperation.swift in Sources */,
+				452832882044C7BE00458375 /* ID3FrameFlagsCreator.swift in Sources */,
+				4528329C2044C7BE00458375 /* FrameContentSizeCalculator.swift in Sources */,
+				452832542044C7BE00458375 /* ArtistFrameContentParsingOperation.swift in Sources */,
+				452832802044C7BE00458375 /* PaddingRemoverUsingTrimming.swift in Sources */,
+				452832682044C7BE00458375 /* TagVersionParser.swift in Sources */,
+				452832582044C7BE00458375 /* FrameContentParser.swift in Sources */,
+				452832722044C7BE00458375 /* UInt32ToByteArrayAdapter.swift in Sources */,
+				452832442044C7BE00458375 /* ID3TagEditorError.swift in Sources */,
+				452832902044C7BE00458375 /* ID3TitleFrameCreator.swift in Sources */,
+				452832982044C7BE00458375 /* ID3AlbumFrameCreator.swift in Sources */,
+				452832942044C7BE00458375 /* ID3ArtworkFrameCreator.swift in Sources */,
+				4528328E2044C7BE00458375 /* ID3ArtistFrameCreator.swift in Sources */,
+				4528324E2044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831CA2044C40700458375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831E02044C4F500458375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4528327B2044C7BE00458375 /* ID3TagConfiguration.swift in Sources */,
+				452832532044C7BE00458375 /* ID3StringContentParsingOperation.swift in Sources */,
+				4528328D2044C7BE00458375 /* FrameFromStringContentCreator.swift in Sources */,
+				4528326B2044C7BE00458375 /* ID3TagSizeParser.swift in Sources */,
+				452832512044C7BE00458375 /* FrameContentParsingOperation.swift in Sources */,
+				4528326F2044C7BE00458375 /* ID3FrameConfiguration.swift in Sources */,
+				452832792044C7BE00458375 /* ID3TagPresence.swift in Sources */,
+				452832832044C7BE00458375 /* PaddingRemover.swift in Sources */,
+				452832712044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
+				4528327D2044C7BE00458375 /* Mp3WithID3TagBuilder.swift in Sources */,
+				452832932044C7BE00458375 /* ID3FrameFromStringContentCreator.swift in Sources */,
+				4528325F2044C7BE00458375 /* ID3FrameSizeParser.swift in Sources */,
+				4528328B2044C7BE00458375 /* FrameFlagsCreator.swift in Sources */,
+				452832972044C7BE00458375 /* ID3FrameCreatorsChain.swift in Sources */,
+				452832652044C7BE00458375 /* ID3TagParser.swift in Sources */,
+				452832852044C7BE00458375 /* PaddingAdder.swift in Sources */,
+				4528327F2044C7BE00458375 /* ID3TagEditor.swift in Sources */,
+				4528326D2044C7BE00458375 /* TagSizeParser.swift in Sources */,
+				452832872044C7BE00458375 /* PaddingAdderForContentUsingNullChar.swift in Sources */,
+				452832472044C7BE00458375 /* AlbumFrameContentParsingOperation.swift in Sources */,
+				452832772044C7BE00458375 /* TagPresence.swift in Sources */,
+				452832572044C7BE00458375 /* ID3FrameContentParser.swift in Sources */,
+				452832632044C7BE00458375 /* ID3TagParserFactory.swift in Sources */,
+				4528324B2044C7BE00458375 /* FrameStringContentParsingOperation.swift in Sources */,
+				4528325B2044C7BE00458375 /* FrameContentSizeParser.swift in Sources */,
+				4528329F2044C7BE00458375 /* ID3FrameContentSizeCalculator.swift in Sources */,
+				452832A32044C7BE00458375 /* ID3TagCreator.swift in Sources */,
+				452832672044C7BE00458375 /* ID3TagVersionParser.swift in Sources */,
+				4528329B2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift in Sources */,
+				4528325D2044C7BE00458375 /* ID3FrameContentSizeParser.swift in Sources */,
+				452832A12044C7BE00458375 /* ID3TagCreatorFactory.swift in Sources */,
+				452832752044C7BE00458375 /* ID3Tag.swift in Sources */,
+				452832612044C7BE00458375 /* FrameSizeParser.swift in Sources */,
+				452832492044C7BE00458375 /* ID3FrameContentParsingOperationFactory.swift in Sources */,
+				4528324D2044C7BE00458375 /* TitleFrameContentParsingOperation.swift in Sources */,
+				452832892044C7BE00458375 /* ID3FrameFlagsCreator.swift in Sources */,
+				4528329D2044C7BE00458375 /* FrameContentSizeCalculator.swift in Sources */,
+				452832552044C7BE00458375 /* ArtistFrameContentParsingOperation.swift in Sources */,
+				452832812044C7BE00458375 /* PaddingRemoverUsingTrimming.swift in Sources */,
+				452832692044C7BE00458375 /* TagVersionParser.swift in Sources */,
+				452832592044C7BE00458375 /* FrameContentParser.swift in Sources */,
+				452832732044C7BE00458375 /* UInt32ToByteArrayAdapter.swift in Sources */,
+				452832452044C7BE00458375 /* ID3TagEditorError.swift in Sources */,
+				452832912044C7BE00458375 /* ID3TitleFrameCreator.swift in Sources */,
+				452832992044C7BE00458375 /* ID3AlbumFrameCreator.swift in Sources */,
+				452832952044C7BE00458375 /* ID3ArtworkFrameCreator.swift in Sources */,
+				4528328F2044C7BE00458375 /* ID3ArtistFrameCreator.swift in Sources */,
+				4528324F2044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		452831E92044C4F500458375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		452831D12044C40700458375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 452831C42044C40700458375 /* ID3TagEditor macOS */;
+			targetProxy = 452831D02044C40700458375 /* PBXContainerItemProxy */;
+		};
+		452831F02044C4F500458375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 452831E42044C4F500458375 /* ID3TagEditor iOS */;
+			targetProxy = 452831EF2044C4F500458375 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		452831D72044C40700458375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		452831D82044C40700458375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		452831DA2044C40700458375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		452831DB2044C40700458375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		452831DD2044C40700458375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				INFOPLIST_FILE = ID3TagEditorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		452831DE2044C40700458375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				INFOPLIST_FILE = ID3TagEditorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		452831F72044C4F500458375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		452831F82044C4F500458375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		452831FA2044C4F500458375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				INFOPLIST_FILE = "ID3TagEditor iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		452831FB2044C4F500458375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				INFOPLIST_FILE = "ID3TagEditor iOSTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		452831BF2044C40700458375 /* Build configuration list for PBXProject "ID3TagEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452831D72044C40700458375 /* Debug */,
+				452831D82044C40700458375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452831D92044C40700458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452831DA2044C40700458375 /* Debug */,
+				452831DB2044C40700458375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452831DC2044C40700458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452831DD2044C40700458375 /* Debug */,
+				452831DE2044C40700458375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452831F62044C4F500458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452831F72044C4F500458375 /* Debug */,
+				452831F82044C4F500458375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452831F92044C4F500458375 /* Build configuration list for PBXNativeTarget "ID3TagEditor iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452831FA2044C4F500458375 /* Debug */,
+				452831FB2044C4F500458375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 452831BC2044C40700458375 /* Project object */;
+}
