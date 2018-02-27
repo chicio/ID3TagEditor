@@ -8,7 +8,7 @@
 import Foundation
 
 struct Artwork {
-    var art: NSData?;
+    var art: Data?;
     var isPNG: Bool?;
 }
 

@@ -44,7 +44,7 @@ public class ID3TagEditor {
      
      - returns: NSData if artwork exists or `nil` otherwise
      */
-    public func getArtwork() -> NSData? {
+    public func getArtwork() -> Data? {
         return currentId3Tag?.artwork.art
     }
 
@@ -108,7 +108,7 @@ public class ID3TagEditor {
     - parameter artwork: the image to be used as artwork to create/update the ID3 tag.
     - parameter isPNG: a flag to check if the image is a png or not.
     */
-    public func setArtwork(artwork: NSData, isPNG: Bool) {
+    public func setArtwork(artwork: Data, isPNG: Bool) {
         newId3Tag.artwork.art = artwork
         newId3Tag.artwork.isPNG = isPNG
     }

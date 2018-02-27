@@ -23,7 +23,7 @@ class ID3TagParserTest: XCTestCase {
 
     func testParseV2Tag() {
         let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example", fileType: "mp3"))!
-        let cover = NSData(contentsOfFile: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))!
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let id3Tag = tagParser.parse(mp3: mp3)
         XCTAssertNotNil(id3Tag)
         XCTAssertEqual(id3Tag?.version, 2)
@@ -36,7 +36,7 @@ class ID3TagParserTest: XCTestCase {
 
     func testParseV3Tag() {
         let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))!
-        let cover = NSData(contentsOfFile: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))!
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png")))
         let id3Tag = tagParser.parse(mp3: mp3)
         XCTAssertNotNil(id3Tag)
         XCTAssertEqual(id3Tag?.version, 3)

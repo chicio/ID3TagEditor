@@ -23,7 +23,7 @@ class ID3TagEditorTest: XCTestCase {
     func test_getArtwork() {
         let artwork = try! ID3TagEditor(path: pathFor(name: "example", fileType: "mp3")).getArtwork();
         XCTAssertNotNil(artwork)
-        XCTAssertNoThrow(try artwork?.write(toFile: NSHomeDirectory() + "/cover.jpg"))
+        XCTAssertNoThrow(try artwork?.write(to: URL(fileURLWithPath: NSHomeDirectory() + "/cover.jpg")))
     }
     
     func testReadID3v22tag() {
@@ -38,7 +38,8 @@ class ID3TagEditorTest: XCTestCase {
         mp3.setTitle(title: "Your decision");
         mp3.setArtist(artist: "Alice In Chains");
         mp3.setAlbum(album: "Black Gives Way to Blue");
-        mp3.setArtwork(artwork: try! NSData(contentsOfFile: pathFor(name: "folder", fileType: "jpg")), isPNG: false)
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "folder", fileType: "jpg")))
+        mp3.setArtwork(artwork: data, isPNG: false)
         XCTAssertNoThrow(try mp3.writeWithNewTag(to: NSHomeDirectory() + "/alice-in-chains-created.mp3"));
         let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/alice-in-chains-created.mp3")
         let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "alice-in-chains-with-tag", fileType: "mp3"))
@@ -50,7 +51,8 @@ class ID3TagEditorTest: XCTestCase {
         mp3.setTitle(title: "A New title");
         mp3.setArtist(artist: "A New Artist");
         mp3.setAlbum(album: "A New Album");
-        mp3.setArtwork(artwork: try! NSData(contentsOfFile: pathFor(name: "example-cover", fileType: "jpg")), isPNG: false);
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        mp3.setArtwork(artwork: data, isPNG: false);
         XCTAssertNoThrow(try mp3.writeWithNewTag(to: NSHomeDirectory() + "/example-created.mp3"));
         let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/example-created.mp3")
         let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "example-with-tag", fileType: "mp3"))
@@ -62,7 +64,8 @@ class ID3TagEditorTest: XCTestCase {
         mp3.setTitle(title: "Loser");
         mp3.setArtist(artist: "Limp bizkit");
         mp3.setAlbum(album: "Gold Cobra");
-        mp3.setArtwork(artwork: try! NSData(contentsOfFile: pathFor(name: "cover2", fileType: "jpg")), isPNG: false);
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "cover2", fileType: "jpg")))
+        mp3.setArtwork(artwork: data, isPNG: false);
         XCTAssertNoThrow(try mp3.writeWithNewTag(to: NSHomeDirectory() + "/lb-mine.mp3"));
 //        let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/lb-mine.mp3")
 //        let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "lb-mine", fileType: "mp3"))
@@ -74,7 +77,8 @@ class ID3TagEditorTest: XCTestCase {
         mp3.setTitle(title: "A New title");
         mp3.setArtist(artist: "A New Artist");
         mp3.setAlbum(album: "A New Album");
-        mp3.setArtwork(artwork: try! NSData(contentsOfFile: pathFor(name: "example-cover", fileType: "jpg")), isPNG: false);
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        mp3.setArtwork(artwork: data, isPNG: false);
         XCTAssertNoThrow(try mp3.writeWithNewTag(to: NSHomeDirectory() + "/lb-mine.mp3"));
         let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/example-created.mp3")
         let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "example-with-tag", fileType: "mp3"))
@@ -86,7 +90,8 @@ class ID3TagEditorTest: XCTestCase {
         mp3.setTitle(title: "A New title");
         mp3.setArtist(artist: "A New Artist");
         mp3.setAlbum(album: "A New Album");
-        mp3.setArtwork(artwork: try! NSData(contentsOfFile: pathFor(name: "example-cover-png", fileType: "png")), isPNG: true);
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover-png", fileType: "png")))
+        mp3.setArtwork(artwork: data, isPNG: true);
         XCTAssertNoThrow(try mp3.writeWithNewTag(to: NSHomeDirectory() + "/lb-mine.mp3"));
     }
 

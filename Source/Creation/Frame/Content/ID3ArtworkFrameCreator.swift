@@ -38,7 +38,7 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
                     contentAsBytes.append(contentsOf: [0x00, 0x4A, 0x50, 0x47, 0x03, 0x00])
                 }
             }
-            let artworkData = Array(UnsafeBufferPointer(start: art.bytes.assumingMemoryBound(to: UInt8.self), count: art.length))
+            let artworkData = [UInt8](art)
             contentAsBytes.append(contentsOf: artworkData);
 
             frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: id3Tag.version))
