@@ -6,7 +6,7 @@
 //  Copyright © 2018 Fabrizio Duroni. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Foundation;
 
 FOUNDATION_EXPORT double ID3TagEditorVersionNumber;
 FOUNDATION_EXPORT const unsigned char ID3TagEditorVersionString[];

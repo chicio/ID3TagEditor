@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "452831C42044C40700458375"
-               BuildableName = "ID3TagEditor_macOS.framework"
+               BuildableName = "ID3TagEditor.framework"
                BlueprintName = "ID3TagEditor macOS"
                ReferencedContainer = "container:ID3TagEditor.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "452831C42044C40700458375"
-            BuildableName = "ID3TagEditor_macOS.framework"
+            BuildableName = "ID3TagEditor.framework"
             BlueprintName = "ID3TagEditor macOS"
             ReferencedContainer = "container:ID3TagEditor.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "452831C42044C40700458375"
-            BuildableName = "ID3TagEditor_macOS.framework"
+            BuildableName = "ID3TagEditor.framework"
             BlueprintName = "ID3TagEditor macOS"
             ReferencedContainer = "container:ID3TagEditor.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "452831C42044C40700458375"
-            BuildableName = "ID3TagEditor_macOS.framework"
+            BuildableName = "ID3TagEditor.framework"
             BlueprintName = "ID3TagEditor macOS"
             ReferencedContainer = "container:ID3TagEditor.xcodeproj">
          </BuildableReference>
