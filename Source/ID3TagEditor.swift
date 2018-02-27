@@ -10,7 +10,7 @@ import Foundation;
 public class ID3TagEditor {
     private let id3TagParser: ID3TagParser
     private let mp3WithID3TagBuilder: Mp3WithID3TagBuilder
-    private let mp3: NSData
+    private let mp3: Data
     private let currentId3Tag: ID3Tag?
     private let newId3Tag: ID3Tag
     private var path: String
@@ -24,16 +24,15 @@ public class ID3TagEditor {
      specified path doesn't exist.
      */
     public init(path: String) throws {
-        guard (path as NSString).pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
+        let validPath = URL(fileURLWithPath: path)
+        guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
             throw ID3TagEditorError.InvalidFileFormat;
         }
-        guard let validMp3 = NSData(contentsOfFile: path) else {
-            throw ID3TagEditorError.FileNotFound;
-        }
+        let validMp3 = try Data(contentsOf: validPath)
         self.path = path
         self.mp3 = validMp3
         self.id3TagParser = ID3TagParserFactory.make()
-        self.currentId3Tag = id3TagParser.parse(mp3: validMp3)
+        self.currentId3Tag = id3TagParser.parse(mp3: validMp3 as NSData)
         self.newId3Tag = currentId3Tag ?? ID3Tag(version: 3, size: 0)
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
@@ -128,7 +127,7 @@ public class ID3TagEditor {
      */
     public func writeWithNewTag(to newPath: String? = nil) throws {
         try mp3WithID3TagBuilder.buildMp3WithNewTagUsing(
-                mp3: mp3,
+                mp3: mp3 as NSData,
                 id3Tag: newId3Tag,
                 consideringThereIsAn: currentId3Tag,
                 andSaveTo: newPath ?? path

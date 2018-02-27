@@ -7,7 +7,6 @@
 
 public enum ID3TagEditorError: Error {
     case InvalidFileFormat;
-    case FileNotFound;
     case TagTooBig;
     case InvalidTagData;
 }
