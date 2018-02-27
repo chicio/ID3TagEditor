@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FrameFromStringContentCreator {
-    func createFrame(frameIdentifier: [UInt8], version: UInt8, content: String) -> [UInt8]
+    func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8]
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FrameSizeParser {
-    func parse(mp3: NSData, framePosition: Int, version: UInt8) -> Int
+    func parse(mp3: NSData, framePosition: Int, version: ID3Version) -> Int
 }

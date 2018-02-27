@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FrameContentSizeCalculator {
-    func calculateSizeOf(content: [UInt8], version: UInt8) -> [UInt8]
+    func calculateSizeOf(content: [UInt8], version: ID3Version) -> [UInt8]
 }

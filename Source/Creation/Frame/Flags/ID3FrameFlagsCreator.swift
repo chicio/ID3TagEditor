@@ -8,8 +8,8 @@
 import Foundation
 
 class ID3FrameFlagsCreator: FrameFlagsCreator {
-    func createFor(version: UInt8) -> [UInt8] {
-        if (version >= 3) {
+    func createFor(version: ID3Version) -> [UInt8] {
+        if (version >= ID3Version.version3) {
             return [0, 0]
         } else {
             return []

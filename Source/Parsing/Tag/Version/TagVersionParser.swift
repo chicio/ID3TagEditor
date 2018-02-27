@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TagVersionParser {
-    func parse(mp3: Data) -> UInt8
+    func parse(mp3: Data) -> ID3Version
 }

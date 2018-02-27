@@ -11,12 +11,12 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
     private var id3FrameConfiguration: ID3FrameConfiguration
     private let frameContentSizeCalculator: FrameContentSizeCalculator
     private let frameFlagsCreator: FrameFlagsCreator
-    private let frameImageTypeHeader: [UInt8 : [String : [UInt8]]] = [
-        2: [
+    private let frameImageTypeHeader: [ID3Version : [String : [UInt8]]] = [
+        .version2: [
             "png" : [0x00, 0x50, 0x4E, 0x47, 0x03, 0x00],
             "jpeg" : [0x00, 0x4A, 0x50, 0x47, 0x03, 0x00]
         ],
-        3 : [
+        .version3: [
             "png" : [0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F, 0x70, 0x6E, 0x67, 0x00, 0x03, 0x00],
             "jpeg" : [0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F, 0x6A, 0x70, 0x65, 0x67, 0x00, 0x03, 0x00]
         ]

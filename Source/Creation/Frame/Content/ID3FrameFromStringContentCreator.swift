@@ -20,7 +20,7 @@ class ID3FrameFromStringContentCreator: FrameFromStringContentCreator {
         self.paddingAdder = paddingAdder
     }
 
-    func createFrame(frameIdentifier: [UInt8], version: UInt8, content: String) -> [UInt8] {
+    func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8] {
         var frame: [UInt8] = frameIdentifier
         let contentAsBytes = paddingAdder.addTo(content:[UInt8](content.utf8))
         frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: version))

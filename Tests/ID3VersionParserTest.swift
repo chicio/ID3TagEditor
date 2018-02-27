@@ -13,16 +13,16 @@ class ID3VersionParserTest: XCTestCase {
     
     func testExtractVersion2() {
         let mp3WithV2Tag = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3")))
-        XCTAssertEqual(2, id3VersionParser.parse(mp3: mp3WithV2Tag))
+        XCTAssertEqual(.version2, id3VersionParser.parse(mp3: mp3WithV2Tag))
     }
     
     func testExtractVersion3() {
         let mp3WithV2Tag = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23", fileType: "mp3")))
-        XCTAssertEqual(3, id3VersionParser.parse(mp3: mp3WithV2Tag))
+        XCTAssertEqual(.version3, id3VersionParser.parse(mp3: mp3WithV2Tag))
     }
     
     func testDefaultVersion() {
         let mp3WithV2Tag = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3")))
-        XCTAssertEqual(3, id3VersionParser.parse(mp3: mp3WithV2Tag))
+        XCTAssertEqual(.version3, id3VersionParser.parse(mp3: mp3WithV2Tag))
     }
 }

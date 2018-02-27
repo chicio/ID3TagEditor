@@ -54,7 +54,7 @@ class ID3TagParser {
         }
     }
 
-    private func getFrameFrom(mp3: NSData, position: Int, version: UInt8) -> Data {
+    private func getFrameFrom(mp3: NSData, position: Int, version: ID3Version) -> Data {
         let frameSize = frameSizeParser.parse(mp3: mp3, framePosition: position, version: version)
         let frame = mp3.subdata(with: NSMakeRange(position, frameSize))
         return frame

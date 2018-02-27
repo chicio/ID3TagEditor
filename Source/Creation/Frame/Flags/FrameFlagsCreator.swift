@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FrameFlagsCreator {
-    func createFor(version: UInt8) -> [UInt8]
+    func createFor(version: ID3Version) -> [UInt8]
 }

@@ -13,14 +13,14 @@ struct Artwork {
 }
 
 class ID3Tag {
-    var version: UInt8
+    var version: ID3Version
     var size: UInt32
     var artist: String?
     var album: String?
     var title: String?
     var artwork: Artwork = Artwork()
     
-    init(version: UInt8, size: UInt32) {
+    init(version: ID3Version, size: UInt32) {
         self.version = version
         self.size = size
     }

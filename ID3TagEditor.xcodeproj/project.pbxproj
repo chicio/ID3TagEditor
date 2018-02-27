@@ -151,6 +151,7 @@
 		452832E32044CECD00458375 /* folder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 452832B82044CECD00458375 /* folder.jpg */; };
 		452832E42044CECD00458375 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832B92044CECD00458375 /* PathLoader.swift */; };
 		452832E52044CECD00458375 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832B92044CECD00458375 /* PathLoader.swift */; };
+		C5067B1B1FA6D04ACC720729 /* ID3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ED87F78D196E8980F49 /* ID3Version.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		452832B72044CECD00458375 /* TagParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagParserTest.swift; sourceTree = "<group>"; };
 		452832B82044CECD00458375 /* folder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = folder.jpg; sourceTree = "<group>"; };
 		452832B92044CECD00458375 /* PathLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathLoader.swift; sourceTree = "<group>"; };
+		C5067ED87F78D196E8980F49 /* ID3Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3Version.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 				452832212044C7BE00458375 /* Tag */,
 				4528321E2044C7BE00458375 /* UInt32ToByteArrayAdapter */,
 				452831C92044C40700458375 /* Info.plist */,
+				C5067ED87F78D196E8980F49 /* ID3Version.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				452832942044C7BE00458375 /* ID3ArtworkFrameCreator.swift in Sources */,
 				4528328E2044C7BE00458375 /* ID3ArtistFrameCreator.swift in Sources */,
 				4528324E2044C7BE00458375 /* ArtworkFrameContentParsingOperation.swift in Sources */,
+				C5067B1B1FA6D04ACC720729 /* ID3Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

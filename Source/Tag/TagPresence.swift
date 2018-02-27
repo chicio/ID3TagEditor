@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TagPresence {
-    func isTagPresentIn(mp3: Data, version: UInt8) -> Bool
+    func isTagPresentIn(mp3: Data, version: ID3Version) -> Bool
 }

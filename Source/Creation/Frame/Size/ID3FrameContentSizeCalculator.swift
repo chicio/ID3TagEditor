@@ -14,7 +14,7 @@ class ID3FrameContentSizeCalculator: FrameContentSizeCalculator {
         self.uInt32ToByteArrayAdapter = uInt32ToByteArrayAdapter
     }
 
-    func calculateSizeOf(content: [UInt8], version: UInt8) -> [UInt8] {
+    func calculateSizeOf(content: [UInt8], version: ID3Version) -> [UInt8] {
         var size = uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(content.count))
         if version2OrBelow(version: version) {
             size.removeFirst();
@@ -22,7 +22,7 @@ class ID3FrameContentSizeCalculator: FrameContentSizeCalculator {
         return size
     }
 
-    private func version2OrBelow(version: UInt8) -> Bool {
-        return version <= 2
+    private func version2OrBelow(version: ID3Version) -> Bool {
+        return version <= ID3Version.version2
     }
 }

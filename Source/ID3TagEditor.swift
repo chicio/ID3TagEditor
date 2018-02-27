@@ -33,7 +33,7 @@ public class ID3TagEditor {
         self.mp3 = validMp3
         self.id3TagParser = ID3TagParserFactory.make()
         self.currentId3Tag = id3TagParser.parse(mp3: validMp3)
-        self.newId3Tag = currentId3Tag ?? ID3Tag(version: 3, size: 0)
+        self.newId3Tag = currentId3Tag ?? ID3Tag(version: .version3, size: 0)
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
     }

@@ -10,10 +10,10 @@ import Foundation
 class ID3TagVersionParser: TagVersionParser {
     private let versionBytesOffset = 3;
     
-    func parse(mp3: Data) -> UInt8 {
-        var version: UInt8 = 3
-        if (thereAreAtLeast4BytesIn(mp3: mp3)) {
-            version = tryToGetVersionFrom(mp3: mp3 as Data)
+    func parse(mp3: Data) -> ID3Version {
+        let version = ID3Version.version3
+        if let validVersion = tryToGetVersionFrom(mp3: mp3) {
+            return validVersion
         }
         return version
     }
@@ -22,15 +22,8 @@ class ID3TagVersionParser: TagVersionParser {
         return mp3.count >= 4
     }
     
-    private func tryToGetVersionFrom(mp3: Data) -> UInt8 {
-        var version = [UInt8](mp3)[versionBytesOffset]
-        if (isNotAValid(version: version)) {
-            version = 3
-        }
-        return version
-    }
-    
-    private func isNotAValid(version: UInt8) -> Bool {
-        return version != 2 && version != 3
+    private func tryToGetVersionFrom(mp3: Data) -> ID3Version? {
+        let version = [UInt8](mp3)[versionBytesOffset]
+        return ID3Version(rawValue: version)
     }
 }
