@@ -14,9 +14,8 @@ class ID3TagPresence: TagPresence {
         self.id3TagConfiguration = id3TagConfiguration
     }
 
-    func isTagPresentIn(mp3: NSData, version: UInt8) -> Bool {
-        var header = [UInt8](repeating: 0, count: 6)
-        mp3.getBytes(&header, range: NSMakeRange(0, 6))
-        return header == id3TagConfiguration.headerFor(version: version)
+    func isTagPresentIn(mp3: Data, version: UInt8) -> Bool {
+        let header = [UInt8](mp3.subdata(in: Range(0..<6)))
+        return header.elementsEqual(id3TagConfiguration.headerFor(version: version))
     }
 }
