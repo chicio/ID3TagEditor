@@ -31,7 +31,7 @@ class ID3TagParser {
     }
     
     func parse(mp3: NSData) -> ID3Tag? {
-        let version = tagVersionParser.parse(mp3: mp3)
+        let version = tagVersionParser.parse(mp3: mp3 as Data)
         if (tagPresence.isTagPresentIn(mp3: mp3, version: version)) {
             let id3Tag = ID3Tag(version: version, size: 0)
             parseTagSizeFor(mp3: mp3, andSaveInId3Tag: id3Tag)

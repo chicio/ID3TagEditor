@@ -10,20 +10,20 @@ import Foundation
 class ID3TagVersionParser: TagVersionParser {
     private let versionBytesOffset = 3;
     
-    func parse(mp3: NSData) -> UInt8 {
+    func parse(mp3: Data) -> UInt8 {
         var version: UInt8 = 3
         if (thereAreAtLeast4BytesIn(mp3: mp3)) {
-            version = tryToGetVersionFrom(mp3: mp3)
+            version = tryToGetVersionFrom(mp3: mp3 as Data)
         }
         return version
     }
     
-    private func thereAreAtLeast4BytesIn(mp3: NSData) -> Bool {
-        return mp3.length >= 4
+    private func thereAreAtLeast4BytesIn(mp3: Data) -> Bool {
+        return mp3.count >= 4
     }
     
-    private func tryToGetVersionFrom(mp3: NSData) -> UInt8 {
-        var version = mp3.bytes.assumingMemoryBound(to: UInt8.self)[versionBytesOffset];
+    private func tryToGetVersionFrom(mp3: Data) -> UInt8 {
+        var version = [UInt8](mp3)[versionBytesOffset]
         if (isNotAValid(version: version)) {
             version = 3
         }
