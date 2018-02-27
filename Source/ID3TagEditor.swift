@@ -32,7 +32,7 @@ public class ID3TagEditor {
         self.path = path
         self.mp3 = validMp3
         self.id3TagParser = ID3TagParserFactory.make()
-        self.currentId3Tag = id3TagParser.parse(mp3: validMp3 as NSData)
+        self.currentId3Tag = id3TagParser.parse(mp3: validMp3)
         self.newId3Tag = currentId3Tag ?? ID3Tag(version: 3, size: 0)
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
@@ -125,7 +125,7 @@ public class ID3TagEditor {
      - throws: Could throw `TagTooBig` (tag size > 256 MB) or `InvalidTagData` (no data set to be written in the
      ID3 tag).
      */
-    public func writeWithNewTag(to newPath: String? = nil) throws {
+    public func write(to newPath: String? = nil) throws {
         try mp3WithID3TagBuilder.buildMp3WithNewTagUsing(
                 mp3: mp3,
                 id3Tag: newId3Tag,

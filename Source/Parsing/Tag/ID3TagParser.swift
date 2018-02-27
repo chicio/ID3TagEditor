@@ -30,12 +30,12 @@ class ID3TagParser {
         self.id3TagConfiguration = id3TagConfiguration
     }
     
-    func parse(mp3: NSData) -> ID3Tag? {
+    func parse(mp3: Data) -> ID3Tag? {
         let version = tagVersionParser.parse(mp3: mp3 as Data)
         if (tagPresence.isTagPresentIn(mp3: mp3 as Data, version: version)) {
             let id3Tag = ID3Tag(version: version, size: 0)
-            parseTagSizeFor(mp3: mp3, andSaveInId3Tag: id3Tag)
-            parseFramesFor(mp3: mp3, id3Tag: id3Tag)
+            parseTagSizeFor(mp3: mp3 as NSData, andSaveInId3Tag: id3Tag)
+            parseFramesFor(mp3: mp3 as NSData, id3Tag: id3Tag)
             return id3Tag
         }
         return nil
