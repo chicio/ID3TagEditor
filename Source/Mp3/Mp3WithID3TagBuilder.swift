@@ -16,7 +16,7 @@ class Mp3WithID3TagBuilder {
         self.id3TagConfiguration = id3TagConfiguration
     }
 
-    public func buildMp3WithNewTagUsing(mp3: NSData,
+    public func buildMp3WithNewTagUsing(mp3: Data,
                                         id3Tag newId3Tag: ID3Tag,
                                         consideringThereIsAn currentId3Tag: ID3Tag?,
                                         andSaveTo path: String) throws {
@@ -25,7 +25,7 @@ class Mp3WithID3TagBuilder {
         if let validCurrentId3Tag = currentId3Tag {
             tagSizeWithHeader = Int(validCurrentId3Tag.size) + ID3TagConfiguration().headerSize();
         }
-        let music = mp3.subdata(with: NSMakeRange(tagSizeWithHeader, mp3.length - tagSizeWithHeader))
+        let music = mp3.subdata(in: Range(tagSizeWithHeader..<(mp3.count - tagSizeWithHeader)))
         let newMp3 = tag + music
         try newMp3.write(to: URL(fileURLWithPath: path))
     }

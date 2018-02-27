@@ -20,7 +20,7 @@ public class ID3TagEditor {
      
      - parameter path: the path of the file to be opened to create/edit the ID3Tag.
 
-     - throws: Could throw an `InvalidFileFormat` (only mp3 supported) or `FileNotFound` if the file at the
+     - throws: Could throw an `InvalidFileFormat` (only mp3 supported) or Cocoa Domain error if the file at the
      specified path doesn't exist.
      */
     public init(path: String) throws {
@@ -127,7 +127,7 @@ public class ID3TagEditor {
      */
     public func writeWithNewTag(to newPath: String? = nil) throws {
         try mp3WithID3TagBuilder.buildMp3WithNewTagUsing(
-                mp3: mp3 as NSData,
+                mp3: mp3,
                 id3Tag: newId3Tag,
                 consideringThereIsAn: currentId3Tag,
                 andSaveTo: newPath ?? path
