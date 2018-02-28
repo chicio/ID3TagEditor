@@ -13,7 +13,8 @@ typealias Byte = UInt8;
 class PaddingRemoverUsingTrimmingTest: XCTestCase {
     func testRemovePadding() {
         XCTAssertEqual(
-            "simple string", PaddingRemoverUsingTrimming().removeFrom(string: "\0\0\0simple string\0\0\0")
+                "simple string",
+                PaddingRemoverUsingTrimming().removeFrom(string: "\0\0\0simple string\0\0\0")
         )
     }
 }

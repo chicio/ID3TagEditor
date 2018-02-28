@@ -35,6 +35,7 @@ class ID3TagCreatorTest: XCTestCase {
                 uInt32ToByteArrayAdapter: MockUInt32ToByteArrayAdapter(),
                 id3TagConfiguration: ID3TagConfiguration()
         )
+
         XCTAssertEqual(
                 try! id3TagCreator.create(id3Tag: ID3Tag(version: .version3, size: 2)),
                 Data(bytes: ID3TagConfiguration().headerFor(version: .version3)

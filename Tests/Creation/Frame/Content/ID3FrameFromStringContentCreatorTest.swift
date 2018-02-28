@@ -15,10 +15,12 @@ class ID3FrameFromStringContentCreatorTest: XCTestCase {
                 frameFlagsCreator: MockFrameFlagsCreator(),
                 paddingAdder: MockPaddingAdder()
         )
+
         let frameBytes = id3FrameFromStringContentCreator.createFrame(
                 frameIdentifier: [0x22],
                 version: .version3, content: "test"
         )
+
         XCTAssertEqual(frameBytes, [0x22, 0x11, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00])
     }
 }

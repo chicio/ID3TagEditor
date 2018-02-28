@@ -10,6 +10,7 @@ import XCTest
 
 class ID3AlbumFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoAlbum() {
+        let tagBytes: [UInt8] = [1, 1, 1]
         let id3AlbumFrameCreator = ID3AlbumFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -17,13 +18,17 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
-        let tagBytes: [UInt8] = [1, 1, 1]
+
         let newTagBytes = id3AlbumFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
 
     func testFrameCreationWhenThereIsAnAlbum() {
         let newFrameBytes: [UInt8] = [1, 1]
+        let tagAsBytes: [UInt8] = [1, 1, 1]
+        let id3Tag = ID3Tag(version: .version3, size: 0)
+        id3Tag.album = "::an example album::"
         let id3AlbumFrameCreator = ID3AlbumFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
@@ -31,10 +36,9 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
-        let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.album = "::an example album::"
+
         let newTagBytes = id3AlbumFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

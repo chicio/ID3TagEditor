@@ -1,5 +1,5 @@
 //
-//  Int32ToByteArrayAdapterUsingUnsafePointer.swift
+//  Int32ToByteArrayAdapterUsingUnsafePointerTest.swift
 //
 //  Created by Fabrizio Duroni on 19/02/2018.
 //  2018 Fabrizio Duroni.
