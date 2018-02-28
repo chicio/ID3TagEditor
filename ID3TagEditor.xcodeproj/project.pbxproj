@@ -154,11 +154,13 @@
 		45AD069220460BD7003C570B /* ID3AlbumFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678BCE96013EF95D91E7E /* ID3AlbumFrameCreatorTest.swift */; };
 		45AD069320461505003C570B /* ID3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ED87F78D196E8980F49 /* ID3Version.swift */; };
 		C50670988CA3E37BCB646502 /* ID3TitleFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678BD37DA4B4DF9F1AA8C /* ID3TitleFrameCreatorTest.swift */; };
+		C506712F0396A58E1E3F8D25 /* ID3TagCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067E1D713A8D6BF81B9DC4 /* ID3TagCreatorTest.swift */; };
 		C506714C03EAB37AC337B983 /* MockFrameFromStringContentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506715FBCEE562BFB182459 /* MockFrameFromStringContentCreator.swift */; };
 		C50671C64692909C1AD1AC5D /* MockID3FrameCreatorsChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506701F77DD635B85857590 /* MockID3FrameCreatorsChain.swift */; };
 		C50671D87F09A66699907CF0 /* ID3ArtistFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067C3C5131452FCBCDE0EE /* ID3ArtistFrameCreatorTest.swift */; };
 		C5067279656F0EB75FE154A5 /* ID3FrameCreatorsChainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067B3C247D1CEBB70F1D1B /* ID3FrameCreatorsChainTest.swift */; };
 		C506731A8470956B3A6E6785 /* MockUInt32ToByteArrayAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50677463766C47CCE06012D /* MockUInt32ToByteArrayAdapter.swift */; };
+		C50673D948A7F9F93AEE1267 /* ID3TagCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067E1D713A8D6BF81B9DC4 /* ID3TagCreatorTest.swift */; };
 		C50673F417940FFC88D07142 /* ID3FrameContentSizeCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067735A5B72B3B9BC181DC /* ID3FrameContentSizeCalculatorTest.swift */; };
 		C5067429A4599983A129E025 /* MockFrameFlagsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067C4A517611B94BC6D6B2 /* MockFrameFlagsCreator.swift */; };
 		C506752353FE3E38ED8B1FFE /* ID3FrameFromStringContentCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067DF288BDB0311F5D8F40 /* ID3FrameFromStringContentCreatorTest.swift */; };
@@ -291,6 +293,7 @@
 		C5067C3C5131452FCBCDE0EE /* ID3ArtistFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ArtistFrameCreatorTest.swift; sourceTree = "<group>"; };
 		C5067C4A517611B94BC6D6B2 /* MockFrameFlagsCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFrameFlagsCreator.swift; sourceTree = "<group>"; };
 		C5067DF288BDB0311F5D8F40 /* ID3FrameFromStringContentCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameFromStringContentCreatorTest.swift; sourceTree = "<group>"; };
+		C5067E1D713A8D6BF81B9DC4 /* ID3TagCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagCreatorTest.swift; sourceTree = "<group>"; };
 		C5067ED87F78D196E8980F49 /* ID3Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3Version.swift; sourceTree = "<group>"; };
 		C5067F20A28745E0CE36993E /* ID3FrameFlagsCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameFlagsCreatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -627,6 +630,7 @@
 			isa = PBXGroup;
 			children = (
 				C5067DCFE38B9E078595FB32 /* Frame */,
+				C5067E2AF1D5EE7B3CABC461 /* Tag */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -673,6 +677,14 @@
 				C5067CC0329F75AA4305DFD8 /* Size */,
 			);
 			path = Frame;
+			sourceTree = "<group>";
+		};
+		C5067E2AF1D5EE7B3CABC461 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				C5067E1D713A8D6BF81B9DC4 /* ID3TagCreatorTest.swift */,
+			);
+			path = Tag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -962,6 +974,7 @@
 				C5067986B85BE4BE38C166ED /* ID3FrameFlagsCreatorTest.swift in Sources */,
 				C5067BD2D0DA084ED571C2B1 /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				C506731A8470956B3A6E6785 /* MockUInt32ToByteArrayAdapter.swift in Sources */,
+				C506712F0396A58E1E3F8D25 /* ID3TagCreatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,6 +1061,7 @@
 				C5067BB89B579AC95DC810DA /* ID3FrameFlagsCreatorTest.swift in Sources */,
 				C50673F417940FFC88D07142 /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				C50677CCA43334F0B8280A0A /* MockUInt32ToByteArrayAdapter.swift in Sources */,
+				C50673D948A7F9F93AEE1267 /* ID3TagCreatorTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
