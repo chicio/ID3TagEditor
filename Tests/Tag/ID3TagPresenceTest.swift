@@ -1,6 +1,8 @@
 //
-// Created by Fabrizio Duroni on 28.02.18.
-// Copyright (c) 2018 Fabrizio Duroni. All rights reserved.
+//  ID3TagPresenceTest.swift
+//
+//  Created by Fabrizio Duroni on 19/02/2018.
+//  2018 Fabrizio Duroni.
 //
 
 import XCTest

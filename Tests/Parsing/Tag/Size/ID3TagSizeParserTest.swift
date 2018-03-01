@@ -16,4 +16,3 @@ class ID3TagSizeParserTest: XCTestCase {
         XCTAssertEqual(id3TagSizeParser.parse(data: mp3), 0xA503);
     }
 }
-

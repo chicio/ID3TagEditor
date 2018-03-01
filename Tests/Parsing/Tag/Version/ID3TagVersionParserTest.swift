@@ -1,5 +1,5 @@
 //
-//  ID3VersionParserTest.swift
+//  ID3TagVersionParserTest.swift
 //
 //  Created by Fabrizio Duroni on 20/02/2018.
 //  2018 Fabrizio Duroni.
@@ -8,8 +8,8 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3VersionParserTest: XCTestCase {
-    let id3VersionParser = ID3TagVersionParser()
+class ID3TagVersionParserTest: XCTestCase {
+    private let id3VersionParser = ID3TagVersionParser()
     
     func testExtractVersion2() {
         let mp3WithV2Tag = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3")))
