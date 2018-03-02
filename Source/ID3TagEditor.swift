@@ -14,6 +14,17 @@ public class ID3TagEditor {
     private let currentId3Tag: ID3Tag?
     private let newId3Tag: ID3Tag
     private var path: String
+    private lazy var newMp3: Data? = {
+        do {
+            return try mp3WithID3TagBuilder.buildMp3WithNewTag(
+                mp3: mp3,
+                id3Tag: newId3Tag,
+                consideringThereIsAn: currentId3Tag
+            )
+        } catch {
+            return nil
+        }
+    }()
 
     /**
      Init the ID3TagEditor.
@@ -111,9 +122,13 @@ public class ID3TagEditor {
         newId3Tag.artwork.art = artwork
         newId3Tag.artwork.isPNG = isPNG
     }
+    
+    public func generate() throws -> Data? {
+        return newMp3
+    }
 
     /**
-     Writes the file with the new ID3 tag.
+     Writes the mp3 to a new file or overwrite it with the new ID3 tag.
 
      The ID3 Tag of the file will be changed in the following way:
      * if the file does not have a ID3 tag, a new one will be created. The default version is ID3v2.3.
@@ -126,7 +141,7 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(to newPath: String? = nil) throws {
-        try mp3WithID3TagBuilder.buildMp3WithNewTagUsing(
+        try mp3WithID3TagBuilder.buildMp3WithNewTagAndSaveUsing(
                 mp3: mp3,
                 id3Tag: newId3Tag,
                 consideringThereIsAn: currentId3Tag,

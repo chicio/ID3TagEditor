@@ -119,8 +119,6 @@
 		452832C92044CECD00458375 /* example-with-tag-already-setted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AB2044CECC00458375 /* example-with-tag-already-setted.mp3 */; };
 		452832CA2044CECD00458375 /* example-cover-png.png in Resources */ = {isa = PBXBuildFile; fileRef = 452832AC2044CECC00458375 /* example-cover-png.png */; };
 		452832CB2044CECD00458375 /* example-cover-png.png in Resources */ = {isa = PBXBuildFile; fileRef = 452832AC2044CECC00458375 /* example-cover-png.png */; };
-		452832CC2044CECD00458375 /* example-with-tag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AD2044CECC00458375 /* example-with-tag.mp3 */; };
-		452832CD2044CECD00458375 /* example-with-tag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AD2044CECC00458375 /* example-with-tag.mp3 */; };
 		452832CE2044CECD00458375 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AE2044CECC00458375 /* example.mp3 */; };
 		452832CF2044CECD00458375 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AE2044CECC00458375 /* example.mp3 */; };
 		452832D02044CECD00458375 /* example-v23-png.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AF2044CECC00458375 /* example-v23-png.mp3 */; };
@@ -137,6 +135,8 @@
 		45AD069320461505003C570B /* ID3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ED87F78D196E8980F49 /* ID3Version.swift */; };
 		45AD069B2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45AD069A2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 */; };
 		45AD069C2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45AD069A2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 */; };
+		45AD069F204A147700576A99 /* example-with-tag-jpg-v3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45AD069E204A147700576A99 /* example-with-tag-jpg-v3.mp3 */; };
+		45AD06A0204A147700576A99 /* example-with-tag-jpg-v3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45AD069E204A147700576A99 /* example-with-tag-jpg-v3.mp3 */; };
 		C506707F9CDB2AEFFFC07F28 /* ID3TagVersionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50670526B9C63D9B7DC52FE /* ID3TagVersionParserTest.swift */; };
 		C50670988CA3E37BCB646502 /* ID3TitleFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678BD37DA4B4DF9F1AA8C /* ID3TitleFrameCreatorTest.swift */; };
 		C50670C02BD264044FC17413 /* TitleFrameContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067A9D68535B0F48209CDF /* TitleFrameContentParsingOperationTest.swift */; };
@@ -286,7 +286,6 @@
 		452832AA2044CECC00458375 /* my-version.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "my-version.mp3"; sourceTree = "<group>"; };
 		452832AB2044CECC00458375 /* example-with-tag-already-setted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-with-tag-already-setted.mp3"; sourceTree = "<group>"; };
 		452832AC2044CECC00458375 /* example-cover-png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "example-cover-png.png"; sourceTree = "<group>"; };
-		452832AD2044CECC00458375 /* example-with-tag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-with-tag.mp3"; sourceTree = "<group>"; };
 		452832AE2044CECC00458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		452832AF2044CECC00458375 /* example-v23-png.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v23-png.mp3"; sourceTree = "<group>"; };
 		452832B02044CECD00458375 /* alice-in-chains-with-tag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "alice-in-chains-with-tag.mp3"; sourceTree = "<group>"; };
@@ -294,6 +293,7 @@
 		452832B62044CECD00458375 /* example-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "example-cover.jpg"; sourceTree = "<group>"; };
 		452832B82044CECD00458375 /* folder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = folder.jpg; sourceTree = "<group>"; };
 		45AD069A2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-to-be-modified-in-same-path.mp3"; sourceTree = "<group>"; };
+		45AD069E204A147700576A99 /* example-with-tag-jpg-v3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-with-tag-jpg-v3.mp3"; sourceTree = "<group>"; };
 		C506700658BCCA8D6CD0E270 /* MockFrameContentSizeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFrameContentSizeCalculator.swift; sourceTree = "<group>"; };
 		C506701F77DD635B85857590 /* MockID3FrameCreatorsChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockID3FrameCreatorsChain.swift; sourceTree = "<group>"; };
 		C50670526B9C63D9B7DC52FE /* ID3TagVersionParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagVersionParserTest.swift; sourceTree = "<group>"; };
@@ -416,7 +416,7 @@
 				452832AF2044CECC00458375 /* example-v23-png.mp3 */,
 				452832A52044CECC00458375 /* example-v23.mp3 */,
 				452832AB2044CECC00458375 /* example-with-tag-already-setted.mp3 */,
-				452832AD2044CECC00458375 /* example-with-tag.mp3 */,
+				45AD069E204A147700576A99 /* example-with-tag-jpg-v3.mp3 */,
 				452832AE2044CECC00458375 /* example.mp3 */,
 				452832B82044CECD00458375 /* folder.jpg */,
 				452832A62044CECC00458375 /* lb-mine.mp3 */,
@@ -1026,13 +1026,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				452832C82044CECD00458375 /* example-with-tag-already-setted.mp3 in Resources */,
+				45AD069F204A147700576A99 /* example-with-tag-jpg-v3.mp3 in Resources */,
 				452832E22044CECD00458375 /* folder.jpg in Resources */,
 				452832BA2044CECD00458375 /* cover2.jpg in Resources */,
 				452832D02044CECD00458375 /* example-v23-png.mp3 in Resources */,
 				452832C62044CECD00458375 /* my-version.mp3 in Resources */,
 				452832BE2044CECD00458375 /* lb-mine.mp3 in Resources */,
 				452832D62044CECD00458375 /* example-to-be-modified.mp3 in Resources */,
-				452832CC2044CECD00458375 /* example-with-tag.mp3 in Resources */,
 				452832CE2044CECD00458375 /* example.mp3 in Resources */,
 				452832DE2044CECD00458375 /* example-cover.jpg in Resources */,
 				45AD069B2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 in Resources */,
@@ -1054,13 +1054,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				452832C92044CECD00458375 /* example-with-tag-already-setted.mp3 in Resources */,
+				45AD06A0204A147700576A99 /* example-with-tag-jpg-v3.mp3 in Resources */,
 				452832E32044CECD00458375 /* folder.jpg in Resources */,
 				452832BB2044CECD00458375 /* cover2.jpg in Resources */,
 				452832D12044CECD00458375 /* example-v23-png.mp3 in Resources */,
 				452832C72044CECD00458375 /* my-version.mp3 in Resources */,
 				452832BF2044CECD00458375 /* lb-mine.mp3 in Resources */,
 				452832D72044CECD00458375 /* example-to-be-modified.mp3 in Resources */,
-				452832CD2044CECD00458375 /* example-with-tag.mp3 in Resources */,
 				452832CF2044CECD00458375 /* example.mp3 in Resources */,
 				452832DF2044CECD00458375 /* example-cover.jpg in Resources */,
 				45AD069C2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 in Resources */,
@@ -1482,6 +1482,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Y682K92RZU;
@@ -1507,6 +1508,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Y682K92RZU;
