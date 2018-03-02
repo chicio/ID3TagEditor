@@ -18,10 +18,6 @@ class ID3TagVersionParser: TagVersionParser {
         return version
     }
     
-    private func thereAreAtLeast4BytesIn(mp3: Data) -> Bool {
-        return mp3.count >= 4
-    }
-    
     private func tryToGetVersionFrom(mp3: Data) -> ID3Version? {
         let version = [UInt8](mp3)[versionBytesOffset]
         return ID3Version(rawValue: version)

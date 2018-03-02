@@ -11,11 +11,11 @@ import XCTest
 class ID3FrameFlagsCreatorTest: XCTestCase {
     private let id3FrameFlagsCreator = ID3FrameFlagsCreator()
 
-    func testFlagsForVersion2() {
+    func testFlagsForVersion3() {
         XCTAssertEqual(id3FrameFlagsCreator.createFor(version: .version3), [0x0, 0x0])
     }
 
-    func testFlagsForVersion3() {
+    func testFlagsForVersion2() {
         XCTAssertEqual(id3FrameFlagsCreator.createFor(version: .version2), [])
     }
 }

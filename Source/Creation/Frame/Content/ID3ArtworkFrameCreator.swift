@@ -47,8 +47,7 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
     private func getImageTypeAndCoverTypeUsing(id3Tag: ID3Tag) -> [UInt8] {
         if id3Tag.artwork.isPNG! {
             return frameImageTypeHeader[id3Tag.version]!["png"]!
-        } else {
-            return frameImageTypeHeader[id3Tag.version]!["jpeg"]!
         }
+        return frameImageTypeHeader[id3Tag.version]!["jpeg"]!
     }
 }
