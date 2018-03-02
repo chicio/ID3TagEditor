@@ -27,6 +27,16 @@ class Mp3WithID3TagBuilder {
         }
         let music = mp3.subdata(in: Range(tagSizeWithHeader..<(mp3.count - tagSizeWithHeader)))
         let newMp3 = tag + music
+        try eventuallyCreateIntermediatesDirectoriesFor(path: path)
         try newMp3.write(to: URL(fileURLWithPath: path))
+    }
+
+    private func eventuallyCreateIntermediatesDirectoriesFor(path: String) throws {
+        let fileUrl = URL(fileURLWithPath: NSString(string: path).deletingLastPathComponent)
+        var isDirectory: ObjCBool = false
+        if (!FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) ||
+                !isDirectory.boolValue) {
+            try FileManager.default.createDirectory(at: fileUrl, withIntermediateDirectories: true)
+        }
     }
 }

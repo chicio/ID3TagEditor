@@ -58,26 +58,26 @@ class ID3FrameConfiguration {
     ]
 
     func headerSizeFor(version: ID3Version) -> Int {
-        return headerSizesInBytes[version] ?? 0
+        return headerSizesInBytes[version]!
     }
 
     func sizeOffsetFor(version: ID3Version) -> Int {
-        return sizeOffsetInBytes[version] ?? 0
+        return sizeOffsetInBytes[version]!
     }
 
     func sizeMaskFor(version: ID3Version) -> UInt32 {
-        return sizeMask[version] ?? 0xFFFFFFFF
+        return sizeMask[version]!
     }
 
     func identifierSizeFor(version: ID3Version) -> Int {
-        return identifierSizeInBytes[version] ?? 0
+        return identifierSizeInBytes[version]!
     }
 
     func identifierFor(name: String, version: ID3Version) -> [UInt8] {
-        return identifiers[version]?[name] ?? []
+        return identifiers[version]![name]!
     }
 
     func nameFor(identifier: String, version: ID3Version) -> String {
-        return nameForIdentifier[version]?[identifier] ?? ""
+        return nameForIdentifier[version]![identifier] ?? ""
     }
 }

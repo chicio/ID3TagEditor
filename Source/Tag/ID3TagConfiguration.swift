@@ -19,6 +19,6 @@ class ID3TagConfiguration {
     }
 
     func headerFor(version: ID3Version) -> [UInt8] {
-        return headers[version] ?? []
+        return headers[version]!
     }
 }
