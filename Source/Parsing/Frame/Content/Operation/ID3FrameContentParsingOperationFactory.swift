@@ -11,7 +11,7 @@ class ID3FrameContentParsingOperationFactory {
     static func make() -> [String : FrameContentParsingOperation] {
         let paddingRemover = PaddingRemoverUsingTrimming()
         let id3FrameConfiguration = ID3FrameConfiguration()
-        let stringParsingContentOperation = ID3StringContentParsingOperation(
+        let stringParsingContentOperation = ID3FrameStringContentParsingOperation(
                 paddingRemover: paddingRemover,
                 id3FrameConfiguration: id3FrameConfiguration
         )
