@@ -1,5 +1,5 @@
 //
-//  ID3StringContentParsingOperation.swift
+//  ID3FrameStringContentParsingOperation.swift
 //
 //  Created by Fabrizio Duroni on 26/02/2018.
 //  2018 Fabrizio Duroni.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3StringContentParsingOperation: FrameStringContentParsingOperation {
+class ID3FrameStringContentParsingOperation: FrameStringContentParsingOperation {
     private let paddingRemover: PaddingRemover
     private let id3FrameConfiguration: ID3FrameConfiguration
 

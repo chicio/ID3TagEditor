@@ -14,7 +14,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     func testFrameContentParsedV2() {
         let expectation = XCTestExpectation(description: "content without padding")
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        let id3StringContentParsingOperation = ID3StringContentParsingOperation(
+        let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
                 paddingRemover: MockPaddingRemover(returnValue: value),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -28,7 +28,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     func testFrameContentParsedV3() {
         let expectation = XCTestExpectation(description: "content without padding")
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        let id3StringContentParsingOperation = ID3StringContentParsingOperation(
+        let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
                 paddingRemover: MockPaddingRemover(returnValue: value),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
