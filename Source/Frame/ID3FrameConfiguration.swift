@@ -12,10 +12,6 @@ class ID3FrameConfiguration {
         .version2 : 6,
         .version3 : 10
     ]
-    private let headers: [ID3Version : [UInt8]] = [
-        .version2 : [0x49, 0x44, 0x33, 0x02, 0x00, 0x00],
-        .version3 : [0x49, 0x44, 0x33, 0x03, 0x00, 0x00]
-    ]
     private let sizeOffsetInBytes: [ID3Version : Int] = [
         .version2 : 2,
         .version3 : 4
