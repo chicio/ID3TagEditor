@@ -154,8 +154,5 @@ class ID3TagEditorTest: XCTestCase {
 //        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "cover2", fileType: "jpg")))
 //        mp3.setArtwork(artwork: data, isPNG: false);
 //        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/lb-mine.mp3"));
-//        let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/lb-mine.mp3")
-//        let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "lb-mine", fileType: "mp3"))
-//        XCTAssertEqual(mp3Created, mp3WithId3Tag)
 //    }
 }
