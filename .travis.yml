@@ -1,9 +1,9 @@
 language: objective-c
 osx_image: xcode9.2
 script:
- - xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor macOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty && exit ${PIPESTATUS[0]}
- - xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor iOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty && exit ${PIPESTATUS[0]}
- - xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo macOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty && exit ${PIPESTATUS[0]}
- - xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8,OS=latest" | xcpretty && exit ${PIPESTATUS[0]}
+ - set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor macOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty
+ - set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor iOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty
+ - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo macOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty
+ - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8,OS=latest" | xcpretty
 
 
