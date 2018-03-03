@@ -119,8 +119,6 @@
 		452832CF2044CECD00458375 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AE2044CECC00458375 /* example.mp3 */; };
 		452832D02044CECD00458375 /* example-v23-png.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AF2044CECC00458375 /* example-v23-png.mp3 */; };
 		452832D12044CECD00458375 /* example-v23-png.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832AF2044CECC00458375 /* example-v23-png.mp3 */; };
-		452832D22044CECD00458375 /* alice-in-chains-with-tag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832B02044CECD00458375 /* alice-in-chains-with-tag.mp3 */; };
-		452832D32044CECD00458375 /* alice-in-chains-with-tag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832B02044CECD00458375 /* alice-in-chains-with-tag.mp3 */; };
 		452832D62044CECD00458375 /* example-to-be-modified.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832B22044CECD00458375 /* example-to-be-modified.mp3 */; };
 		452832D72044CECD00458375 /* example-to-be-modified.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452832B22044CECD00458375 /* example-to-be-modified.mp3 */; };
 		452832DE2044CECD00458375 /* example-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 452832B62044CECD00458375 /* example-cover.jpg */; };
@@ -1036,7 +1034,6 @@
 				452832CE2044CECD00458375 /* example.mp3 in Resources */,
 				452832DE2044CECD00458375 /* example-cover.jpg in Resources */,
 				45AD069B2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 in Resources */,
-				452832D22044CECD00458375 /* alice-in-chains-with-tag.mp3 in Resources */,
 				452832CA2044CECD00458375 /* example-cover-png.png in Resources */,
 				452832BC2044CECD00458375 /* example-v23.mp3 in Resources */,
 			);
@@ -1062,7 +1059,6 @@
 				452832CF2044CECD00458375 /* example.mp3 in Resources */,
 				452832DF2044CECD00458375 /* example-cover.jpg in Resources */,
 				45AD069C2049B83D003C570B /* example-to-be-modified-in-same-path.mp3 in Resources */,
-				452832D32044CECD00458375 /* alice-in-chains-with-tag.mp3 in Resources */,
 				452832CB2044CECD00458375 /* example-cover-png.png in Resources */,
 				452832BD2044CECD00458375 /* example-v23.mp3 in Resources */,
 			);
