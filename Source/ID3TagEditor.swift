@@ -88,7 +88,7 @@ public class ID3TagEditor {
      
      - parameter artist: The artist to be used to create/update the ID3 tag.
      */
-    public func setArtist(artist: String) {
+    public func set(artist: String) {
         newId3Tag.artist = artist
     }
 
@@ -97,7 +97,7 @@ public class ID3TagEditor {
      
      - parameter title: The title to be used to create/update the ID3 tag.
      */
-    public func setTitle(title: String) {
+    public func set(title: String) {
         newId3Tag.title = title
     }
 
@@ -106,7 +106,7 @@ public class ID3TagEditor {
      
      - parameter album: The album to be used to create/update the ID3 tag.
      */
-    public func setAlbum(album: String) {
+    public func set(album: String) {
         newId3Tag.album = album
     }
 
@@ -116,7 +116,7 @@ public class ID3TagEditor {
     - parameter artwork: the image to be used as artwork to create/update the ID3 tag.
     - parameter isPNG: a flag to check if the image is a png or not.
     */
-    public func setArtwork(artwork: Data, isPNG: Bool) {
+    public func set(artwork: Data, isPNG: Bool) {
         newId3Tag.artwork.art = artwork
         newId3Tag.artwork.isPNG = isPNG
     }
