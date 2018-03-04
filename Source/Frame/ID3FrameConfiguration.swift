@@ -30,12 +30,14 @@ class ID3FrameConfiguration {
             "title" : [0x54, 0x54, 0x32],
             "album" : [0x54, 0x41, 0x4C],
             "artwork" : [0x50, 0x49, 0x43],
+            "year" : [0x54, 0x59, 0x45]
         ],
         .version3: [
             "artist" : [0x54, 0x50, 0x45, 0x31],
             "title" : [0x54, 0x49, 0x54, 0x32],
             "album" : [0x54, 0x41, 0x4C, 0x42],
             "artwork" : [0x41, 0x50, 0x49, 0x43],
+            "year" : [0x54, 0x59, 0x45, 0x52]
         ]
     ]
     private let nameForIdentifier: [ID3Version : [String : String]] = [
@@ -43,13 +45,15 @@ class ID3FrameConfiguration {
             "TP1" : "artist",
             "TT2" : "title",
             "TAL" : "album",
-            "PIC" : "artwork"
+            "PIC" : "artwork",
+            "TYE" : "year"
         ],
         .version3: [
             "TPE1" : "artist",
             "TIT2" : "title",
             "TALB" : "album",
-            "APIC" : "artwork"
+            "APIC" : "artwork",
+            "TYER" : "year"
         ]
     ]
 

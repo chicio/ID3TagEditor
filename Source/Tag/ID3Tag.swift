@@ -18,6 +18,7 @@ class ID3Tag {
     var artist: String?
     var album: String?
     var title: String?
+    var year: String?
     var artwork: Artwork = Artwork()
     
     init(version: ID3Version, size: UInt32) {

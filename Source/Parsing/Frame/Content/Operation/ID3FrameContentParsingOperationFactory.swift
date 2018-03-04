@@ -19,7 +19,8 @@ class ID3FrameContentParsingOperationFactory {
             "artist" : ArtistFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
             "album" : AlbumFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
             "title" : TitleFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            "artwork" : ArtworkFrameContentParsingOperation(id3FrameConfiguration: id3FrameConfiguration)
+            "artwork" : ArtworkFrameContentParsingOperation(id3FrameConfiguration: id3FrameConfiguration),
+            "year" : YearFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation)
         ]
     }
 }

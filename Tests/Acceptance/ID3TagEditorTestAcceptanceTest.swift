@@ -131,6 +131,33 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertNoThrow(try id3TagEditor.write())
     }
 
+    func testGenerateTagWithAdditionalData() {
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
+        id3TagEditor.setTitle(title: "A New title");
+        id3TagEditor.setArtist(artist: "A New Artist");
+        id3TagEditor.setAlbum(album: "A New Album");
+        id3TagEditor.set(year: "2018")
+        id3TagEditor.setArtwork(artwork: data, isPNG: false);
+
+        XCTAssertEqual(
+                try id3TagEditor.generate(),
+                try Data(contentsOf: URL(fileURLWithPath:pathFor(name: "example-v3-additional-data", fileType: "mp3")))
+        )
+    }
+
+    func testWriteTagWithAdditionalData() {
+        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
+        id3TagEditor.setTitle(title: "A New title");
+        id3TagEditor.setArtist(artist: "A New Artist");
+        id3TagEditor.setAlbum(album: "A New Album");
+        id3TagEditor.set(year: "2018")
+        id3TagEditor.setArtwork(artwork: data, isPNG: false);
+
+        XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/example-v3-additional-data.mp3"));
+    }
+
     //TODO: from here to be removed
 
 //    func testWriteID3withJpgAliceInChains() {

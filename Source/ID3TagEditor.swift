@@ -14,17 +14,6 @@ public class ID3TagEditor {
     private let currentId3Tag: ID3Tag?
     private let newId3Tag: ID3Tag
     private var path: String
-    private lazy var newMp3: Data? = {
-        do {
-            return try mp3WithID3TagBuilder.buildMp3WithNewTag(
-                mp3: mp3,
-                id3Tag: newId3Tag,
-                consideringThereIsAn: currentId3Tag
-            )
-        } catch {
-            return nil
-        }
-    }()
 
     /**
      Init the ID3TagEditor.
@@ -86,6 +75,15 @@ public class ID3TagEditor {
     }
 
     /**
+     Get the year contained in the ID3 tag of the file.
+
+     - returns: The year or nil if it not available.
+     */
+    public func getYear() -> String? {
+        return currentId3Tag?.year
+    }
+
+    /**
      Set the artist for the ID3 tag of the the file.
      
      - parameter artist: The artist to be used to create/update the ID3 tag.
@@ -122,9 +120,32 @@ public class ID3TagEditor {
         newId3Tag.artwork.art = artwork
         newId3Tag.artwork.isPNG = isPNG
     }
-    
-    public func generate() throws -> Data? {
-        return newMp3
+
+    /**
+     Set the year for the ID3 tag of the file.
+
+     - parameter year: The year to be used to create/update the ID3 tag.
+    */
+    public func set(year: String) {
+        newId3Tag.year = year
+    }
+
+    /**
+     Generate a new mp3 with the new ID3 tag and eventually return it as `Data`.
+
+     The ID3 Tag of the file will be changed in the following way:
+      * if the file does not have a ID3 tag, a new one will be created. The default version is ID3v2.3.
+      * if the file already have has a ID3 tag, this one will be updated (version will be maintained).
+
+     - throws: Could throw `TagTooBig` (tag size > 256 MB) or `InvalidTagData` (no data set to be written in the
+     ID3 tag).
+     */
+    public func generate() throws -> Data {
+        return try mp3WithID3TagBuilder.buildMp3WithNewTag(
+                mp3: mp3,
+                id3Tag: newId3Tag,
+                consideringThereIsAn: currentId3Tag
+        )
     }
 
     /**

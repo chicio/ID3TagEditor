@@ -34,9 +34,14 @@ class ID3FrameCreatorsChainFactory {
                 frameContentSizeCalculator: frameContentSizeCalculator,
                 frameFlagsCreator: frameFlagsCreator
         )
+        let yearFrameCreator = ID3YearFrameCreator(
+                frameCreator: frameFromStringContentCreator,
+                id3FrameConfiguration: frameConfiguration
+        )
         albumFrameCreator.nextCreator = artistFrameCreator
         artistFrameCreator.nextCreator = titleFrameCreator
-        titleFrameCreator.nextCreator = artworkFrameCreator
+        titleFrameCreator.nextCreator = yearFrameCreator
+        yearFrameCreator.nextCreator = artworkFrameCreator
         return  albumFrameCreator
     }
 }
