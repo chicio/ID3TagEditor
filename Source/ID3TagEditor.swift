@@ -68,7 +68,7 @@ public class ID3TagEditor {
     /**
      Get the album contained in the ID3 tag of the file.
      
-     - returns: The album or nil if it not available.
+     - returns: The album or nil if it is not available.
     */
     public func getAlbum() -> String? {
         return currentId3Tag?.album
@@ -77,10 +77,19 @@ public class ID3TagEditor {
     /**
      Get the year contained in the ID3 tag of the file.
 
-     - returns: The year or nil if it not available.
+     - returns: The year or nil if it is not available.
      */
     public func getYear() -> String? {
         return currentId3Tag?.year
+    }
+
+    /**
+     Get the genre contained in the ID3 tag of the file.
+
+     - returns: The genre or nil if it is not available.
+     */
+    public func getGenre() -> Genre? {
+        return currentId3Tag?.genre
     }
 
     /**
@@ -128,6 +137,16 @@ public class ID3TagEditor {
     */
     public func set(year: String) {
         newId3Tag.year = year
+    }
+
+    /**
+     Set the genre for the ID3 tag of the file.
+
+     - parameter genre: A `Genre` object where you can specify one of the standard genre supported (inherited from ID3v1
+     specification) and an optional additional description (useful to set your own genre).
+     */
+    public func set(genre: Genre) {
+        newId3Tag.genre = genre
     }
 
     /**

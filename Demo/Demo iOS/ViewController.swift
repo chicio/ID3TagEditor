@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func load(_ sender: Any) {
         do {
-            let id3TagEditor = try ID3TagEditor(path: pathFor(name: "example", fileType: "mp3"))
+            let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleTextField.text = id3TagEditor.getTitle()
             albumTextField.text = id3TagEditor.getAlbum()
             artistTextField.text = id3TagEditor.getArtist()
