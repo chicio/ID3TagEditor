@@ -23,6 +23,8 @@
 		452833852044D77100458375 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 452833842044D77100458375 /* example.mp3 */; };
 		452833862044D7F400458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; };
 		452833872044D7F400458375 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45AF185F204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
+		45AF1860204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,7 @@
 		4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ID3TagEditor.xcodeproj; path = ../ID3TagEditor.xcodeproj; sourceTree = "<group>"; };
 		4528337F2044D76500458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		452833842044D77100458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
+		45AF185E204C226C00343B25 /* PathLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,7 @@
 				4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */,
 				4528332A2044D3E300458375 /* Demo macOS */,
 				4528334B2044D41300458375 /* Demo iOS */,
+				45AF185B204C224600343B25 /* Demo common */,
 				452832F02044D28E00458375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,6 +195,14 @@
 				4528336B2044D47B00458375 /* ID3TagEditor iOS Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45AF185B204C224600343B25 /* Demo common */ = {
+			isa = PBXGroup;
+			children = (
+				45AF185E204C226C00343B25 /* PathLoader.swift */,
+			);
+			path = "Demo common";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +354,7 @@
 			files = (
 				452833352044D3E300458375 /* AppDelegate.swift in Sources */,
 				452833322044D3E300458375 /* ViewController.swift in Sources */,
+				45AF185F204C226C00343B25 /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +364,7 @@
 			files = (
 				4528334F2044D41300458375 /* ViewController.swift in Sources */,
 				4528334D2044D41300458375 /* AppDelegate.swift in Sources */,
+				45AF1860204C226C00343B25 /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

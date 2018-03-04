@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Demo iOS
+//  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 27.02.18.
-//  Copyright © 2018 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 03/03/2018.
+//  2018 Fabrizio Duroni
 //
 
 import UIKit
@@ -14,17 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var albumTextField: UITextField!
     @IBOutlet weak var artistTextField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func update(_ sender: Any) {
         do {
-            let id3TagEditor = try ID3TagEditor(path: pathFor(name: "example", fileType: "mp3"))
-            id3TagEditor.setTitle(title: titleTextField.text ?? "")
-            id3TagEditor.setAlbum(album: albumTextField.text ?? "")
-            id3TagEditor.setArtist(artist: artistTextField.text ?? "")
+            let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
+            id3TagEditor.set(title: titleTextField.text ?? "")
+            id3TagEditor.set(album: albumTextField.text ?? "")
+            id3TagEditor.set(artist: artistTextField.text ?? "")
             try id3TagEditor.write()
         } catch {
             print(error)
@@ -43,11 +43,5 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
-    }
-    
-    private func pathFor(name: String, fileType: String) -> String {
-        let bundle = Bundle(for: type(of: self));
-        let path = bundle.path(forResource: name, ofType: fileType)!;
-        return path;
     }
 }
