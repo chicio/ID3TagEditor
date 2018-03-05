@@ -21,9 +21,8 @@ class ID3TagEditorTest: XCTestCase {
     }
     
     func testReadTagV2() {
-        let cover = try! Data(
-                contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
-        )
+        let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example", fileType: "mp3"))
 
         let id3Tag = id3TagEditor.read()
@@ -36,9 +35,8 @@ class ID3TagEditorTest: XCTestCase {
     }
 
     func testParseTagV3() {
-        let cover = try! Data(
-                contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
-        )
+        let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-v23-png", fileType: "mp3"))
 
         let id3Tag = id3TagEditor.read()
@@ -52,9 +50,8 @@ class ID3TagEditorTest: XCTestCase {
     }
 
     func testParseTagV3AdditionalData() {
-        let cover = try! Data(
-                contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
-        )
+        let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-v3-additional-data", fileType: "mp3"))
 
         let id3Tag = id3TagEditor.read()
@@ -69,121 +66,134 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
         XCTAssertEqual(id3Tag?.year, "2018")
     }
-    
-    func testGenerateTagWhenItAlreadyExists() {
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"));
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(
-            artwork: try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg"))),
-            isPNG: false
-        );
-        
-        XCTAssertEqual(
-            try id3TagEditor.generate(),
-            try Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-with-tag-jpg-v3", fileType: "mp3")))
-        )
-    }
 
     func testWriteTagWhenItAlreadyExists() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"));
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(artwork: data, isPNG: false);
+        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let pathMp3ToCompare = pathFor(name: "example-with-tag-jpg-v3", fileType: "mp3")
+        let pathMp3Generated = NSHomeDirectory() + "/example-tag-already-exists.mp3"
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: nil,
+                genre: nil,
+                attachedPicture: AttachedPicture(art: art, isPNG: false)
+        )
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/example-tag-already-exists.mp3"));
-    }
-    
-    func testGenerateTagWithJpg() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(artwork: data, isPNG: false);
-        
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated));
         XCTAssertEqual(
-            try id3TagEditor.generate(),
-            try Data(contentsOf: URL(fileURLWithPath:pathFor(name: "example-with-tag-jpg-v3", fileType: "mp3")))
+                try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
+                try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
 
     func testWriteTagWithJpg() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(artwork: data, isPNG: false);
+        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let pathMp3ToCompare = pathFor(name: "example-with-tag-jpg-v3", fileType: "mp3")
+        let pathMp3Generated = NSHomeDirectory() + "/example-v3-jpg.mp3"
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: nil,
+                genre: nil,
+                attachedPicture: AttachedPicture(art: art, isPNG: false)
+        )
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/example-v3-jpg.mp3"));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated));
+        XCTAssertEqual(
+                try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
+                try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        )
     }
     
     func testWriteTagWithPng() {
-        let data: Data = try! Data(
+        let art: Data = try! Data(
             contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover-png", fileType: "png"))
         )
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(artwork: data, isPNG: true);
-        
-        XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/example-v3-png.mp3"));
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: nil,
+                genre: nil,
+                attachedPicture: AttachedPicture(art: art, isPNG: true)
+        )
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
+
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-png.mp3"));
     }
 
     func testWriteTagWithCustomPathThatDoesNotExists() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: nil,
+                genre: nil,
+                attachedPicture: AttachedPicture(art: art, isPNG: false)
+        )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
-        id3TagEditor.set(title: "A New title")
-        id3TagEditor.set(artist: "A New Artist")
-        id3TagEditor.set(album: "A New Album")
-        id3TagEditor.set(artwork: data, isPNG: false)
 
-        XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/ID3TagEditor/example-v3-custom-path.mp3"));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/ID3TagEditor/example-v3-custom-path.mp3"));
     }
 
     func testWriteTagWithSamePath() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: nil,
+                genre: nil,
+                attachedPicture: AttachedPicture(art: art, isPNG: false)
+        )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3"))
-        id3TagEditor.set(title: "A New title")
-        id3TagEditor.set(artist: "A New Artist")
-        id3TagEditor.set(album: "A New Album")
-        id3TagEditor.set(artwork: data, isPNG: false)
 
-        XCTAssertNoThrow(try id3TagEditor.write())
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag))
     }
 
     func testGenerateTagWithAdditionalData() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: "2018",
+                genre: Genre(genre: .Metal, description: "Metalcore"),
+                attachedPicture: AttachedPicture(art: art, isPNG: false)
+        )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(year: "2018")
-        id3TagEditor.set(genre: Genre(genre: .Metal, description: "Metalcore"))
-        id3TagEditor.set(artwork: data, isPNG: false);
 
         XCTAssertEqual(
-                try id3TagEditor.generate(),
-                try Data(contentsOf: URL(fileURLWithPath:pathFor(name: "example-v3-additional-data", fileType: "mp3")))
+                try! id3TagEditor.generateWith(tag: id3Tag),
+                try! Data(contentsOf: URL(fileURLWithPath:pathFor(name: "example-v3-additional-data", fileType: "mp3")))
         )
     }
 
     func testWriteTagWithAdditionalData() {
-        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let id3Tag = ID3Tag(
+                version: .version3,
+                artist: "A New Artist",
+                album: "A New Album",
+                title: "A New title",
+                year: "2018",
+                genre: Genre(genre: .Metal, description: "Metalcore"),
+                attachedPicture: AttachedPicture(art: art, isPNG: false)
+        )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
-        id3TagEditor.set(title: "A New title");
-        id3TagEditor.set(artist: "A New Artist");
-        id3TagEditor.set(album: "A New Album");
-        id3TagEditor.set(year: "2018")
-        id3TagEditor.set(genre: Genre(genre: .Metal, description: "Metalcore"))
-        id3TagEditor.set(artwork: data, isPNG: false);
 
-        XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/example-v3-additional-data.mp3"));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-additional-data.mp3"));
     }
 
     //TODO: from here to be removed
