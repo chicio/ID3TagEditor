@@ -14,12 +14,14 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         do {
             let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            print(id3TagEditor.getTitle() ?? "")
-            print(id3TagEditor.getArtist() ?? "")
-            print(id3TagEditor.getAlbum() ?? "")
-            print(id3TagEditor.getYear() ?? "")
-            print(id3TagEditor.getGenre()?.genre ?? "")
-            print(id3TagEditor.getGenre()?.description ?? "")
+            if let id3Tag = id3TagEditor.read() {
+                print(id3Tag.title ?? "")
+                print(id3Tag.artist ?? "")
+                print(id3Tag.album ?? "")
+                print(id3Tag.year ?? "")
+                print(id3Tag.genre?.identifier ?? "")
+                print(id3Tag.genre?.description ?? "")
+            }
         } catch {
             print(error)
         }

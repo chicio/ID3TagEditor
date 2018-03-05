@@ -20,7 +20,7 @@ class GenreFrameContentParsingOperationTest: XCTestCase {
 
         genreFrameContentParsingOperation.parse(frame: Data(), id3Tag: tag)
 
-        XCTAssert(tag.genre!.genre == value.genre)
+        XCTAssert(tag.genre!.identifier == value.identifier)
         XCTAssert(tag.genre!.description == value.description)
     }
 }
