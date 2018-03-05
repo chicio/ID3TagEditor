@@ -10,20 +10,28 @@ import Foundation
 class ID3GenreStringAdapter: GenreStringAdapter {
     func adapt(genre: String) -> Genre {
         do {
-            let expression = try NSRegularExpression(pattern: "(\\()\\d+(\\))")
+            let expression = try NSRegularExpression(pattern: "(\\()\\w*\\d*(\\))")
             guard let genreWithParenthesisRange = Range(
                     expression.rangeOfFirstMatch(in: genre, options: [], range: NSMakeRange(0, genre.count)), in: genre)
                     else {
                 return Genre(genre: nil, description: genre)
             }
-            let genreIdentifier = adaptGenreIdentifierFrom(genreWithParenthesis: String(genre[genreWithParenthesisRange]))
-            let genreDescription = adaptGenreDescriptionFrom(
+            let genreWithParenthesis = String(genre[genreWithParenthesisRange])
+            let genreIdentifier = adaptGenreIdentifierFrom(genreWithParenthesis: genreWithParenthesis)
+            var genreDescription = adaptGenreDescriptionFrom(
                     genreDescriptionExtracted: String(genre[genreWithParenthesisRange.upperBound..<genre.endIndex])
             )
+            if notAValid(genreIdentifier: genreIdentifier, from: genreWithParenthesis) {
+                genreDescription = genreWithParenthesis + (genreDescription ?? "")
+            }
             return Genre(genre: genreIdentifier, description: genreDescription)
         } catch {
             return Genre(genre: nil, description: genre)
         }
+    }
+
+    private func notAValid(genreIdentifier: ID3Genre?, from genreWithParenthesis: String) -> Bool {
+        return genreIdentifier == nil && !genreWithParenthesis.isEmpty
     }
 
     private func adaptGenreDescriptionFrom(genreDescriptionExtracted: String) -> String? {

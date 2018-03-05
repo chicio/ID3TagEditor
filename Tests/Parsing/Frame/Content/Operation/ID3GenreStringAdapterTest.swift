@@ -31,4 +31,11 @@ class ID3GenreStringAdapterTest: XCTestCase {
         XCTAssertNil(genre.identifier)
         XCTAssertEqual(genre.description, "Rock & Roll")
     }
+
+    func testAdaptID3v3NewGenresNotNumeric() {
+        XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(RX)").identifier, .Remix)
+        XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(CR)").identifier, .Cover)
+        XCTAssertNil(id3GenreStringAdapter.adapt(genre: "(XXX)").identifier)
+        XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(XXX)").description, "(XXX)")
+    }
 }
