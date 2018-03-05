@@ -12,6 +12,16 @@ struct Artwork {
     var isPNG: Bool?;
 }
 
+public struct Genre {
+    public var genre: ID3Genre?
+    public var description: String?
+    
+    public init(genre: ID3Genre?, description: String?) {
+        self.genre = genre
+        self.description = description
+    }
+}
+
 class ID3Tag {
     var version: ID3Version
     var size: UInt32
@@ -19,6 +29,7 @@ class ID3Tag {
     var album: String?
     var title: String?
     var year: String?
+    var genre: Genre?
     var artwork: Artwork = Artwork()
     
     init(version: ID3Version, size: UInt32) {

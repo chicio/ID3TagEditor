@@ -43,6 +43,21 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3TagEditor.getArtist(), "A New Artist")
         XCTAssertEqual(id3TagEditor.getArtwork(), cover)
     }
+
+    func testParseTagV3AdditionalData() {
+        let cover = try! Data(
+                contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
+        )
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-v3-additional-data", fileType: "mp3"))
+
+        XCTAssertEqual(id3TagEditor.getTitle(), "A New title")
+        XCTAssertEqual(id3TagEditor.getAlbum(), "A New Album")
+        XCTAssertEqual(id3TagEditor.getArtist(), "A New Artist")
+        XCTAssertEqual(id3TagEditor.getArtwork(), cover)
+        XCTAssert(id3TagEditor.getGenre()!.genre == .Metal)
+        XCTAssert(id3TagEditor.getGenre()!.description == "Metalcore")
+        XCTAssertEqual(id3TagEditor.getYear(), "2018")
+    }
     
     func testGenerateTagWhenItAlreadyExists() {
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"));
@@ -138,6 +153,7 @@ class ID3TagEditorTest: XCTestCase {
         id3TagEditor.set(artist: "A New Artist");
         id3TagEditor.set(album: "A New Album");
         id3TagEditor.set(year: "2018")
+        id3TagEditor.set(genre: Genre(genre: .Metal, description: "Metalcore"))
         id3TagEditor.set(artwork: data, isPNG: false);
 
         XCTAssertEqual(
@@ -153,6 +169,7 @@ class ID3TagEditorTest: XCTestCase {
         id3TagEditor.set(artist: "A New Artist");
         id3TagEditor.set(album: "A New Album");
         id3TagEditor.set(year: "2018")
+        id3TagEditor.set(genre: Genre(genre: .Metal, description: "Metalcore"))
         id3TagEditor.set(artwork: data, isPNG: false);
 
         XCTAssertNoThrow(try id3TagEditor.write(to: NSHomeDirectory() + "/example-v3-additional-data.mp3"));
