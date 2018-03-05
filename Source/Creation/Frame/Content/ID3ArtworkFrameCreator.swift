@@ -31,11 +31,11 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let art = id3Tag.artwork.art {
+        if let artwork = id3Tag.artwork {
             var frame: [UInt8] = id3FrameConfiguration.identifierFor(name: "artwork", version: id3Tag.version)
             var contentAsBytes: [UInt8] = [UInt8]()
             contentAsBytes.append(contentsOf: getImageTypeAndCoverTypeUsing(id3Tag: id3Tag))
-            contentAsBytes.append(contentsOf: [UInt8](art));
+            contentAsBytes.append(contentsOf: [UInt8](artwork.art));
             frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: id3Tag.version))
             frame.append(contentsOf: frameFlagsCreator.createFor(version: id3Tag.version))
             frame.append(contentsOf: contentAsBytes)
@@ -45,7 +45,7 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
     }
 
     private func getImageTypeAndCoverTypeUsing(id3Tag: ID3Tag) -> [UInt8] {
-        if id3Tag.artwork.isPNG! {
+        if id3Tag.artwork!.isPNG {
             return frameImageTypeHeader[id3Tag.version]!["png"]!
         }
         return frameImageTypeHeader[id3Tag.version]!["jpeg"]!

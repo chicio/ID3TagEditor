@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             genreDescriptionField.text = id3TagEditor.getGenre()?.description
             yearField.text = id3TagEditor.getYear()
             if let artwork = id3TagEditor.getArtwork() {
-                artworkImage.image = UIImage(data: artwork)
+                artworkImage.image = UIImage(data: artwork.art)
             }
         } catch {
             print(error)

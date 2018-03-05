@@ -20,8 +20,8 @@ class ArtworkFrameContentParsingOperationTest: XCTestCase {
                 id3Tag: id3Tag
         )
 
-        XCTAssertEqual(id3Tag.artwork.isPNG, true)
-        XCTAssertEqual(id3Tag.artwork.art, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.artwork?.isPNG, true)
+        XCTAssertEqual(id3Tag.artwork?.art, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
     }
 
     func testSetTagArtworkJpg() {
@@ -35,7 +35,7 @@ class ArtworkFrameContentParsingOperationTest: XCTestCase {
                 id3Tag: id3Tag
         )
 
-        XCTAssertEqual(id3Tag.artwork.isPNG, false)
-        XCTAssertEqual(id3Tag.artwork.art, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.artwork?.isPNG, false)
+        XCTAssertEqual(id3Tag.artwork?.art, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
     }
 }

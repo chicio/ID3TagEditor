@@ -29,7 +29,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3TagEditor.getTitle(), "example song")
         XCTAssertEqual(id3TagEditor.getAlbum(), "example album")
         XCTAssertEqual(id3TagEditor.getArtist(), "example artist")
-        XCTAssertEqual(id3TagEditor.getArtwork(), cover)
+        XCTAssertEqual(id3TagEditor.getArtwork()?.art, cover)
     }
 
     func testParseTagV3() {
@@ -41,7 +41,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3TagEditor.getTitle(), "A New title")
         XCTAssertEqual(id3TagEditor.getAlbum(), "A New Album")
         XCTAssertEqual(id3TagEditor.getArtist(), "A New Artist")
-        XCTAssertEqual(id3TagEditor.getArtwork(), cover)
+        XCTAssertEqual(id3TagEditor.getArtwork()?.art, cover)
     }
 
     func testParseTagV3AdditionalData() {
@@ -53,7 +53,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3TagEditor.getTitle(), "A New title")
         XCTAssertEqual(id3TagEditor.getAlbum(), "A New Album")
         XCTAssertEqual(id3TagEditor.getArtist(), "A New Artist")
-        XCTAssertEqual(id3TagEditor.getArtwork(), cover)
+        XCTAssertEqual(id3TagEditor.getArtwork()?.art, cover)
         XCTAssert(id3TagEditor.getGenre()!.genre == .Metal)
         XCTAssert(id3TagEditor.getGenre()!.description == "Metalcore")
         XCTAssertEqual(id3TagEditor.getYear(), "2018")

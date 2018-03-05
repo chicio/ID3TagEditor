@@ -24,8 +24,7 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
     
     func testFrameCreationWithJpgForVersion2() {
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        id3Tag.artwork.isPNG = false
-        id3Tag.artwork.art = Data(bytes: [0x10, 0x10])
+        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: false)
         let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
@@ -45,8 +44,7 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithPngForVersion2() {
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        id3Tag.artwork.isPNG = true
-        id3Tag.artwork.art = Data(bytes: [0x10, 0x10])
+        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: true)
         let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
@@ -66,8 +64,7 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithJpgForVersion3() {
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.artwork.isPNG = false
-        id3Tag.artwork.art = Data(bytes: [0x10, 0x10])
+        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: false)
         let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
@@ -90,8 +87,7 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithPngForVersion3() {
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.artwork.isPNG = true
-        id3Tag.artwork.art = Data(bytes: [0x10, 0x10])
+        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: true)
         let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
