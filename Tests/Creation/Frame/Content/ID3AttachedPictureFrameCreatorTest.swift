@@ -1,5 +1,5 @@
 //
-//  ID3ArtworkFrameCreatorTest.swift
+//  ID3AttachedPictureFrameCreatorTest.swift
 //
 //  Created by Fabrizio Duroni on 27/02/2018.
 //  2018 Fabrizio Duroni.
@@ -8,30 +8,30 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3ArtworkFrameCreatorTest: XCTestCase {
+class ID3AttachedPictureFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoArtwork() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
+        let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
 
-        let newTagBytes = id3ArtworkFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
     
     func testFrameCreationWithJpgForVersion2() {
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: false)
-        let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: false)
+        let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
 
-        let newTagBytes = id3ArtworkFrameCreator.createFrames(
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
                 id3Tag: id3Tag,
                 tag: [0x01, 0x01, 0x01]
         )
@@ -44,14 +44,14 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithPngForVersion2() {
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: true)
-        let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true)
+        let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
 
-        let newTagBytes = id3ArtworkFrameCreator.createFrames(
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
                 id3Tag: id3Tag,
                 tag: [0x01, 0x01, 0x01]
         )
@@ -64,14 +64,14 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithJpgForVersion3() {
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: false)
-        let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: false)
+        let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
 
-        let newTagBytes = id3ArtworkFrameCreator.createFrames(
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
                 id3Tag: id3Tag,
                 tag: [0x01, 0x01, 0x01]
         )
@@ -87,14 +87,14 @@ class ID3ArtworkFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithPngForVersion3() {
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.artwork = Artwork(art: Data(bytes: [0x10, 0x10]), isPNG: true)
-        let id3ArtworkFrameCreator = ID3ArtworkFrameCreator(
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true)
+        let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
 
-        let newTagBytes = id3ArtworkFrameCreator.createFrames(
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
                 id3Tag: id3Tag,
                 tag: [0x01, 0x01, 0x01]
         )
