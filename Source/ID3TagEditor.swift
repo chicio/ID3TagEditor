@@ -11,7 +11,6 @@ public class ID3TagEditor {
     private let id3TagParser: ID3TagParser
     private let mp3WithID3TagBuilder: Mp3WithID3TagBuilder
     private let mp3: Data
-    private let currentId3Tag: ID3Tag?
     private let newId3Tag: ID3Tag
     private var path: String
 
@@ -32,76 +31,18 @@ public class ID3TagEditor {
         self.path = path
         self.mp3 = validMp3
         self.id3TagParser = ID3TagParserFactory.make()
-        self.currentId3Tag = id3TagParser.parse(mp3: validMp3)
-        self.newId3Tag = currentId3Tag ?? ID3Tag(version: .version3, size: 0)
+        self.newId3Tag = self.id3TagParser.parse(mp3: mp3) ?? ID3Tag(version: .version3, size: 0)
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
     }
 
     /**
-    Get the version of the ID3 tag of the file.
-    The current version supported are:
-    * 2.2 (.version2)
-    * 2.3 (.version3)
+     Read the ID3 tag contained in the mp3 file.
 
-    - returns: an ID3Version or nil if the file doesn't have a tag.
+     - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
      */
-    public func getVersion() -> ID3Version? {
-        return currentId3Tag?.version
-    }
-
-    /**
-     Get the artwork contained in the ID3 tag of the file.
-     
-     - returns: Artwork (image as Data + flag isPNG) if artwork exist add ts or `nil` otherwise
-     */
-    public func getArtwork() -> AttachedPicture? {
-        return currentId3Tag?.attachedPicture
-    }
-
-    /**
-     Get the artist contained in the ID3 tag of the file.
-     
-     - returns: The artist or nil if it not available.
-     */
-    public func getArtist() -> String? {
-        return currentId3Tag?.artist
-    }
-
-    /**
-     Get the title contained in the ID3 tag of the file.
-     
-     - returns: The title or nil if it not available.
-     */
-    public func getTitle() -> String? {
-        return currentId3Tag?.title
-    }
-
-    /**
-     Get the album contained in the ID3 tag of the file.
-     
-     - returns: The album or nil if it is not available.
-    */
-    public func getAlbum() -> String? {
-        return currentId3Tag?.album
-    }
-
-    /**
-     Get the year contained in the ID3 tag of the file.
-
-     - returns: The year or nil if it is not available.
-     */
-    public func getYear() -> String? {
-        return currentId3Tag?.year
-    }
-
-    /**
-     Get the genre contained in the ID3 tag of the file.
-
-     - returns: The genre or nil if it is not available.
-     */
-    public func getGenre() -> Genre? {
-        return currentId3Tag?.genre
+    public func read() -> ID3Tag? {
+        return self.id3TagParser.parse(mp3: mp3)
     }
 
     /**
@@ -183,7 +124,7 @@ public class ID3TagEditor {
         return try mp3WithID3TagBuilder.buildMp3WithNewTag(
                 mp3: mp3,
                 id3Tag: newId3Tag,
-                consideringThereIsAn: currentId3Tag
+                consideringThereIsAn: self.id3TagParser.parse(mp3: mp3)
         )
     }
 
@@ -204,7 +145,7 @@ public class ID3TagEditor {
         try mp3WithID3TagBuilder.buildMp3WithNewTagAndSaveUsing(
                 mp3: mp3,
                 id3Tag: newId3Tag,
-                consideringThereIsAn: currentId3Tag,
+                consideringThereIsAn: self.id3TagParser.parse(mp3: mp3),
                 andSaveTo: newPath ?? path
         )
     }

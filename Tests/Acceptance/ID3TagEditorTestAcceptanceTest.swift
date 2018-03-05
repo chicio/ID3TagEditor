@@ -26,11 +26,13 @@ class ID3TagEditorTest: XCTestCase {
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example", fileType: "mp3"))
 
-        XCTAssertEqual(id3TagEditor.getVersion(), .version2)
-        XCTAssertEqual(id3TagEditor.getTitle(), "example song")
-        XCTAssertEqual(id3TagEditor.getAlbum(), "example album")
-        XCTAssertEqual(id3TagEditor.getArtist(), "example artist")
-        XCTAssertEqual(id3TagEditor.getArtwork()?.art, cover)
+        let id3Tag = id3TagEditor.read()
+
+        XCTAssertEqual(id3Tag?.version, .version2)
+        XCTAssertEqual(id3Tag?.title, "example song")
+        XCTAssertEqual(id3Tag?.album, "example album")
+        XCTAssertEqual(id3Tag?.artist, "example artist")
+        XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
     }
 
     func testParseTagV3() {
@@ -39,12 +41,14 @@ class ID3TagEditorTest: XCTestCase {
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-v23-png", fileType: "mp3"))
 
-        XCTAssertEqual(id3TagEditor.getVersion(), .version3)
-        XCTAssertEqual(id3TagEditor.getTitle(), "A New title")
-        XCTAssertEqual(id3TagEditor.getAlbum(), "A New Album")
-        XCTAssertEqual(id3TagEditor.getArtist(), "A New Artist")
-        XCTAssertEqual(id3TagEditor.getArtwork()?.art, cover)
-        XCTAssertEqual(id3TagEditor.getArtwork()?.isPNG, true)
+        let id3Tag = id3TagEditor.read()
+
+        XCTAssertEqual(id3Tag?.version, .version3)
+        XCTAssertEqual(id3Tag?.title, "A New title")
+        XCTAssertEqual(id3Tag?.album, "A New Album")
+        XCTAssertEqual(id3Tag?.artist, "A New Artist")
+        XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
+        XCTAssertEqual(id3Tag?.attachedPicture?.isPNG, true)
     }
 
     func testParseTagV3AdditionalData() {
@@ -53,15 +57,17 @@ class ID3TagEditorTest: XCTestCase {
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-v3-additional-data", fileType: "mp3"))
 
-        XCTAssertEqual(id3TagEditor.getVersion(), .version3)
-        XCTAssertEqual(id3TagEditor.getTitle(), "A New title")
-        XCTAssertEqual(id3TagEditor.getAlbum(), "A New Album")
-        XCTAssertEqual(id3TagEditor.getArtist(), "A New Artist")
-        XCTAssertEqual(id3TagEditor.getArtwork()?.art, cover)
-        XCTAssertEqual(id3TagEditor.getArtwork()?.isPNG, false)
-        XCTAssertEqual(id3TagEditor.getGenre()?.genre, .Metal)
-        XCTAssertEqual(id3TagEditor.getGenre()?.description, "Metalcore")
-        XCTAssertEqual(id3TagEditor.getYear(), "2018")
+        let id3Tag = id3TagEditor.read()
+
+        XCTAssertEqual(id3Tag?.version, .version3)
+        XCTAssertEqual(id3Tag?.title, "A New title")
+        XCTAssertEqual(id3Tag?.album, "A New Album")
+        XCTAssertEqual(id3Tag?.artist, "A New Artist")
+        XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
+        XCTAssertEqual(id3Tag?.attachedPicture?.isPNG, false)
+        XCTAssertEqual(id3Tag?.genre?.genre, .Metal)
+        XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
+        XCTAssertEqual(id3Tag?.year, "2018")
     }
     
     func testGenerateTagWhenItAlreadyExists() {
