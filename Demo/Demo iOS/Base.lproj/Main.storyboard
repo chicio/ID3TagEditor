@@ -163,7 +163,7 @@
                     <connections>
                         <outlet property="albumTextField" destination="o7n-QT-uR9" id="W62-zj-pCR"/>
                         <outlet property="artistTextField" destination="u8L-DN-cuP" id="CoT-zg-Eu6"/>
-                        <outlet property="artworkImage" destination="bjH-BI-yoS" id="Ztf-1E-KLl"/>
+                        <outlet property="attachedPictureImage" destination="bjH-BI-yoS" id="rT8-UZ-T7E"/>
                         <outlet property="genreDescriptionField" destination="M6R-xU-VcN" id="kCb-za-ZDT"/>
                         <outlet property="genreIdentifierField" destination="iue-Lp-cTb" id="qWT-V4-TWg"/>
                         <outlet property="titleTextField" destination="Yed-jb-ZrO" id="KyS-ep-Vt1"/>

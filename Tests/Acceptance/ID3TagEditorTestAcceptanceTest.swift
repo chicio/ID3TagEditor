@@ -62,7 +62,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
         XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
         XCTAssertEqual(id3Tag?.attachedPicture?.isPNG, false)
-        XCTAssertEqual(id3Tag?.genre?.genre, .Metal)
+        XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
         XCTAssertEqual(id3Tag?.year, "2018")
     }
@@ -161,27 +161,10 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag))
     }
 
-    func testGenerateTagWithAdditionalData() {
-        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
-        let id3Tag = ID3Tag(
-                version: .version3,
-                artist: "A New Artist",
-                album: "A New Album",
-                title: "A New title",
-                year: "2018",
-                genre: Genre(genre: .Metal, description: "Metalcore"),
-                attachedPicture: AttachedPicture(art: art, isPNG: false)
-        )
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
-
-        XCTAssertEqual(
-                try! id3TagEditor.generateWith(tag: id3Tag),
-                try! Data(contentsOf: URL(fileURLWithPath:pathFor(name: "example-v3-additional-data", fileType: "mp3")))
-        )
-    }
-
     func testWriteTagWithAdditionalData() {
         let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let pathMp3ToCompare = pathFor(name: "example-v3-additional-data", fileType: "mp3")
+        let pathMp3Generated = NSHomeDirectory() + "/example-v3-additional-data.mp3"
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
@@ -194,6 +177,10 @@ class ID3TagEditorTest: XCTestCase {
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
 
         XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-additional-data.mp3"));
+        XCTAssertEqual(
+                try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
+                try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        )
     }
 
     //TODO: from here to be removed

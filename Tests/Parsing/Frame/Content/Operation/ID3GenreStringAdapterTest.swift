@@ -14,21 +14,21 @@ class ID3GenreStringAdapterTest: XCTestCase {
     func testAdaptGenreWithDescription() {
         let genre = id3GenreStringAdapter.adapt(genre: "(9)Metalcore")
 
-        XCTAssert(genre.genre == .Metal)
+        XCTAssert(genre.identifier == .Metal)
         XCTAssertEqual(genre.description, "Metalcore")
     }
 
     func testAdaptGenreWithoutDescription() {
         let genre = id3GenreStringAdapter.adapt(genre: "(9)")
 
-        XCTAssert(genre.genre == .Metal)
+        XCTAssert(genre.identifier == .Metal)
         XCTAssertNil(genre.description)
     }
 
     func testAdaptGenreWithoutGenreIdentifier() {
         let genre = id3GenreStringAdapter.adapt(genre: "Rock & Roll")
 
-        XCTAssertNil(genre.genre)
+        XCTAssertNil(genre.identifier)
         XCTAssertEqual(genre.description, "Rock & Roll")
     }
 }

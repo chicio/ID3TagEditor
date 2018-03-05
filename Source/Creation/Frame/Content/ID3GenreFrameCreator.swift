@@ -31,7 +31,7 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
 
     private func adapt(genre: Genre) -> String {
         var genreString = ""
-        if let genreIdentifier = genre.genre {
+        if let genreIdentifier = genre.identifier {
             genreString = genreString + "(\(genreIdentifier.rawValue))"
         }
         genreString = genreString + "\(genre.description ?? "")"

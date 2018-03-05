@@ -10,7 +10,7 @@ import UIKit
 import ID3TagEditor
 
 class ViewController: UIViewController {
-    @IBOutlet weak var artworkImage: UIImageView!
+    @IBOutlet weak var attachedPictureImage: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var albumTextField: UITextField!
     @IBOutlet weak var artistTextField: UITextField!
@@ -25,12 +25,16 @@ class ViewController: UIViewController {
     @IBAction func update(_ sender: Any) {
         do {
             let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            id3TagEditor.set(title: titleTextField.text ?? "")
-            id3TagEditor.set(album: albumTextField.text ?? "")
-            id3TagEditor.set(artist: artistTextField.text ?? "")
-            id3TagEditor.set(genre: Genre(genre: .ClassicRock, description: "Rock & Roll"))
-            id3TagEditor.set(year: "2019")
-            try id3TagEditor.write()
+            let id3Tag = ID3Tag(
+                version: .version3,
+                artist: artistTextField.text,
+                album: albumTextField.text,
+                title: titleTextField.text,
+                year: "2019",
+                genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
+                attachedPicture: nil
+            )
+            try id3TagEditor.write(tag: id3Tag)
         } catch {
             print(error)
         }
@@ -39,14 +43,15 @@ class ViewController: UIViewController {
     @IBAction func load(_ sender: Any) {
         do {
             let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            titleTextField.text = id3TagEditor.getTitle()
-            albumTextField.text = id3TagEditor.getAlbum()
-            artistTextField.text = id3TagEditor.getArtist()
-            genreIdentifierField.text = "\(id3TagEditor.getGenre()?.genre?.rawValue ?? 0)"
-            genreDescriptionField.text = id3TagEditor.getGenre()?.description
-            yearField.text = id3TagEditor.getYear()
-            if let artwork = id3TagEditor.getArtwork() {
-                artworkImage.image = UIImage(data: artwork.art)
+            let id3Tag = id3TagEditor.read()
+            titleTextField.text = id3Tag?.title
+            albumTextField.text = id3Tag?.album
+            artistTextField.text = id3Tag?.artist
+            genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
+            genreDescriptionField.text = id3Tag?.genre?.description
+            yearField.text = id3Tag?.year
+            if let attachedPicture = id3Tag?.attachedPicture {
+                attachedPictureImage.image = UIImage(data: attachedPicture.art)
             }
         } catch {
             print(error)
