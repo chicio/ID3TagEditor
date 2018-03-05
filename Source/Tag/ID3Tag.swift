@@ -28,8 +28,8 @@ public struct Genre {
 }
 
 class ID3Tag {
-    var version: ID3Version
     var size: UInt32
+    var version: ID3Version
     var artist: String?
     var album: String?
     var title: String?

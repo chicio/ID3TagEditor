@@ -39,9 +39,21 @@ public class ID3TagEditor {
     }
 
     /**
+    Get the version of the ID3 tag of the file.
+    The current version supported are:
+    * 2.2 (.version2)
+    * 2.3 (.version3)
+
+    - returns: an ID3Version or nil if the file doesn't have a tag.
+     */
+    public func getVersion() -> ID3Version? {
+        return currentId3Tag?.version
+    }
+
+    /**
      Get the artwork contained in the ID3 tag of the file.
      
-     - returns: Artwork (image as Data + flag isPNG) if artwork exisg add ts or `nil` otherwise
+     - returns: Artwork (image as Data + flag isPNG) if artwork exist add ts or `nil` otherwise
      */
     public func getArtwork() -> Artwork? {
         return currentId3Tag?.artwork
@@ -93,6 +105,25 @@ public class ID3TagEditor {
     }
 
     /**
+     Set version for the ID3 tag of the file.
+
+     - param version: the version to be setted in the ID3 tag.
+     */
+    public func set(version: ID3Version) {
+        newId3Tag.version = version
+    }
+
+    /**
+     Set the artwork for the ID3 tag of the file.
+
+     - parameter artwork: the image to be used as artwork to create/update the ID3 tag.
+     - parameter isPNG: a flag to check if the image is a png or not.
+     */
+    public func set(artwork: Data, isPNG: Bool) {
+        newId3Tag.artwork = Artwork(art: artwork, isPNG: isPNG)
+    }
+
+    /**
      Set the artist for the ID3 tag of the the file.
      
      - parameter artist: The artist to be used to create/update the ID3 tag.
@@ -112,7 +143,7 @@ public class ID3TagEditor {
 
     /**
      Set the album for the ID3 tag of the file.
-     
+
      - parameter album: The album to be used to create/update the ID3 tag.
      */
     public func set(album: String) {
@@ -120,20 +151,10 @@ public class ID3TagEditor {
     }
 
     /**
-    Set the artwork for the ID3 tag of the file.
-
-    - parameter artwork: the image to be used as artwork to create/update the ID3 tag.
-    - parameter isPNG: a flag to check if the image is a png or not.
-    */
-    public func set(artwork: Data, isPNG: Bool) {
-        newId3Tag.artwork = Artwork(art: artwork, isPNG: isPNG)
-    }
-
-    /**
      Set the year for the ID3 tag of the file.
 
      - parameter year: The year to be used to create/update the ID3 tag.
-    */
+     */
     public func set(year: String) {
         newId3Tag.year = year
     }
