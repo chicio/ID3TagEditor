@@ -26,9 +26,8 @@ public class ID3TagEditor {
         guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
             throw ID3TagEditorError.InvalidFileFormat;
         }
-        let validMp3 = try Data(contentsOf: validPath)
         self.path = path
-        self.mp3 = validMp3
+        self.mp3 = try Data(contentsOf: validPath)
         self.id3TagParser = ID3TagParserFactory.make()
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
@@ -46,10 +45,7 @@ public class ID3TagEditor {
     /**
      Writes the mp3 to a new file or overwrite it with the new ID3 tag.
 
-     The ID3 Tag of the file will be changed in the following way:
-     * if the file does not have a ID3 tag, a new one will be created. The default version is ID3v2.3.
-     * if the file already have has a ID3 tag, this one will be updated (version will be maintained).
-
+     - parameter tag: the ID3 tag that written in the mp3 file.
      - parameter newPath: path where the file with the new tag will be written.
      If nothing is passed, the file will be overwritten at its current location.
 
