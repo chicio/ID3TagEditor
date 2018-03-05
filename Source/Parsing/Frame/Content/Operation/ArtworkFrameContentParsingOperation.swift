@@ -23,15 +23,19 @@ class ArtworkFrameContentParsingOperation: FrameContentParsingOperation {
 
     private func parseToCheckThereIsAJpeg(id3Tag: ID3Tag, frame: Data) {
         if let jpgMagicNumberRange = frame.range(of: jpegMagicNumber) {
-            id3Tag.artwork.art = frame.subdata(in: Range(jpgMagicNumberRange.lowerBound..<frame.count))
-            id3Tag.artwork.isPNG = false
+            id3Tag.artwork = Artwork(
+                    art: frame.subdata(in: Range(jpgMagicNumberRange.lowerBound..<frame.count)),
+                    isPNG: false
+            )
         }
     }
 
     private func parseToCheckIfThereIsAPng(id3Tag: ID3Tag, frame: Data) {
         if let pngMagicNumberRange = frame.range(of: pngMagicNumber) {
-            id3Tag.artwork.art = frame.subdata(in: Range(pngMagicNumberRange.lowerBound..<frame.count))
-            id3Tag.artwork.isPNG = true
+            id3Tag.artwork = Artwork(
+                    art: frame.subdata(in: Range(pngMagicNumberRange.lowerBound..<frame.count)),
+                    isPNG: true
+            )
         }
     }
 }

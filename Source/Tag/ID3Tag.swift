@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct Artwork {
-    var art: Data?;
-    var isPNG: Bool?;
+public struct Artwork {
+    public var art: Data;
+    public var isPNG: Bool;
+
+    public init(art: Data, isPNG: Bool) {
+        self.art = art
+        self.isPNG = isPNG
+    }
 }
 
 public struct Genre {
@@ -30,7 +35,7 @@ class ID3Tag {
     var title: String?
     var year: String?
     var genre: Genre?
-    var artwork: Artwork = Artwork()
+    var artwork: Artwork?
     
     init(version: ID3Version, size: UInt32) {
         self.version = version
