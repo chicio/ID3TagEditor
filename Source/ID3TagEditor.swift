@@ -55,8 +55,8 @@ public class ID3TagEditor {
      
      - returns: Artwork (image as Data + flag isPNG) if artwork exist add ts or `nil` otherwise
      */
-    public func getArtwork() -> Artwork? {
-        return currentId3Tag?.artwork
+    public func getArtwork() -> AttachedPicture? {
+        return currentId3Tag?.attachedPicture
     }
 
     /**
@@ -120,7 +120,7 @@ public class ID3TagEditor {
      - parameter isPNG: a flag to check if the image is a png or not.
      */
     public func set(artwork: Data, isPNG: Bool) {
-        newId3Tag.artwork = Artwork(art: artwork, isPNG: isPNG)
+        newId3Tag.attachedPicture = AttachedPicture(art: artwork, isPNG: isPNG)
     }
 
     /**

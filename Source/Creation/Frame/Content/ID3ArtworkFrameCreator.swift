@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
+class ID3AttachedPictureFrameCreator: ID3FrameCreatorsChain {
     private var id3FrameConfiguration: ID3FrameConfiguration
     private let frameContentSizeCalculator: FrameContentSizeCalculator
     private let frameFlagsCreator: FrameFlagsCreator
@@ -31,7 +31,7 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let artwork = id3Tag.artwork {
+        if let artwork = id3Tag.attachedPicture {
             var frame: [UInt8] = id3FrameConfiguration.identifierFor(name: "artwork", version: id3Tag.version)
             var contentAsBytes: [UInt8] = [UInt8]()
             contentAsBytes.append(contentsOf: getImageTypeAndCoverTypeUsing(id3Tag: id3Tag))
@@ -45,7 +45,7 @@ class ID3ArtworkFrameCreator: ID3FrameCreatorsChain {
     }
 
     private func getImageTypeAndCoverTypeUsing(id3Tag: ID3Tag) -> [UInt8] {
-        if id3Tag.artwork!.isPNG {
+        if id3Tag.attachedPicture!.isPNG {
             return frameImageTypeHeader[id3Tag.version]!["png"]!
         }
         return frameImageTypeHeader[id3Tag.version]!["jpeg"]!

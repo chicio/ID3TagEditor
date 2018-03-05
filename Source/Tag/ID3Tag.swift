@@ -7,35 +7,15 @@
 
 import Foundation
 
-public struct Artwork {
-    public var art: Data;
-    public var isPNG: Bool;
-
-    public init(art: Data, isPNG: Bool) {
-        self.art = art
-        self.isPNG = isPNG
-    }
-}
-
-public struct Genre {
-    public var genre: ID3Genre?
-    public var description: String?
-    
-    public init(genre: ID3Genre?, description: String?) {
-        self.genre = genre
-        self.description = description
-    }
-}
-
-class ID3Tag {
-    var size: UInt32
-    var version: ID3Version
-    var artist: String?
-    var album: String?
-    var title: String?
-    var year: String?
-    var genre: Genre?
-    var artwork: Artwork?
+public class ID3Tag {
+    public var size: UInt32
+    public var version: ID3Version
+    public var artist: String?
+    public var album: String?
+    public var title: String?
+    public var year: String?
+    public var genre: Genre?
+    public var attachedPicture: AttachedPicture?
     
     init(version: ID3Version, size: UInt32) {
         self.version = version
