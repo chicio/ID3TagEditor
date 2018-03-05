@@ -16,7 +16,8 @@ class ID3FrameCreatorsChainFactory {
         let frameFromStringContentCreator = ID3FrameFromStringContentCreator(
                 frameContentSizeCalculator: frameContentSizeCalculator,
                 frameFlagsCreator: frameFlagsCreator,
-                paddingAdder: PaddingAdderUsingNullChar())
+                paddingAdder: PaddingAdderUsingNullChar()
+        )
         let albumFrameCreator = ID3AlbumFrameCreator(
                 frameCreator: frameFromStringContentCreator,
                 id3FrameConfiguration: frameConfiguration

@@ -13,8 +13,13 @@ struct Artwork {
 }
 
 public struct Genre {
-    var genre: ID3Genre?
-    var description: String?
+    public var genre: ID3Genre?
+    public var description: String?
+    
+    public init(genre: ID3Genre?, description: String?) {
+        self.genre = genre
+        self.description = description
+    }
 }
 
 class ID3Tag {
