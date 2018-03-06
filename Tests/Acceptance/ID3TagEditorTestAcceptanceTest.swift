@@ -62,6 +62,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
         XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
         XCTAssertEqual(id3Tag?.attachedPicture?.isPNG, false)
+        XCTAssertEqual(id3Tag?.attachedPicture?.type, .FrontCover)
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
         XCTAssertEqual(id3Tag?.year, "2018")
@@ -78,7 +79,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false)
+                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"))
 
@@ -100,7 +101,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false)
+                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
@@ -122,7 +123,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: true)
+                attachedPicture: AttachedPicture(art: art, isPNG: true, type: .FrontCover)
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
@@ -138,7 +139,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false)
+                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
@@ -154,7 +155,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false)
+                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3"))
 
@@ -172,7 +173,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: "2018",
                 genre: Genre(genre: .Metal, description: "Metalcore"),
-                attachedPicture: AttachedPicture(art: art, isPNG: false)
+                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
 

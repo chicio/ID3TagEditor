@@ -11,9 +11,11 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
     private let jpegMagicNumber: Data = Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0])
     private let pngMagicNumber: Data =  Data(bytes: [0x89, 0x50, 0x4E, 0x47])
     private let id3FrameConfiguration: ID3FrameConfiguration
+    private let pictureTypeAdapter: PictureTypeAdapter
 
-    init(id3FrameConfiguration: ID3FrameConfiguration) {
+    init(id3FrameConfiguration: ID3FrameConfiguration, pictureTypeAdapter: PictureTypeAdapter) {
         self.id3FrameConfiguration = id3FrameConfiguration
+        self.pictureTypeAdapter = pictureTypeAdapter
     }
 
     func parse(frame: Data, id3Tag: ID3Tag) {
@@ -25,7 +27,8 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
         if let jpgMagicNumberRange = frame.range(of: jpegMagicNumber) {
             id3Tag.attachedPicture = AttachedPicture(
                     art: frame.subdata(in: Range(jpgMagicNumberRange.lowerBound..<frame.count)),
-                    isPNG: false
+                    isPNG: false,
+                    type: pictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: id3Tag.version)
             )
         }
     }
@@ -34,7 +37,8 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
         if let pngMagicNumberRange = frame.range(of: pngMagicNumber) {
             id3Tag.attachedPicture = AttachedPicture(
                     art: frame.subdata(in: Range(pngMagicNumberRange.lowerBound..<frame.count)),
-                    isPNG: true
+                    isPNG: true,
+                    type: pictureTypeAdapter.adapt(frame: frame, format: .Png, version: id3Tag.version)
             )
         }
     }

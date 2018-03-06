@@ -21,6 +21,7 @@ class ViewController: NSViewController {
                 print(id3Tag.year ?? "")
                 print(id3Tag.genre?.identifier ?? "")
                 print(id3Tag.genre?.description ?? "")
+                print(id3Tag.attachedPicture?.type ?? 0x00)
             }
         } catch {
             print(error)

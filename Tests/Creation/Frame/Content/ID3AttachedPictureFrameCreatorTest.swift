@@ -13,20 +13,25 @@ class ID3AttachedPictureFrameCreatorTest: XCTestCase {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
+                id3Tag: ID3Tag(version: .version3, size: 0),
+                tag: tagBytes
+        )
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
     
     func testFrameCreationWithJpgForVersion2() {
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: false)
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: false, type: .FrontCover)
         let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
@@ -44,9 +49,10 @@ class ID3AttachedPictureFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithPngForVersion2() {
         let id3Tag = ID3Tag(version: .version2, size: 0)
-        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true)
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true, type: .FrontCover)
         let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
@@ -64,9 +70,10 @@ class ID3AttachedPictureFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithJpgForVersion3() {
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: false)
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: false, type: .FrontCover)
         let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
@@ -87,9 +94,10 @@ class ID3AttachedPictureFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWithPngForVersion3() {
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true)
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true, type: .FrontCover)
         let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: ID3FrameConfiguration(),
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
                 frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                 frameFlagsCreator: MockFrameFlagsCreator()
         )
@@ -104,6 +112,29 @@ class ID3AttachedPictureFrameCreatorTest: XCTestCase {
                 [0x01, 0x01, 0x01, 0x41, 0x50, 0x49, 0x43, 0x11,
                  0x00, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10]
+        )
+    }
+
+    func testFrameCreationWithPngForAnotherTypeOfCover() {
+        let id3Tag = ID3Tag(version: .version3, size: 0)
+        id3Tag.attachedPicture = AttachedPicture(art: Data(bytes: [0x10, 0x10]), isPNG: true, type: .BackCover)
+        let id3AttachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
+                id3FrameConfiguration: ID3FrameConfiguration(),
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                frameContentSizeCalculator: MockFrameContentSizeCalculator(),
+                frameFlagsCreator: MockFrameFlagsCreator()
+        )
+
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
+                id3Tag: id3Tag,
+                tag: [0x01, 0x01, 0x01]
+        )
+
+        XCTAssertEqual(
+                newTagBytes,
+                [0x01, 0x01, 0x01, 0x41, 0x50, 0x49, 0x43, 0x11,
+                 0x00, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                 0x70, 0x6E, 0x67, 0x00, 0x04, 0x00, 0x10, 0x10]
         )
     }
 }
