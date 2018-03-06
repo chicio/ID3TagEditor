@@ -32,7 +32,7 @@ class ViewController: UIViewController {
                 title: titleTextField.text,
                 year: "2019",
                 genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-                attachedPicture: nil
+                attachedPictures: nil
             )
             try id3TagEditor.write(tag: id3Tag)
         } catch {
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
             genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = id3Tag?.genre?.description
             yearField.text = id3Tag?.year
-            if let attachedPicture = id3Tag?.attachedPicture {
-                attachedPictureImage.image = UIImage(data: attachedPicture.art)
+            if let attachedPictures = id3Tag?.attachedPictures {
+                attachedPictureImage.image = UIImage(data: attachedPictures[0].art)
             }
         } catch {
             print(error)

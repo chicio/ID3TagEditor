@@ -26,7 +26,9 @@ public class ID3Tag {
     /// The genre of the tag (see `Genre`).
     public var genre: Genre?
     /// The attached picture of the tag (see `AttachedPicture`).
-    public var attachedPicture: AttachedPicture?
+    public lazy var attachedPictures: [AttachedPicture]? = {
+        return []
+    }()
 
     /**
      Init a tag.
@@ -37,7 +39,7 @@ public class ID3Tag {
      - parameter title: the title of tag.
      - parameter year: the year of the tag.
      - parameter genre: the genre of the tag.
-     - parameter attachedPicture: the attached picture of the tag.
+     - parameter attachedPictures: an array of attached picture of the tag.
      */
     public init(version: ID3Version,
                 artist: String?,
@@ -45,7 +47,7 @@ public class ID3Tag {
                 title: String?,
                 year: String?,
                 genre: Genre?,
-                attachedPicture: AttachedPicture?) {
+                attachedPictures: [AttachedPicture]?) {
         self.size = 0
         self.version = version
         self.artist = artist
@@ -53,7 +55,7 @@ public class ID3Tag {
         self.title = title
         self.year = year
         self.genre = genre
-        self.attachedPicture = attachedPicture
+        self.attachedPictures = attachedPictures
     }
 
     init(version: ID3Version, size: UInt32) {

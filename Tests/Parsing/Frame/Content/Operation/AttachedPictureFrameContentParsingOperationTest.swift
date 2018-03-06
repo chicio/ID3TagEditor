@@ -21,9 +21,9 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
                 id3Tag: id3Tag
         )
 
-        XCTAssertEqual(id3Tag.attachedPicture?.isPNG, true)
-        XCTAssertEqual(id3Tag.attachedPicture?.art, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
-        XCTAssertEqual(id3Tag.attachedPicture?.type, .FrontCover)
+        XCTAssertEqual(id3Tag.attachedPictures?[0].isPNG, true)
+        XCTAssertEqual(id3Tag.attachedPictures?[0].art, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.attachedPictures?[0].type, .FrontCover)
     }
 
     func testSetTagAttachedPictureJpg() {
@@ -38,8 +38,8 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
                 id3Tag: id3Tag
         )
 
-        XCTAssertEqual(id3Tag.attachedPicture?.isPNG, false)
-        XCTAssertEqual(id3Tag.attachedPicture?.art, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
-        XCTAssertEqual(id3Tag.attachedPicture?.type, .FrontCover)
+        XCTAssertEqual(id3Tag.attachedPictures?[0].isPNG, false)
+        XCTAssertEqual(id3Tag.attachedPictures?[0].art, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.attachedPictures?[0].type, .FrontCover)
     }
 }

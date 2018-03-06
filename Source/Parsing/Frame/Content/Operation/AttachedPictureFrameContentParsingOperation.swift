@@ -25,21 +25,21 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
 
     private func parseToCheckThereIsAJpeg(id3Tag: ID3Tag, frame: Data) {
         if let jpgMagicNumberRange = frame.range(of: jpegMagicNumber) {
-            id3Tag.attachedPicture = AttachedPicture(
+            id3Tag.attachedPictures?.append(AttachedPicture(
                     art: frame.subdata(in: Range(jpgMagicNumberRange.lowerBound..<frame.count)),
                     isPNG: false,
                     type: pictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: id3Tag.version)
-            )
+            ))
         }
     }
 
     private func parseToCheckIfThereIsAPng(id3Tag: ID3Tag, frame: Data) {
         if let pngMagicNumberRange = frame.range(of: pngMagicNumber) {
-            id3Tag.attachedPicture = AttachedPicture(
+            id3Tag.attachedPictures?.append(AttachedPicture(
                     art: frame.subdata(in: Range(pngMagicNumberRange.lowerBound..<frame.count)),
                     isPNG: true,
                     type: pictureTypeAdapter.adapt(frame: frame, format: .Png, version: id3Tag.version)
-            )
+            ))
         }
     }
 }
