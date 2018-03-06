@@ -31,7 +31,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.title, "example song")
         XCTAssertEqual(id3Tag?.album, "example album")
         XCTAssertEqual(id3Tag?.artist, "example artist")
-        XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].art, cover)
     }
 
     func testParseTagV3() {
@@ -45,13 +45,15 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
-        XCTAssertEqual(id3Tag?.attachedPicture?.isPNG, true)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].art, cover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].isPNG, true)
     }
 
     func testParseTagV3AdditionalData() {
-        let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
-        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
+        let pathFront = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
+        let pathBack = PathLoader().pathFor(name: "cover2", fileType: "jpg")
+        let coverFront = try! Data(contentsOf: URL(fileURLWithPath: pathFront))
+        let coverBack = try! Data(contentsOf: URL(fileURLWithPath: pathBack))
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-v3-additional-data", fileType: "mp3"))
 
         let id3Tag = id3TagEditor.read()
@@ -60,9 +62,12 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.attachedPicture?.art, cover)
-        XCTAssertEqual(id3Tag?.attachedPicture?.isPNG, false)
-        XCTAssertEqual(id3Tag?.attachedPicture?.type, .FrontCover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].art, coverFront)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].isPNG, false)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[1].art, coverBack)
+        XCTAssertEqual(id3Tag?.attachedPictures?[1].isPNG, false)
+        XCTAssertEqual(id3Tag?.attachedPictures?[1].type, .BackCover)
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
         XCTAssertEqual(id3Tag?.year, "2018")
@@ -79,7 +84,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"))
 
@@ -101,7 +106,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
@@ -123,7 +128,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: true, type: .FrontCover)
+                attachedPictures: [AttachedPicture(art: art, isPNG: true, type: .FrontCover)]
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
@@ -139,7 +144,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
@@ -155,7 +160,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3"))
 
@@ -163,7 +168,8 @@ class ID3TagEditorTest: XCTestCase {
     }
 
     func testWriteTagWithAdditionalData() {
-        let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let artFront: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let artBack: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "cover2", fileType: "jpg")))
         let pathMp3ToCompare = pathFor(name: "example-v3-additional-data", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-v3-additional-data.mp3"
         let id3Tag = ID3Tag(
@@ -173,7 +179,10 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: "2018",
                 genre: Genre(genre: .Metal, description: "Metalcore"),
-                attachedPicture: AttachedPicture(art: art, isPNG: false, type: .FrontCover)
+                attachedPictures: [
+                    AttachedPicture(art: artFront, isPNG: false, type: .FrontCover),
+                    AttachedPicture(art: artBack, isPNG: false, type: .BackCover)
+                ]
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
 

@@ -1,5 +1,5 @@
 //
-//  ID3AttachedPictureFrameCreator.swift
+//  ID3AttachedPictureFramesCreator.swift
 //
 //  Created by Fabrizio Duroni on 26/02/2018.
 //  2018 Fabrizio Duroni.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3AttachedPictureFrameCreator: ID3FrameCreatorsChain {
+class ID3AttachedPictureFramesCreator: ID3FrameCreatorsChain {
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration
     private let frameContentSizeCalculator: FrameContentSizeCalculator
@@ -24,15 +24,19 @@ class ID3AttachedPictureFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let attachedPicture = id3Tag.attachedPicture {
-            var frame: [UInt8] = id3FrameConfiguration.identifierFor(name: "artwork", version: id3Tag.version)
-            var contentAsBytes: [UInt8] = [UInt8]()
-            contentAsBytes.append(contentsOf: getAttachedPictureHeaderFor(attachedPicture: attachedPicture, version: id3Tag.version))
-            contentAsBytes.append(contentsOf: [UInt8](attachedPicture.art));
-            frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: id3Tag.version))
-            frame.append(contentsOf: frameFlagsCreator.createFor(version: id3Tag.version))
-            frame.append(contentsOf: contentAsBytes)
-            return tag + frame
+        if let attachedPictures = id3Tag.attachedPictures {
+            var frames: [UInt8] = []
+            for attachedPicture in attachedPictures {
+                var frame: [UInt8] = id3FrameConfiguration.identifierFor(name: "artwork", version: id3Tag.version)
+                var contentAsBytes: [UInt8] = [UInt8]()
+                contentAsBytes.append(contentsOf: getAttachedPictureHeaderFor(attachedPicture: attachedPicture, version: id3Tag.version))
+                contentAsBytes.append(contentsOf: [UInt8](attachedPicture.art));
+                frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: id3Tag.version))
+                frame.append(contentsOf: frameFlagsCreator.createFor(version: id3Tag.version))
+                frame.append(contentsOf: contentAsBytes)
+                frames.append(contentsOf: frame)
+            }
+            return tag + frames
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
