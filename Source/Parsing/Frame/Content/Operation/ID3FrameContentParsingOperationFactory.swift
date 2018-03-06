@@ -19,7 +19,13 @@ class ID3FrameContentParsingOperationFactory {
             "artist": ArtistFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
             "album": AlbumFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
             "title": TitleFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            "artwork": AttachedPictureFrameContentParsingOperation(id3FrameConfiguration: id3FrameConfiguration),
+            "artwork": AttachedPictureFrameContentParsingOperation(
+                    id3FrameConfiguration: id3FrameConfiguration,
+                    pictureTypeAdapter: ID3PictureTypeAdapter(
+                            id3FrameConfiguration: ID3FrameConfiguration(),
+                            id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
+                    )
+            ),
             "year": YearFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
             "genre": GenreFrameContentParsingOperation(
                     stringContentParsingOperation: stringParsingContentOperation,

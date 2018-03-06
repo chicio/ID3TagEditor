@@ -32,6 +32,7 @@ class ID3FrameCreatorsChainFactory {
         )
         let attachedPictureFrameCreator = ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
+                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
                 frameContentSizeCalculator: frameContentSizeCalculator,
                 frameFlagsCreator: frameFlagsCreator
         )

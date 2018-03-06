@@ -12,7 +12,8 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
     func testSetTagAttachedPicturePng() {
         let id3Tag = ID3Tag(version: .version3, size: 10)
         let attachedPictureFrameContentParsingOperation = AttachedPictureFrameContentParsingOperation(
-                id3FrameConfiguration: ID3FrameConfiguration()
+                id3FrameConfiguration: ID3FrameConfiguration(),
+                pictureTypeAdapter: MockPictureTypeAdapter()
         )
 
         attachedPictureFrameContentParsingOperation.parse(
@@ -22,12 +23,14 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
 
         XCTAssertEqual(id3Tag.attachedPicture?.isPNG, true)
         XCTAssertEqual(id3Tag.attachedPicture?.art, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.attachedPicture?.type, .FrontCover)
     }
 
     func testSetTagAttachedPictureJpg() {
         let id3Tag = ID3Tag(version: .version3, size: 10)
         let attachedPictureFrameContentParsingOperation = AttachedPictureFrameContentParsingOperation(
-                id3FrameConfiguration: ID3FrameConfiguration()
+                id3FrameConfiguration: ID3FrameConfiguration(),
+                pictureTypeAdapter: MockPictureTypeAdapter()
         )
 
         attachedPictureFrameContentParsingOperation.parse(
@@ -37,5 +40,6 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
 
         XCTAssertEqual(id3Tag.attachedPicture?.isPNG, false)
         XCTAssertEqual(id3Tag.attachedPicture?.art, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.attachedPicture?.type, .FrontCover)
     }
 }
