@@ -29,6 +29,7 @@ public class ID3Tag {
     public lazy var attachedPictures: [AttachedPicture]? = {
         return []
     }()
+    public var trackPosition: TrackPositionInSet?
 
     /**
      Init a tag.
@@ -47,7 +48,8 @@ public class ID3Tag {
                 title: String?,
                 year: String?,
                 genre: Genre?,
-                attachedPictures: [AttachedPicture]?) {
+                attachedPictures: [AttachedPicture]?,
+                trackPosition: TrackPositionInSet?) {
         self.size = 0
         self.version = version
         self.artist = artist
@@ -56,6 +58,7 @@ public class ID3Tag {
         self.year = year
         self.genre = genre
         self.attachedPictures = attachedPictures
+        self.trackPosition = trackPosition
     }
 
     init(version: ID3Version, size: UInt32) {

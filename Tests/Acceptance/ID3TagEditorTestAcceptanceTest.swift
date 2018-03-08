@@ -10,9 +10,9 @@ import XCTest
 
 class ID3TagEditorTest: XCTestCase {
     func pathFor(name: String, fileType: String) -> String {
-        let bundle = Bundle(for: type(of: self));
-        let path = bundle.path(forResource: name, ofType: fileType)!;
-        return path;
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: name, ofType: fileType)!
+        return path
     }
     
     func testInitWithFilePath() {
@@ -71,6 +71,8 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
         XCTAssertEqual(id3Tag?.year, "2018")
+        XCTAssertEqual(id3Tag?.trackPosition?.position, 2)
+        XCTAssertEqual(id3Tag?.trackPosition?.totalTracks, 9)
     }
 
     func testWriteTagWhenItAlreadyExists() {
@@ -84,11 +86,12 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                trackPosition: nil
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-with-tag-already-setted", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated))
         XCTAssertEqual(
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -106,11 +109,12 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                trackPosition: nil
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated))
         XCTAssertEqual(
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -128,15 +132,17 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: true, type: .FrontCover)]
+                attachedPictures: [AttachedPicture(art: art, isPNG: true, type: .FrontCover)],
+                trackPosition: nil
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-png.mp3"));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-png.mp3"))
     }
 
     func testWriteTagWithCustomPathThatDoesNotExists() {
         let art: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "example-cover", fileType: "jpg")))
+        let pathMp3Generated = NSHomeDirectory() + "/ID3TagEditor/example-v3-custom-path.mp3"
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
@@ -144,11 +150,12 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                trackPosition: nil
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/ID3TagEditor/example-v3-custom-path.mp3"));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: pathMp3Generated))
     }
 
     func testWriteTagWithSamePath() {
@@ -160,7 +167,8 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)]
+                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                trackPosition: nil
         )
         let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3"))
 
@@ -182,11 +190,12 @@ class ID3TagEditorTest: XCTestCase {
                 attachedPictures: [
                     AttachedPicture(art: artFront, isPNG: false, type: .FrontCover),
                     AttachedPicture(art: artBack, isPNG: false, type: .BackCover)
-                ]
+                ],
+                trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
         )
-        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"));
+        let id3TagEditor = try! ID3TagEditor(path: pathFor(name: "example-to-be-modified", fileType: "mp3"))
 
-        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-additional-data.mp3"));
+        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag, to: NSHomeDirectory() + "/example-v3-additional-data.mp3"))
         XCTAssertEqual(
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -196,25 +205,25 @@ class ID3TagEditorTest: XCTestCase {
     //TODO: from here to be removed
 
 //    func testWriteID3withJpgAliceInChains() {
-//        let mp3 = try! ID3TagEditor(path: pathFor(name: "my-version", fileType: "mp3"));
-//        mp3.setTitle(title: "Your decision");
-//        mp3.setArtist(artist: "Alice In Chains");
-//        mp3.setAlbum(album: "Black Gives Way to Blue");
+//        let mp3 = try! ID3TagEditor(path: pathFor(name: "my-version", fileType: "mp3"))
+//        mp3.setTitle(title: "Your decision")
+//        mp3.setArtist(artist: "Alice In Chains")
+//        mp3.setAlbum(album: "Black Gives Way to Blue")
 //        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "folder", fileType: "jpg")))
 //        mp3.setArtwork(artwork: data, isPNG: false)
-//        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/alice-in-chains-created.mp3"));
+//        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/alice-in-chains-created.mp3"))
 //        let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/alice-in-chains-created.mp3")
 //        let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "alice-in-chains-with-tag", fileType: "mp3"))
 //        XCTAssertEqual(mp3Created, mp3WithId3Tag)
 //    }
 //
 //    func testWriteID4withJpgSampleSong() {
-//        let mp3 = try! ID3TagEditor(path: pathFor(name: "lb-mine", fileType: "mp3"));
-//        mp3.setTitle(title: "Loser");
-//        mp3.setArtist(artist: "Limp bizkit");
-//        mp3.setAlbum(album: "Gold Cobra");
+//        let mp3 = try! ID3TagEditor(path: pathFor(name: "lb-mine", fileType: "mp3"))
+//        mp3.setTitle(title: "Loser")
+//        mp3.setArtist(artist: "Limp bizkit")
+//        mp3.setAlbum(album: "Gold Cobra")
 //        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "cover2", fileType: "jpg")))
-//        mp3.setArtwork(artwork: data, isPNG: false);
-//        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/lb-mine.mp3"));
+//        mp3.setArtwork(artwork: data, isPNG: false)
+//        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/lb-mine.mp3"))
 //    }
 }

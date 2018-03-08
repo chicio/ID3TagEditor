@@ -30,6 +30,10 @@ class ID3FrameContentParsingOperationFactory {
             "genre": GenreFrameContentParsingOperation(
                     stringContentParsingOperation: stringParsingContentOperation,
                     genreStringAdapter: ID3GenreStringAdapter()
+            ),
+            "trackPosition" : TrackPositionFrameContentParsingOperation(
+                stringContentParsingOperation: stringParsingContentOperation,
+                trackPositionStringAdapter: ID3TrackPositionStringAdapter()
             )
         ]
     }

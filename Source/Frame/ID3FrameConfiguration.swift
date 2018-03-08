@@ -31,7 +31,8 @@ class ID3FrameConfiguration {
             "album" : [0x54, 0x41, 0x4C],
             "artwork" : [0x50, 0x49, 0x43],
             "year" : [0x54, 0x59, 0x45],
-            "genre" : [0x54, 0x43, 0x4F]
+            "genre" : [0x54, 0x43, 0x4F],
+            "trackPosition" : [0x54, 0x52, 0x4B]
         ],
         .version3 : [
             "artist" : [0x54, 0x50, 0x45, 0x31],
@@ -39,7 +40,8 @@ class ID3FrameConfiguration {
             "album" : [0x54, 0x41, 0x4C, 0x42],
             "artwork" : [0x41, 0x50, 0x49, 0x43],
             "year" : [0x54, 0x59, 0x45, 0x52],
-            "genre" : [0x54, 0x43, 0x4F, 0x4E]
+            "genre" : [0x54, 0x43, 0x4F, 0x4E],
+            "trackPosition" : [0x54, 0x52, 0x43, 0x4B]
         ]
     ]
     private let nameForIdentifier: [ID3Version : [String : String]] = [
@@ -49,7 +51,8 @@ class ID3FrameConfiguration {
             "TAL" : "album",
             "PIC" : "artwork",
             "TYE" : "year",
-            "TCO" : "genre"
+            "TCO" : "genre",
+            "TRK" : "trackPosition"
         ],
         .version3 : [
             "TPE1" : "artist",
@@ -57,7 +60,8 @@ class ID3FrameConfiguration {
             "TALB" : "album",
             "APIC" : "artwork",
             "TYER" : "year",
-            "TCON" : "genre"
+            "TCON" : "genre",
+            "TRCK" : "trackPosition"
         ]
     ]
 

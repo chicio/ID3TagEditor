@@ -1,13 +1,13 @@
 //
-//  ID3GenreFrameCreator.swift
+//  ID3TrackPositionCreator.swift
 //
-//  Created by Fabrizio Duroni on 04/03/2018.
+//  Created by Fabrizio Duroni on 08/03/2018.
 //  2018 Fabrizio Duroni.
 //
 
 import Foundation
 
-class ID3GenreFrameCreator: ID3FrameCreatorsChain {
+class ID3TrackPositionFrameCreator: ID3FrameCreatorsChain {
     private let frameCreator: FrameFromStringContentCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
 
@@ -17,24 +17,23 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let genre = id3Tag.genre {
+        if let trackPosition = id3Tag.trackPosition {
             let newTag = tag +
                     frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(name: "genre", version: id3Tag.version),
+                            frameIdentifier: id3FrameConfiguration.identifierFor(name: "trackPosition", version: id3Tag.version),
                             version: id3Tag.version,
-                            content: adapt(genre: genre)
+                            content: adapt(trackPosition: trackPosition)
                     )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(genre: Genre) -> String {
-        var genreString = ""
-        if let genreIdentifier = genre.identifier {
-            genreString = "(\(genreIdentifier.rawValue))"
+    private func adapt(trackPosition: TrackPositionInSet) -> String {
+        var trackPositionString = String(trackPosition.position)
+        if let validTotalTracks = trackPosition.totalTracks {
+            trackPositionString = trackPositionString + "/\(validTotalTracks)"
         }
-        genreString = genreString + "\(genre.description ?? "")"
-        return genreString
+        return trackPositionString
     }
 }

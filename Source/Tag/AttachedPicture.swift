@@ -8,8 +8,7 @@
 import Foundation
 
 /**
- A class used to represent an image to be used in the ID3 tag as attached picture.
- This class contains the data of an image to be saved in the tag.
+ A class used to represent an image as attached picture for the ID3 tag.
  */
 public struct AttachedPicture {
     /// The image bytes as `Data`.

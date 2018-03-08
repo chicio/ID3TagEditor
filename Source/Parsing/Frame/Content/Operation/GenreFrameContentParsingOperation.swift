@@ -1,6 +1,8 @@
 //
-// Created by Fabrizio Duroni on 04.03.18.
-// Copyright (c) 2018 Fabrizio Duroni. All rights reserved.
+//  GenreFrameContentParsingOperation.swift
+//
+//  Created by Fabrizio Duroni on 04/03/2018.
+//  2018 Fabrizio Duroni.
 //
 
 import Foundation

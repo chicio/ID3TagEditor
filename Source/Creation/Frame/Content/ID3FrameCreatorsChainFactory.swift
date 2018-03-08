@@ -11,7 +11,9 @@ class ID3FrameCreatorsChainFactory {
     static func make() -> ID3FrameCreatorsChain {
         let frameConfiguration = ID3FrameConfiguration()
         let uInt32ToByteArrayAdapter = UInt32ToByteArrayAdapterUsingUnsafePointer()
-        let frameContentSizeCalculator = ID3FrameContentSizeCalculator(uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter)
+        let frameContentSizeCalculator = ID3FrameContentSizeCalculator(
+                uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter
+        )
         let frameFlagsCreator = ID3FrameFlagsCreator()
         let frameFromStringContentCreator = ID3FrameFromStringContentCreator(
                 frameContentSizeCalculator: frameContentSizeCalculator,
@@ -44,11 +46,16 @@ class ID3FrameCreatorsChainFactory {
                 frameCreator: frameFromStringContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
+        let trackPositionFrameCreator = ID3TrackPositionFrameCreator(
+                frameCreator: frameFromStringContentCreator,
+                id3FrameConfiguration: frameConfiguration
+        )
         albumFrameCreator.nextCreator = artistFrameCreator
         artistFrameCreator.nextCreator = titleFrameCreator
         titleFrameCreator.nextCreator = yearFrameCreator
         yearFrameCreator.nextCreator = genreFrameCreator
-        genreFrameCreator.nextCreator = attachedPictureFrameCreator
+        genreFrameCreator.nextCreator = trackPositionFrameCreator
+        trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
         return  albumFrameCreator
     }
 }
