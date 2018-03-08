@@ -10,11 +10,12 @@ import Cocoa
 import ID3TagEditor
 
 class ViewController: NSViewController {
+    private let id3TagEditor = ID3TagEditor()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            if let id3Tag = id3TagEditor.read() {
+            if let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3")) {
                 print(id3Tag.title ?? "")
                 print(id3Tag.artist ?? "")
                 print(id3Tag.album ?? "")

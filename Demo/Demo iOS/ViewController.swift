@@ -10,6 +10,7 @@ import UIKit
 import ID3TagEditor
 
 class ViewController: UIViewController {
+    private let id3TagEditor = ID3TagEditor()
     @IBOutlet weak var attachedPictureImage: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var albumTextField: UITextField!
@@ -24,7 +25,6 @@ class ViewController: UIViewController {
     
     @IBAction func update(_ sender: Any) {
         do {
-            let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
             let id3Tag = ID3Tag(
                 version: .version3,
                 artist: artistTextField.text,
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 attachedPictures: nil,
                 trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
             )
-            try id3TagEditor.write(tag: id3Tag)
+            try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example", fileType: "mp3"))
         } catch {
             print(error)
         }
@@ -43,15 +43,14 @@ class ViewController: UIViewController {
     
     @IBAction func load(_ sender: Any) {
         do {
-            let id3TagEditor = try ID3TagEditor(path: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            let id3Tag = id3TagEditor.read()
+            let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleTextField.text = id3Tag?.title
             albumTextField.text = id3Tag?.album
             artistTextField.text = id3Tag?.artist
             genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = id3Tag?.genre?.description
             yearField.text = id3Tag?.year
-            if let attachedPictures = id3Tag?.attachedPictures {
+            if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
                 attachedPictureImage.image = UIImage(data: attachedPictures[0].art)
             }
         } catch {
