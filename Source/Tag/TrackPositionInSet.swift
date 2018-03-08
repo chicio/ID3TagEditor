@@ -22,7 +22,7 @@ public class TrackPositionInSet {
      - parameter position: the track position.
      - parameter totalTracks: the total tracks of the recordings.
      */
-    init(position: Int, totalTracks: Int?) {
+    public init(position: Int, totalTracks: Int?) {
         self.position = position
         self.totalTracks = totalTracks
     }

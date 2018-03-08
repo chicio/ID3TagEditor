@@ -32,7 +32,8 @@ class ViewController: UIViewController {
                 title: titleTextField.text,
                 year: "2019",
                 genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-                attachedPictures: nil
+                attachedPictures: nil,
+                trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
             )
             try id3TagEditor.write(tag: id3Tag)
         } catch {
