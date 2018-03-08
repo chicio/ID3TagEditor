@@ -8,32 +8,32 @@
 import Foundation
 
 class ID3FrameContentParser: FrameContentParser {
-    private let frameContentParsingOperations: [String : FrameContentParsingOperation]
+    private let frameContentParsingOperations: [FrameType : FrameContentParsingOperation]
     private var id3FrameConfiguration: ID3FrameConfiguration
 
-    init(frameContentParsingOperations: [String : FrameContentParsingOperation],
+    init(frameContentParsingOperations: [FrameType : FrameContentParsingOperation],
          id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameContentParsingOperations = frameContentParsingOperations
         self.id3FrameConfiguration = id3FrameConfiguration
     }
 
     func parse(frame: Data, id3Tag: ID3Tag) {
-        let frameName = getFrameNameFrom(frame: frame, version: id3Tag.version)
-        if (isAValid(frameName: frameName)) {
-            frameContentParsingOperations[frameName]?.parse(frame: frame, id3Tag: id3Tag)
+        let frameType = getFrameTypeFrom(frame: frame, version: id3Tag.version)
+        if (isAValid(frameType: frameType)) {
+            frameContentParsingOperations[frameType]?.parse(frame: frame, id3Tag: id3Tag)
         }
     }
 
-    func getFrameNameFrom(frame: Data, version: ID3Version) -> String {
+    func getFrameTypeFrom(frame: Data, version: ID3Version) -> FrameType {
         let frameIdentifierSize = id3FrameConfiguration.identifierSizeFor(version: version)
         let frameIdentifierData = [UInt8](frame.subdata(in: Range(0...frameIdentifierSize - 1)))
         let frameIdentifier = toString(frameIdentifier: frameIdentifierData)
-        let frameName = id3FrameConfiguration.nameFor(identifier: frameIdentifier, version: version)
-        return frameName
+        let frameType = id3FrameConfiguration.frameTypeFor(identifier: frameIdentifier, version: version)
+        return frameType
     }
 
-    private func isAValid(frameName: String) -> Bool {
-        return frameName != ""
+    private func isAValid(frameType: FrameType) -> Bool {
+        return frameType != .Invalid
     }
 
     private func toString(frameIdentifier: [UInt8]) -> String {

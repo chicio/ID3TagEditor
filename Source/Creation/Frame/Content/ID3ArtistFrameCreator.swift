@@ -20,7 +20,7 @@ class ID3ArtistFrameCreator: ID3FrameCreatorsChain {
         if let artist = id3Tag.artist {
             let newTag = tag +
                     frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(name: "artist", version: id3Tag.version),
+                            frameIdentifier: id3FrameConfiguration.identifierFor(frameType: .Artist, version: id3Tag.version),
                             version: id3Tag.version,
                             content: artist
                     )

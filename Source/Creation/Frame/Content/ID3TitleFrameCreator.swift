@@ -20,7 +20,7 @@ class ID3TitleFrameCreator: ID3FrameCreatorsChain {
         if let title = id3Tag.title {
             let newTag = tag +
                     frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(name: "title", version: id3Tag.version),
+                            frameIdentifier: id3FrameConfiguration.identifierFor(frameType: .Title, version: id3Tag.version),
                             version: id3Tag.version,
                             content: title
                     )

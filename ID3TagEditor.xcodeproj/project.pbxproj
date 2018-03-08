@@ -181,6 +181,7 @@
 		C50674A8E13D3FCDF039A8FD /* ID3TagSizeParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067E266AD583453DAF632C /* ID3TagSizeParserTest.swift */; };
 		C50674C518F683146C4292BF /* ID3AttachedPictureFrameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ACA74865A893411B45F /* ID3AttachedPictureFrameConfiguration.swift */; };
 		C50674CB9172947676767FE1 /* ID3GenreFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067EE237E6F2533B477079 /* ID3GenreFrameCreator.swift */; };
+		C5067510AF08EA66216584AE /* FrameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506746284865F9DE2091AB2 /* FrameType.swift */; };
 		C506752353FE3E38ED8B1FFE /* ID3FrameFromStringContentCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067DF288BDB0311F5D8F40 /* ID3FrameFromStringContentCreatorTest.swift */; };
 		C506754BAFA5F03009269BD7 /* ID3FrameSizeParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067736CB14E36F76777344 /* ID3FrameSizeParserTest.swift */; };
 		C50675B5343F964682726F81 /* YearFrameContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506781AEB960364ED5876BF /* YearFrameContentParsingOperationTest.swift */; };
@@ -191,6 +192,7 @@
 		C506762688167A78895B3CD5 /* MockFrameContentSizeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067AEAC63028F60F7C6D46 /* MockFrameContentSizeParser.swift */; };
 		C50676E00359E031D4AEAA62 /* ID3TitleFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678BD37DA4B4DF9F1AA8C /* ID3TitleFrameCreatorTest.swift */; };
 		C50676FF36BFB19A498D117A /* ID3TrackPositionFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50671E40AE6C5829EF22D17 /* ID3TrackPositionFrameCreator.swift */; };
+		C50677177F0AF15A633ED620 /* FrameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506746284865F9DE2091AB2 /* FrameType.swift */; };
 		C506771EC40652FF5DE2A6D2 /* ID3FrameConfigurationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067081F30C2572649940F5 /* ID3FrameConfigurationTest.swift */; };
 		C50677243072CAC61B557D57 /* TrackPositionFrameContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678C4F33D08A712991A42 /* TrackPositionFrameContentParsingOperationTest.swift */; };
 		C506776E1E3FED77D9951648 /* ID3FrameConfigurationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067081F30C2572649940F5 /* ID3FrameConfigurationTest.swift */; };
@@ -369,6 +371,7 @@
 		C50672C9D6474ED4409028D8 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		C50673B719019A8C1C21F500 /* ID3PictureTypeAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PictureTypeAdapter.swift; sourceTree = "<group>"; };
 		C50673F2DDF02BDADD5AAFA0 /* GenreFrameContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreFrameContentParsingOperation.swift; sourceTree = "<group>"; };
+		C506746284865F9DE2091AB2 /* FrameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameType.swift; sourceTree = "<group>"; };
 		C5067476E0A4ED0A5116CE21 /* ID3PictureFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PictureFormat.swift; sourceTree = "<group>"; };
 		C50674BDA370976E12A76D4D /* AttachedPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachedPicture.swift; sourceTree = "<group>"; };
 		C506750E1974F38E2AD04B6A /* ID3GenreStringAdapterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3GenreStringAdapterTest.swift; sourceTree = "<group>"; };
@@ -632,6 +635,7 @@
 			children = (
 				4528321D2044C7BE00458375 /* ID3FrameConfiguration.swift */,
 				C5067ACA74865A893411B45F /* ID3AttachedPictureFrameConfiguration.swift */,
+				C506746284865F9DE2091AB2 /* FrameType.swift */,
 			);
 			path = Frame;
 			sourceTree = "<group>";
@@ -1293,6 +1297,7 @@
 				C5067417496EC6418D8BD62F /* TrackPositionFrameContentParsingOperation.swift in Sources */,
 				C50672B6604D9B0AA5CFFADF /* TrackPositionStringAdapter.swift in Sources */,
 				C5067125BC3B50A5E1B60A7B /* ID3TrackPositionStringAdapter.swift in Sources */,
+				C50677177F0AF15A633ED620 /* FrameType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1421,6 +1426,7 @@
 				C5067C6206CB10E65B1307BF /* TrackPositionFrameContentParsingOperation.swift in Sources */,
 				C5067B4C3C289B7A5580EE0E /* TrackPositionStringAdapter.swift in Sources */,
 				C5067E5734999491C8E46BAB /* ID3TrackPositionStringAdapter.swift in Sources */,
+				C5067510AF08EA66216584AE /* FrameType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

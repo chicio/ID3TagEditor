@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ID3TagEditor
+//  Demo iOS
 //
 //  Created by Fabrizio Duroni on 03/03/2018.
 //  2018 Fabrizio Duroni

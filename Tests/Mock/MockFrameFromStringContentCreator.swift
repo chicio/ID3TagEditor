@@ -10,15 +10,15 @@ import Foundation
 
 class MockFrameFromStringContentCreator: FrameFromStringContentCreator {
     private let fakeNewFrameAsByte: [UInt8]
-    private let frameName: String
+    private let frameType: FrameType
 
-    init(fakeNewFrameAsByte: [UInt8], frameIdentifierToBeChecked: String) {
+    init(fakeNewFrameAsByte: [UInt8], frameTypeToBeChecked: FrameType) {
         self.fakeNewFrameAsByte = fakeNewFrameAsByte
-        self.frameName = frameIdentifierToBeChecked
+        self.frameType = frameTypeToBeChecked
     }
 
     func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8] {
-        if (frameIdentifier == ID3FrameConfiguration().identifierFor(name: frameName, version: version)) {
+        if (frameIdentifier == ID3FrameConfiguration().identifierFor(frameType: frameType, version: version)) {
             return fakeNewFrameAsByte
         } else {
             return []

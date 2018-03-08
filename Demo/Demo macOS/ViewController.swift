@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Demo macOS
 //
-//  Created by Fabrizio Duroni on 27.02.18.
-//  Copyright © 2018 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 27/02/2018.
+//  2018 Fabrizio Duroni
 //
 
 import Cocoa

@@ -14,7 +14,7 @@ class ID3GenreFrameCreatorTest: XCTestCase {
         let id3GenreFrameCreator = ID3GenreFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameIdentifierToBeChecked: "genre"
+                        frameTypeToBeChecked: .Genre
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -32,7 +32,7 @@ class ID3GenreFrameCreatorTest: XCTestCase {
         let id3GenreFrameCreator = ID3GenreFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameIdentifierToBeChecked: "genre"
+                        frameTypeToBeChecked: .Genre
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

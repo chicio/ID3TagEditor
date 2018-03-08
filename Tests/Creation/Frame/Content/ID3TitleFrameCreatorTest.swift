@@ -14,7 +14,7 @@ class ID3TitleFrameCreatorTest: XCTestCase {
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameIdentifierToBeChecked: "title"
+                        frameTypeToBeChecked: .Title
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -32,7 +32,7 @@ class ID3TitleFrameCreatorTest: XCTestCase {
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameIdentifierToBeChecked: "title"
+                        frameTypeToBeChecked: .Title
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

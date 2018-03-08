@@ -27,7 +27,7 @@ class ID3AttachedPictureFramesCreator: ID3FrameCreatorsChain {
         if let attachedPictures = id3Tag.attachedPictures {
             var frames: [UInt8] = []
             for attachedPicture in attachedPictures {
-                var frame: [UInt8] = id3FrameConfiguration.identifierFor(name: "artwork", version: id3Tag.version)
+                var frame: [UInt8] = id3FrameConfiguration.identifierFor(frameType: .AttachedPicture, version: id3Tag.version)
                 var contentAsBytes: [UInt8] = [UInt8]()
                 contentAsBytes.append(contentsOf: getAttachedPictureHeaderFor(attachedPicture: attachedPicture, version: id3Tag.version))
                 contentAsBytes.append(contentsOf: [UInt8](attachedPicture.art));

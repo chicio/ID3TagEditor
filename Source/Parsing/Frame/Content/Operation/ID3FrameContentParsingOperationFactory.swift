@@ -8,7 +8,7 @@
 import Foundation
 
 class ID3FrameContentParsingOperationFactory {
-    static func make() -> [String: FrameContentParsingOperation] {
+    static func make() -> [FrameType : FrameContentParsingOperation] {
         let paddingRemover = PaddingRemoverUsingTrimming()
         let id3FrameConfiguration = ID3FrameConfiguration()
         let stringParsingContentOperation = ID3FrameStringContentParsingOperation(
@@ -16,22 +16,22 @@ class ID3FrameContentParsingOperationFactory {
                 id3FrameConfiguration: id3FrameConfiguration
         )
         return [
-            "artist": ArtistFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            "album": AlbumFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            "title": TitleFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            "artwork": AttachedPictureFrameContentParsingOperation(
+            .Artist: ArtistFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
+            .Album: AlbumFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
+            .Title: TitleFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
+            .AttachedPicture: AttachedPictureFrameContentParsingOperation(
                     id3FrameConfiguration: id3FrameConfiguration,
                     pictureTypeAdapter: ID3PictureTypeAdapter(
                             id3FrameConfiguration: ID3FrameConfiguration(),
                             id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
                     )
             ),
-            "year": YearFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            "genre": GenreFrameContentParsingOperation(
+            .Year: YearFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
+            .Genre: GenreFrameContentParsingOperation(
                     stringContentParsingOperation: stringParsingContentOperation,
                     genreStringAdapter: ID3GenreStringAdapter()
             ),
-            "trackPosition" : TrackPositionFrameContentParsingOperation(
+            .TrackPosition : TrackPositionFrameContentParsingOperation(
                 stringContentParsingOperation: stringParsingContentOperation,
                 trackPositionStringAdapter: ID3TrackPositionStringAdapter()
             )

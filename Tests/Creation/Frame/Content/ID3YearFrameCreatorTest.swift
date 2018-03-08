@@ -14,7 +14,7 @@ class ID3YearFrameCreatorTest: XCTestCase {
         let id3YearFrameCreator = ID3YearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameIdentifierToBeChecked: "year"
+                        frameTypeToBeChecked: .Year
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -32,7 +32,7 @@ class ID3YearFrameCreatorTest: XCTestCase {
         let id3TitleFrameCreator = ID3YearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameIdentifierToBeChecked: "year"
+                        frameTypeToBeChecked: .Year
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

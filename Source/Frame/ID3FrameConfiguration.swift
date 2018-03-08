@@ -24,44 +24,44 @@ class ID3FrameConfiguration {
         .version2 : 3,
         .version3 : 4
     ]
-    private let identifiers: [ID3Version : [String : [UInt8]]] = [
+    private let identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
-            "artist" : [0x54, 0x50, 0x31],
-            "title" : [0x54, 0x54, 0x32],
-            "album" : [0x54, 0x41, 0x4C],
-            "artwork" : [0x50, 0x49, 0x43],
-            "year" : [0x54, 0x59, 0x45],
-            "genre" : [0x54, 0x43, 0x4F],
-            "trackPosition" : [0x54, 0x52, 0x4B]
+            .Artist : [0x54, 0x50, 0x31],
+            .Title : [0x54, 0x54, 0x32],
+            .Album : [0x54, 0x41, 0x4C],
+            .AttachedPicture : [0x50, 0x49, 0x43],
+            .Year : [0x54, 0x59, 0x45],
+            .Genre : [0x54, 0x43, 0x4F],
+            .TrackPosition : [0x54, 0x52, 0x4B]
         ],
         .version3 : [
-            "artist" : [0x54, 0x50, 0x45, 0x31],
-            "title" : [0x54, 0x49, 0x54, 0x32],
-            "album" : [0x54, 0x41, 0x4C, 0x42],
-            "artwork" : [0x41, 0x50, 0x49, 0x43],
-            "year" : [0x54, 0x59, 0x45, 0x52],
-            "genre" : [0x54, 0x43, 0x4F, 0x4E],
-            "trackPosition" : [0x54, 0x52, 0x43, 0x4B]
+            .Artist : [0x54, 0x50, 0x45, 0x31],
+            .Title : [0x54, 0x49, 0x54, 0x32],
+            .Album : [0x54, 0x41, 0x4C, 0x42],
+            .AttachedPicture : [0x41, 0x50, 0x49, 0x43],
+            .Year : [0x54, 0x59, 0x45, 0x52],
+            .Genre : [0x54, 0x43, 0x4F, 0x4E],
+            .TrackPosition : [0x54, 0x52, 0x43, 0x4B]
         ]
     ]
-    private let nameForIdentifier: [ID3Version : [String : String]] = [
+    private let nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
-            "TP1" : "artist",
-            "TT2" : "title",
-            "TAL" : "album",
-            "PIC" : "artwork",
-            "TYE" : "year",
-            "TCO" : "genre",
-            "TRK" : "trackPosition"
+            "TP1" : .Artist,
+            "TT2" : .Title,
+            "TAL" : .Album,
+            "PIC" : .AttachedPicture,
+            "TYE" : .Year,
+            "TCO" : .Genre,
+            "TRK" : .TrackPosition
         ],
         .version3 : [
-            "TPE1" : "artist",
-            "TIT2" : "title",
-            "TALB" : "album",
-            "APIC" : "artwork",
-            "TYER" : "year",
-            "TCON" : "genre",
-            "TRCK" : "trackPosition"
+            "TPE1" : .Artist,
+            "TIT2" : .Title,
+            "TALB" : .Album,
+            "APIC" : .AttachedPicture,
+            "TYER" : .Year,
+            "TCON" : .Genre,
+            "TRCK" : .TrackPosition
         ]
     ]
 
@@ -81,11 +81,11 @@ class ID3FrameConfiguration {
         return identifierSizeInBytes[version]!
     }
 
-    func identifierFor(name: String, version: ID3Version) -> [UInt8] {
-        return identifiers[version]![name]!
+    func identifierFor(frameType: FrameType, version: ID3Version) -> [UInt8] {
+        return identifiers[version]![frameType]!
     }
 
-    func nameFor(identifier: String, version: ID3Version) -> String {
-        return nameForIdentifier[version]![identifier] ?? ""
+    func frameTypeFor(identifier: String, version: ID3Version) -> FrameType {
+        return nameForIdentifier[version]![identifier] ?? .Invalid
     }
 }

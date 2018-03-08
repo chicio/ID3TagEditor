@@ -20,7 +20,7 @@ class ID3YearFrameCreator: ID3FrameCreatorsChain {
         if let year = id3Tag.year {
             let newTag = tag +
                     frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(name: "year", version: id3Tag.version),
+                            frameIdentifier: id3FrameConfiguration.identifierFor(frameType: .Year, version: id3Tag.version),
                             version: id3Tag.version,
                             content: year
                     )

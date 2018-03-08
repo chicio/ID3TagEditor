@@ -14,7 +14,7 @@ class ID3TrackPositionCreatorTest: XCTestCase {
         let id3TrackPositionFrameCreator = ID3TrackPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameIdentifierToBeChecked: "trackPosition"
+                        frameTypeToBeChecked: .TrackPosition
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -32,7 +32,7 @@ class ID3TrackPositionCreatorTest: XCTestCase {
         let id3GenreFrameCreator = ID3TrackPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameIdentifierToBeChecked: "trackPosition"
+                        frameTypeToBeChecked: .TrackPosition
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
