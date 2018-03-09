@@ -19,26 +19,19 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
     }
 
     func parse(frame: Data, id3Tag: ID3Tag) {
-        parseToCheckThereIsAJpeg(id3Tag: id3Tag, frame: frame)
-        parseToCheckIfThereIsAPng(id3Tag: id3Tag, frame: frame)
+        parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber, format: .Jpeg, frame: frame, andSaveTo: id3Tag)
+        parseToCheckIfThereIsAnImageUsing(magicNumber: pngMagicNumber, format: .Png, frame: frame, andSaveTo: id3Tag)
     }
 
-    private func parseToCheckThereIsAJpeg(id3Tag: ID3Tag, frame: Data) {
-        if let jpgMagicNumberRange = frame.range(of: jpegMagicNumber) {
+    private func parseToCheckIfThereIsAnImageUsing(magicNumber: Data,
+                                                   format: ID3PictureFormat,
+                                                   frame: Data,
+                                                   andSaveTo id3Tag: ID3Tag) {
+        if let magicNumberRange = frame.range(of: magicNumber) {
             id3Tag.attachedPictures?.append(AttachedPicture(
-                    art: frame.subdata(in: Range(jpgMagicNumberRange.lowerBound..<frame.count)),
-                    type: pictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: id3Tag.version),
-                    format: .Jpeg
-            ))
-        }
-    }
-
-    private func parseToCheckIfThereIsAPng(id3Tag: ID3Tag, frame: Data) {
-        if let pngMagicNumberRange = frame.range(of: pngMagicNumber) {
-            id3Tag.attachedPictures?.append(AttachedPicture(
-                    art: frame.subdata(in: Range(pngMagicNumberRange.lowerBound..<frame.count)),
-                    type: pictureTypeAdapter.adapt(frame: frame, format: .Png, version: id3Tag.version),
-                    format: .Png
+                    art: frame.subdata(in: Range(magicNumberRange.lowerBound..<frame.count)),
+                    type: pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.version),
+                    format: format
             ))
         }
     }
