@@ -40,7 +40,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].art, cover)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].isPNG, true)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
     }
 
     func testParseTagV3AdditionalData() {
@@ -56,10 +56,10 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].art, coverFront)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].isPNG, false)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Jpeg)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
         XCTAssertEqual(id3Tag?.attachedPictures?[1].art, coverBack)
-        XCTAssertEqual(id3Tag?.attachedPictures?[1].isPNG, false)
+        XCTAssertEqual(id3Tag?.attachedPictures?[1].format, .Jpeg)
         XCTAssertEqual(id3Tag?.attachedPictures?[1].type, .BackCover)
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
@@ -81,7 +81,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -110,7 +110,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -136,7 +136,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: true, type: .FrontCover)],
+                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Png)],
                 trackPosition: nil
         )
 
@@ -159,7 +159,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -181,7 +181,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, isPNG: false, type: .FrontCover)],
+                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -208,8 +208,8 @@ class ID3TagEditorTest: XCTestCase {
                 year: "2018",
                 genre: Genre(genre: .Metal, description: "Metalcore"),
                 attachedPictures: [
-                    AttachedPicture(art: artFront, isPNG: false, type: .FrontCover),
-                    AttachedPicture(art: artBack, isPNG: false, type: .BackCover)
+                    AttachedPicture(art: artFront, type: .FrontCover, format: .Jpeg),
+                    AttachedPicture(art: artBack, type: .BackCover, format: .Jpeg)
                 ],
                 trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
         )

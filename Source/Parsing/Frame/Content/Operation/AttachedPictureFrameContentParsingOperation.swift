@@ -27,8 +27,8 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
         if let jpgMagicNumberRange = frame.range(of: jpegMagicNumber) {
             id3Tag.attachedPictures?.append(AttachedPicture(
                     art: frame.subdata(in: Range(jpgMagicNumberRange.lowerBound..<frame.count)),
-                    isPNG: false,
-                    type: pictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: id3Tag.version)
+                    type: pictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: id3Tag.version),
+                    format: .Jpeg
             ))
         }
     }
@@ -37,8 +37,8 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
         if let pngMagicNumberRange = frame.range(of: pngMagicNumber) {
             id3Tag.attachedPictures?.append(AttachedPicture(
                     art: frame.subdata(in: Range(pngMagicNumberRange.lowerBound..<frame.count)),
-                    isPNG: true,
-                    type: pictureTypeAdapter.adapt(frame: frame, format: .Png, version: id3Tag.version)
+                    type: pictureTypeAdapter.adapt(frame: frame, format: .Png, version: id3Tag.version),
+                    format: .Png
             ))
         }
     }

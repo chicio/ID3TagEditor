@@ -42,7 +42,7 @@ class ID3AttachedPictureFramesCreator: ID3FrameCreatorsChain {
     }
 
     private func getAttachedPictureHeaderFor(attachedPicture: AttachedPicture, version: ID3Version) -> [UInt8] {
-        if attachedPicture.isPNG {
+        if attachedPicture.format == .Png {
             var header = id3AttachedPictureFrameConfiguration.getHeaderMimeTypeFor(pictureFormat: .Png, version: version)
             let coverTypeBytePosition = id3AttachedPictureFrameConfiguration.getPictureTypeBytePositionFor(
                     pictureFormat: .Png,
