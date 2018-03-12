@@ -32,17 +32,19 @@ class ID3FrameCreatorsChainFactory {
                 frameCreator: frameFromStringContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
-        let attachedPictureFrameCreator = ID3AttachedPictureFramesCreator(
-                id3FrameConfiguration: frameConfiguration,
-                id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                frameContentSizeCalculator: frameContentSizeCalculator,
-                frameFlagsCreator: frameFlagsCreator
+        let attachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
+                attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
+                        id3FrameConfiguration: frameConfiguration,
+                        id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameContentSizeCalculator: frameContentSizeCalculator,
+                        frameFlagsCreator: frameFlagsCreator
+                )
         )
         let yearFrameCreator = ID3YearFrameCreator(
                 frameCreator: frameFromStringContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
-        let genreFrameCreator = ID3GenreFrameCreator (
+        let genreFrameCreator = ID3GenreFrameCreator(
                 frameCreator: frameFromStringContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
@@ -56,6 +58,6 @@ class ID3FrameCreatorsChainFactory {
         yearFrameCreator.nextCreator = genreFrameCreator
         genreFrameCreator.nextCreator = trackPositionFrameCreator
         trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
-        return  albumFrameCreator
+        return albumFrameCreator
     }
 }
