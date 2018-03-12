@@ -7,20 +7,24 @@
 
 import Foundation
 
-class ID3FrameStringContentParsingOperation: FrameStringContentParsingOperation {
+class ID3FrameStringContentParsingOperation: FrameContentParsingOperation {
     private let paddingRemover: PaddingRemover
+    private var assignToTagOperation: (ID3Tag, String) -> ()
     private let id3FrameConfiguration: ID3FrameConfiguration
 
-    init(paddingRemover: PaddingRemover, id3FrameConfiguration: ID3FrameConfiguration) {
+    init(paddingRemover: PaddingRemover,
+         id3FrameConfiguration: ID3FrameConfiguration,
+         assignToTagOperation: @escaping (ID3Tag, String) -> ()) {
         self.paddingRemover = paddingRemover
         self.id3FrameConfiguration = id3FrameConfiguration
+        self.assignToTagOperation = assignToTagOperation
     }
 
-    func parse(frame: Data, id3Tag: ID3Tag, finish: (String) -> ()) {
+    func parse(frame: Data, id3Tag: ID3Tag) {
         let frameContentRange = Range((id3FrameConfiguration.headerSizeFor(version: id3Tag.version))..<frame.count)
         if let frameContent = String(data: frame.subdata(in: frameContentRange), encoding: .ascii) {
             let frameContentWithoutPadding = paddingRemover.removeFrom(string: frameContent)
-            finish(frameContentWithoutPadding)
+            assignToTagOperation(id3Tag, frameContentWithoutPadding)
         }
     }
 }

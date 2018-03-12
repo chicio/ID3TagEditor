@@ -11,14 +11,25 @@ class ID3FrameContentParsingOperationFactory {
     static func make() -> [FrameType : FrameContentParsingOperation] {
         let paddingRemover = PaddingRemoverUsingTrimming()
         let id3FrameConfiguration = ID3FrameConfiguration()
-        let stringParsingContentOperation = ID3FrameStringContentParsingOperation(
-                paddingRemover: paddingRemover,
-                id3FrameConfiguration: id3FrameConfiguration
-        )
         return [
-            .Artist: ArtistFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            .Album: AlbumFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            .Title: TitleFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
+            .Artist: ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover, 
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.artist = frameContentWithoutPadding
+             },
+            .Album: ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover,
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.album = frameContentWithoutPadding
+            },
+            .Title: ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover,
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.title = frameContentWithoutPadding
+            },
             .AttachedPicture: AttachedPictureFrameContentParsingOperation(
                     id3FrameConfiguration: id3FrameConfiguration,
                     pictureTypeAdapter: ID3PictureTypeAdapter(
@@ -26,15 +37,24 @@ class ID3FrameContentParsingOperationFactory {
                             id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
                     )
             ),
-            .Year: YearFrameContentParsingOperation(stringContentParsingOperation: stringParsingContentOperation),
-            .Genre: GenreFrameContentParsingOperation(
-                    stringContentParsingOperation: stringParsingContentOperation,
-                    genreStringAdapter: ID3GenreStringAdapter()
-            ),
-            .TrackPosition : TrackPositionFrameContentParsingOperation(
-                stringContentParsingOperation: stringParsingContentOperation,
-                trackPositionStringAdapter: ID3TrackPositionStringAdapter()
-            )
+            .Year: ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover,
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.year = frameContentWithoutPadding
+            },
+            .Genre: ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover,
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.genre = ID3GenreStringAdapter().adapt(genre: frameContentWithoutPadding)
+            },
+            .TrackPosition : ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover,
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.trackPosition = ID3TrackPositionStringAdapter().adapt(trackPosition: frameContentWithoutPadding)
+            }
         ]
     }
 }

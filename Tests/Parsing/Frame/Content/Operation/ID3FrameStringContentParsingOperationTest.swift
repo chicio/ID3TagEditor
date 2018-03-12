@@ -17,12 +17,12 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
                 paddingRemover: MockPaddingRemover(returnValue: value),
                 id3FrameConfiguration: ID3FrameConfiguration()
-        )
-        
-        id3StringContentParsingOperation.parse(frame: frameV2(), id3Tag: id3Tag) { (content: String) in
-            XCTAssertEqual(content, value)
+        ) { [unowned self](id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, self.value)
             expectation.fulfill()
-        }
+         }
+
+        id3StringContentParsingOperation.parse(frame: frameV2(), id3Tag: id3Tag)
     }
 
     func testFrameContentParsedV3() {
@@ -31,12 +31,12 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
                 paddingRemover: MockPaddingRemover(returnValue: value),
                 id3FrameConfiguration: ID3FrameConfiguration()
-        )
-
-        id3StringContentParsingOperation.parse(frame: frameV3(), id3Tag: id3Tag) { (content: String) in
-            XCTAssertEqual(content, value)
+        ) { [unowned self](id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, self.value)
             expectation.fulfill()
         }
+
+        id3StringContentParsingOperation.parse(frame: frameV3(), id3Tag: id3Tag)
     }
 
     private func frameV2() -> Data {

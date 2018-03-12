@@ -7,6 +7,9 @@
 
 import Foundation;
 
+/**
+ A class to edit the ID3 tag of an mp3 file.
+ */
 public class ID3TagEditor {
     private let id3TagParser: ID3TagParser
     private let mp3WithID3TagBuilder: Mp3WithID3TagBuilder

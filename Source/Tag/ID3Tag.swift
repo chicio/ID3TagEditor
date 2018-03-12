@@ -29,6 +29,7 @@ public class ID3Tag {
     public lazy var attachedPictures: [AttachedPicture]? = {
         return []
     }()
+    /// The position of the track in the original media (see `TrackPositionInSet`).
     public var trackPosition: TrackPositionInSet?
 
     /**
