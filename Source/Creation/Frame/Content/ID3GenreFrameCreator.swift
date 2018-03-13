@@ -20,8 +20,11 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
         if let genre = id3Tag.genre {
             let newTag = tag +
                     frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(frameType: .Genre, version: id3Tag.version),
-                            version: id3Tag.version,
+                            frameIdentifier: id3FrameConfiguration.identifierFor(
+                                    frameType: .Genre,
+                                    version: id3Tag.properties.version
+                            ),
+                            version: id3Tag.properties.version,
                             content: adapt(genre: genre)
                     )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)

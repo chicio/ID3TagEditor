@@ -30,7 +30,7 @@ class AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation 
         if let magicNumberRange = frame.range(of: magicNumber) {
             id3Tag.attachedPictures?.append(AttachedPicture(
                     art: frame.subdata(in: Range(magicNumberRange.lowerBound..<frame.count)),
-                    type: pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.version),
+                    type: pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.properties.version),
                     format: format
             ))
         }

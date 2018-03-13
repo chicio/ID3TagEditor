@@ -21,9 +21,9 @@ class ID3StringFrameCreator: ID3FrameCreatorsChain {
                 frameCreator.createFrame(
                         frameIdentifier: id3FrameConfiguration.identifierFor(
                                 frameType: frameType,
-                                version: id3Tag.version
+                                version: id3Tag.properties.version
                         ),
-                        version: id3Tag.version,
+                        version: id3Tag.properties.version,
                         content: content
                 )
         return super.createFrames(id3Tag: id3Tag, tag: newTag)

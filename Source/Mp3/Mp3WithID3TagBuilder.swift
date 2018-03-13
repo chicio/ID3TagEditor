@@ -31,7 +31,7 @@ class Mp3WithID3TagBuilder {
         let tag = try id3TagCreator.create(id3Tag: newId3Tag)
         var tagSizeWithHeader = 0
         if let validCurrentId3Tag = currentId3Tag {
-            tagSizeWithHeader = Int(validCurrentId3Tag.size) + ID3TagConfiguration().headerSize();
+            tagSizeWithHeader = Int(validCurrentId3Tag.properties.size) + ID3TagConfiguration().headerSize();
         }
         let music = mp3.subdata(in: Range(tagSizeWithHeader..<(mp3.count)))
         let newMp3 = tag + music

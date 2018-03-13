@@ -1,9 +1,9 @@
-//
-//  ID3Tag.swift
-//
-//  Created by Fabrizio Duroni on 26/02/2018.
-//  2018 Fabrizio Duroni.
-//
+    //
+    //  ID3Tag.swift
+    //
+    //  Created by Fabrizio Duroni on 26/02/2018.
+    //  2018 Fabrizio Duroni.
+    //
 
 import Foundation
 
@@ -11,26 +11,23 @@ import Foundation
  A class used to represent and ID3 tag.
  */
 public class ID3Tag {
-    /// The size of the tag.
-    var size: UInt32
-    /// The version of the tag (see `ID3Version`).
-    public var version: ID3Version
+    public var properties: ID3TagProperties
     /// The artist of the tag.
     public var artist: String?
+    /// The title of the song related to this tag.
+    public var title: String?
+    /// The position of the track in the original media (see `TrackPositionInSet`).
+    public var trackPosition: TrackPositionInSet?
     /// The album of the tag.
     public var album: String?
-    /// The title of the tag.
-    public var title: String?
-    /// The year of the tag.
+    /// The year of the recording contained tag.
     public var year: String?
-    /// The genre of the tag (see `Genre`).
+    /// The genre of the recording contained in the tag (see `Genre`).
     public var genre: Genre?
-    /// The attached picture of the tag (see `AttachedPicture`).
+    /// The attached picture related to the audio file contained in the tag (see `AttachedPicture`).
     public lazy var attachedPictures: [AttachedPicture]? = {
         return []
     }()
-    /// The position of the track in the original media (see `TrackPositionInSet`).
-    public var trackPosition: TrackPositionInSet?
 
     /**
      Init a tag.
@@ -51,8 +48,7 @@ public class ID3Tag {
                 genre: Genre?,
                 attachedPictures: [AttachedPicture]?,
                 trackPosition: TrackPositionInSet?) {
-        self.size = 0
-        self.version = version
+        self.properties = ID3TagProperties(version: version, size: 0)
         self.artist = artist
         self.album = album
         self.title = title
@@ -63,7 +59,6 @@ public class ID3Tag {
     }
 
     init(version: ID3Version, size: UInt32) {
-        self.version = version
-        self.size = size
+        self.properties = ID3TagProperties(version: version, size: size)
     }
 }

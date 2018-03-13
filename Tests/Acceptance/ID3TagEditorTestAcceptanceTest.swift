@@ -22,7 +22,7 @@ class ID3TagEditorTest: XCTestCase {
 
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
 
-        XCTAssertEqual(id3Tag?.version, .version2)
+        XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.title, "example song")
         XCTAssertEqual(id3Tag?.album, "example album")
         XCTAssertEqual(id3Tag?.artist, "example artist")
@@ -35,7 +35,7 @@ class ID3TagEditorTest: XCTestCase {
 
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
 
-        XCTAssertEqual(id3Tag?.version, .version3)
+        XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
@@ -51,7 +51,7 @@ class ID3TagEditorTest: XCTestCase {
 
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v3-additional-data", fileType: "mp3"))
 
-        XCTAssertEqual(id3Tag?.version, .version3)
+        XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")

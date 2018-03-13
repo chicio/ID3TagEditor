@@ -18,7 +18,7 @@ class ID3FrameContentParser: FrameContentParser {
     }
 
     func parse(frame: Data, id3Tag: ID3Tag) {
-        let frameType = getFrameTypeFrom(frame: frame, version: id3Tag.version)
+        let frameType = getFrameTypeFrom(frame: frame, version: id3Tag.properties.version)
         if (isAValid(frameType: frameType)) {
             frameContentParsingOperations[frameType]?.parse(frame: frame, id3Tag: id3Tag)
         }

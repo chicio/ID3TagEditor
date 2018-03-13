@@ -39,8 +39,8 @@ class ID3TagCreator {
     }
 
     private func createTagHeader(contentSize: Int, id3Tag: ID3Tag) -> [UInt8] {
-        id3Tag.size = UInt32(contentSize)
-        let header = id3TagConfiguration.headerFor(version: id3Tag.version) +
+        id3Tag.properties.size = UInt32(contentSize)
+        let header = id3TagConfiguration.headerFor(version: id3Tag.properties.version) +
                 uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(format(size: contentSize)))
         return header
     }

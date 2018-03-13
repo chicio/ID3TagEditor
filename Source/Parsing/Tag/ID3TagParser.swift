@@ -42,13 +42,13 @@ class ID3TagParser {
     }
 
     private func parseTagSizeFor(mp3: NSData, andSaveInId3Tag id3Tag: ID3Tag) {
-        id3Tag.size = tagSizeParser.parse(data: mp3);
+        id3Tag.properties.size = tagSizeParser.parse(data: mp3);
     }
 
     private func parseFramesFor(mp3: NSData, id3Tag: ID3Tag) {
         var currentFramePosition = id3TagConfiguration.headerSize();
-        while currentFramePosition < id3Tag.size {
-            let frame = getFrameFrom(mp3: mp3, position: currentFramePosition, version: id3Tag.version)
+        while currentFramePosition < id3Tag.properties.size {
+            let frame = getFrameFrom(mp3: mp3, position: currentFramePosition, version: id3Tag.properties.version)
             frameContentParser.parse(frame: frame, id3Tag: id3Tag)
             currentFramePosition += frame.count;
         }
