@@ -9,37 +9,37 @@ import Foundation
 
 class ID3GenreStringAdapter: GenreStringAdapter {
     func adapt(genre: String) -> Genre {
-        do {
-            let expression = try NSRegularExpression(pattern: "(\\()\\w*\\d*(\\))")
-            guard let genreWithParenthesisRange = Range(
-                    expression.rangeOfFirstMatch(in: genre, options: [], range: NSMakeRange(0, genre.count)), in: genre)
-                    else {
-                return Genre(genre: nil, description: genre)
-            }
-            let genreWithParenthesis = String(genre[genreWithParenthesisRange])
-            let genreIdentifier = adaptGenreIdentifierFrom(genreWithParenthesis: genreWithParenthesis)
-            var genreDescription = adaptGenreDescriptionFrom(
-                    genreDescriptionExtracted: String(genre[genreWithParenthesisRange.upperBound..<genre.endIndex])
-            )
-            if notAValid(genreIdentifier: genreIdentifier, from: genreWithParenthesis) {
-                genreDescription = genreWithParenthesis + (genreDescription ?? "")
-            }
-            return Genre(genre: genreIdentifier, description: genreDescription)
-        } catch {
+        let expression = try! NSRegularExpression(pattern: "(\\()\\w*\\d*(\\))")
+        guard let genreWithParenthesisRange = Range(
+                expression.rangeOfFirstMatch(in: genre, options: [], range: NSMakeRange(0, genre.count)), in: genre)
+                else {
             return Genre(genre: nil, description: genre)
         }
+        let genreWithParenthesis = String(genre[genreWithParenthesisRange])
+        let genreIdentifier = adaptGenreIdentifierFrom(genreWithParenthesis: genreWithParenthesis)
+        let genreDescription = adaptGenreDescriptionFrom(
+                genreDescriptionExtracted: String(genre[genreWithParenthesisRange.upperBound..<genre.endIndex]),
+                genreIdentifier: genreIdentifier,
+                genreWithParenthesis: genreWithParenthesis
+        )
+        return Genre(genre: genreIdentifier, description: genreDescription)
     }
 
-    private func notAValid(genreIdentifier: ID3Genre?, from genreWithParenthesis: String) -> Bool {
-        return genreIdentifier == nil && !genreWithParenthesis.isEmpty
-    }
-
-    private func adaptGenreDescriptionFrom(genreDescriptionExtracted: String) -> String? {
+    private func adaptGenreDescriptionFrom(genreDescriptionExtracted: String,
+                                           genreIdentifier: ID3Genre?,
+                                           genreWithParenthesis: String) -> String? {
         var genreDescription: String? = genreDescriptionExtracted
         if let validGenreDescription = genreDescription, validGenreDescription.isEmpty {
             genreDescription = nil
         }
+        if notAValid(genreIdentifier: genreIdentifier, from: genreWithParenthesis) {
+            genreDescription = genreWithParenthesis + (genreDescription ?? "")
+        }
         return genreDescription
+    }
+
+    private func notAValid(genreIdentifier: ID3Genre?, from genreWithParenthesis: String) -> Bool {
+        return genreIdentifier == nil && !genreWithParenthesis.isEmpty
     }
 
     private func adaptGenreIdentifierFrom(genreWithParenthesis: String) -> ID3Genre? {
