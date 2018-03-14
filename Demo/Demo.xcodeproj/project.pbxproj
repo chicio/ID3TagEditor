@@ -24,6 +24,14 @@
 		452833872044D7F400458375 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45354679205960880053976F /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 		45541B6E205980530025A8BF /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45541B6B205980530025A8BF /* example.mp3 */; };
+		45541BC8205990990025A8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45541BC7205990990025A8BF /* AppDelegate.swift */; };
+		45541BCA205990990025A8BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45541BC9205990990025A8BF /* ViewController.swift */; };
+		45541BCD205990990025A8BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45541BCB205990990025A8BF /* Main.storyboard */; };
+		45541BCF205990990025A8BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45541BCE205990990025A8BF /* Assets.xcassets */; };
+		45541BD9205991260025A8BF /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; };
+		45541BDA205991260025A8BF /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45541BDE205992420025A8BF /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
+		45541BE0205994AB0025A8BF /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45541BDF205994AA0025A8BF /* example.mp3 */; };
 		45AF185F204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 		45AF1860204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 		45F834382059078B0046C804 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F834362059078B0046C804 /* Interface.storyboard */; };
@@ -80,6 +88,20 @@
 			remoteGlobalIDString = 452831E42044C4F500458375;
 			remoteInfo = "ID3TagEditor iOS";
 		};
+		45541BD6205990990025A8BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45541B7720598F6C0025A8BF;
+			remoteInfo = "ID3TagEditor tvOS";
+		};
+		45541BDB205991260025A8BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45541B7620598F6C0025A8BF;
+			remoteInfo = "ID3TagEditor tvOS";
+		};
 		45F8342F2059061F0046C804 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */;
@@ -129,6 +151,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				452833872044D7F400458375 /* ID3TagEditor.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45541BDD205991270025A8BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45541BDA205991260025A8BF /* ID3TagEditor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +220,13 @@
 		4528337F2044D76500458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		452833842044D77100458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45541B6B205980530025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
+		45541BC5205990990025A8BF /* Demo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45541BC7205990990025A8BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45541BC9205990990025A8BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45541BCC205990990025A8BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45541BCE205990990025A8BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45541BD0205990990025A8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45541BDF205994AA0025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45AF185E204C226C00343B25 /* PathLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoader.swift; sourceTree = "<group>"; };
 		45F834342059078A0046C804 /* Demo watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F834372059078B0046C804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -213,6 +253,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				452833862044D7F400458375 /* ID3TagEditor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45541BC2205990990025A8BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45541BD9205991260025A8BF /* ID3TagEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +291,7 @@
 				45AF185B204C224600343B25 /* Demo common */,
 				45F834352059078B0046C804 /* Demo watchOS */,
 				45F834442059078B0046C804 /* Demo watchOS Extension */,
+				45541BC6205990990025A8BF /* Demo tvOS */,
 				452832F02044D28E00458375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -254,6 +303,7 @@
 				4528334A2044D41300458375 /* Demo iOS.app */,
 				45F834342059078A0046C804 /* Demo watchOS.app */,
 				45F834402059078B0046C804 /* Demo watchOS Extension.appex */,
+				45541BC5205990990025A8BF /* Demo tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,8 +344,22 @@
 				452833692044D47B00458375 /* ID3TagEditor.framework */,
 				4528336B2044D47B00458375 /* ID3TagEditor iOS Tests.xctest */,
 				45F834302059061F0046C804 /* ID3TagEditor.framework */,
+				45541BD7205990990025A8BF /* ID3TagEditor.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45541BC6205990990025A8BF /* Demo tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				45541BDF205994AA0025A8BF /* example.mp3 */,
+				45541BC7205990990025A8BF /* AppDelegate.swift */,
+				45541BC9205990990025A8BF /* ViewController.swift */,
+				45541BCB205990990025A8BF /* Main.storyboard */,
+				45541BCE205990990025A8BF /* Assets.xcassets */,
+				45541BD0205990990025A8BF /* Info.plist */,
+			);
+			path = "Demo tvOS";
 			sourceTree = "<group>";
 		};
 		45AF185B204C224600343B25 /* Demo common */ = {
@@ -371,6 +435,25 @@
 			productReference = 4528334A2044D41300458375 /* Demo iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		45541BC4205990990025A8BF /* Demo tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45541BD8205990990025A8BF /* Build configuration list for PBXNativeTarget "Demo tvOS" */;
+			buildPhases = (
+				45541BC1205990990025A8BF /* Sources */,
+				45541BC2205990990025A8BF /* Frameworks */,
+				45541BC3205990990025A8BF /* Resources */,
+				45541BDD205991270025A8BF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45541BDC205991260025A8BF /* PBXTargetDependency */,
+			);
+			name = "Demo tvOS";
+			productName = "Demo tvOS";
+			productReference = 45541BC5205990990025A8BF /* Demo tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		45F834332059078A0046C804 /* Demo watchOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45F834532059078B0046C804 /* Build configuration list for PBXNativeTarget "Demo watchOS" */;
@@ -426,6 +509,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					45541BC4205990990025A8BF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					45F834332059078A0046C804 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -459,6 +546,7 @@
 				452833492044D41300458375 /* Demo iOS */,
 				45F834332059078A0046C804 /* Demo watchOS */,
 				45F8343F2059078B0046C804 /* Demo watchOS Extension */,
+				45541BC4205990990025A8BF /* Demo tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -492,6 +580,13 @@
 			remoteRef = 4528336A2044D47B00458375 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		45541BD7205990990025A8BF /* ID3TagEditor.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ID3TagEditor.framework;
+			remoteRef = 45541BD6205990990025A8BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		45F834302059061F0046C804 /* ID3TagEditor.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -520,6 +615,16 @@
 				452833852044D77100458375 /* example.mp3 in Resources */,
 				452833542044D41300458375 /* Assets.xcassets in Resources */,
 				452833522044D41300458375 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45541BC3205990990025A8BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45541BE0205994AB0025A8BF /* example.mp3 in Resources */,
+				45541BCF205990990025A8BF /* Assets.xcassets in Resources */,
+				45541BCD205990990025A8BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +669,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45541BC1205990990025A8BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45541BCA205990990025A8BF /* ViewController.swift in Sources */,
+				45541BC8205990990025A8BF /* AppDelegate.swift in Sources */,
+				45541BDE205992420025A8BF /* PathLoader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45F8343C2059078B0046C804 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +701,11 @@
 			isa = PBXTargetDependency;
 			name = "ID3TagEditor iOS";
 			targetProxy = 452833882044D7F400458375 /* PBXContainerItemProxy */;
+		};
+		45541BDC205991260025A8BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ID3TagEditor tvOS";
+			targetProxy = 45541BDB205991260025A8BF /* PBXContainerItemProxy */;
 		};
 		45F834432059078B0046C804 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -627,6 +747,14 @@
 				452833562044D41300458375 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		45541BCB205990990025A8BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45541BCC205990990025A8BF /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		45F834362059078B0046C804 /* Interface.storyboard */ = {
@@ -819,6 +947,47 @@
 			};
 			name = Release;
 		};
+		45541BD1205990990025A8BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				INFOPLIST_FILE = "Demo tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		45541BD2205990990025A8BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y682K92RZU;
+				INFOPLIST_FILE = "Demo tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		45F834502059078B0046C804 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -927,6 +1096,15 @@
 			buildConfigurations = (
 				4528335A2044D41300458375 /* Debug */,
 				4528335B2044D41300458375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45541BD8205990990025A8BF /* Build configuration list for PBXNativeTarget "Demo tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45541BD1205990990025A8BF /* Debug */,
+				45541BD2205990990025A8BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

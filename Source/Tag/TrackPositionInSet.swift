@@ -12,9 +12,9 @@ import Foundation
  */
 public class TrackPositionInSet {
     /// The position of the track.
-    var position: Int
+    public var position: Int
     /// The total number of tracks in recordings.
-    var totalTracks: Int?
+    public var totalTracks: Int?
 
     /**
      Init a track position.
