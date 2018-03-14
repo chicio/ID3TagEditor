@@ -113,7 +113,7 @@ In the following screenshot you can find an example of the data extracted. In th
 target supported.
 
 <p align="center">
-<img width="320" height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/RangeUISlider/master/Screenshots/01-example.png">
+<img width="320" height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
 </p>
  
 
