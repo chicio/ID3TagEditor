@@ -76,7 +76,7 @@ do {
         title: "an example title",
         year: "2019",
         genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-        attachedPictures: AttachedPicture(art: <NSData of the image>, type: .FrontCover, format: .Jpeg),
+        attachedPictures: AttachedPicture(art: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg),
         trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
     )
     try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example", fileType: "mp3"))
