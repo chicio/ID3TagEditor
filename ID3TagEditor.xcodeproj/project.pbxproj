@@ -676,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				452831C82044C40700458375 /* ID3TagEditor.h */,
+				C5067ED87F78D196E8980F49 /* ID3Version.swift */,
 				452832282044C7BE00458375 /* ID3TagEditor.swift */,
 				452831FE2044C7BE00458375 /* ID3TagEditorError.swift */,
 				452832302044C7BE00458375 /* Creation */,
@@ -686,7 +687,6 @@
 				452832212044C7BE00458375 /* Tag */,
 				4528321E2044C7BE00458375 /* UInt32ToByteArrayAdapter */,
 				452831C92044C40700458375 /* Info.plist */,
-				C5067ED87F78D196E8980F49 /* ID3Version.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";

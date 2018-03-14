@@ -105,5 +105,15 @@ The ID3 supported properties are:
 
 Only the `version` field is mandatory. The other fields are optional.
 
+***
+
+### Usage
+
+In the following screenshot you can find an example of the data extracted. In the demo project you will find an example for each
+target supported.
+
+<p align="center">
+<img width="320" height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/RangeUISlider/master/Screenshots/01-example.png">
+</p>
  
 
