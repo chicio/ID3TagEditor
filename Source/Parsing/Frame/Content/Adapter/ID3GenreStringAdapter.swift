@@ -11,8 +11,8 @@ class ID3GenreStringAdapter: GenreStringAdapter {
     func adapt(genre: String) -> Genre {
         let expression = try! NSRegularExpression(pattern: "(\\()\\w*\\d*(\\))")
         guard let genreWithParenthesisRange = Range(
-                expression.rangeOfFirstMatch(in: genre, options: [], range: NSMakeRange(0, genre.count)), in: genre)
-                else {
+                expression.rangeOfFirstMatch(in: genre, options: [], range: NSMakeRange(0, genre.count)), in: genre
+        ) else {
             return Genre(genre: nil, description: genre)
         }
         let genreWithParenthesis = String(genre[genreWithParenthesisRange])

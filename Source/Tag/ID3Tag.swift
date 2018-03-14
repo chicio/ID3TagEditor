@@ -1,9 +1,9 @@
-    //
-    //  ID3Tag.swift
-    //
-    //  Created by Fabrizio Duroni on 26/02/2018.
-    //  2018 Fabrizio Duroni.
-    //
+//
+//  ID3Tag.swift
+//
+//  Created by Fabrizio Duroni on 26/02/2018.
+//  2018 Fabrizio Duroni.
+//
 
 import Foundation
 
