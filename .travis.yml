@@ -7,7 +7,7 @@ script:
  - set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor tvOS" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=tvOS Simulator,name=Apple TV,OS=latest" | xcpretty
  - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo macOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty
  - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8,OS=latest" | xcpretty
- - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=watchOS Simulator,name=Apple Watch - 38mm,OS=latest" | xcpretty
+ - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8,OS=latest" | xcpretty
  - set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo tvOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=tvOS Simulator,name=Apple TV,OS=latest" | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
