@@ -11,7 +11,6 @@
 		452833332044D3E300458375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4528332D2044D3E300458375 /* Assets.xcassets */; };
 		452833342044D3E300458375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4528332E2044D3E300458375 /* Main.storyboard */; };
 		452833352044D3E300458375 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452833302044D3E300458375 /* AppDelegate.swift */; };
-		4528334D2044D41300458375 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528334C2044D41300458375 /* AppDelegate.swift */; };
 		4528334F2044D41300458375 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528334E2044D41300458375 /* ViewController.swift */; };
 		452833522044D41300458375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452833502044D41300458375 /* Main.storyboard */; };
 		452833542044D41300458375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452833532044D41300458375 /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 		452833872044D7F400458375 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45354679205960880053976F /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 		45541B6E205980530025A8BF /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45541B6B205980530025A8BF /* example.mp3 */; };
-		45541BC8205990990025A8BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45541BC7205990990025A8BF /* AppDelegate.swift */; };
 		45541BCA205990990025A8BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45541BC9205990990025A8BF /* ViewController.swift */; };
 		45541BCD205990990025A8BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45541BCB205990990025A8BF /* Main.storyboard */; };
 		45541BCF205990990025A8BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45541BCE205990990025A8BF /* Assets.xcassets */; };
@@ -34,6 +32,8 @@
 		45541BE0205994AB0025A8BF /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45541BDF205994AA0025A8BF /* example.mp3 */; };
 		45AF185F204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 		45AF1860204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
+		45EEC048205A66E900CEF5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EEC042205A66E900CEF5BF /* AppDelegate.swift */; };
+		45EEC049205A66E900CEF5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EEC042205A66E900CEF5BF /* AppDelegate.swift */; };
 		45F834382059078B0046C804 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F834362059078B0046C804 /* Interface.storyboard */; };
 		45F8343A2059078B0046C804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F834392059078B0046C804 /* Assets.xcassets */; };
 		45F834412059078B0046C804 /* Demo watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 45F834402059078B0046C804 /* Demo watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -101,6 +101,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 45541B7620598F6C0025A8BF;
 			remoteInfo = "ID3TagEditor tvOS";
+		};
+		45EEC046205A66E900CEF5BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45541BE52059954C0025A8BF;
+			remoteInfo = "ID3TagEditor tvOS Tests";
 		};
 		45F8342F2059061F0046C804 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -210,7 +217,6 @@
 		452833302044D3E300458375 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452833312044D3E300458375 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4528334A2044D41300458375 /* Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4528334C2044D41300458375 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4528334E2044D41300458375 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		452833512044D41300458375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		452833532044D41300458375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,13 +227,13 @@
 		452833842044D77100458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45541B6B205980530025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45541BC5205990990025A8BF /* Demo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		45541BC7205990990025A8BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45541BC9205990990025A8BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45541BCC205990990025A8BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45541BCE205990990025A8BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45541BD0205990990025A8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45541BDF205994AA0025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45AF185E204C226C00343B25 /* PathLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoader.swift; sourceTree = "<group>"; };
+		45EEC042205A66E900CEF5BF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45F834342059078A0046C804 /* Demo watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F834372059078B0046C804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		45F834392059078B0046C804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				452833842044D77100458375 /* example.mp3 */,
-				4528334C2044D41300458375 /* AppDelegate.swift */,
 				4528334E2044D41300458375 /* ViewController.swift */,
 				452833502044D41300458375 /* Main.storyboard */,
 				452833532044D41300458375 /* Assets.xcassets */,
@@ -343,8 +348,9 @@
 				452833672044D47B00458375 /* ID3TagEditor macOS Tests.xctest */,
 				452833692044D47B00458375 /* ID3TagEditor.framework */,
 				4528336B2044D47B00458375 /* ID3TagEditor iOS Tests.xctest */,
-				45F834302059061F0046C804 /* ID3TagEditor.framework */,
 				45541BD7205990990025A8BF /* ID3TagEditor.framework */,
+				45EEC047205A66E900CEF5BF /* ID3TagEditor tvOS Tests.xctest */,
+				45F834302059061F0046C804 /* ID3TagEditor.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				45541BDF205994AA0025A8BF /* example.mp3 */,
-				45541BC7205990990025A8BF /* AppDelegate.swift */,
 				45541BC9205990990025A8BF /* ViewController.swift */,
 				45541BCB205990990025A8BF /* Main.storyboard */,
 				45541BCE205990990025A8BF /* Assets.xcassets */,
@@ -365,6 +370,7 @@
 		45AF185B204C224600343B25 /* Demo common */ = {
 			isa = PBXGroup;
 			children = (
+				45EEC042205A66E900CEF5BF /* AppDelegate.swift */,
 				45AF185E204C226C00343B25 /* PathLoader.swift */,
 			);
 			path = "Demo common";
@@ -587,6 +593,13 @@
 			remoteRef = 45541BD6205990990025A8BF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		45EEC047205A66E900CEF5BF /* ID3TagEditor tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ID3TagEditor tvOS Tests.xctest";
+			remoteRef = 45EEC046205A66E900CEF5BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		45F834302059061F0046C804 /* ID3TagEditor.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -663,8 +676,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EEC048205A66E900CEF5BF /* AppDelegate.swift in Sources */,
 				4528334F2044D41300458375 /* ViewController.swift in Sources */,
-				4528334D2044D41300458375 /* AppDelegate.swift in Sources */,
 				45AF1860204C226C00343B25 /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,8 +686,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EEC049205A66E900CEF5BF /* AppDelegate.swift in Sources */,
 				45541BCA205990990025A8BF /* ViewController.swift in Sources */,
-				45541BC8205990990025A8BF /* AppDelegate.swift in Sources */,
 				45541BDE205992420025A8BF /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
