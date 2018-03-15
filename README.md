@@ -114,7 +114,7 @@ target supported.
 
 <p align="center">
 <img width="320" height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
-<img height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
+<img hspace="50" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
 </p>
  
 
