@@ -109,10 +109,11 @@ Only the `version` field is mandatory. The other fields are optional.
 
 ### Examples
 
-In the following screenshots you can find examples of the data extracted/updated. In the demo project you will find an example for each
-target supported.
+In the following screenshots you can find examples of the data extracted/updated. In the demo project you will find an example for each 
+supported target.
 
 <p align="center">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/04-example.png">
 <img width="320" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/03-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">

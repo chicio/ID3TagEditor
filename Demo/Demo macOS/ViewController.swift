@@ -11,11 +11,17 @@ import ID3TagEditor
 
 class ViewController: NSViewController {
     private let id3TagEditor = ID3TagEditor()
-
+    @IBOutlet weak var attachedPictureImage: NSImageView!
+    @IBOutlet weak var informations: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
             if let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3")) {
+                if let attachedPictures = id3Tag.attachedPictures, attachedPictures.count > 0 {
+                    attachedPictureImage.image = NSImage(data: attachedPictures[0].art)
+                }
+                informations.stringValue = "\(id3Tag.title ?? "") \n\(id3Tag.artist ?? "")"
                 print(id3Tag.title ?? "")
                 print(id3Tag.artist ?? "")
                 print(id3Tag.album ?? "")
