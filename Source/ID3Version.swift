@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ Enum that contains the version supported by ID3TagEditor.
+ */
 public enum ID3Version: UInt8, Comparable {
     /// ID3 2.2 version.
     case version2 = 2

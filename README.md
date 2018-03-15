@@ -43,7 +43,7 @@ and then run pod install (or pod update).
 
 ### Usage
 
-ID3Tag editor support the following platforms:
+ID3Tag editor is compatible with the following platforms:
 
 * iOS
 * MacOS
@@ -85,8 +85,8 @@ do {
 }    
 ```  
 
-The above methods use the `ID3Tag` class to describe a valid ID3 tag. The class contains various property that could be 
-used to read/write to the mp3 file.  
+The above methods use the `ID3Tag` class to describe a valid ID3 tag. The class contains various properties that could be
+used to read/write a tag to the mp3 file.
 Two versions of the tag are supported. They are described in the `ID3Version` enum:
 
 * version 2.2, described by the enum value `.version2`  
@@ -107,13 +107,14 @@ Only the `version` field is mandatory. The other fields are optional.
 
 ***
 
-### Usage
+### Examples
 
-In the following screenshot you can find an example of the data extracted. In the demo project you will find an example for each
+In the following screenshots you can find examples of the data extracted/updated. In the demo project you will find an example for each
 target supported.
 
 <p align="center">
 <img width="320" height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
+<img height="632" hspace="50" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
 </p>
  
 
