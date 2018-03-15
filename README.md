@@ -113,7 +113,7 @@ In the following screenshots you can find examples of the data extracted/updated
 target supported.
 
 <p align="center">
-<img width="320" height="632" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
+<img width="320" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/03-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
 </p>
