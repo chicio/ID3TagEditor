@@ -16,7 +16,7 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="B0X-qC-HnZ">
                             <items>
-                                <imageView alignment="left" contentMode="scaleAspectFit" id="UEL-oC-taN"/>
+                                <imageView width="60" height="60" alignment="center" contentMode="scaleAspectFit" id="UEL-oC-taN"/>
                                 <label width="1" alignment="left" text="Title" id="wYh-BZ-NOJ"/>
                                 <label alignment="left" text="Album" id="2kk-Ch-TlW"/>
                                 <label alignment="left" text="Genre" id="7nX-x6-xDy"/>
