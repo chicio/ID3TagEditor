@@ -8,12 +8,12 @@ Pod::Spec.new do |s|
 A swift library to read and modify ID3 Tag of any mp3 file.
                    DESC
   s.homepage     = "https://github.com/chicio/ID3TagEditor"
-  s.screenshots  = "https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/example.png"
+  s.screenshots  = "https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.author             = { "chicio" => "fabrizio.duroni@gmail.com" }
   s.social_media_url   = "https://github.com/chicio"
   s.source       = { :git => "https://github.com/chicio/ID3TagEditor.git", :tag => "#{s.version}" }
-  s.source_files  = "Source", "Source/**/*.{h,m}"
+  s.source_files  = "Source", "Source/**/*.{h,m}", "Source/*.swift"
 
   s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.13'
