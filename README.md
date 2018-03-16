@@ -23,7 +23,7 @@ folder inside your project (except for the info.plist file).
 **Framework**
 
 ID3TagEditor is available also as a framework. You can follow the standard procedure to install a custom cocoa touch framework
-(simply drag the RangeUISlider.xcodeproj inside your project and add it to the Embedded Binaries/Linked Frameworks and Libraries section of your 
+(simply drag the ID3TagEditor.xcodeproj inside your project and add it to the Embedded Binaries/Linked Frameworks and Libraries section of your
 project. See the demo project for a complete example of the setup of the framework.
 
 **CocoaPods**
