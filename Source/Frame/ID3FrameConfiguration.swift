@@ -64,6 +64,11 @@ class ID3FrameConfiguration {
             "TRCK" : .TrackPosition
         ]
     ]
+    private let encodingPositionInBytes: [ID3Version : Int] = [
+        .version2 : 6,
+        .version3 : 10
+    ]
+    private let encodingSizeInBytes: Int = 1
 
     func headerSizeFor(version: ID3Version) -> Int {
         return headerSizesInBytes[version]!
@@ -87,5 +92,13 @@ class ID3FrameConfiguration {
 
     func frameTypeFor(identifier: String, version: ID3Version) -> FrameType {
         return nameForIdentifier[version]![identifier] ?? .Invalid
+    }
+    
+    func encodingSize() -> Int {
+        return encodingSizeInBytes
+    }
+    
+    func encodingPositionFor(version: ID3Version) -> Int {
+        return encodingPositionInBytes[version]!
     }
 }

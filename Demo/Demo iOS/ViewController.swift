@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 attachedPictures: nil,
                 trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
             )
-            try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example", fileType: "mp3"))
+            try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example-utf16", fileType: "mp3"))
         } catch {
             print(error)
         }
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     
     @IBAction func load(_ sender: Any) {
         do {
-            let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
+            let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-utf16", fileType: "mp3"))
             titleTextField.text = id3Tag?.title
             albumTextField.text = id3Tag?.album
             artistTextField.text = id3Tag?.artist
