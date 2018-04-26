@@ -22,13 +22,11 @@ class ID3FrameStringContentParsingOperation: FrameContentParsingOperation {
 
     func parse(frame: Data, id3Tag: ID3Tag) {
         let headerSize = id3FrameConfiguration.headerSizeFor(version: id3Tag.properties.version)
-        let encodingSize = id3FrameConfiguration.encodingSize()
         let encodingBytePosition = id3FrameConfiguration.encodingPositionFor(version: id3Tag.properties.version)
-        let frameContentRangeStart = headerSize + encodingSize
+        let frameContentRangeStart = headerSize + id3FrameConfiguration.encodingSize()
         let frameContentRange = Range(frameContentRangeStart..<frame.count)
-        let id3Encoding = ID3StringEncoding(rawValue: frame[encodingBytePosition])
-        if let frameContent = String(data: frame.subdata(in: frameContentRange),
-                                     encoding: getEncodingFor(id3Encoding: id3Encoding)) {
+        let encoding = getEncodingFor(id3Encoding: ID3StringEncoding(rawValue: frame[encodingBytePosition]))
+        if let frameContent = String(data: frame.subdata(in: frameContentRange), encoding: encoding) {
             assignToTagOperation(id3Tag, paddingRemover.removeFrom(string: frameContent))
         }
     }
