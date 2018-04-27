@@ -21,7 +21,7 @@ public class ID3Tag {
     /// The album of the tag.
     public var album: String?
     /// The year of the recording contained tag.
-    public var  year: String?
+    public var year: String?
     /// The genre of the recording contained in the tag (see `Genre`).
     public var genre: Genre?
     /// The attached picture related to the audio file contained in the tag (see `AttachedPicture`).
