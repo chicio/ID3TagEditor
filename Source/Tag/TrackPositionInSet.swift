@@ -10,7 +10,7 @@ import Foundation
 /**
  A class used to represent the track position in the original recordings for the ID3 tag.
  */
-public class TrackPositionInSet {
+public class TrackPositionInSet: Equatable {
     /// The position of the track.
     public var position: Int
     /// The total number of tracks in recordings.
@@ -25,5 +25,17 @@ public class TrackPositionInSet {
     public init(position: Int, totalTracks: Int?) {
         self.position = position
         self.totalTracks = totalTracks
+    }
+
+    /**
+     Compare two TrackPositionInSet.
+
+     - parameter lhs: left side of compare operation.
+     - parameter rhs: right side of compare operation.
+
+     - returns: true if the track positions values are the same, else false.
+     */
+    public static func ==(lhs: TrackPositionInSet, rhs: TrackPositionInSet) -> Bool {
+        return lhs.position == rhs.position && lhs.totalTracks == rhs.totalTracks
     }
 }
