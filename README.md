@@ -105,6 +105,8 @@ The ID3 supported properties are:
 * `attachedPictures`, as an array of `AttachedPicture` objects containing the `Data` of an image, the `ID3PictureType` and the `ID3PictureFormat`
 
 Only the `version` field is mandatory. The other fields are optional.
+The field `artist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
+The library is also able to read text frame wrongly encoded with Unicode (for example year must always be a ISO88591 string). 
 
 ***
 
