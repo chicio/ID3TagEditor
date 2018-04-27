@@ -26,7 +26,8 @@ class ID3FrameStringContentParsingOperation: FrameContentParsingOperation {
         let frameContentRangeStart = headerSize + id3FrameConfiguration.encodingSize()
         let frameContentRange = Range(frameContentRangeStart..<frame.count)
         let encoding = getEncodingFor(id3Encoding: ID3StringEncoding(rawValue: frame[encodingBytePosition]))
-        if let frameContent = String(data: frame.subdata(in: frameContentRange), encoding: encoding) {
+        let frameContent = frame.subdata(in: frameContentRange)
+        if let frameContent = String(data: frameContent, encoding: encoding) {
             assignToTagOperation(id3Tag, paddingRemover.removeFrom(string: frameContent))
         }
     }
