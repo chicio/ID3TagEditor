@@ -232,5 +232,9 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = try! id3TagEditor.read(from: pathMp3)
         
         XCTAssertEqual(id3Tag?.title, "Om Tryumbacom")
+        XCTAssertEqual(id3Tag?.artist, "Laraaji")
+        XCTAssertEqual(id3Tag?.album, "Vision Songs Vol. 1")
+        XCTAssertEqual(id3Tag?.year, "2018")
+        XCTAssertEqual(id3Tag?.trackPosition?.position, 10)
     }
 }

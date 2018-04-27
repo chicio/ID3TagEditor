@@ -10,10 +10,10 @@ import XCTest
 
 class PaddingAdderUsingNullCharTest: XCTestCase {
     func testAddPadding() {
-        let paddingAdderUsingNullChar = PaddingAdderUsingNullChar()
+        let paddingAdderUsingNullChar = PaddingAdderToEndOfContentUsingNullChar()
 
-        let contentWithPadding = paddingAdderUsingNullChar.addTo(content: [0x1, 0x1])
+        let contentWithPadding = paddingAdderUsingNullChar.addTo(content: [0x1, 0x1], numberOfByte: 1)
 
-        XCTAssertEqual(contentWithPadding, [0x0, 0x1, 0x1, 0x0])
+        XCTAssertEqual(contentWithPadding, [0x1, 0x1, 0x0])
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 @testable import ID3TagEditor
 
 class MockPaddingAdder: PaddingAdder {
-    func addTo(content: [UInt8]) -> [UInt8] {
-        return [0x0] + content + [0x0]
+    func addTo(content: [UInt8], numberOfByte: Int) -> [UInt8] {
+        return content + [0x0]
     }
 }
