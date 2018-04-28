@@ -11,19 +11,12 @@ import Foundation
  An enum that contains the genres supported by the ID3 standard using specific identifiers.
  */
 public enum ID3Genre: Int, Equatable {
-    /// Blues genre.
     case Blues = 0
-    /// Classic rock genre.
     case ClassicRock = 1
-    /// Country genre.
     case Country = 2
-    /// Dance genre.
     case Dance = 3
-    /// Disco genre.
     case Disco = 4
-    /// Funk genre.
     case Funk = 5
-
     case Grunge = 6
     case HipHop = 7
     case Jazz = 8

@@ -225,28 +225,16 @@ class ID3TagEditorTest: XCTestCase {
         )
     }
 
-    //TODO: from here to be removed
-
-//    func testWriteID3withJpgAliceInChains() {
-//        let mp3 = try! ID3TagEditor(path: pathFor(name: "my-version", fileType: "mp3"))
-//        mp3.setTitle(title: "Your decision")
-//        mp3.setArtist(artist: "Alice In Chains")
-//        mp3.setAlbum(album: "Black Gives Way to Blue")
-//        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "folder", fileType: "jpg")))
-//        mp3.setArtwork(artwork: data, isPNG: false)
-//        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/alice-in-chains-created.mp3"))
-//        let mp3Created = NSData(contentsOfFile: NSHomeDirectory() + "/alice-in-chains-created.mp3")
-//        let mp3WithId3Tag = NSData(contentsOfFile: pathFor(name: "alice-in-chains-with-tag", fileType: "mp3"))
-//        XCTAssertEqual(mp3Created, mp3WithId3Tag)
-//    }
-//
-//    func testWriteID4withJpgSampleSong() {
-//        let mp3 = try! ID3TagEditor(path: pathFor(name: "lb-mine", fileType: "mp3"))
-//        mp3.setTitle(title: "Loser")
-//        mp3.setArtist(artist: "Limp bizkit")
-//        mp3.setAlbum(album: "Gold Cobra")
-//        let data: Data = try! Data(contentsOf: URL(fileURLWithPath: pathFor(name: "cover2", fileType: "jpg")))
-//        mp3.setArtwork(artwork: data, isPNG: false)
-//        XCTAssertNoThrow(try mp3.write(to: NSHomeDirectory() + "/lb-mine.mp3"))
-//    }
+    func testUtf16String() {
+        let id3TagEditor = ID3TagEditor()
+        let pathMp3 = PathLoader().pathFor(name: "example-utf16", fileType: "mp3")
+        
+        let id3Tag = try! id3TagEditor.read(from: pathMp3)
+        
+        XCTAssertEqual(id3Tag?.title, "Om Tryumbacom")
+        XCTAssertEqual(id3Tag?.artist, "Laraaji")
+        XCTAssertEqual(id3Tag?.album, "Vision Songs Vol. 1")
+        XCTAssertEqual(id3Tag?.year, "2018")
+        XCTAssertEqual(id3Tag?.trackPosition?.position, 10)
+    }
 }

@@ -9,27 +9,35 @@ import Foundation
 
 class ID3FrameCreatorsChainFactory {
     static func make() -> ID3FrameCreatorsChain {
+        let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
         let frameConfiguration = ID3FrameConfiguration()
         let uInt32ToByteArrayAdapter = UInt32ToByteArrayAdapterUsingUnsafePointer()
         let frameContentSizeCalculator = ID3FrameContentSizeCalculator(
                 uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter
         )
         let frameFlagsCreator = ID3FrameFlagsCreator()
-        let frameFromStringContentCreator = ID3FrameFromStringContentCreator(
+        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(
                 frameContentSizeCalculator: frameContentSizeCalculator,
                 frameFlagsCreator: frameFlagsCreator,
-                paddingAdder: PaddingAdderUsingNullChar()
+                stringToBytesAdapter: ID3UTF16StringToByteAdapter(paddingAdder: paddingAdder,
+                                                                  frameConfiguration: frameConfiguration)
+        )
+        let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreator(
+            frameContentSizeCalculator: frameContentSizeCalculator,
+            frameFlagsCreator: frameFlagsCreator,
+            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
+                                                                 frameConfiguration: frameConfiguration)
         )
         let albumFrameCreator = ID3AlbumFrameCreator(
-                frameCreator: frameFromStringContentCreator,
+                frameCreator: frameFromStringUTF16ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
         let artistFrameCreator = ID3ArtistFrameCreator(
-                frameCreator: frameFromStringContentCreator,
+                frameCreator: frameFromStringUTF16ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
         let titleFrameCreator = ID3TitleFrameCreator(
-                frameCreator: frameFromStringContentCreator,
+                frameCreator: frameFromStringUTF16ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
         let attachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
@@ -41,15 +49,15 @@ class ID3FrameCreatorsChainFactory {
                 )
         )
         let yearFrameCreator = ID3YearFrameCreator(
-                frameCreator: frameFromStringContentCreator,
+                frameCreator: frameFromStringISO88591ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
         let genreFrameCreator = ID3GenreFrameCreator(
-                frameCreator: frameFromStringContentCreator,
+                frameCreator: frameFromStringISO88591ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
         let trackPositionFrameCreator = ID3TrackPositionFrameCreator(
-                frameCreator: frameFromStringContentCreator,
+                frameCreator: frameFromStringISO88591ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
         albumFrameCreator.nextCreator = artistFrameCreator
