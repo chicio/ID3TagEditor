@@ -7,6 +7,9 @@
 [![Supported platform](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-orange.svg)](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20Apple%20TV%20%7C%20Apple%20Watch-orange.svg)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/ID3TagEditor.svg)](https://cocoapods.org/pods/ID3TagEditor)
 
+![ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file](https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Assets/Icon-logo-background.png 
+"ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file")
+
 A swift library to read and modify ID3 Tag of any mp3 file. 
 
 ***
