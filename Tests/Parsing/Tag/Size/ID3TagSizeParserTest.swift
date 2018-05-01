@@ -11,8 +11,13 @@ import XCTest
 class ID3TagSizeParserTest: XCTestCase {
     private let id3TagSizeParser = ID3TagSizeParser()
     
-    func testParseTagSize() {
+    func testParseTagSizeV2() {
         let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example", fileType: "mp3"))!
-        XCTAssertEqual(id3TagSizeParser.parse(data: mp3), 0xA503);
+        XCTAssertEqual(id3TagSizeParser.parse(data: mp3), 34213);
+    }
+    
+    func testParseTagSizeV3() {
+        let mp3V23 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))!
+        XCTAssertEqual(id3TagSizeParser.parse(data: mp3V23), 245864);
     }
 }

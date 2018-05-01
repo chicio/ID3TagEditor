@@ -25,8 +25,38 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.title, "example song")
         XCTAssertEqual(id3Tag?.album, "example album")
+        XCTAssertEqual(id3Tag?.albumArtist, "example album artist")
         XCTAssertEqual(id3Tag?.artist, "example artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].art, cover)
+    }
+    
+    func testWriteTagV2() {
+        let art: Data = try! Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
+        )
+        let pathMp3ToCompare = PathLoader().pathFor(name: "example", fileType: "mp3")
+        let pathMp3Generated = NSHomeDirectory() + "/example-v2.mp3"
+        let id3Tag = ID3Tag(
+            version: .version2,
+            artist: "example artist",
+            albumArtist: "example album artist",
+            album: "example album",
+            title: "example song",
+            year: nil,
+            genre: nil,
+            attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
+            trackPosition: nil
+        )
+        
+        XCTAssertNoThrow(try id3TagEditor.write(
+            tag: id3Tag,
+            to: PathLoader().pathFor(name: "example", fileType: "mp3"),
+            andSaveTo: pathMp3Generated
+        ))
+        XCTAssertEqual(
+            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
+            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        )
     }
 
     func testParseTagV3() {
@@ -55,6 +85,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
+        XCTAssertEqual(id3Tag?.albumArtist, "A New Album Artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].art, coverFront)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Jpeg)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
@@ -77,6 +108,7 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
+                albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
                 year: nil,
@@ -106,6 +138,7 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
+                albumArtist: "A New Album Artist", ///2
                 album: "A New Album",
                 title: "A New title",
                 year: nil,
@@ -132,6 +165,7 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
+                albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
                 year: nil,
@@ -155,6 +189,7 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
+                albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
                 year: nil,
@@ -177,6 +212,7 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
+                albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
                 year: nil,
@@ -203,6 +239,7 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = ID3Tag(
                 version: .version3,
                 artist: "A New Artist",
+                albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
                 year: "2018",

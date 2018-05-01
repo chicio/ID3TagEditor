@@ -4,6 +4,7 @@
 //  Created by Fabrizio Duroni on 20/02/2018.
 //  2018 Fabrizio Duroni.
 //
+
 import Foundation
 
 enum FrameType: String, Equatable {
@@ -14,6 +15,7 @@ enum FrameType: String, Equatable {
     case Year = "year"
     case Genre = "genre"
     case TrackPosition = "trackPosition"
+    case AlbumArtist = "albumArtist"
     case Invalid = ""
 
     static func ==(lhs: FrameType, rhs: FrameType) -> Bool {

@@ -17,7 +17,13 @@ class ID3FrameContentParsingOperationFactory {
                     id3FrameConfiguration: id3FrameConfiguration
             ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.artist = frameContentWithoutPadding
-             },
+            },
+            .AlbumArtist: ID3FrameStringContentParsingOperation(
+                    paddingRemover: paddingRemover,
+                    id3FrameConfiguration: id3FrameConfiguration
+            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.albumArtist = frameContentWithoutPadding
+            },
             .Album: ID3FrameStringContentParsingOperation(
                     paddingRemover: paddingRemover,
                     id3FrameConfiguration: id3FrameConfiguration

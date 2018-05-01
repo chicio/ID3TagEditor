@@ -14,6 +14,8 @@ public class ID3Tag {
     public var properties: ID3TagProperties
     /// The artist of the tag.
     public var artist: String?
+    /// Additional information about the artist of the song that contains the tag.
+    public var albumArtist: String?
     /// The title of the song related to this tag.
     public var title: String?
     /// The position of the track in the original media (see `TrackPositionInSet`).
@@ -42,6 +44,7 @@ public class ID3Tag {
      */
     public init(version: ID3Version,
                 artist: String?,
+                albumArtist: String?,
                 album: String?,
                 title: String?,
                 year: String?,
@@ -50,6 +53,7 @@ public class ID3Tag {
                 trackPosition: TrackPositionInSet?) {
         self.properties = ID3TagProperties(version: version, size: 0)
         self.artist = artist
+        self.albumArtist = albumArtist
         self.album = album
         self.title = title
         self.year = year
