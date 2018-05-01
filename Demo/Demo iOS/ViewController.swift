@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var albumTextField: UITextField!
     @IBOutlet weak var artistTextField: UITextField!
+    @IBOutlet weak var albumArtistField: UITextField!
     @IBOutlet weak var genreIdentifierField: UITextField!
     @IBOutlet weak var genreDescriptionField: UITextField!
     @IBOutlet weak var yearField: UITextField!
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
             let id3Tag = ID3Tag(
                 version: .version3,
                 artist: artistTextField.text,
+                albumArtist: albumArtistField.text,
                 album: albumTextField.text,
                 title: titleTextField.text,
                 year: "2019",
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleTextField.text = id3Tag?.title
             albumTextField.text = id3Tag?.album
+            albumArtistField.text = id3Tag?.albumArtist
             artistTextField.text = id3Tag?.artist
             genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = id3Tag?.genre?.description
