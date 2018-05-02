@@ -1,6 +1,13 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [1.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/1.2.0)
+Release date: 2018-05-02.
+
+#### Added
+- `albumArtist` field to support TEP2 frame.
+
+
 ## [1.1.1](https://github.com/chicio/ID3TagEditor/releases/tag/1.1.1)
 Release date: 2018-04-29.
 
