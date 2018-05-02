@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,7 +62,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7n-QT-uR9">
-                                <rect key="frame" x="30" y="350" width="315" height="30"/>
+                                <rect key="frame" x="30" y="350" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="W5g-pD-4ak"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -122,6 +125,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13T-6t-OkL">
+                                <rect key="frame" x="166" y="324" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hxN-AM-9fi" userLabel="Album Artist Field">
+                                <rect key="frame" x="166" y="350" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="em0-da-uMu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -136,17 +154,19 @@
                             <constraint firstItem="M6R-xU-VcN" firstAttribute="leading" secondItem="iue-Lp-cTb" secondAttribute="trailing" constant="15" id="JUO-Fw-dvF"/>
                             <constraint firstItem="iue-Lp-cTb" firstAttribute="top" secondItem="i5F-tC-m6X" secondAttribute="bottom" constant="5" id="LLO-nC-l9e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yed-jb-ZrO" secondAttribute="trailing" constant="30" id="NWI-1K-uL4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o7n-QT-uR9" secondAttribute="trailing" constant="30" id="NpG-wT-cdS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jWM-mq-z68" secondAttribute="trailing" constant="30" id="S6Z-4j-aDC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M6R-xU-VcN" secondAttribute="trailing" constant="31" id="ShX-zl-Fbe"/>
                             <constraint firstItem="i5F-tC-m6X" firstAttribute="top" secondItem="u8L-DN-cuP" secondAttribute="bottom" constant="20" id="Sox-gV-Oil"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1M-6L-KFx" secondAttribute="trailing" constant="20" id="U8r-zg-TG9"/>
                             <constraint firstItem="3hC-zz-Y96" firstAttribute="top" secondItem="JB8-2k-Xmw" secondAttribute="bottom" constant="8" id="UFm-so-Y7e"/>
+                            <constraint firstItem="hxN-AM-9fi" firstAttribute="leading" secondItem="o7n-QT-uR9" secondAttribute="trailing" constant="36" id="UsS-wY-NKq"/>
                             <constraint firstItem="bjH-BI-yoS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="VTp-eX-ozk"/>
                             <constraint firstItem="v1M-6L-KFx" firstAttribute="top" secondItem="Yed-jb-ZrO" secondAttribute="bottom" constant="20" id="W1i-fq-qxe"/>
                             <constraint firstItem="i5F-tC-m6X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XVz-O3-35F"/>
+                            <constraint firstItem="hxN-AM-9fi" firstAttribute="top" secondItem="13T-6t-OkL" secondAttribute="bottom" constant="5" id="c29-XX-SkK"/>
                             <constraint firstItem="jWM-mq-z68" firstAttribute="top" secondItem="bjH-BI-yoS" secondAttribute="bottom" constant="25" id="cEE-2r-ehw"/>
                             <constraint firstItem="Nw6-ux-c27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dvJ-xh-DG6"/>
+                            <constraint firstItem="13T-6t-OkL" firstAttribute="leading" secondItem="v1M-6L-KFx" secondAttribute="trailing" constant="-189" id="fqx-TZ-GSc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3hC-zz-Y96" secondAttribute="trailing" constant="30" id="hTm-vk-w2Q"/>
                             <constraint firstItem="bjH-BI-yoS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kRK-VB-n8A"/>
                             <constraint firstItem="JB8-2k-Xmw" firstAttribute="top" secondItem="iue-Lp-cTb" secondAttribute="bottom" constant="20" id="l0e-tK-x6X"/>
@@ -156,11 +176,13 @@
                             <constraint firstItem="Yed-jb-ZrO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="r4P-Nw-zOd"/>
                             <constraint firstItem="u8L-DN-cuP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="rY1-sd-RFP"/>
                             <constraint firstItem="iue-Lp-cTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="s2X-Z1-2Vi"/>
+                            <constraint firstItem="13T-6t-OkL" firstAttribute="top" secondItem="Yed-jb-ZrO" secondAttribute="bottom" constant="19" id="uhN-qq-g3d"/>
                             <constraint firstItem="v1M-6L-KFx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="wSP-2Q-X4p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="albumArtistField" destination="hxN-AM-9fi" id="Ebe-rl-zzS"/>
                         <outlet property="albumTextField" destination="o7n-QT-uR9" id="W62-zj-pCR"/>
                         <outlet property="artistTextField" destination="u8L-DN-cuP" id="CoT-zg-Eu6"/>
                         <outlet property="attachedPictureImage" destination="bjH-BI-yoS" id="rT8-UZ-T7E"/>

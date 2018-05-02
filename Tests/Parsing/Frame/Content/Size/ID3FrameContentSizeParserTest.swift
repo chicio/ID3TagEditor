@@ -19,7 +19,7 @@ class ID3FrameContentSizeParserTest: XCTestCase {
                     framePosition: ID3TagConfiguration().headerSize(),
                     version: .version2
             ),
-            31997
+            31
         )
     }
 

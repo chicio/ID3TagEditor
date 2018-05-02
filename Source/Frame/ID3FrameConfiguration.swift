@@ -27,6 +27,7 @@ class ID3FrameConfiguration {
     private let identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
             .Artist : [0x54, 0x50, 0x31],
+            .AlbumArtist : [0x54, 0x50, 0x32],
             .Title : [0x54, 0x54, 0x32],
             .Album : [0x54, 0x41, 0x4C],
             .AttachedPicture : [0x50, 0x49, 0x43],
@@ -36,6 +37,7 @@ class ID3FrameConfiguration {
         ],
         .version3 : [
             .Artist : [0x54, 0x50, 0x45, 0x31],
+            .AlbumArtist : [0x54, 0x50, 0x45, 0x32],
             .Title : [0x54, 0x49, 0x54, 0x32],
             .Album : [0x54, 0x41, 0x4C, 0x42],
             .AttachedPicture : [0x41, 0x50, 0x49, 0x43],
@@ -47,6 +49,7 @@ class ID3FrameConfiguration {
     private let nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
             "TP1" : .Artist,
+            "TP2" : .AlbumArtist,
             "TT2" : .Title,
             "TAL" : .Album,
             "PIC" : .AttachedPicture,
@@ -56,6 +59,7 @@ class ID3FrameConfiguration {
         ],
         .version3 : [
             "TPE1" : .Artist,
+            "TPE2" : .AlbumArtist,
             "TIT2" : .Title,
             "TALB" : .Album,
             "APIC" : .AttachedPicture,
