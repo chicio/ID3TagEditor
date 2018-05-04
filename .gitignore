@@ -41,6 +41,9 @@ DerivedData/
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 
+.idea/runConfigurations/Demo_macOS.xml
+.idea/runConfigurations/ID3TagEditor_tvOS.xml
+
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
