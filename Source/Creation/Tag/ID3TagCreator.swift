@@ -7,7 +7,6 @@
 
 import Foundation;
 
-
 class ID3TagCreator {
     private let id3FrameCreatorsChain: ID3FrameCreatorsChain
     private let uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapter
