@@ -858,6 +858,7 @@
 		452832212044C7BE00458375 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
+				C506720B082DA542158D0597 /* Presence */,
 				452832222044C7BE00458375 /* ID3Tag.swift */,
 				452832252044C7BE00458375 /* ID3TagConfiguration.swift */,
 				C50674BDA370976E12A76D4D /* AttachedPicture.swift */,
@@ -866,7 +867,6 @@
 				C506764AD88D467CA74E9200 /* ID3PictureType.swift */,
 				C5067476E0A4ED0A5116CE21 /* ID3PictureFormat.swift */,
 				C50678F2DE47A9312A968E68 /* TrackPositionInSet.swift */,
-				C506720B082DA542158D0597 /* Presence */,
 				C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */,
 			);
 			path = Tag;

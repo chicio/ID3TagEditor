@@ -26,24 +26,24 @@ class ID3FrameConfiguration {
     ]
     private let identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
-            .Artist : [0x54, 0x50, 0x31],
-            .AlbumArtist : [0x54, 0x50, 0x32],
-            .Title : [0x54, 0x54, 0x32],
-            .Album : [0x54, 0x41, 0x4C],
-            .AttachedPicture : [0x50, 0x49, 0x43],
-            .Year : [0x54, 0x59, 0x45],
-            .Genre : [0x54, 0x43, 0x4F],
-            .TrackPosition : [0x54, 0x52, 0x4B]
+            .Artist : [UInt8]("TP1".utf8),
+            .AlbumArtist : [UInt8]("TP2".utf8),
+            .Title : [UInt8]("TT2".utf8),
+            .Album : [UInt8]("TAL".utf8),
+            .AttachedPicture : [UInt8]("PIC".utf8),
+            .Year : [UInt8]("TYE".utf8),
+            .Genre : [UInt8]("TCO".utf8),
+            .TrackPosition : [UInt8]("TRK".utf8)
         ],
         .version3 : [
-            .Artist : [0x54, 0x50, 0x45, 0x31],
-            .AlbumArtist : [0x54, 0x50, 0x45, 0x32],
-            .Title : [0x54, 0x49, 0x54, 0x32],
-            .Album : [0x54, 0x41, 0x4C, 0x42],
-            .AttachedPicture : [0x41, 0x50, 0x49, 0x43],
-            .Year : [0x54, 0x59, 0x45, 0x52],
-            .Genre : [0x54, 0x43, 0x4F, 0x4E],
-            .TrackPosition : [0x54, 0x52, 0x43, 0x4B]
+            .Artist : [UInt8]("TPE1".utf8),
+            .AlbumArtist : [UInt8]("TPE2".utf8),
+            .Title : [UInt8]("TIT2".utf8),
+            .Album : [UInt8]("TALB".utf8),
+            .AttachedPicture : [UInt8]("APIC".utf8),
+            .Year : [UInt8]("TYER".utf8),
+            .Genre : [UInt8]("TCON".utf8),
+            .TrackPosition : [UInt8]("TRCK".utf8)
         ]
     ]
     private let nameForIdentifier: [ID3Version : [String : FrameType]] = [

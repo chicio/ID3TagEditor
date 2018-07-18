@@ -41,6 +41,7 @@ public class ID3Tag {
      - parameter year: the year of the tag.
      - parameter genre: the genre of the tag.
      - parameter attachedPictures: an array of attached picture of the tag.
+     - parameter trackPosition: track position of the tag.
      */
     public init(version: ID3Version,
                 artist: String?,
