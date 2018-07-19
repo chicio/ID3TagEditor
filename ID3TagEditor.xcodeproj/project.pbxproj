@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
+		450967172100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
+		450967182100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
+		450967192100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
+		4509671C2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */; };
+		4509671D2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */; };
+		4509671E2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */; };
 		452831CF2044C40700458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452831C52044C40700458375 /* ID3TagEditor.framework */; };
 		452831D62044C40700458375 /* ID3TagEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 452831C82044C40700458375 /* ID3TagEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452831EE2044C4F500458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452831E52044C4F500458375 /* ID3TagEditor.framework */; };
@@ -486,6 +493,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		450967152100BDC700A9CAA6 /* Mp3FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReader.swift; sourceTree = "<group>"; };
+		4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReaderTest.swift; sourceTree = "<group>"; };
 		452831C52044C40700458375 /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		452831C82044C40700458375 /* ID3TagEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ID3TagEditor.h; sourceTree = "<group>"; };
 		452831C92044C40700458375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -683,6 +692,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4509671A2100C02A00A9CAA6 /* Mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */,
+			);
+			path = Mp3;
+			sourceTree = "<group>";
+		};
 		452831BB2044C40700458375 = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +759,7 @@
 				C5067BAC206E02C3F1E42C3C /* Utils */,
 				C5067881846ACF5208A657DF /* Acceptance */,
 				C50673BFBC49C3EB001D29F9 /* Frame */,
+				4509671A2100C02A00A9CAA6 /* Mp3 */,
 				C506746699DCFC84F2A358E5 /* Examples */,
 			);
 			path = Tests;
@@ -876,6 +894,7 @@
 			isa = PBXGroup;
 			children = (
 				452832272044C7BE00458375 /* Mp3WithID3TagBuilder.swift */,
+				450967152100BDC700A9CAA6 /* Mp3FileReader.swift */,
 			);
 			path = Mp3;
 			sourceTree = "<group>";
@@ -1680,6 +1699,7 @@
 				C50677177F0AF15A633ED620 /* FrameType.swift in Sources */,
 				C506714D30359FA4F9E7D556 /* ID3AttachedPictureFrameCreator.swift in Sources */,
 				C5067634716C32B44E076420 /* ID3StringFrameCreator.swift in Sources */,
+				450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				C50671DE6CD2C6BD107AB811 /* ID3TagProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1714,6 +1734,7 @@
 				455787F4204F104A00EE8756 /* ID3PictureTypeAdapterTest.swift in Sources */,
 				45537A6F2093332F009F639C /* ID3ISO88591StringToByteAdapterTest.swift in Sources */,
 				C5067C69D80DFCCBED793EA3 /* ID3TagPresenceTest.swift in Sources */,
+				4509671C2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */,
 				C5067C79BF68449CE8844391 /* PathLoader.swift in Sources */,
 				C5067D3173A1FE4A5F8A589B /* ID3TagEditorTestAcceptanceTest.swift in Sources */,
 				C50675EFA0C7A17E6A23758D /* MockFrameContentSizeParser.swift in Sources */,
@@ -1806,6 +1827,7 @@
 				C5067510AF08EA66216584AE /* FrameType.swift in Sources */,
 				C5067B769579DD6F6E8BB521 /* ID3AttachedPictureFrameCreator.swift in Sources */,
 				C506785000E8B1374A274A56 /* ID3StringFrameCreator.swift in Sources */,
+				450967172100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				C5067F6C02D1EDB1B142D76F /* ID3TagProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1840,6 +1862,7 @@
 				455787F5204F104A00EE8756 /* ID3PictureTypeAdapterTest.swift in Sources */,
 				45537A702093332F009F639C /* ID3ISO88591StringToByteAdapterTest.swift in Sources */,
 				C50679EED08937A1A66C8978 /* ID3TagPresenceTest.swift in Sources */,
+				4509671D2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */,
 				C50671A0BD849A8FB377BF4A /* PathLoader.swift in Sources */,
 				C5067239129F90566D38ED60 /* ID3TagEditorTestAcceptanceTest.swift in Sources */,
 				C506762688167A78895B3CD5 /* MockFrameContentSizeParser.swift in Sources */,
@@ -1932,6 +1955,7 @@
 				45541BBD20598FA60025A8BF /* ID3TagProperties.swift in Sources */,
 				45541BBE20598FA60025A8BF /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
 				45541BBF20598FA60025A8BF /* UInt32ToByteArrayAdapter.swift in Sources */,
+				450967182100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				45541BC020598FA60025A8BF /* ID3Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1966,6 +1990,7 @@
 				45541C05205995F60025A8BF /* MockPictureTypeAdapter.swift in Sources */,
 				45537A712093332F009F639C /* ID3ISO88591StringToByteAdapterTest.swift in Sources */,
 				45541C06205995F60025A8BF /* MockTrackPositionStringAdapter.swift in Sources */,
+				4509671E2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */,
 				45541C07205995F60025A8BF /* PaddingAdderUsingNullCharTest.swift in Sources */,
 				45541C08205995F60025A8BF /* PaddingRemoverUsingTrimming.swift in Sources */,
 				45541C09205995F60025A8BF /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift in Sources */,
@@ -2058,6 +2083,7 @@
 				45F83428205905EF0046C804 /* ID3TagProperties.swift in Sources */,
 				45F83429205905EF0046C804 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
 				45F8342A205905EF0046C804 /* UInt32ToByteArrayAdapter.swift in Sources */,
+				450967192100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				45F8342B205905EF0046C804 /* ID3Version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

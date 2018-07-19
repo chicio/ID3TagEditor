@@ -12,6 +12,7 @@ import Foundation;
  */
 public class ID3TagEditor {
     private let id3TagParser: ID3TagParser
+    private let mp3FileReader: Mp3FileReader
     private let mp3WithID3TagBuilder: Mp3WithID3TagBuilder
 
     /**
@@ -19,6 +20,7 @@ public class ID3TagEditor {
      */
     public init() {
         self.id3TagParser = ID3TagParserFactory.make()
+        self.mp3FileReader = Mp3FileReader()
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
     }
@@ -33,7 +35,7 @@ public class ID3TagEditor {
      - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
      */
     public func read(from path: String) throws -> ID3Tag? {
-        return self.id3TagParser.parse(mp3: try readMp3From(path: path))
+        return self.id3TagParser.parse(mp3: try mp3FileReader.readFrom(path: path))
     }
 
     /**
@@ -49,21 +51,12 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
-        let mp3 = try readMp3From(path: path)
+        let mp3 = try mp3FileReader.readFrom(path: path)
         try mp3WithID3TagBuilder.buildMp3WithNewTagAndSaveUsing(
                 mp3: mp3,
                 id3Tag: tag,
                 consideringThereIsAn: self.id3TagParser.parse(mp3: mp3),
                 andSaveTo: newPath ?? path
         )
-    }
-
-    private func readMp3From(path: String) throws -> Data {
-        let validPath = URL(fileURLWithPath: path)
-        guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
-            throw ID3TagEditorError.InvalidFileFormat;
-        }
-        let mp3 = try Data(contentsOf: validPath)
-        return mp3
     }
 }
