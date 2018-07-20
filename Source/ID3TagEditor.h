@@ -1,9 +1,8 @@
 //
 //  ID3TagEditor.h
-//  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 26.02.18.
-//  Copyright © 2018 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 26/02/2018.
+//  2018 Fabrizio Duroni.
 //
 
 @import Foundation;

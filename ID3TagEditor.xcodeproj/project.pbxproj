@@ -14,6 +14,10 @@
 		4509671C2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */; };
 		4509671D2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */; };
 		4509671E2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */; };
+		450967202100C3E600A9CAA6 /* Mp3FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */; };
+		450967212100C3E600A9CAA6 /* Mp3FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */; };
+		450967222100C3E700A9CAA6 /* Mp3FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */; };
+		450967232100C3E700A9CAA6 /* Mp3FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */; };
 		452831CF2044C40700458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452831C52044C40700458375 /* ID3TagEditor.framework */; };
 		452831D62044C40700458375 /* ID3TagEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 452831C82044C40700458375 /* ID3TagEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452831EE2044C4F500458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452831E52044C4F500458375 /* ID3TagEditor.framework */; };
@@ -495,6 +499,7 @@
 /* Begin PBXFileReference section */
 		450967152100BDC700A9CAA6 /* Mp3FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReader.swift; sourceTree = "<group>"; };
 		4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReaderTest.swift; sourceTree = "<group>"; };
+		4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileWriter.swift; sourceTree = "<group>"; };
 		452831C52044C40700458375 /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		452831C82044C40700458375 /* ID3TagEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ID3TagEditor.h; sourceTree = "<group>"; };
 		452831C92044C40700458375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -895,6 +900,7 @@
 			children = (
 				452832272044C7BE00458375 /* Mp3WithID3TagBuilder.swift */,
 				450967152100BDC700A9CAA6 /* Mp3FileReader.swift */,
+				4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */,
 			);
 			path = Mp3;
 			sourceTree = "<group>";
@@ -1689,6 +1695,7 @@
 				45FA7DC820990873000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */,
 				458BED2C20928D3A003C2E14 /* ID3StringEncoding.swift in Sources */,
 				C5067E828209D8A11ACBBFCC /* ID3PictureTypeAdapter.swift in Sources */,
+				450967202100C3E600A9CAA6 /* Mp3FileWriter.swift in Sources */,
 				C5067E1869B77D2ED3D7ED71 /* TrackPositionInSet.swift in Sources */,
 				C5067C79EDA365A4B00C5687 /* TagPresence.swift in Sources */,
 				45537A5920932CCF009F639C /* StringToBytesAdapter.swift in Sources */,
@@ -1817,6 +1824,7 @@
 				45FA7DCD209917C6000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */,
 				C5067DE4C743E8342244CB32 /* PictureTypeAdapter.swift in Sources */,
 				458BED2B20928D39003C2E14 /* ID3StringEncoding.swift in Sources */,
+				450967212100C3E600A9CAA6 /* Mp3FileWriter.swift in Sources */,
 				C5067D3671305D9286611AD8 /* ID3PictureTypeAdapter.swift in Sources */,
 				C5067E219945B4BE917748B3 /* TrackPositionInSet.swift in Sources */,
 				C5067BA34199807B389BC732 /* TagPresence.swift in Sources */,
@@ -1945,6 +1953,7 @@
 				45FA7DCE209917C8000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */,
 				45541BB520598FA60025A8BF /* AttachedPicture.swift in Sources */,
 				458BED2A20928D38003C2E14 /* ID3StringEncoding.swift in Sources */,
+				450967222100C3E700A9CAA6 /* Mp3FileWriter.swift in Sources */,
 				45541BB620598FA60025A8BF /* Genre.swift in Sources */,
 				45541BB720598FA60025A8BF /* ID3Genre.swift in Sources */,
 				45541BB820598FA60025A8BF /* ID3PictureType.swift in Sources */,
@@ -2073,6 +2082,7 @@
 				45FA7DCF209917C8000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */,
 				45F83420205905EF0046C804 /* AttachedPicture.swift in Sources */,
 				458BED2920928D37003C2E14 /* ID3StringEncoding.swift in Sources */,
+				450967232100C3E700A9CAA6 /* Mp3FileWriter.swift in Sources */,
 				45F83421205905EF0046C804 /* Genre.swift in Sources */,
 				45F83422205905EF0046C804 /* ID3Genre.swift in Sources */,
 				45F83423205905EF0046C804 /* ID3PictureType.swift in Sources */,
