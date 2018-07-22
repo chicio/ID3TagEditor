@@ -5,7 +5,7 @@ All changes to ID3TagEditor will be documented in this file.
 Release date: ----
 
 #### Added
-- 
+- Renamed `art` property as `picture` on the `ID3Tag` class 
 
 #### Fixed
 - Refactoring `ID3TagEditor` class

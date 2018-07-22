@@ -12,7 +12,7 @@ import Foundation
  */
 public struct AttachedPicture: Equatable {
     /// The image bytes as `Data`.
-    public var art: Data;
+    public var picture: Data;
     /// The ID3 type of the image (see `ID3PictureType`).
     public var type: ID3PictureType
     /// The file format. Only Jpeg and Png are supported by the standard (cross compatibility).
@@ -21,13 +21,13 @@ public struct AttachedPicture: Equatable {
     /**
      Init an attached picture.
 
-     - parameter art: the image bytes as `Data`.
+     - parameter picture: the image bytes as `Data`.
      - parameter type: the ID3 type of the attached picture. See `ID3PictureType` for a complete list of the available.
      - parameter format: the format of the image. See `ID3PictureFormat`.
      types.
      */
-    public init(art: Data, type: ID3PictureType, format: ID3PictureFormat) {
-        self.art = art
+    public init(picture: Data, type: ID3PictureType, format: ID3PictureFormat) {
+        self.picture = picture
         self.type = type
         self.format = format
     }
@@ -41,6 +41,6 @@ public struct AttachedPicture: Equatable {
      - returns: true if the attached pictures values are the same, else false.
      */
     public static func ==(lhs: AttachedPicture, rhs: AttachedPicture) -> Bool {
-        return lhs.art == rhs.art && lhs.format == rhs.format && lhs.type == rhs.type
+        return lhs.picture == rhs.picture && lhs.format == rhs.format && lhs.type == rhs.type
     }
 }

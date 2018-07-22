@@ -38,7 +38,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
                 version: id3Tag.properties.version,
                 format: attachedPicture.format
         ))
-        contentAsBytes.append(contentsOf: [UInt8](attachedPicture.art));
+        contentAsBytes.append(contentsOf: [UInt8](attachedPicture.picture));
         frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(
                 content: contentAsBytes,
                 version: id3Tag.properties.version

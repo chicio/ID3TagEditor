@@ -22,7 +22,7 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
         )
 
         XCTAssertEqual(id3Tag.attachedPictures?[0].format, .Png)
-        XCTAssertEqual(id3Tag.attachedPictures?[0].art, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.attachedPictures?[0].picture, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
         XCTAssertEqual(id3Tag.attachedPictures?[0].type, .FrontCover)
     }
 
@@ -39,7 +39,7 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
         )
 
         XCTAssertEqual(id3Tag.attachedPictures?[0].format, .Jpeg)
-        XCTAssertEqual(id3Tag.attachedPictures?[0].art, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
+        XCTAssertEqual(id3Tag.attachedPictures?[0].picture, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
         XCTAssertEqual(id3Tag.attachedPictures?[0].type, .FrontCover)
     }
 }

@@ -27,7 +27,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.album, "example album")
         XCTAssertEqual(id3Tag?.albumArtist, "example album artist")
         XCTAssertEqual(id3Tag?.artist, "example artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].art, cover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
     }
     
     func testWriteTagV2() {
@@ -44,7 +44,7 @@ class ID3TagEditorTest: XCTestCase {
             title: "example song",
             year: nil,
             genre: nil,
-            attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
+            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
             trackPosition: nil
         )
         
@@ -69,7 +69,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].art, cover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
     }
 
@@ -86,10 +86,10 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.album, "A New Album")
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
         XCTAssertEqual(id3Tag?.albumArtist, "A New Album Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].art, coverFront)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, coverFront)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Jpeg)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
-        XCTAssertEqual(id3Tag?.attachedPictures?[1].art, coverBack)
+        XCTAssertEqual(id3Tag?.attachedPictures?[1].picture, coverBack)
         XCTAssertEqual(id3Tag?.attachedPictures?[1].format, .Jpeg)
         XCTAssertEqual(id3Tag?.attachedPictures?[1].type, .BackCover)
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
@@ -113,7 +113,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -143,7 +143,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -170,7 +170,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Png)],
+                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Png)],
                 trackPosition: nil
         )
 
@@ -194,7 +194,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -217,7 +217,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 year: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(art: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -245,8 +245,8 @@ class ID3TagEditorTest: XCTestCase {
                 year: "2018",
                 genre: Genre(genre: .Metal, description: "Metalcore"),
                 attachedPictures: [
-                    AttachedPicture(art: artFront, type: .FrontCover, format: .Jpeg),
-                    AttachedPicture(art: artBack, type: .BackCover, format: .Jpeg)
+                    AttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
+                    AttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg)
                 ],
                 trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
         )
