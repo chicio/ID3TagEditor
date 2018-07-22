@@ -21,7 +21,7 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            attachedPictureImage.setImageData(id3Tag?.attachedPictures?[0].art)
+            attachedPictureImage.setImageData(id3Tag?.attachedPictures?[0].picture)
             titleLabel.setText(id3Tag?.title)
             albumLabel.setText(id3Tag?.album)
             genreLabel.setText(id3Tag?.genre?.description)

@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             trackPositionLabel.text = "Track \(id3Tag?.trackPosition?.position ?? -1) of " +
                                       "\(id3Tag?.trackPosition?.totalTracks ?? -1)"
             if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
-                attachedPictureImage.image = UIImage(data: attachedPictures[0].art)
+                attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
             }
         } catch {
             print(error)

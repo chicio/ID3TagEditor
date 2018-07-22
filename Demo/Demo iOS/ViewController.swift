@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             genreDescriptionField.text = id3Tag?.genre?.description
             yearField.text = id3Tag?.year
             if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
-                attachedPictureImage.image = UIImage(data: attachedPictures[0].art)
+                attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
             }
         } catch {
             print(error)

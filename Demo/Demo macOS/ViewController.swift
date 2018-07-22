@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         do {
             if let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3")) {
                 if let attachedPictures = id3Tag.attachedPictures, attachedPictures.count > 0 {
-                    attachedPictureImage.image = NSImage(data: attachedPictures[0].art)
+                    attachedPictureImage.image = NSImage(data: attachedPictures[0].picture)
                 }
                 informations.stringValue = "\(id3Tag.title ?? "") \n\(id3Tag.artist ?? "")"
                 print(id3Tag.title ?? "")
