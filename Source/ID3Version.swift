@@ -15,6 +15,8 @@ public enum ID3Version: UInt8, Comparable {
     case version2 = 2
     /// ID3 2.3 version.
     case version3 = 3
+    /// ID3 2.4 version.
+    case version4 = 4
 
     /**
      Compare two version values.

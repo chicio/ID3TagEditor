@@ -37,7 +37,8 @@ public class ID3TagEditor {
      - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
      */
     public func read(from path: String) throws -> ID3Tag? {
-        return self.id3TagParser.parse(mp3: try mp3FileReader.readFrom(path: path))
+        let mp3 = try mp3FileReader.readFrom(path: path)
+        return self.id3TagParser.parse(mp3: mp3)
     }
 
     /**

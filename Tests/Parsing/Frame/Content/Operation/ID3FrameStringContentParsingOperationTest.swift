@@ -9,16 +9,18 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3StringContentParsingOperationTest: XCTestCase {
-    private let value = "::value::"
-
     func testFrameContentParsedV2() {
         let expectation = XCTestExpectation(description: "content without padding")
         let id3Tag = ID3Tag(version: .version2, size: 0)
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
-                paddingRemover: MockPaddingRemover(returnValue: value),
+                stringEncodingDetector: ID3FrameStringEncodingDetector(
+                    id3FrameConfiguration: ID3FrameConfiguration(),
+                    id3StringEncodingConverter: ID3StringEncodingConverter()
+                ),
+                paddingRemover: PaddingRemoverUsingTrimming(),
                 id3FrameConfiguration: ID3FrameConfiguration()
-        ) { [unowned self](id3Tag: ID3Tag, frameContentWithoutPadding: String) in
-            XCTAssertEqual(frameContentWithoutPadding, self.value)
+        ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, ":: value ::")
             expectation.fulfill()
          }
 
@@ -29,10 +31,14 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let expectation = XCTestExpectation(description: "content without padding")
         let id3Tag = ID3Tag(version: .version3, size: 0)
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
-                paddingRemover: MockPaddingRemover(returnValue: value),
+                stringEncodingDetector: ID3FrameStringEncodingDetector(
+                    id3FrameConfiguration: ID3FrameConfiguration(),
+                    id3StringEncodingConverter: ID3StringEncodingConverter()
+                ),
+                paddingRemover: PaddingRemoverUsingTrimming(),
                 id3FrameConfiguration: ID3FrameConfiguration()
-        ) { [unowned self](id3Tag: ID3Tag, frameContentWithoutPadding: String) in
-            XCTAssertEqual(frameContentWithoutPadding, self.value)
+        ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, ":: value ::")
             expectation.fulfill()
         }
 
@@ -43,10 +49,14 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let expectation = XCTestExpectation(description: "content without padding")
         let id3Tag = ID3Tag(version: .version2, size: 0)
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
-            paddingRemover: MockPaddingRemover(returnValue: value),
+            stringEncodingDetector: ID3FrameStringEncodingDetector(
+                id3FrameConfiguration: ID3FrameConfiguration(),
+                id3StringEncodingConverter: ID3StringEncodingConverter()
+            ),
+            paddingRemover: PaddingRemoverUsingTrimming(),
             id3FrameConfiguration: ID3FrameConfiguration()
-        ) { [unowned self](id3Tag: ID3Tag, frameContentWithoutPadding: String) in
-            XCTAssertEqual(frameContentWithoutPadding, self.value)
+        ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, ":: π value ::")
             expectation.fulfill()
         }
         
@@ -57,29 +67,69 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let expectation = XCTestExpectation(description: "content without padding")
         let id3Tag = ID3Tag(version: .version3, size: 0)
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
-            paddingRemover: MockPaddingRemover(returnValue: value),
+            stringEncodingDetector: ID3FrameStringEncodingDetector(
+                id3FrameConfiguration: ID3FrameConfiguration(),
+                id3StringEncodingConverter: ID3StringEncodingConverter()
+            ),
+            paddingRemover: PaddingRemoverUsingTrimming(),
             id3FrameConfiguration: ID3FrameConfiguration()
-        ) { [unowned self](id3Tag: ID3Tag, frameContentWithoutPadding: String) in
-            XCTAssertEqual(frameContentWithoutPadding, self.value)
+        ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, ":: π value ::")
+            expectation.fulfill()
+        }
+
+        id3StringContentParsingOperation.parse(frame: frameV3utf16(), id3Tag: id3Tag)
+    }
+    
+    func testFrameContentParsedV4utf8() {
+        let expectation = XCTestExpectation(description: "content without padding")
+        let id3Tag = ID3Tag(version: .version4, size: 0)
+        let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
+            stringEncodingDetector: ID3FrameStringEncodingDetector(
+                id3FrameConfiguration: ID3FrameConfiguration(),
+                id3StringEncodingConverter: ID3StringEncodingConverter()
+            ),
+            paddingRemover: PaddingRemoverUsingTrimming(),
+            id3FrameConfiguration: ID3FrameConfiguration()
+        ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            XCTAssertEqual(frameContentWithoutPadding, ":: π value ::")
             expectation.fulfill()
         }
         
-        id3StringContentParsingOperation.parse(frame: frameV3utf16(), id3Tag: id3Tag)
+        id3StringContentParsingOperation.parse(frame: frameV4utf8(), id3Tag: id3Tag)
     }
 
     private func frameV2() -> Data {
-        return Data(bytes: [0x41, 0x4C, 0x42, 0x00, 0x00, 0x00] + [0x00, 0x11, 0x11])
-    }
-
-    private func frameV3() -> Data {
-        return Data(bytes: [0x54, 0x41, 0x4C, 0x42, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] + [0x01, 0x11, 0x11])
+        return Data(bytes:
+            [UInt8]("TAL".utf8) + [0x00, 0x00, 0x00] +
+                [0x00] + [UInt8](":: value ::".utf8)
+        )
     }
     
     private func frameV2utf16() -> Data {
-        return Data(bytes: [0x41, 0x4C, 0x42, 0x00, 0x00, 0x00] + [0x01, 0xFF, 0xFE, 0x11, 0x11])
+        return Data(bytes:
+            [UInt8]("TAL".utf8) + [0x00, 0x00, 0x00] +
+                [0x01, 0xFF, 0xFE] + ":: π value ::".utf16ToBytes
+        )
+    }
+
+    private func frameV3() -> Data {
+        return Data(bytes: [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
+            [0x00] + [UInt8](":: value ::".utf8)
+        )
     }
     
     private func frameV3utf16() -> Data {
-        return Data(bytes: [0x54, 0x41, 0x4C, 0x42, 0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] + [0x01, 0xFF, 0xFE, 0x11, 0x11])
+        return Data(bytes:
+            [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
+                [0x01, 0xFF, 0xFE] + ":: π value ::".utf16ToBytes
+        )
+    }
+    
+    private func frameV4utf8() -> Data {
+        return Data(bytes:
+            [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
+                [0x03] + [UInt8](":: π value ::".utf8)
+        )
     }
 }

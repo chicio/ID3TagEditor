@@ -8,8 +8,6 @@
 import XCTest
 @testable import ID3TagEditor
 
-typealias Byte = UInt8;
-
 class PaddingRemoverUsingTrimmingTest: XCTestCase {
     func testRemovePadding() {
         XCTAssertEqual(
