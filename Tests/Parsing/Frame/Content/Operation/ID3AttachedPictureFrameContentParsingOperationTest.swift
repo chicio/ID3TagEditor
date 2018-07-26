@@ -8,10 +8,10 @@
 import XCTest
 @testable import ID3TagEditor
 
-class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
+class ID3AttachedPictureFrameContentParsingOperationTest: XCTestCase {
     func testSetTagAttachedPicturePng() {
         let id3Tag = ID3Tag(version: .version3, size: 10)
-        let attachedPictureFrameContentParsingOperation = AttachedPictureFrameContentParsingOperation(
+        let attachedPictureFrameContentParsingOperation = ID3AttachedPictureFrameContentParsingOperation(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )
@@ -28,7 +28,7 @@ class AttachedPictureFrameContentParsingOperationTest: XCTestCase {
 
     func testSetTagAttachedPictureJpg() {
         let id3Tag = ID3Tag(version: .version3, size: 10)
-        let attachedPictureFrameContentParsingOperation = AttachedPictureFrameContentParsingOperation(
+        let attachedPictureFrameContentParsingOperation = ID3AttachedPictureFrameContentParsingOperation(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )

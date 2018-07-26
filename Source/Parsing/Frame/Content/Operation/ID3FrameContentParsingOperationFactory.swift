@@ -44,7 +44,7 @@ class ID3FrameContentParsingOperationFactory {
             ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.title = frameContentWithoutPadding
             },
-            .AttachedPicture: AttachedPictureFrameContentParsingOperation(
+            .AttachedPicture: ID3AttachedPictureFrameContentParsingOperation(
                     id3FrameConfiguration: id3FrameConfiguration,
                     pictureTypeAdapter: ID3PictureTypeAdapter(
                             id3FrameConfiguration: ID3FrameConfiguration(),
