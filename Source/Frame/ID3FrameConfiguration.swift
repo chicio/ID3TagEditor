@@ -55,7 +55,7 @@ class ID3FrameConfiguration {
             .Title : [UInt8]("TIT2".utf8),
             .Album : [UInt8]("TALB".utf8),
             .AttachedPicture : [UInt8]("APIC".utf8),
-            .RecordingYear : [UInt8]("TDRC".utf8),
+            .RecodingDateTime : [UInt8]("TDRC".utf8),
             .Genre : [UInt8]("TCON".utf8),
             .TrackPosition : [UInt8]("TRCK".utf8)
         ],
@@ -87,7 +87,7 @@ class ID3FrameConfiguration {
             "TIT2" : .Title,
             "TALB" : .Album,
             "APIC" : .AttachedPicture,
-            "TDRC" : .RecodingTimestamp,
+            "TDRC" : .RecodingDateTime,
             "TCON" : .Genre,
             "TRCK" : .TrackPosition
         ]
