@@ -21,14 +21,23 @@ class ID3FrameConfiguration {
     private let sizeMask: [ID3Version : UInt32] = [
         .version2 : 0x00FFFFFF,
         .version3 : 0xFFFFFFFF,
-        .version4 : 0xFFFFFFFF,
+        .version4 : 0xFFFFFFFF
     ]
     private let identifierSizeInBytes: [ID3Version : Int] = [
         .version2 : 3,
         .version3 : 4,
         .version4 : 4
     ]
-    private let identifiers: [ID3Version : [FrameType : [UInt8]]] = [
+    private let commonFourLetterIdentifiers: [FrameType : [UInt8]] = [
+        .Artist : [UInt8]("TPE1".utf8),
+        .AlbumArtist : [UInt8]("TPE2".utf8),
+        .Title : [UInt8]("TIT2".utf8),
+        .Album : [UInt8]("TALB".utf8),
+        .AttachedPicture : [UInt8]("APIC".utf8),
+        .Genre : [UInt8]("TCON".utf8),
+        .TrackPosition : [UInt8]("TRCK".utf8)
+    ]
+    private var identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
             .Artist : [UInt8]("TP1".utf8),
             .AlbumArtist : [UInt8]("TP2".utf8),
@@ -40,27 +49,22 @@ class ID3FrameConfiguration {
             .TrackPosition : [UInt8]("TRK".utf8)
         ],
         .version3 : [
-            .Artist : [UInt8]("TPE1".utf8),
-            .AlbumArtist : [UInt8]("TPE2".utf8),
-            .Title : [UInt8]("TIT2".utf8),
-            .Album : [UInt8]("TALB".utf8),
-            .AttachedPicture : [UInt8]("APIC".utf8),
-            .RecordingYear : [UInt8]("TYER".utf8),
-            .Genre : [UInt8]("TCON".utf8),
-            .TrackPosition : [UInt8]("TRCK".utf8)
+            .RecordingYear : [UInt8]("TYER".utf8)
         ],
         .version4 : [
-            .Artist : [UInt8]("TPE1".utf8),
-            .AlbumArtist : [UInt8]("TPE2".utf8),
-            .Title : [UInt8]("TIT2".utf8),
-            .Album : [UInt8]("TALB".utf8),
-            .AttachedPicture : [UInt8]("APIC".utf8),
             .RecodingDateTime : [UInt8]("TDRC".utf8),
-            .Genre : [UInt8]("TCON".utf8),
-            .TrackPosition : [UInt8]("TRCK".utf8)
-        ],
+        ]
     ]
-    private let nameForIdentifier: [ID3Version : [String : FrameType]] = [
+    private let commonNamesForIdentifiers: [String : FrameType] = [
+        "TPE1" : .Artist,
+        "TPE2" : .AlbumArtist,
+        "TIT2" : .Title,
+        "TALB" : .Album,
+        "APIC" : .AttachedPicture,
+        "TCON" : .Genre,
+        "TRCK" : .TrackPosition
+    ]
+    private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
             "TP1" : .Artist,
             "TP2" : .AlbumArtist,
@@ -72,24 +76,10 @@ class ID3FrameConfiguration {
             "TRK" : .TrackPosition
         ],
         .version3 : [
-            "TPE1" : .Artist,
-            "TPE2" : .AlbumArtist,
-            "TIT2" : .Title,
-            "TALB" : .Album,
-            "APIC" : .AttachedPicture,
-            "TYER" : .RecordingYear,
-            "TCON" : .Genre,
-            "TRCK" : .TrackPosition
+            "TYER" : .RecordingYear
         ],
         .version4 : [
-            "TPE1" : .Artist,
-            "TPE2" : .AlbumArtist,
-            "TIT2" : .Title,
-            "TALB" : .Album,
-            "APIC" : .AttachedPicture,
-            "TDRC" : .RecodingDateTime,
-            "TCON" : .Genre,
-            "TRCK" : .TrackPosition
+            "TDRC" : .RecodingDateTime
         ]
     ]
     private let encodingPositionInBytes: [ID3Version : Int] = [
@@ -101,11 +91,11 @@ class ID3FrameConfiguration {
     private let encodingByte: [ID3Version : [ID3StringEncoding : [UInt8]]] = [
         .version2 : [
             .ISO88591 : [0x00],
-            .UTF16 : [0x01],
+            .UTF16 : [0x01]
         ],
         .version3 : [
             .ISO88591 : [0x00],
-            .UTF16 : [0x01],
+            .UTF16 : [0x01]
         ],
         .version4 : [
             .ISO88591 : [0x00],
@@ -113,6 +103,13 @@ class ID3FrameConfiguration {
             .UTF8 : [0x03]
         ]
     ]
+    
+    init() {
+        self.identifiers[.version3] = self.identifiers[.version3]?.merging(commonFourLetterIdentifiers) { $1 }
+        self.identifiers[.version4] = self.identifiers[.version4]?.merging(commonFourLetterIdentifiers) { $1 }
+        self.nameForIdentifier[.version3] = self.nameForIdentifier[.version3]?.merging(commonNamesForIdentifiers) { $1 }
+        self.nameForIdentifier[.version4] = self.nameForIdentifier[.version4]?.merging(commonNamesForIdentifiers) { $1 }
+    }
 
     func headerSizeFor(version: ID3Version) -> Int {
         return headerSizesInBytes[version]!

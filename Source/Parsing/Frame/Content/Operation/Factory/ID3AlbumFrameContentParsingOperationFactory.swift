@@ -5,7 +5,6 @@
 //  2018 Fabrizio Duroni.
 //
 
-
 import Foundation
 
 class ID3AlbumFrameContentParsingOperationFactory {
