@@ -156,6 +156,9 @@
 		4528AF41210B880500CB7A2E /* RecordingDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775EFE210A5A9900B1B3FE /* RecordingDateTime.swift */; };
 		4528AF42210B880600CB7A2E /* RecordingDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775EFE210A5A9900B1B3FE /* RecordingDateTime.swift */; };
 		4528AF44210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */; };
+		4528AF45210BAE0300CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */; };
+		4528AF46210BAE0400CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */; };
+		4528AF47210BAE0400CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */; };
 		45537A5920932CCF009F639C /* StringToBytesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5820932CCF009F639C /* StringToBytesAdapter.swift */; };
 		45537A5B20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */; };
 		45537A5C20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */; };
@@ -1939,6 +1942,7 @@
 				4528329F2044C7BE00458375 /* ID3FrameContentSizeCalculator.swift in Sources */,
 				452832A32044C7BE00458375 /* ID3TagCreator.swift in Sources */,
 				452832672044C7BE00458375 /* ID3TagVersionParser.swift in Sources */,
+				4528AF45210BAE0300CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				4528AF3D210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift in Sources */,
 				4528329B2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift in Sources */,
 				4528325D2044C7BE00458375 /* ID3FrameContentSizeParser.swift in Sources */,
@@ -2085,6 +2089,7 @@
 				45541B9420598FA60025A8BF /* ID3TagCreator.swift in Sources */,
 				45541B9520598FA60025A8BF /* ID3FrameConfiguration.swift in Sources */,
 				45541B9620598FA60025A8BF /* ID3AttachedPictureFrameConfiguration.swift in Sources */,
+				4528AF46210BAE0400CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				4528AF3E210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift in Sources */,
 				45541B9720598FA60025A8BF /* FrameType.swift in Sources */,
 				45541B9820598FA60025A8BF /* Mp3WithID3TagBuilder.swift in Sources */,
@@ -2231,6 +2236,7 @@
 				45F833FF205905EF0046C804 /* ID3TagCreator.swift in Sources */,
 				45F83400205905EF0046C804 /* ID3FrameConfiguration.swift in Sources */,
 				45F83401205905EF0046C804 /* ID3AttachedPictureFrameConfiguration.swift in Sources */,
+				4528AF47210BAE0400CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				4528AF3F210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift in Sources */,
 				45F83402205905EF0046C804 /* FrameType.swift in Sources */,
 				45F83403205905EF0046C804 /* Mp3WithID3TagBuilder.swift in Sources */,

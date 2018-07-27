@@ -10,7 +10,6 @@ import XCTest
 
 class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
     func testframeContentValidTimestamp() {
-        let id3FrameConfiguration = ID3FrameConfiguration()
         let recordingTimeParsingOperation = ID3RecordingTimeFrameContentParsingOperation(
             stringContentParser: ID3FrameStringContentParserFactory.make()
         )
@@ -27,7 +26,6 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
     }
     
     func testframeContentWithYearInsteadOfTimestamp() {
-        let id3FrameConfiguration = ID3FrameConfiguration()
         let recordingTimeParsingOperation = ID3RecordingTimeFrameContentParsingOperation(
             stringContentParser: ID3FrameStringContentParserFactory.make()
         )
