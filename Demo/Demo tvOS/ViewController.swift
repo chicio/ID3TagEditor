@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleLabel.text = id3Tag?.title
             artistLabel.text = id3Tag?.artist
-            yearLabel.text = id3Tag?.year
+            yearLabel.text = id3Tag?.recordingDateTime?.date?.year
             genreLabel.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0) \(id3Tag?.genre?.description ?? "")"
             trackPositionLabel.text = "Track \(id3Tag?.trackPosition?.position ?? -1) of " +
                                       "\(id3Tag?.trackPosition?.totalTracks ?? -1)"

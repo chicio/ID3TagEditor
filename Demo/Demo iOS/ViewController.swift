@@ -32,7 +32,8 @@ class ViewController: UIViewController {
                 albumArtist: albumArtistField.text,
                 album: albumTextField.text,
                 title: titleTextField.text,
-                year: "2019",
+                recordingDateTime: RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: "2019"),
+                                                     time: nil),
                 genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
                 attachedPictures: nil,
                 trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
             artistTextField.text = id3Tag?.artist
             genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = id3Tag?.genre?.description
-            yearField.text = id3Tag?.year
+            yearField.text = id3Tag?.recordingDateTime?.date?.year
             if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
                 attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
             }

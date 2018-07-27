@@ -25,7 +25,7 @@ class ViewController: NSViewController {
                 print(id3Tag.title ?? "")
                 print(id3Tag.artist ?? "")
                 print(id3Tag.album ?? "")
-                print(id3Tag.year ?? "")
+                print(id3Tag.recordingDateTime?.date?.year ?? "")
                 print(id3Tag.genre?.identifier ?? "")
                 print(id3Tag.genre?.description ?? "")
                 print(id3Tag.attachedPictures?[0].type ?? 0x00)

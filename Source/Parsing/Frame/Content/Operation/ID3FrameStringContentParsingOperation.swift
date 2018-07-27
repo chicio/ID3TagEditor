@@ -7,12 +7,14 @@
 
 import Foundation
 
+typealias AssignToTagOperation = (ID3Tag, String) -> ()
+
 class ID3FrameStringContentParsingOperation: FrameContentParsingOperation {
     private var stringContentParser: ID3FrameStringContentParser
-    private var assignToTagOperation: (ID3Tag, String) -> ()
+    private var assignToTagOperation: AssignToTagOperation
 
     init(stringContentParser: ID3FrameStringContentParser,
-         assignToTagOperation: @escaping (ID3Tag, String) -> ()) {
+         assignToTagOperation: @escaping AssignToTagOperation) {
         self.stringContentParser = stringContentParser
         self.assignToTagOperation = assignToTagOperation
     }
