@@ -9,17 +9,7 @@ import Foundation
 
 class ID3FrameStringContentParsingOperationFactory {
     static func make(operation: @escaping AssignToTagOperation) -> ID3FrameStringContentParsingOperation {
-        let id3FrameConfiguration = ID3FrameConfiguration()
-        let paddingRemover = PaddingRemoverUsingTrimming()
-        let stringEncodingDetector = ID3FrameStringEncodingDetector(
-            id3FrameConfiguration: id3FrameConfiguration,
-            id3StringEncodingConverter: ID3StringEncodingConverter()
-        )
-        let stringContentParser = ID3FrameStringContentParser(
-            stringEncodingDetector: stringEncodingDetector,
-            paddingRemover: paddingRemover,
-            id3FrameConfiguration: id3FrameConfiguration
-        )
+        let stringContentParser = ID3FrameStringContentParserFactory.make()
         return ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser,
                                                      assignToTagOperation: operation)
     }

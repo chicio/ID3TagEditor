@@ -9,15 +9,7 @@ import Foundation
 
 class ID3RecordingTimeFrameContentParsingOperationFactory {
     static func make() -> ID3RecordingTimeFrameContentParsingOperation {
-        let id3FrameConfiguration = ID3FrameConfiguration()
-        let paddingRemover = PaddingRemoverUsingTrimming()
-        let stringEncodingDetector = ID3FrameStringEncodingDetector(
-            id3FrameConfiguration: id3FrameConfiguration,
-            id3StringEncodingConverter: ID3StringEncodingConverter()
-        )
-        return ID3RecordingTimeFrameContentParsingOperation(stringEncodingDetector: stringEncodingDetector,
-                                                            paddingRemover: paddingRemover,
-                                                            id3FrameConfiguration: id3FrameConfiguration
-        )
+        let stringContentParser = ID3FrameStringContentParserFactory.make()
+        return ID3RecordingTimeFrameContentParsingOperation(stringContentParser: stringContentParser)
     }
 }

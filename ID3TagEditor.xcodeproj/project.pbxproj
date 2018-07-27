@@ -155,6 +155,7 @@
 		4528AF40210B880500CB7A2E /* RecordingDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775EFE210A5A9900B1B3FE /* RecordingDateTime.swift */; };
 		4528AF41210B880500CB7A2E /* RecordingDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775EFE210A5A9900B1B3FE /* RecordingDateTime.swift */; };
 		4528AF42210B880600CB7A2E /* RecordingDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775EFE210A5A9900B1B3FE /* RecordingDateTime.swift */; };
+		4528AF44210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */; };
 		45537A5920932CCF009F639C /* StringToBytesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5820932CCF009F639C /* StringToBytesAdapter.swift */; };
 		45537A5B20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */; };
 		45537A5C20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */; };
@@ -626,6 +627,7 @@
 		4528AF31210B864600CB7A2E /* ID3AlbumFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3AlbumFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		4528AF36210B869C00CB7A2E /* ID3TitleFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TitleFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		4528AF3B210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingYearFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
+		4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameStringContentParserFactory.swift; sourceTree = "<group>"; };
 		45537A5820932CCF009F639C /* StringToBytesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToBytesAdapter.swift; sourceTree = "<group>"; };
 		45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3UTF16StringToByteAdapter.swift; sourceTree = "<group>"; };
 		45537A5F20932D81009F639C /* ID3ISO88591StringToByteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ISO88591StringToByteAdapter.swift; sourceTree = "<group>"; };
@@ -1088,6 +1090,7 @@
 			isa = PBXGroup;
 			children = (
 				4528AF03210B54E300CB7A2E /* ID3FrameStringContentParser.swift */,
+				4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */,
 			);
 			path = StringParser;
 			sourceTree = "<group>";
@@ -1789,6 +1792,7 @@
 				452832662044C7BE00458375 /* ID3TagVersionParser.swift in Sources */,
 				4528329A2044C7BE00458375 /* ID3FrameCreatorsChainFactory.swift in Sources */,
 				4528325C2044C7BE00458375 /* ID3FrameContentSizeParser.swift in Sources */,
+				4528AF44210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				452832A02044C7BE00458375 /* ID3TagCreatorFactory.swift in Sources */,
 				452832742044C7BE00458375 /* ID3Tag.swift in Sources */,
 				452832602044C7BE00458375 /* FrameSizeParser.swift in Sources */,

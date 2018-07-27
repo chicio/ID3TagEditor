@@ -12,12 +12,7 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
     func testframeContentValidTimestamp() {
         let id3FrameConfiguration = ID3FrameConfiguration()
         let recordingTimeParsingOperation = ID3RecordingTimeFrameContentParsingOperation(
-            stringEncodingDetector: ID3FrameStringEncodingDetector(
-                id3FrameConfiguration: id3FrameConfiguration,
-                id3StringEncodingConverter: ID3StringEncodingConverter()
-            ),
-            paddingRemover: PaddingRemoverUsingTrimming(),
-            id3FrameConfiguration: id3FrameConfiguration
+            stringContentParser: ID3FrameStringContentParserFactory.make()
         )
         let id3Tag = ID3Tag(version: .version4, size: 0)
 
@@ -34,12 +29,7 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
     func testframeContentWithYearInsteadOfTimestamp() {
         let id3FrameConfiguration = ID3FrameConfiguration()
         let recordingTimeParsingOperation = ID3RecordingTimeFrameContentParsingOperation(
-            stringEncodingDetector: ID3FrameStringEncodingDetector(
-                id3FrameConfiguration: id3FrameConfiguration,
-                id3StringEncodingConverter: ID3StringEncodingConverter()
-            ),
-            paddingRemover: PaddingRemoverUsingTrimming(),
-            id3FrameConfiguration: id3FrameConfiguration
+            stringContentParser: ID3FrameStringContentParserFactory.make()
         )
         let id3Tag = ID3Tag(version: .version4, size: 0)
         
