@@ -633,7 +633,7 @@
 		45537A6E2093332F009F639C /* ID3ISO88591StringToByteAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ISO88591StringToByteAdapterTest.swift; sourceTree = "<group>"; };
 		45541B7720598F6C0025A8BF /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45541BE52059954C0025A8BF /* ID3TagEditor tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ID3TagEditor tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		45541C25205999A20025A8BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		45541C25205999A20025A8BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		45775ED821070B3000B1B3FE /* String+UTF16Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UTF16Bytes.swift"; sourceTree = "<group>"; };
 		45775EDC210714EB00B1B3FE /* UInt16+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+Bytes.swift"; sourceTree = "<group>"; };
 		45775EE12107C24C00B1B3FE /* ID3FrameStringEncodingDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameStringEncodingDetector.swift; sourceTree = "<group>"; };

@@ -6,9 +6,13 @@ Release date: ----
 
 #### Added
 - Renamed `art` property as `picture` on the `ID3Tag` class 
+- Added v2.4 tag support
+    - 2.4 tag and frame configuration (without reverse header support for tag)
+    - added "TDRC" instead of deprecated "TYER"(2.3)/"TYE"(2.2). Field with timestamp that has a fallback to string content.
 
 #### Fixed
 - Refactoring `ID3TagEditor` class
+- Refactoring `ID3FrameContentParsingOperationFactory` class
 
 
 ## [1.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/1.2.0)
