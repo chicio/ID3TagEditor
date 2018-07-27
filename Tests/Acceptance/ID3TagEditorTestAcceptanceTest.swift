@@ -42,7 +42,7 @@ class ID3TagEditorTest: XCTestCase {
             albumArtist: "example album artist",
             album: "example album",
             title: "example song",
-            year: nil,
+            recordingDateTime: nil,
             genre: nil,
             attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
             trackPosition: nil
@@ -94,7 +94,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.attachedPictures?[1].type, .BackCover)
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
-        XCTAssertEqual(id3Tag?.year, "2018")
+        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, "2018")
         XCTAssertEqual(id3Tag?.trackPosition?.position, 2)
         XCTAssertEqual(id3Tag?.trackPosition?.totalTracks, 9)
     }
@@ -111,7 +111,7 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
-                year: nil,
+                recordingDateTime: nil,
                 genre: nil,
                 attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
@@ -141,7 +141,7 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist", ///2
                 album: "A New Album",
                 title: "A New title",
-                year: nil,
+                recordingDateTime: nil,
                 genre: nil,
                 attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
@@ -168,7 +168,7 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
-                year: nil,
+                recordingDateTime: nil,
                 genre: nil,
                 attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Png)],
                 trackPosition: nil
@@ -192,7 +192,7 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
-                year: nil,
+                recordingDateTime: nil,
                 genre: nil,
                 attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
@@ -215,7 +215,7 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
-                year: nil,
+                recordingDateTime: nil,
                 genre: nil,
                 attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
@@ -242,7 +242,7 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
-                year: "2018",
+                recordingDateTime: RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: "2018"), time: nil),
                 genre: Genre(genre: .Metal, description: "Metalcore"),
                 attachedPictures: [
                     AttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
@@ -271,7 +271,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.title, "Om Tryumbacom")
         XCTAssertEqual(id3Tag?.artist, "Laraaji")
         XCTAssertEqual(id3Tag?.album, "Vision Songs Vol. 1")
-        XCTAssertEqual(id3Tag?.year, "2018")
+        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, "2018")
         XCTAssertEqual(id3Tag?.trackPosition?.position, 10)
     }
 }

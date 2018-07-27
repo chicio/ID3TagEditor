@@ -35,7 +35,7 @@ class ID3FrameConfiguration {
             .Title : [UInt8]("TT2".utf8),
             .Album : [UInt8]("TAL".utf8),
             .AttachedPicture : [UInt8]("PIC".utf8),
-            .Year : [UInt8]("TYE".utf8),
+            .RecordingYear : [UInt8]("TYE".utf8),
             .Genre : [UInt8]("TCO".utf8),
             .TrackPosition : [UInt8]("TRK".utf8)
         ],
@@ -45,7 +45,7 @@ class ID3FrameConfiguration {
             .Title : [UInt8]("TIT2".utf8),
             .Album : [UInt8]("TALB".utf8),
             .AttachedPicture : [UInt8]("APIC".utf8),
-            .Year : [UInt8]("TYER".utf8),
+            .RecordingYear : [UInt8]("TYER".utf8),
             .Genre : [UInt8]("TCON".utf8),
             .TrackPosition : [UInt8]("TRCK".utf8)
         ],
@@ -55,7 +55,7 @@ class ID3FrameConfiguration {
             .Title : [UInt8]("TIT2".utf8),
             .Album : [UInt8]("TALB".utf8),
             .AttachedPicture : [UInt8]("APIC".utf8),
-            .Year : [UInt8]("TDRC".utf8),
+            .RecordingYear : [UInt8]("TDRC".utf8),
             .Genre : [UInt8]("TCON".utf8),
             .TrackPosition : [UInt8]("TRCK".utf8)
         ],
@@ -67,7 +67,7 @@ class ID3FrameConfiguration {
             "TT2" : .Title,
             "TAL" : .Album,
             "PIC" : .AttachedPicture,
-            "TYE" : .Year,
+            "TYE" : .RecordingYear,
             "TCO" : .Genre,
             "TRK" : .TrackPosition
         ],
@@ -77,7 +77,7 @@ class ID3FrameConfiguration {
             "TIT2" : .Title,
             "TALB" : .Album,
             "APIC" : .AttachedPicture,
-            "TYER" : .Year,
+            "TYER" : .RecordingYear,
             "TCON" : .Genre,
             "TRCK" : .TrackPosition
         ],
@@ -87,7 +87,7 @@ class ID3FrameConfiguration {
             "TIT2" : .Title,
             "TALB" : .Album,
             "APIC" : .AttachedPicture,
-            "TDRC" : .Year,
+            "TDRC" : .RecodingTimestamp,
             "TCON" : .Genre,
             "TRCK" : .TrackPosition
         ]

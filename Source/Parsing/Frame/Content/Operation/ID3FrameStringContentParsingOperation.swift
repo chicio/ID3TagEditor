@@ -8,29 +8,18 @@
 import Foundation
 
 class ID3FrameStringContentParsingOperation: FrameContentParsingOperation {
-    private let stringEncodingDetector: ID3FrameStringEncodingDetector
-    private let paddingRemover: PaddingRemover
-    private let id3FrameConfiguration: ID3FrameConfiguration
+    private var stringContentParser: ID3FrameStringContentParser
     private var assignToTagOperation: (ID3Tag, String) -> ()
 
-    init(stringEncodingDetector: ID3FrameStringEncodingDetector,
-         paddingRemover: PaddingRemover,
-         id3FrameConfiguration: ID3FrameConfiguration,
+    init(stringContentParser: ID3FrameStringContentParser,
          assignToTagOperation: @escaping (ID3Tag, String) -> ()) {
-        self.stringEncodingDetector = stringEncodingDetector
-        self.paddingRemover = paddingRemover
-        self.id3FrameConfiguration = id3FrameConfiguration
+        self.stringContentParser = stringContentParser
         self.assignToTagOperation = assignToTagOperation
     }
 
     func parse(frame: Data, id3Tag: ID3Tag) {
-        let headerSize = id3FrameConfiguration.headerSizeFor(version: id3Tag.properties.version)
-        let frameContentRangeStart = headerSize + id3FrameConfiguration.encodingSize()
-        let frameContentRange = Range(frameContentRangeStart..<frame.count)
-        let frameContent = frame.subdata(in: frameContentRange)
-        let encoding = stringEncodingDetector.detect(frame: frame, version: id3Tag.properties.version)
-        if let frameContent = String(data: frameContent, encoding: encoding) {
-            assignToTagOperation(id3Tag, paddingRemover.removeFrom(string: frameContent))
+        if let frameContent = stringContentParser.parse(frame: frame, version: id3Tag.properties.version) {
+            assignToTagOperation(id3Tag, frameContent)
         }
     }
 }

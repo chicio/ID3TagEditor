@@ -15,33 +15,26 @@ class ID3FrameContentParsingOperationFactory {
             id3FrameConfiguration: id3FrameConfiguration,
             id3StringEncodingConverter: ID3StringEncodingConverter()
         )
+        let stringContentParser = ID3FrameStringContentParser(
+            stringEncodingDetector: stringEncodingDetector,
+            paddingRemover: paddingRemover,
+            id3FrameConfiguration: id3FrameConfiguration
+        )
         return [
-            .Artist: ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover, 
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            .Artist: ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.artist = frameContentWithoutPadding
             },
-            .AlbumArtist: ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover,
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            .AlbumArtist: ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.albumArtist = frameContentWithoutPadding
             },
-            .Album: ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover,
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            .Album: ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.album = frameContentWithoutPadding
             },
-            .Title: ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover,
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            .Title: ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.title = frameContentWithoutPadding
             },
             .AttachedPicture: ID3AttachedPictureFrameContentParsingOperation(
@@ -51,25 +44,21 @@ class ID3FrameContentParsingOperationFactory {
                             id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
                     )
             ),
-            .Year: ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover,
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
-                id3Tag.year = frameContentWithoutPadding
+            .RecordingYear: ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+                id3Tag.recordingDateTime?.date?.year = frameContentWithoutPadding
             },
-            .Genre: ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover,
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            .RecodingTimestamp: ID3RecordingTimeFrameContentParsingOperation(
+                stringEncodingDetector: stringEncodingDetector,
+                paddingRemover: paddingRemover,
+                id3FrameConfiguration: id3FrameConfiguration
+            ),
+            .Genre: ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.genre = ID3GenreStringAdapter().adapt(genre: frameContentWithoutPadding)
             },
-            .TrackPosition : ID3FrameStringContentParsingOperation(
-                    stringEncodingDetector: stringEncodingDetector,
-                    paddingRemover: paddingRemover,
-                    id3FrameConfiguration: id3FrameConfiguration
-            ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
+            .TrackPosition : ID3FrameStringContentParsingOperation(stringContentParser: stringContentParser) {
+                (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
                 id3Tag.trackPosition = ID3TrackPositionStringAdapter().adapt(trackPosition: frameContentWithoutPadding)
             }
         ]

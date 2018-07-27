@@ -14,7 +14,7 @@ class ID3YearFrameCreatorTest: XCTestCase {
         let id3YearFrameCreator = ID3YearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .Year
+                        frameTypeToBeChecked: .RecordingYear
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -28,11 +28,11 @@ class ID3YearFrameCreatorTest: XCTestCase {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.year = "2018"
+        id3Tag.recordingDateTime?.date?.year = "2018"
         let id3TitleFrameCreator = ID3YearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameTypeToBeChecked: .Year
+                        frameTypeToBeChecked: .RecordingYear
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

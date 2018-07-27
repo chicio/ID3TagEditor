@@ -22,8 +22,8 @@ public class ID3Tag {
     public var trackPosition: TrackPositionInSet?
     /// The album of the tag.
     public var album: String?
-    /// The year of the recording contained tag.
-    public var year: String?
+    ///The recording datetime of the song related to this tag.
+    public lazy var recordingDateTime: RecordingDateTime? = RecordingDateTime()
     /// The genre of the recording contained in the tag (see `Genre`).
     public var genre: Genre?
     /// The attached picture related to the audio file contained in the tag (see `AttachedPicture`).
@@ -38,7 +38,7 @@ public class ID3Tag {
      - parameter artist: the artist of the tag.
      - parameter album: the album of the tag.
      - parameter title: the title of tag.
-     - parameter year: the year of the tag.
+     - parameter recordingDateTime: the recording time of the tag.
      - parameter genre: the genre of the tag.
      - parameter attachedPictures: an array of attached picture of the tag.
      - parameter trackPosition: track position of the tag.
@@ -48,7 +48,7 @@ public class ID3Tag {
                 albumArtist: String?,
                 album: String?,
                 title: String?,
-                year: String?,
+                recordingDateTime: RecordingDateTime?,
                 genre: Genre?,
                 attachedPictures: [AttachedPicture]?,
                 trackPosition: TrackPositionInSet?) {
@@ -57,7 +57,7 @@ public class ID3Tag {
         self.albumArtist = albumArtist
         self.album = album
         self.title = title
-        self.year = year
+        self.recordingDateTime = recordingDateTime
         self.genre = genre
         self.attachedPictures = attachedPictures
         self.trackPosition = trackPosition
