@@ -23,6 +23,23 @@ class ID3YearFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
+    
+    func testNoFrameCreationWhenIsVersion4() {
+        let tagBytes: [UInt8] = [1, 1, 1]
+        let id3YearFrameCreator = ID3YearFrameCreator(
+            frameCreator: MockFrameFromStringContentCreator(
+                fakeNewFrameAsByte: [2, 2],
+                frameTypeToBeChecked: .RecordingYear
+            ),
+            id3FrameConfiguration: ID3FrameConfiguration()
+        )
+        let id3tag = ID3Tag(version: .version4, size: 0)
+        id3tag.recordingDateTime?.date?.year = "2018"
+        
+        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag, tag: tagBytes)
+        
+        XCTAssertEqual(newTagBytes, tagBytes)
+    }
 
     func testFrameCreationWhenThereIsAnYear() {
         let newFrameBytes: [UInt8] = [1, 1]
