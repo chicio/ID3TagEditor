@@ -44,12 +44,16 @@ class ID3FrameConfiguration {
             .Title : [UInt8]("TT2".utf8),
             .Album : [UInt8]("TAL".utf8),
             .AttachedPicture : [UInt8]("PIC".utf8),
+            .RecordingDayMonth : [UInt8]("TDA".utf8),
             .RecordingYear : [UInt8]("TYE".utf8),
+            .RecordingHourMinute : [UInt8]("TIM".utf8),
             .Genre : [UInt8]("TCO".utf8),
             .TrackPosition : [UInt8]("TRK".utf8)
         ],
         .version3 : [
-            .RecordingYear : [UInt8]("TYER".utf8)
+            .RecordingDayMonth : [UInt8]("TDAT".utf8),
+            .RecordingYear : [UInt8]("TYER".utf8),
+            .RecordingHourMinute : [UInt8]("TIME".utf8)
         ],
         .version4 : [
             .RecordingDateTime : [UInt8]("TDRC".utf8),
@@ -71,12 +75,16 @@ class ID3FrameConfiguration {
             "TT2" : .Title,
             "TAL" : .Album,
             "PIC" : .AttachedPicture,
+            "TDA" : .RecordingDayMonth,
             "TYE" : .RecordingYear,
+            "TIM" : .RecordingHourMinute,
             "TCO" : .Genre,
             "TRK" : .TrackPosition
         ],
         .version3 : [
-            "TYER" : .RecordingYear
+            "TDAT" : .RecordingDayMonth,
+            "TYER" : .RecordingYear,
+            "TIME" : .RecordingHourMinute
         ],
         .version4 : [
             "TDRC" : .RecordingDateTime
