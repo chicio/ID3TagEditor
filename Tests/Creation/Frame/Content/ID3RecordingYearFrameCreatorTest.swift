@@ -1,5 +1,5 @@
 //
-//  ID3YearFrameCreatorTest.swift
+//  ID3RecordingYearFrameCreatorTest.swift
 //
 //  Created by Fabrizio Duroni on 04/03/2018.
 //  2018 Fabrizio Duroni.
@@ -11,7 +11,7 @@ import XCTest
 class ID3YearFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoYear() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3YearFrameCreator = ID3YearFrameCreator(
+        let id3YearFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
                         frameTypeToBeChecked: .RecordingYear
@@ -24,9 +24,9 @@ class ID3YearFrameCreatorTest: XCTestCase {
         XCTAssertEqual(newTagBytes, tagBytes)
     }
     
-    func testNoFrameCreationWhenIsVersion4() {
+    func testNoFrameCreationWhenIsMajorThanVersion3() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3YearFrameCreator = ID3YearFrameCreator(
+        let id3YearFrameCreator = ID3RecordingYearFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [2, 2],
                 frameTypeToBeChecked: .RecordingYear
@@ -46,7 +46,7 @@ class ID3YearFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(version: .version3, size: 0)
         id3Tag.recordingDateTime?.date?.year = "2018"
-        let id3TitleFrameCreator = ID3YearFrameCreator(
+        let id3TitleFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
                         frameTypeToBeChecked: .RecordingYear

@@ -52,7 +52,7 @@ class ID3FrameCreatorsChainFactory {
                         frameFlagsCreator: frameFlagsCreator
                 )
         )
-        let yearFrameCreator = ID3YearFrameCreator(
+        let yearFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: frameFromStringISO88591ContentCreator,
                 id3FrameConfiguration: frameConfiguration
         )
