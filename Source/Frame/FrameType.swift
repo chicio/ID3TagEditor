@@ -13,7 +13,7 @@ enum FrameType: String, Equatable {
     case Album = "album"
     case AttachedPicture = "artwork"
     case RecordingYear = "recordingYear"
-    case RecodingDateTime = "recodingDateTime"
+    case RecordingDateTime = "recodingDateTime"
     case Genre = "genre"
     case TrackPosition = "trackPosition"
     case AlbumArtist = "albumArtist"

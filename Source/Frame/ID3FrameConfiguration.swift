@@ -52,7 +52,7 @@ class ID3FrameConfiguration {
             .RecordingYear : [UInt8]("TYER".utf8)
         ],
         .version4 : [
-            .RecodingDateTime : [UInt8]("TDRC".utf8),
+            .RecordingDateTime : [UInt8]("TDRC".utf8),
         ]
     ]
     private let commonNamesForIdentifiers: [String : FrameType] = [
@@ -79,7 +79,7 @@ class ID3FrameConfiguration {
             "TYER" : .RecordingYear
         ],
         .version4 : [
-            "TDRC" : .RecodingDateTime
+            "TDRC" : .RecordingDateTime
         ]
     ]
     private let encodingPositionInBytes: [ID3Version : Int] = [
