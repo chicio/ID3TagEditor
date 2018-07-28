@@ -135,7 +135,6 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
         XCTAssertEqual(id3Tag?.recordingDateTime?.time?.hour, 12)
         XCTAssertEqual(id3Tag?.recordingDateTime?.time?.minute, 10)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.second, 35)
     }
 
     func testWriteTagWhenItAlreadyExists() {
@@ -356,7 +355,7 @@ class ID3TagEditorTest: XCTestCase {
             album: "A New Album",
             title: "A New title",
             recordingDateTime: RecordingDateTime(date: RecordingDate(day: 25, month: 7, year: 2018),
-                                                 time: RecordingTime(hour: 12, minute: 10, second: 35)),
+                                                 time: RecordingTime(hour: 12, minute: 10)),
             genre: nil,
             attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
             trackPosition: nil

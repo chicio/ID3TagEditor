@@ -22,7 +22,6 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         XCTAssertEqual(id3Tag.recordingDateTime?.date?.year, 2018)
         XCTAssertEqual(id3Tag.recordingDateTime?.time?.hour, 11)
         XCTAssertEqual(id3Tag.recordingDateTime?.time?.minute, 35)
-        XCTAssertEqual(id3Tag.recordingDateTime?.time?.second, 10)
     }
     
     func testframeContentWithYearInsteadOfTimestamp() {
@@ -38,7 +37,6 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         XCTAssertEqual(id3Tag.recordingDateTime?.date?.year, 2016)
         XCTAssertNil(id3Tag.recordingDateTime?.time?.hour)
         XCTAssertNil(id3Tag.recordingDateTime?.time?.minute)
-        XCTAssertNil(id3Tag.recordingDateTime?.time?.second)
     }
     
     private func frameV4utf8Valid() -> Data {

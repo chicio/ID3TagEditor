@@ -30,7 +30,6 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
             id3Tag.recordingDateTime?.date?.year = calendar.component(.year, from: date)
             id3Tag.recordingDateTime?.time?.hour = calendar.component(.hour, from: date)
             id3Tag.recordingDateTime?.time?.minute = calendar.component(.minute, from: date)
-            id3Tag.recordingDateTime?.time?.second = calendar.component(.second, from: date)
         } else {
             /**
              Fallback case:

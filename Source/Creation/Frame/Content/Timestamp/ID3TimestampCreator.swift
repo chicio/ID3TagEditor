@@ -15,14 +15,13 @@ class ID3TimestampCreator: TimestampCreator {
             let month = recordingDateTime.date?.month,
             let year = recordingDateTime.date?.year,
             let hour = recordingDateTime.time?.hour,
-            let minute = recordingDateTime.time?.minute,
-            let second = recordingDateTime.time?.second {
+            let minute = recordingDateTime.time?.minute {
             let components = DateComponents(year: year,
                                             month: month,
                                             day: day,
                                             hour: hour,
                                             minute: minute,
-                                            second: second)
+                                            second: 0)
             let timestamp = String(format: "%.0f", calendar.date(from: components)!.timeIntervalSince1970)
             return timestamp
         }

@@ -18,7 +18,6 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
         id3Tag.recordingDateTime?.date?.year = 2018
         id3Tag.recordingDateTime?.time?.hour = 12
         id3Tag.recordingDateTime?.time?.minute = 30
-        id3Tag.recordingDateTime?.time?.second = 15
         let timestampCreator = MockTimestampCreator(returnValue: "123456789")
         
         let id3TitleFrameCreator = ID3RecordingDateTimeFrameCreator(

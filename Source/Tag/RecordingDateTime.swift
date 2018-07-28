@@ -40,13 +40,10 @@ public struct RecordingTime {
     public var hour: Int?
     /// Recording seconds of the song.
     public var minute: Int?
-    /// Recording seconds of the song.
-    public var second: Int?
     
     init() {
         self.hour = nil
         self.minute = nil
-        self.second = nil
     }
     
     /**
@@ -54,12 +51,10 @@ public struct RecordingTime {
      
      - parameter hour: the recording hour of the song.
      - parameter minute: the recording minute of the song.
-     - parameter second: the recording second of the song.
      */
-    public init(hour: Int?, minute: Int?, second: Int?) {
+    public init(hour: Int?, minute: Int?) {
         self.hour = hour
         self.minute = minute
-        self.second = second
     }
 }
 

@@ -11,15 +11,15 @@ import XCTest
 class ID3TimestampCreatorTest: XCTestCase {
     func testCreateTimestampCorrectly() {
         let recordingTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: 2018),
-                                              time: RecordingTime(hour: 12, minute: 35, second: 15))
+                                              time: RecordingTime(hour: 12, minute: 35))
         let timestampCreator = ID3TimestampCreator()
         
-        XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), "1532781315")
+        XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), "1532781300")
     }
     
     func testNilDay() {
         let recordingTime = RecordingDateTime(date: RecordingDate(day: nil, month: 7, year: 2018),
-                                              time: RecordingTime(hour: 12, minute: 35, second: 15))
+                                              time: RecordingTime(hour: 12, minute: 35))
         let timestampCreator = ID3TimestampCreator()
         
         XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
@@ -27,7 +27,7 @@ class ID3TimestampCreatorTest: XCTestCase {
     
     func testNilMonth() {
         let recordingTime = RecordingDateTime(date: RecordingDate(day: 28, month: nil, year: 2018),
-                                              time: RecordingTime(hour: 12, minute: 35, second: 15))
+                                              time: RecordingTime(hour: 12, minute: 35))
         let timestampCreator = ID3TimestampCreator()
         
         XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
@@ -35,7 +35,7 @@ class ID3TimestampCreatorTest: XCTestCase {
     
     func testNilYear() {
         let recordingTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: nil),
-                                              time: RecordingTime(hour: 12, minute: 35, second: 15))
+                                              time: RecordingTime(hour: 12, minute: 35))
         let timestampCreator = ID3TimestampCreator()
         
         XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
@@ -43,7 +43,7 @@ class ID3TimestampCreatorTest: XCTestCase {
     
     func testNilHour() {
         let recordingTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: 2018),
-                                              time: RecordingTime(hour: nil, minute: 35, second: 15))
+                                              time: RecordingTime(hour: nil, minute: 35))
         let timestampCreator = ID3TimestampCreator()
         
         XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
@@ -51,15 +51,7 @@ class ID3TimestampCreatorTest: XCTestCase {
     
     func testNilMinute() {
         let recordingTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: 2018),
-                                              time: RecordingTime(hour: 12, minute: nil, second: 15))
-        let timestampCreator = ID3TimestampCreator()
-        
-        XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
-    }
-    
-    func testNilSecond() {
-        let recordingTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: 2018),
-                                              time: RecordingTime(hour: 12, minute: 35, second: nil))
+                                              time: RecordingTime(hour: 12, minute: nil))
         let timestampCreator = ID3TimestampCreator()
         
         XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
