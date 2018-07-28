@@ -25,12 +25,12 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
             let date = Date(timeIntervalSince1970: frameContentAsDouble)
             var calendar = Calendar(identifier: .gregorian)
             calendar.timeZone = TimeZone(identifier: "UTC")!
-            id3Tag.recordingDateTime?.date?.day = String(calendar.component(.day, from: date))
-            id3Tag.recordingDateTime?.date?.month = String(calendar.component(.month, from: date))
-            id3Tag.recordingDateTime?.date?.year = String(calendar.component(.year, from: date))
-            id3Tag.recordingDateTime?.time?.hour = String(calendar.component(.hour, from: date))
-            id3Tag.recordingDateTime?.time?.minute = String(calendar.component(.minute, from: date))
-            id3Tag.recordingDateTime?.time?.second = String(calendar.component(.second, from: date))
+            id3Tag.recordingDateTime?.date?.day = calendar.component(.day, from: date)
+            id3Tag.recordingDateTime?.date?.month = calendar.component(.month, from: date)
+            id3Tag.recordingDateTime?.date?.year = calendar.component(.year, from: date)
+            id3Tag.recordingDateTime?.time?.hour = calendar.component(.hour, from: date)
+            id3Tag.recordingDateTime?.time?.minute = calendar.component(.minute, from: date)
+            id3Tag.recordingDateTime?.time?.second = calendar.component(.second, from: date)
         } else {
             /**
              Fallback case:
@@ -40,7 +40,7 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
              to keep general compatibility with the mp3 taggers available we check that the content of the
              frame is a number major than 9999: if not this is a YEAR saved inside a field with a timestamp :).
              */
-            id3Tag.recordingDateTime?.date?.year = content
+            id3Tag.recordingDateTime?.date?.year = Int(content)
         }
     }
 }

@@ -34,7 +34,7 @@ class ID3YearFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         let id3tag = ID3Tag(version: .version4, size: 0)
-        id3tag.recordingDateTime?.date?.year = "2018"
+        id3tag.recordingDateTime?.date?.year = 2018
         
         let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag, tag: tagBytes)
         
@@ -45,7 +45,7 @@ class ID3YearFrameCreatorTest: XCTestCase {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.recordingDateTime?.date?.year = "2018"
+        id3Tag.recordingDateTime?.date?.year = 2018
         let id3TitleFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

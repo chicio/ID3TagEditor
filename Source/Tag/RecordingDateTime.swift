@@ -9,11 +9,11 @@ import Foundation
 
 public struct RecordingDate {
     /// Recording day of the song.
-    public var day: String?
+    public var day: Int?
     /// Recording month of the song.
-    public var month: String?
+    public var month: Int?
     /// Recording year of the song.
-    public var year: String?
+    public var year: Int?
     
     init() {
         self.day = nil
@@ -28,7 +28,7 @@ public struct RecordingDate {
      - parameter month: the recording month of the song.
      - parameter year: the recording year of the song.
      */
-    public init(day: String?, month: String?, year: String?) {
+    public init(day: Int?, month: Int?, year: Int?) {
         self.day = day
         self.month = month
         self.year = year
@@ -37,11 +37,11 @@ public struct RecordingDate {
 
 public struct RecordingTime {
     /// Recording hour of the song.
-    public var hour: String?
+    public var hour: Int?
     /// Recording seconds of the song.
-    public var minute: String?
+    public var minute: Int?
     /// Recording seconds of the song.
-    public var second: String?
+    public var second: Int?
     
     init() {
         self.hour = nil
@@ -56,7 +56,7 @@ public struct RecordingTime {
      - parameter minute: the recording minute of the song.
      - parameter second: the recording second of the song.
      */
-    public init(hour: String?, minute: String?, second: String?) {
+    public init(hour: Int?, minute: Int?, second: Int?) {
         self.hour = hour
         self.minute = minute
         self.second = second
