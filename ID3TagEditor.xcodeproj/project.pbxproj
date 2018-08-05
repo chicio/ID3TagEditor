@@ -242,7 +242,7 @@
 		45541BBA20598FA60025A8BF /* TrackPositionInSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678F2DE47A9312A968E68 /* TrackPositionInSet.swift */; };
 		45541BBB20598FA60025A8BF /* TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50679D23301E8C4097B8270 /* TagPresence.swift */; };
 		45541BBC20598FA60025A8BF /* ID3TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50677C71F0152346DB2DE63 /* ID3TagPresence.swift */; };
-		45541BBD20598FA60025A8BF /* ID3TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */; };
+		45541BBD20598FA60025A8BF /* TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* TagProperties.swift */; };
 		45541BBE20598FA60025A8BF /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321F2044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift */; };
 		45541BBF20598FA60025A8BF /* UInt32ToByteArrayAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832202044C7BE00458375 /* UInt32ToByteArrayAdapter.swift */; };
 		45541BC020598FA60025A8BF /* ID3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ED87F78D196E8980F49 /* ID3Version.swift */; };
@@ -438,7 +438,7 @@
 		45F83425205905EF0046C804 /* TrackPositionInSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678F2DE47A9312A968E68 /* TrackPositionInSet.swift */; };
 		45F83426205905EF0046C804 /* TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50679D23301E8C4097B8270 /* TagPresence.swift */; };
 		45F83427205905EF0046C804 /* ID3TagPresence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50677C71F0152346DB2DE63 /* ID3TagPresence.swift */; };
-		45F83428205905EF0046C804 /* ID3TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */; };
+		45F83428205905EF0046C804 /* TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* TagProperties.swift */; };
 		45F83429205905EF0046C804 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528321F2044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift */; };
 		45F8342A205905EF0046C804 /* UInt32ToByteArrayAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832202044C7BE00458375 /* UInt32ToByteArrayAdapter.swift */; };
 		45F8342B205905EF0046C804 /* ID3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ED87F78D196E8980F49 /* ID3Version.swift */; };
@@ -463,7 +463,7 @@
 		C50671C64692909C1AD1AC5D /* MockID3FrameCreatorsChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506701F77DD635B85857590 /* MockID3FrameCreatorsChain.swift */; };
 		C50671D35F0DC730FA73D029 /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50677883C43F71CFB46246F /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift */; };
 		C50671D87F09A66699907CF0 /* ID3ArtistFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067C3C5131452FCBCDE0EE /* ID3ArtistFrameCreatorTest.swift */; };
-		C50671DE6CD2C6BD107AB811 /* ID3TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */; };
+		C50671DE6CD2C6BD107AB811 /* TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* TagProperties.swift */; };
 		C506720DC977BBBB6485B22C /* ID3AttachedPictureFrameContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067A77786CE7640011760E /* ID3AttachedPictureFrameContentParsingOperationTest.swift */; };
 		C506722E2AEE065705B2D8F7 /* example-with-tag-already-setted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C506730EAC5BBD219DDCC71C /* example-with-tag-already-setted.mp3 */; };
 		C5067239129F90566D38ED60 /* ID3TagEditorTestAcceptanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50670A43E2AAE50A36E7C0D /* ID3TagEditorTestAcceptanceTest.swift */; };
@@ -577,7 +577,7 @@
 		C5067ED2DFF6D822534E16D8 /* example-with-tag-jpg-v3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C506784AEA966C7A8BC7EF69 /* example-with-tag-jpg-v3.mp3 */; };
 		C5067F0530D557910B0EC3CD /* MockPaddingAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067A41EC97686358925AEF /* MockPaddingAdder.swift */; };
 		C5067F271C408A8D0C6AA465 /* MockID3FrameCreatorsChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506701F77DD635B85857590 /* MockID3FrameCreatorsChain.swift */; };
-		C5067F6C02D1EDB1B142D76F /* ID3TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */; };
+		C5067F6C02D1EDB1B142D76F /* TagProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50673F2ECE134CC71C9E573 /* TagProperties.swift */; };
 		C5067F761EC6390E734EFF58 /* MockFrameFromStringContentCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506715FBCEE562BFB182459 /* MockFrameFromStringContentCreator.swift */; };
 		C5067FAC9247C189C8FFFAFA /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50677883C43F71CFB46246F /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift */; };
 		C5067FD9D53E8F4B9C28493F /* ID3AlbumFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50678BCE96013EF95D91E7E /* ID3AlbumFrameCreatorTest.swift */; };
@@ -727,7 +727,7 @@
 		C50672C9D6474ED4409028D8 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		C506730EAC5BBD219DDCC71C /* example-with-tag-already-setted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-with-tag-already-setted.mp3"; sourceTree = "<group>"; };
 		C50673B719019A8C1C21F500 /* ID3PictureTypeAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PictureTypeAdapter.swift; sourceTree = "<group>"; };
-		C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3TagProperties.swift; sourceTree = "<group>"; };
+		C50673F2ECE134CC71C9E573 /* TagProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagProperties.swift; sourceTree = "<group>"; };
 		C506743F39F306B401A7A000 /* cover2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover2.jpg; sourceTree = "<group>"; };
 		C506746284865F9DE2091AB2 /* FrameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameType.swift; sourceTree = "<group>"; };
 		C5067476E0A4ED0A5116CE21 /* ID3PictureFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PictureFormat.swift; sourceTree = "<group>"; };
@@ -1036,7 +1036,7 @@
 				C506764AD88D467CA74E9200 /* ID3PictureType.swift */,
 				C5067476E0A4ED0A5116CE21 /* ID3PictureFormat.swift */,
 				C50678F2DE47A9312A968E68 /* TrackPositionInSet.swift */,
-				C50673F2ECE134CC71C9E573 /* ID3TagProperties.swift */,
+				C50673F2ECE134CC71C9E573 /* TagProperties.swift */,
 				45775EFE210A5A9900B1B3FE /* RecordingDateTime.swift */,
 			);
 			path = Tag;
@@ -1949,7 +1949,7 @@
 				C506714D30359FA4F9E7D556 /* ID3AttachedPictureFrameCreator.swift in Sources */,
 				C5067634716C32B44E076420 /* ID3StringFrameCreator.swift in Sources */,
 				450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
-				C50671DE6CD2C6BD107AB811 /* ID3TagProperties.swift in Sources */,
+				C50671DE6CD2C6BD107AB811 /* TagProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2106,7 +2106,7 @@
 				C506785000E8B1374A274A56 /* ID3StringFrameCreator.swift in Sources */,
 				450967172100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				4528AF15210B83B400CB7A2E /* ID3GenreFrameContentParsingOperationFactory.swift in Sources */,
-				C5067F6C02D1EDB1B142D76F /* ID3TagProperties.swift in Sources */,
+				C5067F6C02D1EDB1B142D76F /* TagProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2256,7 +2256,7 @@
 				4528AF41210B880500CB7A2E /* RecordingDateTime.swift in Sources */,
 				45541BBB20598FA60025A8BF /* TagPresence.swift in Sources */,
 				45541BBC20598FA60025A8BF /* ID3TagPresence.swift in Sources */,
-				45541BBD20598FA60025A8BF /* ID3TagProperties.swift in Sources */,
+				45541BBD20598FA60025A8BF /* TagProperties.swift in Sources */,
 				45541BBE20598FA60025A8BF /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
 				4562C1F221173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */,
 				4528AF0C210B833400CB7A2E /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
@@ -2413,7 +2413,7 @@
 				4528AF42210B880600CB7A2E /* RecordingDateTime.swift in Sources */,
 				45F83426205905EF0046C804 /* TagPresence.swift in Sources */,
 				45F83427205905EF0046C804 /* ID3TagPresence.swift in Sources */,
-				45F83428205905EF0046C804 /* ID3TagProperties.swift in Sources */,
+				45F83428205905EF0046C804 /* TagProperties.swift in Sources */,
 				45F83429205905EF0046C804 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
 				4528AF0D210B833400CB7A2E /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
 				45F8342A205905EF0046C804 /* UInt32ToByteArrayAdapter.swift in Sources */,

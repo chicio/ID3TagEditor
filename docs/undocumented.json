@@ -736,13 +736,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Tag/ID3Tag.swift",
-      "line": 14,
-      "symbol": "ID3Tag.properties",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/fduroni/Work/ID3TagEditor/Source/Tag/RecordingDateTime.swift",
       "line": 10,
       "symbol": "RecordingDate",

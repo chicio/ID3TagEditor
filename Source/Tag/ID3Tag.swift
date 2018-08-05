@@ -12,7 +12,7 @@ import Foundation
  */
 public class ID3Tag {
     /// The properties of the tag. The public available property to the user of the frmaework is the versions property.
-    public var properties: ID3TagProperties
+    public var properties: TagProperties
     /// The artist of the tag.
     public var artist: String?
     /// Additional information about the artist of the song that contains the tag.
@@ -53,7 +53,7 @@ public class ID3Tag {
                 genre: Genre?,
                 attachedPictures: [AttachedPicture]?,
                 trackPosition: TrackPositionInSet?) {
-        self.properties = ID3TagProperties(version: version, size: 0)
+        self.properties = TagProperties(version: version, size: 0)
         self.artist = artist
         self.albumArtist = albumArtist
         self.album = album
@@ -65,6 +65,6 @@ public class ID3Tag {
     }
 
     init(version: ID3Version, size: UInt32) {
-        self.properties = ID3TagProperties(version: version, size: size)
+        self.properties = TagProperties(version: version, size: size)
     }
 }

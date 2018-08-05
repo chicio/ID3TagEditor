@@ -10,7 +10,7 @@ import Foundation
 /**
  A class used to represent the track position in the original recordings for the ID3 tag.
  */
-public class TrackPositionInSet: Equatable {
+public struct TrackPositionInSet: Equatable {
     /// The position of the track.
     public var position: Int
     /// The total number of tracks in recordings.

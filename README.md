@@ -37,7 +37,7 @@ Add the dependency to your Podfile (choose the release version you prefer):
 
 ```
 target 'MyApp' do
-    pod 'ID3TagEditor', '~> 1.0'
+    pod 'ID3TagEditor', '~> 2.0'
 end
 ```
 
@@ -79,7 +79,8 @@ do {
         albumArtist: "an example album artist",
         album: "an example album",
         title: "an example title",
-        year: "2019",
+        recordingDateTime: RecordingDateTime(date: RecordingDate(day: 1, month: 10, year: 2019), 
+                                             time: RecordingTime(hour: 14, minute: 30)),
         genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
         attachedPictures: AttachedPicture(art: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg),
         trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
@@ -92,26 +93,34 @@ do {
 
 The above methods use the `ID3Tag` class to describe a valid ID3 tag. The class contains various properties that could be
 used to read/write a tag to the mp3 file.
-Two versions of the tag are supported. They are described in the `ID3Version` enum:
+Three versions of the tag are supported. They are described in the `ID3Version` enum:
 
 * version 2.2, described by the enum value `.version2`  
 * version 2.3, described by the enum value `.version3`  
+* version 2.4, described by the enum value `.version4`
 
 The ID3 supported properties are:
 
 * `version`, as previously described
 * `artist`, as a string containing the name of the song's artists
 * `albumArtist`, as a string containing additional info about the artists 
-* `title`, as a string containing the title of the song
-* `trackPosition`, as a `TrackPositionInSet` object containing the position of the track in the recording and the total number of track in the recordings
 * `album`, as a string containing the album title
-* `year`, as a string containing the year of the recording
+* `title`, as a string containing the title of the song
+* `recordingDateTime`, as an object composed by two other properties:
+    * `date` as a `RecordingDate` object with three fields:
+        * `day`, as a number that represents the recording day 
+        * `month`, as a number that represents the recording month
+        * `year`, as a number that represents the recording year
+    * `time` as a `RecordingTime` object with two fields:
+        * `hour`, as a number that represents the recording hour
+        * `minute`, as a number that represents the recording minute
+* `trackPosition`, as a `TrackPositionInSet` object containing the position of the track in the recording and the total number of track in the recordings
 * `genre`, as a `Genre` object containing the `ID3Genre` identifier and/or a `description` of the song's genre
 * `attachedPictures`, as an array of `AttachedPicture` objects containing the `Data` of an image, the `ID3PictureType` and the `ID3PictureFormat`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
-The library is also able to read text frame wrongly encoded with Unicode (for example year must always be a ISO88591 string). 
+The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
 
 ***
 

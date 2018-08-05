@@ -14,7 +14,7 @@
     <a title="ID3TagEditor Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ID3TagEditor Docs</a> (33% documented)</p>
+        <p><a href="../index.html">ID3TagEditor Docs</a> (34% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -35,12 +35,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ID3TagEditor.html">ID3TagEditor</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/ID3TagProperties.html">ID3TagProperties</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/TrackPositionInSet.html">TrackPositionInSet</a>
               </li>
             </ul>
           </li>
@@ -81,6 +75,12 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/RecordingTime.html">RecordingTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TagProperties.html">TagProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TrackPositionInSet.html">TrackPositionInSet</a>
               </li>
             </ul>
           </li>
@@ -226,7 +226,7 @@ ID3 tag).</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>the ID3 tag that written in the mp3 file.</p>
+                                  <p>the ID3 tag to be written in the mp3 file.</p>
                                 </div>
                               </td>
                             </tr>
@@ -238,7 +238,7 @@ ID3 tag).</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>path of the mp3 file where we will write the tag.</p>
+                                  <p>path of the mp3 file to which the id3 tag will be added.</p>
                                 </div>
                               </td>
                             </tr>
@@ -250,7 +250,7 @@ ID3 tag).</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>path where the file with the new tag will be written.
+                                  <p>path where the mp3 file with the new tag will be written.
 <strong>If nil, the mp3 file will be overwritten</strong>.
 If nothing is passed, the file will be overwritten at its current location.</p>
                                 </div>
