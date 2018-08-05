@@ -124,6 +124,10 @@ The library is also able to read text frame wrongly encoded with Unicode (for ex
 
 ***
 
+### Documentation
+
+You can find the complete api documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
+
 ### Examples
 
 In the following screenshots you can find examples of the data extracted/updated. In the demo project you will find an example for each 
