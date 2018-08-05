@@ -56,6 +56,14 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let dayMonthCreator = ID3RecordingDayMonthFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let hourMinuteCreator = ID3RecordingHourMinuteFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let genreFrameCreator = ID3GenreFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -73,7 +81,9 @@ class ID3FrameCreatorsChainFactory {
         albumArtistCreator.nextCreator = artistFrameCreator
         artistFrameCreator.nextCreator = titleFrameCreator
         titleFrameCreator.nextCreator = yearFrameCreator
-        yearFrameCreator.nextCreator = recordingDateTimeCreator
+        yearFrameCreator.nextCreator = dayMonthCreator
+        dayMonthCreator.nextCreator = hourMinuteCreator
+        hourMinuteCreator.nextCreator = recordingDateTimeCreator
         recordingDateTimeCreator.nextCreator = genreFrameCreator
         genreFrameCreator.nextCreator = trackPositionFrameCreator
         trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator

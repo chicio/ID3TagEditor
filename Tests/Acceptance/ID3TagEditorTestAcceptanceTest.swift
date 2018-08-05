@@ -280,7 +280,8 @@ class ID3TagEditorTest: XCTestCase {
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
                 title: "A New title",
-                recordingDateTime: RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: 2018), time: nil),
+                recordingDateTime: RecordingDateTime(date: RecordingDate(day: 5, month: 8, year: 2018),
+                                                     time: RecordingTime(hour: 15, minute: 39)),
                 genre: Genre(genre: .Metal, description: "Metalcore"),
                 attachedPictures: [
                     AttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),

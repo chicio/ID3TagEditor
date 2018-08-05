@@ -8,7 +8,7 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3YearFrameCreatorTest: XCTestCase {
+class ID3RecordingYearFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoYear() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3YearFrameCreator = ID3RecordingYearFrameCreator(

@@ -8,7 +8,7 @@ Release date: ----
 - Renamed `art` property as `picture` on the `ID3Tag` class 
 - Added v2.4 tag support
     - 2.4 tag and frame configuration (without reverse header support for tag)
-    - added "TDRC" instead of deprecated "TYER"(2.3)/"TYE"(2.2). Field with timestamp that has a fallback to string content.
+    - added "TDRC" instead of deprecated "TYER"(2.3)/"TYE"(2.2): field with timestamp that has a fallback to string content.
     - new `RecordingDateTime` inside the `ID3Tag` class
 
 #### Fixed
