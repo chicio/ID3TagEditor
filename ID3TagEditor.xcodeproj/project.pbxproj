@@ -322,6 +322,7 @@
 		4562C1FA211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1F7211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift */; };
 		4562C1FC21174B9800AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1EF21173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift */; };
 		4562C1FD21174B9F00AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1F7211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift */; };
+		4562C1FE211750B500AFE22E /* ID3CoupleOfNumbersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1F3211741FE00AFE22E /* ID3CoupleOfNumbersAdapter.swift */; };
 		45775ED921070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775ED821070B3000B1B3FE /* String+UTF16Bytes.swift */; };
 		45775EDA21070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775ED821070B3000B1B3FE /* String+UTF16Bytes.swift */; };
 		45775EDB21070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775ED821070B3000B1B3FE /* String+UTF16Bytes.swift */; };
@@ -2355,6 +2356,7 @@
 				45F83400205905EF0046C804 /* ID3FrameConfiguration.swift in Sources */,
 				45F83401205905EF0046C804 /* ID3AttachedPictureFrameConfiguration.swift in Sources */,
 				4528AF47210BAE0400CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
+				4562C1FE211750B500AFE22E /* ID3CoupleOfNumbersAdapter.swift in Sources */,
 				45D58CD6210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */,
 				4528AF3F210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift in Sources */,
 				4562C1EA211731B100AFE22E /* ID3RecordingHourMinuteFrameCreator.swift in Sources */,
