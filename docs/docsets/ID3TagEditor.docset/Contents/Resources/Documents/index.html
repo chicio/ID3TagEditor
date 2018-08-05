@@ -124,7 +124,7 @@ project. See the demo project for a complete example of the setup of the framewo
 <p>ID3TagEditor is also available as a pod on <a href="https://cocoapods.org/pods/ID3TagEditor" title="ID3TagEditor cocoapods">CocoaPods</a>.
 Add the dependency to your Podfile (choose the release version you prefer):</p>
 <pre class="highlight plaintext"><code>target 'MyApp' do
-    pod 'ID3TagEditor', '~&gt; 1.0'
+    pod 'ID3TagEditor', '~&gt; 2.0'
 end
 </code></pre>
 
@@ -163,7 +163,8 @@ the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class.  </
         <span class="nv">albumArtist</span><span class="p">:</span> <span class="s">"an example album artist"</span><span class="p">,</span>
         <span class="nv">album</span><span class="p">:</span> <span class="s">"an example album"</span><span class="p">,</span>
         <span class="nv">title</span><span class="p">:</span> <span class="s">"an example title"</span><span class="p">,</span>
-        <span class="nv">year</span><span class="p">:</span> <span class="s">"2019"</span><span class="p">,</span>
+        <span class="nv">recordingDateTime</span><span class="p">:</span> <span class="kt">RecordingDateTime</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">RecordingDate</span><span class="p">(</span><span class="nv">day</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">year</span><span class="p">:</span> <span class="mi">2019</span><span class="p">),</span> 
+                                             <span class="nv">time</span><span class="p">:</span> <span class="kt">RecordingTime</span><span class="p">(</span><span class="nv">hour</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">30</span><span class="p">)),</span>
         <span class="nv">genre</span><span class="p">:</span> <span class="kt">Genre</span><span class="p">(</span><span class="nv">genre</span><span class="p">:</span> <span class="o">.</span><span class="kt">ClassicRock</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"Rock &amp; Roll"</span><span class="p">),</span>
         <span class="nv">attachedPictures</span><span class="p">:</span> <span class="kt">AttachedPicture</span><span class="p">(</span><span class="nv">art</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">NSData</span><span class="o">/</span><span class="kt">Data</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">),</span>
         <span class="nv">trackPosition</span><span class="p">:</span> <span class="kt">TrackPositionInSet</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">totalTracks</span><span class="p">:</span> <span class="mi">9</span><span class="p">)</span>
@@ -176,7 +177,7 @@ the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class.  </
 
 <p>The above methods use the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> class to describe a valid ID3 tag. The class contains various properties that could be
 used to read/write a tag to the mp3 file.
-Two versions of the tag are supported. They are described in the <code><a href="Enums/ID3Version.html">ID3Version</a></code> enum:</p>
+Three versions of the tag are supported. They are described in the <code><a href="Enums/ID3Version.html">ID3Version</a></code> enum:</p>
 <div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.2, described by the enum value <code>.version2</code><br>
@@ -187,6 +188,11 @@ Two versions of the tag are supported. They are described in the <code><a href="
     version 2.3, described by the enum value <code>.version3</code><br>
 
 </div>
+<div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    version 2.4, described by the enum value <code>.version4</code>
+
+</div>
 
 <p>The ID3 supported properties are:</p>
 
@@ -194,17 +200,33 @@ Two versions of the tag are supported. They are described in the <code><a href="
 <li><code>version</code>, as previously described</li>
 <li><code>artist</code>, as a string containing the name of the song&rsquo;s artists</li>
 <li><code>albumArtist</code>, as a string containing additional info about the artists</li>
-<li><code>title</code>, as a string containing the title of the song</li>
-<li><code>trackPosition</code>, as a <code><a href="Structs/TrackPositionInSet.html">TrackPositionInSet</a></code> object containing the position of the track in the recording and the total number of track in the recordings</li>
 <li><code>album</code>, as a string containing the album title</li>
-<li><code>year</code>, as a string containing the year of the recording</li>
+<li><code>title</code>, as a string containing the title of the song</li>
+<li><code>recordingDateTime</code>, as an object composed by two other properties:
+
+<ul>
+<li><code>date</code> as a <code><a href="Structs/RecordingDate.html">RecordingDate</a></code> object with three fields:
+
+<ul>
+<li><code>day</code>, as a number that represents the recording day</li>
+<li><code>month</code>, as a number that represents the recording month</li>
+<li><code>year</code>, as a number that represents the recording year</li>
+</ul></li>
+<li><code>time</code> as a <code><a href="Structs/RecordingTime.html">RecordingTime</a></code> object with two fields:
+
+<ul>
+<li><code>hour</code>, as a number that represents the recording hour</li>
+<li><code>minute</code>, as a number that represents the recording minute</li>
+</ul></li>
+</ul></li>
+<li><code>trackPosition</code>, as a <code><a href="Structs/TrackPositionInSet.html">TrackPositionInSet</a></code> object containing the position of the track in the recording and the total number of track in the recordings</li>
 <li><code>genre</code>, as a <code><a href="Structs/Genre.html">Genre</a></code> object containing the <code><a href="Enums/ID3Genre.html">ID3Genre</a></code> identifier and/or a <code>description</code> of the song&rsquo;s genre</li>
 <li><code>attachedPictures</code>, as an array of <code><a href="Structs/AttachedPicture.html">AttachedPicture</a></code> objects containing the <code>Data</code> of an image, the <code><a href="Enums/ID3PictureType.html">ID3PictureType</a></code> and the <code><a href="Enums/ID3PictureFormat.html">ID3PictureFormat</a></code></li>
 </ul>
 
 <p>Only the <code>version</code> field is mandatory. The other fields are optional.
 The field <code>artist</code>,  <code>albumArtist</code>, <code>title</code> and <code>album</code> are encoded/saved using Unicode 16 bit string (as requested by specification). 
-The library is also able to read text frame wrongly encoded with Unicode (for example year must always be a ISO88591 string). </p>
+The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). </p>
 
 <hr>
 <h3 id='examples' class='heading'>Examples</h3>
