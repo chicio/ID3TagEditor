@@ -8,9 +8,10 @@
 import Foundation
 
 /**
- A class used to represent and ID3 tag.
+ A class used to represent an ID3 tag.
  */
 public class ID3Tag {
+    /// The properties of the tag. The public available property to the user of the frmaework is the versions property.
     public var properties: ID3TagProperties
     /// The artist of the tag.
     public var artist: String?

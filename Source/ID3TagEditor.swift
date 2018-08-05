@@ -44,9 +44,9 @@ public class ID3TagEditor {
     /**
      Writes the mp3 to a new file or overwrite it with the new ID3 tag.
 
-     - parameter tag: the ID3 tag that written in the mp3 file.
-     - parameter path: path of the mp3 file where we will write the tag.
-     - parameter newPath: path where the file with the new tag will be written.
+     - parameter tag: the ID3 tag to be written in the mp3 file.
+     - parameter path: path of the mp3 file to which the id3 tag will be added.
+     - parameter newPath: path where the mp3 file with the new tag will be written.
      **If nil, the mp3 file will be overwritten**.
      If nothing is passed, the file will be overwritten at its current location.
 

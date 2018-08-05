@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ID3TagEditor Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ID3TagEditor" class="dashAnchor"></a>
+    <a title="ID3TagEditor Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ID3TagEditor Docs</a> (33% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ID3TagEditor Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ID3TagEditor Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ID3Tag.html">ID3Tag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3TagEditor.html">ID3TagEditor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3TagProperties.html">ID3TagProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TrackPositionInSet.html">TrackPositionInSet</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ID3Genre.html">ID3Genre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3PictureFormat.html">ID3PictureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3PictureType.html">ID3PictureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3TagEditorError.html">ID3TagEditorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3Version.html">ID3Version</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AttachedPicture.html">AttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Genre.html">Genre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingDate.html">RecordingDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingDateTime.html">RecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingTime.html">RecordingTime</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ID3TagEditor</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3TagEditor</span></code></pre>
+
+                </div>
+              </div>
+            <p>A class to edit the ID3 tag of an mp3 file.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditorAACABycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditorAACABycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init the ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditorAAC4readAA0aB0CSgSS4from_tKF"></a>
+                    <a name="//apple_ref/swift/Method/read(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditorAAC4readAA0aB0CSgSS4from_tKF">read(from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Read the ID3 tag contained in the mp3 file.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p>Could throw <code>InvalidFileFormat</code> if an mp3 file doesn&rsquo;t exists at the specified path.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">read</span><span class="p">(</span><span class="n">from</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ID3Tag.html">ID3Tag</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>path</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>path of the mp3 file to be parsed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an ID3 tag or nil, if a tag doesn&rsquo;t exists in the file.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditorAAC5writeyAA0aB0C3tag_SS2toSSSg9andSaveTotKF"></a>
+                    <a name="//apple_ref/swift/Method/write(tag:to:andSaveTo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditorAAC5writeyAA0aB0C3tag_SS2toSSSg9andSaveTotKF">write(tag:to:andSaveTo:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Writes the mp3 to a new file or overwrite it with the new ID3 tag.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p>Could throw <code>TagTooBig</code> (tag size &gt; 256 MB) or <code>InvalidTagData</code> (no data set to be written in the
+ID3 tag).</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3Tag.html">ID3Tag</a></span><span class="p">,</span> <span class="n">to</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">andSaveTo</span> <span class="nv">newPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tag</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the ID3 tag that written in the mp3 file.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>path</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>path of the mp3 file where we will write the tag.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>path where the file with the new tag will be written.
+<strong>If nil, the mp3 file will be overwritten</strong>.
+If nothing is passed, the file will be overwritten at its current location.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2018-08-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
