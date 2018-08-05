@@ -94,7 +94,11 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.attachedPictures?[1].type, .BackCover)
         XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
         XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
+        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.day, 5)
+        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.month, 8)
         XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
+        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.hour, 15)
+        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.minute, 39)
         XCTAssertEqual(id3Tag?.trackPosition?.position, 2)
         XCTAssertEqual(id3Tag?.trackPosition?.totalTracks, 9)
     }

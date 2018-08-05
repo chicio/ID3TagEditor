@@ -15,7 +15,9 @@ class ID3FrameContentParsingOperationFactory {
             .Album: ID3AlbumFrameContentParsingOperationFactory.make(),
             .Title: ID3TitleFrameContentParsingOperationFactory.make(),
             .AttachedPicture: ID3AttachedPictureFrameContentParsingOperationFactory.make(),
+            .RecordingDayMonth: ID3RecordingDayMonthFrameContentParsingOperationFactory.make(),
             .RecordingYear: ID3RecordingYearFrameContentParsingOperationFactory.make(),
+            .RecordingHourMinute: ID3RecordingHourMinuteFrameContentParsingOperationFactory.make(),
             .RecordingDateTime: ID3RecordingTimeFrameContentParsingOperationFactory.make(),
             .Genre: ID3GenreFrameContentParsingOperationFactory.make(),
             .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make()
