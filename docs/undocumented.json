@@ -734,27 +734,6 @@
       "symbol": "ID3PictureType.PublisherStudioLogotype",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Tag/RecordingDateTime.swift",
-      "line": 10,
-      "symbol": "RecordingDate",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Tag/RecordingDateTime.swift",
-      "line": 38,
-      "symbol": "RecordingTime",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Tag/RecordingDateTime.swift",
-      "line": 61,
-      "symbol": "RecordingDateTime",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/fduroni/Work/ID3TagEditor"

@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A class used to represent an image as attached picture for the ID3 tag.
+ A struct used to represent an image as attached picture for the ID3 tag.
  */
 public struct AttachedPicture: Equatable {
     /// The image bytes as `Data`.

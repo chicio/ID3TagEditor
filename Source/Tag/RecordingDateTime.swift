@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ A struct used to represent the recording date for the ID3 tag.
+ */
 public struct RecordingDate {
     /// Recording day of the song.
     public var day: Int?
@@ -35,6 +38,9 @@ public struct RecordingDate {
     }
 }
 
+/**
+ A struct used to represent the recording time for the ID3 tag.
+ */
 public struct RecordingTime {
     /// Recording hour of the song.
     public var hour: Int?
@@ -58,6 +64,9 @@ public struct RecordingTime {
     }
 }
 
+/**
+ A struct used to represent the recording date and time for the ID3 tag.
+ */
 public struct RecordingDateTime {
     /// Recording date of the song.
     public var date: RecordingDate?

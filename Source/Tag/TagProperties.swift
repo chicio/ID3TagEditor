@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A class that describes the properties of a tag.
+ A struct that describes the properties of a tag.
  */
 public struct TagProperties {
     /// The size of the tag.

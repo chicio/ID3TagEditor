@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A class used to represent a genre to be used in the ID3 tag.
+ A struct used to represent a genre to be used in the ID3 tag.
  */
 public struct Genre: Equatable {
     /// The genre identifier specified as an ID3 v1 Genre (see ID3Genre).

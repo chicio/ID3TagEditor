@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A class used to represent the track position in the original recordings for the ID3 tag.
+ A struct used to represent the track position in the original recordings for the ID3 tag.
  */
 public struct TrackPositionInSet: Equatable {
     /// The position of the track.
