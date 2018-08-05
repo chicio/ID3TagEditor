@@ -11,6 +11,8 @@ import Foundation
  The attached picture format supported by the ID3 tag.
  */
 public enum ID3PictureFormat {
+    /// Jpeg image.
     case Jpeg
+    /// Png image.
     case Png
 }
