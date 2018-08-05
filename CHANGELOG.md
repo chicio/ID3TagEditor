@@ -2,7 +2,7 @@
 All changes to ID3TagEditor will be documented in this file.
 
 ## [2.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.0.0)
-Release date: ----
+Release date: 2018-08-05
 
 #### Added
 - Renamed `art` property as `picture` on the `ID3Tag` class 
