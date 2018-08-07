@@ -40,6 +40,17 @@ public class ID3TagEditor {
         let mp3 = try mp3FileReader.readFrom(path: path)
         return self.id3TagParser.parse(mp3: mp3)
     }
+    
+    /**
+     Read the ID3 tag contained in the mp3 file passed as `Data`.
+     
+     - parameter mp3: mp3 file opened as Data.
+     
+     - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
+     */
+    public func read(mp3: Data) -> ID3Tag? {
+        return self.id3TagParser.parse(mp3: mp3)
+    }
 
     /**
      Writes the mp3 to a new file or overwrite it with the new ID3 tag.
