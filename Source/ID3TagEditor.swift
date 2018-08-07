@@ -41,8 +41,15 @@ public class ID3TagEditor {
         return self.id3TagParser.parse(mp3: mp3)
     }
     
-    public func readData(_ data:Data) throws -> ID3Tag? {
-        return self.id3TagParser.parse(mp3: data)
+    /**
+     Read the ID3 tag contained in the mp3 file passed as `Data`.
+     
+     - parameter mp3: mp3 file opened as Data.
+     
+     - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
+     */
+    public func read(mp3: Data) -> ID3Tag? {
+        return self.id3TagParser.parse(mp3: mp3)
     }
 
     /**
