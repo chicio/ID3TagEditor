@@ -70,4 +70,21 @@ public class ID3TagEditor {
         let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
         try mp3FileWriter.write(mp3: mp3WithId3Tag, path: newPath ?? path)
     }
+    
+    /**
+     Write the ID3 tag passed as parameter to the mp3 file passed as `Data`.
+     
+     - parameter tag: the ID3 tag to be written in the mp3.
+     - parameter mp3: the mp3 on which we want to write the new tag.
+     
+     - returns: a new `Data` object that contains the mp3 data with the new tag.
+     
+     - throws: Could throw `TagTooBig` (tag size > 256 MB) or `InvalidTagData` (no data set to be written in the
+     ID3 tag).
+     */
+    public func write(tag: ID3Tag, mp3: Data) throws -> Data {
+        let currentTag = self.id3TagParser.parse(mp3: mp3)
+        let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
+        return mp3WithId3Tag
+    }
 }

@@ -140,6 +140,21 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.recordingDateTime?.time?.hour, 12)
         XCTAssertEqual(id3Tag?.recordingDateTime?.time?.minute, 10)
     }
+    
+    func testParseDataAsMp3() {
+        let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
+        let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3")))
+        
+        let id3Tag = id3TagEditor.read(mp3: mp3)
+
+        XCTAssertEqual(id3Tag?.properties.version, .version3)
+        XCTAssertEqual(id3Tag?.title, "A New title")
+        XCTAssertEqual(id3Tag?.album, "A New Album")
+        XCTAssertEqual(id3Tag?.artist, "A New Artist")
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
+    }
 
     func testWriteTagWhenItAlreadyExists() {
         let art: Data = try! Data(
@@ -374,6 +389,40 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        )
+    }
+    
+    func testWriteTagToMp3AsData() {
+        let artFront: Data = try! Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
+        )
+        let artBack: Data = try! Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg"))
+        )
+        let id3Tag = ID3Tag(
+            version: .version3,
+            artist: "A New Artist",
+            albumArtist: "A New Album Artist",
+            album: "A New Album",
+            title: "A New title",
+            recordingDateTime: RecordingDateTime(date: RecordingDate(day: 5, month: 8, year: 2018),
+                                                 time: RecordingTime(hour: 15, minute: 39)),
+            genre: Genre(genre: .Metal, description: "Metalcore"),
+            attachedPictures: [
+                AttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
+                AttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg)
+            ],
+            trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
+        )
+        let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
+                                                                                  fileType: "mp3")))
+        
+        let newMp3 = try! id3TagEditor.write(tag: id3Tag, mp3: mp3)
+        
+        XCTAssertEqual(
+            newMp3,
+            try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
+                                                                            fileType: "mp3")))
         )
     }
 }
