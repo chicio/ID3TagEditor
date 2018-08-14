@@ -45,12 +45,6 @@ and then run pod install (or pod update).
 
 ***
 
-### Documentation
-
-You can find the complete api documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
-
-***
-
 ### Usage
 
 ID3Tag editor is compatible with the following platforms:
@@ -143,6 +137,12 @@ The ID3 supported properties are:
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
+
+***
+
+### Documentation
+
+You can find the complete api documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
 
 ***
 
