@@ -142,20 +142,37 @@ end
 <li>Apple TV</li>
 </ul>
 
-<p>ID3TagEditor is really easy to use. To read the ID3 tag of an mp3 file use the <code>read</code> method of an instance of 
-the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class.  </p>
+<p>To read the ID3 tag of an mp3 file you can choose between two api contained in the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class:</p>
+
+<ul>
+<li><code>public func read(from path: String) throws -&gt; ID3Tag?</code></li>
+<li><code>public func read(mp3: Data) throws -&gt; ID3Tag?</code></li>
+</ul>
+
+<p>Below you can find a sample code of the api usage.</p>
 <pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">id3TagEditor</span> <span class="o">=</span> <span class="kt">ID3TagEditor</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file&gt;"</span><span class="p">)</span> <span class="p">{</span>
         <span class="o">...</span><span class="n">use</span> <span class="n">the</span> <span class="n">tag</span><span class="o">...</span>
     <span class="p">}</span>
+
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">mp3</span><span class="p">:</span> <span class="s">"&lt;valid mp3 file passed as Data&gt;"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span><span class="n">use</span> <span class="n">the</span> <span class="n">tag</span><span class="o">...</span>
+    <span class="p">}</span>    
 <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 <span class="p">}</span>  
 </code></pre>
 
-<p>To write a new ID3 tag into an mp3 file use the <code>write</code> method of an instance of the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class.</p>
+<p>To write a new ID3 tag into an mp3 file you can choose between two api contained in the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class:</p>
+
+<ul>
+<li><code>public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws</code></li>
+<li><code>public func write(tag: ID3Tag, mp3: Data) throws -&gt; Data</code></li>
+</ul>
+
+<p>Below you can find a sample code of the api usage.</p>
 <pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="kt">ID3Tag</span><span class="p">(</span>
         <span class="nv">version</span><span class="p">:</span> <span class="o">.</span><span class="n">version3</span><span class="p">,</span>
@@ -166,16 +183,21 @@ the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class.  </
         <span class="nv">recordingDateTime</span><span class="p">:</span> <span class="kt">RecordingDateTime</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">RecordingDate</span><span class="p">(</span><span class="nv">day</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">year</span><span class="p">:</span> <span class="mi">2019</span><span class="p">),</span> 
                                              <span class="nv">time</span><span class="p">:</span> <span class="kt">RecordingTime</span><span class="p">(</span><span class="nv">hour</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">30</span><span class="p">)),</span>
         <span class="nv">genre</span><span class="p">:</span> <span class="kt">Genre</span><span class="p">(</span><span class="nv">genre</span><span class="p">:</span> <span class="o">.</span><span class="kt">ClassicRock</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"Rock &amp; Roll"</span><span class="p">),</span>
-        <span class="nv">attachedPictures</span><span class="p">:</span> <span class="kt">AttachedPicture</span><span class="p">(</span><span class="nv">art</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">NSData</span><span class="o">/</span><span class="kt">Data</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">),</span>
+        <span class="nv">attachedPictures</span><span class="p">:</span> <span class="kt">AttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">NSData</span><span class="o">/</span><span class="kt">Data</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">),</span>
         <span class="nv">trackPosition</span><span class="p">:</span> <span class="kt">TrackPositionInSet</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">totalTracks</span><span class="p">:</span> <span class="mi">9</span><span class="p">)</span>
     <span class="p">)</span>
-    <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">PathLoader</span><span class="p">()</span><span class="o">.</span><span class="nf">pathFor</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"example"</span><span class="p">,</span> <span class="nv">fileType</span><span class="p">:</span> <span class="s">"mp3"</span><span class="p">))</span>
+
+    <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file that will be overwritten&gt;"</span><span class="p">))</span>
+    <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> 
+                           <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file&gt;"</span><span class="p">,</span>
+                           <span class="nv">andSaveTo</span><span class="p">:</span> <span class="s">"&lt;new path where you want to save the mp3&gt;"</span><span class="p">))</span>
+    <span class="k">let</span> <span class="nv">newMp3</span><span class="p">:</span> <span class="kt">Data</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">mp3</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">valid</span> <span class="n">mp3</span> <span class="n">file</span> <span class="n">passed</span> <span class="k">as</span> <span class="kt">Data</span><span class="o">&gt;</span><span class="p">)</span>                          
 <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 <span class="p">}</span>    
 </code></pre>
 
-<p>The above methods use the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> class to describe a valid ID3 tag. The class contains various properties that could be
+<p>The above methods use the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> class to describe a valid ID3 tag. This class contains various properties that could be
 used to read/write a tag to the mp3 file.
 Three versions of the tag are supported. They are described in the <code><a href="Enums/ID3Version.html">ID3Version</a></code> enum:</p>
 <div class="aside aside-version">
@@ -249,7 +271,7 @@ supported target.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2018-08-05)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2018-08-14)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
