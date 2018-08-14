@@ -17,7 +17,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            if let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3")) {
+            let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3")))
+            if let id3Tag = try id3TagEditor.read(mp3: mp3) {
                 if let attachedPictures = id3Tag.attachedPictures, attachedPictures.count > 0 {
                     attachedPictureImage.image = NSImage(data: attachedPictures[0].picture)
                 }
