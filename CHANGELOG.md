@@ -3,7 +3,7 @@ All changes to ID3TagEditor will be documented in this file.
 
 
 ## [2.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.1.0)
-Release date: ---
+Release date: 2018-08-14
 
 #### Added
 - New read api that accept mp3 as `Data`  as parameter
