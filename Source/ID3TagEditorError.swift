@@ -13,6 +13,8 @@ public enum ID3TagEditorError: Error {
     case InvalidFileFormat;
     /// Error generated when the tag size exceed 256 MB.
     case TagTooBig;
-    ///Error generated when there's not valid data in the tag.
+    /// Error generated when there's not valid data in the tag.
     case InvalidTagData;
+    /// Error generated when the file is corrupted.
+    case CorruptedFile;
 }

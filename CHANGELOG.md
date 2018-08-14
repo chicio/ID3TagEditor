@@ -8,6 +8,10 @@ Release date: ---
 - New read api that accept mp3 as `Data`  as parameter
 - New write api that accept mp3 as `Data`  as parameter
 
+#### Fixed
+- Fix crashes on incomplete mp3 file. Now a `CorruptedFile` expection is thrown.
+
+
 ## [2.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.0.0)
 Release date: 2018-08-05
 

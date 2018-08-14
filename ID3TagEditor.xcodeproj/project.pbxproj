@@ -162,6 +162,9 @@
 		4528AF52210C7D0B00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF4D210BBDB700CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift */; };
 		4528AF53210C7D0C00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF4D210BBDB700CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift */; };
 		4528AF54210C7D0D00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528AF4D210BBDB700CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift */; };
+		454789382120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 454789372120D77F005EFAA1 /* example-v3-corrupted.mp3 */; };
+		454789392120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 454789372120D77F005EFAA1 /* example-v3-corrupted.mp3 */; };
+		4547893A2120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 454789372120D77F005EFAA1 /* example-v3-corrupted.mp3 */; };
 		45537A5920932CCF009F639C /* StringToBytesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5820932CCF009F639C /* StringToBytesAdapter.swift */; };
 		45537A5B20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */; };
 		45537A5C20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */; };
@@ -675,6 +678,7 @@
 		4528AF3B210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingYearFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		4528AF43210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameStringContentParserFactory.swift; sourceTree = "<group>"; };
 		4528AF4D210BBDB700CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreatorTest.swift; sourceTree = "<group>"; };
+		454789372120D77F005EFAA1 /* example-v3-corrupted.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v3-corrupted.mp3"; sourceTree = "<group>"; };
 		45537A5820932CCF009F639C /* StringToBytesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToBytesAdapter.swift; sourceTree = "<group>"; };
 		45537A5A20932D33009F639C /* ID3UTF16StringToByteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3UTF16StringToByteAdapter.swift; sourceTree = "<group>"; };
 		45537A5F20932D81009F639C /* ID3ISO88591StringToByteAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ISO88591StringToByteAdapter.swift; sourceTree = "<group>"; };
@@ -1305,6 +1309,7 @@
 				45D58CE5210CCEAF00E820C8 /* example-with-tag-jpg-v4.mp3 */,
 				458BED1B20926C9A003C2E14 /* example-utf16.mp3 */,
 				C50677FFA5F143FA0572BA4D /* example-to-be-modified.mp3 */,
+				454789372120D77F005EFAA1 /* example-v3-corrupted.mp3 */,
 				C5067501E6EB4A17945FC71B /* example-cover-png.png */,
 				C506784AEA966C7A8BC7EF69 /* example-with-tag-jpg-v3.mp3 */,
 				C5067C627403499F44702DE6 /* example-v3-additional-data.mp3 */,
@@ -1778,6 +1783,7 @@
 				C506774CEC09164E959AF72A /* example.mp3 in Resources */,
 				C506724A7FBBFA5C694E8B6E /* example-v23-png.mp3 in Resources */,
 				C5067E54FE3A98B1879EDD0B /* example-to-be-modified-in-same-path.mp3 in Resources */,
+				454789382120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
 				C506776DE33D29951124CD85 /* folder.jpg in Resources */,
 				458BED1C20926C9A003C2E14 /* example-utf16.mp3 in Resources */,
 			);
@@ -1807,6 +1813,7 @@
 				C5067249E2E352C2A30A1663 /* example.mp3 in Resources */,
 				C506739BA111E9B2B8887C97 /* example-v23-png.mp3 in Resources */,
 				C5067617959593C6927B955D /* example-to-be-modified-in-same-path.mp3 in Resources */,
+				454789392120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
 				C50678D5E3466DD22929F573 /* folder.jpg in Resources */,
 				458BED1D20926C9A003C2E14 /* example-utf16.mp3 in Resources */,
 			);
@@ -1836,6 +1843,7 @@
 				45541C1F205996110025A8BF /* example.mp3 in Resources */,
 				45541C20205996110025A8BF /* example-v23-png.mp3 in Resources */,
 				45541C21205996110025A8BF /* example-to-be-modified-in-same-path.mp3 in Resources */,
+				4547893A2120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
 				45541C22205996110025A8BF /* folder.jpg in Resources */,
 				458BED1E20926C9A003C2E14 /* example-utf16.mp3 in Resources */,
 			);

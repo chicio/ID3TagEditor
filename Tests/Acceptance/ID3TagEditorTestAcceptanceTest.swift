@@ -146,7 +146,7 @@ class ID3TagEditorTest: XCTestCase {
         let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3")))
         
-        let id3Tag = id3TagEditor.read(mp3: mp3)
+        let id3Tag = try! id3TagEditor.read(mp3: mp3)
 
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.title, "A New title")
@@ -154,6 +154,12 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.artist, "A New Artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
+    }
+    
+    func testReadInvalidFile() {
+        let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-corrupted", fileType: "mp3")))
+
+        XCTAssertThrowsError(try id3TagEditor.read(mp3: mp3))
     }
 
     func testWriteTagWhenItAlreadyExists() {

@@ -32,13 +32,14 @@ public class ID3TagEditor {
 
      - parameter path: path of the mp3 file to be parsed.
 
-     - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path.
-
      - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
+     
+     - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path.
+     Could throw `CorruptedFile` if the file is corrupted.
      */
     public func read(from path: String) throws -> ID3Tag? {
         let mp3 = try mp3FileReader.readFrom(path: path)
-        return self.id3TagParser.parse(mp3: mp3)
+        return try self.id3TagParser.parse(mp3: mp3)
     }
     
     /**
@@ -47,9 +48,11 @@ public class ID3TagEditor {
      - parameter mp3: mp3 file opened as Data.
      
      - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
+     
+     - throws: Could throw `CorruptedFile` if the file is corrupted.
      */
-    public func read(mp3: Data) -> ID3Tag? {
-        return self.id3TagParser.parse(mp3: mp3)
+    public func read(mp3: Data) throws -> ID3Tag? {
+        return try self.id3TagParser.parse(mp3: mp3)
     }
 
     /**
@@ -66,7 +69,7 @@ public class ID3TagEditor {
      */
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
         let mp3 = try mp3FileReader.readFrom(path: path)
-        let currentTag = self.id3TagParser.parse(mp3: mp3)
+        let currentTag = try self.id3TagParser.parse(mp3: mp3)
         let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
         try mp3FileWriter.write(mp3: mp3WithId3Tag, path: newPath ?? path)
     }
@@ -83,7 +86,7 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(tag: ID3Tag, mp3: Data) throws -> Data {
-        let currentTag = self.id3TagParser.parse(mp3: mp3)
+        let currentTag = try self.id3TagParser.parse(mp3: mp3)
         let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
         return mp3WithId3Tag
     }
