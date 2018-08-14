@@ -45,6 +45,12 @@ and then run pod install (or pod update).
 
 ***
 
+### Documentation
+
+You can find the complete api documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
+
+***
+
 ### Usage
 
 ID3Tag editor is compatible with the following platforms:
@@ -54,8 +60,11 @@ ID3Tag editor is compatible with the following platforms:
 * Apple Watch
 * Apple TV
 
-ID3TagEditor is really easy to use. To read the ID3 tag of an mp3 file use the `read` method of an instance of 
-the `ID3TagEditor` class.  
+To read the ID3 tag of an mp3 file you can choose between two api contained in the `ID3TagEditor` class:
+* `public func read(from path: String) throws -> ID3Tag?`
+* `public func read(mp3: Data) throws -> ID3Tag?`
+
+Below you can find a sample code of the api usage.
 
 ```swift
 do {
@@ -64,12 +73,20 @@ do {
     if let id3Tag = try id3TagEditor.read(from: "<valid path to the mp3 file>") {
         ...use the tag...
     }
+    
+    if let id3Tag = try id3TagEditor.read(mp3: "<valid mp3 file passed as Data>") {
+        ...use the tag...
+    }    
 } catch {
     print(error)
 }  
 ```
 
-To write a new ID3 tag into an mp3 file use the `write` method of an instance of the `ID3TagEditor` class.
+To write a new ID3 tag into an mp3 file you can choose between two api contained in the `ID3TagEditor` class:
+* `public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws`
+* `public func write(tag: ID3Tag, mp3: Data) throws -> Data`
+
+Below you can find a sample code of the api usage.
 
 ```swift
 do {
@@ -82,16 +99,21 @@ do {
         recordingDateTime: RecordingDateTime(date: RecordingDate(day: 1, month: 10, year: 2019), 
                                              time: RecordingTime(hour: 14, minute: 30)),
         genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-        attachedPictures: AttachedPicture(art: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg),
+        attachedPictures: AttachedPicture(picture: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg),
         trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
     )
-    try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example", fileType: "mp3"))
+    
+    try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>"))
+    try id3TagEditor.write(tag: id3Tag, 
+                           to: "<valid path to the mp3 file>",
+                           andSaveTo: "<new path where you want to save the mp3>"))
+    let newMp3: Data = try id3TagEditor.write(tag: id3Tag, mp3: <valid mp3 file passed as Data>)                          
 } catch {
     print(error)
 }    
 ```  
 
-The above methods use the `ID3Tag` class to describe a valid ID3 tag. The class contains various properties that could be
+The above methods use the `ID3Tag` class to describe a valid ID3 tag. This class contains various properties that could be
 used to read/write a tag to the mp3 file.
 Three versions of the tag are supported. They are described in the `ID3Version` enum:
 
@@ -121,12 +143,6 @@ The ID3 supported properties are:
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
-
-***
-
-### Documentation
-
-You can find the complete api documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
 
 ***
 
