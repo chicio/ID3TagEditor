@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ID3TagEditor"
-  s.version      = "2.1.0"
+  s.version      = "2.1.1"
   s.summary      = "A swift library to read and modify ID3 Tag of any mp3 file"
   s.description  = <<-DESC
 A swift library to read and modify ID3 Tag of any mp3 file.
