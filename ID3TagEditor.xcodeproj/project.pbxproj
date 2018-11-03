@@ -1703,7 +1703,7 @@
 				TargetAttributes = {
 					452831C42044C40700458375 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					452831CD2044C40700458375 = {
@@ -2591,7 +2591,7 @@
 				PRODUCT_NAME = ID3TagEditor;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -2614,7 +2614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

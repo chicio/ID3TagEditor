@@ -22,7 +22,7 @@ class Mp3WithID3TagBuilder {
         if let validCurrentId3Tag = currentId3Tag {
             tagSizeWithHeader = Int(validCurrentId3Tag.properties.size) + ID3TagConfiguration().headerSize();
         }
-        let music = mp3.subdata(in: Range(tagSizeWithHeader..<(mp3.count)))
+        let music = mp3.subdata(in: tagSizeWithHeader..<mp3.count)
         let mp3WithTag = tag + music
         return mp3WithTag
     }

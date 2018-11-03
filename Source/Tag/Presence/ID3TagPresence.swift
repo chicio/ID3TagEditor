@@ -18,7 +18,7 @@ class ID3TagPresence: TagPresence {
         if (mp3SizeIsTooSmall(mp3: mp3)) {
             return false
         }
-        let header = [UInt8](mp3.subdata(in: Range(0..<6)))
+        let header = [UInt8](mp3.subdata(in: 0..<6))
         return header.elementsEqual(id3TagConfiguration.headerFor(version: version))
     }
 

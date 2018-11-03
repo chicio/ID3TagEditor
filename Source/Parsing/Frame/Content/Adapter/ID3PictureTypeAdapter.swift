@@ -23,7 +23,7 @@ class ID3PictureTypeAdapter: PictureTypeAdapter {
                         pictureFormat: format,
                         version: version
                 )
-        let pictureTypeByte = [UInt8](frame.subdata(in: Range(pictureTypeBytePosition..<pictureTypeBytePosition + 1)))
+        let pictureTypeByte = [UInt8](frame.subdata(in: pictureTypeBytePosition..<pictureTypeBytePosition + 1))
         if pictureTypeByte.count > 0,
            let pictureType = ID3PictureType(rawValue: pictureTypeByte[0]) {
             return pictureType
