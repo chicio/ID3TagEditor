@@ -7,6 +7,7 @@ Release date: 2018-11-03
 #### Fixed
 - Update to Swift 4.2
 - Changed deprecated `Range` init for conversion to `CountableRange` 
+- Fixed Package.swift for Swift Package Manager on macOS
 
 ## [2.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.1.0)
 Release date: 2018-08-14
