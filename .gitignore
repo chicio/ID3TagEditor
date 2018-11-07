@@ -78,3 +78,6 @@ fabric.properties
 Tests/my-version.mp3
 Tests/lb-mine.mp3
 Tests/alice-in-chains-with-tag.mp3
+
+# Swift package manager
+.build
