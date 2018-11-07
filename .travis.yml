@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9.4
+osx_image: xcode10.1
 script:
  - set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor macOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty
  - set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor iOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8,OS=latest" | xcpretty
