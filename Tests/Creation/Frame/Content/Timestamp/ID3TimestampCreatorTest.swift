@@ -56,4 +56,13 @@ class ID3TimestampCreatorTest: XCTestCase {
         
         XCTAssertEqual(timestampCreator.createFrom(recordingDateTime: recordingTime), nil)
     }
+    
+    static var allTests = [
+        ("testCreateTimestampCorrectly", testCreateTimestampCorrectly),
+        ("testNilDay", testNilDay),
+        ("testNilMonth", testNilMonth),
+        ("testNilYear", testNilYear),
+        ("testNilHour", testNilHour),
+        ("testNilMinute", testNilMinute)
+    ]
 }

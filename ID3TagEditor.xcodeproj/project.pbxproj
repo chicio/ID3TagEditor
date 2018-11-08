@@ -368,9 +368,9 @@
 		45D58CD4210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */; };
 		45D58CD5210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */; };
 		45D58CD6210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */; };
-		45D58CD9210CB97900E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD8210CB97900E820C8 /* ID3TimestampCreator.swift */; };
-		45D58CDA210CB97900E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD8210CB97900E820C8 /* ID3TimestampCreator.swift */; };
-		45D58CDB210CB97900E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD8210CB97900E820C8 /* ID3TimestampCreator.swift */; };
+		45D58CD9210CB97900E820C8 /* ID3TimestampCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */; };
+		45D58CDA210CB97900E820C8 /* ID3TimestampCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */; };
+		45D58CDB210CB97900E820C8 /* ID3TimestampCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */; };
 		45D58CDD210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */; };
 		45D58CDE210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */; };
 		45D58CDF210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */; };
@@ -693,6 +693,8 @@
 		4562C1EF21173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDayMonthContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		4562C1F3211741FE00AFE22E /* ID3CoupleOfNumbersAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3CoupleOfNumbersAdapter.swift; sourceTree = "<group>"; };
 		4562C1F7211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
+		457517C52193B69000627A34 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		457517C62193B6B300627A34 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		45775ED821070B3000B1B3FE /* String+UTF16Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UTF16Bytes.swift"; sourceTree = "<group>"; };
 		45775EDC210714EB00B1B3FE /* UInt16+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+Bytes.swift"; sourceTree = "<group>"; };
 		45775EE12107C24C00B1B3FE /* ID3FrameStringEncodingDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameStringEncodingDetector.swift; sourceTree = "<group>"; };
@@ -709,7 +711,7 @@
 		45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CCD210CB85000E820C8 /* TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
-		45D58CD8210CB97900E820C8 /* ID3TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TimestampCreator.swift; sourceTree = "<group>"; };
+		45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TimestampCreatorTest.swift; sourceTree = "<group>"; };
 		45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CE5210CCEAF00E820C8 /* example-with-tag-jpg-v4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-with-tag-jpg-v4.mp3"; sourceTree = "<group>"; };
 		45D58CE9210CD12E00E820C8 /* example-with-tag-jpg-v4-timestamp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-with-tag-jpg-v4-timestamp.mp3"; sourceTree = "<group>"; };
@@ -901,6 +903,8 @@
 		452831D22044C40700458375 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				457517C52193B69000627A34 /* LinuxMain.swift */,
+				457517C62193B6B300627A34 /* XCTestManifests.swift */,
 				452831D52044C40700458375 /* Info.plist */,
 				C5067753D083F53C9092BDF7 /* Creation */,
 				C5067B13D98AA770959FAF9C /* Mock */,
@@ -1241,7 +1245,7 @@
 		45D58CD7210CB94C00E820C8 /* Timestamp */ = {
 			isa = PBXGroup;
 			children = (
-				45D58CD8210CB97900E820C8 /* ID3TimestampCreator.swift */,
+				45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */,
 			);
 			path = Timestamp;
 			sourceTree = "<group>";
@@ -2008,7 +2012,7 @@
 				C506776E1E3FED77D9951648 /* ID3FrameConfigurationTest.swift in Sources */,
 				C50672BFCD4990A0A347FA87 /* ID3RecordingYearFrameCreatorTest.swift in Sources */,
 				C5067B9F73B2694F5F3378E0 /* ID3GenreFrameCreatorTest.swift in Sources */,
-				45D58CD9210CB97900E820C8 /* ID3TimestampCreator.swift in Sources */,
+				45D58CD9210CB97900E820C8 /* ID3TimestampCreatorTest.swift in Sources */,
 				4528AF52210C7D0B00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */,
 				C506705D2D3EA84FC56C8F74 /* ID3GenreStringAdapterTest.swift in Sources */,
 				45D58CC9210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */,
@@ -2165,7 +2169,7 @@
 				C506771EC40652FF5DE2A6D2 /* ID3FrameConfigurationTest.swift in Sources */,
 				C5067D55EE20476641294612 /* ID3RecordingYearFrameCreatorTest.swift in Sources */,
 				C50677C38A31BD28A1F54E01 /* ID3GenreFrameCreatorTest.swift in Sources */,
-				45D58CDA210CB97900E820C8 /* ID3TimestampCreator.swift in Sources */,
+				45D58CDA210CB97900E820C8 /* ID3TimestampCreatorTest.swift in Sources */,
 				4528AF53210C7D0C00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */,
 				C506730C7ADDAACABB7405E4 /* ID3GenreStringAdapterTest.swift in Sources */,
 				45D58CCA210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */,
@@ -2321,7 +2325,7 @@
 				45541C0F205995F60025A8BF /* ID3FrameStringContentParsingOperationTest.swift in Sources */,
 				45541C10205995F60025A8BF /* ID3GenreStringAdapterTest.swift in Sources */,
 				45541C11205995F60025A8BF /* ID3PictureTypeAdapterTest.swift in Sources */,
-				45D58CDB210CB97900E820C8 /* ID3TimestampCreator.swift in Sources */,
+				45D58CDB210CB97900E820C8 /* ID3TimestampCreatorTest.swift in Sources */,
 				4528AF54210C7D0D00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */,
 				45541C12205995F60025A8BF /* ID3TrackPositionStringAdapterTest.swift in Sources */,
 				45541C13205995F60025A8BF /* ID3TagPresenceTest.swift in Sources */,
