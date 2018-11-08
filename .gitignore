@@ -82,3 +82,5 @@ Tests/alice-in-chains-with-tag.mp3
 # Swift package manager
 .build
 Demo/**/Package.resolved
+Demo/**/.build
+
