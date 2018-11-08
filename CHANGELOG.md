@@ -1,8 +1,11 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
-## [2.1.1](https://github.com/chicio/ID3TagEditor/releases/tag/2.1.1)
-Release date: 2018-11-03
+## [2.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.2.0)
+Release date: 2018-11-08
+
+#### Added
+- Added support for swift build on Linux (Ubuntu)
 
 #### Fixed
 - Update to Swift 4.2
