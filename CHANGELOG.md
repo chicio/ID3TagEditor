@@ -5,7 +5,7 @@ All changes to ID3TagEditor will be documented in this file.
 Release date: 2018-11-08
 
 #### Added
-- Added support for swift build on Linux (Ubuntu)
+- Added support for swift package manager using `swift build`/`swift test` on Linux (Ubuntu) and macOS
 
 #### Fixed
 - Update to Swift 4.2
@@ -20,7 +20,7 @@ Release date: 2018-08-14
 - New write api that accept mp3 as `Data`  as parameter
 
 #### Fixed
-- Fix crashes on incomplete mp3 file. Now a `CorruptedFile` expection is thrown.
+- Fix crashes on incomplete mp3 file. Now a `CorruptedFile` expection is thrown
 
 
 ## [2.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.0.0)
@@ -30,7 +30,7 @@ Release date: 2018-08-05
 - Renamed `art` property as `picture` on the `ID3Tag` class 
 - Added v2.4 tag support
     - 2.4 tag and frame configuration (without reverse header support for tag)
-    - added "TDRC" instead of deprecated "TYER"(2.3)/"TYE"(2.2): field with timestamp that has a fallback to string content.
+    - added "TDRC" instead of deprecated "TYER"(2.3)/"TYE"(2.2): field with timestamp that has a fallback to string content
     - new `RecordingDateTime` inside the `ID3Tag` class
 - Added "TDAT" frame support
 - Added "TIME" frame support
