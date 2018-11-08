@@ -11,7 +11,7 @@ class ID3TagSizeParser: TagSizeParser {
     private let tagBytesOffset = 6;
     
     func parse(data: NSData) -> UInt32 {
-        let size = CFSwapInt32HostToBig((data.bytes + tagBytesOffset).assumingMemoryBound(to: UInt32.self).pointee);
+        let size = (data.bytes + tagBytesOffset).assumingMemoryBound(to: UInt32.self).pointee.bigEndian;
         let b1 = (size & 0x7F000000) >> 3;
         let b2 = (size & 0x007F0000) >> 2;
         let b3 = (size & 0x00007F00) >> 1;
