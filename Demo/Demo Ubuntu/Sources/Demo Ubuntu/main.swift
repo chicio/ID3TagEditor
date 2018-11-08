@@ -3,7 +3,7 @@ import ID3TagEditor
 
 print("Start...")
 
-let mp3Path = FileManager.default.currentDirectoryPath + "/Sources/DemoUbuntu/example-v3-additional-data.mp3"
+let mp3Path = FileManager.default.currentDirectoryPath + "/Sources/Demo Ubuntu/example-v3-additional-data.mp3"
 
 do {
     let id3TagEditor = ID3TagEditor()

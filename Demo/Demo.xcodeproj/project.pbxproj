@@ -231,6 +231,11 @@
 		45541BCE205990990025A8BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45541BD0205990990025A8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45541BDF205994AA0025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
+		45751DAB2193CDB100627A34 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Package.resolved; sourceTree = "<group>"; };
+		45751DAC2193CDB100627A34 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		45751DAD2193CDB100627A34 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		45751DB02193CDB100627A34 /* example-v3-additional-data.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v3-additional-data.mp3"; sourceTree = "<group>"; };
+		45751DB12193CDB100627A34 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		458BED20209272E4003C2E14 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45AF185E204C226C00343B25 /* PathLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoader.swift; sourceTree = "<group>"; };
 		45EEC042205A66E900CEF5BF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 				45F834352059078B0046C804 /* Demo watchOS */,
 				45F834442059078B0046C804 /* Demo watchOS Extension */,
 				45541BC6205990990025A8BF /* Demo tvOS */,
+				457517C82193CDAF00627A34 /* Demo Ubuntu */,
 				452832F02044D28E00458375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -365,6 +371,34 @@
 				45541BD0205990990025A8BF /* Info.plist */,
 			);
 			path = "Demo tvOS";
+			sourceTree = "<group>";
+		};
+		457517C82193CDAF00627A34 /* Demo Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				45751DAB2193CDB100627A34 /* Package.resolved */,
+				45751DAC2193CDB100627A34 /* .gitignore */,
+				45751DAD2193CDB100627A34 /* Package.swift */,
+				45751DAE2193CDB100627A34 /* Sources */,
+			);
+			path = "Demo Ubuntu";
+			sourceTree = "<group>";
+		};
+		45751DAE2193CDB100627A34 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				45751DAF2193CDB100627A34 /* Demo Ubuntu */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		45751DAF2193CDB100627A34 /* Demo Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				45751DB02193CDB100627A34 /* example-v3-additional-data.mp3 */,
+				45751DB12193CDB100627A34 /* main.swift */,
+			);
+			path = "Demo Ubuntu";
 			sourceTree = "<group>";
 		};
 		45AF185B204C224600343B25 /* Demo common */ = {
