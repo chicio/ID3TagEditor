@@ -133,16 +133,6 @@ extension ID3RecordingYearFrameCreatorTest {
     ]
 }
 
-extension ID3StringContentParsingOperationTest {
-    static let __allTests = [
-        ("testFrameContentParsedV2", testFrameContentParsedV2),
-        ("testFrameContentParsedV2utf16", testFrameContentParsedV2utf16),
-        ("testFrameContentParsedV3", testFrameContentParsedV3),
-        ("testFrameContentParsedV3utf16", testFrameContentParsedV3utf16),
-        ("testFrameContentParsedV4utf8", testFrameContentParsedV4utf8),
-    ]
-}
-
 extension ID3TagCreatorTest {
     static let __allTests = [
         ("testGenerateValidData", testGenerateValidData),
@@ -238,7 +228,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3RecordingDayMonthFrameCreatorTest.__allTests),
         testCase(ID3RecordingTimeFrameContentParsingOperationTest.__allTests),
         testCase(ID3RecordingYearFrameCreatorTest.__allTests),
-        testCase(ID3StringContentParsingOperationTest.__allTests),
         testCase(ID3TagCreatorTest.__allTests),
         testCase(ID3TagPresenceTest.__allTests),
         testCase(ID3TimestampCreatorTest.__allTests),

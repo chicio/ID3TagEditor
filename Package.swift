@@ -23,6 +23,7 @@ let package = Package(
             path: "./Tests",
             exclude: [
                 "Parsing/Frame/Content/Size/ID3FrameContentSizeParserTest.swift",
+                "Parsing/Frame/Content/Operation/ID3FrameStringContentParsingOperationTest.swift",
                 "Parsing/Frame/Size/ID3FrameSizeParserTest.swift",
                 "Parsing/Tag/Size/ID3TagSizeParserTest.swift",
                 "Parsing/Tag/Version/ID3TagVersionParserTest.swift",

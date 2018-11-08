@@ -693,8 +693,6 @@
 		4562C1EF21173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDayMonthContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		4562C1F3211741FE00AFE22E /* ID3CoupleOfNumbersAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3CoupleOfNumbersAdapter.swift; sourceTree = "<group>"; };
 		4562C1F7211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
-		457517C62193B6B300627A34 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		457517C72193B8BF00627A34 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		45775ED821070B3000B1B3FE /* String+UTF16Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UTF16Bytes.swift"; sourceTree = "<group>"; };
 		45775EDC210714EB00B1B3FE /* UInt16+Bytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+Bytes.swift"; sourceTree = "<group>"; };
 		45775EE12107C24C00B1B3FE /* ID3FrameStringEncodingDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameStringEncodingDetector.swift; sourceTree = "<group>"; };
@@ -860,7 +858,6 @@
 				45541C25205999A20025A8BF /* CHANGELOG.md */,
 				45AB7194204AD842004A2239 /* LICENSE.md */,
 				45AB7195204AD842004A2239 /* README.md */,
-				457517C72193B8BF00627A34 /* LinuxMain.swift */,
 				45AB7193204AD842004A2239 /* Package.swift */,
 				452831C72044C40700458375 /* Source */,
 				452831D22044C40700458375 /* Tests */,
@@ -904,7 +901,6 @@
 		452831D22044C40700458375 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				457517C62193B6B300627A34 /* XCTestManifests.swift */,
 				452831D52044C40700458375 /* Info.plist */,
 				C5067753D083F53C9092BDF7 /* Creation */,
 				C5067B13D98AA770959FAF9C /* Mock */,
