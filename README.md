@@ -16,7 +16,7 @@ A swift library to read and modify ID3 Tag of any mp3 file.
 
 ### Installation
 
-There are three ways to install ID3TagEditor in your project: manual installation, as a stand-alone framework or using
+There are four ways to install ID3TagEditor in your project: manual installation, as a stand-alone framework or using
 cocoapods.
 
 **Manual installation**
@@ -42,6 +42,29 @@ end
 ```
 
 and then run pod install (or pod update).
+
+**Swift Package Manager**
+
+ID3TagEditor is also available as Swift Package for the Swift Package Manager. To use it simply add it to your dependecies in the Swift  `Package.swift`.
+After that you can build your project with the command `swift build`, and eventually run you project (if it is an executable type) with the command `swift run`.
+
+```
+// swift-tools-version:4.2
+
+import PackageDescription
+
+let package = Package(
+    name: "Your App",
+    dependencies: [
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "2.2.0"),
+    ],
+    targets: [
+        .target(
+            name: "Your App",
+            dependencies: ["ID3TagEditor"]),
+    ]
+)
+```
 
 ***
 
@@ -156,4 +179,5 @@ supported target.
 <img width="320" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/03-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/05-example.png">
 </p>
