@@ -16,8 +16,12 @@ A swift library to read and modify ID3 Tag of any mp3 file.
 
 ### Installation
 
-There are four ways to install ID3TagEditor in your project: manual installation, as a stand-alone framework or using
-cocoapods.
+There are four ways to install ID3TagEditor in your project:
+
+- manual installation
+- framework 
+- cocoapods
+- Swift Package Manager (support for linux platform)
 
 **Manual installation**
 
