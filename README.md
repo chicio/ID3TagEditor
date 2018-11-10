@@ -51,9 +51,10 @@ and then run pod install (or pod update).
 
 ID3TagEditor is also available as Swift Package for the Swift Package Manager. To use it simply add it to your dependecies in the Swift  `Package.swift`.
 After that you can build your project with the command `swift build`, and eventually run you project (if it is an executable type) with the command `swift run`.
-If you want you can also run tests using `swift test`.
-*IMPORTANT: at the moment some tests are excluded from  `swift test` because the test api is missing (eg. `XCTestExpectation`) or 
-because the Bundle of resources in the test target doesn't work as expected. 
+If you want you can also run tests using `swift test`.  
+  
+  *IMPORTANT: at the moment some tests are excluded from  `swift test` because some test api are missing (eg. `XCTestExpectation`) or 
+because the Bundle of resources in the test target doesn't work as expected.* 
 
 ```
 // swift-tools-version:4.2
