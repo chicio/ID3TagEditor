@@ -39,7 +39,7 @@ class ID3TagCreatorTest: XCTestCase {
         XCTAssertEqual(
                 try! id3TagCreator.create(id3Tag: ID3Tag(version: .version3, size: 2)),
                 Data(bytes: ID3TagConfiguration().headerFor(version: .version3)
-                        + [0x3, 0x2, 0x22, 0x33] + [UInt8](repeating: 0x0, count: 2048)
+                        + [0x0, 0x3, 0x2, 0x22, 0x33] + [UInt8](repeating: 0x0, count: 2048)
                 )
         )
     }

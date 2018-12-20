@@ -10,7 +10,7 @@ import Foundation
 /**
  A class used to represent an ID3 tag.
  */
-public class ID3Tag {
+public class ID3Tag: CustomDebugStringConvertible {
     /// The properties of the tag. The public available property to the user of the frmaework is the versions property.
     public var properties: TagProperties
     /// The artist of the tag.
@@ -31,6 +31,22 @@ public class ID3Tag {
     public lazy var attachedPictures: [AttachedPicture]? = {
         return []
     }()
+    
+    public var debugDescription: String {
+        return """
+        ID3Tag:
+          - size: \(self.properties.size)
+          - version: \(self.properties.version)
+          - artist: \(self.artist ?? "-")
+          - albumArtist: \(self.albumArtist ?? "-")
+          - title: \(self.title ?? "-")
+          - trackPosition: \(self.trackPosition?.debugDescription ?? "-")
+          - album: \(self.album ?? "-")
+          - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
+        - genre: \(String(describing: genre))
+        - attachedPicture: \(attachedPictures?.reduce("", { $0 + " - " + $1.description }) ?? "")
+        """
+    }
 
     /**
      Init a tag.

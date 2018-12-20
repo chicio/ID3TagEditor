@@ -16,6 +16,8 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertThrowsError(try id3TagEditor.write(tag: ID3Tag(version: .version2, size: 0), to: ""))
     }
     
+    //MARK: read
+    
     func testReadTagV2() {
         let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
@@ -28,35 +30,6 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.albumArtist, "example album artist")
         XCTAssertEqual(id3Tag?.artist, "example artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
-    }
-    
-    func testWriteTagV2() {
-        let art: Data = try! Data(
-            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
-        )
-        let pathMp3ToCompare = PathLoader().pathFor(name: "example", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-v2.mp3"
-        let id3Tag = ID3Tag(
-            version: .version2,
-            artist: "example artist",
-            albumArtist: "example album artist",
-            album: "example album",
-            title: "example song",
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
-            trackPosition: nil
-        )
-        
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
-        XCTAssertEqual(
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
-        )
     }
 
     func testParseTagV3() {
@@ -103,45 +76,31 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.trackPosition?.totalTracks, 9)
     }
     
-    func testParseTagV4FromCompetitionWithErroneousTDRC() {
-        let pathFront = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
-        let coverFront = try! Data(contentsOf: URL(fileURLWithPath: pathFront))
-
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-with-tag-jpg-v4", fileType: "mp3"))
+    func testReadV4() {
+        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4", fileType: "mp3"))
 
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual(id3Tag?.title, "A New title")
         XCTAssertEqual(id3Tag?.album, "A New Album")
-        XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.albumArtist, "A New Album Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, coverFront)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Jpeg)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 1998)
+        XCTAssertEqual(id3Tag?.artist, "A New Artist")        
     }
     
-    func testParseTagV4FromCompetitionWithTDRCTimestamp() {
-        let pathFront = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
-        let coverFront = try! Data(contentsOf: URL(fileURLWithPath: pathFront))
+    func testReadV4WithImage() {
+        let path = PathLoader().pathFor(name: "cover-v4", fileType: "png")
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-with-tag-jpg-v4-timestamp", fileType: "mp3"))
+        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4-png", fileType: "mp3"))
         
         XCTAssertEqual(id3Tag?.properties.version, .version4)
-        XCTAssertEqual(id3Tag?.title, "A New title")
-        XCTAssertEqual(id3Tag?.album, "A New Album")
-        XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.albumArtist, "A New Album Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, coverFront)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Jpeg)
+        XCTAssertEqual(id3Tag?.artist, "MATRANG")
+        XCTAssertEqual(id3Tag?.title, "Медуза")
+        XCTAssertEqual(id3Tag?.genre, Genre(genre: nil, description: "Hip-Hop"))
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
+        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
         XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.day, 25)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.month, 7)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.hour, 12)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.minute, 10)
     }
     
-    func testParseDataAsMp3() {
+    func testReadAsMp3() {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3")))
@@ -160,6 +119,51 @@ class ID3TagEditorTest: XCTestCase {
         let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-corrupted", fileType: "mp3")))
 
         XCTAssertThrowsError(try id3TagEditor.read(mp3: mp3))
+    }
+    
+    func testReadUtf16String() {
+        let id3TagEditor = ID3TagEditor()
+        let pathMp3 = PathLoader().pathFor(name: "example-utf16", fileType: "mp3")
+        
+        let id3Tag = try! id3TagEditor.read(from: pathMp3)
+        
+        XCTAssertEqual(id3Tag?.title, "Om Tryumbacom")
+        XCTAssertEqual(id3Tag?.artist, "Laraaji")
+        XCTAssertEqual(id3Tag?.album, "Vision Songs Vol. 1")
+        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
+        XCTAssertEqual(id3Tag?.trackPosition?.position, 10)
+    }
+    
+    
+    //MARK: write
+    
+    func testWriteTagV2() {
+        let art: Data = try! Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
+        )
+        let pathMp3ToCompare = PathLoader().pathFor(name: "example", fileType: "mp3")
+        let pathMp3Generated = NSHomeDirectory() + "/example-v2.mp3"
+        let id3Tag = ID3Tag(
+            version: .version2,
+            artist: "example artist",
+            albumArtist: "example album artist",
+            album: "example album",
+            title: "example song",
+            recordingDateTime: nil,
+            genre: nil,
+            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
+            trackPosition: nil
+        )
+        
+        XCTAssertNoThrow(try id3TagEditor.write(
+            tag: id3Tag,
+            to: PathLoader().pathFor(name: "example", fileType: "mp3"),
+            andSaveTo: pathMp3Generated
+            ))
+        XCTAssertEqual(
+            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
+            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        )
     }
 
     func testWriteTagWhenItAlreadyExists() {
@@ -323,78 +327,6 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
                 try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
-        )
-    }
-
-    func testUtf16String() {
-        let id3TagEditor = ID3TagEditor()
-        let pathMp3 = PathLoader().pathFor(name: "example-utf16", fileType: "mp3")
-        
-        let id3Tag = try! id3TagEditor.read(from: pathMp3)
-        
-        XCTAssertEqual(id3Tag?.title, "Om Tryumbacom")
-        XCTAssertEqual(id3Tag?.artist, "Laraaji")
-        XCTAssertEqual(id3Tag?.album, "Vision Songs Vol. 1")
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
-        XCTAssertEqual(id3Tag?.trackPosition?.position, 10)
-    }
-    
-    func testWrite24tagWithOnlyYear() {
-        let art: Data = try! Data(
-            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
-        )
-        let pathMp3ToCompare = PathLoader().pathFor(name: "example-with-tag-jpg-v4", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-v4-jpg.mp3"
-        let id3Tag = ID3Tag(
-            version: .version4,
-            artist: "A New Artist",
-            albumArtist: "A New Album Artist",
-            album: "A New Album",
-            title: "A New title",
-            recordingDateTime: RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: 1998), time: nil),
-            genre: nil,
-            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
-            trackPosition: nil
-        )
-        
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-            ))
-        XCTAssertEqual(
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
-        )
-    }
-    
-    func testWrite24tagWithTimestamp() {
-        let art: Data = try! Data(
-            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
-        )
-        let pathMp3ToCompare = PathLoader().pathFor(name: "example-with-tag-jpg-v4-timestamp", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-with-tag-jpg-v4-timestamp.mp3"
-        let id3Tag = ID3Tag(
-            version: .version4,
-            artist: "A New Artist",
-            albumArtist: "A New Album Artist",
-            album: "A New Album",
-            title: "A New title",
-            recordingDateTime: RecordingDateTime(date: RecordingDate(day: 25, month: 7, year: 2018),
-                                                 time: RecordingTime(hour: 12, minute: 10)),
-            genre: nil,
-            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
-            trackPosition: nil
-        )
-        
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-            ))
-        XCTAssertEqual(
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
     

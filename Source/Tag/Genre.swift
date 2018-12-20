@@ -15,7 +15,7 @@ public struct Genre: Equatable {
     public var identifier: ID3Genre?
     /// A generic genre description. Useful to build your own genres.
     public var description: String?
-
+    
     /**
      Init a genre.as
 
