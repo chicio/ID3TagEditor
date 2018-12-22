@@ -15,6 +15,7 @@ class ID3FrameContentSizeCalculator: FrameContentSizeCalculator {
     }
 
     func calculateSizeOf(content: [UInt8], version: ID3Version) -> [UInt8] {
+        #warning("ADD HERE ENCODING FOR SAVE SIZE AS SYNCHSAFE INTEGER")
         var size = uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(content.count))
         if version2OrBelow(version: version) {
             size.removeFirst();
