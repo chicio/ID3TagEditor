@@ -13,17 +13,17 @@ import Foundation
  - SeeAlso https://en.wikipedia.org/wiki/Synchsafe
  */
 class SynchsafeIntegerEncoder {
-    func encode(integer: UInt32) -> UInt32 {
-        var encodedInteger: UInt32 = 0
-        var mask: UInt32 = 0x7F
-        var partiallyEncodedInteger = integer
+    func encode(integer: Int) -> Int {
+        var out: Int = 0
+        var mask: Int = 0x7F
+        var currentValue = integer
         while (mask != 0x7FFFFFFF) {
-            encodedInteger = partiallyEncodedInteger & ~mask
-            encodedInteger = encodedInteger << 1
-            encodedInteger = encodedInteger | partiallyEncodedInteger & mask
+            out = currentValue & ~mask
+            out = out << 1
+            out = out | currentValue & mask
             mask = ((mask + 1) << 8) - 1
-            partiallyEncodedInteger = encodedInteger
+            currentValue = out
         }
-        return encodedInteger
+        return out
     }
 }

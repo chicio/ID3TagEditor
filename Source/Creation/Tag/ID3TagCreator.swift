@@ -48,7 +48,7 @@ class ID3TagCreator {
         let flags: [UInt8] = [0x00]
         let header = id3TagConfiguration.headerFor(version: id3Tag.properties.version)
             + flags
-            + uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(format(size: contentSize)))
+            + uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(SynchsafeIntegerEncoder().encode(integer: contentSize)))
         return header
     }
 
@@ -58,19 +58,5 @@ class ID3TagCreator {
 
     private func isTooBig(tag: [UInt8]) -> Bool {
         return tag.count > 0xFFFFFFF
-    }
-
-    private func format(size: Int) -> Int {
-        var out: Int = 0
-        var mask: Int = 0x7F
-        var currentValue = size
-        while (mask != 0x7FFFFFFF) {
-            out = currentValue & ~mask
-            out = out << 1
-            out = out | currentValue & mask
-            mask = ((mask + 1) << 8) - 1
-            currentValue = out
-        }
-        return out
     }
 }
