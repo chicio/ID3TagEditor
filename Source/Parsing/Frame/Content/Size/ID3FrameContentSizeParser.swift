@@ -9,9 +9,11 @@ import Foundation
 
 class ID3FrameContentSizeParser: FrameContentSizeParser {
     private let id3FrameConfiguration: ID3FrameConfiguration
+    private let synchsafeIntegerDecoder: SynchsafeIntegerDecoder
 
-    init(id3FrameConfiguration: ID3FrameConfiguration) {
+    init(id3FrameConfiguration: ID3FrameConfiguration, synchsafeIntegerDecoder: SynchsafeIntegerDecoder) {
         self.id3FrameConfiguration = id3FrameConfiguration
+        self.synchsafeIntegerDecoder = synchsafeIntegerDecoder
     }
 
     func parse(mp3: NSData, framePosition: Int, version: ID3Version) -> Int {
@@ -31,7 +33,7 @@ class ID3FrameContentSizeParser: FrameContentSizeParser {
     private func decodeIfIsASynchsafeInteger(frameSize: UInt32, for version: ID3Version) -> UInt32 {
         var newFrameSize = frameSize
         if version == .version4 {
-            newFrameSize = SynchsafeIntegerDecoder().decode(integer: frameSize)
+            newFrameSize = synchsafeIntegerDecoder.decode(integer: frameSize)
         }
         return newFrameSize
     }
