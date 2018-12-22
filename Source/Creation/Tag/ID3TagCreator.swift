@@ -48,7 +48,7 @@ class ID3TagCreator {
         let flags: [UInt8] = [0x00]
         let header = id3TagConfiguration.headerFor(version: id3Tag.properties.version)
             + flags
-            + uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(SynchsafeIntegerEncoder().encode(integer: contentSize)))
+            + uInt32ToByteArrayAdapter.adapt(uInt32: SynchsafeIntegerEncoder().encode(integer: id3Tag.properties.size))
         return header
     }
 
