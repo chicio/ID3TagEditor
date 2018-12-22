@@ -24,11 +24,5 @@ class SynchsafeIntegerDecoder {
         }
         
         return decodedInteger;
-//        let b1 = (integer & 0x7F000000) >> 3
-//        let b2 = (integer & 0x007F0000) >> 2
-//        let b3 = (integer & 0x00007F00) >> 1
-//        let b4 =  integer & 0x0000007F;
-//
-//        return UInt32(b1 + b2 + b3 + b4);
     }
 }
