@@ -5,7 +5,7 @@ All changes to ID3TagEditor will be documented in this file.
 Release date: 2018-11-08
 
 #### Added
-- Added support for swift package manager using `swift build`/`swift test` on Linux (Ubuntu) and macOS
+- Added support for Swift Package Manager using `swift build`/`swift test` on Linux (Ubuntu) and macOS
 
 #### Fixed
 - Update to Swift 4.2
