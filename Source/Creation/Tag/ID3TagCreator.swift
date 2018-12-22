@@ -21,11 +21,7 @@ class ID3TagCreator {
     }
 
     func create(id3Tag: ID3Tag) throws -> Data {
-        var frames = id3FrameCreatorsChain.createFrames(id3Tag: id3Tag, tag: [UInt8]())
-        if thereIsNotValidDataIn(frames: frames) {
-            throw ID3TagEditorError.InvalidTagData
-        }
-        frames.append(contentsOf: createFramesEnd())
+        let frames = try createFramesUsing(id3Tag: id3Tag)
         let header = createTagHeader(contentSize: frames.count, id3Tag: id3Tag);
         let tag = header + frames
         if (isTooBig(tag: tag)) {
@@ -36,6 +32,15 @@ class ID3TagCreator {
 
     private func thereIsNotValidDataIn(frames: [UInt8]) -> Bool {
         return frames.count == 0
+    }
+    
+    private func createFramesUsing(id3Tag: ID3Tag) throws -> [UInt8] {
+        var frames = id3FrameCreatorsChain.createFrames(id3Tag: id3Tag, tag: [UInt8]())
+        if thereIsNotValidDataIn(frames: frames) {
+            throw ID3TagEditorError.InvalidTagData
+        }
+        frames.append(contentsOf: createFramesEnd())
+        return frames
     }
 
     private func createTagHeader(contentSize: Int, id3Tag: ID3Tag) -> [UInt8] {
