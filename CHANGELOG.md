@@ -11,6 +11,7 @@ Release date: 2018-11-08
 - Update to Swift 4.2
 - Changed deprecated `Range` init for conversion to `CountableRange` 
 - Fixed Package.swift for Swift Package Manager on macOS
+- Fixed frame size encoding for version v4: now is encoded as a synchsafe integer
 
 
 ## [2.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.1.0)
