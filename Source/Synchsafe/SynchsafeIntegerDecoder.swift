@@ -8,22 +8,22 @@
 import Foundation
 
 /**
+ Synchsafe integer decoder
+ 
  - SeeAlso https://en.wikipedia.org/wiki/Synchsafe
  */
 class SynchsafeIntegerDecoder {
-    func decode(integer: UIInt32) -> UInt32 {
-        let out: UInt32 = 0x7F
-        let mask: UInt32 = 0x7F
+    func decode(integer: UInt32) -> UInt32 {
+        var decodedInteger: UInt32 = 0
+        var mask: UInt32 = 0x7F000000;
         
-        while (mask ^ 0x7FFFFFFF) {
-            out = in & ~mask;
-            out <<= 1;
-            out |= in & mask;
-            mask = ((mask + 1) << 8) - 1;
-            in = out;
+        while (mask != 0) {
+            decodedInteger = decodedInteger >> 1;
+            decodedInteger = decodedInteger | integer & mask;
+            mask >>= 8;
         }
         
-        return out;
+        return decodedInteger;
 //        let b1 = (integer & 0x7F000000) >> 3
 //        let b2 = (integer & 0x007F0000) >> 2
 //        let b3 = (integer & 0x00007F00) >> 1
