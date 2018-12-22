@@ -384,6 +384,7 @@
 		45D58CDE210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */; };
 		45D58CDF210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */; };
 		45D58CE0210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */; };
+		45DB70B521CD18B3008CC07F /* SynchsafeIntegerDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB70B421CD18B3008CC07F /* SynchsafeIntegerDecoder.swift */; };
 		45F833EB205905EF0046C804 /* ID3TagEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832282044C7BE00458375 /* ID3TagEditor.swift */; };
 		45F833EC205905EF0046C804 /* ID3TagEditorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452831FE2044C7BE00458375 /* ID3TagEditorError.swift */; };
 		45F833ED205905EF0046C804 /* ID3FrameFlagsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452832332044C7BE00458375 /* ID3FrameFlagsCreator.swift */; };
@@ -719,6 +720,7 @@
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
 		45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TimestampCreatorTest.swift; sourceTree = "<group>"; };
 		45D58CDC210CBDF400E820C8 /* ID3TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TimestampCreator.swift; sourceTree = "<group>"; };
+		45DB70B421CD18B3008CC07F /* SynchsafeIntegerDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchsafeIntegerDecoder.swift; sourceTree = "<group>"; };
 		45F833E3205904680046C804 /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FA7DC720990873000A7484 /* ID3AlbumArtistFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3AlbumArtistFrameCreator.swift; sourceTree = "<group>"; };
 		45FA7DC9209917BF000A7484 /* ID3AlbumArtistFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3AlbumArtistFrameCreatorTest.swift; sourceTree = "<group>"; };
@@ -898,6 +900,7 @@
 				452832262044C7BE00458375 /* Mp3 */,
 				452832292044C7BE00458375 /* Padding */,
 				452831FF2044C7BE00458375 /* Parsing */,
+				45DB70B321CD1878008CC07F /* Synchsafe */,
 				452832212044C7BE00458375 /* Tag */,
 				4528321E2044C7BE00458375 /* UInt32ToByteArrayAdapter */,
 				452831C92044C40700458375 /* Info.plist */,
@@ -1252,6 +1255,14 @@
 				45D58CD8210CB97900E820C8 /* ID3TimestampCreatorTest.swift */,
 			);
 			path = Timestamp;
+			sourceTree = "<group>";
+		};
+		45DB70B321CD1878008CC07F /* Synchsafe */ = {
+			isa = PBXGroup;
+			children = (
+				45DB70B421CD18B3008CC07F /* SynchsafeIntegerDecoder.swift */,
+			);
+			path = Synchsafe;
 			sourceTree = "<group>";
 		};
 		C50671F7E0FB8146826B6571 /* Add */ = {
@@ -1969,6 +1980,7 @@
 				4562C1F021173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */,
 				4528AF37210B869C00CB7A2E /* ID3TitleFrameContentParsingOperationFactory.swift in Sources */,
 				C506714D30359FA4F9E7D556 /* ID3AttachedPictureFrameCreator.swift in Sources */,
+				45DB70B521CD18B3008CC07F /* SynchsafeIntegerDecoder.swift in Sources */,
 				C5067634716C32B44E076420 /* ID3StringFrameCreator.swift in Sources */,
 				450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				C50671DE6CD2C6BD107AB811 /* TagProperties.swift in Sources */,
