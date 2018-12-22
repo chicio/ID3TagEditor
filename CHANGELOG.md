@@ -2,7 +2,7 @@
 All changes to ID3TagEditor will be documented in this file.
 
 ## [2.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.2.0)
-Release date: 2018-11-08
+Release date: 2018-12-22
 
 #### Added
 - Added support for Swift Package Manager using `swift build`/`swift test` on Linux (Ubuntu) and macOS
