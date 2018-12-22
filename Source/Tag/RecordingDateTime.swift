@@ -17,7 +17,7 @@ public struct RecordingDate: CustomDebugStringConvertible {
     public var month: Int?
     /// Recording year of the song.
     public var year: Int?
-    
+    /// RecordingDate description, useful for debug.
     public var debugDescription: String {
         return "\(day ?? 0) \(month ?? 0) \(year ?? 0)"
     }
@@ -50,7 +50,7 @@ public struct RecordingTime: CustomDebugStringConvertible {
     public var hour: Int?
     /// Recording seconds of the song.
     public var minute: Int?
-    
+    /// RecordingTime description, useful for debug.
     public var debugDescription: String {
         return "\(hour ?? 0) \(minute ?? 0)"
     }
@@ -80,7 +80,7 @@ public struct RecordingDateTime: CustomDebugStringConvertible {
     public var date: RecordingDate?
     /// Recording time of the song.
     public var time: RecordingTime?
-    
+    /// RecordingDateTime description, useful for debug.
     public var debugDescription: String {
         return "Date: (\(date?.debugDescription ?? "-") - Time: (\(time?.debugDescription ?? "-"))"
     }

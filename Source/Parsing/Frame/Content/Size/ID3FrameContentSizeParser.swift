@@ -28,7 +28,7 @@ class ID3FrameContentSizeParser: FrameContentSizeParser {
         return frameSize
     }
     
-    func decodeIfIsASynchsafeInteger(frameSize: UInt32, for version: ID3Version) -> UInt32 {
+    private func decodeIfIsASynchsafeInteger(frameSize: UInt32, for version: ID3Version) -> UInt32 {
         var newFrameSize = frameSize
         if version == .version4 {
             newFrameSize = SynchsafeIntegerDecoder().decode(integer: frameSize)

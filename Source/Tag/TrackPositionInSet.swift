@@ -15,7 +15,7 @@ public struct TrackPositionInSet: Equatable, CustomDebugStringConvertible {
     public var position: Int
     /// The total number of tracks in recordings.
     public var totalTracks: Int?
-    
+    /// TrackPositionInSet description, useful for debug.
     public var debugDescription: String {
         return "\(position) of \(totalTracks != nil ? String(totalTracks!) : "-")"
     }

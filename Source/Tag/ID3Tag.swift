@@ -31,7 +31,7 @@ public class ID3Tag: CustomDebugStringConvertible {
     public lazy var attachedPictures: [AttachedPicture]? = {
         return []
     }()
-    
+    /// ID3Tag description, useful for debug.
     public var debugDescription: String {
         return """
         ID3Tag:
