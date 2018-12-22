@@ -10,11 +10,15 @@ import Foundation
 /**
  A struct used to represent the track position in the original recordings for the ID3 tag.
  */
-public struct TrackPositionInSet: Equatable {
+public struct TrackPositionInSet: Equatable, CustomDebugStringConvertible {
     /// The position of the track.
     public var position: Int
     /// The total number of tracks in recordings.
     public var totalTracks: Int?
+    /// TrackPositionInSet description, useful for debug.
+    public var debugDescription: String {
+        return "\(position) of \(totalTracks != nil ? String(totalTracks!) : "-")"
+    }
 
     /**
      Init a track position.

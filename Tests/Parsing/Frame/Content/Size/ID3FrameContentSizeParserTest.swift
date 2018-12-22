@@ -9,7 +9,10 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3FrameContentSizeParserTest: XCTestCase {
-    let id3FrameContentSizeParser = ID3FrameContentSizeParser(id3FrameConfiguration: ID3FrameConfiguration())
+    let id3FrameContentSizeParser = ID3FrameContentSizeParser(
+        id3FrameConfiguration: ID3FrameConfiguration(),
+        synchsafeIntegerDecoder: SynchsafeIntegerDecoder()
+    )
 
     func testParseFrameContentSizeV2() {
         let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example", fileType: "mp3"))!
@@ -32,6 +35,18 @@ class ID3FrameContentSizeParserTest: XCTestCase {
                     version: .version3
             ),
             13
+        )
+    }
+    
+    func testParseFramrContentSizeV4() {
+        let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v4-png", fileType: "mp3"))!
+        XCTAssertEqual(
+            id3FrameContentSizeParser.parse(
+                mp3: mp3,
+                framePosition: ID3TagConfiguration().headerSize(),
+                version: .version4
+            ),
+            14
         )
     }
 }

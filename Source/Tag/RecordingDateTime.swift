@@ -10,13 +10,17 @@ import Foundation
 /**
  A struct used to represent the recording date for the ID3 tag.
  */
-public struct RecordingDate {
+public struct RecordingDate: CustomDebugStringConvertible {
     /// Recording day of the song.
     public var day: Int?
     /// Recording month of the song.
     public var month: Int?
     /// Recording year of the song.
     public var year: Int?
+    /// RecordingDate description, useful for debug.
+    public var debugDescription: String {
+        return "\(day ?? 0) \(month ?? 0) \(year ?? 0)"
+    }
     
     init() {
         self.day = nil
@@ -41,11 +45,15 @@ public struct RecordingDate {
 /**
  A struct used to represent the recording time for the ID3 tag.
  */
-public struct RecordingTime {
+public struct RecordingTime: CustomDebugStringConvertible {
     /// Recording hour of the song.
     public var hour: Int?
     /// Recording seconds of the song.
     public var minute: Int?
+    /// RecordingTime description, useful for debug.
+    public var debugDescription: String {
+        return "\(hour ?? 0) \(minute ?? 0)"
+    }
     
     init() {
         self.hour = nil
@@ -67,11 +75,15 @@ public struct RecordingTime {
 /**
  A struct used to represent the recording date and time for the ID3 tag.
  */
-public struct RecordingDateTime {
+public struct RecordingDateTime: CustomDebugStringConvertible {
     /// Recording date of the song.
     public var date: RecordingDate?
     /// Recording time of the song.
     public var time: RecordingTime?
+    /// RecordingDateTime description, useful for debug.
+    public var debugDescription: String {
+        return "Date: (\(date?.debugDescription ?? "-") - Time: (\(time?.debugDescription ?? "-"))"
+    }
     
     init() {
         self.date = RecordingDate()

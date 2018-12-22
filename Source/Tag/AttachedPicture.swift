@@ -17,6 +17,10 @@ public struct AttachedPicture: Equatable {
     public var type: ID3PictureType
     /// The file format. Only Jpeg and Png are supported by the standard (cross compatibility).
     public var format: ID3PictureFormat
+    
+    public var description: String {
+        return "\(type) \(format)"
+    }
 
     /**
      Init an attached picture.
