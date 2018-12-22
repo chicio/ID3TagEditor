@@ -469,7 +469,6 @@
 		5FAF8DAF21CED92F0049798C /* MockSynchsafeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF8DAE21CED92F0049798C /* MockSynchsafeEncoder.swift */; };
 		5FAF8DB021CED92F0049798C /* MockSynchsafeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF8DAE21CED92F0049798C /* MockSynchsafeEncoder.swift */; };
 		5FAF8DB121CED92F0049798C /* MockSynchsafeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF8DAE21CED92F0049798C /* MockSynchsafeEncoder.swift */; };
-		5FAF8DB221CED92F0049798C /* MockSynchsafeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF8DAE21CED92F0049798C /* MockSynchsafeEncoder.swift */; };
 		5FF00B7C21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF00B7B21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift */; };
 		5FF00B7D21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF00B7B21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift */; };
 		5FF00B7E21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF00B7B21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift */; };
@@ -2453,7 +2452,6 @@
 				45D58CD6210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */,
 				5FA1CF6221CE891D008D74CE /* SynchsafeIntegerDecoder.swift in Sources */,
 				4528AF3F210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift in Sources */,
-				5FAF8DB221CED92F0049798C /* MockSynchsafeEncoder.swift in Sources */,
 				4562C1EA211731B100AFE22E /* ID3RecordingHourMinuteFrameCreator.swift in Sources */,
 				45F83402205905EF0046C804 /* FrameType.swift in Sources */,
 				4562C1FC21174B9800AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */,
