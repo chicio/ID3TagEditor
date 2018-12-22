@@ -13,7 +13,8 @@ class ID3FrameCreatorsChainFactory {
         let frameConfiguration = ID3FrameConfiguration()
         let uInt32ToByteArrayAdapter = UInt32ToByteArrayAdapterUsingUnsafePointer()
         let frameContentSizeCalculator = ID3FrameContentSizeCalculator(
-            uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter
+            uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter,
+            synchsafeEncoder: SynchsafeIntegerEncoder()
         )
         let frameFlagsCreator = ID3FrameFlagsCreator()
         let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(

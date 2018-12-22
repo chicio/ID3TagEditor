@@ -12,7 +12,7 @@ import Foundation
  
  - SeeAlso https://en.wikipedia.org/wiki/Synchsafe
  */
-class SynchsafeIntegerEncoder {
+class SynchsafeIntegerEncoder: SynchsafeEncoder {
     func encode(integer: UInt32) -> UInt32 {
         var encodedInteger: UInt32 = 0
         var mask: UInt32 = 0x7F

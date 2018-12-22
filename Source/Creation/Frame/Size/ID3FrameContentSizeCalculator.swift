@@ -9,21 +9,33 @@ import Foundation
 
 class ID3FrameContentSizeCalculator: FrameContentSizeCalculator {
     private let uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapter
+    private let synchsafeEncoder: SynchsafeEncoder
 
-    init(uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapter) {
+    init(uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapter, synchsafeEncoder: SynchsafeEncoder) {
         self.uInt32ToByteArrayAdapter = uInt32ToByteArrayAdapter
+        self.synchsafeEncoder = synchsafeEncoder
     }
 
     func calculateSizeOf(content: [UInt8], version: ID3Version) -> [UInt8] {
-        #warning("ADD HERE ENCODING FOR SAVE SIZE AS SYNCHSAFE INTEGER")
-        var size = uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(content.count))
-        if version2OrBelow(version: version) {
-            size.removeFirst();
+        var size = UInt32(content.count)
+        size = synchsafeEncodeIfVersion4(size: size, version: version)
+        var sizeBytes = uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(content.count))
+        sizeBytes = removeFirstByteIfVersion2From(size: sizeBytes, version: version)
+        return sizeBytes
+    }
+    
+    private func synchsafeEncodeIfVersion4(size: UInt32, version: ID3Version) -> UInt32 {
+        if version <= .version4 {
+            return synchsafeEncoder.encode(integer: size)
         }
         return size
     }
-
-    private func version2OrBelow(version: ID3Version) -> Bool {
-        return version <= ID3Version.version2
+    
+    private func removeFirstByteIfVersion2From(size: [UInt8], version: ID3Version) -> [UInt8] {
+        var newSize = size
+        if version <= .version2 {
+            newSize.removeFirst();
+        }
+        return newSize
     }
 }
