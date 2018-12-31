@@ -15,7 +15,7 @@ public class ID3Tag: CustomDebugStringConvertible {
     public var properties: TagProperties
     /// Dictionary that contains the frames extracted or to be added to the id3 tag for an mp3 file.
     public lazy var frames: [FrameType : Frame] = {
-        return [:]
+        return  [FrameType : Frame]()
     }()
     /// The artist of the tag.
     public var artist: String?
