@@ -13,6 +13,10 @@ import Foundation
 public class ID3Tag: CustomDebugStringConvertible {
     /// The properties of the tag. The public available property to the user of the frmaework is the versions property.
     public var properties: TagProperties
+    /// Dictionary that contains the frames extracted or to be added to the id3 tag for an mp3 file.
+    public lazy var frames: [FrameType : Frame] = {
+        return [:]
+    }()
     /// The artist of the tag.
     public var artist: String?
     /// Additional information about the artist of the song that contains the tag.

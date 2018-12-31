@@ -31,6 +31,14 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.artist, "example artist")
         XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
     }
+    
+    func testReadTagV2FramesDictionary() {        
+        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
+        
+        XCTAssertEqual(id3Tag?.properties.version, .version2)
+        XCTAssertEqual(id3Tag?.frames[.Title]?.getContent(), "example song")
+        XCTAssertEqual(id3Tag?.frames[.Artist]?.getContent(), "example artist")
+    }
 
     func testParseTagV3() {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
