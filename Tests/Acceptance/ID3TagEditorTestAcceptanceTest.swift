@@ -38,6 +38,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.Title]?.getContent(), "example song")
         XCTAssertEqual(id3Tag?.frames[.Artist]?.getContent(), "example artist")
+        XCTAssertEqual(id3Tag?.frames[.AlbumArtist]?.getContent(), "example album artist")
     }
 
     func testParseTagV3() {
