@@ -10,7 +10,9 @@ import Foundation
 class ID3TrackPositionFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (id3Tag: ID3Tag, content: String) in
-            id3Tag.trackPosition = ID3TrackPositionStringAdapter().adapt(trackPosition: content)
+            let frameTrackingPosition = ID3TrackPositionStringAdapter().adapt(trackPosition: content)
+            id3Tag.frames[.TrackPosition] = frameTrackingPosition
+            id3Tag.trackPosition = frameTrackingPosition
         }
     }
 }

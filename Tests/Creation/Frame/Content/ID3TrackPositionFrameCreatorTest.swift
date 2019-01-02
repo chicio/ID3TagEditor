@@ -28,7 +28,7 @@ class ID3TrackPositionCreatorTest: XCTestCase {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.trackPosition = TrackPositionInSet(position: 1, totalTracks: 10)
+        id3Tag.trackPosition = ID3FrameTrackPosition(position: 1, totalTracks: 10)
         let id3GenreFrameCreator = ID3TrackPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

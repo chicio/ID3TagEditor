@@ -28,7 +28,7 @@ class ID3GenreFrameCreatorTest: XCTestCase {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.genre = Genre(genre: .Metal, description: "Metalcore")
+        id3Tag.genre = ID3FrameGenre(genre: .Metal, description: "Metalcore")
         let id3GenreFrameCreator = ID3GenreFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

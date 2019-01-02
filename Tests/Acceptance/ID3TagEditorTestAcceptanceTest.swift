@@ -25,21 +25,13 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
 
         XCTAssertEqual(id3Tag?.properties.version, .version2)
-        XCTAssertEqual(id3Tag?.title, "example song")
-        XCTAssertEqual(id3Tag?.album, "example album")
-        XCTAssertEqual(id3Tag?.albumArtist, "example album artist")
-        XCTAssertEqual(id3Tag?.artist, "example artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
-    }
-    
-    func testReadTagV2FramesDictionary() {        
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-        
-        XCTAssertEqual(id3Tag?.properties.version, .version2)
-        XCTAssertEqual(id3Tag?.frames[.Title]?.getContent(), "example song")
-        XCTAssertEqual(id3Tag?.frames[.Album]?.getContent(), "example album")
-        XCTAssertEqual(id3Tag?.frames[.AlbumArtist]?.getContent(), "example album artist")
-        XCTAssertEqual(id3Tag?.frames[.Artist]?.getContent(), "example artist")
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "example song")
+        XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "example album")
+        XCTAssertEqual((id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content, "example album artist")
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "example artist")
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.picture, cover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.type, .FrontCover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.format, .Jpeg)
     }
 
     func testParseTagV3() {
@@ -49,11 +41,12 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
 
         XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual(id3Tag?.title, "A New title")
-        XCTAssertEqual(id3Tag?.album, "A New Album")
-        XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "A New title")
+        XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "A New Album")
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.picture, cover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.type, .FrontCover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.format, .Png)
     }
 
     func testParseTagV3AdditionalData() {
@@ -65,49 +58,49 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v3-additional-data", fileType: "mp3"))
 
         XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual(id3Tag?.title, "A New title")
-        XCTAssertEqual(id3Tag?.album, "A New Album")
-        XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.albumArtist, "A New Album Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, coverFront)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Jpeg)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
-        XCTAssertEqual(id3Tag?.attachedPictures?[1].picture, coverBack)
-        XCTAssertEqual(id3Tag?.attachedPictures?[1].format, .Jpeg)
-        XCTAssertEqual(id3Tag?.attachedPictures?[1].type, .BackCover)
-        XCTAssertEqual(id3Tag?.genre?.identifier, .Metal)
-        XCTAssertEqual(id3Tag?.genre?.description, "Metalcore")
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.day, 5)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.month, 8)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.hour, 15)
-        XCTAssertEqual(id3Tag?.recordingDateTime?.time?.minute, 39)
-        XCTAssertEqual(id3Tag?.trackPosition?.position, 2)
-        XCTAssertEqual(id3Tag?.trackPosition?.totalTracks, 9)
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "A New title")
+        XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "A New Album")
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
+        XCTAssertEqual((id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content, "A New Album Artist")
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.picture, coverFront)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.type, .FrontCover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.format, .Jpeg)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureBackCover] as? ID3FrameAttachedPicture)?.picture, coverBack)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureBackCover] as? ID3FrameAttachedPicture)?.type, .BackCover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureBackCover] as? ID3FrameAttachedPicture)?.format, .Jpeg)
+        XCTAssertEqual((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier, .Metal)
+        XCTAssertEqual((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description, "Metalcore")
+        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position, 2)
+        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.totalTracks, 9)
+        XCTAssertEqual((id3Tag?.frames[.RecordingDayMonth] as? ID3FrameRecordingDayMonth)?.day, 5)
+        XCTAssertEqual((id3Tag?.frames[.RecordingDayMonth] as? ID3FrameRecordingDayMonth)?.month, 8)
+        XCTAssertEqual((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year, 2018)
+        XCTAssertEqual((id3Tag?.frames[.RecordingHourMinute] as? ID3FrameRecordingHourMinute)?.hour, 15)
+        XCTAssertEqual((id3Tag?.frames[.RecordingHourMinute] as? ID3FrameRecordingHourMinute)?.minute, 39)
     }
     
-    func testReadV4() {
+    func testReadTagV4() {
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4", fileType: "mp3"))
 
         XCTAssertEqual(id3Tag?.properties.version, .version4)
-        XCTAssertEqual(id3Tag?.title, "A New title")
-        XCTAssertEqual(id3Tag?.album, "A New Album")
-        XCTAssertEqual(id3Tag?.artist, "A New Artist")        
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "A New title")
+        XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "A New Album")
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
     }
     
-    func testReadV4WithImage() {
+    func testReadTagV4WithImage() {
         let path = PathLoader().pathFor(name: "cover-v4", fileType: "png")
         let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
         
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4-png", fileType: "mp3"))
         
         XCTAssertEqual(id3Tag?.properties.version, .version4)
-        XCTAssertEqual(id3Tag?.artist, "MATRANG")
-        XCTAssertEqual(id3Tag?.title, "Медуза")
-        XCTAssertEqual(id3Tag?.genre, Genre(genre: nil, description: "Hip-Hop"))
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].type, .FrontCover)
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "MATRANG")
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "Медуза")
+        XCTAssertEqual(id3Tag?.frames[.Genre] as? ID3FrameGenre, ID3FrameGenre(genre: nil, description: "Hip-Hop"))
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.picture, cover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.type, .FrontCover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.format, .Png)
     }
     
     func testReadAsMp3() {
@@ -118,11 +111,11 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = try! id3TagEditor.read(mp3: mp3)
 
         XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual(id3Tag?.title, "A New title")
-        XCTAssertEqual(id3Tag?.album, "A New Album")
-        XCTAssertEqual(id3Tag?.artist, "A New Artist")
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].picture, cover)
-        XCTAssertEqual(id3Tag?.attachedPictures?[0].format, .Png)
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "A New title")
+        XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "A New Album")
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.picture, cover)
+        XCTAssertEqual((id3Tag?.frames[.AttachedPictureFrontCover] as? ID3FrameAttachedPicture)?.format, .Png)
     }
     
     func testReadInvalidFile() {
@@ -137,11 +130,11 @@ class ID3TagEditorTest: XCTestCase {
         
         let id3Tag = try! id3TagEditor.read(from: pathMp3)
         
-        XCTAssertEqual(id3Tag?.title, "Om Tryumbacom")
-        XCTAssertEqual(id3Tag?.artist, "Laraaji")
-        XCTAssertEqual(id3Tag?.album, "Vision Songs Vol. 1")
-        XCTAssertEqual(id3Tag?.recordingDateTime?.date?.year, 2018)
-        XCTAssertEqual(id3Tag?.trackPosition?.position, 10)
+        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "Om Tryumbacom")
+        XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "Laraaji")
+        XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "Vision Songs Vol. 1")
+        XCTAssertEqual((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year, 2018)
+        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position, 10)
     }
     
     
@@ -161,7 +154,7 @@ class ID3TagEditorTest: XCTestCase {
             title: "example song",
             recordingDateTime: nil,
             genre: nil,
-            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
+            attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
             trackPosition: nil
         )
         
@@ -190,7 +183,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 recordingDateTime: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -220,7 +213,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 recordingDateTime: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -247,7 +240,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 recordingDateTime: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Png)],
+                attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)],
                 trackPosition: nil
         )
 
@@ -271,7 +264,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 recordingDateTime: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -294,7 +287,7 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 recordingDateTime: nil,
                 genre: nil,
-                attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
+                attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
                 trackPosition: nil
         )
 
@@ -321,12 +314,12 @@ class ID3TagEditorTest: XCTestCase {
                 title: "A New title",
                 recordingDateTime: RecordingDateTime(date: RecordingDate(day: 5, month: 8, year: 2018),
                                                      time: RecordingTime(hour: 15, minute: 39)),
-                genre: Genre(genre: .Metal, description: "Metalcore"),
+                genre: ID3FrameGenre(genre: .Metal, description: "Metalcore"),
                 attachedPictures: [
-                    AttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
-                    AttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg)
+                    ID3FrameAttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
+                    ID3FrameAttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg)
                 ],
-                trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
+                trackPosition: ID3FrameTrackPosition(position: 2, totalTracks: 9)
         )
 
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -355,12 +348,12 @@ class ID3TagEditorTest: XCTestCase {
             title: "A New title",
             recordingDateTime: RecordingDateTime(date: RecordingDate(day: 5, month: 8, year: 2018),
                                                  time: RecordingTime(hour: 15, minute: 39)),
-            genre: Genre(genre: .Metal, description: "Metalcore"),
+            genre: ID3FrameGenre(genre: .Metal, description: "Metalcore"),
             attachedPictures: [
-                AttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
-                AttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg)
+                ID3FrameAttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
+                ID3FrameAttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg)
             ],
-            trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
+            trackPosition: ID3FrameTrackPosition(position: 2, totalTracks: 9)
         )
         let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
                                                                                   fileType: "mp3")))
@@ -415,7 +408,7 @@ class ID3TagEditorTest: XCTestCase {
             title: "A New title",
             recordingDateTime: nil,
             genre: nil,
-            attachedPictures: [AttachedPicture(picture: art, type: .FrontCover, format: .Png)],
+            attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)],
             trackPosition: nil
         )
         

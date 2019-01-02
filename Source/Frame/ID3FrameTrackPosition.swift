@@ -8,9 +8,9 @@
 import Foundation
 
 /**
- A struct used to represent the track position in the original recordings for the ID3 tag.
+ A class used to represent the track position in the original recordings for the ID3 tag.
  */
-public struct TrackPositionInSet: Equatable, CustomDebugStringConvertible {
+public class ID3FrameTrackPosition: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The position of the track.
     public var position: Int
     /// The total number of tracks in recordings.
@@ -39,7 +39,7 @@ public struct TrackPositionInSet: Equatable, CustomDebugStringConvertible {
 
      - returns: true if the track positions values are the same, else false.
      */
-    public static func ==(lhs: TrackPositionInSet, rhs: TrackPositionInSet) -> Bool {
+    public static func ==(lhs: ID3FrameTrackPosition, rhs: ID3FrameTrackPosition) -> Bool {
         return lhs.position == rhs.position && lhs.totalTracks == rhs.totalTracks
     }
 }

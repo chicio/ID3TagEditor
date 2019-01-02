@@ -22,12 +22,6 @@ public struct RecordingDate: CustomDebugStringConvertible {
         return "\(day ?? 0) \(month ?? 0) \(year ?? 0)"
     }
     
-    init() {
-        self.day = nil
-        self.month = nil
-        self.year = nil
-    }
-    
     /**
      Init a recording date.
      
@@ -55,11 +49,6 @@ public struct RecordingTime: CustomDebugStringConvertible {
         return "\(hour ?? 0) \(minute ?? 0)"
     }
     
-    init() {
-        self.hour = nil
-        self.minute = nil
-    }
-    
     /**
      Init a recording time.
      
@@ -85,11 +74,6 @@ public struct RecordingDateTime: CustomDebugStringConvertible {
         return "Date: (\(date?.debugDescription ?? "-") - Time: (\(time?.debugDescription ?? "-"))"
     }
     
-    init() {
-        self.date = RecordingDate()
-        self.time = RecordingTime()
-    }
-    
     /**
      Init a recording date time.
      
@@ -99,5 +83,13 @@ public struct RecordingDateTime: CustomDebugStringConvertible {
     public init(date: RecordingDate?, time: RecordingTime?) {
         self.date = date
         self.time = time
+    }
+}
+
+public class ID3FrameRecordingDateTime: ID3Frame {
+    public let recordingDateTime: RecordingDateTime
+    
+    public init(recordingDateTime: RecordingDateTime) {
+        self.recordingDateTime = recordingDateTime
     }
 }

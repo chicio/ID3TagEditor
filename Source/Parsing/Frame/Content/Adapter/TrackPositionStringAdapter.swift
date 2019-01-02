@@ -8,6 +8,5 @@
 import Foundation
 
 protocol TrackPositionStringAdapter {
-    func adapt(trackPosition: String) -> TrackPositionInSet
+    func adapt(trackPosition: String) -> ID3FrameTrackPosition
 }
-

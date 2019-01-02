@@ -9,7 +9,7 @@ import Foundation
 @testable import ID3TagEditor
 
 class MockTrackPositionStringAdapter: TrackPositionStringAdapter {
-    func adapt(trackPosition: String) -> TrackPositionInSet {
-        return TrackPositionInSet(position: 2, totalTracks: 9)
+    func adapt(trackPosition: String) -> ID3FrameTrackPosition {
+        return ID3FrameTrackPosition(position: 2, totalTracks: 9)
     }
 }

@@ -28,11 +28,15 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
                                                    frame: Data,
                                                    andSaveTo id3Tag: ID3Tag) {
         if let magicNumberRange = frame.range(of: magicNumber) {
-            id3Tag.attachedPictures?.append(AttachedPicture(
-                    picture: frame.subdata(in: magicNumberRange.lowerBound..<frame.count),
-                    type: pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.properties.version),
-                    format: format
-            ))
+            let pictureType = pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.properties.version)
+            let attachedPictureFrameName = id3FrameConfiguration.attachedPictureFrameNameFor(pictureType: pictureType)
+            let attachedPictureFrame = ID3FrameAttachedPicture(
+                picture: frame.subdata(in: magicNumberRange.lowerBound..<frame.count),
+                type: pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.properties.version),
+                format: format
+            )
+            id3Tag.frames[attachedPictureFrameName] = attachedPictureFrame
+            id3Tag.attachedPictures?.append(attachedPictureFrame)
         }
     }
 }

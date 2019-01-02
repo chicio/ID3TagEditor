@@ -14,8 +14,8 @@ public class ID3Tag: CustomDebugStringConvertible {
     /// The properties of the tag. The public available property to the user of the frmaework is the versions property.
     public var properties: TagProperties
     /// Dictionary that contains the frames extracted or to be added to the id3 tag for an mp3 file.
-    public lazy var frames: [FrameType : Frame] = {
-        return  [FrameType : Frame]()
+    public lazy var frames: [FrameName : ID3Frame] = {
+        return [:]
     }()
     /// The artist of the tag.
     public var artist: String?
@@ -24,15 +24,20 @@ public class ID3Tag: CustomDebugStringConvertible {
     /// The title of the song related to this tag.
     public var title: String?
     /// The position of the track in the original media (see `TrackPositionInSet`).
-    public var trackPosition: TrackPositionInSet?
+    public var trackPosition: ID3FrameTrackPosition?
     /// The album of the tag.
     public var album: String?
     ///The recording datetime of the song related to this tag.
-    public lazy var recordingDateTime: RecordingDateTime? = RecordingDateTime()
+    public lazy var recordingDateTime: RecordingDateTime? = {
+        return RecordingDateTime(
+            date: RecordingDate(day: nil, month: nil, year: nil),
+            time: RecordingTime(hour: nil, minute: nil)
+        )
+    }()
     /// The genre of the recording contained in the tag (see `Genre`).
-    public var genre: Genre?
+    public var genre: ID3FrameGenre?
     /// The attached picture related to the audio file contained in the tag (see `AttachedPicture`).
-    public lazy var attachedPictures: [AttachedPicture]? = {
+    public lazy var attachedPictures: [ID3FrameAttachedPicture]? = {
         return []
     }()
     /// ID3Tag description, useful for debug.
@@ -70,9 +75,9 @@ public class ID3Tag: CustomDebugStringConvertible {
                 album: String?,
                 title: String?,
                 recordingDateTime: RecordingDateTime?,
-                genre: Genre?,
-                attachedPictures: [AttachedPicture]?,
-                trackPosition: TrackPositionInSet?) {
+                genre: ID3FrameGenre?,
+                attachedPictures: [ID3FrameAttachedPicture]?,
+                trackPosition: ID3FrameTrackPosition?) {
         self.properties = TagProperties(version: version, size: 0)
         self.artist = artist
         self.albumArtist = albumArtist
