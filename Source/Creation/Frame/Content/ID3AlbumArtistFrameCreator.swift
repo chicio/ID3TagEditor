@@ -9,6 +9,9 @@ import Foundation
 
 class ID3AlbumArtistFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+        if let albumArtistFrame = id3Tag.frames[.AlbumArtist] as? ID3FrameWithStringContent {
+            return createFrameUsing(frameType: .AlbumArtist, content: albumArtistFrame.content, id3Tag: id3Tag, andAddItTo: tag)
+        }
         if let albumArtist = id3Tag.albumArtist {
             return createFrameUsing(frameType: .AlbumArtist, content: albumArtist, id3Tag: id3Tag, andAddItTo: tag)
         }

@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         do {
             let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: artistTextField.text,
                 albumArtist: albumArtistField.text,
                 album: albumTextField.text,

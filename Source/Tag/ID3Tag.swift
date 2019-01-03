@@ -70,6 +70,7 @@ public class ID3Tag: CustomDebugStringConvertible {
      - parameter trackPosition: track position of the tag.
      */
     public init(version: ID3Version,
+                frames: [FrameName : ID3Frame],
                 artist: String?,
                 albumArtist: String?,
                 album: String?,
@@ -79,6 +80,7 @@ public class ID3Tag: CustomDebugStringConvertible {
                 attachedPictures: [ID3FrameAttachedPicture]?,
                 trackPosition: ID3FrameTrackPosition?) {
         self.properties = TagProperties(version: version, size: 0)
+        self.frames = frames
         self.artist = artist
         self.albumArtist = albumArtist
         self.album = album

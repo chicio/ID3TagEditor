@@ -148,15 +148,23 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-v2.mp3"
         let id3Tag = ID3Tag(
             version: .version2,
-            artist: "example artist",
-            albumArtist: "example album artist",
-            album: "example album",
-            title: "example song",
+            frames: [
+                .Artist : ID3FrameWithStringContent(content: "example artist"),
+                .AlbumArtist : ID3FrameWithStringContent(content: "example album artist"),
+                .Album : ID3FrameWithStringContent(content: "example album"),
+                .Title : ID3FrameWithStringContent(content: "example song"),
+                .AttachedPictureFrontCover : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
+            ],
+            artist: nil,
+            albumArtist: nil,
+            album: nil,
+            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)],
             trackPosition: nil
         )
+        
         
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
@@ -177,6 +185,7 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-already-exists.mp3"
         let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: "A New Artist",
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
@@ -207,6 +216,7 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-v3-jpg.mp3"
         let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: "A New Artist",
                 albumArtist: "A New Album Artist", ///2
                 album: "A New Album",
@@ -234,6 +244,7 @@ class ID3TagEditorTest: XCTestCase {
         )
         let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: "A New Artist",
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
@@ -258,6 +269,7 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/ID3TagEditor/example-v3-custom-path.mp3"
         let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: "A New Artist",
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
@@ -281,6 +293,7 @@ class ID3TagEditorTest: XCTestCase {
         )
         let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: "A New Artist",
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
@@ -308,6 +321,7 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-v3-additional-data.mp3"
         let id3Tag = ID3Tag(
                 version: .version3,
+                frames: [:],
                 artist: "A New Artist",
                 albumArtist: "A New Album Artist",
                 album: "A New Album",
@@ -342,6 +356,7 @@ class ID3TagEditorTest: XCTestCase {
         )
         let id3Tag = ID3Tag(
             version: .version3,
+            frames: [:],
             artist: "A New Artist",
             albumArtist: "A New Album Artist",
             album: "A New Album",
@@ -372,6 +387,7 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
+            frames: [:],
             artist: "A New Artist",
             albumArtist: "A New Album Artist",
             album: "A New Album",
@@ -402,6 +418,7 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4-with-png.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
+            frames: [:],
             artist: "A New Artist",
             albumArtist: "A New Album Artist",
             album: "A New Album",
