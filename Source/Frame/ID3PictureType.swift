@@ -10,7 +10,7 @@ import Foundation
 /**
  An enum that describes the ID3 picture type supported.
  */
-public enum ID3PictureType: UInt8, Equatable {
+public enum ID3PictureType: UInt8, Equatable, CaseIterable {
     /// Other image.
     case Other = 0x00
     /// File icon image.

@@ -15,7 +15,16 @@ class ID3AttachedPicturesFramesCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        
+        var frames: [UInt8] = []
+        for pictureType in ID3PictureType.allCases {
+            if let attachedPictureFrame = id3Tag.frames[.AttachedPicture(pictureType)] as? ID3FrameAttachedPicture {
+                let frame = attachedPictureFrameCreator.createFrame(using: attachedPictureFrame, id3Tag: id3Tag)
+                frames.append(contentsOf: frame)
+            }
+        }
+        if frames.count > 0 {
+            return tag + frames
+        }
         
         if let attachedPictures = id3Tag.attachedPictures {
             var frames: [UInt8] = []

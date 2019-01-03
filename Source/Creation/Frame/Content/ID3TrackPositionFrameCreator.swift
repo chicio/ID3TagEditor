@@ -17,6 +17,19 @@ class ID3TrackPositionFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+        if let trackPositionFrame = id3Tag.frames[.TrackPosition] as? ID3FrameTrackPosition {
+            let newTag = tag +
+                frameCreator.createFrame(
+                    frameIdentifier: id3FrameConfiguration.identifierFor(
+                        frameType: .TrackPosition,
+                        version: id3Tag.properties.version
+                    ),
+                    version: id3Tag.properties.version,
+                    content: adapt(trackPosition: trackPositionFrame)
+            )
+            return super.createFrames(id3Tag: id3Tag, tag: newTag)
+        }
+        
         if let trackPosition = id3Tag.trackPosition {
             let newTag = tag +
                     frameCreator.createFrame(

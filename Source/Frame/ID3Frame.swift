@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum FrameName {
+public enum FrameName: Hashable {
     case Title
     case Album
     case AlbumArtist
@@ -22,27 +22,7 @@ public enum FrameName {
     case RecordingHourMinute
     // only v4, for v3/2 use RecordingDayMonth, RecordingYear, RecordingHourMinute
     case RecordingDateTime
-    case AttachedPictureOther
-    case AttachedPicturefileIcon
-    case AttachedPictureOtherFileIcon
-    case AttachedPictureFrontCover
-    case AttachedPictureBackCover
-    case AttachedPictureLeafletPage
-    case AttachedPictureMedia
-    case AttachedPictureLeadArtistLeadPerformerSoloist
-    case AttachedPictureArtistPerformer
-    case AttachedPictureConductor
-    case AttachedPictureBandOrchestra
-    case AttachedPictureComposer
-    case AttachedPictureLyricistTextWriter
-    case AttachedPictureRecordingLocation
-    case AttachedPictureDuringRecording
-    case AttachedPictureDuringPerformance
-    case AttachedPictureMovieVideoScreenCapture
-    case AttachedPictureABrightColouredFish
-    case AttachedPictureIllustration
-    case AttachedPictureBandArtistLogotype
-    case AttachedPicturePublisherStudioLogotype
+    case AttachedPicture(ID3PictureType)
 }
 /**.
  A class that contains the basic features of a frame.

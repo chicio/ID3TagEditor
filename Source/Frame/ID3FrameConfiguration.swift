@@ -111,29 +111,6 @@ class ID3FrameConfiguration {
             .UTF8 : [0x03]
         ]
     ]
-    private let attachedPictureFrameNameForType: [ID3PictureType : FrameName] = [
-        .Other : .AttachedPictureOther,
-        .fileIcon : .AttachedPicturefileIcon,
-        .OtherFileIcon : .AttachedPictureOtherFileIcon,
-        .FrontCover : .AttachedPictureFrontCover,
-        .BackCover : .AttachedPictureBackCover,
-        .LeafletPage : .AttachedPictureLeafletPage,
-        .Media : .AttachedPictureMedia,
-        .LeadArtistLeadPerformerSoloist : .AttachedPictureLeadArtistLeadPerformerSoloist,
-        .ArtistPerformer : .AttachedPictureArtistPerformer,
-        .Conductor : .AttachedPictureConductor,
-        .BandOrchestra : .AttachedPictureBandOrchestra,
-        .Composer : .AttachedPictureComposer,
-        .LyricistTextWriter : .AttachedPictureLyricistTextWriter,
-        .RecordingLocation : .AttachedPictureRecordingLocation,
-        .DuringRecording : .AttachedPictureDuringRecording,
-        .DuringPerformance : .AttachedPictureDuringPerformance,
-        .MovieVideoScreenCapture : .AttachedPictureMovieVideoScreenCapture,
-        .ABrightColouredFish : .AttachedPictureABrightColouredFish,
-        .Illustration : .AttachedPictureIllustration,
-        .BandArtistLogotype : .AttachedPictureBandArtistLogotype,
-        .PublisherStudioLogotype : .AttachedPicturePublisherStudioLogotype,
-    ]
     
     init() {
         self.identifiers[.version3] = self.identifiers[.version3]?.merging(commonFourLetterIdentifiers) { $1 }
@@ -176,9 +153,5 @@ class ID3FrameConfiguration {
 
     func encodingByteFor(version: ID3Version, encoding: ID3StringEncoding) -> [UInt8] {
         return encodingByte[version]![encoding]!
-    }
-    
-    func attachedPictureFrameNameFor(pictureType: ID3PictureType) -> FrameName {
-        return attachedPictureFrameNameForType[pictureType]!
-    }
+    }    
 }
