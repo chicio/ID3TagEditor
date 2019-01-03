@@ -432,11 +432,16 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
-            frames: [:],
-            artist: "A New Artist",
-            albumArtist: "A New Album Artist",
-            album: "A New Album",
-            title: "A New title",
+            frames: [
+                .Artist : ID3FrameWithStringContent(content: "A New Artist"),
+                .AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
+                .Album : ID3FrameWithStringContent(content: "A New Album"),
+                .Title : ID3FrameWithStringContent(content:  "A New title"),
+            ],
+            artist: nil,
+            albumArtist: nil,
+            album: nil,
+            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -463,14 +468,20 @@ class ID3TagEditorTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4-with-png.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
-            frames: [:],
-            artist: "A New Artist",
-            albumArtist: "A New Album Artist",
-            album: "A New Album",
-            title: "A New title",
+            frames: [
+                .Artist : ID3FrameWithStringContent(content: "A New Artist"),
+                .AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
+                .Album : ID3FrameWithStringContent(content: "A New Album"),
+                .Title : ID3FrameWithStringContent(content:  "A New title"),
+                .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
+            ],
+            artist: nil,
+            albumArtist: nil,
+            album: nil,
+            title: nil,
             recordingDateTime: nil,
             genre: nil,
-            attachedPictures: [ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)],
+            attachedPictures: nil,
             trackPosition: nil
         )
         
