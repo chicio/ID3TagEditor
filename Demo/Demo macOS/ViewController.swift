@@ -22,8 +22,11 @@ class ViewController: NSViewController {
                 if let attachedPictures = id3Tag.attachedPictures, attachedPictures.count > 0 {
                     attachedPictureImage.image = NSImage(data: attachedPictures[0].picture)
                 }
-                informations.stringValue = "\(id3Tag.title ?? "") \n\((id3Tag.frames[.Artist] as?  ID3FrameWithStringContent)?.content ?? "")"
-                print(id3Tag.title ?? "")
+                informations.stringValue = """
+                    \((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+                    \((id3Tag.frames[.Artist] as?  ID3FrameWithStringContent)?.content ?? "")
+                """
+                print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
                 print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
                 print(id3Tag.album ?? "")
                 print(id3Tag.recordingDateTime?.date?.year ?? "")

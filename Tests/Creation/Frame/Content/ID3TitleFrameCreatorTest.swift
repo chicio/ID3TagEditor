@@ -27,8 +27,10 @@ class ID3TitleFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsATitle() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.title = "::an example title::"
+        let id3Tag = ID3Tag(
+            version: .version3,
+            frames: [.Title : ID3FrameWithStringContent(content: "::an example title::")]
+        )
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

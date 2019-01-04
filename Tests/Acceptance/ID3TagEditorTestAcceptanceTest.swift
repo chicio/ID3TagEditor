@@ -156,7 +156,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -190,7 +189,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -225,7 +223,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -257,7 +254,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -286,7 +282,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -314,7 +309,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -352,7 +346,6 @@ class ID3TagEditorTest: XCTestCase {
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -393,7 +386,6 @@ class ID3TagEditorTest: XCTestCase {
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -423,7 +415,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,
@@ -458,7 +449,6 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
             ],
             album: nil,
-            title: nil,
             recordingDateTime: nil,
             genre: nil,
             attachedPictures: nil,

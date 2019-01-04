@@ -31,9 +31,9 @@ class ViewController: UIViewController {
                 frames: [
                     .Artist : ID3FrameWithStringContent(content: artistTextField.text ?? ""),
                     .AlbumArtist : ID3FrameWithStringContent(content: albumArtistField.text ?? ""),
+                    .Title : ID3FrameWithStringContent(content: titleTextField.text ?? ""),
                 ],
                 album: albumTextField.text,
-                title: titleTextField.text,
                 recordingDateTime: RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: 2019),
                                                      time: nil),
                 genre: ID3FrameGenre(genre: .ClassicRock, description: "Rock & Roll"),
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     @IBAction func load(_ sender: Any) {
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            titleTextField.text = id3Tag?.title
+            titleTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
             albumTextField.text = id3Tag?.album
             albumArtistField.text = (id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content
             artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content

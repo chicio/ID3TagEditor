@@ -17,8 +17,6 @@ public class ID3Tag: CustomDebugStringConvertible {
     public lazy var frames: [FrameName : ID3Frame] = {
         return [:]
     }()
-    /// The title of the song related to this tag.
-    public var title: String?
     /// The position of the track in the original media (see `TrackPositionInSet`).
     public var trackPosition: ID3FrameTrackPosition?
     /// The album of the tag.
@@ -44,7 +42,7 @@ public class ID3Tag: CustomDebugStringConvertible {
           - version: \(self.properties.version)
           - artist: \((self.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "-")
           - albumArtist: \((self.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content ?? "-")
-          - title: \(self.title ?? "-")
+          - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
           - trackPosition: \(self.trackPosition?.debugDescription ?? "-")
           - album: \(self.album ?? "-")
           - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
@@ -73,7 +71,6 @@ public class ID3Tag: CustomDebugStringConvertible {
     public init(version: ID3Version,
                 frames: [FrameName : ID3Frame],
                 album: String?,
-                title: String?,
                 recordingDateTime: RecordingDateTime?,
                 genre: ID3FrameGenre?,
                 attachedPictures: [ID3FrameAttachedPicture]?,
@@ -81,7 +78,6 @@ public class ID3Tag: CustomDebugStringConvertible {
         self.properties = TagProperties(version: version, size: 0)
         self.frames = frames
         self.album = album
-        self.title = title
         self.recordingDateTime = recordingDateTime
         self.genre = genre
         self.attachedPictures = attachedPictures

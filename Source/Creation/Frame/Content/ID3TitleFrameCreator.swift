@@ -12,9 +12,6 @@ class ID3TitleFrameCreator: ID3StringFrameCreator {
         if let titleFrame = id3Tag.frames[.Title] as? ID3FrameWithStringContent {
             return createFrameUsing(frameType: .Title, content: titleFrame.content, id3Tag: id3Tag, andAddItTo: tag)
         }
-        if let title = id3Tag.title {
-            return createFrameUsing(frameType: .Title, content: title, id3Tag: id3Tag, andAddItTo: tag)
-        }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 }
