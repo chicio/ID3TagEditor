@@ -155,7 +155,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content: "example song"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -190,7 +189,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -226,7 +224,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -259,7 +256,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -289,7 +285,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -318,7 +313,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -357,7 +351,6 @@ class ID3TagEditorTest: XCTestCase {
                 .RecordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -399,7 +392,6 @@ class ID3TagEditorTest: XCTestCase {
                 .RecordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -430,7 +422,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
@@ -466,7 +457,6 @@ class ID3TagEditorTest: XCTestCase {
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
             ],
-            albumArtist: nil,
             album: nil,
             title: nil,
             recordingDateTime: nil,
