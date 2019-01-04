@@ -83,8 +83,4 @@ public class ID3Tag: CustomDebugStringConvertible {
         self.attachedPictures = attachedPictures
         self.trackPosition = trackPosition
     }
-
-    init(version: ID3Version, size: UInt32) {
-        self.properties = TagProperties(version: version, size: size)
-    }
 }

@@ -19,7 +19,7 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3AlbumFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3AlbumFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -27,8 +27,10 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsAnAlbum() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.album = "::an example album::"
+        let id3Tag = ID3Tag(
+            version: .version3,
+            frames: [.Album : ID3FrameWithStringContent(content: "::an example album::")]
+        )
         let id3AlbumFrameCreator = ID3AlbumFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

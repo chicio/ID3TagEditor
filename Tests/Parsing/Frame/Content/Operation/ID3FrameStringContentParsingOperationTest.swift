@@ -20,7 +20,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     
     func testFrameContentParsedV2() {
         let expectation = XCTestExpectation(description: "content without padding")
-        let id3Tag = ID3Tag(version: .version2, size: 0)
+        let id3Tag = ID3Tag(version: .version2, frames: [:])
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
@@ -33,7 +33,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     
     func testFrameContentParsedV3() {
         let expectation = XCTestExpectation(description: "content without padding")
-        let id3Tag = ID3Tag(version: .version3, size: 0)
+        let id3Tag = ID3Tag(version: .version3, frames: [:])
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
@@ -46,7 +46,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     
     func testFrameContentParsedV2utf16() {
         let expectation = XCTestExpectation(description: "content without padding")
-        let id3Tag = ID3Tag(version: .version2, size: 0)
+        let id3Tag = ID3Tag(version: .version2, frames: [:])
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
@@ -59,7 +59,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     
     func testFrameContentParsedV3utf16() {
         let expectation = XCTestExpectation(description: "content without padding")
-        let id3Tag = ID3Tag(version: .version3, size: 0)
+        let id3Tag = ID3Tag(version: .version3, frames: [:])
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in
@@ -72,7 +72,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     
     func testFrameContentParsedV4utf8() {
         let expectation = XCTestExpectation(description: "content without padding")
-        let id3Tag = ID3Tag(version: .version4, size: 0)
+        let id3Tag = ID3Tag(version: .version4, frames: [:])
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (id3Tag: ID3Tag, frameContentWithoutPadding: String) in

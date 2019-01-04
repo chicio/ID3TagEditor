@@ -19,7 +19,7 @@ class ID3TrackPositionCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3TrackPositionFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3TrackPositionFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -27,7 +27,7 @@ class ID3TrackPositionCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsATrackPosition() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
+        let id3Tag = ID3Tag(version: .version3, frames: [:])
         id3Tag.trackPosition = ID3FrameTrackPosition(position: 1, totalTracks: 10)
         let id3GenreFrameCreator = ID3TrackPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(

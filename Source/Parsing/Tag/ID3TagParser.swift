@@ -33,7 +33,7 @@ class ID3TagParser {
     func parse(mp3: Data) throws -> ID3Tag? {
         let version = tagVersionParser.parse(mp3: mp3 as Data)
         if (tagPresence.isTagPresentIn(mp3: mp3 as Data, version: version)) {
-            let id3Tag = ID3Tag(version: version, size: 0)
+            let id3Tag = ID3Tag(version: version, frames: [:])
             parseTagSizeFor(mp3: mp3 as NSData, andSaveInId3Tag: id3Tag)
             try validate(tagSize: id3Tag.properties.size, mp3: mp3)
             parseFramesFor(mp3: mp3 as NSData, id3Tag: id3Tag)

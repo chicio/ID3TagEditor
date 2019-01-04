@@ -13,7 +13,7 @@ class ID3TagEditorTest: XCTestCase {
     
     func testFailWrongFilePathFilePath() {
         XCTAssertThrowsError(try id3TagEditor.read(from: "::a wrong path::"))
-        XCTAssertThrowsError(try id3TagEditor.write(tag: ID3Tag(version: .version2, size: 0), to: ""))
+        XCTAssertThrowsError(try id3TagEditor.write(tag: ID3Tag(version: .version2,frames: [:]), to: ""))
     }
     
     //MARK: read

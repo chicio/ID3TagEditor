@@ -19,7 +19,7 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -33,8 +33,11 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        let id3tag = ID3Tag(version: .version4, size: 0)
-        id3tag.recordingDateTime?.date?.year = 2018
+        let recordingDateTime = RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: 2018), time: nil)
+        let id3tag = ID3Tag(
+            version: .version4,
+            frames: [.RecordingDateTime : ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime)]
+        )
         
         let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag, tag: tagBytes)
         
@@ -44,8 +47,10 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsAnYear() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.recordingDateTime?.date?.year = 2018
+        let id3Tag = ID3Tag(
+            version: .version3,
+            frames: [.RecordingYear : ID3FrameRecordingYear(year: 2018)]
+        )
         let id3TitleFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

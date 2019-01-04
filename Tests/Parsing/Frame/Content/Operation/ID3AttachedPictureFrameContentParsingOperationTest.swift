@@ -10,36 +10,42 @@ import XCTest
 
 class ID3AttachedPictureFrameContentParsingOperationTest: XCTestCase {
     func testSetTagAttachedPicturePng() {
-        let id3Tag = ID3Tag(version: .version3, size: 10)
         let attachedPictureFrameContentParsingOperation = ID3AttachedPictureFrameContentParsingOperation(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )
+        let id3Tag = ID3Tag(version: .version3, frames: [:])
 
         attachedPictureFrameContentParsingOperation.parse(
                 frame: Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]),
                 id3Tag: id3Tag
         )
 
-        XCTAssertEqual(id3Tag.attachedPictures?[0].format, .Png)
-        XCTAssertEqual(id3Tag.attachedPictures?[0].picture, Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]))
-        XCTAssertEqual(id3Tag.attachedPictures?[0].type, .FrontCover)
+        XCTAssertEqual((id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.format, .Png)
+        XCTAssertEqual(
+            (id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture,
+            Data(bytes: [0x89, 0x50, 0x4E, 0x47, 0x11, 0x11])
+        )
+        XCTAssertEqual((id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.type, .FrontCover)
     }
 
     func testSetTagAttachedPictureJpg() {
-        let id3Tag = ID3Tag(version: .version3, size: 10)
         let attachedPictureFrameContentParsingOperation = ID3AttachedPictureFrameContentParsingOperation(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )
+        let id3Tag = ID3Tag(version: .version3, frames: [:])
 
         attachedPictureFrameContentParsingOperation.parse(
                 frame: Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]),
                 id3Tag: id3Tag
         )
 
-        XCTAssertEqual(id3Tag.attachedPictures?[0].format, .Jpeg)
-        XCTAssertEqual(id3Tag.attachedPictures?[0].picture, Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]))
-        XCTAssertEqual(id3Tag.attachedPictures?[0].type, .FrontCover)
+        XCTAssertEqual((id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.format, .Jpeg)
+        XCTAssertEqual(
+            (id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture,
+            Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11])
+        )
+        XCTAssertEqual((id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.type, .FrontCover)
     }
 }

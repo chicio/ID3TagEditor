@@ -19,7 +19,7 @@ class ID3AlbumArtistFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3AlbumArtistFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3AlbumArtistFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }

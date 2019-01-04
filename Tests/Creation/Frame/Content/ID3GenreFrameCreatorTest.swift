@@ -19,7 +19,7 @@ class ID3GenreFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3GenreFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3GenreFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -27,8 +27,10 @@ class ID3GenreFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsAGenre() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.genre = ID3FrameGenre(genre: .Metal, description: "Metalcore")
+        let id3Tag = ID3Tag(
+            version: .version3,
+            frames: [.Genre : ID3FrameGenre(genre: .Metal, description: "Metalcore")]
+        )
         let id3GenreFrameCreator = ID3GenreFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

@@ -13,7 +13,7 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         let recordingTimeParsingOperation = ID3RecordingTimeFrameContentParsingOperation(
             stringContentParser: ID3FrameStringContentParserFactory.make()
         )
-        let id3Tag = ID3Tag(version: .version4, size: 0)
+        let id3Tag = ID3Tag(version: .version4, frames: [:])
 
         recordingTimeParsingOperation.parse(frame: frameV4utf8Valid(), id3Tag: id3Tag)
         
@@ -28,8 +28,8 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         let recordingTimeParsingOperation = ID3RecordingTimeFrameContentParsingOperation(
             stringContentParser: ID3FrameStringContentParserFactory.make()
         )
-        let id3Tag = ID3Tag(version: .version4, size: 0)
-        
+        let id3Tag = ID3Tag(version: .version4, frames: [:])
+
         recordingTimeParsingOperation.parse(frame: frameV4utf8Invalid(), id3Tag: id3Tag)
         
         XCTAssertNil(id3Tag.recordingDateTime?.date?.day)
