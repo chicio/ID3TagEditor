@@ -28,8 +28,10 @@ class ViewController: UIViewController {
         do {
             let id3Tag = ID3Tag(
                 version: .version3,
-                frames: [:],
-                artist: artistTextField.text,
+                frames: [
+                    .Artist : ID3FrameWithStringContent(content: artistTextField.text ?? "")
+                ],
+                artist: nil,
                 albumArtist: albumArtistField.text,
                 album: albumTextField.text,
                 title: titleTextField.text,
@@ -51,7 +53,7 @@ class ViewController: UIViewController {
             titleTextField.text = id3Tag?.title
             albumTextField.text = id3Tag?.album
             albumArtistField.text = id3Tag?.albumArtist
-            artistTextField.text = id3Tag?.artist
+            artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
             genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = id3Tag?.genre?.description
             yearField.text = "\(id3Tag?.recordingDateTime?.date?.year ?? 0)"

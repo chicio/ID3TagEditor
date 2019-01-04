@@ -8,9 +8,9 @@
 import Foundation
 
 public class ID3FrameWithStringContent: ID3Frame {
-    let content: String
+    public let content: String
     
-    init(content: String) {
+    public init(content: String) {
         self.content = content
     }
 }

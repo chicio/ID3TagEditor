@@ -17,8 +17,6 @@ public class ID3Tag: CustomDebugStringConvertible {
     public lazy var frames: [FrameName : ID3Frame] = {
         return [:]
     }()
-    /// The artist of the tag.
-    public var artist: String?
     /// Additional information about the artist of the song that contains the tag.
     public var albumArtist: String?
     /// The title of the song related to this tag.
@@ -46,7 +44,7 @@ public class ID3Tag: CustomDebugStringConvertible {
         ID3Tag:
           - size: \(self.properties.size)
           - version: \(self.properties.version)
-          - artist: \(self.artist ?? "-")
+          - artist: \((self.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "-")
           - albumArtist: \(self.albumArtist ?? "-")
           - title: \(self.title ?? "-")
           - trackPosition: \(self.trackPosition?.debugDescription ?? "-")
@@ -55,6 +53,11 @@ public class ID3Tag: CustomDebugStringConvertible {
         - genre: \(String(describing: genre))
         - attachedPicture: \(attachedPictures?.reduce("", { $0 + " - " + $1.description }) ?? "")
         """
+    }
+    
+    public init(version: ID3Version, frames: [FrameName : ID3Frame]) {
+        self.properties = TagProperties(version: version, size: 0)
+        self.frames = frames
     }
 
     /**
@@ -71,7 +74,6 @@ public class ID3Tag: CustomDebugStringConvertible {
      */
     public init(version: ID3Version,
                 frames: [FrameName : ID3Frame],
-                artist: String?,
                 albumArtist: String?,
                 album: String?,
                 title: String?,
@@ -81,7 +83,6 @@ public class ID3Tag: CustomDebugStringConvertible {
                 trackPosition: ID3FrameTrackPosition?) {
         self.properties = TagProperties(version: version, size: 0)
         self.frames = frames
-        self.artist = artist
         self.albumArtist = albumArtist
         self.album = album
         self.title = title
