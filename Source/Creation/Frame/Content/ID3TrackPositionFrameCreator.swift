@@ -29,19 +29,6 @@ class ID3TrackPositionFrameCreator: ID3FrameCreatorsChain {
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
-        
-        if let trackPosition = id3Tag.trackPosition {
-            let newTag = tag +
-                    frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(
-                                    frameType: .TrackPosition,
-                                    version: id3Tag.properties.version
-                            ),
-                            version: id3Tag.properties.version,
-                            content: adapt(trackPosition: trackPosition)
-                    )
-            return super.createFrames(id3Tag: id3Tag, tag: newTag)
-        }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 

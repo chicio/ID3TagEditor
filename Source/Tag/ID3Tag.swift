@@ -17,10 +17,6 @@ public class ID3Tag: CustomDebugStringConvertible {
     public lazy var frames: [FrameName : ID3Frame] = {
         return [:]
     }()
-    /// The position of the track in the original media (see `TrackPositionInSet`).
-    public var trackPosition: ID3FrameTrackPosition?
-    /// The album of the tag.
-    public var album: String?
     ///The recording datetime of the song related to this tag.
     public lazy var recordingDateTime: RecordingDateTime? = {
         return RecordingDateTime(
@@ -43,8 +39,8 @@ public class ID3Tag: CustomDebugStringConvertible {
           - artist: \((self.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "-")
           - albumArtist: \((self.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content ?? "-")
           - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
-          - trackPosition: \(self.trackPosition?.debugDescription ?? "-")
-          - album: \(self.album ?? "-")
+          - trackPosition: \((self.frames[.TrackPosition] as? ID3FrameTrackPosition)?.debugDescription ?? "-")
+          - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
           - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
         - genre: \(String(describing: genre))
         - attachedPicture: \(attachedPictures?.reduce("", { $0 + " - " + $1.description }) ?? "")
@@ -54,33 +50,5 @@ public class ID3Tag: CustomDebugStringConvertible {
     public init(version: ID3Version, frames: [FrameName : ID3Frame]) {
         self.properties = TagProperties(version: version, size: 0)
         self.frames = frames
-    }
-
-    /**
-     Init a tag.
-
-     - parameter version: the version of the tag.
-     - parameter artist: the artist of the tag.
-     - parameter album: the album of the tag.
-     - parameter title: the title of tag.
-     - parameter recordingDateTime: the recording time of the tag.
-     - parameter genre: the genre of the tag.
-     - parameter attachedPictures: an array of attached picture of the tag.
-     - parameter trackPosition: track position of the tag.
-     */
-    public init(version: ID3Version,
-                frames: [FrameName : ID3Frame],
-                album: String?,
-                recordingDateTime: RecordingDateTime?,
-                genre: ID3FrameGenre?,
-                attachedPictures: [ID3FrameAttachedPicture]?,
-                trackPosition: ID3FrameTrackPosition?) {
-        self.properties = TagProperties(version: version, size: 0)
-        self.frames = frames
-        self.album = album
-        self.recordingDateTime = recordingDateTime
-        self.genre = genre
-        self.attachedPictures = attachedPictures
-        self.trackPosition = trackPosition
     }
 }

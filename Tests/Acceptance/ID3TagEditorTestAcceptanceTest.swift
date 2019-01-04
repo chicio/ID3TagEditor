@@ -154,12 +154,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "example album"),
                 .Title : ID3FrameWithStringContent(content: "example song"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -187,12 +182,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -221,12 +211,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -252,12 +237,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -280,12 +260,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -307,12 +282,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -344,12 +314,7 @@ class ID3TagEditorTest: XCTestCase {
                 .RecordingYear : ID3FrameRecordingYear(year: 2018),
                 .RecordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -384,12 +349,7 @@ class ID3TagEditorTest: XCTestCase {
                 .RecordingYear : ID3FrameRecordingYear(year: 2018),
                 .RecordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
                                                                                   fileType: "mp3")))
@@ -413,12 +373,7 @@ class ID3TagEditorTest: XCTestCase {
                 .AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(
@@ -447,12 +402,7 @@ class ID3TagEditorTest: XCTestCase {
                 .Album : ID3FrameWithStringContent(content: "A New Album"),
                 .Title : ID3FrameWithStringContent(content:  "A New title"),
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
-            ],
-            album: nil,
-            recordingDateTime: nil,
-            genre: nil,
-            attachedPictures: nil,
-            trackPosition: nil
+            ]
         )
         
         XCTAssertNoThrow(try id3TagEditor.write(

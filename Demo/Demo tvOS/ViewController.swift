@@ -26,8 +26,10 @@ class ViewController: UIViewController {
             artistLabel.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
             yearLabel.text = String(id3Tag?.recordingDateTime?.date?.year ?? 0)
             genreLabel.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0) \(id3Tag?.genre?.description ?? "")"
-            trackPositionLabel.text = "Track \(id3Tag?.trackPosition?.position ?? -1) of " +
-                                      "\(id3Tag?.trackPosition?.totalTracks ?? -1)"
+            trackPositionLabel.text = """
+                Track \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position ?? -1) of
+                \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.totalTracks ?? -1)
+            """
             if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
                 attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
             }

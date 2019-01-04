@@ -12,9 +12,6 @@ class ID3AlbumFrameCreator: ID3StringFrameCreator {
         if let albumFrame = id3Tag.frames[.Album] as? ID3FrameWithStringContent {
             return createFrameUsing(frameType: .Album, content: albumFrame.content, id3Tag: id3Tag, andAddItTo: tag)
         }
-        if let album = id3Tag.album {
-            return createFrameUsing(frameType: .Album, content: album, id3Tag: id3Tag, andAddItTo: tag)
-        }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 }
