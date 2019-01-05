@@ -24,7 +24,7 @@ class InterfaceController: WKInterfaceController {
             attachedPictureImage.setImageData(id3Tag?.attachedPictures?[0].picture)
             titleLabel.setText((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content)
             albumLabel.setText((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content)
-            genreLabel.setText(id3Tag?.genre?.description)
+            genreLabel.setText((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description)
         } catch {
             print(error)
         }

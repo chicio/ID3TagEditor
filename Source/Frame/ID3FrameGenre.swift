@@ -10,11 +10,15 @@ import Foundation
 /**
  A struct used to represent a genre to be used in the ID3 tag.
  */
-public class ID3FrameGenre: ID3Frame, Equatable {
+public class ID3FrameGenre: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The genre identifier specified as an ID3 v1 Genre (see ID3Genre).
     public var identifier: ID3Genre?
     /// A generic genre description. Useful to build your own genres.
     public var description: String?
+    /// ID3FrameGenre description, useful for debug.
+    public var debugDescription: String {
+        return "\(String(describing: identifier)) - \(String(describing: description))"
+    }
     
     /**
      Init a genre.as

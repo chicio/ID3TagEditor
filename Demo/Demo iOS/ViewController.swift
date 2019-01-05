@@ -51,11 +51,11 @@ class ViewController: UIViewController {
             albumTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
             albumArtistField.text = (id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content
             artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
-            genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
-            genreDescriptionField.text = id3Tag?.genre?.description
+            genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)"
+            genreDescriptionField.text = (id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description
             yearField.text = "\(id3Tag?.recordingDateTime?.date?.year ?? 0)"
-            if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
-                attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
+            if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
+                attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {
             print(error)

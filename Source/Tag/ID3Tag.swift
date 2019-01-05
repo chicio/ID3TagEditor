@@ -24,8 +24,6 @@ public class ID3Tag: CustomDebugStringConvertible {
             time: RecordingTime(hour: nil, minute: nil)
         )
     }()
-    /// The genre of the recording contained in the tag (see `Genre`).
-    public var genre: ID3FrameGenre?
     /// The attached picture related to the audio file contained in the tag (see `AttachedPicture`).
     public lazy var attachedPictures: [ID3FrameAttachedPicture]? = {
         return []
@@ -42,8 +40,8 @@ public class ID3Tag: CustomDebugStringConvertible {
           - trackPosition: \((self.frames[.TrackPosition] as? ID3FrameTrackPosition)?.debugDescription ?? "-")
           - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
           - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
-        - genre: \(String(describing: genre))
-        - attachedPicture: \(attachedPictures?.reduce("", { $0 + " - " + $1.description }) ?? "")
+          - genre: \((self.frames[.Genre] as? ID3FrameGenre)?.debugDescription ?? "-")
+          - attachedPicture: \(attachedPictures?.reduce("", { $0 + " - " + $1.description }) ?? "")
         """
     }
     

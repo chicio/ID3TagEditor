@@ -10,9 +10,7 @@ import Foundation
 class ID3GenreFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (id3Tag: ID3Tag, content: String) in
-            let genreFrame = ID3GenreStringAdapter().adapt(genre: content)
-            id3Tag.frames[.Genre] = genreFrame
-            id3Tag.genre = genreFrame
+            id3Tag.frames[.Genre] = ID3GenreStringAdapter().adapt(genre: content)
         }
     }
 }
