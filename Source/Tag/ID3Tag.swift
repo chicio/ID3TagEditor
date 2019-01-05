@@ -24,24 +24,22 @@ public class ID3Tag: CustomDebugStringConvertible {
             time: RecordingTime(hour: nil, minute: nil)
         )
     }()
-    /// The attached picture related to the audio file contained in the tag (see `AttachedPicture`).
-    public lazy var attachedPictures: [ID3FrameAttachedPicture]? = {
-        return []
-    }()
     /// ID3Tag description, useful for debug.
     public var debugDescription: String {
         return """
         ID3Tag:
-          - size: \(self.properties.size)
-          - version: \(self.properties.version)
-          - artist: \((self.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "-")
-          - albumArtist: \((self.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content ?? "-")
-          - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
-          - trackPosition: \((self.frames[.TrackPosition] as? ID3FrameTrackPosition)?.debugDescription ?? "-")
-          - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
-          - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
-          - genre: \((self.frames[.Genre] as? ID3FrameGenre)?.debugDescription ?? "-")
-          - attachedPicture: \(attachedPictures?.reduce("", { $0 + " - " + $1.description }) ?? "")
+        - size: \(self.properties.size)
+        - version: \(self.properties.version)
+        - artist: \((self.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "-")
+        - albumArtist: \((self.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content ?? "-")
+        - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
+        - trackPosition: \((self.frames[.TrackPosition] as? ID3FrameTrackPosition)?.debugDescription ?? "-")
+        - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
+        - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
+        - genre: \((self.frames[.Genre] as? ID3FrameGenre)?.debugDescription ?? "-")
+        - attachedPicture: \(ID3PictureType.allCases.reduce("", {
+            $0 + " - " + ((self.frames[.AttachedPicture($1)] as? ID3FrameAttachedPicture)?.debugDescription ?? "")
+        }) )
         """
     }
     

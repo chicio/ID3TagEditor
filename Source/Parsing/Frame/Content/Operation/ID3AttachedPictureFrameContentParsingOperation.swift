@@ -35,7 +35,6 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
                 format: format
             )
             id3Tag.frames[.AttachedPicture(pictureType)] = attachedPictureFrame
-            id3Tag.attachedPictures?.append(attachedPictureFrame)
         }
     }
 }

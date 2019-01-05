@@ -25,15 +25,6 @@ class ID3AttachedPicturesFramesCreator: ID3FrameCreatorsChain {
         if frames.count > 0 {
             return tag + frames
         }
-        
-        if let attachedPictures = id3Tag.attachedPictures {
-            var frames: [UInt8] = []
-            for attachedPicture in attachedPictures {
-                let frame = attachedPictureFrameCreator.createFrame(using: attachedPicture, id3Tag: id3Tag)
-                frames.append(contentsOf: frame)
-            }
-            return tag + frames
-        }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 }

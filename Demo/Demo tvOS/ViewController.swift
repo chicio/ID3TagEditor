@@ -33,8 +33,8 @@ class ViewController: UIViewController {
                 Track \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position ?? -1) of
                 \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.totalTracks ?? -1)
             """
-            if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
-                attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
+            if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
+                attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {
             print(error)
