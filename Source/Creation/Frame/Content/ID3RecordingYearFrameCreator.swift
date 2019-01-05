@@ -13,11 +13,7 @@ class ID3RecordingYearFrameCreator: ID3StringFrameCreator {
             let yearFrame = id3Tag.frames[.RecordingYear] as? ID3FrameRecordingYear,
             let year = yearFrame.year {
             return createFrameUsing(frameType: .RecordingYear, content: String(year), id3Tag: id3Tag, andAddItTo: tag)
-        }
-        
-        if id3Tag.properties.version < .version4, let year = id3Tag.recordingDateTime?.date?.year {
-            return createFrameUsing(frameType: .RecordingYear, content: String(year), id3Tag: id3Tag, andAddItTo: tag)
-        }
+        }        
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 }

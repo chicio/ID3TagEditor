@@ -21,18 +21,6 @@ class ID3RecordingHourMinuteFrameCreator: ID3StringFrameCreator {
                                     id3Tag: id3Tag,
                                     andAddItTo: tag)
         }
-        
-        if id3Tag.properties.version < .version4,
-            let hour = id3Tag.recordingDateTime?.time?.hour,
-            let minute = id3Tag.recordingDateTime?.time?.minute {
-            let hourAsString = String(format: "%02d", hour)
-            let minuteAsString = String(format: "%02d", minute)
-            let recordingHourMinute = hourAsString + minuteAsString
-            return createFrameUsing(frameType: .RecordingHourMinute,
-                                    content: recordingHourMinute,
-                                    id3Tag: id3Tag,
-                                    andAddItTo: tag)
-        }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 }

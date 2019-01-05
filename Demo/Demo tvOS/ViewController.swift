@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleLabel.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
             artistLabel.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
-            yearLabel.text = String(id3Tag?.recordingDateTime?.date?.year ?? 0)
+            yearLabel.text = String((id3Tag?.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? 0)
             genreLabel.text = """
                 \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)
                 \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description ?? "")

@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
             genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = (id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description
-            yearField.text = "\(id3Tag?.recordingDateTime?.date?.year ?? 0)"
+            yearField.text = "\((id3Tag?.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? 0)"
             if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)
             }

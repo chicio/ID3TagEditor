@@ -17,13 +17,6 @@ public class ID3Tag: CustomDebugStringConvertible {
     public lazy var frames: [FrameName : ID3Frame] = {
         return [:]
     }()
-    ///The recording datetime of the song related to this tag.
-    public lazy var recordingDateTime: RecordingDateTime? = {
-        return RecordingDateTime(
-            date: RecordingDate(day: nil, month: nil, year: nil),
-            time: RecordingTime(hour: nil, minute: nil)
-        )
-    }()
     /// ID3Tag description, useful for debug.
     public var debugDescription: String {
         return """
@@ -35,7 +28,12 @@ public class ID3Tag: CustomDebugStringConvertible {
         - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
         - trackPosition: \((self.frames[.TrackPosition] as? ID3FrameTrackPosition)?.debugDescription ?? "-")
         - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
-        - recordingDateTime: \(self.recordingDateTime?.debugDescription ?? "-")
+        - recordingDateTime: \(
+            (self.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.debugDescription ?? "-"
+        )
+        - recordingYear: \((self.frames[.RecordingYear] as? ID3FrameRecordingYear)?.debugDescription ?? "-")
+        - recordingDayMonth: \((self.frames[.RecordingDayMonth] as? ID3FrameRecordingDayMonth)?.debugDescription ?? "-")
+        - recordingHourMinute: \((self.frames[.RecordingHourMinute] as? ID3FrameRecordingHourMinute)?.debugDescription ?? "-")
         - genre: \((self.frames[.Genre] as? ID3FrameGenre)?.debugDescription ?? "-")
         - attachedPicture: \(ID3PictureType.allCases.reduce("", {
             $0 + " - " + ((self.frames[.AttachedPicture($1)] as? ID3FrameAttachedPicture)?.debugDescription ?? "")

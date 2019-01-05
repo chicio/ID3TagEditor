@@ -17,11 +17,11 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
 
         recordingTimeParsingOperation.parse(frame: frameV4utf8Valid(), id3Tag: id3Tag)
         
-        XCTAssertEqual(id3Tag.recordingDateTime?.date?.day, 27)
-        XCTAssertEqual(id3Tag.recordingDateTime?.date?.month, 7)
-        XCTAssertEqual(id3Tag.recordingDateTime?.date?.year, 2018)
-        XCTAssertEqual(id3Tag.recordingDateTime?.time?.hour, 11)
-        XCTAssertEqual(id3Tag.recordingDateTime?.time?.minute, 35)
+        XCTAssertEqual((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day, 27)
+        XCTAssertEqual((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month, 7)
+        XCTAssertEqual((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2018)
+        XCTAssertEqual((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.hour, 11)
+        XCTAssertEqual((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.minute, 35)
     }
     
     func testframeContentWithYearInsteadOfTimestamp() {
@@ -32,11 +32,11 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
 
         recordingTimeParsingOperation.parse(frame: frameV4utf8Invalid(), id3Tag: id3Tag)
         
-        XCTAssertNil(id3Tag.recordingDateTime?.date?.day)
-        XCTAssertNil(id3Tag.recordingDateTime?.date?.month)
-        XCTAssertEqual(id3Tag.recordingDateTime?.date?.year, 2016)
-        XCTAssertNil(id3Tag.recordingDateTime?.time?.hour)
-        XCTAssertNil(id3Tag.recordingDateTime?.time?.minute)
+        XCTAssertNil((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day)
+        XCTAssertNil((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month)
+        XCTAssertEqual((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2016)
+        XCTAssertNil((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.hour)
+        XCTAssertNil((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.minute)
     }
     
     private func frameV4utf8Valid() -> Data {

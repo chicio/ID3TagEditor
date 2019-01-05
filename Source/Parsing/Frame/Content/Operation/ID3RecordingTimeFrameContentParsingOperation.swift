@@ -34,7 +34,6 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
             recordingDateTime.date?.year = calendar.component(.year, from: date)
             recordingDateTime.time?.hour = calendar.component(.hour, from: date)
             recordingDateTime.time?.minute = calendar.component(.minute, from: date)
-            id3Tag.recordingDateTime = recordingDateTime
         } else {
             /**
              Fallback case:
@@ -45,7 +44,6 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
              frame is a number major than 9999: if not this is a YEAR saved inside a field with a timestamp :).
              */
             recordingDateTime.date?.year = Int(content)
-            id3Tag.recordingDateTime?.date?.year = Int(content)
         }
         id3Tag.frames[.RecordingDateTime] = ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime)
     }

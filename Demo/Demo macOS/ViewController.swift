@@ -29,7 +29,7 @@ class ViewController: NSViewController {
                 print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
                 print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
                 print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
-                print(id3Tag.recordingDateTime?.date?.year ?? "")
+                print((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? "")
                 print((id3Tag.frames[.Genre] as? ID3FrameGenre)?.identifier ?? "")
                 print((id3Tag.frames[.Genre] as? ID3FrameGenre)?.description ?? "")
                 print((id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.type ?? 0x00)
