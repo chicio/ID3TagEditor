@@ -359,6 +359,10 @@
 		45775F01210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775F00210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift */; };
 		45775F02210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775F00210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift */; };
 		45775F03210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45775F00210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift */; };
+		4578C69021E39009000ABF57 /* ID3FramesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578C68F21E39009000ABF57 /* ID3FramesParser.swift */; };
+		4578C69121E39009000ABF57 /* ID3FramesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578C68F21E39009000ABF57 /* ID3FramesParser.swift */; };
+		4578C69221E39009000ABF57 /* ID3FramesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578C68F21E39009000ABF57 /* ID3FramesParser.swift */; };
+		4578C69321E39009000ABF57 /* ID3FramesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4578C68F21E39009000ABF57 /* ID3FramesParser.swift */; };
 		4584521021DD00780043FECD /* ID3PictureFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584520E21DD00780043FECD /* ID3PictureFormat.swift */; };
 		4584521121DD00780043FECD /* ID3PictureFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584520E21DD00780043FECD /* ID3PictureFormat.swift */; };
 		4584521221DD00780043FECD /* ID3PictureFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584520E21DD00780043FECD /* ID3PictureFormat.swift */; };
@@ -756,6 +760,7 @@
 		45775EE12107C24C00B1B3FE /* ID3FrameStringEncodingDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameStringEncodingDetector.swift; sourceTree = "<group>"; };
 		45775EE62107C37A00B1B3FE /* ID3StringEncodingConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3StringEncodingConverter.swift; sourceTree = "<group>"; };
 		45775F00210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingTimestampOperationTest.swift; sourceTree = "<group>"; };
+		4578C68F21E39009000ABF57 /* ID3FramesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FramesParser.swift; sourceTree = "<group>"; };
 		4584520E21DD00780043FECD /* ID3PictureFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PictureFormat.swift; sourceTree = "<group>"; };
 		4584520F21DD00780043FECD /* ID3PictureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PictureType.swift; sourceTree = "<group>"; };
 		4584521821DD00800043FECD /* ID3FrameRecordingDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingDateTime.swift; sourceTree = "<group>"; };
@@ -1000,6 +1005,7 @@
 			children = (
 				452832012044C7BE00458375 /* Content */,
 				452832102044C7BE00458375 /* Size */,
+				4578C68F21E39009000ABF57 /* ID3FramesParser.swift */,
 			);
 			path = Frame;
 			sourceTree = "<group>";
@@ -2036,6 +2042,7 @@
 				4528AF2D210B860400CB7A2E /* ID3AlbumArtistFrameContentParsingOperationFactory.swift in Sources */,
 				5FAF8DA221CECCD70049798C /* SynchsafeEncoder.swift in Sources */,
 				45D58CDD210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */,
+				4578C69021E39009000ABF57 /* ID3FramesParser.swift in Sources */,
 				4528AF1E210B840900CB7A2E /* ID3RecordingTimeFrameContentParsingOperationFactory.swift in Sources */,
 				C5067DFA24C550CD872E8101 /* ID3AttachedPictureFrameConfiguration.swift in Sources */,
 				4528AF14210B83B400CB7A2E /* ID3GenreFrameContentParsingOperationFactory.swift in Sources */,
@@ -2204,6 +2211,7 @@
 				45AF1852204B647600343B25 /* ID3FrameStringContentParsingOperation.swift in Sources */,
 				5FAF8DA321CECCD70049798C /* SynchsafeEncoder.swift in Sources */,
 				45537A5C20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */,
+				4578C69121E39009000ABF57 /* ID3FramesParser.swift in Sources */,
 				45D58CDE210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */,
 				4528324F2044C7BE00458375 /* ID3AttachedPictureFrameContentParsingOperation.swift in Sources */,
 				C5067178C64142CCD7395832 /* ID3RecordingYearFrameCreator.swift in Sources */,
@@ -2372,6 +2380,7 @@
 				45537A5D20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */,
 				5FAF8DA421CECCD70049798C /* SynchsafeEncoder.swift in Sources */,
 				45D58CDF210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */,
+				4578C69221E39009000ABF57 /* ID3FramesParser.swift in Sources */,
 				45541BAA20598FA60025A8BF /* ID3TrackPositionStringAdapter.swift in Sources */,
 				45541BAB20598FA60025A8BF /* ID3FrameSizeParser.swift in Sources */,
 				45541BAC20598FA60025A8BF /* FrameSizeParser.swift in Sources */,
@@ -2540,6 +2549,7 @@
 				45537A5E20932D33009F639C /* ID3UTF16StringToByteAdapter.swift in Sources */,
 				5FAF8DA521CECCD70049798C /* SynchsafeEncoder.swift in Sources */,
 				45D58CE0210CBDF400E820C8 /* ID3TimestampCreator.swift in Sources */,
+				4578C69321E39009000ABF57 /* ID3FramesParser.swift in Sources */,
 				45F83415205905EF0046C804 /* ID3TrackPositionStringAdapter.swift in Sources */,
 				45F83416205905EF0046C804 /* ID3FrameSizeParser.swift in Sources */,
 				45F83417205905EF0046C804 /* FrameSizeParser.swift in Sources */,
