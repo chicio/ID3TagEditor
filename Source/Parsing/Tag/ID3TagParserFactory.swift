@@ -23,7 +23,7 @@ class ID3TagParserFactory {
                         synchsafeIntegerDecoder: SynchsafeIntegerDecoder()),
                     id3FrameConfiguration: id3FrameConfiguration
                 ),
-                frameContentParser: ID3FrameContentParser(
+                id3FrameParser: ID3FrameParser(
                     frameContentParsingOperations: ID3FrameContentParsingOperationFactory.make(),
                     id3FrameConfiguration: id3FrameConfiguration
                 ),

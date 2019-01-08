@@ -9,14 +9,14 @@ import Foundation
 
 class ID3FramesParser {
     private let frameSizeParser: FrameSizeParser
-    private let frameContentParser: FrameContentParser
+    private let id3FrameParser: ID3FrameParser
     private var id3TagConfiguration: ID3TagConfiguration
     
     init(frameSizeParser: FrameSizeParser,
-         frameContentParser: FrameContentParser,
+         id3FrameParser: ID3FrameParser,
          id3TagConfiguration: ID3TagConfiguration) {
         self.frameSizeParser = frameSizeParser
-        self.frameContentParser = frameContentParser
+        self.id3FrameParser = id3FrameParser
         self.id3TagConfiguration = id3TagConfiguration
     }
     
@@ -24,7 +24,7 @@ class ID3FramesParser {
         var currentFramePosition = id3TagConfiguration.headerSize();
         while currentFramePosition < id3Tag.properties.size {
             let frame = getFrameFrom(mp3: mp3, position: currentFramePosition, version: id3Tag.properties.version)
-            frameContentParser.parse(frame: frame, id3Tag: id3Tag)
+            id3FrameParser.parse(frame: frame, id3Tag: id3Tag)
             currentFramePosition += frame.count;
         }
     }

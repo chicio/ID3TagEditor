@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3FrameContentParser: FrameContentParser {
+class ID3FrameParser: FrameContentParser {
     private let frameContentParsingOperations: [FrameType : FrameContentParsingOperation]
     private var id3FrameConfiguration: ID3FrameConfiguration
 
