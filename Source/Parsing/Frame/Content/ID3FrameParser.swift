@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3FrameParser: FrameContentParser {
+class ID3FrameParser {
     private let frameContentParsingOperations: [FrameType : FrameContentParsingOperation]
     private var id3FrameConfiguration: ID3FrameConfiguration
 
@@ -17,7 +17,7 @@ class ID3FrameParser: FrameContentParser {
         self.id3FrameConfiguration = id3FrameConfiguration
     }
 
-    func parse(frame: Data, id3Tag: ID3Tag) {
+    func parse(frame: Data, frameSize: Int, id3Tag: ID3Tag) {
         let frameIdentifier = getFrameIdentifier(frame: frame, version: id3Tag.properties.version)
         let frameType = id3FrameConfiguration.frameTypeFor(identifier: frameIdentifier,
                                                            version: id3Tag.properties.version)
@@ -26,6 +26,7 @@ class ID3FrameParser: FrameContentParser {
                                                             version: id3Tag.properties.version,
                                                             completed: { frameName, frame in
                 frame.id3Identifier = frameIdentifier
+                frame.size = frameSize
                 id3Tag.frames[frameName] = frame
             })
         }

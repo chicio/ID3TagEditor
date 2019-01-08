@@ -25,7 +25,8 @@ class ID3TagEditorTest: XCTestCase {
         let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
         
         XCTAssertEqual(id3Tag?.properties.version, .version2)
-        XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.id3Identifier, "TT2")
+        XCTAssertEqual(id3Tag?.frames[.Title]?.id3Identifier, "TT2")
+        XCTAssertEqual(id3Tag?.frames[.Title]?.size, 35)
         XCTAssertEqual((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content, "example song")
         XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.id3Identifier, "TAL")
         XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "example album")

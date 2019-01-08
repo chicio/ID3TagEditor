@@ -29,6 +29,5 @@ public enum FrameName: Hashable {
  */
 public class ID3Frame {
     public internal(set) var id3Identifier: String?
-    
-    
+    public internal(set) var size: Int?    
 }
