@@ -23,13 +23,13 @@ class ID3FramesParser {
     func parse(mp3: NSData, id3Tag: ID3Tag) {
         var currentFramePosition = id3TagConfiguration.headerSize();
         while currentFramePosition < id3Tag.properties.size {
-            let frame = getFrameFrom(mp3: mp3, position: currentFramePosition, version: id3Tag.properties.version)
+            let frame = getFrameDataFrom(mp3: mp3, position: currentFramePosition, version: id3Tag.properties.version)
             id3FrameParser.parse(frame: frame, id3Tag: id3Tag)
             currentFramePosition += frame.count;
         }
     }
     
-    private func getFrameFrom(mp3: NSData, position: Int, version: ID3Version) -> Data {
+    private func getFrameDataFrom(mp3: NSData, position: Int, version: ID3Version) -> Data {
         let frameSize = frameSizeParser.parse(mp3: mp3, framePosition: position, version: version)
         let frame = mp3.subdata(with: NSMakeRange(position, frameSize))
         return frame

@@ -9,9 +9,9 @@ import Foundation
 
 class ID3RecordingHourMinuteFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (id3Tag: ID3Tag, content: String) in
+        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
             let hourMinute = ID3CoupleOfNumbersAdapter().adapt(coupleOfNumbers: content)
-            id3Tag.frames[.RecordingHourMinute] = ID3FrameRecordingHourMinute(hour: hourMinute.0, minute: hourMinute.1)
+            return (.RecordingHourMinute, ID3FrameRecordingHourMinute(hour: hourMinute.0, minute: hourMinute.1))
         }
     }
 }

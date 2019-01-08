@@ -18,23 +18,32 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
         self.pictureTypeAdapter = pictureTypeAdapter
     }
 
-    func parse(frame: Data, id3Tag: ID3Tag) {
-        parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber, format: .Jpeg, frame: frame, andSaveTo: id3Tag)
-        parseToCheckIfThereIsAnImageUsing(magicNumber: pngMagicNumber, format: .Png, frame: frame, andSaveTo: id3Tag)
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+        parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber,
+                                          format: .Jpeg,
+                                          frame: frame,
+                                          version: version,
+                                          completed: completed)
+        parseToCheckIfThereIsAnImageUsing(magicNumber: pngMagicNumber,
+                                          format: .Png,
+                                          frame: frame,
+                                          version: version,
+                                          completed: completed)
     }
 
     private func parseToCheckIfThereIsAnImageUsing(magicNumber: Data,
                                                    format: ID3PictureFormat,
                                                    frame: Data,
-                                                   andSaveTo id3Tag: ID3Tag) {
+                                                   version: ID3Version,
+                                                   completed: (FrameName, ID3Frame) -> ()) {
         if let magicNumberRange = frame.range(of: magicNumber) {
-            let pictureType = pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.properties.version)
+            let pictureType = pictureTypeAdapter.adapt(frame: frame, format: format, version: version)
             let attachedPictureFrame = ID3FrameAttachedPicture(
                 picture: frame.subdata(in: magicNumberRange.lowerBound..<frame.count),
                 type: pictureType,
                 format: format
             )
-            id3Tag.frames[.AttachedPicture(pictureType)] = attachedPictureFrame
+            completed(.AttachedPicture(pictureType), attachedPictureFrame)
         }
     }
 }

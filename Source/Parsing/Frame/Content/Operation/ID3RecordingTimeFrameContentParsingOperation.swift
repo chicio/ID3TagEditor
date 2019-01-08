@@ -14,13 +14,13 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
         self.stringContentParser = stringContentParser
     }
     
-    func parse(frame: Data, id3Tag: ID3Tag) {
-        if let frameContent = stringContentParser.parse(frame: frame, version: id3Tag.properties.version) {
-            parse(content: frameContent, id3Tag: id3Tag)
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+        if let frameContent = stringContentParser.parse(frame: frame, version: version) {
+            parse(content: frameContent, completed: completed)
         }
     }
 
-    private func parse(content: String, id3Tag: ID3Tag) {
+    private func parse(content: String, completed: (FrameName, ID3Frame) -> ()) {
         var recordingDateTime: RecordingDateTime = RecordingDateTime(
             date: RecordingDate(day: nil, month: nil, year: nil),
             time: RecordingTime(hour: nil, minute: nil)
@@ -45,6 +45,6 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
              */
             recordingDateTime.date?.year = Int(content)
         }
-        id3Tag.frames[.RecordingDateTime] = ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime)
+        completed(.RecordingDateTime, ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
     }
 }
