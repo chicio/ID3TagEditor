@@ -26,6 +26,7 @@ class ViewController: NSViewController {
                     \((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
                     \((id3Tag.frames[.Artist] as?  ID3FrameWithStringContent)?.content ?? "")
                 """
+                print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.id3Identifier ?? "")
                 print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
                 print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
                 print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")

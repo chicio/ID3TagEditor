@@ -28,5 +28,7 @@ public enum FrameName: Hashable {
  A class that contains the basic features of a frame.
  */
 public class ID3Frame {
+    public internal(set) var id3Identifier: String?
+    
     
 }
