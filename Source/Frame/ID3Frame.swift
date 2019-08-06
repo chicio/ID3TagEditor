@@ -23,6 +23,7 @@ public enum FrameName: Hashable {
     // only v4, for v3/2 use RecordingDayMonth, RecordingYear, RecordingHourMinute
     case RecordingDateTime
     case AttachedPicture(ID3PictureType)
+    case Popularimeter
 }
 /**.
  A class that contains the basic features of a frame.

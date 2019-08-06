@@ -78,6 +78,13 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration,
             timestampCreator: ID3TimestampCreator()
         )
+        let popularimeterCreator = ID3PopularimeterFramesCreator(
+            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
+                                                                 frameConfiguration: frameConfiguration),
+            id3FrameConfiguration: frameConfiguration,
+            frameContentSizeCalculator: frameContentSizeCalculator,
+            frameFlagsCreator: frameFlagsCreator
+        )
         albumFrameCreator.nextCreator = albumArtistCreator
         albumArtistCreator.nextCreator = artistFrameCreator
         artistFrameCreator.nextCreator = titleFrameCreator
@@ -86,7 +93,8 @@ class ID3FrameCreatorsChainFactory {
         dayMonthCreator.nextCreator = hourMinuteCreator
         hourMinuteCreator.nextCreator = recordingDateTimeCreator
         recordingDateTimeCreator.nextCreator = genreFrameCreator
-        genreFrameCreator.nextCreator = trackPositionFrameCreator
+        genreFrameCreator.nextCreator = popularimeterCreator
+        popularimeterCreator.nextCreator = trackPositionFrameCreator
         trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
         return albumFrameCreator
     }

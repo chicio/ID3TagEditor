@@ -35,6 +35,7 @@ public class ID3Tag: CustomDebugStringConvertible {
         - recordingDayMonth: \((self.frames[.RecordingDayMonth] as? ID3FrameRecordingDayMonth)?.debugDescription ?? "-")
         - recordingHourMinute: \((self.frames[.RecordingHourMinute] as? ID3FrameRecordingHourMinute)?.debugDescription ?? "-")
         - genre: \((self.frames[.Genre] as? ID3FrameGenre)?.debugDescription ?? "-")
+        - popularimeter: \((self.frames[.Popularimeter] as? ID3FramePopularimeter)?.debugDescription ?? "-")
         - attachedPicture: \(ID3PictureType.allCases.reduce("", {
             $0 + " - " + ((self.frames[.AttachedPicture($1)] as? ID3FrameAttachedPicture)?.debugDescription ?? "")
         }) )

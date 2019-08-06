@@ -20,7 +20,8 @@ class ID3FrameContentParsingOperationFactory {
             .RecordingHourMinute: ID3RecordingHourMinuteFrameContentParsingOperationFactory.make(),
             .RecordingDateTime: ID3RecordingTimeFrameContentParsingOperationFactory.make(),
             .Genre: ID3GenreFrameContentParsingOperationFactory.make(),
-            .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make()
+            .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make(),
+            .Popularimeter: ID3PopularimeterFrameContentParsingOperationFactory.make()
         ]
     }
 }
