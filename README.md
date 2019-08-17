@@ -125,11 +125,11 @@ do {
         recordingDateTime: RecordingDateTime(date: RecordingDate(day: 1, month: 10, year: 2019), 
                                              time: RecordingTime(hour: 14, minute: 30)),
         genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-        attachedPictures: AttachedPicture(picture: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg),
+        attachedPictures: [AttachedPicture(picture: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg)],
         trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
     )
     
-    try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>"))
+    try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
     try id3TagEditor.write(tag: id3Tag, 
                            to: "<valid path to the mp3 file>",
                            andSaveTo: "<new path where you want to save the mp3>"))
