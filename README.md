@@ -132,7 +132,7 @@ do {
     try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
     try id3TagEditor.write(tag: id3Tag, 
                            to: "<valid path to the mp3 file>",
-                           andSaveTo: "<new path where you want to save the mp3>"))
+                           andSaveTo: "<new path where you want to save the mp3>")
     let newMp3: Data = try id3TagEditor.write(tag: id3Tag, mp3: <valid mp3 file passed as Data>)                          
 } catch {
     print(error)
