@@ -94,34 +94,34 @@ class ID3StringContentParsingOperationTest: XCTestCase {
     }
     
     private func frameV2() -> Data {
-        return Data(bytes:
+        return Data(
             [UInt8]("TAL".utf8) + [0x00, 0x00, 0x00] +
                 [0x00] + [UInt8](":: value ::".utf8)
         )
     }
     
     private func frameV2utf16() -> Data {
-        return Data(bytes:
+        return Data(
             [UInt8]("TAL".utf8) + [0x00, 0x00, 0x00] +
                 [0x01, 0xFF, 0xFE] + ":: π value ::".utf16ToBytes
         )
     }
     
     private func frameV3() -> Data {
-        return Data(bytes: [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
+        return Data([UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
             [0x00] + [UInt8](":: value ::".utf8)
         )
     }
     
     private func frameV3utf16() -> Data {
-        return Data(bytes:
+        return Data(
             [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
                 [0x01, 0xFF, 0xFE] + ":: π value ::".utf16ToBytes
         )
     }
     
     private func frameV4utf8() -> Data {
-        return Data(bytes:
+        return Data(
             [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
                 [0x03] + [UInt8](":: π value ::".utf8)
         )

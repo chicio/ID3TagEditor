@@ -8,8 +8,8 @@
 import Foundation
 
 class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation {
-    private let jpegMagicNumber: Data = Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0])
-    private let pngMagicNumber: Data =  Data(bytes: [0x89, 0x50, 0x4E, 0x47])
+    private let jpegMagicNumber: Data = Data([0xFF, 0xD8, 0xFF, 0xE0])
+    private let pngMagicNumber: Data =  Data([0x89, 0x50, 0x4E, 0x47])
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let pictureTypeAdapter: PictureTypeAdapter
 

@@ -23,7 +23,7 @@ class ID3TagCreator {
         if (isTooBig(tag: tag)) {
             throw ID3TagEditorError.TagTooBig
         }
-        return Data(bytes: tag)
+        return Data(tag)
     }
     
     private func isTooBig(tag: [UInt8]) -> Bool {

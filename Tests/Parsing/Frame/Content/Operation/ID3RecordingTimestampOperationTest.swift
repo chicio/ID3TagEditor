@@ -49,14 +49,14 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
     }
     
     private func frameV4utf8Valid() -> Data {
-        return Data(bytes:
+        return Data(
             [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
                 [0x03] + [UInt8]("1532691310".utf8)
         )
     }
     
     private func frameV4utf8Invalid() -> Data {
-        return Data(bytes:
+        return Data(
             [UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
                 [0x03] + [UInt8]("2016".utf8)
         )
