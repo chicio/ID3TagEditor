@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ID3Tag Class Reference</title>
+    <title>ID3FrameRecordingDayMonth Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ID3Tag" class="dashAnchor"></a>
-    <a title="ID3Tag Class Reference"></a>
+    <a name="//apple_ref/swift/Class/ID3FrameRecordingDayMonth" class="dashAnchor"></a>
+    <a title="ID3FrameRecordingDayMonth Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">ID3TagEditor Docs</a> (87% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">ID3TagEditor Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ID3Tag Class Reference
+        ID3FrameRecordingDayMonth Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -110,14 +110,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ID3Tag</h1>
+            <h1>ID3FrameRecordingDayMonth</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3Tag</span> <span class="p">:</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameRecordingDayMonth</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
 
                 </div>
               </div>
-            <p>A class used to represent an ID3 tag.</p>
+            <p>Undocumented</p>
 
           </section>
           <section class="section task-group-section">
@@ -126,9 +126,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0aB0C10propertiesAA0B10PropertiesVvp"></a>
-                    <a name="//apple_ref/swift/Property/properties" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0aB0C10propertiesAA0B10PropertiesVvp">properties</a>
+                    <a name="/s:12ID3TagEditor0A22FrameRecordingDayMonthC3daySiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/day" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A22FrameRecordingDayMonthC3daySiSgvp">day</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -136,14 +136,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The properties of the tag. The public available property to the user of the frmaework is the versions property.</p>
+                        <p>Recording day of the song.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">properties</span><span class="p">:</span> <span class="kt"><a href="../Structs/TagProperties.html">TagProperties</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">day</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -153,9 +153,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0aB0C6framesSDyAA9FrameNameOAA0aE0CGvp"></a>
-                    <a name="//apple_ref/swift/Property/frames" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0aB0C6framesSDyAA9FrameNameOAA0aE0CGvp">frames</a>
+                    <a name="/s:12ID3TagEditor0A22FrameRecordingDayMonthC5monthSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/month" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A22FrameRecordingDayMonthC5monthSiSgvp">month</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,14 +163,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Dictionary that contains the frames extracted or to be added to the id3 tag for an mp3 file.</p>
+                        <p>Recording month of the song.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">frames</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/FrameName.html">FrameName</a></span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">month</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -180,36 +180,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0aB0C16debugDescriptionSSvp"></a>
-                    <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0aB0C16debugDescriptionSSvp">debugDescription</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>ID3Tag description, useful for debug.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12ID3TagEditor0aB0C7version6framesAcA0A7VersionO_SDyAA9FrameNameOAA0aG0CGtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(version:frames:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0aB0C7version6framesAcA0A7VersionO_SDyAA9FrameNameOAA0aG0CGtcfc">init(version:frames:)</a>
+                    <a name="/s:12ID3TagEditor0A22FrameRecordingDayMonthC3day5monthACSiSg_AFtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(day:month:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A22FrameRecordingDayMonthC3day5monthACSiSg_AFtcfc">init(day:month:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,7 +197,33 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3Version.html">ID3Version</a></span><span class="p">,</span> <span class="nv">frames</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/FrameName.html">FrameName</a></span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">day</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="nv">month</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s28CustomDebugStringConvertibleP16debugDescriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s28CustomDebugStringConvertibleP16debugDescriptionSSvp">debugDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

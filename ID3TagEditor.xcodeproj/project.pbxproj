@@ -749,6 +749,7 @@
 		45541BE52059954C0025A8BF /* ID3TagEditor tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ID3TagEditor tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45541C25205999A20025A8BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		455CF9862340C14B004C880A /* ID3TagEditor.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ID3TagEditor.podspec; sourceTree = "<group>"; };
+		455CF9872340C31F004C880A /* generate_docs */ = {isa = PBXFileReference; lastKnownFileType = text; path = generate_docs; sourceTree = "<group>"; };
 		4562C1E121172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDayMonthFrameCreator.swift; sourceTree = "<group>"; };
 		4562C1E6211731B100AFE22E /* ID3RecordingHourMinuteFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingHourMinuteFrameCreator.swift; sourceTree = "<group>"; };
 		4562C1EB211737C100AFE22E /* ID3RecordingDayMonthFrameCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDayMonthFrameCreatorTest.swift; sourceTree = "<group>"; };
@@ -929,6 +930,7 @@
 				45AB7194204AD842004A2239 /* LICENSE.md */,
 				45AB7195204AD842004A2239 /* README.md */,
 				455CF9862340C14B004C880A /* ID3TagEditor.podspec */,
+				455CF9872340C31F004C880A /* generate_docs */,
 				4553D64521946A3000540631 /* LinuxMain.swift */,
 				45AB7193204AD842004A2239 /* Package.swift */,
 				452831C72044C40700458375 /* Source */,
