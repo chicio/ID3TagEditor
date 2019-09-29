@@ -7,8 +7,9 @@
 
 import Foundation
 
+/// A class that represents the frame 
 public class ID3FrameRecordingYear: ID3Frame, CustomDebugStringConvertible {
-    /// Recording day of the song.
+    /// Recording year of the song.
     public let year: Int?
     
     public init(year: Int?) {

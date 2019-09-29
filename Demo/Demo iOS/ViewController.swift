@@ -9,7 +9,7 @@
 import UIKit
 import ID3TagEditor
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     private let id3TagEditor = ID3TagEditor()
     @IBOutlet weak var attachedPictureImage: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.delegate = self
+        albumTextField.delegate = self
+        artistTextField.delegate = self
+        albumArtistField.delegate = self
+        genreIdentifierField.delegate = self
+        genreDescriptionField.delegate = self
+        yearField.delegate = self
     }
     
     @IBAction func update(_ sender: Any) {
@@ -53,12 +60,17 @@ class ViewController: UIViewController {
             artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
             genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)"
             genreDescriptionField.text = (id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description
-            yearField.text = "\((id3Tag?.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? 0)"
+            yearField.text = "\((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
             if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {
             print(error)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
