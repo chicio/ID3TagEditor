@@ -7,27 +7,12 @@
 
 import Foundation
 
-public enum FrameName: Hashable {
-    case Title
-    case Album
-    case AlbumArtist
-    case Artist
-    case Genre
-    case TrackPosition
-    // only v3/2, for v4 use RecordingDateTime
-    case RecordingDayMonth
-    // only v3/2, for v4 use RecordingDateTime
-    case RecordingYear
-    // only v3/2, for v4 use RecordingDateTime
-    case RecordingHourMinute
-    // only v4, for v3/2 use RecordingDayMonth, RecordingYear, RecordingHourMinute
-    case RecordingDateTime
-    case AttachedPicture(ID3PictureType)
-}
 /**.
- A class that contains the basic features of a frame.
+ A class that represent an ID3Tag frame. It contains the common information of all the ID3 frames.
  */
 public class ID3Frame {
+    /// The ID3 frame identifier as specified in the ID3 tag standard..
     public internal(set) var id3Identifier: String?
+    /// The ID3 frame size as specified in the ID3 tag standard.
     public internal(set) var size: Int?    
 }

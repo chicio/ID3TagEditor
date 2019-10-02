@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A struct used to represent a genre to be used in the ID3 tag.
+ A class used to represent an ID3 genre frame to be used in the ID3 tag.
  */
 public class ID3FrameGenre: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The genre identifier specified as an ID3 v1 Genre (see ID3Genre).
@@ -21,7 +21,7 @@ public class ID3FrameGenre: ID3Frame, Equatable, CustomDebugStringConvertible {
     }
     
     /**
-     Init a genre.as
+     Init a ID3 genre frame.
 
      - parameter genre: an ID3Genre to be setted in the ID3 tag.
      - parameter description: a generic genre description. Useful to build your own genres.

@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A struct used to represent an image as attached picture for the ID3 tag.
+ A class used to represent an ID3 attached picture frame to be used in the ID3 tag.
  */
 public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The image bytes as `Data`.
@@ -17,13 +17,13 @@ public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConv
     public let type: ID3PictureType
     /// The file format. Only Jpeg and Png are supported by the standard (cross compatibility).
     public let format: ID3PictureFormat
-    /// ID3FrameAttachedPicture debug description
+    /// ID3FrameAttachedPicture debug description.
     public var debugDescription: String {
         return "\(type) \(format)"
     }
 
     /**
-     Init an attached picture.
+     Init an ID3 attached picture frame.
 
      - parameter picture: the image bytes as `Data`.
      - parameter type: the ID3 type of the attached picture. See `ID3PictureType` for a complete list of the available.
