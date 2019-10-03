@@ -1,68 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/FrameName.swift",
-      "line": 11,
-      "symbol": "FrameName",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameRecordingDayMonth.swift",
-      "line": 10,
-      "symbol": "ID3FrameRecordingDayMonth",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameRecordingDayMonth.swift",
-      "line": 16,
-      "symbol": "ID3FrameRecordingDayMonth.init(day:month:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameRecordingHourMinute.swift",
-      "line": 11,
-      "symbol": "ID3FrameRecordingHourMinute",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameRecordingYear.swift",
-      "line": 15,
-      "symbol": "ID3FrameRecordingYear.init(year:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameWithStringContent.swift",
-      "line": 10,
-      "symbol": "ID3FrameWithStringContent",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameWithStringContent.swift",
-      "line": 11,
-      "symbol": "ID3FrameWithStringContent.content",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Frame/ID3FrameWithStringContent.swift",
-      "line": 13,
-      "symbol": "ID3FrameWithStringContent.init(content:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Work/ID3TagEditor/Source/Tag/ID3Tag.swift",
-      "line": 44,
-      "symbol": "ID3Tag.init(version:frames:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/fduroni/Work/ID3TagEditor"
 }

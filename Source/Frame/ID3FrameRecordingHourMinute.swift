@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ A class used to represent an ID3 recording hour minute frame to be used in the ID3 tag. Valid only for ID3 tag version 2.3 and 2.2.
+ */
 public class ID3FrameRecordingHourMinute: ID3Frame, CustomDebugStringConvertible {
     /// Recording hour of the song.
     public let hour: Int?
@@ -19,7 +22,7 @@ public class ID3FrameRecordingHourMinute: ID3Frame, CustomDebugStringConvertible
     }
     
     /**
-     Init a recording time.
+     Init an ID3 recording hour minute frame.
      
      - parameter hour: the recording hour of the song.
      - parameter minute: the recording minute of the song.

@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// An enum used to identify the different types of frame parsed by the ID3TagEditor. This must be used to acces the frame data as identifier inside the dictionary
+/// of frame in the `ID3tag` `frames` properties.
 public enum FrameName: Hashable {
     /// Title frame name.
     case Title

@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A class used to represent the track position in the original recordings for the ID3 tag.
+ A class used to represent an ID3 track position in the original recordings frame  in the ID3 tag.
  */
 public class ID3FrameTrackPosition: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The position of the track.
@@ -21,7 +21,7 @@ public class ID3FrameTrackPosition: ID3Frame, Equatable, CustomDebugStringConver
     }
 
     /**
-     Init a track position.
+     Init an ID3 track position frame.
 
      - parameter position: the track position.
      - parameter totalTracks: the total tracks of the recordings.

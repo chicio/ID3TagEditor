@@ -87,8 +87,8 @@ public struct RecordingDateTime: CustomDebugStringConvertible {
 }
 
 /**
-A class used to represent an ID3 recording date time frame to be used in the ID3 tag. Valid only for ID3 tag version 2.4.
-*/
+ A class used to represent an ID3 recording date time frame to be used in the ID3 tag. Valid only for ID3 tag version 2.4.
+ */
 public class ID3FrameRecordingDateTime: ID3Frame {
     /// The recordin date time information. This field contains date and time of the recording.
     public let recordingDateTime: RecordingDateTime
