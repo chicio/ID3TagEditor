@@ -1,6 +1,18 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.0.0)
+Release date: XXX-XX-XX
+
+#### Added
+- Refactor ID3Tag class with new structure to contains a list of frames (breaking api change)
+- Add size information to frame
+- Add ID3 tag standard identifier to frame
+
+#### Fixed
+- Update to Swift 5.0
+
+
 ## [2.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/2.2.0)
 Release date: 2018-12-22
 
