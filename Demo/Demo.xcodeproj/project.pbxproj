@@ -231,7 +231,6 @@
 		45541BCE205990990025A8BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45541BD0205990990025A8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45541BDF205994AA0025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
-		45751DAB2193CDB100627A34 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Package.resolved; sourceTree = "<group>"; };
 		45751DAC2193CDB100627A34 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		45751DAD2193CDB100627A34 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		45751DB02193CDB100627A34 /* example-v3-additional-data.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v3-additional-data.mp3"; sourceTree = "<group>"; };
@@ -376,7 +375,6 @@
 		457517C82193CDAF00627A34 /* Demo Ubuntu */ = {
 			isa = PBXGroup;
 			children = (
-				45751DAB2193CDB100627A34 /* Package.resolved */,
 				45751DAC2193CDB100627A34 /* .gitignore */,
 				45751DAD2193CDB100627A34 /* Package.swift */,
 				45751DAE2193CDB100627A34 /* Sources */,

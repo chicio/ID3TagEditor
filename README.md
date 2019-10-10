@@ -64,7 +64,7 @@ import PackageDescription
 let package = Package(
     name: "Your App",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "2.2.0"),
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0"),
     ],
     targets: [
         .target(
