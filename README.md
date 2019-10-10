@@ -57,19 +57,20 @@ If you want you can also run tests using `swift test`.
 because the Bundle of resources in the test target doesn't work as expected.* 
 
 ```
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
-    name: "Your App",
+    name: "Demo Ubuntu",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0"),
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
     ],
     targets: [
         .target(
-            name: "Your App",
-            dependencies: ["ID3TagEditor"]),
+            name: "Demo Ubuntu",
+            dependencies: ["ID3TagEditor"]
+        )
     ]
 )
 ```
