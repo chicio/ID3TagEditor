@@ -9,8 +9,8 @@ import Foundation
 
 class ID3TitleFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (id3Tag: ID3Tag, content: String) in
-            id3Tag.title = content
+        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+            return (.Title, ID3FrameWithStringContent(content: content))
         }
     }
 }

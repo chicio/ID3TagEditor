@@ -9,7 +9,7 @@
 import UIKit
 import ID3TagEditor
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     private let id3TagEditor = ID3TagEditor()
     @IBOutlet weak var attachedPictureImage: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -22,21 +22,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.delegate = self
+        albumTextField.delegate = self
+        artistTextField.delegate = self
+        albumArtistField.delegate = self
+        genreIdentifierField.delegate = self
+        genreDescriptionField.delegate = self
+        yearField.delegate = self
     }
     
     @IBAction func update(_ sender: Any) {
         do {
             let id3Tag = ID3Tag(
                 version: .version3,
-                artist: artistTextField.text,
-                albumArtist: albumArtistField.text,
-                album: albumTextField.text,
-                title: titleTextField.text,
-                recordingDateTime: RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: 2019),
-                                                     time: nil),
-                genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-                attachedPictures: nil,
-                trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
+                frames: [
+                    .Artist : ID3FrameWithStringContent(content: artistTextField.text ?? ""),
+                    .AlbumArtist : ID3FrameWithStringContent(content: albumArtistField.text ?? ""),
+                    .Title : ID3FrameWithStringContent(content: titleTextField.text ?? ""),
+                    .Album : ID3FrameWithStringContent(content: albumTextField.text ?? ""),
+                    .RecordingYear : ID3FrameRecordingYear(year: 2019),
+                    .Genre : ID3FrameGenre(genre: .ClassicRock, description: "Rock & Roll"),
+                    .TrackPosition: ID3FrameTrackPosition(position: 2, totalTracks: 9)
+                ]
             )
             try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example", fileType: "mp3"))
         } catch {
@@ -47,18 +54,23 @@ class ViewController: UIViewController {
     @IBAction func load(_ sender: Any) {
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            titleTextField.text = id3Tag?.title
-            albumTextField.text = id3Tag?.album
-            albumArtistField.text = id3Tag?.albumArtist
-            artistTextField.text = id3Tag?.artist
-            genreIdentifierField.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0)"
-            genreDescriptionField.text = id3Tag?.genre?.description
-            yearField.text = "\(id3Tag?.recordingDateTime?.date?.year ?? 0)"
-            if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
-                attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
+            titleTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
+            albumTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
+            albumArtistField.text = (id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content
+            artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
+            genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)"
+            genreDescriptionField.text = (id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description
+            yearField.text = "\((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
+            if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
+                attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {
             print(error)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

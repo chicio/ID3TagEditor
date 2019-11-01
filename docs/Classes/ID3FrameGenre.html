@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AttachedPicture Structure Reference</title>
+    <title>ID3FrameGenre Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/AttachedPicture" class="dashAnchor"></a>
-    <a title="AttachedPicture Structure Reference"></a>
+    <a name="//apple_ref/swift/Class/ID3FrameGenre" class="dashAnchor"></a>
+    <a title="ID3FrameGenre Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">ID3TagEditor Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">ID3TagEditor Reference</a>
         <img id="carat" src="../img/carat.png" />
-        AttachedPicture Structure Reference
+        ID3FrameGenre Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -30,6 +30,33 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ID3Frame.html">ID3Frame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameAttachedPicture.html">ID3FrameAttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameGenre.html">ID3FrameGenre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingDayMonth.html">ID3FrameRecordingDayMonth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameTrackPosition.html">ID3FrameTrackPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Classes/ID3Tag.html">ID3Tag</a>
               </li>
@@ -41,6 +68,9 @@
           <li class="nav-group-name">
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/FrameName.html">FrameName</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Enums/ID3Genre.html">ID3Genre</a>
               </li>
@@ -62,12 +92,6 @@
             <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Structs/AttachedPicture.html">AttachedPicture</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/Genre.html">Genre</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Structs/RecordingDate.html">RecordingDate</a>
               </li>
               <li class="nav-group-task">
@@ -79,9 +103,6 @@
               <li class="nav-group-task">
                 <a href="../Structs/TagProperties.html">TagProperties</a>
               </li>
-              <li class="nav-group-task">
-                <a href="../Structs/TrackPositionInSet.html">TrackPositionInSet</a>
-              </li>
             </ul>
           </li>
         </ul>
@@ -89,14 +110,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>AttachedPicture</h1>
+            <h1>ID3FrameGenre</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AttachedPicture</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameGenre</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
 
                 </div>
               </div>
-            <p>A struct used to represent an image as attached picture for the ID3 tag.</p>
+            <p>A class used to represent an ID3 genre frame to be used in the ID3 tag.</p>
 
           </section>
           <section class="section task-group-section">
@@ -105,9 +126,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor15AttachedPictureV7picture10Foundation4DataVvp"></a>
-                    <a name="//apple_ref/swift/Property/picture" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor15AttachedPictureV7picture10Foundation4DataVvp">picture</a>
+                    <a name="/s:12ID3TagEditor0A10FrameGenreC10identifierAA0aE0OSgvp"></a>
+                    <a name="//apple_ref/swift/Property/identifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A10FrameGenreC10identifierAA0aE0OSgvp">identifier</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -115,14 +136,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The image bytes as <code>Data</code>.</p>
+                        <p>The genre identifier specified as an ID3 v1 Genre (see ID3Genre).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">picture</span><span class="p">:</span> <span class="kt">Data</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3Genre.html">ID3Genre</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -132,9 +153,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor15AttachedPictureV4typeAA0aE4TypeOvp"></a>
-                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor15AttachedPictureV4typeAA0aE4TypeOvp">type</a>
+                    <a name="/s:12ID3TagEditor0A10FrameGenreC11descriptionSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A10FrameGenreC11descriptionSSSgvp">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -142,14 +163,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The ID3 type of the image (see <code><a href="../Enums/ID3PictureType.html">ID3PictureType</a></code>).</p>
+                        <p>A generic genre description. Useful to build your own genres.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3PictureType.html">ID3PictureType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -159,9 +180,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor15AttachedPictureV6formatAA0aE6FormatOvp"></a>
-                    <a name="//apple_ref/swift/Property/format" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor15AttachedPictureV6formatAA0aE6FormatOvp">format</a>
+                    <a name="/s:12ID3TagEditor0A10FrameGenreC16debugDescriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A10FrameGenreC16debugDescriptionSSvp">debugDescription</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -169,14 +190,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The file format. Only Jpeg and Png are supported by the standard (cross compatibility).</p>
+                        <p>ID3FrameGenre description, useful for debug.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3PictureFormat.html">ID3PictureFormat</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -186,9 +207,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor15AttachedPictureV7picture4type6formatAC10Foundation4DataV_AA0aE4TypeOAA0aE6FormatOtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(picture:type:format:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor15AttachedPictureV7picture4type6formatAC10Foundation4DataV_AA0aE4TypeOAA0aE6FormatOtcfc">init(picture:type:format:)</a>
+                    <a name="/s:12ID3TagEditor0A10FrameGenreC5genre11descriptionAcA0aE0OSg_SSSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(genre:description:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A10FrameGenreC5genre11descriptionAcA0aE0OSg_SSSgtcfc">init(genre:description:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -196,14 +217,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Init an attached picture.</p>
+                        <p>Init a ID3 genre frame.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3PictureType.html">ID3PictureType</a></span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3PictureFormat.html">ID3PictureFormat</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">genre</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3Genre.html">ID3Genre</a></span><span class="p">?,</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -214,37 +235,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>picture</em>
+                                <em>genre</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the image bytes as <code>Data</code>.</p>
+                                  <p>an ID3Genre to be setted in the ID3 tag.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>type</em>
+                                <em>description</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the ID3 type of the attached picture. See <code><a href="../Enums/ID3PictureType.html">ID3PictureType</a></code> for a complete list of the available.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>format</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the format of the image. See <code><a href="../Enums/ID3PictureFormat.html">ID3PictureFormat</a></code>.
-types.</p>
+                                  <p>a generic genre description. Useful to build your own genres.</p>
                                 </div>
                               </td>
                             </tr>
@@ -257,9 +265,9 @@ types.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor15AttachedPictureV2eeoiySbAC_ACtFZ"></a>
+                    <a name="/s:12ID3TagEditor0A10FrameGenreC2eeoiySbAC_ACtFZ"></a>
                     <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor15AttachedPictureV2eeoiySbAC_ACtFZ">==(_:_:)</a>
+                    <a class="token" href="#/s:12ID3TagEditor0A10FrameGenreC2eeoiySbAC_ACtFZ">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -267,14 +275,14 @@ types.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Compare two AttachedPicture.</p>
+                        <p>Compare two Genre.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">AttachedPicture</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">AttachedPicture</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">ID3FrameGenre</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">ID3FrameGenre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -311,7 +319,7 @@ types.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>true if the attached pictures values are the same, else false.</p>
+                        <p>true if the genre values are the same, else false.</p>
                       </div>
                     </section>
                   </div>
@@ -321,8 +329,8 @@ types.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2018-11-10)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2019-10-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

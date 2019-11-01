@@ -2,8 +2,8 @@
 //  ExtensionDelegate.swift
 //  Demo watchOS Extension
 //
-//  Created by Fabrizio Duroni on 14.03.18.
-//  Copyright © 2018 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 14/03/18.
+//  2018 Fabrizio Duroni
 //
 
 import WatchKit

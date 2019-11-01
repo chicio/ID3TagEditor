@@ -8,11 +8,11 @@
 import Foundation
 
 class ID3TrackPositionStringAdapter: TrackPositionStringAdapter {
-    func adapt(trackPosition: String) -> TrackPositionInSet {
+    func adapt(trackPosition: String) -> ID3FrameTrackPosition {
         let trackPositionComponents = trackPosition.components(separatedBy: "/")
         let trackPosition = getTrackPositionFrom(trackPositionComponents: trackPositionComponents)
         let totalTracks = getTotalTracksFrom(trackPositionComponents: trackPositionComponents)
-        return TrackPositionInSet(position: trackPosition, totalTracks: totalTracks)
+        return ID3FrameTrackPosition(position: trackPosition, totalTracks: totalTracks)
     }
 
     private func getTrackPositionFrom(trackPositionComponents: [String]) -> Int {

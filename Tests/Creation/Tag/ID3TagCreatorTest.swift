@@ -15,7 +15,7 @@ class ID3TagCreatorTest: XCTestCase {
                                                       id3TagConfiguration: ID3TagConfiguration())
         let id3TagCreator = ID3TagCreator(id3FramesCreator: id3FramesCreator, id3TagHeaderCreator: id3TagHeaderCreator)
 
-        XCTAssertThrowsError(try id3TagCreator.create(id3Tag: ID3Tag(version: .version3, size: 0)))
+        XCTAssertThrowsError(try id3TagCreator.create(id3Tag: ID3Tag(version: .version3, frames: [:])))
     }
 
     func testTagTooBig() {
@@ -25,7 +25,7 @@ class ID3TagCreatorTest: XCTestCase {
                                                       id3TagConfiguration: ID3TagConfiguration())
         let id3TagCreator = ID3TagCreator(id3FramesCreator: id3FramesCreator, id3TagHeaderCreator: id3TagHeaderCreator)
         
-        XCTAssertThrowsError(try id3TagCreator.create(id3Tag: ID3Tag(version: .version3, size: 0)))
+        XCTAssertThrowsError(try id3TagCreator.create(id3Tag: ID3Tag(version: .version3, frames: [:])))
     }
 
     func testGenerateValidData() {
@@ -36,8 +36,8 @@ class ID3TagCreatorTest: XCTestCase {
         let id3TagCreator = ID3TagCreator(id3FramesCreator: id3FramesCreator, id3TagHeaderCreator: id3TagHeaderCreator)
 
         XCTAssertEqual(
-                try! id3TagCreator.create(id3Tag: ID3Tag(version: .version3, size: 2)),
-                Data(bytes: ID3TagConfiguration().headerFor(version: .version3)
+                try! id3TagCreator.create(id3Tag: ID3Tag(version: .version3, frames: [:])),
+                Data(ID3TagConfiguration().headerFor(version: .version3)
                         + [0x0, 0x3, 0x2, 0x22, 0x33] + [UInt8](repeating: 0x0, count: 2048)
                 )
         )

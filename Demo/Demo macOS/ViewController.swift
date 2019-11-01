@@ -19,17 +19,21 @@ class ViewController: NSViewController {
         do {
             let mp3 = try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3")))
             if let id3Tag = try id3TagEditor.read(mp3: mp3) {
-                if let attachedPictures = id3Tag.attachedPictures, attachedPictures.count > 0 {
-                    attachedPictureImage.image = NSImage(data: attachedPictures[0].picture)
+                if let attachedPicture = (id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
+                    attachedPictureImage.image = NSImage(data: attachedPicture)
                 }
-                informations.stringValue = "\(id3Tag.title ?? "") \n\(id3Tag.artist ?? "")"
-                print(id3Tag.title ?? "")
-                print(id3Tag.artist ?? "")
-                print(id3Tag.album ?? "")
-                print(id3Tag.recordingDateTime?.date?.year ?? "")
-                print(id3Tag.genre?.identifier ?? "")
-                print(id3Tag.genre?.description ?? "")
-                print(id3Tag.attachedPictures?[0].type ?? 0x00)
+                informations.stringValue = """
+                    \((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+                    \((id3Tag.frames[.Artist] as?  ID3FrameWithStringContent)?.content ?? "")
+                """
+                print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.id3Identifier ?? "")
+                print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+                print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+                print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
+                print((id3Tag.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? "")
+                print((id3Tag.frames[.Genre] as? ID3FrameGenre)?.identifier ?? "")
+                print((id3Tag.frames[.Genre] as? ID3FrameGenre)?.description ?? "")
+                print((id3Tag.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.type ?? 0x00)
             }
         } catch {
             print(error)

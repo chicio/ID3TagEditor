@@ -8,8 +8,8 @@
 import Foundation
 
 class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation {
-    private let jpegMagicNumber: Data = Data(bytes: [0xFF, 0xD8, 0xFF, 0xE0])
-    private let pngMagicNumber: Data =  Data(bytes: [0x89, 0x50, 0x4E, 0x47])
+    private let jpegMagicNumber: Data = Data([0xFF, 0xD8, 0xFF, 0xE0])
+    private let pngMagicNumber: Data =  Data([0x89, 0x50, 0x4E, 0x47])
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let pictureTypeAdapter: PictureTypeAdapter
 
@@ -18,21 +18,32 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
         self.pictureTypeAdapter = pictureTypeAdapter
     }
 
-    func parse(frame: Data, id3Tag: ID3Tag) {
-        parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber, format: .Jpeg, frame: frame, andSaveTo: id3Tag)
-        parseToCheckIfThereIsAnImageUsing(magicNumber: pngMagicNumber, format: .Png, frame: frame, andSaveTo: id3Tag)
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+        parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber,
+                                          format: .Jpeg,
+                                          frame: frame,
+                                          version: version,
+                                          completed: completed)
+        parseToCheckIfThereIsAnImageUsing(magicNumber: pngMagicNumber,
+                                          format: .Png,
+                                          frame: frame,
+                                          version: version,
+                                          completed: completed)
     }
 
     private func parseToCheckIfThereIsAnImageUsing(magicNumber: Data,
                                                    format: ID3PictureFormat,
                                                    frame: Data,
-                                                   andSaveTo id3Tag: ID3Tag) {
+                                                   version: ID3Version,
+                                                   completed: (FrameName, ID3Frame) -> ()) {
         if let magicNumberRange = frame.range(of: magicNumber) {
-            id3Tag.attachedPictures?.append(AttachedPicture(
-                    picture: frame.subdata(in: magicNumberRange.lowerBound..<frame.count),
-                    type: pictureTypeAdapter.adapt(frame: frame, format: format, version: id3Tag.properties.version),
-                    format: format
-            ))
+            let pictureType = pictureTypeAdapter.adapt(frame: frame, format: format, version: version)
+            let attachedPictureFrame = ID3FrameAttachedPicture(
+                picture: frame.subdata(in: magicNumberRange.lowerBound..<frame.count),
+                type: pictureType,
+                format: format
+            )
+            completed(.AttachedPicture(pictureType), attachedPictureFrame)
         }
     }
 }

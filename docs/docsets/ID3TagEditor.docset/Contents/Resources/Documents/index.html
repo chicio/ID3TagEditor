@@ -30,6 +30,33 @@
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Classes/ID3Frame.html">ID3Frame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameAttachedPicture.html">ID3FrameAttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameGenre.html">ID3FrameGenre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingDayMonth.html">ID3FrameRecordingDayMonth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameTrackPosition.html">ID3FrameTrackPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/ID3Tag.html">ID3Tag</a>
               </li>
               <li class="nav-group-task">
@@ -40,6 +67,9 @@
           <li class="nav-group-name">
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/FrameName.html">FrameName</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Enums/ID3Genre.html">ID3Genre</a>
               </li>
@@ -61,12 +91,6 @@
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/AttachedPicture.html">AttachedPicture</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/Genre.html">Genre</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/RecordingDate.html">RecordingDate</a>
               </li>
               <li class="nav-group-task">
@@ -77,9 +101,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/TagProperties.html">TagProperties</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/TrackPositionInSet.html">TrackPositionInSet</a>
               </li>
             </ul>
           </li>
@@ -215,14 +236,14 @@ let package = Package(
         <span class="nv">recordingDateTime</span><span class="p">:</span> <span class="kt">RecordingDateTime</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">RecordingDate</span><span class="p">(</span><span class="nv">day</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">year</span><span class="p">:</span> <span class="mi">2019</span><span class="p">),</span> 
                                              <span class="nv">time</span><span class="p">:</span> <span class="kt">RecordingTime</span><span class="p">(</span><span class="nv">hour</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">30</span><span class="p">)),</span>
         <span class="nv">genre</span><span class="p">:</span> <span class="kt">Genre</span><span class="p">(</span><span class="nv">genre</span><span class="p">:</span> <span class="o">.</span><span class="kt">ClassicRock</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"Rock &amp; Roll"</span><span class="p">),</span>
-        <span class="nv">attachedPictures</span><span class="p">:</span> <span class="kt">AttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">NSData</span><span class="o">/</span><span class="kt">Data</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">),</span>
+        <span class="nv">attachedPictures</span><span class="p">:</span> <span class="p">[</span><span class="kt">AttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">NSData</span><span class="o">/</span><span class="kt">Data</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">)],</span>
         <span class="nv">trackPosition</span><span class="p">:</span> <span class="kt">TrackPositionInSet</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">totalTracks</span><span class="p">:</span> <span class="mi">9</span><span class="p">)</span>
     <span class="p">)</span>
 
-    <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file that will be overwritten&gt;"</span><span class="p">))</span>
+    <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file that will be overwritten&gt;"</span><span class="p">)</span>
     <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> 
                            <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file&gt;"</span><span class="p">,</span>
-                           <span class="nv">andSaveTo</span><span class="p">:</span> <span class="s">"&lt;new path where you want to save the mp3&gt;"</span><span class="p">))</span>
+                           <span class="nv">andSaveTo</span><span class="p">:</span> <span class="s">"&lt;new path where you want to save the mp3&gt;"</span><span class="p">)</span>
     <span class="k">let</span> <span class="nv">newMp3</span><span class="p">:</span> <span class="kt">Data</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">mp3</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">valid</span> <span class="n">mp3</span> <span class="n">file</span> <span class="n">passed</span> <span class="k">as</span> <span class="kt">Data</span><span class="o">&gt;</span><span class="p">)</span>                          
 <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
@@ -273,9 +294,9 @@ Three versions of the tag are supported. They are described in the <code><a href
 <li><code>minute</code>, as a number that represents the recording minute</li>
 </ul></li>
 </ul></li>
-<li><code>trackPosition</code>, as a <code><a href="Structs/TrackPositionInSet.html">TrackPositionInSet</a></code> object containing the position of the track in the recording and the total number of track in the recordings</li>
-<li><code>genre</code>, as a <code><a href="Structs/Genre.html">Genre</a></code> object containing the <code><a href="Enums/ID3Genre.html">ID3Genre</a></code> identifier and/or a <code>description</code> of the song&rsquo;s genre</li>
-<li><code>attachedPictures</code>, as an array of <code><a href="Structs/AttachedPicture.html">AttachedPicture</a></code> objects containing the <code>Data</code> of an image, the <code><a href="Enums/ID3PictureType.html">ID3PictureType</a></code> and the <code><a href="Enums/ID3PictureFormat.html">ID3PictureFormat</a></code></li>
+<li><code>trackPosition</code>, as a <code>TrackPositionInSet</code> object containing the position of the track in the recording and the total number of track in the recordings</li>
+<li><code>genre</code>, as a <code>Genre</code> object containing the <code><a href="Enums/ID3Genre.html">ID3Genre</a></code> identifier and/or a <code>description</code> of the song&rsquo;s genre</li>
+<li><code>attachedPictures</code>, as an array of <code>AttachedPicture</code> objects containing the <code>Data</code> of an image, the <code><a href="Enums/ID3PictureType.html">ID3PictureType</a></code> and the <code><a href="Enums/ID3PictureFormat.html">ID3PictureFormat</a></code></li>
 </ul>
 
 <p>Only the <code>version</code> field is mandatory. The other fields are optional.
@@ -304,8 +325,8 @@ supported target.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2018-11-10)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2019 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2019-10-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

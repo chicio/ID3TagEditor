@@ -153,5 +153,5 @@ class ID3FrameConfiguration {
 
     func encodingByteFor(version: ID3Version, encoding: ID3StringEncoding) -> [UInt8] {
         return encodingByte[version]![encoding]!
-    }
+    }    
 }

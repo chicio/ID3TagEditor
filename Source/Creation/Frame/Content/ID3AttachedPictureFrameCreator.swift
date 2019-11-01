@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AttachedPictureFrameCreator {
-    func createFrame(using attachedPicture: AttachedPicture, id3Tag: ID3Tag) -> [UInt8]
+    func createFrame(using attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8]
 }
 
 class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
@@ -27,7 +27,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
         self.frameFlagsCreator = frameFlagsCreator
     }
 
-    func createFrame(using attachedPicture: AttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
+    func createFrame(using attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
         var frame: [UInt8] = id3FrameConfiguration.identifierFor(
                 frameType: .AttachedPicture,
                 version: id3Tag.properties.version
@@ -48,7 +48,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
         return frame
     }
 
-    private func getAttachedPictureHeaderFor(attachedPicture: AttachedPicture,
+    private func getAttachedPictureHeaderFor(attachedPicture: ID3FrameAttachedPicture,
                                              version: ID3Version,
                                              format: ID3PictureFormat) -> [UInt8] {
         var header = id3AttachedPictureFrameConfiguration.getHeaderMimeTypeFor(pictureFormat: format, version: version)

@@ -1,5 +1,5 @@
 //
-//  AttachedPicture.swift
+//  ID3FrameAttachedPicture.swift
 //
 //  Created by Fabrizio Duroni on 05/03/2018.
 //  2018 Fabrizio Duroni.
@@ -8,22 +8,22 @@
 import Foundation
 
 /**
- A struct used to represent an image as attached picture for the ID3 tag.
+ A class used to represent an ID3 attached picture frame to be used in the ID3 tag.
  */
-public struct AttachedPicture: Equatable {
+public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The image bytes as `Data`.
-    public var picture: Data;
+    public let picture: Data;
     /// The ID3 type of the image (see `ID3PictureType`).
-    public var type: ID3PictureType
+    public let type: ID3PictureType
     /// The file format. Only Jpeg and Png are supported by the standard (cross compatibility).
-    public var format: ID3PictureFormat
-    
-    public var description: String {
+    public let format: ID3PictureFormat
+    /// ID3FrameAttachedPicture debug description.
+    public var debugDescription: String {
         return "\(type) \(format)"
     }
 
     /**
-     Init an attached picture.
+     Init an ID3 attached picture frame.
 
      - parameter picture: the image bytes as `Data`.
      - parameter type: the ID3 type of the attached picture. See `ID3PictureType` for a complete list of the available.
@@ -44,7 +44,7 @@ public struct AttachedPicture: Equatable {
 
      - returns: true if the attached pictures values are the same, else false.
      */
-    public static func ==(lhs: AttachedPicture, rhs: AttachedPicture) -> Bool {
+    public static func ==(lhs: ID3FrameAttachedPicture, rhs: ID3FrameAttachedPicture) -> Bool {
         return lhs.picture == rhs.picture && lhs.format == rhs.format && lhs.type == rhs.type
     }
 }

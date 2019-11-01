@@ -17,22 +17,22 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let genre = id3Tag.genre {
+        if let genreFrame = id3Tag.frames[.Genre] as? ID3FrameGenre {
             let newTag = tag +
-                    frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(
-                                    frameType: .Genre,
-                                    version: id3Tag.properties.version
-                            ),
-                            version: id3Tag.properties.version,
-                            content: adapt(genre: genre)
-                    )
+                frameCreator.createFrame(
+                    frameIdentifier: id3FrameConfiguration.identifierFor(
+                        frameType: .Genre,
+                        version: id3Tag.properties.version
+                    ),
+                    version: id3Tag.properties.version,
+                    content: adapt(genre: genreFrame)
+            )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(genre: Genre) -> String {
+    private func adapt(genre: ID3FrameGenre) -> String {
         var genreString = ""
         if let genreIdentifier = genre.identifier {
             genreString = "(\(genreIdentifier.rawValue))"

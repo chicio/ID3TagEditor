@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ID3TagEditor"
-  s.version      = "2.2.0"
+  s.version      = "3.0.0"
   s.summary      = "A swift library to read and modify ID3 Tag of any mp3 file"
   s.description  = <<-DESC
 A swift library to read and modify ID3 Tag of any mp3 file.
@@ -20,5 +20,6 @@ A swift library to read and modify ID3 Tag of any mp3 file.
   s.watchos.deployment_target = '4.0'
 
   s.source_files  = "Source", "Source/**/*.{h,m}", "Source/**/*.swift"
+  s.swift_version = '5.0'
 
 end

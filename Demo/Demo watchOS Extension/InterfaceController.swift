@@ -2,8 +2,8 @@
 //  InterfaceController.swift
 //  Demo watchOS Extension
 //
-//  Created by Fabrizio Duroni on 14.03.18.
-//  Copyright © 2018 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 14/03/18.
+//  2018 Fabrizio Duroni
 //
 
 import WatchKit
@@ -21,10 +21,12 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            attachedPictureImage.setImageData(id3Tag?.attachedPictures?[0].picture)
-            titleLabel.setText(id3Tag?.title)
-            albumLabel.setText(id3Tag?.album)
-            genreLabel.setText(id3Tag?.genre?.description)
+            attachedPictureImage.setImageData(
+                (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture
+            )
+            titleLabel.setText((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content)
+            albumLabel.setText((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content)
+            genreLabel.setText((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description)
         } catch {
             print(error)
         }

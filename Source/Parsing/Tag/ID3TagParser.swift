@@ -5,38 +5,34 @@
 //  2018 Fabrizio Duroni.
 //
 
-import CoreFoundation;
 import Foundation;
 
 class ID3TagParser {
     private let tagVersionParser: TagVersionParser
     private let tagPresence: TagPresence
     private let tagSizeParser: TagSizeParser
-    private let frameSizeParser: FrameSizeParser
-    private let frameContentParser: FrameContentParser
     private var id3TagConfiguration: ID3TagConfiguration
+    private let framesParser: ID3FramesParser
 
     init(tagVersionParser: TagVersionParser,
          tagPresence: TagPresence,
          tagSizeParser: TagSizeParser,
-         frameSizeParser: FrameSizeParser,
-         frameContentParser: FrameContentParser,
-         id3TagConfiguration: ID3TagConfiguration) {
+         id3TagConfiguration: ID3TagConfiguration,
+         frameParser: ID3FramesParser) {
         self.tagVersionParser = tagVersionParser
         self.tagPresence = tagPresence
         self.tagSizeParser = tagSizeParser
-        self.frameSizeParser = frameSizeParser
-        self.frameContentParser = frameContentParser
+        self.framesParser = frameParser
         self.id3TagConfiguration = id3TagConfiguration
     }
     
     func parse(mp3: Data) throws -> ID3Tag? {
         let version = tagVersionParser.parse(mp3: mp3 as Data)
         if (tagPresence.isTagPresentIn(mp3: mp3 as Data, version: version)) {
-            let id3Tag = ID3Tag(version: version, size: 0)
+            let id3Tag = ID3Tag(version: version, frames: [:])
             parseTagSizeFor(mp3: mp3 as NSData, andSaveInId3Tag: id3Tag)
             try validate(tagSize: id3Tag.properties.size, mp3: mp3)
-            parseFramesFor(mp3: mp3 as NSData, id3Tag: id3Tag)
+            framesParser.parse(mp3: mp3 as NSData, id3Tag: id3Tag)
             return id3Tag
         }
         return nil
@@ -50,20 +46,5 @@ class ID3TagParser {
         if mp3.count < (Int(tagSize) + id3TagConfiguration.headerSize()) {
             throw ID3TagEditorError.CorruptedFile;
         }
-    }
-
-    private func parseFramesFor(mp3: NSData, id3Tag: ID3Tag) {
-        var currentFramePosition = id3TagConfiguration.headerSize();
-        while currentFramePosition < id3Tag.properties.size {
-            let frame = getFrameFrom(mp3: mp3, position: currentFramePosition, version: id3Tag.properties.version)
-            frameContentParser.parse(frame: frame, id3Tag: id3Tag)
-            currentFramePosition += frame.count;
-        }
-    }
-
-    private func getFrameFrom(mp3: NSData, position: Int, version: ID3Version) -> Data {
-        let frameSize = frameSizeParser.parse(mp3: mp3, framePosition: position, version: version)
-        let frame = mp3.subdata(with: NSMakeRange(position, frameSize))
-        return frame
     }
 }

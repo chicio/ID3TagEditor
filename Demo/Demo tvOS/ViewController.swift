@@ -22,14 +22,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-            titleLabel.text = id3Tag?.title
-            artistLabel.text = id3Tag?.artist
-            yearLabel.text = String(id3Tag?.recordingDateTime?.date?.year ?? 0)
-            genreLabel.text = "\(id3Tag?.genre?.identifier?.rawValue ?? 0) \(id3Tag?.genre?.description ?? "")"
-            trackPositionLabel.text = "Track \(id3Tag?.trackPosition?.position ?? -1) of " +
-                                      "\(id3Tag?.trackPosition?.totalTracks ?? -1)"
-            if let attachedPictures = id3Tag?.attachedPictures, attachedPictures.count > 0 {
-                attachedPictureImage.image = UIImage(data: attachedPictures[0].picture)
+            titleLabel.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
+            artistLabel.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
+            yearLabel.text = String((id3Tag?.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? 0)
+            genreLabel.text = """
+                \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)
+                \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description ?? "")
+            """
+            trackPositionLabel.text = """
+                Track \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position ?? -1) of
+                \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.totalTracks ?? -1)
+            """
+            if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
+                attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {
             print(error)

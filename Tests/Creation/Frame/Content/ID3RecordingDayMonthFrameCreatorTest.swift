@@ -18,10 +18,12 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        let tag = ID3Tag(version: .version3, size: 0)
-        tag.recordingDateTime?.date?.month = 1
+        let tag = ID3Tag(
+            version: .version3,
+            frames: [.RecordingDayMonth : ID3FrameRecordingDayMonth(day: nil, month: 1)]
+        )
         
-        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: tag, tag: tagBytes)
         
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -35,10 +37,12 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        let tag = ID3Tag(version: .version3, size: 0)
-        tag.recordingDateTime?.date?.day = 1
+        let tag = ID3Tag(
+            version: .version3,
+            frames: [.RecordingDayMonth : ID3FrameRecordingDayMonth(day: 1, month: nil)]
+        )
         
-        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, size: 0), tag: tagBytes)
+        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: tag, tag: tagBytes)
         
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -52,9 +56,10 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        let id3tag = ID3Tag(version: .version4, size: 0)
-        id3tag.recordingDateTime?.date?.day = 1
-        id3tag.recordingDateTime?.date?.month = 1
+        let id3tag = ID3Tag(
+            version: .version4,
+            frames: [.RecordingDayMonth : ID3FrameRecordingDayMonth(day: 1, month: 1)]
+        )
 
         let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag, tag: tagBytes)
         
@@ -64,9 +69,10 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsADayAndAMonth() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(version: .version3, size: 0)
-        id3Tag.recordingDateTime?.date?.day = 1
-        id3Tag.recordingDateTime?.date?.month = 1
+        let id3Tag = ID3Tag(
+            version: .version3,
+            frames: [.RecordingDayMonth : ID3FrameRecordingDayMonth(day: 1, month: 1)]
+        )
         let id3TitleFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FrameContentParsingOperation {
-    func parse(frame: Data, id3Tag: ID3Tag)
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ())
 }

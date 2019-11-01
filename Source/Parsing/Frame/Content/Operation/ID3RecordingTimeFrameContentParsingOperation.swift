@@ -14,22 +14,26 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
         self.stringContentParser = stringContentParser
     }
     
-    func parse(frame: Data, id3Tag: ID3Tag) {
-        if let frameContent = stringContentParser.parse(frame: frame, version: id3Tag.properties.version) {
-            parse(content: frameContent, id3Tag: id3Tag)
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+        if let frameContent = stringContentParser.parse(frame: frame, version: version) {
+            parse(content: frameContent, completed: completed)
         }
     }
 
-    private func parse(content: String, id3Tag: ID3Tag) {
+    private func parse(content: String, completed: (FrameName, ID3Frame) -> ()) {
+        var recordingDateTime: RecordingDateTime = RecordingDateTime(
+            date: RecordingDate(day: nil, month: nil, year: nil),
+            time: RecordingTime(hour: nil, minute: nil)
+        )
         if let frameContentAsDouble = Double(content), frameContentAsDouble > 9999 {
             let date = Date(timeIntervalSince1970: frameContentAsDouble)
             var calendar = Calendar(identifier: .gregorian)
             calendar.timeZone = TimeZone(identifier: "UTC")!
-            id3Tag.recordingDateTime?.date?.day = calendar.component(.day, from: date)
-            id3Tag.recordingDateTime?.date?.month = calendar.component(.month, from: date)
-            id3Tag.recordingDateTime?.date?.year = calendar.component(.year, from: date)
-            id3Tag.recordingDateTime?.time?.hour = calendar.component(.hour, from: date)
-            id3Tag.recordingDateTime?.time?.minute = calendar.component(.minute, from: date)
+            recordingDateTime.date?.day = calendar.component(.day, from: date)
+            recordingDateTime.date?.month = calendar.component(.month, from: date)
+            recordingDateTime.date?.year = calendar.component(.year, from: date)
+            recordingDateTime.time?.hour = calendar.component(.hour, from: date)
+            recordingDateTime.time?.minute = calendar.component(.minute, from: date)
         } else {
             /**
              Fallback case:
@@ -39,7 +43,8 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
              to keep general compatibility with the mp3 taggers available we check that the content of the
              frame is a number major than 9999: if not this is a YEAR saved inside a field with a timestamp :).
              */
-            id3Tag.recordingDateTime?.date?.year = Int(content)
+            recordingDateTime.date?.year = Int(content)
         }
+        completed(.RecordingDateTime, ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
     }
 }

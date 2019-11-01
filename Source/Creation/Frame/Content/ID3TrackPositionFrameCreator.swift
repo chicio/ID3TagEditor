@@ -17,22 +17,22 @@ class ID3TrackPositionFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let trackPosition = id3Tag.trackPosition {
+        if let trackPositionFrame = id3Tag.frames[.TrackPosition] as? ID3FrameTrackPosition {
             let newTag = tag +
-                    frameCreator.createFrame(
-                            frameIdentifier: id3FrameConfiguration.identifierFor(
-                                    frameType: .TrackPosition,
-                                    version: id3Tag.properties.version
-                            ),
-                            version: id3Tag.properties.version,
-                            content: adapt(trackPosition: trackPosition)
-                    )
+                frameCreator.createFrame(
+                    frameIdentifier: id3FrameConfiguration.identifierFor(
+                        frameType: .TrackPosition,
+                        version: id3Tag.properties.version
+                    ),
+                    version: id3Tag.properties.version,
+                    content: adapt(trackPosition: trackPositionFrame)
+            )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(trackPosition: TrackPositionInSet) -> String {
+    private func adapt(trackPosition: ID3FrameTrackPosition) -> String {
         var trackPositionString = String(trackPosition.position)
         if let validTotalTracks = trackPosition.totalTracks {
             trackPositionString = trackPositionString + "/\(validTotalTracks)"

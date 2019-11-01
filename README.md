@@ -57,19 +57,20 @@ If you want you can also run tests using `swift test`.
 because the Bundle of resources in the test target doesn't work as expected.* 
 
 ```
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
-    name: "Your App",
+    name: "Demo Ubuntu",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "2.2.0"),
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
     ],
     targets: [
         .target(
-            name: "Your App",
-            dependencies: ["ID3TagEditor"]),
+            name: "Demo Ubuntu",
+            dependencies: ["ID3TagEditor"]
+        )
     ]
 )
 ```
@@ -97,11 +98,19 @@ do {
     let id3TagEditor = ID3TagEditor()
 
     if let id3Tag = try id3TagEditor.read(from: "<valid path to the mp3 file>") {
-        ...use the tag...
+        // ...use the tag...
+        // For example to read the title, album and artist content you can do something similar
+        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
     }
     
     if let id3Tag = try id3TagEditor.read(mp3: "<valid mp3 file passed as Data>") {
-        ...use the tag...
+        // ...use the tag...
+        // For example to read the title, album and artist content you can do something similar
+        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
     }    
 } catch {
     print(error)
@@ -117,16 +126,14 @@ Below you can find a sample code of the api usage.
 ```swift
 do {
     let id3Tag = ID3Tag(
-        version: .version3,
-        artist: "an example artist",
-        albumArtist: "an example album artist",
-        album: "an example album",
-        title: "an example title",
-        recordingDateTime: RecordingDateTime(date: RecordingDate(day: 1, month: 10, year: 2019), 
-                                             time: RecordingTime(hour: 14, minute: 30)),
-        genre: Genre(genre: .ClassicRock, description: "Rock & Roll"),
-        attachedPictures: [AttachedPicture(picture: <NSData/Data of the image>, type: .FrontCover, format: .Jpeg)],
-        trackPosition: TrackPositionInSet(position: 2, totalTracks: 9)
+       version: .version3,
+       frames: [
+         .Artist : ID3FrameWithStringContent(content: "A New Artist"),
+         .AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
+         .Album : ID3FrameWithStringContent(content: "A New Album"),
+         .Title : ID3FrameWithStringContent(content:  "A New title"),
+         .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
+       ]
     )
     
     try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
@@ -139,32 +146,27 @@ do {
 }    
 ```  
 
-The above methods use the `ID3Tag` class to describe a valid ID3 tag. This class contains various properties that could be
-used to read/write a tag to the mp3 file.
+The above methods use the `ID3Tag` class to describe a valid ID3 tag. This class contains the tag properties in the field `properties` and the 
+list of frames in the `frames` properties.
 Three versions of the tag are supported. They are described in the `ID3Version` enum:
 
 * version 2.2, described by the enum value `.version2`  
 * version 2.3, described by the enum value `.version3`  
 * version 2.4, described by the enum value `.version4`
 
-The ID3 supported properties are:
+The ID3 supported frames supported are (see the enum `FrameName`):
 
-* `version`, as previously described
-* `artist`, as a string containing the name of the song's artists
-* `albumArtist`, as a string containing additional info about the artists 
-* `album`, as a string containing the album title
-* `title`, as a string containing the title of the song
-* `recordingDateTime`, as an object composed by two other properties:
-    * `date` as a `RecordingDate` object with three fields:
-        * `day`, as a number that represents the recording day 
-        * `month`, as a number that represents the recording month
-        * `year`, as a number that represents the recording year
-    * `time` as a `RecordingTime` object with two fields:
-        * `hour`, as a number that represents the recording hour
-        * `minute`, as a number that represents the recording minute
-* `trackPosition`, as a `TrackPositionInSet` object containing the position of the track in the recording and the total number of track in the recordings
-* `genre`, as a `Genre` object containing the `ID3Genre` identifier and/or a `description` of the song's genre
-* `attachedPictures`, as an array of `AttachedPicture` objects containing the `Data` of an image, the `ID3PictureType` and the `ID3PictureFormat`
+* `.Artist`, artists frame 
+* `.AlbumArtist`, album artist frame 
+* `.Album`, album frame
+* `.Title`, title frame
+* `.RecordingDayMonth`, recording day month frame available only for ID3 v2.2/v2.3
+* `.RecordingYear`, recording year frame available only for ID3 v2.2/v2.3
+* `.RecordingHourMinute`, recording hour minute frame available only for ID3 v2.2/v2.3
+* `.RecordingDateTime`, recording date time frame available only for ID3 v2.4
+* `.TrackPosition`, track position frame
+* `.Genre`, the genre frame
+* `.AttachedPicture(_ pictureType: ID3PictureType)` the attached picture frame
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 

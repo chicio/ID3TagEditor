@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- A struct used to represent the recording date for the ID3 tag.
+ A struct used to represent the recording date for the ID3 recording date time frame.
  */
 public struct RecordingDate: CustomDebugStringConvertible {
     /// Recording day of the song.
@@ -20,12 +20,6 @@ public struct RecordingDate: CustomDebugStringConvertible {
     /// RecordingDate description, useful for debug.
     public var debugDescription: String {
         return "\(day ?? 0) \(month ?? 0) \(year ?? 0)"
-    }
-    
-    init() {
-        self.day = nil
-        self.month = nil
-        self.year = nil
     }
     
     /**
@@ -43,7 +37,7 @@ public struct RecordingDate: CustomDebugStringConvertible {
 }
 
 /**
- A struct used to represent the recording time for the ID3 tag.
+ A struct used to represent the recording time for the ID3 recording date time frame.
  */
 public struct RecordingTime: CustomDebugStringConvertible {
     /// Recording hour of the song.
@@ -53,11 +47,6 @@ public struct RecordingTime: CustomDebugStringConvertible {
     /// RecordingTime description, useful for debug.
     public var debugDescription: String {
         return "\(hour ?? 0) \(minute ?? 0)"
-    }
-    
-    init() {
-        self.hour = nil
-        self.minute = nil
     }
     
     /**
@@ -73,7 +62,7 @@ public struct RecordingTime: CustomDebugStringConvertible {
 }
 
 /**
- A struct used to represent the recording date and time for the ID3 tag.
+ A struct used to represent the recording date and time for the ID3 recording date time frame.
  */
 public struct RecordingDateTime: CustomDebugStringConvertible {
     /// Recording date of the song.
@@ -85,11 +74,6 @@ public struct RecordingDateTime: CustomDebugStringConvertible {
         return "Date: (\(date?.debugDescription ?? "-") - Time: (\(time?.debugDescription ?? "-"))"
     }
     
-    init() {
-        self.date = RecordingDate()
-        self.time = RecordingTime()
-    }
-    
     /**
      Init a recording date time.
      
@@ -99,5 +83,22 @@ public struct RecordingDateTime: CustomDebugStringConvertible {
     public init(date: RecordingDate?, time: RecordingTime?) {
         self.date = date
         self.time = time
+    }
+}
+
+/**
+ A class used to represent an ID3 recording date time frame to be used in the ID3 tag. Valid only for ID3 tag version 2.4.
+ */
+public class ID3FrameRecordingDateTime: ID3Frame {
+    /// The recordin date time information. This field contains date and time of the recording.
+    public let recordingDateTime: RecordingDateTime
+    
+    /**
+     Init an ID3 recording date time frame.
+     
+     - parameter recordingDateTime: a RecordingDateTime struct.
+     */
+    public init(recordingDateTime: RecordingDateTime) {
+        self.recordingDateTime = recordingDateTime
     }
 }

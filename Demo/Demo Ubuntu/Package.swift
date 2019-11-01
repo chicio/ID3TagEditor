@@ -1,11 +1,11 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
     name: "Demo Ubuntu",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "2.2.0")
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
     ],
     targets: [
         .target(

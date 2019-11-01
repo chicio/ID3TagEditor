@@ -8,8 +8,8 @@
 import Foundation
 
 enum FrameType: String, Equatable {
-    case Artist = "artist"
     case Title = "title"
+    case Artist = "artist"
     case Album = "album"
     case AttachedPicture = "artwork"
     case RecordingDayMonth = "recordingDayMonth"
