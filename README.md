@@ -98,11 +98,19 @@ do {
     let id3TagEditor = ID3TagEditor()
 
     if let id3Tag = try id3TagEditor.read(from: "<valid path to the mp3 file>") {
-        ...use the tag...
+        // ...use the tag...
+        // For example to read the title, album and artist content you can do something similar
+        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
     }
     
     if let id3Tag = try id3TagEditor.read(mp3: "<valid mp3 file passed as Data>") {
-        ...use the tag...
+        // ...use the tag...
+        // For example to read the title, album and artist content you can do something similar
+        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
     }    
 } catch {
     print(error)
