@@ -2,7 +2,7 @@
 All changes to ID3TagEditor will be documented in this file.
 
 ## [3.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.0.0)
-Release date: XXX-XX-XX
+Release date: 2019-11-01
 
 #### Added
 - Refactor ID3Tag class with new structure to contains a list of frames (breaking api change)
