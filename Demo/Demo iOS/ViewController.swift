@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
-            albumTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
+            albumTextField.text = (id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content
             albumArtistField.text = (id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content
             artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
             genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)"
