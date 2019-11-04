@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.0.1](https://github.com/chicio/ID3TagEditor/releases/tag/3.0.1)
+Release date: 2019-11-04
+
+#### Fixed
+- Optimized memory usage to avoid crashes when reading/writing big files
+
 ## [3.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.0.0)
 Release date: 2019-11-01
 
