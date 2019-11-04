@@ -41,7 +41,7 @@ Add the dependency to your Podfile (choose the release version you prefer):
 
 ```
 target 'MyApp' do
-    pod 'ID3TagEditor', '~> 2.0'
+    pod 'ID3TagEditor', '~> 3.0'
 end
 ```
 
