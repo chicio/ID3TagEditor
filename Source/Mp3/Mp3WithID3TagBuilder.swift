@@ -17,13 +17,12 @@ class Mp3WithID3TagBuilder {
     }
 
     func build(mp3: Data, newId3Tag: ID3Tag, currentId3Tag: ID3Tag?) throws -> Data {
-        let tag = try id3TagCreator.create(id3Tag: newId3Tag)
         var tagSizeWithHeader = 0
         if let validCurrentId3Tag = currentId3Tag {
             tagSizeWithHeader = Int(validCurrentId3Tag.properties.size) + ID3TagConfiguration().headerSize();
         }
-        let music = mp3.subdata(in: tagSizeWithHeader..<mp3.count)
-        let mp3WithTag = tag + music
+        var mp3WithTag = try id3TagCreator.create(id3Tag: newId3Tag)
+        mp3WithTag.append(mp3.subdata(in: tagSizeWithHeader..<mp3.count))
         return mp3WithTag
     }
 }

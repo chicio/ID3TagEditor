@@ -976,7 +976,7 @@
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -995,7 +995,7 @@
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1054,7 +1054,7 @@
 				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = "Demo watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1.watchkitapp-1.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1073,7 +1073,7 @@
 				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = "Demo watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1.watchkitapp-1.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1095,7 +1095,7 @@
 				IBSC_MODULE = Demo_watchOS_Extension;
 				INFOPLIST_FILE = "Demo watchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1.watchkitapp-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1116,7 +1116,7 @@
 				IBSC_MODULE = Demo_watchOS_Extension;
 				INFOPLIST_FILE = "Demo watchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1.watchkitapp-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

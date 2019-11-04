@@ -45,7 +45,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     .TrackPosition: ID3FrameTrackPosition(position: 2, totalTracks: 9)
                 ]
             )
-            try id3TagEditor.write(tag: id3Tag, to: PathLoader().pathFor(name: "example", fileType: "mp3"))
+            let documentDirectory = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor:nil,
+                create:false
+            )
+            let newPath = documentDirectory.appendingPathComponent("example.mp3").path
+            print(PathLoader().pathFor(name: "example", fileType: "mp3"))
+            print(newPath)
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example", fileType: "mp3"),
+                andSaveTo: newPath
+            )
         } catch {
             print(error)
         }
