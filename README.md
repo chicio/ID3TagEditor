@@ -167,6 +167,30 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `.TrackPosition`, track position frame
 * `.Genre`, the genre frame
 * `.AttachedPicture(_ pictureType: ID3PictureType)` the attached picture frame
+* `Comment`
+* `Composer`
+* `Conductor`
+* `ContentGrouping`
+* `Copyright`
+* `DiscPosition`
+* `EncodedBy`
+* `EncoderSettings`
+* `FileType`
+* `FileOwner`
+* `Grouping`
+* `Language`
+* `Lyricist`
+* `Media Type`
+* `MixArtist`
+* `MovementName`
+* `MovementIndex` (aka movement number)
+* `PocastCategory`
+* `PodcastDescription`
+* `PodcastID`
+* `PodcastKeyword`
+* `Publisher`
+* `Subtitle`
+* `UnsyncedLyrics`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
