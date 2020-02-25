@@ -30,16 +30,56 @@ class ID3FrameConfiguration {
     ]
     private let commonFourLetterIdentifiers: [FrameType : [UInt8]] = [
         .Artist : [UInt8]("TPE1".utf8),
+        .Comment : [UInt8]("COMM".utf8),
+        .Composer : [UInt8]("TCOM".utf8),
+        .Conductor : [UInt8]("TPE3".utf8),
+        .ContentGrouping : [UInt8]("TIT1".utf8),
+        .Copyright : [UInt8]("TCOP".utf8),
+        .EncodedBy : [UInt8]("TENC".utf8),
+        .EncoderSettings : [UInt8]("TSSE".utf8),
+        .FileOwner : [UInt8]("TOWN".utf8),
+        .FileType : [UInt8]("TFLT".utf8),
+        .Grouping : [UInt8]("GRP1".utf8),
+        .Language : [UInt8]("TLAN".utf8),
+        .Lyricist : [UInt8]("TEXT".utf8),
+        .MediaType : [UInt8]("TMED".utf8),
+        .MixArtist : [UInt8]("TPE4".utf8),
+        .MovementName : [UInt8]("MVNM".utf8),
+        .MovementIndex : [UInt8]("MVIN".utf8),
+        .PodcastCategory : [UInt8]("TCAT".utf8),
+        .PodcastDescription : [UInt8]("TDES".utf8),
+        .PodcastID : [UInt8]("TGID".utf8),
+        .PodcastKeywords : [UInt8]("TKWD".utf8),
+        .Publisher : [UInt8]("TPUB".utf8),
+        .Subtitle : [UInt8]("TIT3".utf8),
+        .UnsyncedLyrics : [UInt8]("USLT".utf8),
         .AlbumArtist : [UInt8]("TPE2".utf8),
         .Title : [UInt8]("TIT2".utf8),
         .Album : [UInt8]("TALB".utf8),
         .AttachedPicture : [UInt8]("APIC".utf8),
         .Genre : [UInt8]("TCON".utf8),
-        .TrackPosition : [UInt8]("TRCK".utf8)
+        .TrackPosition : [UInt8]("TRCK".utf8),
+        .DiscPosition : [UInt8]("TPOS".utf8),
+        .SeriesIndex : [UInt8]("TXXX".utf8)
     ]
     private var identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
             .Artist : [UInt8]("TP1".utf8),
+            .Comment : [UInt8]("COM".utf8),
+            .Composer : [UInt8]("TCM".utf8),
+            .Conductor : [UInt8]("TP3".utf8),
+            .ContentGrouping : [UInt8]("TT1".utf8),
+            .Copyright : [UInt8]("TCR".utf8),
+            .EncodedBy : [UInt8]("TEN".utf8),
+            .EncoderSettings : [UInt8]("TSS".utf8),
+            .FileType : [UInt8]("TFT".utf8),
+            .Language : [UInt8]("TLA".utf8),
+            .Lyricist : [UInt8]("TXT".utf8),
+            .MediaType : [UInt8]("TMT".utf8),
+            .MixArtist : [UInt8]("TP4".utf8),
+            .Publisher : [UInt8]("TPB".utf8),
+            .Subtitle : [UInt8]("TT3".utf8),
+            .UnsyncedLyrics : [UInt8]("ULT".utf8),
             .AlbumArtist : [UInt8]("TP2".utf8),
             .Title : [UInt8]("TT2".utf8),
             .Album : [UInt8]("TAL".utf8),
@@ -48,7 +88,9 @@ class ID3FrameConfiguration {
             .RecordingYear : [UInt8]("TYE".utf8),
             .RecordingHourMinute : [UInt8]("TIM".utf8),
             .Genre : [UInt8]("TCO".utf8),
-            .TrackPosition : [UInt8]("TRK".utf8)
+            .TrackPosition : [UInt8]("TRK".utf8),
+            .DiscPosition : [UInt8]("TPA".utf8),
+            .SeriesIndex : [UInt8]("TXX".utf8)
         ],
         .version3 : [
             .RecordingDayMonth : [UInt8]("TDAT".utf8),
@@ -61,16 +103,56 @@ class ID3FrameConfiguration {
     ]
     private let commonNamesForIdentifiers: [String : FrameType] = [
         "TPE1" : .Artist,
+        "COMM" : .Comment,
+        "TCOM" : .Composer,
+        "TPE3" : .Conductor,
+        "TIT1" : .ContentGrouping,
+        "TCOP" : .Copyright,
+        "TENC" : .EncodedBy,
+        "TSSE" : .EncoderSettings,
+        "TOWN" : .FileOwner,
+        "TFLT" : .FileType,
+        "GRP1" : .Grouping,
+        "TLAN" : .Language,
+        "TEXT" : .Lyricist,
+        "TMED" : .MediaType,
+        "TPE4" : .MixArtist,
+        "MVNM" : .MovementName,
+        "MVIN" : .MovementIndex,
+        "TCAT" : .PodcastCategory,
+        "TDES" : .PodcastDescription,
+        "TGID" : .PodcastID,
+        "TKWD" : .PodcastKeywords,
+        "TPUB" : .Publisher,
+        "TIT3" : .Subtitle,
+        "USLT" : .UnsyncedLyrics,
         "TPE2" : .AlbumArtist,
         "TIT2" : .Title,
         "TALB" : .Album,
         "APIC" : .AttachedPicture,
         "TCON" : .Genre,
-        "TRCK" : .TrackPosition
+        "TRCK" : .TrackPosition,
+        "TPOS" : .DiscPosition,
+        "TXXX" : .SeriesIndex
     ]
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
             "TP1" : .Artist,
+            "COM" : .Comment,
+            "TCM" : .Composer,
+            "TP3" : .Conductor,
+            "TT1" : .ContentGrouping,
+            "TCR" : .Copyright,
+            "TEN" : .EncodedBy,
+            "TSS" : .EncoderSettings,
+            "TFT" : .FileType,
+            "TLA" : .Language,
+            "TXT" : .Lyricist,
+            "TMT" : .MediaType,
+            "TP4" : .MixArtist,
+            "TPB" : .Publisher,
+            "TT3" : .Subtitle,
+            "ULT" : .UnsyncedLyrics,
             "TP2" : .AlbumArtist,
             "TT2" : .Title,
             "TAL" : .Album,
@@ -79,7 +161,9 @@ class ID3FrameConfiguration {
             "TYE" : .RecordingYear,
             "TIM" : .RecordingHourMinute,
             "TCO" : .Genre,
-            "TRK" : .TrackPosition
+            "TRK" : .TrackPosition,
+            "TPA" : .DiscPosition,
+            "TXX" : .SeriesIndex
         ],
         .version3 : [
             "TDAT" : .RecordingDayMonth,
@@ -153,5 +237,5 @@ class ID3FrameConfiguration {
 
     func encodingByteFor(version: ID3Version, encoding: ID3StringEncoding) -> [UInt8] {
         return encodingByte[version]![encoding]!
-    }    
+    }
 }

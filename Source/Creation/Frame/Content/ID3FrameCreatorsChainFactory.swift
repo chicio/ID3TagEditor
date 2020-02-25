@@ -41,6 +41,94 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let commentFrameCreator = ID3CommentFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let composerFrameCreator = ID3ComposerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let conductorFrameCreator = ID3ConductorFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let contentGroupingFrameCreator = ID3ContentGroupingFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let copyrightFrameCreator = ID3CopyrightFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let encodedByFrameCreator = ID3EncodedByFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let encoderSettingsFrameCreator = ID3EncoderSettingsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let fileOwnerFrameCreator = ID3FileOwnerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let fileTypeFrameCreator = ID3FileTypeFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let groupingFrameCreator = ID3GroupingFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let languageFrameCreator = ID3LanguageFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let lyricistFrameCreator = ID3LyricistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let mediaTypeFrameCreator = ID3MediaTypeFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let mixArtistFrameCreator = ID3MixArtistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let movementNameFrameCreator = ID3MovementNameFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastCategoryFrameCreator = ID3PodcastCategoryFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastDescriptionFrameCreator = ID3PodcastDescriptionFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastIDFrameCreator = ID3PodcastIDFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastKeywordsFrameCreator = ID3PodcastKeywordsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let publisherFrameCreator = ID3PublisherFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let subtitleFrameCreator = ID3SubtitleFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let titleFrameCreator = ID3TitleFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -73,6 +161,18 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let discPositionFrameCreator = ID3DiscPositionFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let movementIndexFrameCreator = ID3MovementIndexFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let seriesIndexFrameCreator = ID3SeriesIndexFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let recordingDateTimeCreator = ID3RecordingDateTimeFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration,
@@ -80,14 +180,39 @@ class ID3FrameCreatorsChainFactory {
         )
         albumFrameCreator.nextCreator = albumArtistCreator
         albumArtistCreator.nextCreator = artistFrameCreator
-        artistFrameCreator.nextCreator = titleFrameCreator
-        titleFrameCreator.nextCreator = yearFrameCreator
+        artistFrameCreator.nextCreator = commentFrameCreator
+        commentFrameCreator.nextCreator = composerFrameCreator
+        composerFrameCreator.nextCreator = conductorFrameCreator
+        conductorFrameCreator.nextCreator = contentGroupingFrameCreator
+        contentGroupingFrameCreator.nextCreator = copyrightFrameCreator
+        copyrightFrameCreator.nextCreator = encodedByFrameCreator
+        encodedByFrameCreator.nextCreator = encoderSettingsFrameCreator
+        encoderSettingsFrameCreator.nextCreator = fileOwnerFrameCreator
+        fileOwnerFrameCreator.nextCreator = fileTypeFrameCreator
+        fileTypeFrameCreator.nextCreator = groupingFrameCreator
+        groupingFrameCreator.nextCreator = languageFrameCreator
+        languageFrameCreator.nextCreator = lyricistFrameCreator
+        lyricistFrameCreator.nextCreator = mediaTypeFrameCreator
+        mediaTypeFrameCreator.nextCreator = mixArtistFrameCreator
+        mixArtistFrameCreator.nextCreator = movementNameFrameCreator
+        movementNameFrameCreator.nextCreator = movementIndexFrameCreator
+        movementIndexFrameCreator.nextCreator = podcastCategoryFrameCreator
+        podcastCategoryFrameCreator.nextCreator = podcastDescriptionFrameCreator
+        podcastDescriptionFrameCreator.nextCreator = podcastIDFrameCreator
+        podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator
+        podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
+        publisherFrameCreator.nextCreator = subtitleFrameCreator
+        subtitleFrameCreator.nextCreator = titleFrameCreator
+        titleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
+        unsyncedLyricsFrameCreator.nextCreator = yearFrameCreator
         yearFrameCreator.nextCreator = dayMonthCreator
         dayMonthCreator.nextCreator = hourMinuteCreator
         hourMinuteCreator.nextCreator = recordingDateTimeCreator
         recordingDateTimeCreator.nextCreator = genreFrameCreator
         genreFrameCreator.nextCreator = trackPositionFrameCreator
-        trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
+        trackPositionFrameCreator.nextCreator = discPositionFrameCreator
+        discPositionFrameCreator.nextCreator = seriesIndexFrameCreator
+        seriesIndexFrameCreator.nextCreator = attachedPictureFrameCreator
         return albumFrameCreator
     }
 }
