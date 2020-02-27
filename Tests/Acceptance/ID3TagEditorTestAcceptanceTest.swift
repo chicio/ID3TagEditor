@@ -1,5 +1,5 @@
 //
-//  ID3FrameContentSizeParserTest.swift
+//  ID3TagEditorTestAcceptanceTest.swift
 //
 //  Created by Fabrizio Duroni on 23/02/2018.
 //  2018 Fabrizio Duroni.
