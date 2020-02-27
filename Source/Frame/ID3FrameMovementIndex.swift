@@ -1,12 +1,9 @@
 //
 //  MovementIndex.swift
 //
-//  OriginalCreated by Fabrizio Duroni on 07/03/2018.
+//  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
 //
-// this version altered to suit cataloging of audiobooks in
-// multi-series chronologies
-// by Nolaine Crusher on 02/19/2020
 
 import Foundation
 

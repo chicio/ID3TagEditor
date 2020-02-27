@@ -1,10 +1,8 @@
 //
 //  ID3MovementIndexFrameCreator.swift
 //
-//  Originally Created by Fabrizio Duroni on 08/03/2018.
+//  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
-//
-// This version created by Nolaine Crusher on 02/19/2020
 //
 
 import Foundation

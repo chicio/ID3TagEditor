@@ -168,13 +168,6 @@ extension ID3TitleFrameCreatorTest {
     ]
 }
 
-extension ID3CommentFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAComment", testFrameCreationWhenThereIsAComment),
-        ("testNoFrameCreationWhenThereIsNoComment", testNoFrameCreationWhenThereIsNoComment),
-    ]
-}
-
 extension ID3ComposerFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAComposer", testFrameCreationWhenThereIsAComposer),
@@ -231,17 +224,10 @@ extension ID3FileTypeFrameCreatorTest {
     ]
 }
 
-extension ID3GroupingFrameCreatorTest {
+extension ID3iTunesGroupingFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
         ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping),
-    ]
-}
-
-extension ID3LanguageFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsALanguage", testFrameCreationWhenThereIsALanguage),
-        ("testNoFrameCreationWhenThereIsNoLanguage", testNoFrameCreationWhenThereIsNoLanguage),
     ]
 }
 
@@ -412,7 +398,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3AlbumArtistFrameCreatorTest.__allTests),
         testCase(ID3AlbumFrameCreatorTest.__allTests),
         testCase(ID3ArtistFrameCreatorTest.__allTests),
-        testCase(ID3CommentFrameCreatorTest.__allTests),
         testCase(ID3ComposerFrameCreatorTest.__allTests),
         testCase(ID3ConductorFrameCreatorTest.__allTests),
         testCase(ID3ContentGroupingFrameCreatorTest.__allTests),
@@ -422,8 +407,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3EncoderSettingsFrameCreatorTest.__allTests),
         testCase(ID3FileTypeFrameCreatorTest.__allTests),
         testCase(ID3FileOwnerFrameCreatorTest.__allTests),
-        testCase(ID3GroupingFrameCreatorTest.__allTests),
-        testCase(ID3LanguageFrameCreatorTest.__allTests),
+        testCase(ID3iTunesGroupingFrameCreatorTest.__allTests),
         testCase(ID3LyricistFrameCreatorTest.__allTests),
         testCase(ID3MediaTypeFrameCreatorTest.__allTests),
         testCase(ID3MixArtistFrameCreatorTest.__allTests),

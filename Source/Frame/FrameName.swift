@@ -19,8 +19,6 @@ public enum FrameName: Hashable {
     case AlbumArtist
     /// Artist frame name.
     case Artist
-    /// Comment frame name.
-    case Comment
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
@@ -38,9 +36,7 @@ public enum FrameName: Hashable {
     /// File type frame name.
     case FileType
     /// Grouping frame name. Version 2.3 and 2.4 only.
-    case Grouping
-    /// Language frame name.
-    case Language
+    case ITunesGrouping
     /// Lyricist frame name
     case Lyricist
     /// Media type frame name.

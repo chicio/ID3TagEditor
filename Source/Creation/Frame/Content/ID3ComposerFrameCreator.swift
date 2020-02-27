@@ -1,10 +1,9 @@
 //
 //  ID3ComposerFrameCreator.swift
 //
-//  Created by Fabrizio Duroni on 26/02/2018.
+//  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
 //
-
 import Foundation
 
 class ID3ComposerFrameCreator: ID3StringFrameCreator {

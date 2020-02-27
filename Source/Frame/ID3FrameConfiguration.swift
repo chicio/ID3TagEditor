@@ -30,7 +30,6 @@ class ID3FrameConfiguration {
     ]
     private let commonFourLetterIdentifiers: [FrameType : [UInt8]] = [
         .Artist : [UInt8]("TPE1".utf8),
-        .Comment : [UInt8]("COMM".utf8),
         .Composer : [UInt8]("TCOM".utf8),
         .Conductor : [UInt8]("TPE3".utf8),
         .ContentGrouping : [UInt8]("TIT1".utf8),
@@ -39,8 +38,7 @@ class ID3FrameConfiguration {
         .EncoderSettings : [UInt8]("TSSE".utf8),
         .FileOwner : [UInt8]("TOWN".utf8),
         .FileType : [UInt8]("TFLT".utf8),
-        .Grouping : [UInt8]("GRP1".utf8),
-        .Language : [UInt8]("TLAN".utf8),
+        .ITunesGrouping : [UInt8]("GRP1".utf8),
         .Lyricist : [UInt8]("TEXT".utf8),
         .MediaType : [UInt8]("TMED".utf8),
         .MixArtist : [UInt8]("TPE4".utf8),
@@ -65,7 +63,6 @@ class ID3FrameConfiguration {
     private var identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
             .Artist : [UInt8]("TP1".utf8),
-            .Comment : [UInt8]("COM".utf8),
             .Composer : [UInt8]("TCM".utf8),
             .Conductor : [UInt8]("TP3".utf8),
             .ContentGrouping : [UInt8]("TT1".utf8),
@@ -73,7 +70,6 @@ class ID3FrameConfiguration {
             .EncodedBy : [UInt8]("TEN".utf8),
             .EncoderSettings : [UInt8]("TSS".utf8),
             .FileType : [UInt8]("TFT".utf8),
-            .Language : [UInt8]("TLA".utf8),
             .Lyricist : [UInt8]("TXT".utf8),
             .MediaType : [UInt8]("TMT".utf8),
             .MixArtist : [UInt8]("TP4".utf8),
@@ -103,7 +99,6 @@ class ID3FrameConfiguration {
     ]
     private let commonNamesForIdentifiers: [String : FrameType] = [
         "TPE1" : .Artist,
-        "COMM" : .Comment,
         "TCOM" : .Composer,
         "TPE3" : .Conductor,
         "TIT1" : .ContentGrouping,
@@ -112,8 +107,7 @@ class ID3FrameConfiguration {
         "TSSE" : .EncoderSettings,
         "TOWN" : .FileOwner,
         "TFLT" : .FileType,
-        "GRP1" : .Grouping,
-        "TLAN" : .Language,
+        "GRP1" : .ITunesGrouping,
         "TEXT" : .Lyricist,
         "TMED" : .MediaType,
         "TPE4" : .MixArtist,
@@ -138,7 +132,6 @@ class ID3FrameConfiguration {
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
             "TP1" : .Artist,
-            "COM" : .Comment,
             "TCM" : .Composer,
             "TP3" : .Conductor,
             "TT1" : .ContentGrouping,
@@ -146,7 +139,6 @@ class ID3FrameConfiguration {
             "TEN" : .EncodedBy,
             "TSS" : .EncoderSettings,
             "TFT" : .FileType,
-            "TLA" : .Language,
             "TXT" : .Lyricist,
             "TMT" : .MediaType,
             "TP4" : .MixArtist,

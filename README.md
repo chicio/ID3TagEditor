@@ -184,7 +184,7 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `MixArtist`
 * `MovementName`
 * `MovementIndex` (aka movement number)
-* `PocastCategory`
+* `PodcastCategory`
 * `PodcastDescription`
 * `PodcastID`
 * `PodcastKeyword`

@@ -41,10 +41,6 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let commentFrameCreator = ID3CommentFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
         let composerFrameCreator = ID3ComposerFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -77,11 +73,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let groupingFrameCreator = ID3GroupingFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
-        let languageFrameCreator = ID3LanguageFrameCreator(
+        let iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -180,8 +172,15 @@ class ID3FrameCreatorsChainFactory {
         )
         albumFrameCreator.nextCreator = albumArtistCreator
         albumArtistCreator.nextCreator = artistFrameCreator
-        artistFrameCreator.nextCreator = commentFrameCreator
-        commentFrameCreator.nextCreator = composerFrameCreator
+        artistFrameCreator.nextCreator = titleFrameCreator
+        titleFrameCreator.nextCreator = yearFrameCreator
+        yearFrameCreator.nextCreator = dayMonthCreator
+        dayMonthCreator.nextCreator = hourMinuteCreator
+        hourMinuteCreator.nextCreator = recordingDateTimeCreator
+        recordingDateTimeCreator.nextCreator = genreFrameCreator
+        genreFrameCreator.nextCreator = trackPositionFrameCreator
+        trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
+        attachedPictureFrameCreator.nextCreator = composerFrameCreator
         composerFrameCreator.nextCreator = conductorFrameCreator
         conductorFrameCreator.nextCreator = contentGroupingFrameCreator
         contentGroupingFrameCreator.nextCreator = copyrightFrameCreator
@@ -189,9 +188,8 @@ class ID3FrameCreatorsChainFactory {
         encodedByFrameCreator.nextCreator = encoderSettingsFrameCreator
         encoderSettingsFrameCreator.nextCreator = fileOwnerFrameCreator
         fileOwnerFrameCreator.nextCreator = fileTypeFrameCreator
-        fileTypeFrameCreator.nextCreator = groupingFrameCreator
-        groupingFrameCreator.nextCreator = languageFrameCreator
-        languageFrameCreator.nextCreator = lyricistFrameCreator
+        fileTypeFrameCreator.nextCreator = iTunesGroupingFrameCreator
+        iTunesGroupingFrameCreator.nextCreator = lyricistFrameCreator
         lyricistFrameCreator.nextCreator = mediaTypeFrameCreator
         mediaTypeFrameCreator.nextCreator = mixArtistFrameCreator
         mixArtistFrameCreator.nextCreator = movementNameFrameCreator
@@ -202,17 +200,9 @@ class ID3FrameCreatorsChainFactory {
         podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator
         podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
         publisherFrameCreator.nextCreator = subtitleFrameCreator
-        subtitleFrameCreator.nextCreator = titleFrameCreator
-        titleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
-        unsyncedLyricsFrameCreator.nextCreator = yearFrameCreator
-        yearFrameCreator.nextCreator = dayMonthCreator
-        dayMonthCreator.nextCreator = hourMinuteCreator
-        hourMinuteCreator.nextCreator = recordingDateTimeCreator
-        recordingDateTimeCreator.nextCreator = genreFrameCreator
-        genreFrameCreator.nextCreator = trackPositionFrameCreator
-        trackPositionFrameCreator.nextCreator = discPositionFrameCreator
+        subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
+        unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
         discPositionFrameCreator.nextCreator = seriesIndexFrameCreator
-        seriesIndexFrameCreator.nextCreator = attachedPictureFrameCreator
         return albumFrameCreator
     }
 }

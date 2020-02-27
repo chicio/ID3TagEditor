@@ -1,25 +1,25 @@
 //
 //  ID3GroupingFrameCreatorTest.swift
 //
-//  Created by Fabrizio Duroni on 27/02/2018.
+//  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
 //
 
 import XCTest
 @testable import ID3TagEditor
 
-class ID3GroupingFrameCreatorTest: XCTestCase {
+class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoGrouping() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3GroupingFrameCreator = ID3GroupingFrameCreator(
+        let id3iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Grouping
+                frameTypeToBeChecked: .ITunesGrouping
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
-        let newTagBytes = id3GroupingFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+        let newTagBytes = id3iTunesGroupingFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
         
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -29,17 +29,17 @@ class ID3GroupingFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Grouping : ID3FrameWithStringContent(content: "::an example grouping::")]
+            frames: [.ITunesGrouping : ID3FrameWithStringContent(content: "::an example grouping::")]
         )
-        let id3GroupingFrameCreator = ID3GroupingFrameCreator(
+        let id3iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Grouping
+                frameTypeToBeChecked: .ITunesGrouping
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
-        let newTagBytes = id3GroupingFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3iTunesGroupingFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
         
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
