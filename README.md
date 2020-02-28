@@ -194,6 +194,9 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
+***
+### Contributor
+The latter ~25 frames were contributed by [Nolaine Crusher](https://github.com/NCrusher74) 
 
 ***
 
