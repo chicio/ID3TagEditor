@@ -49,7 +49,7 @@ public class ID3Tag: CustomDebugStringConvertible {
         - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
         - trackPosition: \((self.frames[.TrackPosition] as? ID3FrameTrackPosition)?.debugDescription ?? "-")
         - discPosition: \((self.frames[.DiscPosition] as? ID3FrameDiscPosition)?.debugDescription ?? "-")
-        - seriesIndex: \((self.frames[.SeriesIndex] as? ID3FrameSeriesIndex)?.debugDescription ?? "-")
+        - userDefinedTextInformation: \((self.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content ?? "-")
         - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
         - recordingDateTime: \(
             (self.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.debugDescription ?? "-"

@@ -40,7 +40,7 @@ enum FrameType: String, Equatable {
     case Genre = "genre"
     case TrackPosition = "trackPosition"
     case DiscPosition = "discPosition"
-    case SeriesIndex = "seriesIndex"
+    case UserDefinedTextInformation = "userDefinedTextInformation"
     case AlbumArtist = "albumArtist"
     case Invalid = ""
 

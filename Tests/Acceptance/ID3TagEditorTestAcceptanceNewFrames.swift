@@ -56,14 +56,13 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "ULT")
         //XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.size, 39)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content, "UnsyncedLyrics V2")
+        XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXX")
+        //XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.size, 39)
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V2")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPA")
         //XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.size, 15)
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FrameDiscPosition)?.position, 1)
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FrameDiscPosition)?.totalDiscs, 3)
-        XCTAssertEqual(id3Tag?.frames[.SeriesIndex]?.id3Identifier, "TXX")
-        //XCTAssertEqual(id3Tag?.frames[.SeriesIndex]?.size, 15)
-        XCTAssertEqual((id3Tag?.frames[.SeriesIndex] as? ID3FrameSeriesIndex)?.index, 11)
-        XCTAssertEqual((id3Tag?.frames[.SeriesIndex] as? ID3FrameSeriesIndex)?.totalBooks, 19)
     }
     
     func testReadNewFramesV3() {
@@ -132,17 +131,15 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPUB")
         //XCTAssertEqual(id3Tag?.frames[.Publisher]?.size, 37)
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V3")
-        XCTAssertEqual(id3Tag?.frames[.SeriesIndex]?.id3Identifier, "TXXX")
-        //XCTAssertEqual(id3Tag?.frames[.SeriesIndex]?.size, 15)
-        XCTAssertEqual((id3Tag?.frames[.SeriesIndex] as? ID3FrameSeriesIndex)?.index, 11)
-        XCTAssertEqual((id3Tag?.frames[.SeriesIndex] as? ID3FrameSeriesIndex)?.totalBooks, 19)
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TIT3")
         //XCTAssertEqual(id3Tag?.frames[.Subtitle]?.size, 39)
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "USLT")
         //XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.size, 51)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content, "UnsyncedLyrics V3")
-
+        XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXXX")
+        //XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.size, 51)
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V3")
     }
     
     func testReadNewFramesV4() {
@@ -211,6 +208,9 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         //XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.size, 39)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.id3Identifier, "USLT")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content, "UnsyncedLyrics V4")
+        //XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.size, 39)
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.id3Identifier, "TXXX")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V4")
     }
         
     //MARK: write
@@ -233,9 +233,9 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .MediaType : ID3FrameWithStringContent(content: "MediaType V2"),
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V2"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V2"),
-                .SeriesIndex : ID3FrameSeriesIndex(index: 11, totalBooks: 19),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
-                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V2")
+                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V2"),
+                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V2")
             ]
         )
         
@@ -276,7 +276,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V3"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
-                .SeriesIndex : ID3FrameSeriesIndex(index: 11, totalBooks: 19),
+                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
                 .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V3"),
             ]
@@ -319,7 +319,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V4"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V4"),
-                .SeriesIndex : ID3FrameSeriesIndex(index: 11, totalBooks: 19),
+                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V4"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
                 .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V4"),
             ]

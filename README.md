@@ -189,6 +189,7 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `Publisher`
 * `Subtitle`
 * `UnsyncedLyrics`
+* `UserDefinedTextInformation`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 

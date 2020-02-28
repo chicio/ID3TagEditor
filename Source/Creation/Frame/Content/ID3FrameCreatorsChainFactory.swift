@@ -121,6 +121,10 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let titleFrameCreator = ID3TitleFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -161,10 +165,6 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let seriesIndexFrameCreator = ID3SeriesIndexFrameCreator(
-            frameCreator: frameFromStringISO88591ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
         let recordingDateTimeCreator = ID3RecordingDateTimeFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration,
@@ -202,7 +202,7 @@ class ID3FrameCreatorsChainFactory {
         publisherFrameCreator.nextCreator = subtitleFrameCreator
         subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
         unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
-        discPositionFrameCreator.nextCreator = seriesIndexFrameCreator
+        discPositionFrameCreator.nextCreator = userDefinedTextInformationFrameCreator
         return albumFrameCreator
     }
 }

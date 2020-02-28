@@ -33,7 +33,7 @@ class ID3FrameContentParsingOperationFactory {
             .PodcastID: ID3PodcastIDFrameContentParsingOperationFactory.make(),
             .PodcastKeywords: ID3PodcastKeywordsFrameContentParsingOperationFactory.make(),
             .Publisher: ID3PublisherFrameContentParsingOperationFactory.make(),
-            .SeriesIndex: ID3SeriesIndexFrameContentParsingOperationFactory.make(),
+            .UserDefinedTextInformation: ID3UserDefinedTextInformationFrameContentParsingOperationFactory.make(),
             .Subtitle: ID3SubtitleFrameContentParsingOperationFactory.make(),
             .UnsyncedLyrics: ID3UnsyncedLyricsFrameContentParsingOperationFactory.make(),
             .Title: ID3TitleFrameContentParsingOperationFactory.make(),
