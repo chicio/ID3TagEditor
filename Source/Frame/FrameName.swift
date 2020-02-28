@@ -44,9 +44,9 @@ public enum FrameName: Hashable {
     /// Mix Artist frame name.
     case MixArtist
     ///Movement name frame name.
-    case MovementName
+    case ITunesMovementName
     /// Movement Index frame name. Version 2.3 and 2.4 only.
-    case MovementIndex
+    case ITunesMovementIndex
     /// Podcast category frame name. Version 2.3 and 2.4 only.
     case PodcastCategory
     /// Podcast Description frame name. Version 2.3 and 2.4 only.

@@ -89,7 +89,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let movementNameFrameCreator = ID3MovementNameFrameCreator(
+        let iTunesMovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -157,7 +157,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let movementIndexFrameCreator = ID3MovementIndexFrameCreator(
+        let iTunesMovementIndexFrameCreator = ID3ItunesMovementIndexFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -192,9 +192,9 @@ class ID3FrameCreatorsChainFactory {
         iTunesGroupingFrameCreator.nextCreator = lyricistFrameCreator
         lyricistFrameCreator.nextCreator = mediaTypeFrameCreator
         mediaTypeFrameCreator.nextCreator = mixArtistFrameCreator
-        mixArtistFrameCreator.nextCreator = movementNameFrameCreator
-        movementNameFrameCreator.nextCreator = movementIndexFrameCreator
-        movementIndexFrameCreator.nextCreator = podcastCategoryFrameCreator
+        mixArtistFrameCreator.nextCreator = iTunesMovementNameFrameCreator
+        iTunesMovementNameFrameCreator.nextCreator = iTunesMovementIndexFrameCreator
+        iTunesMovementIndexFrameCreator.nextCreator = podcastCategoryFrameCreator
         podcastCategoryFrameCreator.nextCreator = podcastDescriptionFrameCreator
         podcastDescriptionFrameCreator.nextCreator = podcastIDFrameCreator
         podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator

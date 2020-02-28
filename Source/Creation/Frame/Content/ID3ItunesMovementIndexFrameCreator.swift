@@ -1,5 +1,5 @@
 //
-//  ID3MovementIndexFrameCreator.swift
+//  ID3ItunesMovementIndexFrameCreator.swift
 //
 //  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3MovementIndexFrameCreator: ID3FrameCreatorsChain {
+class ID3ItunesMovementIndexFrameCreator: ID3FrameCreatorsChain {
     private let frameCreator: FrameFromStringContentCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
 
@@ -17,11 +17,11 @@ class ID3MovementIndexFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let movementIndexFrame = id3Tag.frames[.MovementIndex] as? ID3FrameMovementIndex {
+        if let movementIndexFrame = id3Tag.frames[.ITunesMovementIndex] as? ID3FrameItunesMovementIndex {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .MovementIndex,
+                        frameType: .ITunesMovementIndex,
                         version: id3Tag.properties.version
                     ),
                     version: id3Tag.properties.version,
@@ -32,7 +32,7 @@ class ID3MovementIndexFrameCreator: ID3FrameCreatorsChain {
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(movementIndex: ID3FrameMovementIndex) -> String {
+    private func adapt(movementIndex: ID3FrameItunesMovementIndex) -> String {
         var movementIndexString = String(movementIndex.index)
         if let validTotalMovements = movementIndex.totalMovements {
             movementIndexString = movementIndexString + "/\(validTotalMovements)"

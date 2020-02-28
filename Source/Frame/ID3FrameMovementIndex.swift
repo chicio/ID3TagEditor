@@ -1,5 +1,5 @@
 //
-//  MovementIndex.swift
+//  ID3FrameItunesItunesMovementIndex.swift
 //
 //  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
@@ -10,7 +10,7 @@ import Foundation
 /**
  A class used to represent a movement index in a work.
  */
-public class ID3FrameMovementIndex: ID3Frame, Equatable, CustomDebugStringConvertible {
+public class ID3FrameItunesMovementIndex: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The index of the movement.
     public var index: Int
     /// The total number of movements in work.
@@ -39,7 +39,7 @@ public class ID3FrameMovementIndex: ID3Frame, Equatable, CustomDebugStringConver
 
      - returns: true if the movement index values are the same, else false.
      */
-    public static func ==(lhs: ID3FrameMovementIndex, rhs: ID3FrameMovementIndex) -> Bool {
+    public static func ==(lhs: ID3FrameItunesMovementIndex, rhs: ID3FrameItunesMovementIndex) -> Bool {
         return lhs.index == rhs.index && lhs.totalMovements == rhs.totalMovements
     }
 }

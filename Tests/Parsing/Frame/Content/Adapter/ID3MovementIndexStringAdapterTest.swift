@@ -8,8 +8,8 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3MovementIndexStringAdapterTest: XCTestCase {
-    let movementIndexStringAdapter = ID3MovementIndexStringAdapter()
+class ID3ItunesMovementIndexStringAdapterTest: XCTestCase {
+    let movementIndexStringAdapter = ID3ItunesMovementIndexStringAdapter()
 
     func testAdaptMovementIndexWithTotalMovements() {
         let movementIndex = movementIndexStringAdapter.adapt(movementIndex: "6/13")

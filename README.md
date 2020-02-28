@@ -167,7 +167,6 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `.TrackPosition`, track position frame
 * `.Genre`, the genre frame
 * `.AttachedPicture(_ pictureType: ID3PictureType)` the attached picture frame
-* `Comment`
 * `Composer`
 * `Conductor`
 * `ContentGrouping`
@@ -177,13 +176,12 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `EncoderSettings`
 * `FileType`
 * `FileOwner`
-* `Grouping`
-* `Language`
+* `iTunesGrouping`
 * `Lyricist`
 * `Media Type`
 * `MixArtist`
-* `MovementName`
-* `MovementIndex` (aka movement number)
+* `iTunesMovementName`
+* `iTunesMovementIndex` (aka movement number)
 * `PodcastCategory`
 * `PodcastDescription`
 * `PodcastID`

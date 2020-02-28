@@ -252,7 +252,7 @@ extension ID3MixArtistFrameCreatorTest {
     ]
 }
 
-extension ID3MovementNameFrameCreatorTest {
+extension ID3ItunesMovementNameFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMovementName", testFrameCreationWhenThereIsAMovementName),
         ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName),
@@ -322,7 +322,7 @@ extension ID3DiscPositionCreatorTest {
     ]
 }
 
-extension ID3MovementIndexCreatorTest {
+extension ID3ItunesMovementIndexCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
         ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex),
@@ -360,7 +360,7 @@ extension ID3SeriesIndexStringAdapterTest {
     ]
 }
 
-extension ID3MovementIndexStringAdapterTest {
+extension ID3ItunesMovementIndexStringAdapterTest {
     static let __allTests = [
         ("testAdaptNotANumberMovementIndex", testAdaptNotANumberMovementIndex),
         ("testAdaptMovementIndexWithoutTotalMovements", testAdaptMovementIndexWithoutTotalMovements),
@@ -411,8 +411,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3LyricistFrameCreatorTest.__allTests),
         testCase(ID3MediaTypeFrameCreatorTest.__allTests),
         testCase(ID3MixArtistFrameCreatorTest.__allTests),
-        testCase(ID3MovementIndexFrameCreatorTest.__allTests),
-        testCase(ID3MovementNameFrameCreatorTest.__allTests),
+        testCase(ID3ItunesMovementIndexFrameCreatorTest.__allTests),
+        testCase(ID3ItunesMovementNameFrameCreatorTest.__allTests),
         testCase(ID3PodcastCategoryFrameCreatorTest.__allTests),
         testCase(ID3PodcastDescriptionFrameCreatorTest.__allTests),
         testCase(ID3PodcastIDFrameCreatorTest.__allTests),
@@ -445,8 +445,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3TrackPositionStringAdapterTest.__allTests),
         testCase(ID3DiscPositionCreatorTest.__allTests),
         testCase(ID3DiscPositionStringAdapterTest.__allTests),
-        testCase(ID3MovementIndexCreatorTest.__allTests),
-        testCase(ID3MovementIndexStringAdapterTest.__allTests),
+        testCase(ID3ItunesMovementIndexCreatorTest.__allTests),
+        testCase(ID3ItunesMovementIndexStringAdapterTest.__allTests),
         testCase(ID3SeriesIndexCreatorTest.__allTests),
         testCase(ID3SeriesIndexStringAdapterTest.__allTests),
         testCase(ID3UTF16StringToByteAdapterTest.__allTests),
