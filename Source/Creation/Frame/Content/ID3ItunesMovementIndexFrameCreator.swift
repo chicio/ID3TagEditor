@@ -7,36 +7,12 @@
 
 import Foundation
 
-class ID3ItunesMovementIndexFrameCreator: ID3FrameCreatorsChain {
-    private let frameCreator: FrameFromStringContentCreator
-    private var id3FrameConfiguration: ID3FrameConfiguration
-
-    init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
-        self.frameCreator = frameCreator
-        self.id3FrameConfiguration = id3FrameConfiguration
-    }
-
+class ID3ItunesMovementIndexFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let movementIndexFrame = id3Tag.frames[.ITunesMovementIndex] as? ID3FrameItunesMovementIndex {
-            let newTag = tag +
-                frameCreator.createFrame(
-                    frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .ITunesMovementIndex,
-                        version: id3Tag.properties.version
-                    ),
-                    version: id3Tag.properties.version,
-                    content: adapt(movementIndex: movementIndexFrame)
-            )
-            return super.createFrames(id3Tag: id3Tag, tag: newTag)
+        if let indexFrame = id3Tag.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent,
+            let index = indexFrame.value {
+            return createFrameUsing(frameType: .ITunesMovementIndex, content: String(index), id3Tag: id3Tag, andAddItTo: tag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
-    }
-
-    private func adapt(movementIndex: ID3FrameItunesMovementIndex) -> String {
-        var movementIndexString = String(movementIndex.index)
-        if let validTotalMovements = movementIndex.totalMovements {
-            movementIndexString = movementIndexString + "/\(validTotalMovements)"
-        }
-        return movementIndexString
     }
 }

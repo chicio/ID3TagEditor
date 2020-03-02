@@ -329,6 +329,12 @@ extension ID3ItunesMovementIndexCreatorTest {
     ]
 }
 
+extension ID3ItunesMovementCountCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAMovementCount", testFrameCreationWhenThereIsAMovementCount),
+        ("testNoFrameCreationWhenThereIsNoMovementCount", testNoFrameCreationWhenThereIsNoMovementCount),
+    ]
+}
 extension ID3UserDefinedTextInformationCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsUserDefinedText", testFrameCreationWhenThereIsUserDefinedText),
@@ -349,14 +355,6 @@ extension ID3DiscPositionStringAdapterTest {
         ("testAdaptNotANumberDiscPosition", testAdaptNotANumberDiscPosition),
         ("testAdaptDiscPositionWithoutTotalDiscs", testAdaptDiscPositionWithoutTotalDiscs),
         ("testAdaptDiscPositionWithTotalDiscs", testAdaptDiscPositionWithTotalDiscs),
-    ]
-}
-
-extension ID3ItunesMovementIndexStringAdapterTest {
-    static let __allTests = [
-        ("testAdaptNotANumberMovementIndex", testAdaptNotANumberMovementIndex),
-        ("testAdaptMovementIndexWithoutTotalMovements", testAdaptMovementIndexWithoutTotalMovements),
-        ("testAdaptMovementIndexWithTotalMovements", testAdaptMovementIndexWithTotalMovements),
     ]
 }
 
@@ -438,7 +436,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3DiscPositionCreatorTest.__allTests),
         testCase(ID3DiscPositionStringAdapterTest.__allTests),
         testCase(ID3ItunesMovementIndexCreatorTest.__allTests),
-        testCase(ID3ItunesMovementIndexStringAdapterTest.__allTests),
+        testCase(ID3ItunesMovementCountCreatorTest.__allTests),
         testCase(ID3UserDefinedTextInformationCreatorTest.__allTests),
         testCase(ID3UTF16StringToByteAdapterTest.__allTests),
         testCase(PaddingAdderUsingNullCharTest.__allTests),

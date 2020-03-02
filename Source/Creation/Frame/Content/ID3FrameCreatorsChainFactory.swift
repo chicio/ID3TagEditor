@@ -165,6 +165,10 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let iTunesMovementCountFrameCreator = ID3ItunesMovementCountFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let recordingDateTimeCreator = ID3RecordingDateTimeFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration,
@@ -194,7 +198,8 @@ class ID3FrameCreatorsChainFactory {
         mediaTypeFrameCreator.nextCreator = mixArtistFrameCreator
         mixArtistFrameCreator.nextCreator = iTunesMovementNameFrameCreator
         iTunesMovementNameFrameCreator.nextCreator = iTunesMovementIndexFrameCreator
-        iTunesMovementIndexFrameCreator.nextCreator = podcastCategoryFrameCreator
+        iTunesMovementIndexFrameCreator.nextCreator = iTunesMovementCountFrameCreator
+        iTunesMovementCountFrameCreator.nextCreator = podcastCategoryFrameCreator
         podcastCategoryFrameCreator.nextCreator = podcastDescriptionFrameCreator
         podcastDescriptionFrameCreator.nextCreator = podcastIDFrameCreator
         podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator

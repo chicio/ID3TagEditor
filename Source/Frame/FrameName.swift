@@ -47,6 +47,8 @@ public enum FrameName: Hashable {
     case ITunesMovementName
     /// Movement Index frame name. Version 2.3 and 2.4 only.
     case ITunesMovementIndex
+    /// Movement Count frame name. Version 2.3 and 2.4 only
+    case ITunesMovementCount
     /// Podcast category frame name. Version 2.3 and 2.4 only.
     case PodcastCategory
     /// Podcast Description frame name. Version 2.3 and 2.4 only.

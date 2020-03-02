@@ -496,15 +496,30 @@
 		45FA7DCD209917C6000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA7DC720990873000A7484 /* ID3AlbumArtistFrameCreator.swift */; };
 		45FA7DCE209917C8000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA7DC720990873000A7484 /* ID3AlbumArtistFrameCreator.swift */; };
 		45FA7DCF209917C8000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA7DC720990873000A7484 /* ID3AlbumArtistFrameCreator.swift */; };
+		5151CACD240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
+		5151CACE240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
+		5151CACF240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
+		5151CAD0240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
+		5151CAD2240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */; };
+		5151CAD3240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */; };
+		5151CAD4240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */; };
+		5151CAD5240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */; };
+		5151CAD7240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */; };
+		5151CAD8240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */; };
+		5151CAD9240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */; };
+		5151CADA240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */; };
+		5151CADC240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CADB240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift */; };
+		5151CADD240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CADB240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift */; };
+		5151CADE240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CADB240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift */; };
+		5151CAE1240D9A30002A7C05 /* example-newframes-v3-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5151CADF240D9A30002A7C05 /* example-newframes-v3-written.mp3 */; };
+		5151CAE2240D9A30002A7C05 /* example-newframes-v3-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5151CADF240D9A30002A7C05 /* example-newframes-v3-written.mp3 */; };
+		5151CAE3240D9A30002A7C05 /* example-newframes-v3-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5151CADF240D9A30002A7C05 /* example-newframes-v3-written.mp3 */; };
+		5151CAE4240D9A30002A7C05 /* example-newframes-v4-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5151CAE0240D9A30002A7C05 /* example-newframes-v4-written.mp3 */; };
+		5151CAE5240D9A30002A7C05 /* example-newframes-v4-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5151CAE0240D9A30002A7C05 /* example-newframes-v4-written.mp3 */; };
+		5151CAE6240D9A30002A7C05 /* example-newframes-v4-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5151CAE0240D9A30002A7C05 /* example-newframes-v4-written.mp3 */; };
 		517AB40D2408EE0900D88853 /* example-newframes-v2-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40A2408EE0800D88853 /* example-newframes-v2-written.mp3 */; };
 		517AB40E2408EE0900D88853 /* example-newframes-v2-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40A2408EE0800D88853 /* example-newframes-v2-written.mp3 */; };
 		517AB40F2408EE0900D88853 /* example-newframes-v2-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40A2408EE0800D88853 /* example-newframes-v2-written.mp3 */; };
-		517AB4102408EE0900D88853 /* example-newframes-v4-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40B2408EE0800D88853 /* example-newframes-v4-written.mp3 */; };
-		517AB4112408EE0900D88853 /* example-newframes-v4-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40B2408EE0800D88853 /* example-newframes-v4-written.mp3 */; };
-		517AB4122408EE0900D88853 /* example-newframes-v4-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40B2408EE0800D88853 /* example-newframes-v4-written.mp3 */; };
-		517AB4132408EE0900D88853 /* example-newframes-v3-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40C2408EE0900D88853 /* example-newframes-v3-written.mp3 */; };
-		517AB4142408EE0900D88853 /* example-newframes-v3-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40C2408EE0900D88853 /* example-newframes-v3-written.mp3 */; };
-		517AB4152408EE0900D88853 /* example-newframes-v3-written.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 517AB40C2408EE0900D88853 /* example-newframes-v3-written.mp3 */; };
 		519C33D52405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C33BC2405041A008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift */; };
 		519C33D62405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C33BC2405041A008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift */; };
 		519C33D72405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C33BC2405041A008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift */; };
@@ -601,10 +616,6 @@
 		519C343D24050578008F3BDE /* ID3FrameDiscPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343924050578008F3BDE /* ID3FrameDiscPosition.swift */; };
 		519C343E24050578008F3BDE /* ID3FrameDiscPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343924050578008F3BDE /* ID3FrameDiscPosition.swift */; };
 		519C343F24050578008F3BDE /* ID3FrameDiscPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343924050578008F3BDE /* ID3FrameDiscPosition.swift */; };
-		519C344424050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343B24050578008F3BDE /* ID3FrameMovementIndex.swift */; };
-		519C344524050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343B24050578008F3BDE /* ID3FrameMovementIndex.swift */; };
-		519C344624050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343B24050578008F3BDE /* ID3FrameMovementIndex.swift */; };
-		519C344724050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C343B24050578008F3BDE /* ID3FrameMovementIndex.swift */; };
 		519C34612405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C344824050666008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift */; };
 		519C34622405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C344824050666008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift */; };
 		519C34632405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C344824050666008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift */; };
@@ -637,18 +648,18 @@
 		519C347E2405066A008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C344F24050668008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift */; };
 		519C347F2405066A008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C344F24050668008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift */; };
 		519C34802405066A008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C344F24050668008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift */; };
-		519C34812405066A008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift */; };
-		519C34822405066A008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift */; };
-		519C34832405066B008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift */; };
-		519C34842405066B008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift */; };
+		519C34812405066A008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift */; };
+		519C34822405066A008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift */; };
+		519C34832405066B008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift */; };
+		519C34842405066B008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345024050668008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift */; };
 		519C34852405066B008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345124050668008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift */; };
 		519C34862405066B008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345124050668008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift */; };
 		519C34872405066B008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345124050668008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift */; };
 		519C34882405066B008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345124050668008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift */; };
-		519C34892405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift */; };
-		519C348A2405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift */; };
-		519C348B2405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift */; };
-		519C348C2405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift */; };
+		519C34892405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift */; };
+		519C348A2405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift */; };
+		519C348B2405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift */; };
+		519C348C2405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345224050668008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift */; };
 		519C348D2405066B008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345324050668008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift */; };
 		519C348E2405066B008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345324050668008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift */; };
 		519C348F2405066B008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C345324050668008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift */; };
@@ -705,14 +716,6 @@
 		519C34D0240506C0008F3BDE /* DiscPositionStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C6240506C0008F3BDE /* DiscPositionStringAdapter.swift */; };
 		519C34D1240506C0008F3BDE /* DiscPositionStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C6240506C0008F3BDE /* DiscPositionStringAdapter.swift */; };
 		519C34D2240506C0008F3BDE /* DiscPositionStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C6240506C0008F3BDE /* DiscPositionStringAdapter.swift */; };
-		519C34DB240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C9240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift */; };
-		519C34DC240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C9240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift */; };
-		519C34DD240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C9240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift */; };
-		519C34DE240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34C9240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift */; };
-		519C34DF240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34CA240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift */; };
-		519C34E0240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34CA240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift */; };
-		519C34E1240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34CA240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift */; };
-		519C34E2240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34CA240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift */; };
 		519C34FC240507D4008F3BDE /* ID3SubtitleFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E3240507D0008F3BDE /* ID3SubtitleFrameCreatorTest.swift */; };
 		519C34FD240507D4008F3BDE /* ID3SubtitleFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E3240507D0008F3BDE /* ID3SubtitleFrameCreatorTest.swift */; };
 		519C34FE240507D4008F3BDE /* ID3SubtitleFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E3240507D0008F3BDE /* ID3SubtitleFrameCreatorTest.swift */; };
@@ -722,9 +725,9 @@
 		519C3502240507D4008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E5240507D0008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift */; };
 		519C3503240507D4008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E5240507D0008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift */; };
 		519C3504240507D4008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E5240507D0008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift */; };
-		519C3505240507D4008F3BDE /* ID3MovementIndexFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E6240507D0008F3BDE /* ID3MovementIndexFrameCreatorTest.swift */; };
-		519C3506240507D4008F3BDE /* ID3MovementIndexFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E6240507D0008F3BDE /* ID3MovementIndexFrameCreatorTest.swift */; };
-		519C3507240507D4008F3BDE /* ID3MovementIndexFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E6240507D0008F3BDE /* ID3MovementIndexFrameCreatorTest.swift */; };
+		519C3505240507D4008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E6240507D0008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift */; };
+		519C3506240507D4008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E6240507D0008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift */; };
+		519C3507240507D4008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E6240507D0008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift */; };
 		519C3508240507D4008F3BDE /* ID3MediaTypeFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E7240507D0008F3BDE /* ID3MediaTypeFrameCreatorTest.swift */; };
 		519C3509240507D4008F3BDE /* ID3MediaTypeFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E7240507D0008F3BDE /* ID3MediaTypeFrameCreatorTest.swift */; };
 		519C350A240507D4008F3BDE /* ID3MediaTypeFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34E7240507D0008F3BDE /* ID3MediaTypeFrameCreatorTest.swift */; };
@@ -761,9 +764,9 @@
 		519C352F240507D4008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F4240507D3008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift */; };
 		519C3530240507D4008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F4240507D3008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift */; };
 		519C3531240507D4008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F4240507D3008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift */; };
-		519C3532240507D4008F3BDE /* ID3MovementNameFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F5240507D3008F3BDE /* ID3MovementNameFrameCreatorTest.swift */; };
-		519C3533240507D4008F3BDE /* ID3MovementNameFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F5240507D3008F3BDE /* ID3MovementNameFrameCreatorTest.swift */; };
-		519C3534240507D4008F3BDE /* ID3MovementNameFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F5240507D3008F3BDE /* ID3MovementNameFrameCreatorTest.swift */; };
+		519C3532240507D4008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F5240507D3008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift */; };
+		519C3533240507D4008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F5240507D3008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift */; };
+		519C3534240507D4008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F5240507D3008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift */; };
 		519C3535240507D4008F3BDE /* ID3PodcastIDFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F6240507D3008F3BDE /* ID3PodcastIDFrameCreatorTest.swift */; };
 		519C3536240507D4008F3BDE /* ID3PodcastIDFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F6240507D3008F3BDE /* ID3PodcastIDFrameCreatorTest.swift */; };
 		519C3537240507D4008F3BDE /* ID3PodcastIDFrameCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C34F6240507D3008F3BDE /* ID3PodcastIDFrameCreatorTest.swift */; };
@@ -785,12 +788,6 @@
 		519C354D2405085D008F3BDE /* MockDiscPositionStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C35482405085D008F3BDE /* MockDiscPositionStringAdapter.swift */; };
 		519C354E2405085D008F3BDE /* MockDiscPositionStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C35482405085D008F3BDE /* MockDiscPositionStringAdapter.swift */; };
 		519C354F2405085D008F3BDE /* MockDiscPositionStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C35482405085D008F3BDE /* MockDiscPositionStringAdapter.swift */; };
-		519C35502405085D008F3BDE /* MockMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C35492405085D008F3BDE /* MockMovementIndexStringAdapter.swift */; };
-		519C35512405085D008F3BDE /* MockMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C35492405085D008F3BDE /* MockMovementIndexStringAdapter.swift */; };
-		519C35522405085D008F3BDE /* MockMovementIndexStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C35492405085D008F3BDE /* MockMovementIndexStringAdapter.swift */; };
-		519C3559240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C3554240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift */; };
-		519C355A240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C3554240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift */; };
-		519C355B240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C3554240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift */; };
 		519C355C240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C3555240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift */; };
 		519C355D240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C3555240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift */; };
 		519C355E240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C3555240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift */; };
@@ -1100,9 +1097,13 @@
 		45F833E3205904680046C804 /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FA7DC720990873000A7484 /* ID3AlbumArtistFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3AlbumArtistFrameCreator.swift; sourceTree = "<group>"; };
 		45FA7DC9209917BF000A7484 /* ID3AlbumArtistFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3AlbumArtistFrameCreatorTest.swift; sourceTree = "<group>"; };
+		5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameWithIntegerContent.swift; sourceTree = "<group>"; };
+		5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementCountFrame.swift; sourceTree = "<group>"; };
+		5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementCountFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
+		5151CADB240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementCountFrameCreatorTest.swift; sourceTree = "<group>"; };
+		5151CADF240D9A30002A7C05 /* example-newframes-v3-written.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes-v3-written.mp3"; sourceTree = "<group>"; };
+		5151CAE0240D9A30002A7C05 /* example-newframes-v4-written.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes-v4-written.mp3"; sourceTree = "<group>"; };
 		517AB40A2408EE0800D88853 /* example-newframes-v2-written.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes-v2-written.mp3"; sourceTree = "<group>"; };
-		517AB40B2408EE0800D88853 /* example-newframes-v4-written.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes-v4-written.mp3"; sourceTree = "<group>"; };
-		517AB40C2408EE0900D88853 /* example-newframes-v3-written.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes-v3-written.mp3"; sourceTree = "<group>"; };
 		519C33BC2405041A008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementIndexFrameCreator.swift; sourceTree = "<group>"; };
 		519C33BD2405041A008F3BDE /* ID3EncoderSettingsFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3EncoderSettingsFrameCreator.swift; sourceTree = "<group>"; };
 		519C33BE2405041A008F3BDE /* ID3SubtitleFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3SubtitleFrameCreator.swift; sourceTree = "<group>"; };
@@ -1127,7 +1128,6 @@
 		519C33D32405041E008F3BDE /* ID3UnsyncedLyricsFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3UnsyncedLyricsFrameCreator.swift; sourceTree = "<group>"; };
 		519C33D42405041E008F3BDE /* ID3DiscPositionFrameCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3DiscPositionFrameCreator.swift; sourceTree = "<group>"; };
 		519C343924050578008F3BDE /* ID3FrameDiscPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameDiscPosition.swift; sourceTree = "<group>"; };
-		519C343B24050578008F3BDE /* ID3FrameMovementIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameMovementIndex.swift; sourceTree = "<group>"; };
 		519C344824050666008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ConductorFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C344924050667008F3BDE /* ID3CopyrightFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3CopyrightFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C344A24050667008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3EncodedByFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
@@ -1136,9 +1136,9 @@
 		519C344D24050667008F3BDE /* ID3MixArtistFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MixArtistFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C344E24050667008F3BDE /* ID3PodcastIDFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PodcastIDFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C344F24050668008F3BDE /* ID3DiscPositionFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3DiscPositionFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
-		519C345024050668008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MovementIndexFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
+		519C345024050668008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C345124050668008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PodcastDescriptionFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
-		519C345224050668008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MovementNameFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
+		519C345224050668008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ITunesMovementNameFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C345324050668008F3BDE /* ID3PublisherFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PublisherFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C345424050668008F3BDE /* ID3ContentGroupingFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ContentGroupingFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C345524050669008F3BDE /* ID3EncoderSettingsFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3EncoderSettingsFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
@@ -1153,12 +1153,10 @@
 		519C34602405066A008F3BDE /* ID3SubtitleFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3SubtitleFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
 		519C34C5240506C0008F3BDE /* ID3DiscPositionStringAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3DiscPositionStringAdapter.swift; sourceTree = "<group>"; };
 		519C34C6240506C0008F3BDE /* DiscPositionStringAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscPositionStringAdapter.swift; sourceTree = "<group>"; };
-		519C34C9240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItunesMovementIndexStringAdapter.swift; sourceTree = "<group>"; };
-		519C34CA240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementIndexStringAdapter.swift; sourceTree = "<group>"; };
 		519C34E3240507D0008F3BDE /* ID3SubtitleFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3SubtitleFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34E4240507D0008F3BDE /* ID3ConductorFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ConductorFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34E5240507D0008F3BDE /* ID3ITunesGroupingFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ITunesGroupingFrameCreatorTest.swift; sourceTree = "<group>"; };
-		519C34E6240507D0008F3BDE /* ID3MovementIndexFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MovementIndexFrameCreatorTest.swift; sourceTree = "<group>"; };
+		519C34E6240507D0008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ITunesMovementIndexFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34E7240507D0008F3BDE /* ID3MediaTypeFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MediaTypeFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34E8240507D0008F3BDE /* ID3PublisherFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PublisherFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34EA240507D1008F3BDE /* ID3PodcastDescriptionFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PodcastDescriptionFrameCreatorTest.swift; sourceTree = "<group>"; };
@@ -1171,7 +1169,7 @@
 		519C34F2240507D2008F3BDE /* ID3ComposerFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ComposerFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34F3240507D2008F3BDE /* ID3DiscPositionFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3DiscPositionFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34F4240507D3008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ContentGroupingFrameCreatorTest.swift; sourceTree = "<group>"; };
-		519C34F5240507D3008F3BDE /* ID3MovementNameFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MovementNameFrameCreatorTest.swift; sourceTree = "<group>"; };
+		519C34F5240507D3008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3ITunesMovementNameFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34F6240507D3008F3BDE /* ID3PodcastIDFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3PodcastIDFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34F7240507D3008F3BDE /* ID3UnsyncedLyricsFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3UnsyncedLyricsFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34F8240507D3008F3BDE /* ID3EncodedByFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3EncodedByFrameCreatorTest.swift; sourceTree = "<group>"; };
@@ -1179,8 +1177,6 @@
 		519C34FA240507D4008F3BDE /* ID3MixArtistFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MixArtistFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C34FB240507D4008F3BDE /* ID3LyricistFrameCreatorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3LyricistFrameCreatorTest.swift; sourceTree = "<group>"; };
 		519C35482405085D008F3BDE /* MockDiscPositionStringAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDiscPositionStringAdapter.swift; sourceTree = "<group>"; };
-		519C35492405085D008F3BDE /* MockMovementIndexStringAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMovementIndexStringAdapter.swift; sourceTree = "<group>"; };
-		519C3554240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3MovementIndexStringAdapterTest.swift; sourceTree = "<group>"; };
 		519C3555240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3DiscPositionStringAdapterTest.swift; sourceTree = "<group>"; };
 		51CDFE1324085F2600B06F29 /* ID3TagEditorTestAcceptanceNewFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TagEditorTestAcceptanceNewFrames.swift; sourceTree = "<group>"; };
 		51CDFE2B24087A1300B06F29 /* example-newframes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes.mp3"; sourceTree = "<group>"; };
@@ -1491,7 +1487,6 @@
 			isa = PBXGroup;
 			children = (
 				519C343924050578008F3BDE /* ID3FrameDiscPosition.swift */,
-				519C343B24050578008F3BDE /* ID3FrameMovementIndex.swift */,
 				4584522221DD00950043FECD /* ID3Genre.swift */,
 				4584520E21DD00780043FECD /* ID3PictureFormat.swift */,
 				4584520F21DD00780043FECD /* ID3PictureType.swift */,
@@ -1501,6 +1496,7 @@
 				4584521821DD00800043FECD /* ID3FrameRecordingDateTime.swift */,
 				45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */,
 				45B4337021DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift */,
+				5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */,
 				4584521921DD00800043FECD /* ID3FrameTrackPosition.swift */,
 				45231DE721DBFFDD008FDCE7 /* ID3FrameWithStringContent.swift */,
 				4528321D2044C7BE00458375 /* ID3FrameConfiguration.swift */,
@@ -1615,6 +1611,7 @@
 				519C33CF2405041D008F3BDE /* ID3MediaTypeFrameCreator.swift */,
 				519C33C42405041B008F3BDE /* ID3MixArtistFrameCreator.swift */,
 				519C33BC2405041A008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift */,
+				5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */,
 				519C33C92405041C008F3BDE /* ID3ItunesMovementNameFrameCreator.swift */,
 				519C33D22405041E008F3BDE /* ID3PodcastCategoryFrameCreator.swift */,
 				519C33C52405041C008F3BDE /* ID3PodcastDescriptionFrameCreator.swift */,
@@ -1688,8 +1685,9 @@
 				519C345F2405066A008F3BDE /* ID3LyricistFrameContentParsingOperationFactory.swift */,
 				519C344C24050667008F3BDE /* ID3MediaTypeFrameContentParsingOperationFactory.swift */,
 				519C344D24050667008F3BDE /* ID3MixArtistFrameContentParsingOperationFactory.swift */,
-				519C345024050668008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift */,
-				519C345224050668008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift */,
+				519C345024050668008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift */,
+				5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */,
+				519C345224050668008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift */,
 				519C345624050669008F3BDE /* ID3PodcastCategoryFrameContentParsingOperationFactory.swift */,
 				519C345124050668008F3BDE /* ID3PodcastDescriptionFrameContentParsingOperationFactory.swift */,
 				519C344E24050667008F3BDE /* ID3PodcastIDFrameContentParsingOperationFactory.swift */,
@@ -1812,8 +1810,6 @@
 			children = (
 				519C34C6240506C0008F3BDE /* DiscPositionStringAdapter.swift */,
 				519C34C5240506C0008F3BDE /* ID3DiscPositionStringAdapter.swift */,
-				519C34CA240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift */,
-				519C34C9240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift */,
 				4562C1F3211741FE00AFE22E /* ID3CoupleOfNumbersAdapter.swift */,
 				C5067D9C4A8D397FC8157256 /* ID3GenreStringAdapter.swift */,
 				C5067BB2E9A55E63182D4599 /* PictureTypeAdapter.swift */,
@@ -1854,8 +1850,8 @@
 			isa = PBXGroup;
 			children = (
 				517AB40A2408EE0800D88853 /* example-newframes-v2-written.mp3 */,
-				517AB40C2408EE0900D88853 /* example-newframes-v3-written.mp3 */,
-				517AB40B2408EE0800D88853 /* example-newframes-v4-written.mp3 */,
+				5151CADF240D9A30002A7C05 /* example-newframes-v3-written.mp3 */,
+				5151CAE0240D9A30002A7C05 /* example-newframes-v4-written.mp3 */,
 				51CDFE2B24087A1300B06F29 /* example-newframes.mp3 */,
 				4546E7D321CBC844008502CF /* example-v4.mp3 */,
 				4546E7CB21CB86AE008502CF /* cover-v4.png */,
@@ -1948,8 +1944,9 @@
 				519C34FB240507D4008F3BDE /* ID3LyricistFrameCreatorTest.swift */,
 				519C34E7240507D0008F3BDE /* ID3MediaTypeFrameCreatorTest.swift */,
 				519C34FA240507D4008F3BDE /* ID3MixArtistFrameCreatorTest.swift */,
-				519C34E6240507D0008F3BDE /* ID3MovementIndexFrameCreatorTest.swift */,
-				519C34F5240507D3008F3BDE /* ID3MovementNameFrameCreatorTest.swift */,
+				519C34E6240507D0008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift */,
+				5151CADB240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift */,
+				519C34F5240507D3008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift */,
 				519C34F1240507D2008F3BDE /* ID3PodcastCategoryFrameCreatorTest.swift */,
 				519C34EA240507D1008F3BDE /* ID3PodcastDescriptionFrameCreatorTest.swift */,
 				519C34F6240507D3008F3BDE /* ID3PodcastIDFrameCreatorTest.swift */,
@@ -1987,7 +1984,6 @@
 			isa = PBXGroup;
 			children = (
 				519C35482405085D008F3BDE /* MockDiscPositionStringAdapter.swift */,
-				519C35492405085D008F3BDE /* MockMovementIndexStringAdapter.swift */,
 				C506715FBCEE562BFB182459 /* MockFrameFromStringContentCreator.swift */,
 				C506700658BCCA8D6CD0E270 /* MockFrameContentSizeCalculator.swift */,
 				C5067C4A517611B94BC6D6B2 /* MockFrameFlagsCreator.swift */,
@@ -2050,7 +2046,6 @@
 			isa = PBXGroup;
 			children = (
 				519C3555240508CA008F3BDE /* ID3DiscPositionStringAdapterTest.swift */,
-				519C3554240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift */,
 				C506750E1974F38E2AD04B6A /* ID3GenreStringAdapterTest.swift */,
 				C50675D67C5E12BAE08DB28A /* ID3PictureTypeAdapterTest.swift */,
 				C5067735F928B1F4911987D4 /* ID3TrackPositionStringAdapterTest.swift */,
@@ -2360,20 +2355,20 @@
 				4546E7D421CBC844008502CF /* example-v4.mp3 in Resources */,
 				C5067E73FB0E641EDB3E9329 /* example-to-be-modified.mp3 in Resources */,
 				C50679A1C772693D46B33A8A /* example-cover-png.png in Resources */,
+				5151CAE1240D9A30002A7C05 /* example-newframes-v3-written.mp3 in Resources */,
 				C50674AB4EC8395A9D02B752 /* example-with-tag-jpg-v3.mp3 in Resources */,
 				C50673482C00E74766328BD2 /* example-v3-additional-data.mp3 in Resources */,
+				5151CAE4240D9A30002A7C05 /* example-newframes-v4-written.mp3 in Resources */,
 				C506784B5FB0ED51D2170B34 /* example-v23.mp3 in Resources */,
 				C50679E29510A8E111ABF2C2 /* example-cover.jpg in Resources */,
 				C50679A6775695E2E56A5F36 /* example-with-tag-already-setted.mp3 in Resources */,
 				5FAF8DAD21CED88E0049798C /* example-v4-additional-data.mp3 in Resources */,
 				C50672444BF2E5B0AD7DC8B6 /* cover2.jpg in Resources */,
-				517AB4132408EE0900D88853 /* example-newframes-v3-written.mp3 in Resources */,
 				457352E921C249C30017B75D /* example-v4-png.mp3 in Resources */,
 				C506774CEC09164E959AF72A /* example.mp3 in Resources */,
 				C506724A7FBBFA5C694E8B6E /* example-v23-png.mp3 in Resources */,
 				C5067E54FE3A98B1879EDD0B /* example-to-be-modified-in-same-path.mp3 in Resources */,
 				454789382120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
-				517AB4102408EE0900D88853 /* example-newframes-v4-written.mp3 in Resources */,
 				4546E7CC21CB86AE008502CF /* cover-v4.png in Resources */,
 				517AB40D2408EE0900D88853 /* example-newframes-v2-written.mp3 in Resources */,
 				51CDFE3224087A1300B06F29 /* example-newframes.mp3 in Resources */,
@@ -2396,20 +2391,20 @@
 				4546E7D521CBC844008502CF /* example-v4.mp3 in Resources */,
 				C5067297E8F35D74EABEC80C /* example-to-be-modified.mp3 in Resources */,
 				C5067A2CCCD84E8DEA001CB3 /* example-cover-png.png in Resources */,
+				5151CAE2240D9A30002A7C05 /* example-newframes-v3-written.mp3 in Resources */,
 				C5067ED2DFF6D822534E16D8 /* example-with-tag-jpg-v3.mp3 in Resources */,
 				C50677BDD0F9B6A711E0A400 /* example-v3-additional-data.mp3 in Resources */,
+				5151CAE5240D9A30002A7C05 /* example-newframes-v4-written.mp3 in Resources */,
 				C50677AED7E603CF7B613C8E /* example-v23.mp3 in Resources */,
 				C506745C3F50A01AFE352304 /* example-cover.jpg in Resources */,
 				C506722E2AEE065705B2D8F7 /* example-with-tag-already-setted.mp3 in Resources */,
 				5FAF8DAC21CED88D0049798C /* example-v4-additional-data.mp3 in Resources */,
 				C50677494ED96E785E2A50DE /* cover2.jpg in Resources */,
-				517AB4142408EE0900D88853 /* example-newframes-v3-written.mp3 in Resources */,
 				457352EA21C249C30017B75D /* example-v4-png.mp3 in Resources */,
 				C5067249E2E352C2A30A1663 /* example.mp3 in Resources */,
 				C506739BA111E9B2B8887C97 /* example-v23-png.mp3 in Resources */,
 				C5067617959593C6927B955D /* example-to-be-modified-in-same-path.mp3 in Resources */,
 				454789392120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
-				517AB4112408EE0900D88853 /* example-newframes-v4-written.mp3 in Resources */,
 				4546E7CD21CB86AE008502CF /* cover-v4.png in Resources */,
 				517AB40E2408EE0900D88853 /* example-newframes-v2-written.mp3 in Resources */,
 				51CDFE3324087A1300B06F29 /* example-newframes.mp3 in Resources */,
@@ -2432,20 +2427,20 @@
 				4546E7D621CBC844008502CF /* example-v4.mp3 in Resources */,
 				45541C17205996110025A8BF /* example-to-be-modified.mp3 in Resources */,
 				45541C18205996110025A8BF /* example-cover-png.png in Resources */,
+				5151CAE3240D9A30002A7C05 /* example-newframes-v3-written.mp3 in Resources */,
 				45541C19205996110025A8BF /* example-with-tag-jpg-v3.mp3 in Resources */,
 				45541C1A205996110025A8BF /* example-v3-additional-data.mp3 in Resources */,
+				5151CAE6240D9A30002A7C05 /* example-newframes-v4-written.mp3 in Resources */,
 				45541C1B205996110025A8BF /* example-v23.mp3 in Resources */,
 				45541C1C205996110025A8BF /* example-cover.jpg in Resources */,
 				45541C1D205996110025A8BF /* example-with-tag-already-setted.mp3 in Resources */,
 				5FAF8DAB21CED88C0049798C /* example-v4-additional-data.mp3 in Resources */,
 				45541C1E205996110025A8BF /* cover2.jpg in Resources */,
-				517AB4152408EE0900D88853 /* example-newframes-v3-written.mp3 in Resources */,
 				457352EB21C249C40017B75D /* example-v4-png.mp3 in Resources */,
 				45541C1F205996110025A8BF /* example.mp3 in Resources */,
 				45541C20205996110025A8BF /* example-v23-png.mp3 in Resources */,
 				45541C21205996110025A8BF /* example-to-be-modified-in-same-path.mp3 in Resources */,
 				4547893A2120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
-				517AB4122408EE0900D88853 /* example-newframes-v4-written.mp3 in Resources */,
 				4546E7CE21CB86AE008502CF /* cover-v4.png in Resources */,
 				517AB40F2408EE0900D88853 /* example-newframes-v2-written.mp3 in Resources */,
 				51CDFE3424087A1300B06F29 /* example-newframes.mp3 in Resources */,
@@ -2510,8 +2505,8 @@
 				458A0DF223452F910063DC4A /* FrameName.swift in Sources */,
 				452832622044C7BE00458375 /* ID3TagParserFactory.swift in Sources */,
 				4528325A2044C7BE00458375 /* FrameContentSizeParser.swift in Sources */,
+				5151CAD2240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */,
 				4562C1F8211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift in Sources */,
-				519C34DF240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */,
 				4528329E2044C7BE00458375 /* ID3FrameContentSizeCalculator.swift in Sources */,
 				452832A22044C7BE00458375 /* ID3TagCreator.swift in Sources */,
 				519C33E52405041E008F3BDE /* ID3ContentGroupingFrameCreator.swift in Sources */,
@@ -2535,7 +2530,6 @@
 				452832882044C7BE00458375 /* ID3FrameFlagsCreator.swift in Sources */,
 				4584521E21DD00800043FECD /* ID3FrameTrackPosition.swift in Sources */,
 				4562C1E221172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */,
-				519C344424050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */,
 				519C33D52405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */,
 				4528329C2044C7BE00458375 /* FrameContentSizeCalculator.swift in Sources */,
 				45D58CCE210CB85000E820C8 /* TimestampCreator.swift in Sources */,
@@ -2550,7 +2544,7 @@
 				45231DF221DC0A90008FDCE7 /* ID3FrameGenre.swift in Sources */,
 				4528AF0A210B833400CB7A2E /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
 				519C33D92405041E008F3BDE /* ID3EncoderSettingsFrameCreator.swift in Sources */,
-				519C34812405066A008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */,
+				519C34812405066A008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */,
 				452832582044C7BE00458375 /* FrameContentParser.swift in Sources */,
 				519C34692405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7C21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
@@ -2586,6 +2580,7 @@
 				519C34752405066A008F3BDE /* ID3MixArtistFrameContentParsingOperationFactory.swift in Sources */,
 				C5067DFA24C550CD872E8101 /* ID3AttachedPictureFrameConfiguration.swift in Sources */,
 				519C33DD2405041E008F3BDE /* ID3SubtitleFrameCreator.swift in Sources */,
+				5151CACD240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */,
 				519C34612405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */,
 				4528AF14210B83B400CB7A2E /* ID3GenreFrameContentParsingOperationFactory.swift in Sources */,
 				C506734B2C977C6DD38D6469 /* ID3GenreStringAdapter.swift in Sources */,
@@ -2603,7 +2598,6 @@
 				4528AF3C210B86E300CB7A2E /* ID3RecordingYearFrameContentParsingOperationFactory.swift in Sources */,
 				4528AEFE210B508400CB7A2E /* ID3RecordingTimeFrameContentParsingOperation.swift in Sources */,
 				45B4337121DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift in Sources */,
-				519C34DB240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */,
 				C5067C79EDA365A4B00C5687 /* TagPresence.swift in Sources */,
 				45537A5920932CCF009F639C /* StringToBytesAdapter.swift in Sources */,
 				C5067BB034AF777BFFBB32AE /* ID3TagPresence.swift in Sources */,
@@ -2625,8 +2619,9 @@
 				519C34112405041E008F3BDE /* ID3iTunesGroupingFrameCreator.swift in Sources */,
 				C5067634716C32B44E076420 /* ID3StringFrameCreator.swift in Sources */,
 				450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
-				519C34892405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */,
+				519C34892405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */,
 				C50671DE6CD2C6BD107AB811 /* TagProperties.swift in Sources */,
+				5151CAD7240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2652,7 +2647,7 @@
 				C5067F0530D557910B0EC3CD /* MockPaddingAdder.swift in Sources */,
 				C50670988CA3E37BCB646502 /* ID3TitleFrameCreatorTest.swift in Sources */,
 				C5067986B85BE4BE38C166ED /* ID3FrameFlagsCreatorTest.swift in Sources */,
-				519C3505240507D4008F3BDE /* ID3MovementIndexFrameCreatorTest.swift in Sources */,
+				519C3505240507D4008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift in Sources */,
 				519C3520240507D4008F3BDE /* ID3CopyrightFrameCreatorTest.swift in Sources */,
 				C5067BD2D0DA084ED571C2B1 /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				519C3538240507D4008F3BDE /* ID3UnsyncedLyricsFrameCreatorTest.swift in Sources */,
@@ -2666,7 +2661,7 @@
 				45775EDD210714EB00B1B3FE /* UInt16+Bytes.swift in Sources */,
 				519C350B240507D4008F3BDE /* ID3PublisherFrameCreatorTest.swift in Sources */,
 				C5067317C5D4E530E584629E /* PaddingAdderUsingNullCharTest.swift in Sources */,
-				519C3532240507D4008F3BDE /* ID3MovementNameFrameCreatorTest.swift in Sources */,
+				519C3532240507D4008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift in Sources */,
 				C5067144A4B3C378D9438BA7 /* PaddingRemoverUsingTrimming.swift in Sources */,
 				C50671D35F0DC730FA73D029 /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift in Sources */,
 				4562C1EC211737C100AFE22E /* ID3RecordingDayMonthFrameCreatorTest.swift in Sources */,
@@ -2677,6 +2672,7 @@
 				519C3511240507D4008F3BDE /* ID3PodcastDescriptionFrameCreatorTest.swift in Sources */,
 				45537A6F2093332F009F639C /* ID3ISO88591StringToByteAdapterTest.swift in Sources */,
 				519C353E240507D4008F3BDE /* ID3FileTypeFrameCreatorTest.swift in Sources */,
+				5151CADC240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift in Sources */,
 				519C3541240507D4008F3BDE /* ID3MixArtistFrameCreatorTest.swift in Sources */,
 				C5067C69D80DFCCBED793EA3 /* ID3TagPresenceTest.swift in Sources */,
 				4509671C2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */,
@@ -2685,13 +2681,11 @@
 				519C3526240507D4008F3BDE /* ID3PodcastCategoryFrameCreatorTest.swift in Sources */,
 				C5067D3173A1FE4A5F8A589B /* ID3TagEditorTestAcceptanceTest.swift in Sources */,
 				C50675EFA0C7A17E6A23758D /* MockFrameContentSizeParser.swift in Sources */,
-				519C3559240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift in Sources */,
 				455787F7204F129C00EE8756 /* MockPictureTypeAdapter.swift in Sources */,
 				519C3544240507D4008F3BDE /* ID3LyricistFrameCreatorTest.swift in Sources */,
 				519C3523240507D4008F3BDE /* ID3EncoderSettingsFrameCreatorTest.swift in Sources */,
 				C5067B280EA0FE66E2207456 /* ID3FrameSizeParserTest.swift in Sources */,
 				C5067BE6C579E689B413206A /* ID3FrameContentSizeParserTest.swift in Sources */,
-				519C35502405085D008F3BDE /* MockMovementIndexStringAdapter.swift in Sources */,
 				C506739C37F8E4AA11597067 /* ID3AttachedPictureFrameContentParsingOperationTest.swift in Sources */,
 				45775ED921070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */,
 				519C3535240507D4008F3BDE /* ID3PodcastIDFrameCreatorTest.swift in Sources */,
@@ -2760,8 +2754,8 @@
 				458A0DF323452FB80063DC4A /* FrameName.swift in Sources */,
 				452832632044C7BE00458375 /* ID3TagParserFactory.swift in Sources */,
 				4528325B2044C7BE00458375 /* FrameContentSizeParser.swift in Sources */,
+				5151CAD3240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */,
 				4562C1F9211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift in Sources */,
-				519C34E0240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */,
 				4528AF29210B854500CB7A2E /* ID3ArtistFrameContentParsingOperationFactory.swift in Sources */,
 				4528AF1F210B840900CB7A2E /* ID3RecordingTimeFrameContentParsingOperationFactory.swift in Sources */,
 				519C33E62405041E008F3BDE /* ID3ContentGroupingFrameCreator.swift in Sources */,
@@ -2785,7 +2779,6 @@
 				452832752044C7BE00458375 /* ID3Tag.swift in Sources */,
 				4584521F21DD00800043FECD /* ID3FrameTrackPosition.swift in Sources */,
 				452832612044C7BE00458375 /* FrameSizeParser.swift in Sources */,
-				519C344524050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */,
 				519C33D62405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */,
 				4562C1E321172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */,
 				4528AF05210B54E300CB7A2E /* ID3FrameStringContentParser.swift in Sources */,
@@ -2800,7 +2793,7 @@
 				45231DF321DC0A90008FDCE7 /* ID3FrameGenre.swift in Sources */,
 				4528329D2044C7BE00458375 /* FrameContentSizeCalculator.swift in Sources */,
 				519C33DA2405041E008F3BDE /* ID3EncoderSettingsFrameCreator.swift in Sources */,
-				519C34822405066A008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */,
+				519C34822405066A008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */,
 				452832812044C7BE00458375 /* PaddingRemoverUsingTrimming.swift in Sources */,
 				519C346A2405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7D21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
@@ -2836,6 +2829,7 @@
 				519C34762405066A008F3BDE /* ID3MixArtistFrameContentParsingOperationFactory.swift in Sources */,
 				4528324F2044C7BE00458375 /* ID3AttachedPictureFrameContentParsingOperation.swift in Sources */,
 				519C33DE2405041E008F3BDE /* ID3SubtitleFrameCreator.swift in Sources */,
+				5151CACE240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */,
 				519C34622405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */,
 				C5067178C64142CCD7395832 /* ID3RecordingYearFrameCreator.swift in Sources */,
 				C50674CB9172947676767FE1 /* ID3GenreFrameCreator.swift in Sources */,
@@ -2853,7 +2847,6 @@
 				458BED2B20928D39003C2E14 /* ID3StringEncoding.swift in Sources */,
 				450967212100C3E600A9CAA6 /* Mp3FileWriter.swift in Sources */,
 				45B4337221DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift in Sources */,
-				519C34DC240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */,
 				C5067D3671305D9286611AD8 /* ID3PictureTypeAdapter.swift in Sources */,
 				C5067BA34199807B389BC732 /* TagPresence.swift in Sources */,
 				C5067C339EFF7D8034981D2D /* ID3TagPresence.swift in Sources */,
@@ -2875,8 +2868,9 @@
 				519C34122405041E008F3BDE /* ID3iTunesGroupingFrameCreator.swift in Sources */,
 				450967172100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				4528AF15210B83B400CB7A2E /* ID3GenreFrameContentParsingOperationFactory.swift in Sources */,
-				519C348A2405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */,
+				519C348A2405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */,
 				C5067F6C02D1EDB1B142D76F /* TagProperties.swift in Sources */,
+				5151CAD8240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2902,7 +2896,7 @@
 				C5067EC50CC8AFB2D0EA8917 /* MockPaddingAdder.swift in Sources */,
 				C50676E00359E031D4AEAA62 /* ID3TitleFrameCreatorTest.swift in Sources */,
 				C5067BB89B579AC95DC810DA /* ID3FrameFlagsCreatorTest.swift in Sources */,
-				519C3506240507D4008F3BDE /* ID3MovementIndexFrameCreatorTest.swift in Sources */,
+				519C3506240507D4008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift in Sources */,
 				519C3521240507D4008F3BDE /* ID3CopyrightFrameCreatorTest.swift in Sources */,
 				C50673F417940FFC88D07142 /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				519C3539240507D4008F3BDE /* ID3UnsyncedLyricsFrameCreatorTest.swift in Sources */,
@@ -2916,7 +2910,7 @@
 				45775EDE210714EB00B1B3FE /* UInt16+Bytes.swift in Sources */,
 				519C350C240507D4008F3BDE /* ID3PublisherFrameCreatorTest.swift in Sources */,
 				C5067B5F4001A87FBDC6DDA7 /* PaddingAdderUsingNullCharTest.swift in Sources */,
-				519C3533240507D4008F3BDE /* ID3MovementNameFrameCreatorTest.swift in Sources */,
+				519C3533240507D4008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift in Sources */,
 				C5067BF5D2ECC627CED7FF7C /* PaddingRemoverUsingTrimming.swift in Sources */,
 				C5067FAC9247C189C8FFFAFA /* UInt32ToByteArrayAdapterUsingUnsafePointerTest.swift in Sources */,
 				4562C1ED211737C100AFE22E /* ID3RecordingDayMonthFrameCreatorTest.swift in Sources */,
@@ -2927,6 +2921,7 @@
 				519C3512240507D4008F3BDE /* ID3PodcastDescriptionFrameCreatorTest.swift in Sources */,
 				45537A702093332F009F639C /* ID3ISO88591StringToByteAdapterTest.swift in Sources */,
 				519C353F240507D4008F3BDE /* ID3FileTypeFrameCreatorTest.swift in Sources */,
+				5151CADD240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift in Sources */,
 				519C3542240507D4008F3BDE /* ID3MixArtistFrameCreatorTest.swift in Sources */,
 				C50679EED08937A1A66C8978 /* ID3TagPresenceTest.swift in Sources */,
 				4509671D2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */,
@@ -2935,13 +2930,11 @@
 				519C3527240507D4008F3BDE /* ID3PodcastCategoryFrameCreatorTest.swift in Sources */,
 				C5067239129F90566D38ED60 /* ID3TagEditorTestAcceptanceTest.swift in Sources */,
 				C506762688167A78895B3CD5 /* MockFrameContentSizeParser.swift in Sources */,
-				519C355A240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift in Sources */,
 				455787F6204F129C00EE8756 /* MockPictureTypeAdapter.swift in Sources */,
 				519C3545240507D4008F3BDE /* ID3LyricistFrameCreatorTest.swift in Sources */,
 				519C3524240507D4008F3BDE /* ID3EncoderSettingsFrameCreatorTest.swift in Sources */,
 				C506754BAFA5F03009269BD7 /* ID3FrameSizeParserTest.swift in Sources */,
 				C5067A2D7EF57EC5AF3551E3 /* ID3FrameContentSizeParserTest.swift in Sources */,
-				519C35512405085D008F3BDE /* MockMovementIndexStringAdapter.swift in Sources */,
 				C506720DC977BBBB6485B22C /* ID3AttachedPictureFrameContentParsingOperationTest.swift in Sources */,
 				45775EDA21070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */,
 				519C3536240507D4008F3BDE /* ID3PodcastIDFrameCreatorTest.swift in Sources */,
@@ -3010,8 +3003,8 @@
 				458A0DF423452FB90063DC4A /* FrameName.swift in Sources */,
 				45541B9220598FA60025A8BF /* ID3FrameContentSizeCalculator.swift in Sources */,
 				45541B9320598FA60025A8BF /* ID3TagCreatorFactory.swift in Sources */,
+				5151CAD4240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */,
 				4562C1FA211742A600AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift in Sources */,
-				519C34E1240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */,
 				4528AF2A210B854500CB7A2E /* ID3ArtistFrameContentParsingOperationFactory.swift in Sources */,
 				4528AF20210B840900CB7A2E /* ID3RecordingTimeFrameContentParsingOperationFactory.swift in Sources */,
 				519C33E72405041E008F3BDE /* ID3ContentGroupingFrameCreator.swift in Sources */,
@@ -3035,7 +3028,6 @@
 				45541B9A20598FA60025A8BF /* PaddingRemover.swift in Sources */,
 				4584522021DD00800043FECD /* ID3FrameTrackPosition.swift in Sources */,
 				45541B9B20598FA60025A8BF /* PaddingAdder.swift in Sources */,
-				519C344624050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */,
 				519C33D72405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */,
 				4562C1E421172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */,
 				4528AF06210B54E300CB7A2E /* ID3FrameStringContentParser.swift in Sources */,
@@ -3050,7 +3042,7 @@
 				45231DF421DC0A90008FDCE7 /* ID3FrameGenre.swift in Sources */,
 				45541B9E20598FA60025A8BF /* ID3AttachedPictureFrameContentParsingOperation.swift in Sources */,
 				519C33DB2405041E008F3BDE /* ID3EncoderSettingsFrameCreator.swift in Sources */,
-				519C34832405066B008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */,
+				519C34832405066B008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */,
 				45541B9F20598FA60025A8BF /* FrameContentParsingOperation.swift in Sources */,
 				519C346B2405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7E21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
@@ -3086,6 +3078,7 @@
 				519C34772405066A008F3BDE /* ID3MixArtistFrameContentParsingOperationFactory.swift in Sources */,
 				45541BAB20598FA60025A8BF /* ID3FrameSizeParser.swift in Sources */,
 				519C33DF2405041E008F3BDE /* ID3SubtitleFrameCreator.swift in Sources */,
+				5151CACF240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */,
 				519C34632405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */,
 				45541BAC20598FA60025A8BF /* FrameSizeParser.swift in Sources */,
 				45541BAD20598FA60025A8BF /* ID3TagParserFactory.swift in Sources */,
@@ -3103,7 +3096,6 @@
 				4584521221DD00780043FECD /* ID3PictureFormat.swift in Sources */,
 				4528AF39210B869C00CB7A2E /* ID3TitleFrameContentParsingOperationFactory.swift in Sources */,
 				45B4337321DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift in Sources */,
-				519C34DD240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */,
 				45541BB420598FA60025A8BF /* ID3TagConfiguration.swift in Sources */,
 				45FA7DCE209917C8000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */,
 				458BED2A20928D38003C2E14 /* ID3StringEncoding.swift in Sources */,
@@ -3125,8 +3117,9 @@
 				519C34132405041E008F3BDE /* ID3iTunesGroupingFrameCreator.swift in Sources */,
 				450967182100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */,
 				4528AF16210B83B400CB7A2E /* ID3GenreFrameContentParsingOperationFactory.swift in Sources */,
-				519C348B2405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */,
+				519C348B2405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */,
 				45541BC020598FA60025A8BF /* ID3Version.swift in Sources */,
+				5151CAD9240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3152,7 +3145,7 @@
 				45541BF9205995F60025A8BF /* ID3FrameFlagsCreatorTest.swift in Sources */,
 				45541BFA205995F60025A8BF /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				45541BFB205995F60025A8BF /* ID3TagCreatorTest.swift in Sources */,
-				519C3507240507D4008F3BDE /* ID3MovementIndexFrameCreatorTest.swift in Sources */,
+				519C3507240507D4008F3BDE /* ID3ITunesMovementIndexFrameCreatorTest.swift in Sources */,
 				519C3522240507D4008F3BDE /* ID3CopyrightFrameCreatorTest.swift in Sources */,
 				45541BFC205995F60025A8BF /* MockFrameFromStringContentCreator.swift in Sources */,
 				519C353A240507D4008F3BDE /* ID3UnsyncedLyricsFrameCreatorTest.swift in Sources */,
@@ -3166,7 +3159,7 @@
 				45775EDF210714EB00B1B3FE /* UInt16+Bytes.swift in Sources */,
 				519C350D240507D4008F3BDE /* ID3PublisherFrameCreatorTest.swift in Sources */,
 				45541C00205995F60025A8BF /* MockPaddingAdder.swift in Sources */,
-				519C3534240507D4008F3BDE /* ID3MovementNameFrameCreatorTest.swift in Sources */,
+				519C3534240507D4008F3BDE /* ID3ITunesMovementNameFrameCreatorTest.swift in Sources */,
 				45541C01205995F60025A8BF /* MockUInt32ToByteArrayAdapter.swift in Sources */,
 				45541C02205995F60025A8BF /* MockFrameContentSizeParser.swift in Sources */,
 				4562C1EE211737C100AFE22E /* ID3RecordingDayMonthFrameCreatorTest.swift in Sources */,
@@ -3177,6 +3170,7 @@
 				519C3513240507D4008F3BDE /* ID3PodcastDescriptionFrameCreatorTest.swift in Sources */,
 				4509671E2100C0A600A9CAA6 /* Mp3FileReaderTest.swift in Sources */,
 				519C3540240507D4008F3BDE /* ID3FileTypeFrameCreatorTest.swift in Sources */,
+				5151CADE240D969B002A7C05 /* ID3ItunesMovementCountFrameCreatorTest.swift in Sources */,
 				519C3543240507D4008F3BDE /* ID3MixArtistFrameCreatorTest.swift in Sources */,
 				45541C07205995F60025A8BF /* PaddingAdderUsingNullCharTest.swift in Sources */,
 				45541C08205995F60025A8BF /* PaddingRemoverUsingTrimming.swift in Sources */,
@@ -3185,13 +3179,11 @@
 				519C3528240507D4008F3BDE /* ID3PodcastCategoryFrameCreatorTest.swift in Sources */,
 				45541C0A205995F60025A8BF /* ID3TagSizeParserTest.swift in Sources */,
 				45541C0B205995F60025A8BF /* ID3TagVersionParserTest.swift in Sources */,
-				519C355B240508CA008F3BDE /* ID3MovementIndexStringAdapterTest.swift in Sources */,
 				45541C0C205995F60025A8BF /* ID3FrameSizeParserTest.swift in Sources */,
 				519C3546240507D4008F3BDE /* ID3LyricistFrameCreatorTest.swift in Sources */,
 				519C3525240507D4008F3BDE /* ID3EncoderSettingsFrameCreatorTest.swift in Sources */,
 				45541C0D205995F60025A8BF /* ID3FrameContentSizeParserTest.swift in Sources */,
 				45775EDB21070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */,
-				519C35522405085D008F3BDE /* MockMovementIndexStringAdapter.swift in Sources */,
 				45541C0E205995F60025A8BF /* ID3AttachedPictureFrameContentParsingOperationTest.swift in Sources */,
 				45541C0F205995F60025A8BF /* ID3FrameStringContentParsingOperationTest.swift in Sources */,
 				519C3537240507D4008F3BDE /* ID3PodcastIDFrameCreatorTest.swift in Sources */,
@@ -3260,8 +3252,8 @@
 				458A0DF523452FBA0063DC4A /* FrameName.swift in Sources */,
 				45F833FD205905EF0046C804 /* ID3FrameContentSizeCalculator.swift in Sources */,
 				45F833FE205905EF0046C804 /* ID3TagCreatorFactory.swift in Sources */,
+				5151CAD5240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift in Sources */,
 				4528AF2B210B854500CB7A2E /* ID3ArtistFrameContentParsingOperationFactory.swift in Sources */,
-				519C34E2240506C0008F3BDE /* ID3ItunesMovementIndexStringAdapter.swift in Sources */,
 				4528AF21210B840900CB7A2E /* ID3RecordingTimeFrameContentParsingOperationFactory.swift in Sources */,
 				45F833FF205905EF0046C804 /* ID3TagCreator.swift in Sources */,
 				519C33E82405041E008F3BDE /* ID3ContentGroupingFrameCreator.swift in Sources */,
@@ -3285,7 +3277,6 @@
 				45F83405205905EF0046C804 /* PaddingRemover.swift in Sources */,
 				4584522121DD00800043FECD /* ID3FrameTrackPosition.swift in Sources */,
 				45F83406205905EF0046C804 /* PaddingAdder.swift in Sources */,
-				519C344724050578008F3BDE /* ID3FrameMovementIndex.swift in Sources */,
 				519C33D82405041E008F3BDE /* ID3ItunesMovementIndexFrameCreator.swift in Sources */,
 				4562C1E521172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */,
 				4528AF07210B54E300CB7A2E /* ID3FrameStringContentParser.swift in Sources */,
@@ -3300,7 +3291,7 @@
 				45231DF521DC0A90008FDCE7 /* ID3FrameGenre.swift in Sources */,
 				45F83409205905EF0046C804 /* ID3AttachedPictureFrameContentParsingOperation.swift in Sources */,
 				519C33DC2405041E008F3BDE /* ID3EncoderSettingsFrameCreator.swift in Sources */,
-				519C34842405066B008F3BDE /* ID3MovementIndexFrameContentParsingOperationFactory.swift in Sources */,
+				519C34842405066B008F3BDE /* ID3ItunesMovementIndexFrameContentParsingOperationFactory.swift in Sources */,
 				45F8340A205905EF0046C804 /* FrameContentParsingOperation.swift in Sources */,
 				519C346C2405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7F21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
@@ -3336,6 +3327,7 @@
 				519C34782405066A008F3BDE /* ID3MixArtistFrameContentParsingOperationFactory.swift in Sources */,
 				45F83416205905EF0046C804 /* ID3FrameSizeParser.swift in Sources */,
 				519C33E02405041E008F3BDE /* ID3SubtitleFrameCreator.swift in Sources */,
+				5151CAD0240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */,
 				519C34642405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */,
 				45F83417205905EF0046C804 /* FrameSizeParser.swift in Sources */,
 				45F83418205905EF0046C804 /* ID3TagParserFactory.swift in Sources */,
@@ -3353,7 +3345,6 @@
 				4584521321DD00780043FECD /* ID3PictureFormat.swift in Sources */,
 				4528AF3A210B869C00CB7A2E /* ID3TitleFrameContentParsingOperationFactory.swift in Sources */,
 				45B4337421DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift in Sources */,
-				519C34DE240506C0008F3BDE /* ItunesMovementIndexStringAdapter.swift in Sources */,
 				45F8341F205905EF0046C804 /* ID3TagConfiguration.swift in Sources */,
 				45FA7DCF209917C8000A7484 /* ID3AlbumArtistFrameCreator.swift in Sources */,
 				458BED2920928D37003C2E14 /* ID3StringEncoding.swift in Sources */,
@@ -3375,8 +3366,9 @@
 				519C34142405041E008F3BDE /* ID3iTunesGroupingFrameCreator.swift in Sources */,
 				4528AF17210B83B400CB7A2E /* ID3GenreFrameContentParsingOperationFactory.swift in Sources */,
 				4562C1FD21174B9F00AFE22E /* ID3RecordingHourMinuteFrameContentParsingOperationFactory.swift in Sources */,
-				519C348C2405066B008F3BDE /* ID3MovementNameFrameContentParsingOperationFactory.swift in Sources */,
+				519C348C2405066B008F3BDE /* ID3ITunesMovementNameFrameContentParsingOperationFactory.swift in Sources */,
 				45F8342B205905EF0046C804 /* ID3Version.swift in Sources */,
+				5151CADA240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

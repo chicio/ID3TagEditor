@@ -84,8 +84,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.ITunesMovementName]?.id3Identifier, "MVNM")
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V3")
         XCTAssertEqual(id3Tag?.frames[.ITunesMovementIndex]?.id3Identifier, "MVIN")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameItunesMovementIndex)?.index, 6)
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameItunesMovementIndex)?.totalMovements, 13)
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
         XCTAssertEqual(id3Tag?.frames[.PodcastCategory]?.id3Identifier, "TCAT")
         XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content, "PodcastCategory V3")
         XCTAssertEqual(id3Tag?.frames[.PodcastDescription]?.id3Identifier, "TDES")
@@ -134,8 +134,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.MixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V4")
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V4")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameItunesMovementIndex)?.index, 6)
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameItunesMovementIndex)?.totalMovements, 13)
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
         XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.id3Identifier, "TCAT")
         XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content, "PodcastCategory V4")
         XCTAssertEqual((id3Tag?.frames[.PodcastDescription] as? ID3FrameWithStringContent)?.id3Identifier, "TDES")
@@ -211,7 +211,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .MediaType : ID3FrameWithStringContent(content: "MediaType V3"),
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V3"),
                 .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V3"),
-                .ITunesMovementIndex : ID3FrameItunesMovementIndex(index: 6, totalMovements: 13),
+                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
+                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 13),
                 .PodcastCategory : ID3FrameWithStringContent(content: "PodcastCategory V3"),
                 .PodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V3"),
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
@@ -254,7 +255,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .MediaType : ID3FrameWithStringContent(content: "MediaType V4"),
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V4"),
                 .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V4"),
-                .ITunesMovementIndex : ID3FrameItunesMovementIndex(index: 6, totalMovements: 13),
+                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
+                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 13),
                 .PodcastCategory : ID3FrameWithStringContent(content: "PodcastCategory V4"),
                 .PodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V4"),
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),

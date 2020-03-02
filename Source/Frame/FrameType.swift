@@ -24,6 +24,7 @@ enum FrameType: String, Equatable {
     case MixArtist = "mixArtist"
     case ITunesMovementName = "iTunesMovementName"
     case ITunesMovementIndex = "iTunesMovementIndex"
+    case ITunesMovementCount = "iTunesMovementCount"
     case PodcastCategory = "podcastCategory"
     case PodcastDescription = "podcastDescription"
     case PodcastID = "podcastID"
