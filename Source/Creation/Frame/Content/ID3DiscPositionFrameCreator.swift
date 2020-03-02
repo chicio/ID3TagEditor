@@ -17,7 +17,7 @@ class ID3DiscPositionFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let discPositionFrame = id3Tag.frames[.DiscPosition] as? ID3FrameDiscPosition {
+        if let discPositionFrame = id3Tag.frames[.DiscPosition] as? ID3FramePartOfTotal {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
@@ -32,9 +32,9 @@ class ID3DiscPositionFrameCreator: ID3FrameCreatorsChain {
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(discPosition: ID3FrameDiscPosition) -> String {
-        var discPositionString = String(discPosition.position)
-        if let validTotalDiscs = discPosition.totalDiscs {
+    private func adapt(discPosition: ID3FramePartOfTotal) -> String {
+        var discPositionString = String(discPosition.part)
+        if let validTotalDiscs = discPosition.total {
             discPositionString = discPositionString + "/\(validTotalDiscs)"
         }
         return discPositionString

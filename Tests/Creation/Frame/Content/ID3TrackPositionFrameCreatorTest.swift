@@ -29,7 +29,7 @@ class ID3TrackPositionCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.TrackPosition : ID3FrameTrackPosition(position: 1, totalTracks: 10)]
+            frames: [.TrackPosition : ID3FramePartOfTotal(part: 1, total: 10)]
         )
         let id3GenreFrameCreator = ID3TrackPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(

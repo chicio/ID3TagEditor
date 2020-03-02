@@ -9,26 +9,26 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3DiscPositionStringAdapterTest: XCTestCase {
-    let discPositionStringAdapter = ID3DiscPositionStringAdapter()
+    let discPositionStringAdapter = ID3PartOfTotalStringAdapter()
 
     func testAdaptDiscPositionWithTotalDiscs() {
-        let discPosition = discPositionStringAdapter.adapt(discPosition: "1/3")
+        let discPosition = discPositionStringAdapter.adapt(partOfTotal: "1/3")
 
-        XCTAssertEqual(discPosition.position, 1)
-        XCTAssertEqual(discPosition.totalDiscs, 3)
+        XCTAssertEqual(discPosition.part, 1)
+        XCTAssertEqual(discPosition.total, 3)
     }
 
     func testAdaptDiscPositionWithoutTotalDiscs() {
-        let discPosition = discPositionStringAdapter.adapt(discPosition: "1")
+        let discPosition = discPositionStringAdapter.adapt(partOfTotal: "1")
 
-        XCTAssertEqual(discPosition.position, 1)
-        XCTAssertNil(discPosition.totalDiscs)
+        XCTAssertEqual(discPosition.part, 1)
+        XCTAssertNil(discPosition.total)
     }
 
     func testAdaptNotANumberDiscPosition() {
-        let discPosition = discPositionStringAdapter.adapt(discPosition: "::invalid::")
+        let discPosition = discPositionStringAdapter.adapt(partOfTotal: "::invalid::")
 
-        XCTAssertEqual(discPosition.position, 0)
-        XCTAssertNil(discPosition.totalDiscs)
+        XCTAssertEqual(discPosition.part, 0)
+        XCTAssertNil(discPosition.total)
     }
 }

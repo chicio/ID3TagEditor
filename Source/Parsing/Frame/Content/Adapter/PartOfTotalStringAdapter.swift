@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TrackPositionStringAdapter {
-    func adapt(trackPosition: String) -> ID3FrameTrackPosition
+protocol PartOfTotalStringAdapter {
+    func adapt(partOfTotal: String) -> ID3FramePartOfTotal
 }

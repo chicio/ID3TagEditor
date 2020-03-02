@@ -46,8 +46,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V2")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPA")
-        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FrameDiscPosition)?.position, 1)
-        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FrameDiscPosition)?.totalDiscs, 3)
+        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
+        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
     }
     
     func testReadNewFramesV3() {
@@ -63,8 +63,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.ContentGrouping]?.id3Identifier, "TIT1")
         XCTAssertEqual((id3Tag?.frames[.ContentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V3")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPOS")
-        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FrameDiscPosition)?.position, 1)
-        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FrameDiscPosition)?.totalDiscs, 3)
+        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
+        XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
         XCTAssertEqual(id3Tag?.frames[.EncodedBy]?.id3Identifier, "TENC")
         XCTAssertEqual((id3Tag?.frames[.EncodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V3")
         XCTAssertEqual(id3Tag?.frames[.EncoderSettings]?.id3Identifier, "TSSE")
@@ -166,7 +166,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V2"),
                 .ContentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V2"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V2"),
-                .DiscPosition : ID3FrameDiscPosition(position: 1, totalDiscs: 3),
+                .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V2"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V2"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V2"),
@@ -201,7 +201,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V3"),
                 .ContentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V3"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V3"),
-                .DiscPosition : ID3FrameDiscPosition(position: 1, totalDiscs: 3),
+                .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V3"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V3"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V3"),
@@ -245,7 +245,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V4"),
                 .ContentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V4"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V4"),
-                .DiscPosition : ID3FrameDiscPosition(position: 1, totalDiscs: 3),
+                .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V4"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V4"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V4"),

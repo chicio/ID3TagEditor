@@ -96,8 +96,8 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description, "Metalcore")
         XCTAssertEqual(id3Tag?.frames[.TrackPosition]?.id3Identifier, "TRCK")
         XCTAssertEqual(id3Tag?.frames[.TrackPosition]?.size, 15)
-        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position, 2)
-        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.totalTracks, 9)
+        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.part, 2)
+        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.total, 9)
         XCTAssertEqual(id3Tag?.frames[.RecordingDayMonth]?.id3Identifier, "TDAT")
         XCTAssertEqual(id3Tag?.frames[.RecordingDayMonth]?.size, 16)
         XCTAssertEqual((id3Tag?.frames[.RecordingDayMonth] as? ID3FrameRecordingDayMonth)?.day, 5)
@@ -178,7 +178,7 @@ class ID3TagEditorTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content, "Laraaji")
         XCTAssertEqual((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content, "Vision Songs Vol. 1")
         XCTAssertEqual((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year, 2018)
-        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position, 10)
+        XCTAssertEqual((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.part, 10)
     }
     
     
@@ -354,7 +354,7 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
                 .AttachedPicture(.BackCover) : ID3FrameAttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg),
                 .Genre :  ID3FrameGenre(genre: .Metal, description: "Metalcore"),
-                .TrackPosition : ID3FrameTrackPosition(position: 2, totalTracks: 9),
+                .TrackPosition : ID3FramePartOfTotal(part: 2, total: 9),
                 .RecordingYear : ID3FrameRecordingYear(year: 2018),
                 .RecordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
@@ -389,7 +389,7 @@ class ID3TagEditorTest: XCTestCase {
                 .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: artFront, type: .FrontCover, format: .Jpeg),
                 .AttachedPicture(.BackCover) : ID3FrameAttachedPicture(picture: artBack, type: .BackCover, format: .Jpeg),
                 .Genre :  ID3FrameGenre(genre: .Metal, description: "Metalcore"),
-                .TrackPosition : ID3FrameTrackPosition(position: 2, totalTracks: 9),
+                .TrackPosition : ID3FramePartOfTotal(part: 2, total: 9),
                 .RecordingYear : ID3FrameRecordingYear(year: 2018),
                 .RecordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .RecordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
