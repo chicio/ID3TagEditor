@@ -182,6 +182,7 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `MixArtist`
 * `iTunesMovementName`
 * `iTunesMovementIndex` (aka movement number)
+* `iTunesMovementCount`
 * `PodcastCategory`
 * `PodcastDescription`
 * `PodcastID`
