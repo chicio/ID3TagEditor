@@ -13,7 +13,7 @@
     <a title="ID3TagEditor  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor Docs</a> (0% documented)</p>
+        <p><a href="index.html">ID3TagEditor Docs</a> (100% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -26,6 +26,87 @@
     <div class="content-wrapper">
       <nav class="sidebar">
         <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ID3Frame.html">ID3Frame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameAttachedPicture.html">ID3FrameAttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameGenre.html">ID3FrameGenre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingDayMonth.html">ID3FrameRecordingDayMonth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3Tag.html">ID3Tag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ID3TagEditor.html">ID3TagEditor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/FrameName.html">FrameName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ID3Genre.html">ID3Genre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ID3PictureFormat.html">ID3PictureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ID3PictureType.html">ID3PictureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ID3TagEditorError.html">ID3TagEditorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ID3Version.html">ID3Version</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/RecordingDate.html">RecordingDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RecordingDateTime.html">RecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RecordingTime.html">RecordingTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/TagProperties.html">TagProperties</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -118,7 +199,7 @@ let package = Package(
 <li>Linux Ubuntu</li>
 </ul>
 
-<p>To read the ID3 tag of an mp3 file you can choose between two api contained in the <code>ID3TagEditor</code> class:</p>
+<p>To read the ID3 tag of an mp3 file you can choose between two api contained in the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class:</p>
 
 <ul>
 <li><code>public func read(from path: String) throws -&gt; ID3Tag?</code></li>
@@ -149,7 +230,7 @@ let package = Package(
 <span class="p">}</span>  
 </code></pre>
 
-<p>To write a new ID3 tag into an mp3 file you can choose between two api contained in the <code>ID3TagEditor</code> class:</p>
+<p>To write a new ID3 tag into an mp3 file you can choose between two api contained in the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class:</p>
 
 <ul>
 <li><code>public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws</code></li>
@@ -179,26 +260,24 @@ let package = Package(
 <span class="p">}</span>    
 </code></pre>
 
-<p>The above methods use the <code>ID3Tag</code> class to describe a valid ID3 tag. This class contains the tag properties in the field <code>properties</code> and the 
+<p>The above methods use the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> class to describe a valid ID3 tag. This class contains the tag properties in the field <code>properties</code> and the 
 list of frames in the <code>frames</code> properties.
-Three versions of the tag are supported. They are described in the <code>ID3Version</code> enum:</p>
+Three versions of the tag are supported. They are described in the <code><a href="Enums/ID3Version.html">ID3Version</a></code> enum:</p>
 <div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.2, described by the enum value <code>.version2</code><br>
 
-</div>
-<div class="aside aside-version">
+</div><div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.3, described by the enum value <code>.version3</code><br>
 
-</div>
-<div class="aside aside-version">
+</div><div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.4, described by the enum value <code>.version4</code>
 
 </div>
 
-<p>The ID3 supported frames supported are (see the enum <code>FrameName</code>):</p>
+<p>The ID3 supported frames supported are (see the enum <code><a href="Enums/FrameName.html">FrameName</a></code>):</p>
 
 <ul>
 <li><code>.Artist</code>, artists frame</li>
@@ -208,7 +287,7 @@ Three versions of the tag are supported. They are described in the <code>ID3Vers
 <li><code>.RecordingDayMonth</code>, recording day month frame available only for ID3 v2.2/v2.3</li>
 <li><code>.RecordingYear</code>, recording year frame available only for ID3 v2.2/v2.3</li>
 <li><code>.RecordingHourMinute</code>, recording hour minute frame available only for ID3 v2.2/v2.3</li>
-<li><code>.RecordingDateTime</code>, recording date time frame available only for ID3 v2.4</li>
+<li><code><a href="Structs/RecordingDateTime.html">.RecordingDateTime</a></code>, recording date time frame available only for ID3 v2.4</li>
 <li><code>.TrackPosition</code>, track position frame</li>
 <li><code>.Genre</code>, the genre frame</li>
 <li><code>.AttachedPicture(_ pictureType: ID3PictureType)</code> the attached picture frame</li>
@@ -270,7 +349,7 @@ supported target.</p>
         </section>
         <section id="footer">
           <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-03-04)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
