@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     .Album : ID3FrameWithStringContent(content: albumTextField.text ?? ""),
                     .RecordingYear : ID3FrameRecordingYear(year: 2019),
                     .Genre : ID3FrameGenre(genre: .ClassicRock, description: "Rock & Roll"),
-                    .TrackPosition: ID3FrameTrackPosition(position: 2, totalTracks: 9)
+                    .TrackPosition: ID3FramePartOfTotal(part: 2, total: 9)
                 ]
             )
             let documentDirectory = try FileManager.default.url(
