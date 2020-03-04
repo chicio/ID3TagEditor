@@ -41,6 +41,90 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let composerFrameCreator = ID3ComposerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let conductorFrameCreator = ID3ConductorFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let contentGroupingFrameCreator = ID3ContentGroupingFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let copyrightFrameCreator = ID3CopyrightFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let encodedByFrameCreator = ID3EncodedByFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let encoderSettingsFrameCreator = ID3EncoderSettingsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let fileOwnerFrameCreator = ID3FileOwnerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let fileTypeFrameCreator = ID3FileTypeFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let lyricistFrameCreator = ID3LyricistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let mediaTypeFrameCreator = ID3MediaTypeFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let mixArtistFrameCreator = ID3MixArtistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let iTunesMovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastCategoryFrameCreator = ID3PodcastCategoryFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastDescriptionFrameCreator = ID3PodcastDescriptionFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastIDFrameCreator = ID3PodcastIDFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastKeywordsFrameCreator = ID3PodcastKeywordsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let publisherFrameCreator = ID3PublisherFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let subtitleFrameCreator = ID3SubtitleFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let titleFrameCreator = ID3TitleFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -73,6 +157,18 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let discPositionFrameCreator = ID3DiscPositionFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let iTunesMovementIndexFrameCreator = ID3ItunesMovementIndexFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let iTunesMovementCountFrameCreator = ID3ItunesMovementCountFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let recordingDateTimeCreator = ID3RecordingDateTimeFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration,
@@ -88,6 +184,30 @@ class ID3FrameCreatorsChainFactory {
         recordingDateTimeCreator.nextCreator = genreFrameCreator
         genreFrameCreator.nextCreator = trackPositionFrameCreator
         trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
+        attachedPictureFrameCreator.nextCreator = composerFrameCreator
+        composerFrameCreator.nextCreator = conductorFrameCreator
+        conductorFrameCreator.nextCreator = contentGroupingFrameCreator
+        contentGroupingFrameCreator.nextCreator = copyrightFrameCreator
+        copyrightFrameCreator.nextCreator = encodedByFrameCreator
+        encodedByFrameCreator.nextCreator = encoderSettingsFrameCreator
+        encoderSettingsFrameCreator.nextCreator = fileOwnerFrameCreator
+        fileOwnerFrameCreator.nextCreator = fileTypeFrameCreator
+        fileTypeFrameCreator.nextCreator = iTunesGroupingFrameCreator
+        iTunesGroupingFrameCreator.nextCreator = lyricistFrameCreator
+        lyricistFrameCreator.nextCreator = mediaTypeFrameCreator
+        mediaTypeFrameCreator.nextCreator = mixArtistFrameCreator
+        mixArtistFrameCreator.nextCreator = iTunesMovementNameFrameCreator
+        iTunesMovementNameFrameCreator.nextCreator = iTunesMovementIndexFrameCreator
+        iTunesMovementIndexFrameCreator.nextCreator = iTunesMovementCountFrameCreator
+        iTunesMovementCountFrameCreator.nextCreator = podcastCategoryFrameCreator
+        podcastCategoryFrameCreator.nextCreator = podcastDescriptionFrameCreator
+        podcastDescriptionFrameCreator.nextCreator = podcastIDFrameCreator
+        podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator
+        podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
+        publisherFrameCreator.nextCreator = subtitleFrameCreator
+        subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
+        unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
+        discPositionFrameCreator.nextCreator = userDefinedTextInformationFrameCreator
         return albumFrameCreator
     }
 }

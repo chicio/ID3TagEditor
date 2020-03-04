@@ -9,26 +9,26 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3TrackPositionStringAdapterTest: XCTestCase {
-    let trackPositionStringAdapter = ID3TrackPositionStringAdapter()
+    let trackPositionStringAdapter = ID3PartOfTotalStringAdapter()
 
     func testAdaptTrackPositionWithTotalTrack() {
-        let trackPosition = trackPositionStringAdapter.adapt(trackPosition: "2/9")
+        let trackPosition = trackPositionStringAdapter.adapt(partOfTotal: "2/9")
 
-        XCTAssertEqual(trackPosition.position, 2)
-        XCTAssertEqual(trackPosition.totalTracks, 9)
+        XCTAssertEqual(trackPosition.part, 2)
+        XCTAssertEqual(trackPosition.total, 9)
     }
 
     func testAdaptTrackPositionWithoutTotalTracks() {
-        let trackPosition = trackPositionStringAdapter.adapt(trackPosition: "2")
+        let trackPosition = trackPositionStringAdapter.adapt(partOfTotal: "2")
 
-        XCTAssertEqual(trackPosition.position, 2)
-        XCTAssertNil(trackPosition.totalTracks)
+        XCTAssertEqual(trackPosition.part, 2)
+        XCTAssertNil(trackPosition.total)
     }
 
     func testAdaptNotANumberTrackPosition() {
-        let trackPosition = trackPositionStringAdapter.adapt(trackPosition: "::invalid::")
+        let trackPosition = trackPositionStringAdapter.adapt(partOfTotal: "::invalid::")
 
-        XCTAssertEqual(trackPosition.position, 0)
-        XCTAssertNil(trackPosition.totalTracks)
+        XCTAssertEqual(trackPosition.part, 0)
+        XCTAssertNil(trackPosition.total)
     }
 }
