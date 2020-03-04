@@ -1,6 +1,13 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.1.0)
+Release date: 2020-03-04
+
+#### Added
+- 25 new frames added
+
+
 ## [3.0.1](https://github.com/chicio/ID3TagEditor/releases/tag/3.0.1)
 Release date: 2019-11-04
 
