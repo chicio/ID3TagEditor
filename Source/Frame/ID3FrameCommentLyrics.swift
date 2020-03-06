@@ -45,7 +45,7 @@ public class ID3FrameCommentLyrics: ID3Frame, Equatable, CustomDebugStringConver
 
      - returns: true if the language and content description values are the same, else false.
      */
-    public static func ==(lhs: ID3FrameComment, rhs: ID3FrameComment) -> Bool {
+    public static func ==(lhs: ID3FrameCommentLyrics, rhs: ID3FrameCommentLyrics) -> Bool {
         return lhs.contentDescription == rhs.contentDescription && lhs.language == rhs.language
     }
 }
