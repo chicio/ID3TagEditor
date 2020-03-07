@@ -12,6 +12,7 @@ class ID3UnsyncedLyricsFrameContentParsingOperationFactory {
         return ID3FrameStringContentParsingOperationFactory.make() { (language: String?, contentDescription: String, contentText: String) in
             #warning("I don't know what to do for an adaptor here, if anything")
             return (.UnsyncedLyrics, ID3FrameCommentLyrics(language: <#T##String?#>, contentDescription: <#T##String?#>, contentText: <#T##String#>))
+
         }
     }
 }

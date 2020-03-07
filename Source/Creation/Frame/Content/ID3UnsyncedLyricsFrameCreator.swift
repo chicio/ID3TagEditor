@@ -43,16 +43,3 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
         return lyricsString
     }
 }
-
-
-
-
-
-//class ID3UnsyncedLyricsFrameCreator: ID3StringFrameCreator {
-//    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-//        if let unsyncedLyricsFrame = id3Tag.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent {
-//            return createFrameUsing(frameType: .UnsyncedLyrics, content: unsyncedLyricsFrame.content, id3Tag: id3Tag, andAddItTo: tag)
-//        }
-//        return super.createFrames(id3Tag: id3Tag, tag: tag)
-//    }
-//}

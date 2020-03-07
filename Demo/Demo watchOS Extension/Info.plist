@@ -25,7 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>it.chicio.Demo-iOS.watchkitapp</string>
+			<string>it.chicio.Demo-iOS-1.watchkitapp-1</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>

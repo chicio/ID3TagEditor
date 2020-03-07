@@ -1635,6 +1635,7 @@
 				51FA15C4241393C4009100FA /* ID3LanguageFrameCreator.swift */,
 				519C33D32405041E008F3BDE /* ID3UnsyncedLyricsFrameCreator.swift */,
 				51FA15BA241390DE009100FA /* ID3CommentFrameCreator.swift */,
+				519C33D32405041E008F3BDE /* ID3UnsyncedLyricsFrameCreator.swift */,
 				45D58CCC210CB83C00E820C8 /* Timestamp */,
 				45537A5720932C9D009F639C /* String */,
 				452832372044C7BE00458375 /* ID3ArtistFrameCreator.swift */,
@@ -2848,7 +2849,7 @@
 				519C33DE2405041E008F3BDE /* ID3SubtitleFrameCreator.swift in Sources */,
 				5151CACE240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */,
 				519C34622405066A008F3BDE /* ID3ConductorFrameContentParsingOperationFactory.swift in Sources */,
-				51FA15C6241393C4009100FA /* ID3LanguageFrameCreator.swift in Sources */,
+  			51FA15C6241393C4009100FA /* ID3LanguageFrameCreator.swift in Sources */,
 				C5067178C64142CCD7395832 /* ID3RecordingYearFrameCreator.swift in Sources */,
 				C50674CB9172947676767FE1 /* ID3GenreFrameCreator.swift in Sources */,
 				45537A6520932DC2009F639C /* StringToBytesAdapter.swift in Sources */,
@@ -3549,7 +3550,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3575,7 +3576,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3633,7 +3634,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3662,7 +3663,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3732,7 +3733,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3757,7 +3758,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3823,7 +3824,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3849,7 +3850,7 @@
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 3.0.1;
+				MARKETING_VERSION = 3.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";

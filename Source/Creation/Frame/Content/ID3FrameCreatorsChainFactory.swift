@@ -217,6 +217,7 @@ class ID3FrameCreatorsChainFactory {
         unsyncedLyricsFrameCreator.nextCreator = commentFrameCreator
         commentFrameCreator.nextCreator = languageFrameCreator
         languageFrameCreator.nextCreator = discPositionFrameCreator
+        unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
         discPositionFrameCreator.nextCreator = userDefinedTextInformationFrameCreator
         return albumFrameCreator
     }
