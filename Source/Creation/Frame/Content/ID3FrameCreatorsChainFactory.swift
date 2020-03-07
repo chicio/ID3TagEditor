@@ -117,10 +117,6 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
         let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -150,6 +146,18 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let genreFrameCreator = ID3GenreFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let commentFrameCreator = ID3CommentFrameCreator(
+            frameCreator: frameFromStringISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let languageFrameCreator = ID3LanguageFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -206,7 +214,9 @@ class ID3FrameCreatorsChainFactory {
         podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
         publisherFrameCreator.nextCreator = subtitleFrameCreator
         subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
-        unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
+        unsyncedLyricsFrameCreator.nextCreator = commentFrameCreator
+        commentFrameCreator.nextCreator = languageFrameCreator
+        languageFrameCreator.nextCreator = discPositionFrameCreator
         discPositionFrameCreator.nextCreator = userDefinedTextInformationFrameCreator
         return albumFrameCreator
     }

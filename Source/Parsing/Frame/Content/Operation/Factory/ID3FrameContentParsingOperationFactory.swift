@@ -37,6 +37,8 @@ class ID3FrameContentParsingOperationFactory {
             .UserDefinedTextInformation: ID3UserDefinedTextInformationFrameContentParsingOperationFactory.make(),
             .Subtitle: ID3SubtitleFrameContentParsingOperationFactory.make(),
             .UnsyncedLyrics: ID3UnsyncedLyricsFrameContentParsingOperationFactory.make(),
+            .Comment: ID3CommentFrameContentParsingOperationFactory.make(),
+            .Language: ID3LanguageFrameContentParsingOperationFactory.make(),
             .Title: ID3TitleFrameContentParsingOperationFactory.make(),
             .AttachedPicture: ID3AttachedPictureFrameContentParsingOperationFactory.make(),
             .RecordingDayMonth: ID3RecordingDayMonthFrameContentParsingOperationFactory.make(),

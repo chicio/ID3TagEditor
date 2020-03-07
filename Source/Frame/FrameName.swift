@@ -63,6 +63,10 @@ public enum FrameName: Hashable {
     case Subtitle
     /// Unsynced lyrics frame name
     case UnsyncedLyrics
+    /// Comment frame name
+    case Comment
+    /// Language frame name
+    case Language
     /// Genre frame name.
     case Genre
     /// Disc Position frame name.
