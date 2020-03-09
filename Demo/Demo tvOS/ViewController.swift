@@ -30,8 +30,8 @@ class ViewController: UIViewController {
                 \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description ?? "")
             """
             trackPositionLabel.text = """
-                Track \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.position ?? -1) of
-                \((id3Tag?.frames[.TrackPosition] as? ID3FrameTrackPosition)?.totalTracks ?? -1)
+                Track \((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.part ?? -1) of
+                \((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.total ?? -1)
             """
             if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)

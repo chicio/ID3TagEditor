@@ -117,6 +117,10 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration

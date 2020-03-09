@@ -39,6 +39,9 @@
                 <a href="Classes/ID3FrameGenre.html">ID3FrameGenre</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
               </li>
               <li class="nav-group-task">
@@ -51,7 +54,7 @@
                 <a href="Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/ID3FrameTrackPosition.html">ID3FrameTrackPosition</a>
+                <a href="Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
@@ -151,7 +154,7 @@ project. See the demo project for a complete example of the setup of the framewo
 <p>ID3TagEditor is also available as a pod on <a href="https://cocoapods.org/pods/ID3TagEditor" title="ID3TagEditor cocoapods">CocoaPods</a>.
 Add the dependency to your Podfile (choose the release version you prefer):</p>
 <pre class="highlight plaintext"><code>target 'MyApp' do
-    pod 'ID3TagEditor', '~&gt; 2.0'
+    pod 'ID3TagEditor', '~&gt; 3.0'
 end
 </code></pre>
 
@@ -165,19 +168,20 @@ If you want you can also run tests using <code>swift test</code>.  </p>
 
 <p><em>IMPORTANT: at the moment some tests are excluded from  <code>swift test</code> because some test api are missing (eg. <code>XCTestExpectation</code>) or 
 because the Bundle of resources in the test target doesn&rsquo;t work as expected.</em> </p>
-<pre class="highlight plaintext"><code>// swift-tools-version:4.2
+<pre class="highlight plaintext"><code>// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
-    name: "Your App",
+    name: "Demo Ubuntu",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "2.2.0"),
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
     ],
     targets: [
         .target(
-            name: "Your App",
-            dependencies: ["ID3TagEditor"]),
+            name: "Demo Ubuntu",
+            dependencies: ["ID3TagEditor"]
+        )
     ]
 )
 </code></pre>
@@ -207,11 +211,19 @@ let package = Package(
     <span class="k">let</span> <span class="nv">id3TagEditor</span> <span class="o">=</span> <span class="kt">ID3TagEditor</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file&gt;"</span><span class="p">)</span> <span class="p">{</span>
-        <span class="o">...</span><span class="n">use</span> <span class="n">the</span> <span class="n">tag</span><span class="o">...</span>
+        <span class="c1">// ...use the tag...</span>
+        <span class="c1">// For example to read the title, album and artist content you can do something similar</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Title</span><span class="p">]</span> <span class="k">as?</span>  <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Artist</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Album</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">mp3</span><span class="p">:</span> <span class="s">"&lt;valid mp3 file passed as Data&gt;"</span><span class="p">)</span> <span class="p">{</span>
-        <span class="o">...</span><span class="n">use</span> <span class="n">the</span> <span class="n">tag</span><span class="o">...</span>
+        <span class="c1">// ...use the tag...</span>
+        <span class="c1">// For example to read the title, album and artist content you can do something similar</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Title</span><span class="p">]</span> <span class="k">as?</span>  <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Artist</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Album</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
     <span class="p">}</span>    
 <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
@@ -228,16 +240,14 @@ let package = Package(
 <p>Below you can find a sample code of the api usage.</p>
 <pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="kt">ID3Tag</span><span class="p">(</span>
-        <span class="nv">version</span><span class="p">:</span> <span class="o">.</span><span class="n">version3</span><span class="p">,</span>
-        <span class="nv">artist</span><span class="p">:</span> <span class="s">"an example artist"</span><span class="p">,</span>
-        <span class="nv">albumArtist</span><span class="p">:</span> <span class="s">"an example album artist"</span><span class="p">,</span>
-        <span class="nv">album</span><span class="p">:</span> <span class="s">"an example album"</span><span class="p">,</span>
-        <span class="nv">title</span><span class="p">:</span> <span class="s">"an example title"</span><span class="p">,</span>
-        <span class="nv">recordingDateTime</span><span class="p">:</span> <span class="kt">RecordingDateTime</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">RecordingDate</span><span class="p">(</span><span class="nv">day</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">year</span><span class="p">:</span> <span class="mi">2019</span><span class="p">),</span> 
-                                             <span class="nv">time</span><span class="p">:</span> <span class="kt">RecordingTime</span><span class="p">(</span><span class="nv">hour</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">30</span><span class="p">)),</span>
-        <span class="nv">genre</span><span class="p">:</span> <span class="kt">Genre</span><span class="p">(</span><span class="nv">genre</span><span class="p">:</span> <span class="o">.</span><span class="kt">ClassicRock</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"Rock &amp; Roll"</span><span class="p">),</span>
-        <span class="nv">attachedPictures</span><span class="p">:</span> <span class="p">[</span><span class="kt">AttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="o">&lt;</span><span class="kt">NSData</span><span class="o">/</span><span class="kt">Data</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">)],</span>
-        <span class="nv">trackPosition</span><span class="p">:</span> <span class="kt">TrackPositionInSet</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">totalTracks</span><span class="p">:</span> <span class="mi">9</span><span class="p">)</span>
+       <span class="nv">version</span><span class="p">:</span> <span class="o">.</span><span class="n">version3</span><span class="p">,</span>
+       <span class="nv">frames</span><span class="p">:</span> <span class="p">[</span>
+         <span class="o">.</span><span class="kt">Artist</span> <span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"A New Artist"</span><span class="p">),</span>
+         <span class="o">.</span><span class="kt">AlbumArtist</span> <span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"A New Album Artist"</span><span class="p">),</span>
+         <span class="o">.</span><span class="kt">Album</span> <span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"A New Album"</span><span class="p">),</span>
+         <span class="o">.</span><span class="kt">Title</span> <span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span>  <span class="s">"A New title"</span><span class="p">),</span>
+         <span class="o">.</span><span class="kt">AttachedPicture</span><span class="p">(</span><span class="o">.</span><span class="kt">FrontCover</span><span class="p">)</span> <span class="p">:</span> <span class="kt">ID3FrameAttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="n">art</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="kt">FrontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="kt">Jpeg</span><span class="p">)</span>
+       <span class="p">]</span>
     <span class="p">)</span>
 
     <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file that will be overwritten&gt;"</span><span class="p">)</span>
@@ -250,58 +260,71 @@ let package = Package(
 <span class="p">}</span>    
 </code></pre>
 
-<p>The above methods use the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> class to describe a valid ID3 tag. This class contains various properties that could be
-used to read/write a tag to the mp3 file.
+<p>The above methods use the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> class to describe a valid ID3 tag. This class contains the tag properties in the field <code>properties</code> and the 
+list of frames in the <code>frames</code> properties.
 Three versions of the tag are supported. They are described in the <code><a href="Enums/ID3Version.html">ID3Version</a></code> enum:</p>
 <div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.2, described by the enum value <code>.version2</code><br>
 
-</div>
-<div class="aside aside-version">
+</div><div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.3, described by the enum value <code>.version3</code><br>
 
-</div>
-<div class="aside aside-version">
+</div><div class="aside aside-version">
     <p class="aside-title">Version</p>
     version 2.4, described by the enum value <code>.version4</code>
 
 </div>
 
-<p>The ID3 supported properties are:</p>
+<p>The ID3 supported frames supported are (see the enum <code><a href="Enums/FrameName.html">FrameName</a></code>):</p>
 
 <ul>
-<li><code>version</code>, as previously described</li>
-<li><code>artist</code>, as a string containing the name of the song&rsquo;s artists</li>
-<li><code>albumArtist</code>, as a string containing additional info about the artists</li>
-<li><code>album</code>, as a string containing the album title</li>
-<li><code>title</code>, as a string containing the title of the song</li>
-<li><code>recordingDateTime</code>, as an object composed by two other properties:
-
-<ul>
-<li><code>date</code> as a <code><a href="Structs/RecordingDate.html">RecordingDate</a></code> object with three fields:
-
-<ul>
-<li><code>day</code>, as a number that represents the recording day</li>
-<li><code>month</code>, as a number that represents the recording month</li>
-<li><code>year</code>, as a number that represents the recording year</li>
-</ul></li>
-<li><code>time</code> as a <code><a href="Structs/RecordingTime.html">RecordingTime</a></code> object with two fields:
-
-<ul>
-<li><code>hour</code>, as a number that represents the recording hour</li>
-<li><code>minute</code>, as a number that represents the recording minute</li>
-</ul></li>
-</ul></li>
-<li><code>trackPosition</code>, as a <code>TrackPositionInSet</code> object containing the position of the track in the recording and the total number of track in the recordings</li>
-<li><code>genre</code>, as a <code>Genre</code> object containing the <code><a href="Enums/ID3Genre.html">ID3Genre</a></code> identifier and/or a <code>description</code> of the song&rsquo;s genre</li>
-<li><code>attachedPictures</code>, as an array of <code>AttachedPicture</code> objects containing the <code>Data</code> of an image, the <code><a href="Enums/ID3PictureType.html">ID3PictureType</a></code> and the <code><a href="Enums/ID3PictureFormat.html">ID3PictureFormat</a></code></li>
+<li><code>.Artist</code>, artists frame</li>
+<li><code>.AlbumArtist</code>, album artist frame</li>
+<li><code>.Album</code>, album frame</li>
+<li><code>.Title</code>, title frame</li>
+<li><code>.RecordingDayMonth</code>, recording day month frame available only for ID3 v2.2/v2.3</li>
+<li><code>.RecordingYear</code>, recording year frame available only for ID3 v2.2/v2.3</li>
+<li><code>.RecordingHourMinute</code>, recording hour minute frame available only for ID3 v2.2/v2.3</li>
+<li><code><a href="Structs/RecordingDateTime.html">.RecordingDateTime</a></code>, recording date time frame available only for ID3 v2.4</li>
+<li><code>.TrackPosition</code>, track position frame</li>
+<li><code>.Genre</code>, the genre frame</li>
+<li><code>.AttachedPicture(_ pictureType: ID3PictureType)</code> the attached picture frame</li>
+<li><code>Composer</code></li>
+<li><code>Conductor</code></li>
+<li><code>ContentGrouping</code></li>
+<li><code>Copyright</code></li>
+<li><code>DiscPosition</code></li>
+<li><code>EncodedBy</code></li>
+<li><code>EncoderSettings</code></li>
+<li><code>FileType</code></li>
+<li><code>FileOwner</code></li>
+<li><code>iTunesGrouping</code></li>
+<li><code>Lyricist</code></li>
+<li><code>Media Type</code></li>
+<li><code>MixArtist</code></li>
+<li><code>iTunesMovementName</code></li>
+<li><code>iTunesMovementIndex</code> (aka movement number)</li>
+<li><code>iTunesMovementCount</code></li>
+<li><code>PodcastCategory</code></li>
+<li><code>PodcastDescription</code></li>
+<li><code>PodcastID</code></li>
+<li><code>PodcastKeyword</code></li>
+<li><code>Publisher</code></li>
+<li><code>Subtitle</code></li>
+<li><code>UnsyncedLyrics</code></li>
+<li><code>UserDefinedTextInformation</code></li>
 </ul>
 
 <p>Only the <code>version</code> field is mandatory. The other fields are optional.
 The field <code>artist</code>,  <code>albumArtist</code>, <code>title</code> and <code>album</code> are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). </p>
+
+<hr>
+<h3 id='contributor' class='heading'>Contributor</h3>
+
+<p>The latter ~25 frames were contributed by <a href="https://github.com/NCrusher74">Nolaine Crusher</a> </p>
 
 <hr>
 <h3 id='documentation' class='heading'>Documentation</h3>
@@ -325,8 +348,8 @@ supported target.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2019-10-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-03-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

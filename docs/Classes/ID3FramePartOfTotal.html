@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ID3FrameTrackPosition Class Reference</title>
+    <title>ID3FramePartOfTotal Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ID3FrameTrackPosition" class="dashAnchor"></a>
-    <a title="ID3FrameTrackPosition Class Reference"></a>
+    <a name="//apple_ref/swift/Class/ID3FramePartOfTotal" class="dashAnchor"></a>
+    <a title="ID3FramePartOfTotal Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">ID3TagEditor Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">ID3TagEditor Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ID3FrameTrackPosition Class Reference
+        ID3FramePartOfTotal Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -40,6 +40,9 @@
                 <a href="../Classes/ID3FrameGenre.html">ID3FrameGenre</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
               </li>
               <li class="nav-group-task">
@@ -52,7 +55,7 @@
                 <a href="../Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/ID3FrameTrackPosition.html">ID3FrameTrackPosition</a>
+                <a href="../Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
@@ -110,14 +113,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ID3FrameTrackPosition</h1>
+            <h1>ID3FramePartOfTotal</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameTrackPosition</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FramePartOfTotal</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
 
                 </div>
               </div>
-            <p>A class used to represent an ID3 track position in the original recordings frame  in the ID3 tag.</p>
+            <p>A class used to represent an ID3 track/disc position in the original recordings frame  in the ID3 tag.</p>
 
           </section>
           <section class="section task-group-section">
@@ -126,9 +129,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A18FrameTrackPositionC8positionSivp"></a>
-                    <a name="//apple_ref/swift/Property/position" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A18FrameTrackPositionC8positionSivp">position</a>
+                    <a name="/s:12ID3TagEditor0A16FramePartOfTotalC4partSivp"></a>
+                    <a name="//apple_ref/swift/Property/part" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A16FramePartOfTotalC4partSivp">part</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -136,14 +139,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The position of the track.</p>
+                        <p>The position of the track/disc.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">part</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -153,9 +156,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A18FrameTrackPositionC11totalTracksSiSgvp"></a>
-                    <a name="//apple_ref/swift/Property/totalTracks" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A18FrameTrackPositionC11totalTracksSiSgvp">totalTracks</a>
+                    <a name="/s:12ID3TagEditor0A16FramePartOfTotalC5totalSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/total" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A16FramePartOfTotalC5totalSiSgvp">total</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,14 +166,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The total number of tracks in recordings.</p>
+                        <p>The total number of tracks/discs in recordings.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">totalTracks</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">total</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -180,9 +183,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A18FrameTrackPositionC16debugDescriptionSSvp"></a>
+                    <a name="/s:12ID3TagEditor0A16FramePartOfTotalC16debugDescriptionSSvp"></a>
                     <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A18FrameTrackPositionC16debugDescriptionSSvp">debugDescription</a>
+                    <a class="token" href="#/s:12ID3TagEditor0A16FramePartOfTotalC16debugDescriptionSSvp">debugDescription</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -207,9 +210,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A18FrameTrackPositionC8position11totalTracksACSi_SiSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(position:totalTracks:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A18FrameTrackPositionC8position11totalTracksACSi_SiSgtcfc">init(position:totalTracks:)</a>
+                    <a name="/s:12ID3TagEditor0A16FramePartOfTotalC4part5totalACSi_SiSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(part:total:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A16FramePartOfTotalC4part5totalACSi_SiSgtcfc">init(part:total:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,7 +227,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">totalTracks</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">total</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -235,24 +238,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>position</em>
+                                <em>part</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the track position.</p>
+                                  <p>the index of the track/disc.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>totalTracks</em>
+                                <em>total</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>the total tracks of the recordings.</p>
+                                  <p>the total tracks/discs of the recordings.</p>
                                 </div>
                               </td>
                             </tr>
@@ -265,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A18FrameTrackPositionC2eeoiySbAC_ACtFZ"></a>
+                    <a name="/s:12ID3TagEditor0A16FramePartOfTotalC2eeoiySbAC_ACtFZ"></a>
                     <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A18FrameTrackPositionC2eeoiySbAC_ACtFZ">==(_:_:)</a>
+                    <a class="token" href="#/s:12ID3TagEditor0A16FramePartOfTotalC2eeoiySbAC_ACtFZ">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -282,7 +285,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">ID3FrameTrackPosition</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">ID3FrameTrackPosition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">ID3FramePartOfTotal</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">ID3FramePartOfTotal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -329,8 +332,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2019-10-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-03-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
