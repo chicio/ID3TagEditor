@@ -9,7 +9,6 @@
 class ID3LanguageFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            #warning("I don't know what to do for an adaptor here, if anything")
             return (.Language, ID3FrameLanguage(language: content))
         }
     }

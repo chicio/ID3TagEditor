@@ -16,7 +16,7 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let lyricsFrame = id3Tag.frames[.UnsyncedLyrics] as? ID3FrameCommentLyrics {
+        if let lyricsFrame = id3Tag.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
@@ -31,7 +31,7 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(lyrics: ID3FrameCommentLyrics) -> String {
+    private func adapt(lyrics: ID3FrameCommentTypes) -> String {
         var lyricsString = ""
         if let lyricsLanguage = lyrics.language {
             lyricsString = "(\(lyricsLanguage))"

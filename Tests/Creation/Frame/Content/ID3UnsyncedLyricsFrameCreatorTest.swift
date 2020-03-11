@@ -8,39 +8,39 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3UnsyncedLyricsFrameCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereAreNoUnsyncedLyrics() {
+class ID3UnsyncedLyricsCreatorTest: XCTestCase {
+    func testNoFrameCreationWhenThereAreNoLyrics() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3UnsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
-            frameCreator: MockFrameFromStringContentCreator(
-                fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .UnsyncedLyrics
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
+        let id3LyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
+                frameCreator: MockFrameFromStringContentCreator(
+                        fakeNewFrameAsByte: [],
+                        frameTypeToBeChecked: .UnsyncedLyrics
+                ),
+                id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
-        let newTagBytes = id3UnsyncedLyricsFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
-        
+
+        let newTagBytes = id3LyricsFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
-    func testFrameCreationWhenThereAreUnsyncedLyrics() {
+
+    func testFrameCreationWhenThereAreLyrics() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.UnsyncedLyrics : ID3FrameWithStringContent(content: "::an example unsynced lyric::")]
+            frames: [.UnsyncedLyrics : ID3FrameCommentTypes(language: "eng", contentDescription: "description", contentText: "some sample lyrics text")]
         )
         let id3UnsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
-            frameCreator: MockFrameFromStringContentCreator(
-                fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .UnsyncedLyrics
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
+                frameCreator: MockFrameFromStringContentCreator(
+                        fakeNewFrameAsByte: newFrameBytes,
+                        frameTypeToBeChecked: .UnsyncedLyrics
+                ),
+                id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3UnsyncedLyricsFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

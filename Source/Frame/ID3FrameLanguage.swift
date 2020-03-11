@@ -27,7 +27,7 @@ public class ID3FrameLanguage: ID3Frame, Equatable, CustomDebugStringConvertible
      - parameter language: the ISO-639-2 language code.
      */
     public init(language: String) {
-        self.language = ID3FrameLanguage.locale.localizedString(forLanguageCode: language) ?? "zxx"
+        self.language = ISO_639_2_Codes(rawValue: language).map { $0.rawValue } ?? "zxx"
     }
 
     /**

@@ -8,9 +8,8 @@
 
 class ID3CommentFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (language: String?, contentDescription: String, contentText: String) in
-            #warning("I don't know what to do for an adaptor here, if anything")
-            return (.Comment, ID3FrameCommentLyrics(language: <#T##String?#>, contentDescription: <#T##String?#>, contentText: <#T##String#>))
+        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+            return (.Comment, ID3CommentTypesStringAdapter().adapt(content: content))
         }
     }
 }

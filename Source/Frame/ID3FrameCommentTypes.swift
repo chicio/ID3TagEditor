@@ -11,10 +11,11 @@ import Foundation
 /**
  A class used to represent an ID3 comment or lyrics frame to be used in the ID3 tag.
  */
-public class ID3FrameCommentLyrics: ID3Frame, Equatable, CustomDebugStringConvertible {
+public class ID3FrameCommentTypes: ID3Frame, Equatable, CustomDebugStringConvertible {
     
     /// The ISO-639-2 three-letter language identifier
     private static let locale = NSLocale.autoupdatingCurrent
+    /// ISO-639-2 languge code
     public var language: String?
     /// A short description of the frame content.
     public var contentDescription: String?
@@ -33,7 +34,7 @@ public class ID3FrameCommentLyrics: ID3Frame, Equatable, CustomDebugStringConver
      - parameter contentText: the full text of the comment or lyric frame.
      */
     public init(language: String?, contentDescription: String?, contentText: String) {
-        self.language = ID3FrameCommentLyrics.locale.localizedString(forLanguageCode: language ?? "English")
+        self.language = ISO_639_2_Codes(rawValue: language ?? "zxx").map { $0.rawValue }
         self.contentDescription = contentDescription
         self.contentText = contentText
     }
@@ -46,7 +47,7 @@ public class ID3FrameCommentLyrics: ID3Frame, Equatable, CustomDebugStringConver
 
      - returns: true if the language and content description values are the same, else false.
      */
-    public static func ==(lhs: ID3FrameCommentLyrics, rhs: ID3FrameCommentLyrics) -> Bool {
+    public static func ==(lhs: ID3FrameCommentTypes, rhs: ID3FrameCommentTypes) -> Bool {
         return lhs.contentDescription == rhs.contentDescription && lhs.language == rhs.language
     }
 }

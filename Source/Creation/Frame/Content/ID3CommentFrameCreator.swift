@@ -18,7 +18,7 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let commentFrame = id3Tag.frames[.Comment] as? ID3FrameCommentLyrics {
+        if let commentFrame = id3Tag.frames[.Comment] as? ID3FrameCommentTypes {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
@@ -33,7 +33,7 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
 
-    private func adapt(comment: ID3FrameCommentLyrics) -> String {
+    private func adapt(comment: ID3FrameCommentTypes) -> String {
         var commentString = ""
         if let commentLanguage = comment.language {
             commentString = "(\(commentLanguage))"
