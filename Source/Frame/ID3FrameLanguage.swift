@@ -15,7 +15,7 @@ public class ID3FrameLanguage: ID3Frame, Equatable, CustomDebugStringConvertible
     
     /// The ISO-639-2 three-letter language identifier
     private static let locale = NSLocale.autoupdatingCurrent
-    public var language: String
+    public var language: ISO_639_2_Codes
     /// ID3FrameLanguage description, useful for debug.
     public var debugDescription: String {
         return "\(String(describing: language))"
@@ -26,8 +26,8 @@ public class ID3FrameLanguage: ID3Frame, Equatable, CustomDebugStringConvertible
 
      - parameter language: the ISO-639-2 language code.
      */
-    public init(language: String) {
-        self.language = ISO_639_2_Codes(rawValue: language).map { $0.rawValue } ?? "zxx"
+    public init(language: ISO_639_2_Codes) {
+        self.language = language
     }
 
     /**

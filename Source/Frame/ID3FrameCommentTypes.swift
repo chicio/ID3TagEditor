@@ -16,7 +16,7 @@ public class ID3FrameCommentTypes: ID3Frame, Equatable, CustomDebugStringConvert
     /// The ISO-639-2 three-letter language identifier
     private static let locale = NSLocale.autoupdatingCurrent
     /// ISO-639-2 languge code
-    public var language: String?
+    public var language: ISO_639_2_Codes
     /// A short description of the frame content.
     public var contentDescription: String?
     /// the content of the frame
@@ -33,8 +33,8 @@ public class ID3FrameCommentTypes: ID3Frame, Equatable, CustomDebugStringConvert
      - parameter contentDescription: a terminated text string describing the frame content
      - parameter contentText: the full text of the comment or lyric frame.
      */
-    public init(language: String?, contentDescription: String?, contentText: String) {
-        self.language = ISO_639_2_Codes(rawValue: language ?? "zxx").map { $0.rawValue }
+    public init(language: ISO_639_2_Codes, contentDescription: String?, contentText: String) {
+        self.language = language
         self.contentDescription = contentDescription
         self.contentText = contentText
     }

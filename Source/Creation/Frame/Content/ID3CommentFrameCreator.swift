@@ -35,9 +35,7 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
 
     private func adapt(comment: ID3FrameCommentTypes) -> String {
         var commentString = ""
-        if let commentLanguage = comment.language {
-            commentString = "(\(commentLanguage))"
-        }
+        _ = comment.language
         if let commentDescription = comment.contentDescription {
             commentString = commentString + "\(commentDescription)"
         }

@@ -374,7 +374,7 @@ extension ID3DiscPositionStringAdapterTest {
 
 extension ID3CommentTypesStringAdapterTest {
     static let __allTests = [
-        ("ttestAdaptCommentWithLanguage", testAdaptCommentWithLanguage),
+        ("testAdaptCommentWithLanguage", testAdaptCommentWithLanguage),
         ("testAdaptCommentWithoutDescription", testAdaptCommentWithoutDescription),
         ("testAdaptCommentWithoutLanguage", testAdaptCommentWithoutLanguage),
         ("testAdaptCommentWithoutContentText", testAdaptCommentWithoutContentText),

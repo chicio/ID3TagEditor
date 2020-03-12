@@ -389,7 +389,7 @@ extension  ISO_639_2_Codes {
     public static var all: [ISO_639_2_Codes] { return [.cnr, .zgh, .hmn, .bih, .him, .afa, .apa, .art, .bai, .bat, .ber, .bnt, .cai, .cau, .cel, .cpe, .cpf, .cpp, .crp, .cus, .dra, .fiu, .gem, .inc, .ine, .ira, .iro, .khi, .map, .mkh, .nai, .nic, .oto, .paa, .phi, .pra, .roa, .sai, .sal, .sem, .sit, .sla, .smi, .ssa, .tai, .tut, .wak, .mol, .kho, .oci, .pro, .wal, .srp, .scc, .hrv, .scr, .zxx, .gsw, .pus, .ast, .bej, .chp, .iii, .ile, .pam, .zbl, .mis, .arc, .syc, .bin, .car, .bad, .btk, .day, .ijo, .kar, .kro, .nah, .son, .srn, .znd, .kac, .khm, .arn, .rar, .roh, .kir, .zza, .div, .nqo, .krl, .frs, .fry, .anp, .frr, .rup, .ain, .glg, .alt, .xal, .mic, .nso, .sin, .fil, .mwl, .scn, .nwc,. tlh, .byn, .jbo, .dsb, .hsb, .csb, .crh, .ady, .krc, .mdf, .myv, .udm, .dar, .inh, .nog, .hat, .kbd, .arg, .lim, .nap, .sma, .smj, .smn, .sms, .wln, .ido, .tup, .jav, .jav, .jaw, .nbl, .nde, .nds, .ave, .bam, .bos, .cha, .che, .chu, .chv, .her, .hmo, .kik, .kom, .kua, .mah, .mnc, .nav, .ndo, .nno, .nob, .nya, .nya, .oss, .oss, .pli, .sgn, .sme, .srd, .tah, .aka, .ava, .cre, .div, .ewe, .ful, .ibo, .kau, .kon, .lub, .lug, .oji, .ven, .cor, .glv, .ltz, .heb, .iku, .ind, .uig, .yid, .zha]
     }
     
-    public var language: String {
+    public var languageCodeToFull: String {
         switch self {
             case .cnr: return "Montenegrin"
             case .zgh: return "Standard Moroccan Tamazight"
@@ -577,6 +577,751 @@ extension  ISO_639_2_Codes {
             case .yid: return "Yiddish"
             case .zha: return "Zhuang; Chuang"
         }
+    }
+    
+    public func languageFullToCode(fullLanguageName: String) -> String {
+        switch self {
+            case .cnr:
+                if fullLanguageName == "Montenegrin" {
+                    return "cnr"
+            }
+            case .zgh:
+                if fullLanguageName == "Standard Moroccan Tamazight" {
+                    return "zgh"
+            }
+            case .hmn:
+                if fullLanguageName == "Hmong; Mong" {
+                    return "hmn"
+            }
+            case .bih:
+                if fullLanguageName == "Bihari languages" {
+                    return "bih"
+            }
+            case .him:
+                if fullLanguageName == "Himachali languages; Western Pahari languages" {
+                    return "him"
+            }
+            case .afa:
+                if fullLanguageName == "Afro-Asiatic languages" {
+                    return "afa"
+            }
+            case .apa:
+                if fullLanguageName == "Apache languages" {
+                    return "apa"
+            }
+            case .art:
+                if fullLanguageName == "Artificial languages" {
+                    return "art"
+            }
+            case .bai:
+                if fullLanguageName == "Bamileke languages" {
+                    return "bai"
+            }
+            case .bat:
+                if fullLanguageName == "Baltic languages" {
+                    return "bat"
+            }
+            case .ber:
+                if fullLanguageName == "Berber languages" {
+                    return "ber"
+            }
+            case .bnt:
+                if fullLanguageName == "Bantu languages" {
+                    return "bnt"
+            }
+            case .cai:
+                if fullLanguageName == "Central American Indian languages" {
+                    return "cai"
+            }
+            case .cau:
+                if fullLanguageName == "Caucasian languages" {
+                    return "cau"
+            }
+            case .cel:
+                if fullLanguageName == "Celtic languages" {
+                    return "cel"
+            }
+            case .cpe:
+                if fullLanguageName == "Creoles and pidgins, English based" {
+                    return "cpe"
+            }
+            case .cpf:
+                if fullLanguageName == "Creoles and pidgins, French-based" {
+                    return "cpf"
+            }
+            case .cpp:
+                if fullLanguageName == "Creoles and pidgins, Portuguese-based" {
+                    return "cpp"
+            }
+            case .crp:
+                if fullLanguageName == "Creoles and pidgins" {
+                    return "crp"
+            }
+            case .cus:
+                if fullLanguageName == "Cushitic languages" {
+                    return "cus"
+            }
+            case .dra:
+                if fullLanguageName == "Dravidian languages" {
+                    return "dra"
+            }
+            case .fiu:
+                if fullLanguageName == "Finno-Ugrian languages" {
+                    return "fiu"
+            }
+            case .gem:
+                if fullLanguageName == "Germanic languages" {
+                    return "gem"
+            }
+            case .inc:
+                if fullLanguageName == "Indic languages" {
+                    return "inc"
+            }
+            case .ine:
+                if fullLanguageName == "Indo-European languages" {
+                    return "ine"
+            }
+            case .ira:
+                if fullLanguageName == "Iranian languages" {
+                    return "ira"
+            }
+            case .iro:
+                if fullLanguageName == "Iroquoian languages" {
+                    return "iro"
+            }
+            case .khi:
+                if fullLanguageName == "Khoisan languages" {
+                    return "khi"
+            }
+            case .map:
+                if fullLanguageName == "Austronesian languages" {
+                    return "map"
+            }
+            case .mkh:
+                if fullLanguageName == "Mon-Khmer languages" {
+                    return "mkh"
+            }
+            case .nai:
+                if fullLanguageName == "North American Indian languages" {
+                    return "nai"
+            }
+            case .nic:
+                if fullLanguageName == "Niger-Kordofanian languages" {
+                    return "nic"
+            }
+            case .oto:
+                if fullLanguageName == "Otomian languages" {
+                    return "oto"
+            }
+            case .paa:
+                if fullLanguageName == "Papuan languages" {
+                    return "paa"
+            }
+            case .phi:
+                if fullLanguageName == "Philippine languages" {
+                    return "phi"
+            }
+            case .pra:
+                if fullLanguageName == "Prakrit languages" {
+                    return "pra"
+            }
+            case .roa:
+                if fullLanguageName == "Romance languages" {
+                    return "roa"
+            }
+            case .sai:
+                if fullLanguageName == "South American Indian languages" {
+                    return "sai"
+            }
+            case .sal:
+                if fullLanguageName == "Salishan languages" {
+                    return "sal"
+            }
+            case .sem:
+                if fullLanguageName == "Semitic languages" {
+                    return "sem"
+            }
+            case .sit:
+                if fullLanguageName == "Sino-Tibetan languages" {
+                    return "sit"
+            }
+            case .sla:
+                if fullLanguageName == "Slavic languages" {
+                    return "sla"
+            }
+            case .smi:
+                if fullLanguageName == "Sami languages" {
+                    return "smi"
+            }
+            case .ssa:
+                if fullLanguageName == "Nilo-Saharan languages" {
+                    return "ssa"
+            }
+            case .tai:
+                if fullLanguageName == "Tai languages" {
+                    return "tai"
+            }
+            case .tut:
+                if fullLanguageName == "Altaic languages" {
+                    return "tut"
+            }
+            case .wak:
+                if fullLanguageName == "Wakashan languages" {
+                    return "wak"
+            }
+            case .mol:
+                if fullLanguageName == "Moldavian; Moldovan" {
+                    return "mol"
+            }
+            case .kho:
+                if fullLanguageName == "Khotanese; Sakan" {
+                    return "kho"
+            }
+            case .oci:
+                if fullLanguageName == "Occitan (post 1500)" {
+                    return "oci"
+            }
+            case .pro:
+                if fullLanguageName == "Provençal, Old (to 1500);Occitan, Old (to 1500)" {
+                    return "pro"
+            }
+            case .wal:
+                if fullLanguageName == "Wolaitta; Wolaytta" {
+                    return "wal"
+            }
+            case .srp:
+                if fullLanguageName == "Serbian" {
+                    return "srp"
+            }
+            case .scc:
+                if fullLanguageName == "Serbian" {
+                    return "scc"
+            }
+            case .hrv:
+                if fullLanguageName == "Croatian" {
+                    return "hrv"
+            }
+            case .scr:
+                if fullLanguageName == "Croatian" {
+                    return "scr"
+            }
+            case .zxx:
+                if fullLanguageName == "No linguistic content; Not applicable" {
+                    return "zxx"
+            }
+            case .gsw:
+                if fullLanguageName == "Swiss German; Alemannic; Alsatian" {
+                    return "gsw"
+            }
+            case .pus:
+                if fullLanguageName == "Pushto; Pashto" {
+                    return "pus"
+            }
+            case .ast:
+                if fullLanguageName == "Asturian; Bable; Leonese; Asturleonese" {
+                    return "ast"
+            }
+            case .bej:
+                if fullLanguageName == "Beja; Bedawiyet" {
+                    return "bej"
+            }
+            case .chp:
+                if fullLanguageName == "Chipewyan; Dene Suline" {
+                    return "chp"
+            }
+            case .iii:
+                if fullLanguageName == "Sichuan Yi; Nuosu" {
+                    return "iii"
+            }
+            case .ile:
+                if fullLanguageName == "Interlingue; Occidental" {
+                    return "ile"
+            }
+            case .pam:
+                if fullLanguageName == "Pampanga; Kapampangan" {
+                    return "pam"
+            }
+            case .zbl:
+                if fullLanguageName == "Blissymbols; Blissymbolics; Bliss" {
+                    return "zbl"
+            }
+            case .mis:
+                if fullLanguageName == "Uncoded languages" {
+                    return "mis"
+            }
+            case .arc:
+                if fullLanguageName == "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)" {
+                    return "arc"
+            }
+            case .syc:
+                if fullLanguageName == "Classical Syriac" {
+                    return "syc"
+            }
+            case .bin:
+                if fullLanguageName == "Bini; Edo" {
+                    return "bin"
+            }
+            case .car:
+                if fullLanguageName == "Galibi Carib" {
+                    return "car"
+            }
+            case .bad:
+                if fullLanguageName == "Banda languages" {
+                    return "bad"
+            }
+            case .btk:
+                if fullLanguageName == "Batak languages" {
+                    return "btk"
+            }
+            case .day:
+                if fullLanguageName == "Land Dayak languages" {
+                    return "day"
+            }
+            case .ijo:
+                if fullLanguageName == "Ijo languages" {
+                    return "ijo"
+            }
+            case .kar:
+                if fullLanguageName == "Karen languages" {
+                    return "kar"
+            }
+            case .kro:
+                if fullLanguageName == "Kru languages" {
+                    return "kro"
+            }
+            case .nah:
+                if fullLanguageName == "Nahuatl languages" {
+                    return "nah"
+            }
+            case .son:
+                if fullLanguageName == "Songhai languages" {
+                    return "son"
+            }
+            case .srn:
+                if fullLanguageName == "Sranan Tongo" {
+                    return "srn"
+            }
+            case .znd:
+                if fullLanguageName == "Zande languages" {
+                    return "znd"
+            }
+            case .kac:
+                if fullLanguageName == "Kachin; Jingpho" {
+                    return "kac"
+            }
+            case .khm:
+                if fullLanguageName == "Central Khmer" {
+                    return "khm"
+            }
+            case .arn:
+                if fullLanguageName == "Mapudungun; Mapuche" {
+                    return "arn"
+            }
+            case .rar:
+                if fullLanguageName == "Rarotongan; Cook Islands Maori" {
+                    return "rar"
+            }
+            case .roh:
+                if fullLanguageName == "Romansh" {
+                    return "roh"
+            }
+            case .kir:
+                if fullLanguageName == "Kirghiz; Kyrgyz" {
+                    return "kir"
+            }
+            case .zza:
+                if fullLanguageName == "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki" {
+                    return "zza"
+            }
+            case .div:
+                if fullLanguageName == "Divehi; Dhivehi; Maldivian" {
+                    return "div"
+            }
+            case .nqo:
+                if fullLanguageName == "N'Ko" {
+                    return "nqo"
+            }
+            case .krl:
+                if fullLanguageName == "Karelian" {
+                    return "krl"
+            }
+            case .frs:
+                if fullLanguageName == "Eastern Frisian" {
+                    return "frs"
+            }
+            case .fry:
+                if fullLanguageName == "Western Frisian" {
+                    return "fry"
+            }
+            case .anp:
+                if fullLanguageName == "Angika" {
+                    return "anp"
+            }
+            case .frr:
+                if fullLanguageName == "Northern Frisian" {
+                    return "frr"
+            }
+            case .rup:
+                if fullLanguageName == "Aromanian; Arumanian; Macedo-Romanian" {
+                    return "rup"
+            }
+            case .ain:
+                if fullLanguageName == "Ainu" {
+                    return "ain"
+            }
+            case .glg:
+                if fullLanguageName == "Galician" {
+                    return "glg"
+            }
+            case .alt:
+                if fullLanguageName == "Southern Altai" {
+                    return "alt"
+            }
+            case .xal:
+                if fullLanguageName == "Kalmyk; Oirat" {
+                    return "xal"
+            }
+            case .mic:
+                if fullLanguageName == "Mi'kmaq; Micmac" {
+                    return "mic"
+            }
+            case .nso:
+                if fullLanguageName == "Pedi; Sepedi; Northern Sotho" {
+                    return "nso"
+            }
+            case .sin:
+                if fullLanguageName == "Sinhala; Sinhalese" {
+                    return "sin"
+            }
+            case .fil:
+                if fullLanguageName == "Filipino; Pilipino" {
+                    return "fil"
+            }
+            case .mwl:
+                if fullLanguageName == "Mirandese" {
+                    return "mwl"
+            }
+            case .scn:
+                if fullLanguageName == "Sicilian" {
+                    return "scn"
+            }
+            case .nwc:
+                if fullLanguageName == "Classical Newari; Old Newari; Classical Nepal Bhasa" {
+                    return "nwc"
+            }
+            case .tlh:
+                if fullLanguageName == "Klingon; tlhIngan-Hol" {
+                    return "tlh"
+            }
+            case .byn:
+                if fullLanguageName == "Blin; Bilin" {
+                    return "byn"
+            }
+            case .jbo:
+                if fullLanguageName == "Lojban" {
+                    return "jbo"
+            }
+            case .dsb:
+                if fullLanguageName == "Lower Sorbian" {
+                    return "dsb"
+            }
+            case .hsb:
+                if fullLanguageName == "Upper Sorbian" {
+                    return "hsb"
+            }
+            case .csb:
+                if fullLanguageName == "Kashubian" {
+                    return "csb"
+            }
+            case .crh:
+                if fullLanguageName == "Crimean Tatar; Crimean Turkish" {
+                    return "crh"
+            }
+            case .ady:
+                if fullLanguageName == "Adyghe; Adygei" {
+                    return "ady"
+            }
+            case .krc:
+                if fullLanguageName == "Karachay-Balkar" {
+                    return "krc"
+            }
+            case .mdf:
+                if fullLanguageName == "Moksha" {
+                    return "mdf"
+            }
+            case .myv:
+                if fullLanguageName == "Erzya" {
+                    return "myv"
+            }
+            case .udm:
+                if fullLanguageName == "Udmurt" {
+                    return "udm"
+            }
+            case .dar:
+                if fullLanguageName == "Dargwa" {
+                    return "dar"
+            }
+            case .inh:
+                if fullLanguageName == "Ingush" {
+                    return "inh"
+            }
+            case .nog:
+                if fullLanguageName == "Nogai" {
+                    return "nog"
+            }
+            case .hat:
+                if fullLanguageName == "Haitian; Haitian Creole" {
+                    return "hat"
+            }
+            case .kbd:
+                if fullLanguageName == "Kabardian" {
+                    return "kbd"
+            }
+            case .arg:
+                if fullLanguageName == "Aragonese" {
+                    return "arg"
+            }
+            case .lim:
+                if fullLanguageName == "Limburgan; Limburger; Limburgish" {
+                    return "lim"
+            }
+            case .nap:
+                if fullLanguageName == "Neapolitan" {
+                    return "nap"
+            }
+            case .sma:
+                if fullLanguageName == "Southern Sami" {
+                    return "sma"
+            }
+            case .smj:
+                if fullLanguageName == "Lule Sami" {
+                    return "smj"
+            }
+            case .smn:
+                if fullLanguageName == "Inari Sami" {
+                    return "smn"
+            }
+            case .sms:
+                if fullLanguageName == "Skolt Sami" {
+                    return "sms"
+            }
+            case .wln:
+                if fullLanguageName == "Walloon" {
+                    return "wln"
+            }
+            case .ido:
+                if fullLanguageName == "Ido" {
+                    return "ido"
+            }
+            case .tup:
+                if fullLanguageName == "Tupi languages" {
+                    return "tup"
+            }
+            case .jav:
+                if fullLanguageName == "Javanese" {
+                    return "jav"
+            }
+            case .jaw:
+                if fullLanguageName == "Javanese" {
+                    return "jaw"
+            }
+            case .nbl:
+                if fullLanguageName == "Ndebele, South; South Ndebele" {
+                    return "nbl"
+            }
+            case .nde:
+                if fullLanguageName == "Ndebele, North; North Ndebele" {
+                    return "nde"
+            }
+            case .nds:
+                if fullLanguageName == "Low German; Low Saxon; German, Low; Saxon, Low" {
+                    return "nds"
+            }
+            case .ave:
+                if fullLanguageName == "Avestan" {
+                    return "ave"
+            }
+            case .bam:
+                if fullLanguageName == "Bambara" {
+                    return "bam"
+            }
+            case .bos:
+                if fullLanguageName == "Bosnian" {
+                    return "bos"
+            }
+            case .cha:
+                if fullLanguageName == "Chamorro" {
+                    return "cha"
+            }
+            case .che:
+                if fullLanguageName == "Chechen" {
+                    return "che"
+            }
+            case .chu:
+                if fullLanguageName == "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic" {
+                    return "chu"
+            }
+            case .chv:
+                if fullLanguageName == "Chuvash" {
+                    return "chv"
+            }
+            case .her:
+                if fullLanguageName == "Herero" {
+                    return "her"
+            }
+            case .hmo:
+                if fullLanguageName == "Hiri Motu" {
+                    return "hmo"
+            }
+            case .kik:
+                if fullLanguageName == "Kikuyu; Gikuyu" {
+                    return "kik"
+            }
+            case .kom:
+                if fullLanguageName == "Komi" {
+                    return "kom"
+            }
+            case .kua:
+                if fullLanguageName == "Kuanyama; Kwanyama" {
+                    return "kua"
+            }
+            case .mah:
+                if fullLanguageName == "Marshallese" {
+                    return "mah"
+            }
+            case .mnc:
+                if fullLanguageName == "Manchu" {
+                    return "mnc"
+            }
+            case .nav:
+                if fullLanguageName == "Navajo; Navaho" {
+                    return "nav"
+            }
+            case .ndo:
+                if fullLanguageName == "Ndonga" {
+                    return "ndo"
+            }
+            case .nno:
+                if fullLanguageName == "Norwegian Nynorsk; Nynorsk, Norwegian" {
+                    return "nno"
+            }
+            case .nob:
+                if fullLanguageName == "Bokmål, Norwegian; Norwegian Bokmål" {
+                    return "nob"
+            }
+            case .nya:
+                if fullLanguageName == "Chichewa; Chewa; Nyanja" {
+                    return "nya"
+            }
+            case .oss:
+                if fullLanguageName == "Ossetian; Ossetic" {
+                    return "oss"
+            }
+            case .pli:
+                if fullLanguageName == "Pali" {
+                    return "pli"
+            }
+            case .sgn:
+                if fullLanguageName == "Sign Languages" {
+                    return "sgn"
+            }
+            case .sme:
+                if fullLanguageName == "Northern Sami" {
+                    return "sme"
+            }
+            case .srd:
+                if fullLanguageName == "Sardinian" {
+                    return "srd"
+            }
+            case .tah:
+                if fullLanguageName == "Tahitian" {
+                    return "tah"
+            }
+            case .aka:
+                if fullLanguageName == "Akan" {
+                    return "aka"
+            }
+            case .ava:
+                if fullLanguageName == "Avaric" {
+                    return "ava"
+            }
+            case .cre:
+                if fullLanguageName == "Cree" {
+                    return "cre"
+            }
+            case .ewe:
+                if fullLanguageName == "Ewe" {
+                    return "ewe"
+            }
+            case .ful:
+                if fullLanguageName == "Fulah" {
+                    return "ful"
+            }
+            case .ibo:
+                if fullLanguageName == "Igbo" {
+                    return "ibo"
+            }
+            case .kau:
+                if fullLanguageName == "Kanuri" {
+                    return "kau"
+            }
+            case .kon:
+                if fullLanguageName == "Kongo" {
+                    return "kon"
+            }
+            case .lub:
+                if fullLanguageName == "Luba-Katanga" {
+                    return "lub"
+            }
+            case .lug:
+                if fullLanguageName == "Ganda" {
+                    return "lug"
+            }
+            case .oji:
+                if fullLanguageName == "Ojibwa" {
+                    return "oji"
+            }
+            case .ven:
+                if fullLanguageName == "Venda" {
+                    return "ven"
+            }
+            case .cor:
+                if fullLanguageName == "Cornish" {
+                    return "cor"
+            }
+            case .glv:
+                if fullLanguageName == "Manx" {
+                    return "glv"
+            }
+            case .ltz:
+                if fullLanguageName == "Luxembourgish; Letzeburgesch" {
+                    return "ltz"
+            }
+            case .heb:
+                if fullLanguageName == "Hebrew" {
+                    return "heb"
+            }
+            case .iku:
+                if fullLanguageName == "Inuktitut" {
+                    return "iku"
+            }
+            case .ind:
+                if fullLanguageName == "Indonesian" {
+                    return "ind"
+            }
+            case .uig:
+                if fullLanguageName == "Uighur; Uyghur" {
+                    return "uig"
+            }
+            case .yid:
+                if fullLanguageName == "Yiddish" {
+                    return "yid"
+            }
+            case .zha:
+                if fullLanguageName == "Zhuang; Chuang" {
+                    return "zha"
+            }
+        }; return ""
     }
     
 }

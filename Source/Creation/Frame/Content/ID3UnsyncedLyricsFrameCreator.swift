@@ -33,9 +33,7 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
 
     private func adapt(lyrics: ID3FrameCommentTypes) -> String {
         var lyricsString = ""
-        if let lyricsLanguage = lyrics.language {
-            lyricsString = "(\(lyricsLanguage))"
-        }
+        _ = lyrics.language
         if let lyricsDescription = lyrics.contentDescription {
             lyricsString = lyricsString + "\(lyricsDescription)"
         }
