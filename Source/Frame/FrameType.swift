@@ -32,6 +32,8 @@ enum FrameType: String, Equatable {
     case Publisher = "publisher"
     case Subtitle = "subtitle"
     case UnsyncedLyrics = "unsyncedLyrics"
+    case Comment = "comment"
+    case Language = "language"
     case Album = "album"
     case AttachedPicture = "artwork"
     case RecordingDayMonth = "recordingDayMonth"
