@@ -22,10 +22,10 @@ class ID3CommentTypesFrameCreator: CommentTypesFrameCreator {
         self.stringToBytesAdapter = stringToBytesAdapter
     }
 
-    func createFrame(frameIdentifier: [UInt8], version: ID3Version, language: String, description: String?, content: String) -> [UInt8] {
+    func createFrame(frameIdentifier: [UInt8], version: ID3Version, language: ISO_639_2_Codes, description: String?, content: String) -> [UInt8] {
         var frame: [UInt8] = frameIdentifier
 
-        let languageAsBytes = stringToBytesAdapter.adapt(string: language, for: version)
+        let languageAsBytes = stringToBytesAdapter.adapt(string: language.rawValue, for: version)
         let terminatedString = String(decoding: (description?.nullTerminated)!, as: UTF8.self)
         let descriptionAsBytes = stringToBytesAdapter.adapt(string: terminatedString, for: version)
         let contentAsBytes = stringToBytesAdapter.adapt(string: content, for: version)

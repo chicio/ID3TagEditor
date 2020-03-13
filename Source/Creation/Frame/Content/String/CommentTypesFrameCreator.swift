@@ -9,6 +9,6 @@
 import Foundation
 
 protocol CommentTypesFrameCreator {
-    func createFrame(frameIdentifier: [UInt8], version: ID3Version, language: String, description: String?, content: String) -> [UInt8]
+    func createFrame(frameIdentifier: [UInt8], version: ID3Version, language: ISO_639_2_Codes, description: String?, content: String) -> [UInt8]
     #warning ("description needs a terminator character and I don't know how to create that.")
 }

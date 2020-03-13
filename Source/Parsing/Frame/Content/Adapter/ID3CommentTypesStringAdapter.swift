@@ -15,8 +15,7 @@ class ID3CommentTypesStringAdapter: CommentTypesStringAdapter {
         let commentLanguage = getLanguageFrom(contentComponents: contentComponents)
         let commentDescription = getCommentDescriptionFrom(contentComponents: contentComponents)
         let commentContent = getCommentContentFrom(contentComponents: contentComponents)
-        #warning("Same thing with the language code.")
-        return ID3FrameCommentTypes(language: ISO_639_2_Codes(rawValue: "") ?? .zxx, contentDescription: commentDescription, contentText: commentContent)
+        return ID3FrameCommentTypes(language: ISO_639_2_Codes(rawValue: commentLanguage) ?? .zxx, contentDescription: commentDescription, contentText: commentContent)
     }
 
     private func getLanguageFrom(contentComponents: [String]) -> String {
