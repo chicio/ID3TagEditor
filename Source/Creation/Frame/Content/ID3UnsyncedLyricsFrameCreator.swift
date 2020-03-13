@@ -23,7 +23,7 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
                         frameType: .UnsyncedLyrics,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version, language: lyricsFrame.language, description: lyricsFrame.contentDescription,
+                    version: id3Tag.properties.version, language: lyricsFrame.language, description: lyricsFrame.description,
                     content: adapt(lyrics: lyricsFrame)
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
@@ -35,23 +35,10 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
         var lyricsString = ""
         let lyricsLanguage = lyrics.language
         lyricsString = lyricsString + "\(lyricsLanguage)"
-        if let lyricsDescription = lyrics.contentDescription {
+        if let lyricsDescription = lyrics.description {
             lyricsString = lyricsString + "\(lyricsDescription)"
         }
-        lyricsString = lyricsString + "\(lyrics.contentText)"
+        lyricsString = lyricsString + "\(lyrics.content)"
         return lyricsString
     }
 }
-
-
-
-
-
-//class ID3UnsyncedLyricsFrameCreator: ID3StringFrameCreator {
-//    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-//        if let unsyncedLyricsFrame = id3Tag.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent {
-//            return createFrameUsing(frameType: .UnsyncedLyrics, content: unsyncedLyricsFrame.content, id3Tag: id3Tag, andAddItTo: tag)
-//        }
-//        return super.createFrames(id3Tag: id3Tag, tag: tag)
-//    }
-//}

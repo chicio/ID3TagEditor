@@ -35,6 +35,12 @@ class ID3FrameCreatorsChainFactory {
             stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
                                                                  frameConfiguration: frameConfiguration)
         )
+        let frameFromUserTextISO88591ContentCreator = ID3UserDefinedTextFrameCreator(
+            frameContentSizeCalculator: frameContentSizeCalculator,
+            frameFlagsCreator: frameFlagsCreator,
+            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
+                                                                 frameConfiguration: frameConfiguration)
+        )
         let albumFrameCreator = ID3AlbumFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -124,7 +130,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromUserTextISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let titleFrameCreator = ID3TitleFrameCreator(

@@ -25,7 +25,7 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
                         frameType: .Comment,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version, language: commentFrame.language, description: commentFrame.contentDescription,
+                    version: id3Tag.properties.version, language: commentFrame.language, description: commentFrame.description,
                     content: adapt(comment: commentFrame)
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
@@ -35,12 +35,12 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
     
     private func adapt(comment: ID3FrameCommentTypes) -> String {
         var commentString = ""
-        let commentLanguage = comment.language
-        commentString = commentString + "\(commentLanguage)"
-        if let commentDescription = comment.contentDescription {
-            commentString = commentString + "\(commentDescription)"
+        let language = comment.language
+        commentString = commentString + "\(language)"
+        if let description = comment.description {
+            commentString = commentString + "\(description)"
         }
-        commentString = commentString + "\(comment.contentText)"
+        commentString = commentString + "\(comment.content)"
         return commentString
     }
 }
