@@ -11,7 +11,7 @@ import Foundation
 class ID3LanguageFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if let languageFrame = id3Tag.frames[.Language] as? ID3FrameLanguage {
-            return createFrameUsing(frameType: .Language, content: languageFrame.language, id3Tag: id3Tag, andAddItTo: tag)
+            return createFrameUsing(frameType: .Language, content: languageFrame.language!.rawValue, id3Tag: id3Tag, andAddItTo: tag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

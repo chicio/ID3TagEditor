@@ -8,8 +8,8 @@
 
 class ID3LanguageFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: ISO_639_2_Codes) in
-            return (.Language, ID3FrameLanguage(language: content))
+        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+            return (.Language, ID3FrameLanguage(language: ISO_639_2_Codes(rawValue: content) ?? .zxx))
         }
     }
 }
