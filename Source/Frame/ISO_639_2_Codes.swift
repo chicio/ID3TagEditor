@@ -9,11 +9,10 @@
 import Foundation
 
 /// the ISO-639-2 language codes
-public enum ISO_639_2_Codes: String {
-    
-    init() {
-        
-    }
+public enum ISO_639_2_Codes: String, LosslessStringConvertible {
+ 
+    #warning("I'm not sure how to initialize this properly")
+
     /// Montenegrin
     case cnr = "cnr"
     /// Standard Moroccan Tamazight

@@ -9,14 +9,14 @@
 import Foundation
 
 class ID3CommentFrameCreator: ID3FrameCreatorsChain {
-    private let frameCreator: FrameFromStringContentCreator
+    private let frameCreator: CommentTypesFrameCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
-
-    init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+    
+    init(frameCreator: CommentTypesFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
     }
-
+    
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if let commentFrame = id3Tag.frames[.Comment] as? ID3FrameCommentTypes {
             let newTag = tag +
@@ -25,17 +25,18 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
                         frameType: .Comment,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version,
+                    version: id3Tag.properties.version, language: commentFrame.language.rawValue, description: commentFrame.contentDescription,
                     content: adapt(comment: commentFrame)
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
-
+    
     private func adapt(comment: ID3FrameCommentTypes) -> String {
         var commentString = ""
-        _ = comment.language
+        let commentLanguage = comment.language
+        commentString = commentString + "\(commentLanguage)"
         if let commentDescription = comment.contentDescription {
             commentString = commentString + "\(commentDescription)"
         }

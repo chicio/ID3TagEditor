@@ -7,10 +7,10 @@
 import Foundation
 
 class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
-    private let frameCreator: FrameFromStringContentCreator
+    private let frameCreator: CommentTypesFrameCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
 
-    init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+    init(frameCreator: CommentTypesFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
     }
@@ -23,7 +23,7 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
                         frameType: .UnsyncedLyrics,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version,
+                    version: id3Tag.properties.version, language: lyricsFrame.language.rawValue, description: lyricsFrame.contentDescription,
                     content: adapt(lyrics: lyricsFrame)
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
@@ -33,7 +33,8 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
 
     private func adapt(lyrics: ID3FrameCommentTypes) -> String {
         var lyricsString = ""
-        _ = lyrics.language
+        let lyricsLanguage = lyrics.language
+        lyricsString = lyricsString + "\(lyricsLanguage)"
         if let lyricsDescription = lyrics.contentDescription {
             lyricsString = lyricsString + "\(lyricsDescription)"
         }

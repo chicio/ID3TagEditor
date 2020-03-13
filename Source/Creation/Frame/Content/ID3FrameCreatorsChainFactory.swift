@@ -29,6 +29,12 @@ class ID3FrameCreatorsChainFactory {
             stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
                                                                  frameConfiguration: frameConfiguration)
         )
+        let frameFromMultiStringISO88591ContentCreator = ID3CommentTypesFrameCreator(
+            frameContentSizeCalculator: frameContentSizeCalculator,
+            frameFlagsCreator: frameFlagsCreator,
+            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
+                                                                 frameConfiguration: frameConfiguration)
+        )
         let albumFrameCreator = ID3AlbumFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -150,11 +156,11 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
-            frameCreator: frameFromStringISO88591ContentCreator,
+            frameCreator: frameFromMultiStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let commentFrameCreator = ID3CommentFrameCreator(
-            frameCreator: frameFromStringISO88591ContentCreator,
+            frameCreator: frameFromMultiStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let languageFrameCreator = ID3LanguageFrameCreator(
