@@ -201,8 +201,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     //MARK: write
     
     func testWriteNewFramesV2() {
-        let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v2-generated.mp3"
+        let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-V2-written", fileType: "mp3")
+        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-V2-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
