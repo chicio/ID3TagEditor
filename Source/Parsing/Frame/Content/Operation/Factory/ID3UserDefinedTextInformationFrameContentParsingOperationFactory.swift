@@ -10,7 +10,7 @@ import Foundation
 class ID3UserDefinedTextInformationFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.UserDefinedTextInformation, ID3FrameWithStringContent(content: content))
+            return (.UserDefinedTextInformation, ID3UserDefinedTextStringAdapter().adapt(content: content))
         }
     }
 }

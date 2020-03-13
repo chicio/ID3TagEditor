@@ -13,21 +13,22 @@ class ID3CommentTypesStringAdapter: CommentTypesStringAdapter {
     func adapt(content: String) -> ID3FrameCommentTypes {
         let contentComponents = content.components(separatedBy: ":")
         let language = getLanguageFrom(contentComponents: contentComponents)
-        let description = getCommentDescriptionFrom(contentComponents: contentComponents)
-        let content = getCommentContentFrom(contentComponents: contentComponents)
-        return ID3FrameCommentTypes(language: ISO_639_2_Codes, description: description, content: content)
+        let description = getDescriptionFrom(contentComponents: contentComponents)
+        let content = getContentFrom(contentComponents: contentComponents)
+        return ID3FrameCommentTypes(language: language, description: description, content: content)
     }
 
-    private func getLanguageFrom(contentComponents: [String]) -> String {
-        return String(contentComponents.first ?? "zxx")
+    private func getLanguageFrom(contentComponents: [String]) -> ISO_639_2_Codes {
+        let stringToLanguageCode = contentComponents.first.map({ ISO_639_2_Codes(rawValue: $0) })
+        #warning("fatal error with the unwrapping here. I need to fix this.")
+        return stringToLanguageCode!!
     }
-
-    private func getCommentDescriptionFrom(contentComponents: [String]) -> String? {
+    
+    private func getDescriptionFrom(contentComponents: [String]) -> String? {
         return (contentComponents.count > 1 ? String(contentComponents[1]) : nil) ?? ""
     }
 
-    private func getCommentContentFrom(contentComponents: [String]) -> String {
+    private func getContentFrom(contentComponents: [String]) -> String {
         return String(contentComponents.last ?? "")
     }
-
 }

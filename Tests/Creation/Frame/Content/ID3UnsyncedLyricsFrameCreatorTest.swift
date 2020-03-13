@@ -29,7 +29,7 @@ class ID3UnsyncedLyricsFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "test", contentText: "::some sample content text::")]
+            frames: [.UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "test", content: "::some sample content text::")]
         )
         let id3UnsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
             frameCreator: MockCommentTypesFrameContentCreator(

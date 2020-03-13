@@ -42,23 +42,24 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V2")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "ULT")
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.contentText, """
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, """
                                                 UnsyncedLyrics V2
                                                 with line break
                                                 """)
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .zxx)
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.contentDescription, "lyricsTest V2")
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "lyricsTest V2")
         XCTAssertEqual(id3Tag?.frames[.Comment]?.id3Identifier, "COM")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.contentText, """
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, """
                                                 Comment V2
                                                 another line break
                                                 """)
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .zxx)
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.contentDescription, "commentTest V2")
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.description, "commentTest V2")
         XCTAssertEqual(id3Tag?.frames[.Language]?.id3Identifier, "TLA")
-        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .zxx)
+        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
         XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXX")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V2")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V2")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPA")
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
@@ -113,25 +114,26 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "USLT")
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.contentText, """
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, """
                                                 Multi-Line
                                                 Lyrics
                                                 Test V3
                                                 """)
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .zxx)
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.contentDescription, "LyricsTest V3")
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "LyricsTest V3")
         XCTAssertEqual(id3Tag?.frames[.Comment]?.id3Identifier, "COMM")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .zxx)
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.contentDescription, "CommentTest V3")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.contentText, """
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.description, "CommentTest V3")
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, """
                                                 Multi-Line
                                                 Comments
                                                 V3
                                                 """)
         XCTAssertEqual(id3Tag?.frames[.Language]?.id3Identifier, "TLAN")
-        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .zxx)
+        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
         XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXXX")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V3")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V3")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
     }
     
     func testReadNewFramesV4() {
@@ -179,29 +181,30 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V4")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.id3Identifier, "USLT")
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .zxx)
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.contentDescription, "LyricsTest V4")
-        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.contentText, """
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "LyricsTest V4")
+        XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, """
                                                 UnsyncedLyrics V4
                                                 New Line Check
                                                 """)
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.id3Identifier, "COMM")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .zxx)
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.contentDescription, "CommentTest V4")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.contentText, """
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.description, "CommentTest V4")
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, """
                                                 Comments V4
                                                 New Line Whee!
                                                 """)
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.id3Identifier, "TLAN")
-        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .zxx)
+        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.id3Identifier, "TXXX")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V4")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V4")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
     }
-        
+    
     //MARK: write
     
     func testWriteNewFramesV2() {
-        let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-V2-written", fileType: "mp3")
+        let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-V2-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version2,
@@ -219,16 +222,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V2"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V2"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
-                .Language : ID3FrameLanguage(language: .zxx),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "lyricsTest V2", contentText: """
+                .Language : ID3FrameLanguage(language: .und),
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "lyricsTest V2", content: """
                                                                     UnsyncedLyrics V2
                                                                     with line break
                                                                     """),
-                .Comment : ID3FrameCommentTypes(language: .zxx, contentDescription: "commentTest V2", contentText: """
+                .Comment : ID3FrameCommentTypes(language: .und, description: "commentTest V2", content: """
                                                                     Comment V2
                                                                     another line break
                                                                     """),
-                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V2")
+                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V2"),
             ]
         )
         
@@ -270,19 +273,19 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V3"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
-                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V3"),
+                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "LyricsTest V4", contentText: """
-                                    Multi-Line
-                                    Lyrics
-                                    Test V3
-                                    """),
-                .Comment : ID3FrameCommentTypes(language: .zxx, contentDescription: "CommentTest V3", contentText: """
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V4", content: """
+                                        Multi-Line
+                                        Lyrics
+                                        Test V3
+                                        """),
+                .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V3", content: """
                                                 Multi-Line
                                                 Comments
                                                 V3
                                                 """),
-                .Language : ID3FrameLanguage(language: .zxx),
+                .Language : ID3FrameLanguage(language: .und),
             ]
         )
         
@@ -324,18 +327,17 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V4"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V4"),
-                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V4"),
+                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V4"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "LyricsTest V4", contentText: """
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V4", content: """
                                 UnsyncedLyrics V4
                                 New Line Check
                                 """),
-                .Comment : ID3FrameCommentTypes(language: .zxx, contentDescription: "CommentTest V4",
-                                                contentText: """
-                                                            Comments V4
-                                                            New Line Whee!
-                                                            """),
-                .Language : ID3FrameLanguage(language: .zxx),
+                .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V4", content: """
+                                            Comments V4
+                                            New Line Whee!
+                                            """),
+                .Language : ID3FrameLanguage(language: .und),
             ]
         )
         

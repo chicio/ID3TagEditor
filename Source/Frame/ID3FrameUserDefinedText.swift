@@ -29,7 +29,7 @@ public class ID3FrameUserDefinedText: ID3Frame, Equatable, CustomDebugStringConv
      - parameter contentDescription: a terminated text string describing the frame content
      - parameter contentText: the full text of the comment or lyric frame.
      */
-    public init(language: ISO_639_2_Codes, description: String?, content: String) {
+    public init(description: String?, content: String) {
         self.description = description
         self.content = content
     }

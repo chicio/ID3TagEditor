@@ -30,7 +30,7 @@ class ID3LanguageFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Language : ID3FrameLanguage(language: .zxx)]
+            frames: [.Language : ID3FrameLanguage(language: .und)]
         )
         let id3LanguageFrameCreator = ID3LanguageFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(

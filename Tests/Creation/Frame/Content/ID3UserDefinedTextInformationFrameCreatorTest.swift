@@ -11,15 +11,18 @@ import XCTest
 class ID3UserDefinedTextInformationFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoUserDefinedText() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3UserDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: MockFrameFromStringContentCreator(
+        #warning("I'm getting an error here: Extra argument 'frameCreator' in call")
+        #warning("I'm having a hard time figuring out why.")
+
+        let id3UserTextFrameCreator = ID3UserDefinedTextFrameCreator(
+            frameCreator: MockUserTextFrameContentCreator(
                 fakeNewFrameAsByte: [],
                 frameTypeToBeChecked: .UserDefinedTextInformation
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
-        let newTagBytes = id3UserDefinedTextInformationFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+        let newTagBytes = id3UserTextFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
         
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -29,17 +32,17 @@ class ID3UserDefinedTextInformationFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.UserDefinedTextInformation : ID3FrameWithStringContent(content: "::an example user-defined text::")]
+            frames: [.UserDefinedTextInformation: ID3FrameUserDefinedText(description: "test", content: "::some sample text::")]
         )
-        let id3UserDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: MockFrameFromStringContentCreator(
+        let id3UserTextFrameCreator = ID3UserDefinedTextInformationFrameCreator(
+            frameCreator: MockUserTextFrameContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
                 frameTypeToBeChecked: .UserDefinedTextInformation
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
-        let newTagBytes = id3UserDefinedTextInformationFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3UserTextFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
         
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
