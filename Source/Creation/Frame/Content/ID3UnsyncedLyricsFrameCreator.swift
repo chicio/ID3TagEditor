@@ -23,7 +23,7 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
                         frameType: .UnsyncedLyrics,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version, language: lyricsFrame.language.rawValue, description: lyricsFrame.contentDescription,
+                    version: id3Tag.properties.version, language: lyricsFrame.language, description: lyricsFrame.contentDescription,
                     content: adapt(lyrics: lyricsFrame)
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
