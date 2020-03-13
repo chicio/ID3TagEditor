@@ -12,10 +12,10 @@ class ID3CommentTypesStringAdapter: CommentTypesStringAdapter {
      
     func adapt(content: String) -> ID3FrameCommentTypes {
         let contentComponents = content.components(separatedBy: ":")
-        let commentLanguage = getLanguageFrom(contentComponents: contentComponents)
-        let commentDescription = getCommentDescriptionFrom(contentComponents: contentComponents)
-        let commentContent = getCommentContentFrom(contentComponents: contentComponents)
-        return ID3FrameCommentTypes(language: ISO_639_2_Codes(rawValue: commentLanguage) ?? .zxx, contentDescription: commentDescription, contentText: commentContent)
+        let language = getLanguageFrom(contentComponents: contentComponents)
+        let description = getCommentDescriptionFrom(contentComponents: contentComponents)
+        let content = getCommentContentFrom(contentComponents: contentComponents)
+        return ID3FrameCommentTypes(language: ISO_639_2_Codes(rawValue: language) ?? .zxx, contentDescription: description, contentText: content)
     }
 
     private func getLanguageFrom(contentComponents: [String]) -> String {

@@ -272,8 +272,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
                 .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "lyricsTest", contentText: "Lyrics Test"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "commentTest", contentText: "Comment Test"),
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "LyricsTest V4", contentText: """
+                                    Multi-Line
+                                    Lyrics
+                                    Test V3
+                                    """),
+                .Comment : ID3FrameCommentTypes(language: .zxx, contentDescription: "CommentTest V3", contentText: """
+                                                Multi-Line
+                                                Comments
+                                                V3
+                                                """),
                 .Language : ID3FrameLanguage(language: .zxx),
             ]
         )
@@ -318,8 +326,15 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V4"),
                 .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V4"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "", contentText: ""),
-                .Comment : ID3FrameCommentTypes(language: .zxx, contentDescription: "", contentText: ""),
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .zxx, contentDescription: "LyricsTest V4", contentText: """
+                                UnsyncedLyrics V4
+                                New Line Check
+                                """),
+                .Comment : ID3FrameCommentTypes(language: .zxx, contentDescription: "CommentTest V4",
+                                                contentText: """
+                                                            Comments V4
+                                                            New Line Whee!
+                                                            """),
                 .Language : ID3FrameLanguage(language: .zxx),
             ]
         )

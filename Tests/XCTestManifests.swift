@@ -72,6 +72,12 @@ extension ID3FrameFromStringContentCreatorTest {
     ]
 }
 
+extension ID3ContentTypesFrameCreatorTest {
+    static let __allTests = [
+        ("testCreatorFrameFromStringContent", testCreatorFrameFromStringContent),
+    ]
+}
+
 extension ID3GenreFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAGenre", testFrameCreationWhenThereIsAGenre),
@@ -308,6 +314,20 @@ extension ID3UnsyncedLyricsFrameCreatorTest {
     ]
 }
 
+extension ID3CommentFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsNoComment", testFrameCreationWhenThereIsNoComment),
+        ("testNoFrameCreationWhenThereAreAComment", testNoFrameCreationWhenThereIsAComment),
+    ]
+}
+
+extension ID3LanguageFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsALanguage", testFrameCreationWhenThereIsALanguage),
+        ("testNoFrameCreationWhenThereIsNoLanguage", testNoFrameCreationWhenThereIsNoLanguage),
+    ]
+}
+
 extension ID3TrackPositionCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsATrackPosition", testFrameCreationWhenThereIsATrackPosition),
@@ -347,6 +367,14 @@ extension ID3TrackPositionStringAdapterTest {
         ("testAdaptNotANumberTrackPosition", testAdaptNotANumberTrackPosition),
         ("testAdaptTrackPositionWithoutTotalTracks", testAdaptTrackPositionWithoutTotalTracks),
         ("testAdaptTrackPositionWithTotalTrack", testAdaptTrackPositionWithTotalTrack),
+    ]
+}
+
+extension ID3CommentTypesStringAdapterTest {
+    static let __allTests = [
+        ("testAdaptNotACountryCode", testAdaptNotACountryCode),
+        ("testAdaptCommentWithoutDescription", testAdaptCommentWithoutDescription),
+        ("testAdaptCommentWithDescription", testAdaptCommentWithDescription),
     ]
 }
 
@@ -410,6 +438,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3PublisherFrameCreatorTest.__allTests),
         testCase(ID3SubtitleFrameCreatorTest.__allTests),
         testCase(ID3UnsyncedLyricsFrameCreatorTest.__allTests),
+        testCase(ID3CommentFrameCreatorTest.__allTests),
+        testCase(ID3LanguageFrameCreatorTest.__allTests),
         testCase(ID3DiscPositionFrameCreatorTest.__allTests),
         testCase(ID3UserDefinedTextInformationFrameCreatorTest.__allTests),
         testCase(ID3AttachedPictureFrameContentParsingOperationTest.__allTests),
@@ -419,8 +449,10 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3FrameCreatorsChainTest.__allTests),
         testCase(ID3FrameFlagsCreatorTest.__allTests),
         testCase(ID3FrameFromStringContentCreatorTest.__allTests),
+        testCast(ID3CommentTypesFrameCreatorTest).__allTests,
         testCase(ID3GenreFrameCreatorTest.__allTests),
         testCase(ID3GenreStringAdapterTest.__allTests),
+        testCase(ID3CommentTypesStringAdapterTest.__allTests),
         testCase(ID3ISO88591StringToByteAdapterTest.__allTests),
         testCase(ID3PictureTypeAdapterTest.__allTests),
         testCase(ID3RecordingDateTimeFrameCreatorTest.__allTests),
