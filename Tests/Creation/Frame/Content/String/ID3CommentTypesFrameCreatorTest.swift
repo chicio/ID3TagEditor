@@ -26,7 +26,7 @@ class ID3CommentTypesFrameCreatorTest: XCTestCase {
         )
 
         #warning("this is going to fail because I don't know how to adapt it for the new type")
-        XCTAssertEqual(frameBytes, [0x22, 0x11, 0x00, /* insert .und in bytes*/ /* insert "description in bytes followed by a null character*/ 0x01, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, 0x00])
+        XCTAssertEqual(frameBytes, [0x22, 0x11, 0x00, /* insert .und in bytes*/ /* insert "description in bytes followed by null character*/ 0x01, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, 0x00])
     }
 }
 
