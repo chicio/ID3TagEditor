@@ -391,946 +391,957 @@ extension  ISO_639_2_Codes {
     
     public static var all: [ISO_639_2_Codes] { return [.und, .cnr, .zgh, .hmn, .bih, .him, .afa, .apa, .art, .bai, .bat, .ber, .bnt, .cai, .cau, .cel, .cpe, .cpf, .cpp, .crp, .cus, .dra, .fiu, .gem, .inc, .ine, .ira, .iro, .khi, .map, .mkh, .nai, .nic, .oto, .paa, .phi, .pra, .roa, .sai, .sal, .sem, .sit, .sla, .smi, .ssa, .tai, .tut, .wak, .mol, .kho, .oci, .pro, .wal, .srp, .scc, .hrv, .scr, .zxx, .gsw, .pus, .ast, .bej, .chp, .iii, .ile, .pam, .zbl, .mis, .arc, .syc, .bin, .car, .bad, .btk, .day, .ijo, .kar, .kro, .nah, .son, .srn, .znd, .kac, .khm, .arn, .rar, .roh, .kir, .zza, .div, .nqo, .krl, .frs, .fry, .anp, .frr, .rup, .ain, .glg, .alt, .xal, .mic, .nso, .sin, .fil, .mwl, .scn, .nwc,. tlh, .byn, .jbo, .dsb, .hsb, .csb, .crh, .ady, .krc, .mdf, .myv, .udm, .dar, .inh, .nog, .hat, .kbd, .arg, .lim, .nap, .sma, .smj, .smn, .sms, .wln, .ido, .tup, .jav, .jav, .jaw, .nbl, .nde, .nds, .ave, .bam, .bos, .cha, .che, .chu, .chv, .her, .hmo, .kik, .kom, .kua, .mah, .mnc, .nav, .ndo, .nno, .nob, .nya, .nya, .oss, .oss, .pli, .sgn, .sme, .srd, .tah, .aka, .ava, .cre, .div, .ewe, .ful, .ibo, .kau, .kon, .lub, .lug, .oji, .ven, .cor, .glv, .ltz, .heb, .iku, .ind, .uig, .yid, .zha]
     }
-    
-    public var languageCodeToFull: String {
-        switch self {
-            case .und: return "Undefined"
-            case .cnr: return "Montenegrin"
-            case .zgh: return "Standard Moroccan Tamazight"
-            case .hmn: return "Hmong; Mong"
-            case .bih: return "Bihari languages"
-            case .him: return "Himachali languages; Western Pahari languages"
-            case .afa: return "Afro-Asiatic languages"
-            case .apa: return "Apache languages"
-            case .art: return "Artificial languages"
-            case .bai: return "Bamileke languages"
-            case .bat: return "Baltic languages"
-            case .ber: return "Berber languages"
-            case .bnt: return "Bantu languages"
-            case .cai: return "Central American Indian languages"
-            case .cau: return "Caucasian languages"
-            case .cel: return "Celtic languages"
-            case .cpe: return "Creoles and pidgins, English based"
-            case .cpf: return "Creoles and pidgins, French-based"
-            case .cpp: return "Creoles and pidgins, Portuguese-based"
-            case .crp: return "Creoles and pidgins"
-            case .cus: return "Cushitic languages"
-            case .dra: return "Dravidian languages"
-            case .fiu: return "Finno-Ugrian languages"
-            case .gem: return "Germanic languages"
-            case .inc: return "Indic languages"
-            case .ine: return "Indo-European languages"
-            case .ira: return "Iranian languages"
-            case .iro: return "Iroquoian languages"
-            case .khi: return "Khoisan languages"
-            case .map: return "Austronesian languages"
-            case .mkh: return "Mon-Khmer languages"
-            case .nai: return "North American Indian languages"
-            case .nic: return "Niger-Kordofanian languages"
-            case .oto: return "Otomian languages"
-            case .paa: return "Papuan languages"
-            case .phi: return "Philippine languages"
-            case .pra: return "Prakrit languages"
-            case .roa: return "Romance languages"
-            case .sai: return "South American Indian languages"
-            case .sal: return "Salishan languages"
-            case .sem: return "Semitic languages"
-            case .sit: return "Sino-Tibetan languages"
-            case .sla: return "Slavic languages"
-            case .smi: return "Sami languages"
-            case .ssa: return "Nilo-Saharan languages"
-            case .tai: return "Tai languages"
-            case .tut: return "Altaic languages"
-            case .wak: return "Wakashan languages"
-            case .mol: return "Moldavian; Moldovan"
-            case .kho: return "Khotanese; Sakan"
-            case .oci: return "Occitan (post 1500)"
-            case .pro: return "Provençal, Old (to 1500);Occitan, Old (to 1500)"
-            case .wal: return "Wolaitta; Wolaytta"
-            case .srp: return "Serbian"
-            case .scc: return "Serbian"
-            case .hrv: return "Croatian"
-            case .scr: return "Croatian"
-            case .zxx: return "No linguistic content; Not applicable"
-            case .gsw: return "Swiss German; Alemannic; Alsatian"
-            case .pus: return "Pushto; Pashto"
-            case .ast: return "Asturian; Bable; Leonese; Asturleonese"
-            case .bej: return "Beja; Bedawiyet"
-            case .chp: return "Chipewyan; Dene Suline"
-            case .iii: return "Sichuan Yi; Nuosu"
-            case .ile: return "Interlingue; Occidental"
-            case .pam: return "Pampanga; Kapampangan"
-            case .zbl: return "Blissymbols; Blissymbolics; Bliss"
-            case .mis: return "Uncoded languages"
-            case .arc: return "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)"
-            case .syc: return "Classical Syriac"
-            case .bin: return "Bini; Edo"
-            case .car: return "Galibi Carib"
-            case .bad: return "Banda languages"
-            case .btk: return "Batak languages"
-            case .day: return "Land Dayak languages"
-            case .ijo: return "Ijo languages"
-            case .kar: return "Karen languages"
-            case .kro: return "Kru languages"
-            case .nah: return "Nahuatl languages"
-            case .son: return "Songhai languages"
-            case .srn: return "Sranan Tongo"
-            case .znd: return "Zande languages"
-            case .kac: return "Kachin; Jingpho"
-            case .khm: return "Central Khmer"
-            case .arn: return "Mapudungun; Mapuche"
-            case .rar: return "Rarotongan; Cook Islands Maori"
-            case .roh: return "Romansh"
-            case .kir: return "Kirghiz; Kyrgyz"
-            case .zza: return "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"
-            case .div: return "Divehi; Dhivehi; Maldivian"
-            case .nqo: return "N'Ko"
-            case .krl: return "Karelian"
-            case .frs: return "Eastern Frisian"
-            case .fry: return "Western Frisian"
-            case .anp: return "Angika"
-            case .frr: return "Northern Frisian"
-            case .rup: return "Aromanian; Arumanian; Macedo-Romanian"
-            case .ain: return "Ainu"
-            case .glg: return "Galician"
-            case .alt: return "Southern Altai"
-            case .xal: return "Kalmyk; Oirat"
-            case .mic: return "Mi'kmaq; Micmac"
-            case .nso: return "Pedi; Sepedi; Northern Sotho"
-            case .sin: return "Sinhala; Sinhalese"
-            case .fil: return "Filipino; Pilipino"
-            case .mwl: return "Mirandese"
-            case .scn: return "Sicilian"
-            case .nwc: return "Classical Newari; Old Newari; Classical Nepal Bhasa"
-            case .tlh: return "Klingon; tlhIngan-Hol"
-            case .byn: return "Blin; Bilin"
-            case .jbo: return "Lojban"
-            case .dsb: return "Lower Sorbian"
-            case .hsb: return "Upper Sorbian"
-            case .csb: return "Kashubian"
-            case .crh: return "Crimean Tatar; Crimean Turkish"
-            case .ady: return "Adyghe; Adygei"
-            case .krc: return "Karachay-Balkar"
-            case .mdf: return "Moksha"
-            case .myv: return "Erzya"
-            case .udm: return "Udmurt"
-            case .dar: return "Dargwa"
-            case .inh: return "Ingush"
-            case .nog: return "Nogai"
-            case .hat: return "Haitian; Haitian Creole"
-            case .kbd: return "Kabardian"
-            case .arg: return "Aragonese"
-            case .lim: return "Limburgan; Limburger; Limburgish"
-            case .nap: return "Neapolitan"
-            case .sma: return "Southern Sami"
-            case .smj: return "Lule Sami"
-            case .smn: return "Inari Sami"
-            case .sms: return "Skolt Sami"
-            case .wln: return "Walloon"
-            case .ido: return "Ido"
-            case .tup: return "Tupi languages"
-            case .jav: return "Javanese"
-            case .jaw: return "Javanese"
-            case .nbl: return "Ndebele, South; South Ndebele"
-            case .nde: return "Ndebele, North; North Ndebele"
-            case .nds: return "Low German; Low Saxon; German, Low; Saxon, Low"
-            case .ave: return "Avestan"
-            case .bam: return "Bambara"
-            case .bos: return "Bosnian"
-            case .cha: return "Chamorro"
-            case .che: return "Chechen"
-            case .chu: return "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic"
-            case .chv: return "Chuvash"
-            case .her: return "Herero"
-            case .hmo: return "Hiri Motu"
-            case .kik: return "Kikuyu; Gikuyu"
-            case .kom: return "Komi"
-            case .kua: return "Kuanyama; Kwanyama"
-            case .mah: return "Marshallese"
-            case .mnc: return "Manchu"
-            case .nav: return "Navajo; Navaho"
-            case .ndo: return "Ndonga"
-            case .nno: return "Norwegian Nynorsk; Nynorsk, Norwegian"
-            case .nob: return "Bokmål, Norwegian; Norwegian Bokmål"
-            case .nya: return "Chichewa; Chewa; Nyanja"
-            case .oss: return "Ossetian; Ossetic"
-            case .pli: return "Pali"
-            case .sgn: return "Sign Languages"
-            case .sme: return "Northern Sami"
-            case .srd: return "Sardinian"
-            case .tah: return "Tahitian"
-            case .aka: return "Akan"
-            case .ava: return "Avaric"
-            case .cre: return "Cree"
-            case .ewe: return "Ewe"
-            case .ful: return "Fulah"
-            case .ibo: return "Igbo"
-            case .kau: return "Kanuri"
-            case .kon: return "Kongo"
-            case .lub: return "Luba-Katanga"
-            case .lug: return "Ganda"
-            case .oji: return "Ojibwa"
-            case .ven: return "Venda"
-            case .cor: return "Cornish"
-            case .glv: return "Manx"
-            case .ltz: return "Luxembourgish; Letzeburgesch"
-            case .heb: return "Hebrew"
-            case .iku: return "Inuktitut"
-            case .ind: return "Indonesian"
-            case .uig: return "Uighur; Uyghur"
-            case .yid: return "Yiddish"
-            case .zha: return "Zhuang; Chuang"
-        }
+            
+    public static var UndefinedLanguage: String {
+        return self.und.rawValue
+    }
+
+    public static var MontenegrinLanguages: String {
+        return self.cnr.rawValue
+    }
+
+    public static var StandardMoroccanTamazighLanguages: String {
+        return self.zgh.rawValue
+    }
+
+    public static var Hmong: String {
+        return self.hmn.rawValue
+    }
+
+    public static var Mong: String {
+        return self.hmn.rawValue
+    }
+
+    public static var BihariLanguages: String {
+        return self.bih.rawValue
+    }
+
+    public static var HimachaliLanguages: String {
+        return self.him.rawValue
+    }
+
+    public static var WesternPahariLanguages: String {
+        return self.him.rawValue
+    }
+
+    public static var AfroAsiaticLanguages: String {
+        return self.afa.rawValue
+    }
+
+    public static var ApachiLanguages: String {
+        return self.apa.rawValue
+    }
+
+    public static var ArtificialLanguages: String {
+        return self.art.rawValue
+    }
+
+    public static var BamilekeLanguages: String {
+        return self.bai.rawValue
+    }
+
+    public static var BalticLanguages: String {
+        return self.bat.rawValue
+    }
+
+    public static var BerberLanguages: String {
+        return self.ber.rawValue
+    }
+
+    public static var BantuLanguages: String {
+        return self.bnt.rawValue
+    }
+
+    public static var CentralAmericanIndianLanguages: String {
+        return self.cai.rawValue
+    }
+
+    public static var CaucasianLanguages: String {
+        return self.cau.rawValue
+    }
+
+    public static var CelticLanguages: String {
+        return self.cel.rawValue
+    }
+
+    public static var EnglishCreolesAndPidgins: String {
+        return self.cpe.rawValue
+    }
+
+    public static var FrenchCreolesAndPidgins: String {
+        return self.cpf.rawValue
+    }
+
+    public static var PortugeseCreolesAndPidgins: String {
+        return self.cpp.rawValue
+    }
+
+    public static var CreolesAndPidgins: String {
+        return self.crp.rawValue
+    }
+
+    public static var CushiticLanguages: String {
+        return self.cus.rawValue
+    }
+
+    public static var DravidianLanguages: String {
+        return self.dra.rawValue
+    }
+
+    public static var FinnoUgrianLanguages: String {
+        return self.fiu.rawValue
+    }
+
+    public static var GermanicLanguages: String {
+        return self.gem.rawValue
+    }
+
+    public static var IndicLanguages: String {
+        return self.inc.rawValue
+    }
+
+    public static var IndoEuropeanLanguages: String {
+        return self.ine.rawValue
+    }
+
+    public static var IranianLanguages: String {
+        return self.ira.rawValue
+    }
+
+    public static var IroquoianLanguages: String {
+        return self.iro.rawValue
+    }
+
+    public static var KhoisanLanguages: String {
+        return self.khi.rawValue
+    }
+
+    public static var AustronesianLanguages: String {
+        return self.map.rawValue
+    }
+
+    public static var MonKhmerLanguages: String {
+        return self.mkh.rawValue
+    }
+
+    public static var NorthAmericanIndianLanguages: String {
+        return self.nai.rawValue
+    }
+
+    public static var NigerKordofanianLanguages: String {
+        return self.nic.rawValue
+    }
+
+    public static var OtomianLanguages: String {
+        return self.oto.rawValue
+    }
+
+    public static var PapuanLanguages: String {
+        return self.paa.rawValue
+    }
+
+    public static var PhilippineLanguages: String {
+        return self.phi.rawValue
+    }
+
+    public static var PrakritLanguages: String {
+        return self.pra.rawValue
+    }
+
+    public static var RomanceLanguages: String {
+        return self.roa.rawValue
+    }
+
+    public static var SouthAmericanIndianLanguages: String {
+        return self.sai.rawValue
+    }
+
+    public static var SalishanLanguages: String {
+        return self.sal.rawValue
+    }
+
+    public static var SemiticLanguages: String {
+        return self.sem.rawValue
+    }
+
+    public static var SinoTibetanLanguages: String {
+        return self.sit.rawValue
+    }
+
+    public static var SlavicLanguages: String {
+        return self.sla.rawValue
+    }
+
+    public static var SamiLanguages: String {
+        return self.smi.rawValue
+    }
+
+    public static var NiloSaharanLanguages: String {
+        return self.ssa.rawValue
+    }
+
+    public static var TaiLanguages: String {
+        return self.tai.rawValue
+    }
+
+    public static var AltaicLanguages: String {
+        return self.tut.rawValue
+    }
+
+    public static var WakashanLanguages: String {
+        return self.wak.rawValue
+    }
+
+    public static var Moldavian: String {
+        return self.mol.rawValue
+    }
+
+    public static var Moldavan: String {
+        return self.mol.rawValue
+    }
+
+    public static var Khotanese: String {
+        return self.kho.rawValue
+    }
+
+    public static var Sakan: String {
+        return self.kho.rawValue
+    }
+
+    public static var Occitan: String {
+        return self.oci.rawValue
+    }
+
+    public static var Provençal: String {
+        return self.pro.rawValue
+    }
+
+    public static var Wolaitta: String {
+        return self.wal.rawValue
     }
         
-    public func languageFullToCode(fullLanguageName: String) -> String {
-        switch self {
-            case .und:
-                if fullLanguageName == "Undefined" {
-                    return "cnr"
-            }
-            case .cnr:
-                if fullLanguageName == "Montenegrin" {
-                    return "cnr"
-            }
-            case .zgh:
-                if fullLanguageName == "Standard Moroccan Tamazight" {
-                    return "zgh"
-            }
-            case .hmn:
-                if fullLanguageName == "Hmong; Mong" {
-                    return "hmn"
-            }
-            case .bih:
-                if fullLanguageName == "Bihari languages" {
-                    return "bih"
-            }
-            case .him:
-                if fullLanguageName == "Himachali languages; Western Pahari languages" {
-                    return "him"
-            }
-            case .afa:
-                if fullLanguageName == "Afro-Asiatic languages" {
-                    return "afa"
-            }
-            case .apa:
-                if fullLanguageName == "Apache languages" {
-                    return "apa"
-            }
-            case .art:
-                if fullLanguageName == "Artificial languages" {
-                    return "art"
-            }
-            case .bai:
-                if fullLanguageName == "Bamileke languages" {
-                    return "bai"
-            }
-            case .bat:
-                if fullLanguageName == "Baltic languages" {
-                    return "bat"
-            }
-            case .ber:
-                if fullLanguageName == "Berber languages" {
-                    return "ber"
-            }
-            case .bnt:
-                if fullLanguageName == "Bantu languages" {
-                    return "bnt"
-            }
-            case .cai:
-                if fullLanguageName == "Central American Indian languages" {
-                    return "cai"
-            }
-            case .cau:
-                if fullLanguageName == "Caucasian languages" {
-                    return "cau"
-            }
-            case .cel:
-                if fullLanguageName == "Celtic languages" {
-                    return "cel"
-            }
-            case .cpe:
-                if fullLanguageName == "Creoles and pidgins, English based" {
-                    return "cpe"
-            }
-            case .cpf:
-                if fullLanguageName == "Creoles and pidgins, French-based" {
-                    return "cpf"
-            }
-            case .cpp:
-                if fullLanguageName == "Creoles and pidgins, Portuguese-based" {
-                    return "cpp"
-            }
-            case .crp:
-                if fullLanguageName == "Creoles and pidgins" {
-                    return "crp"
-            }
-            case .cus:
-                if fullLanguageName == "Cushitic languages" {
-                    return "cus"
-            }
-            case .dra:
-                if fullLanguageName == "Dravidian languages" {
-                    return "dra"
-            }
-            case .fiu:
-                if fullLanguageName == "Finno-Ugrian languages" {
-                    return "fiu"
-            }
-            case .gem:
-                if fullLanguageName == "Germanic languages" {
-                    return "gem"
-            }
-            case .inc:
-                if fullLanguageName == "Indic languages" {
-                    return "inc"
-            }
-            case .ine:
-                if fullLanguageName == "Indo-European languages" {
-                    return "ine"
-            }
-            case .ira:
-                if fullLanguageName == "Iranian languages" {
-                    return "ira"
-            }
-            case .iro:
-                if fullLanguageName == "Iroquoian languages" {
-                    return "iro"
-            }
-            case .khi:
-                if fullLanguageName == "Khoisan languages" {
-                    return "khi"
-            }
-            case .map:
-                if fullLanguageName == "Austronesian languages" {
-                    return "map"
-            }
-            case .mkh:
-                if fullLanguageName == "Mon-Khmer languages" {
-                    return "mkh"
-            }
-            case .nai:
-                if fullLanguageName == "North American Indian languages" {
-                    return "nai"
-            }
-            case .nic:
-                if fullLanguageName == "Niger-Kordofanian languages" {
-                    return "nic"
-            }
-            case .oto:
-                if fullLanguageName == "Otomian languages" {
-                    return "oto"
-            }
-            case .paa:
-                if fullLanguageName == "Papuan languages" {
-                    return "paa"
-            }
-            case .phi:
-                if fullLanguageName == "Philippine languages" {
-                    return "phi"
-            }
-            case .pra:
-                if fullLanguageName == "Prakrit languages" {
-                    return "pra"
-            }
-            case .roa:
-                if fullLanguageName == "Romance languages" {
-                    return "roa"
-            }
-            case .sai:
-                if fullLanguageName == "South American Indian languages" {
-                    return "sai"
-            }
-            case .sal:
-                if fullLanguageName == "Salishan languages" {
-                    return "sal"
-            }
-            case .sem:
-                if fullLanguageName == "Semitic languages" {
-                    return "sem"
-            }
-            case .sit:
-                if fullLanguageName == "Sino-Tibetan languages" {
-                    return "sit"
-            }
-            case .sla:
-                if fullLanguageName == "Slavic languages" {
-                    return "sla"
-            }
-            case .smi:
-                if fullLanguageName == "Sami languages" {
-                    return "smi"
-            }
-            case .ssa:
-                if fullLanguageName == "Nilo-Saharan languages" {
-                    return "ssa"
-            }
-            case .tai:
-                if fullLanguageName == "Tai languages" {
-                    return "tai"
-            }
-            case .tut:
-                if fullLanguageName == "Altaic languages" {
-                    return "tut"
-            }
-            case .wak:
-                if fullLanguageName == "Wakashan languages" {
-                    return "wak"
-            }
-            case .mol:
-                if fullLanguageName == "Moldavian; Moldovan" {
-                    return "mol"
-            }
-            case .kho:
-                if fullLanguageName == "Khotanese; Sakan" {
-                    return "kho"
-            }
-            case .oci:
-                if fullLanguageName == "Occitan (post 1500)" {
-                    return "oci"
-            }
-            case .pro:
-                if fullLanguageName == "Provençal, Old (to 1500);Occitan, Old (to 1500)" {
-                    return "pro"
-            }
-            case .wal:
-                if fullLanguageName == "Wolaitta; Wolaytta" {
-                    return "wal"
-            }
-            case .srp:
-                if fullLanguageName == "Serbian" {
-                    return "srp"
-            }
-            case .scc:
-                if fullLanguageName == "Serbian" {
-                    return "scc"
-            }
-            case .hrv:
-                if fullLanguageName == "Croatian" {
-                    return "hrv"
-            }
-            case .scr:
-                if fullLanguageName == "Croatian" {
-                    return "scr"
-            }
-            case .zxx:
-                if fullLanguageName == "No linguistic content; Not applicable" {
-                    return "zxx"
-            }
-            case .gsw:
-                if fullLanguageName == "Swiss German; Alemannic; Alsatian" {
-                    return "gsw"
-            }
-            case .pus:
-                if fullLanguageName == "Pushto; Pashto" {
-                    return "pus"
-            }
-            case .ast:
-                if fullLanguageName == "Asturian; Bable; Leonese; Asturleonese" {
-                    return "ast"
-            }
-            case .bej:
-                if fullLanguageName == "Beja; Bedawiyet" {
-                    return "bej"
-            }
-            case .chp:
-                if fullLanguageName == "Chipewyan; Dene Suline" {
-                    return "chp"
-            }
-            case .iii:
-                if fullLanguageName == "Sichuan Yi; Nuosu" {
-                    return "iii"
-            }
-            case .ile:
-                if fullLanguageName == "Interlingue; Occidental" {
-                    return "ile"
-            }
-            case .pam:
-                if fullLanguageName == "Pampanga; Kapampangan" {
-                    return "pam"
-            }
-            case .zbl:
-                if fullLanguageName == "Blissymbols; Blissymbolics; Bliss" {
-                    return "zbl"
-            }
-            case .mis:
-                if fullLanguageName == "Uncoded languages" {
-                    return "mis"
-            }
-            case .arc:
-                if fullLanguageName == "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)" {
-                    return "arc"
-            }
-            case .syc:
-                if fullLanguageName == "Classical Syriac" {
-                    return "syc"
-            }
-            case .bin:
-                if fullLanguageName == "Bini; Edo" {
-                    return "bin"
-            }
-            case .car:
-                if fullLanguageName == "Galibi Carib" {
-                    return "car"
-            }
-            case .bad:
-                if fullLanguageName == "Banda languages" {
-                    return "bad"
-            }
-            case .btk:
-                if fullLanguageName == "Batak languages" {
-                    return "btk"
-            }
-            case .day:
-                if fullLanguageName == "Land Dayak languages" {
-                    return "day"
-            }
-            case .ijo:
-                if fullLanguageName == "Ijo languages" {
-                    return "ijo"
-            }
-            case .kar:
-                if fullLanguageName == "Karen languages" {
-                    return "kar"
-            }
-            case .kro:
-                if fullLanguageName == "Kru languages" {
-                    return "kro"
-            }
-            case .nah:
-                if fullLanguageName == "Nahuatl languages" {
-                    return "nah"
-            }
-            case .son:
-                if fullLanguageName == "Songhai languages" {
-                    return "son"
-            }
-            case .srn:
-                if fullLanguageName == "Sranan Tongo" {
-                    return "srn"
-            }
-            case .znd:
-                if fullLanguageName == "Zande languages" {
-                    return "znd"
-            }
-            case .kac:
-                if fullLanguageName == "Kachin; Jingpho" {
-                    return "kac"
-            }
-            case .khm:
-                if fullLanguageName == "Central Khmer" {
-                    return "khm"
-            }
-            case .arn:
-                if fullLanguageName == "Mapudungun; Mapuche" {
-                    return "arn"
-            }
-            case .rar:
-                if fullLanguageName == "Rarotongan; Cook Islands Maori" {
-                    return "rar"
-            }
-            case .roh:
-                if fullLanguageName == "Romansh" {
-                    return "roh"
-            }
-            case .kir:
-                if fullLanguageName == "Kirghiz; Kyrgyz" {
-                    return "kir"
-            }
-            case .zza:
-                if fullLanguageName == "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki" {
-                    return "zza"
-            }
-            case .div:
-                if fullLanguageName == "Divehi; Dhivehi; Maldivian" {
-                    return "div"
-            }
-            case .nqo:
-                if fullLanguageName == "N'Ko" {
-                    return "nqo"
-            }
-            case .krl:
-                if fullLanguageName == "Karelian" {
-                    return "krl"
-            }
-            case .frs:
-                if fullLanguageName == "Eastern Frisian" {
-                    return "frs"
-            }
-            case .fry:
-                if fullLanguageName == "Western Frisian" {
-                    return "fry"
-            }
-            case .anp:
-                if fullLanguageName == "Angika" {
-                    return "anp"
-            }
-            case .frr:
-                if fullLanguageName == "Northern Frisian" {
-                    return "frr"
-            }
-            case .rup:
-                if fullLanguageName == "Aromanian; Arumanian; Macedo-Romanian" {
-                    return "rup"
-            }
-            case .ain:
-                if fullLanguageName == "Ainu" {
-                    return "ain"
-            }
-            case .glg:
-                if fullLanguageName == "Galician" {
-                    return "glg"
-            }
-            case .alt:
-                if fullLanguageName == "Southern Altai" {
-                    return "alt"
-            }
-            case .xal:
-                if fullLanguageName == "Kalmyk; Oirat" {
-                    return "xal"
-            }
-            case .mic:
-                if fullLanguageName == "Mi'kmaq; Micmac" {
-                    return "mic"
-            }
-            case .nso:
-                if fullLanguageName == "Pedi; Sepedi; Northern Sotho" {
-                    return "nso"
-            }
-            case .sin:
-                if fullLanguageName == "Sinhala; Sinhalese" {
-                    return "sin"
-            }
-            case .fil:
-                if fullLanguageName == "Filipino; Pilipino" {
-                    return "fil"
-            }
-            case .mwl:
-                if fullLanguageName == "Mirandese" {
-                    return "mwl"
-            }
-            case .scn:
-                if fullLanguageName == "Sicilian" {
-                    return "scn"
-            }
-            case .nwc:
-                if fullLanguageName == "Classical Newari; Old Newari; Classical Nepal Bhasa" {
-                    return "nwc"
-            }
-            case .tlh:
-                if fullLanguageName == "Klingon; tlhIngan-Hol" {
-                    return "tlh"
-            }
-            case .byn:
-                if fullLanguageName == "Blin; Bilin" {
-                    return "byn"
-            }
-            case .jbo:
-                if fullLanguageName == "Lojban" {
-                    return "jbo"
-            }
-            case .dsb:
-                if fullLanguageName == "Lower Sorbian" {
-                    return "dsb"
-            }
-            case .hsb:
-                if fullLanguageName == "Upper Sorbian" {
-                    return "hsb"
-            }
-            case .csb:
-                if fullLanguageName == "Kashubian" {
-                    return "csb"
-            }
-            case .crh:
-                if fullLanguageName == "Crimean Tatar; Crimean Turkish" {
-                    return "crh"
-            }
-            case .ady:
-                if fullLanguageName == "Adyghe; Adygei" {
-                    return "ady"
-            }
-            case .krc:
-                if fullLanguageName == "Karachay-Balkar" {
-                    return "krc"
-            }
-            case .mdf:
-                if fullLanguageName == "Moksha" {
-                    return "mdf"
-            }
-            case .myv:
-                if fullLanguageName == "Erzya" {
-                    return "myv"
-            }
-            case .udm:
-                if fullLanguageName == "Udmurt" {
-                    return "udm"
-            }
-            case .dar:
-                if fullLanguageName == "Dargwa" {
-                    return "dar"
-            }
-            case .inh:
-                if fullLanguageName == "Ingush" {
-                    return "inh"
-            }
-            case .nog:
-                if fullLanguageName == "Nogai" {
-                    return "nog"
-            }
-            case .hat:
-                if fullLanguageName == "Haitian; Haitian Creole" {
-                    return "hat"
-            }
-            case .kbd:
-                if fullLanguageName == "Kabardian" {
-                    return "kbd"
-            }
-            case .arg:
-                if fullLanguageName == "Aragonese" {
-                    return "arg"
-            }
-            case .lim:
-                if fullLanguageName == "Limburgan; Limburger; Limburgish" {
-                    return "lim"
-            }
-            case .nap:
-                if fullLanguageName == "Neapolitan" {
-                    return "nap"
-            }
-            case .sma:
-                if fullLanguageName == "Southern Sami" {
-                    return "sma"
-            }
-            case .smj:
-                if fullLanguageName == "Lule Sami" {
-                    return "smj"
-            }
-            case .smn:
-                if fullLanguageName == "Inari Sami" {
-                    return "smn"
-            }
-            case .sms:
-                if fullLanguageName == "Skolt Sami" {
-                    return "sms"
-            }
-            case .wln:
-                if fullLanguageName == "Walloon" {
-                    return "wln"
-            }
-            case .ido:
-                if fullLanguageName == "Ido" {
-                    return "ido"
-            }
-            case .tup:
-                if fullLanguageName == "Tupi languages" {
-                    return "tup"
-            }
-            case .jav:
-                if fullLanguageName == "Javanese" {
-                    return "jav"
-            }
-            case .jaw:
-                if fullLanguageName == "Javanese" {
-                    return "jaw"
-            }
-            case .nbl:
-                if fullLanguageName == "Ndebele, South; South Ndebele" {
-                    return "nbl"
-            }
-            case .nde:
-                if fullLanguageName == "Ndebele, North; North Ndebele" {
-                    return "nde"
-            }
-            case .nds:
-                if fullLanguageName == "Low German; Low Saxon; German, Low; Saxon, Low" {
-                    return "nds"
-            }
-            case .ave:
-                if fullLanguageName == "Avestan" {
-                    return "ave"
-            }
-            case .bam:
-                if fullLanguageName == "Bambara" {
-                    return "bam"
-            }
-            case .bos:
-                if fullLanguageName == "Bosnian" {
-                    return "bos"
-            }
-            case .cha:
-                if fullLanguageName == "Chamorro" {
-                    return "cha"
-            }
-            case .che:
-                if fullLanguageName == "Chechen" {
-                    return "che"
-            }
-            case .chu:
-                if fullLanguageName == "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic" {
-                    return "chu"
-            }
-            case .chv:
-                if fullLanguageName == "Chuvash" {
-                    return "chv"
-            }
-            case .her:
-                if fullLanguageName == "Herero" {
-                    return "her"
-            }
-            case .hmo:
-                if fullLanguageName == "Hiri Motu" {
-                    return "hmo"
-            }
-            case .kik:
-                if fullLanguageName == "Kikuyu; Gikuyu" {
-                    return "kik"
-            }
-            case .kom:
-                if fullLanguageName == "Komi" {
-                    return "kom"
-            }
-            case .kua:
-                if fullLanguageName == "Kuanyama; Kwanyama" {
-                    return "kua"
-            }
-            case .mah:
-                if fullLanguageName == "Marshallese" {
-                    return "mah"
-            }
-            case .mnc:
-                if fullLanguageName == "Manchu" {
-                    return "mnc"
-            }
-            case .nav:
-                if fullLanguageName == "Navajo; Navaho" {
-                    return "nav"
-            }
-            case .ndo:
-                if fullLanguageName == "Ndonga" {
-                    return "ndo"
-            }
-            case .nno:
-                if fullLanguageName == "Norwegian Nynorsk; Nynorsk, Norwegian" {
-                    return "nno"
-            }
-            case .nob:
-                if fullLanguageName == "Bokmål, Norwegian; Norwegian Bokmål" {
-                    return "nob"
-            }
-            case .nya:
-                if fullLanguageName == "Chichewa; Chewa; Nyanja" {
-                    return "nya"
-            }
-            case .oss:
-                if fullLanguageName == "Ossetian; Ossetic" {
-                    return "oss"
-            }
-            case .pli:
-                if fullLanguageName == "Pali" {
-                    return "pli"
-            }
-            case .sgn:
-                if fullLanguageName == "Sign Languages" {
-                    return "sgn"
-            }
-            case .sme:
-                if fullLanguageName == "Northern Sami" {
-                    return "sme"
-            }
-            case .srd:
-                if fullLanguageName == "Sardinian" {
-                    return "srd"
-            }
-            case .tah:
-                if fullLanguageName == "Tahitian" {
-                    return "tah"
-            }
-            case .aka:
-                if fullLanguageName == "Akan" {
-                    return "aka"
-            }
-            case .ava:
-                if fullLanguageName == "Avaric" {
-                    return "ava"
-            }
-            case .cre:
-                if fullLanguageName == "Cree" {
-                    return "cre"
-            }
-            case .ewe:
-                if fullLanguageName == "Ewe" {
-                    return "ewe"
-            }
-            case .ful:
-                if fullLanguageName == "Fulah" {
-                    return "ful"
-            }
-            case .ibo:
-                if fullLanguageName == "Igbo" {
-                    return "ibo"
-            }
-            case .kau:
-                if fullLanguageName == "Kanuri" {
-                    return "kau"
-            }
-            case .kon:
-                if fullLanguageName == "Kongo" {
-                    return "kon"
-            }
-            case .lub:
-                if fullLanguageName == "Luba-Katanga" {
-                    return "lub"
-            }
-            case .lug:
-                if fullLanguageName == "Ganda" {
-                    return "lug"
-            }
-            case .oji:
-                if fullLanguageName == "Ojibwa" {
-                    return "oji"
-            }
-            case .ven:
-                if fullLanguageName == "Venda" {
-                    return "ven"
-            }
-            case .cor:
-                if fullLanguageName == "Cornish" {
-                    return "cor"
-            }
-            case .glv:
-                if fullLanguageName == "Manx" {
-                    return "glv"
-            }
-            case .ltz:
-                if fullLanguageName == "Luxembourgish; Letzeburgesch" {
-                    return "ltz"
-            }
-            case .heb:
-                if fullLanguageName == "Hebrew" {
-                    return "heb"
-            }
-            case .iku:
-                if fullLanguageName == "Inuktitut" {
-                    return "iku"
-            }
-            case .ind:
-                if fullLanguageName == "Indonesian" {
-                    return "ind"
-            }
-            case .uig:
-                if fullLanguageName == "Uighur; Uyghur" {
-                    return "uig"
-            }
-            case .yid:
-                if fullLanguageName == "Yiddish" {
-                    return "yid"
-            }
-            case .zha:
-                if fullLanguageName == "Zhuang; Chuang" {
-                    return "zha"
-            }
-        }; return ""
+    public static var Wolaytta: String {
+        return self.wal.rawValue
     }
+
+    public static var Serbian: String {
+        return self.srp.rawValue
+    }
+    
+    public static var Croatian: String {
+        return self.hrv.rawValue
+    }
+
+    public static var NoLinguisticContent: String {
+        return self.zxx.rawValue
+    }
+    
+    public static var SwissGerman: String {
+        return self.gsw.rawValue
+    }
+
+    public static var Alemannic: String {
+        return self.gsw.rawValue
+    }
+
+    public static var Alsatian: String {
+        return self.gsw.rawValue
+    }
+
+    public static var Pushto: String {
+        return self.pus.rawValue
+    }
+
+    
+    public static var Pashto: String {
+        return self.pus.rawValue
+    }
+
+    public static var Asturian: String {
+        return self.ast.rawValue
+    }
+
+    public static var Bable: String {
+        return self.ast.rawValue
+    }
+
+    public static var Leonese: String {
+        return self.ast.rawValue
+    }
+
+    public static var Asturleonese: String {
+        return self.ast.rawValue
+    }
+
+    public static var Beja: String {
+        return self.bej.rawValue
+    }
+
+    public static var Bedawiyet: String {
+        return self.bej.rawValue
+    }
+
+    public static var Chipewyan: String {
+        return self.chp.rawValue
+    }
+
+    public static var DeneSuline: String {
+        return self.chp.rawValue
+    }
+
+    public static var SichuanYi: String {
+        return self.iii.rawValue
+    }
+
+    public static var Nuosu: String {
+        return self.iii.rawValue
+    }
+
+    public static var Interlingue: String {
+        return self.ile.rawValue
+    }
+
+    public static var Occidental: String {
+        return self.ile.rawValue
+    }
+
+    public static var Pampanga: String {
+        return self.pam.rawValue
+    }
+
+    public static var Kapampangan: String {
+        return self.pam.rawValue
+    }
+
+    public static var Blissymbols: String {
+        return self.zbl.rawValue
+    }
+
+    public static var Blissymbolics: String {
+        return self.zbl.rawValue
+    }
+    
+    public static var Bliss: String {
+        return self.zbl.rawValue
+    }
+
+    public static var UncodedLanguages: String {
+        return self.mis.rawValue
+    }
+
+    /// Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)
+    public static var ImperialAramaic: String {
+        return self.arc.rawValue
+    }
+
+    public static var ClassicalSyriac: String {
+        return self.syc.rawValue
+    }
+
+    public static var Bini: String {
+        return self.bin.rawValue
+    }
+
+    public static var Edo: String {
+        return self.bin.rawValue
+    }
+
+    public static var GalibiCarib: String {
+        return self.car.rawValue
+    }
+
+    public static var BandaLanguages: String {
+        return self.bad.rawValue
+    }
+
+    public static var BatakLanguages: String {
+        return self.btk.rawValue
+    }
+
+    public static var LandDayakLanguages: String {
+        return self.day.rawValue
+    }
+
+    public static var IjoLanguages: String {
+        return self.ijo.rawValue
+    }
+
+    public static var KarenLanguages: String {
+        return self.kar.rawValue
+    }
+
+    public static var KruLanguages: String {
+        return self.kro.rawValue
+    }
+
+    public static var NahuatlLanguages: String {
+        return self.nah.rawValue
+    }
+
+    public static var SonghaiLanguages: String {
+        return self.son.rawValue
+    }
+
+    public static var StananTongo: String {
+        return self.srn.rawValue
+    }
+
+    public static var ZandeLanguages: String {
+        return self.znd.rawValue
+    }
+
+    public static var Kachin: String {
+        return self.kac.rawValue
+    }
+
+    public static var Jingpho: String {
+        return self.kac.rawValue
+    }
+
+    public static var CentralKhmer: String {
+        return self.khm.rawValue
+    }
+
+    public static var Mapudungun: String {
+        return self.arn.rawValue
+    }
+
+    public static var Mapuche: String {
+        return self.arn.rawValue
+    }
+
+    public static var Rarotongan: String {
+        return self.rar.rawValue
+    }
+
+    public static var CookIslandsMaori: String {
+        return self.rar.rawValue
+    }
+
+    public static var Romansh: String {
+        return self.roh.rawValue
+    }
+
+    public static var Kirghiz: String {
+        return self.kir.rawValue
+    }
+
+    public static var Kyrgyz: String {
+        return self.kir.rawValue
+    }
+
+    public static var Zaza: String {
+        return self.zza.rawValue
+    }
+
+    public static var Dimili: String {
+        return self.zza.rawValue
+    }
+
+    public static var Dimli: String {
+        return self.zza.rawValue
+    }
+
+    public static var Kirdki: String {
+        return self.zza.rawValue
+    }
+
+    public static var Kirmanjki: String {
+        return self.zza.rawValue
+    }
+
+    public static var Zazaki: String {
+        return self.zza.rawValue
+    }
+
+    public static var Divehi: String {
+        return self.div.rawValue
+    }
+    
+    public static var Dhivehi: String {
+        return self.div.rawValue
+    }
+
+    public static var Maldivian: String {
+        return self.div.rawValue
+    }
+    /// N'Ko
+    public static var NKo: String {
+        return self.nqo.rawValue
+    }
+
+    public static var Karelian: String {
+        return self.krl.rawValue
+    }
+
+    public static var EasternFrisian: String {
+        return self.frs.rawValue
+    }
+
+    public static var WesternFrisian: String {
+        return self.fry.rawValue
+    }
+
+    public static var Angika: String {
+        return self.anp.rawValue
+    }
+
+    public static var NorthernFrisian: String {
+        return self.frr.rawValue
+    }
+
+    public static var Aromanian: String {
+        return self.rup.rawValue
+    }
+
+    public static var Arumanian: String {
+        return self.rup.rawValue
+    }
+
+    public static var MacedoRomanian: String {
+        return self.rup.rawValue
+    }
+
+    public static var Ainu: String {
+        return self.ain.rawValue
+    }
+
+    public static var Galician: String {
+        return self.glg.rawValue
+    }
+    
+    public static var SouthernAltai: String {
+        return self.alt.rawValue
+    }
+
+    public static var Kalmyk: String {
+        return self.xal.rawValue
+    }
+
+    public static var Oirat: String {
+        return self.xal.rawValue
+    }
+    /// Mi'kmaq
+    public static var Mikmaq: String {
+        return self.mic.rawValue
+    }
+
+    public static var Micmac: String {
+        return self.mic.rawValue
+    }
+
+    public static var Pedi: String {
+        return self.nso.rawValue
+    }
+
+    public static var Sepedi: String {
+        return self.nso.rawValue
+    }
+    
+    public static var NorthernSotho: String {
+        return self.nso.rawValue
+    }
+
+    public static var Sinhala: String {
+        return self.sin.rawValue
+    }
+
+    public static var Sinhalese: String {
+        return self.sin.rawValue
+    }
+
+    public static var Filipino: String {
+        return self.fil.rawValue
+    }
+
+    public static var Philipino: String {
+        return self.fil.rawValue
+    }
+
+    public static var Mirandese: String {
+        return self.mwl.rawValue
+    }
+
+    public static var Sicilian: String {
+        return self.scn.rawValue
+    }
+
+    public static var ClassicalNewari: String {
+        return self.nwc.rawValue
+    }
+
+    public static var OldNewari: String {
+        return self.nwc.rawValue
+    }
+    
+    public static var ClassicalNepalBhasa: String {
+        return self.nwc.rawValue
+    }
+
+    public static var Blin: String {
+        return self.byn.rawValue
+    }
+
+    public static var Bilin: String {
+        return self.byn.rawValue
+    }
+
+    public static var Lojban: String {
+        return self.jbo.rawValue
+    }
+
+    public static var LowerSorbian: String {
+        return self.dsb.rawValue
+    }
+
+    public static var UpperSorbian: String {
+        return self.hsb.rawValue
+    }
+
+    public static var Kashubian: String {
+        return self.csb.rawValue
+    }
+
+    public static var CrimeanTatar: String {
+        return self.crh.rawValue
+    }
+
+    public static var CrimeanTurkish: String {
+        return self.crh.rawValue
+    }
+
+    public static var Adyghe: String {
+        return self.ady.rawValue
+    }
+
+    public static var Adygei: String {
+        return self.ady.rawValue
+    }
+
+    public static var KarachayBalkar: String {
+        return self.krc.rawValue
+    }
+
+    public static var Moksha: String {
+        return self.mdf.rawValue
+    }
+
+    public static var Erzya: String {
+        return self.myv.rawValue
+    }
+
+    public static var Udmurt: String {
+        return self.udm.rawValue
+    }
+
+    public static var Dargwa: String {
+        return self.dar.rawValue
+    }
+
+    public static var Ingush: String {
+        return self.inh.rawValue
+    }
+
+    public static var Nogai: String {
+        return self.nog.rawValue
+    }
+
+    public static var Haitian: String {
+        return self.hat.rawValue
+    }
+
+    public static var HaitianCreole: String {
+        return self.hat.rawValue
+    }
+
+    public static var Kabardian: String {
+        return self.kbd.rawValue
+    }
+
+    public static var Aragonese: String {
+        return self.arg.rawValue
+    }
+
+    public static var Limbugan: String {
+        return self.lim.rawValue
+    }
+
+    public static var Neapolitan: String {
+        return self.nap.rawValue
+    }
+
+    public static var SouthernSami: String {
+        return self.sma.rawValue
+    }
+
+    public static var LuleSami: String {
+        return self.smj.rawValue
+    }
+
+    public static var InariSami: String {
+        return self.smn.rawValue
+    }
+
+    public static var SkoltSami: String {
+        return self.sms.rawValue
+    }
+
+    public static var Walloon: String {
+        return self.wln.rawValue
+    }
+
+    public static var Ido: String {
+        return self.ido.rawValue
+    }
+
+    public static var TupiLanguages: String {
+        return self.tup.rawValue
+    }
+
+    public static var Javanese: String {
+        return self.jav.rawValue
+    }
+
+    public static var SouthNdebele: String {
+        return self.nbl.rawValue
+    }
+
+    public static var NorthNdebele: String {
+        return self.nde.rawValue
+    }
+
+    public static var LowGerman: String {
+        return self.nds.rawValue
+    }
+
+    public static var LowSaxon: String {
+        return self.nds.rawValue
+    }
+
+    public static var Avestan: String {
+        return self.ave.rawValue
+    }
+
+    public static var Bambara: String {
+        return self.bam.rawValue
+    }
+
+    public static var Bosnian: String {
+        return self.bos.rawValue
+    }
+
+    public static var Chamorro: String {
+        return self.cha.rawValue
+    }
+
+    public static var Chechen: String {
+        return self.che.rawValue
+    }
+
+    public static var ChurchSlavic: String {
+        return self.chu.rawValue
+    }
+
+    public static var OldSlavonic: String {
+        return self.chu.rawValue
+    }
+
+    public static var OldBulgarian: String {
+        return self.chu.rawValue
+    }
+
+    public static var Chuvash: String {
+        return self.chv.rawValue
+    }
+
+    public static var Herero: String {
+        return self.her.rawValue
+    }
+
+    public static var HiriMotu: String {
+        return self.hmo.rawValue
+    }
+
+    public static var Kikuyu: String {
+        return self.kik.rawValue
+    }
+
+    public static var Gikuyu: String {
+        return self.kik.rawValue
+    }
+
+    public static var Komi: String {
+        return self.kom.rawValue
+    }
+
+    public static var Kuanyama: String {
+        return self.kua.rawValue
+    }
+
+    public static var Kwanyama: String {
+        return self.kua.rawValue
+    }
+
+    public static var Marshallese: String {
+        return self.mah.rawValue
+    }
+
+    public static var Manchu: String {
+        return self.mnc.rawValue
+    }
+
+    public static var Navajo: String {
+        return self.nav.rawValue
+    }
+
+    public static var Navaho: String {
+        return self.nav.rawValue
+    }
+
+    public static var Ndonga: String {
+        return self.ndo.rawValue
+    }
+
+    public static var NorwegianNyorsk: String {
+        return self.nno.rawValue
+    }
+
+    public static var NorwegianBokmål: String {
+        return self.nob.rawValue
+    }
+
+    public static var Chichewa: String {
+        return self.nya.rawValue
+    }
+
+    public static var Chewa: String {
+        return self.nya.rawValue
+    }
+
+    public static var Nyanja: String {
+        return self.nya.rawValue
+    }
+
+    public static var Ossetian: String {
+        return self.oss.rawValue
+    }
+
+    public static var Pali: String {
+        return self.pli.rawValue
+    }
+
+    public static var SignLanguage: String {
+        return self.sgn.rawValue
+    }
+
+    public static var NorthernSami: String {
+        return self.sme.rawValue
+    }
+
+    public static var Sardinian: String {
+        return self.srd.rawValue
+    }
+
+    public static var Tahitian: String {
+        return self.tah.rawValue
+    }
+
+    public static var Akan: String {
+        return self.aka.rawValue
+    }
+
+    public static var Avaric: String {
+        return self.ava.rawValue
+    }
+
+    public static var Cree: String {
+        return self.cre.rawValue
+    }
+
+    public static var Ewe: String {
+        return self.ewe.rawValue
+    }
+
+    public static var Fulah: String {
+        return self.ful.rawValue
+    }
+
+    public static var Igbo: String {
+        return self.ibo.rawValue
+    }
+
+    public static var Kanuri: String {
+        return self.kau.rawValue
+    }
+
+    public static var Kongo: String {
+        return self.kon.rawValue
+    }
+
+    public static var LubaKatanga: String {
+        return self.lub.rawValue
+    }
+
+    public static var Ganda: String {
+        return self.lug.rawValue
+    }
+
+    public static var Ojibwa: String {
+        return self.oji.rawValue
+    }
+
+    public static var Venda: String {
+        return self.ven.rawValue
+    }
+
+    public static var Cornish: String {
+        return self.cor.rawValue
+    }
+
+    public static var Manx: String {
+        return self.glv.rawValue
+    }
+
+    public static var Luxembourghish: String {
+        return self.ltz.rawValue
+    }
+
+    public static var Letzeburgesch: String {
+        return self.ltz.rawValue
+    }
+
+    public static var Hebrew: String {
+        return self.heb.rawValue
+    }
+
+    public static var Inuktitut: String {
+        return self.iku.rawValue
+    }
+
+    public static var Indonesian: String {
+        return self.ind.rawValue
+    }
+
+    public static var Uighur: String {
+        return self.uig.rawValue
+    }
+
+    public static var Uyghur: String {
+        return self.uig.rawValue
+    }
+
+    public static var Yiddish: String {
+        return self.yid.rawValue
+    }
+
+    public static var Zhuang: String {
+        return self.zha.rawValue
+    }
+
+    public static var Chuang: String {
+        return self.zha.rawValue
+    }
+
     
 }
 

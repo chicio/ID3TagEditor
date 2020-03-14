@@ -61,7 +61,9 @@ class ID3FrameConfiguration {
         .Genre : [UInt8]("TCON".utf8),
         .TrackPosition : [UInt8]("TRCK".utf8),
         .DiscPosition : [UInt8]("TPOS".utf8),
-        .UserDefinedTextInformation : [UInt8]("TXXX".utf8)
+        .UserDefinedTextInformation : [UInt8]("TXXX".utf8),
+        .TableOfContents : [UInt8]("CTOC".utf8),
+        .Chapter : [UInt8]("CHAP".utf8)
     ]
     private var identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
@@ -135,7 +137,9 @@ class ID3FrameConfiguration {
         "TCON" : .Genre,
         "TRCK" : .TrackPosition,
         "TPOS" : .DiscPosition,
-        "TXXX" : .UserDefinedTextInformation
+        "TXXX" : .UserDefinedTextInformation,
+        "CTOC" : .TableOfContents,
+        "CHAP" : .Chapter
     ]
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [

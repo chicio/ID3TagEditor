@@ -86,4 +86,8 @@ public enum FrameName: Hashable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
+    /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
+    case TableOfContents
+    /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
+    case Chapter
 }
