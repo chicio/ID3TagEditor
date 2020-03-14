@@ -490,6 +490,10 @@
 		5133C417241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C415241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift */; };
 		5133C418241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C415241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift */; };
 		5133C419241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C415241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift */; };
+		5133C41B241D6F9D00CC3138 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C41A241D6F9D00CC3138 /* Languages.swift */; };
+		5133C41C241D6F9D00CC3138 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C41A241D6F9D00CC3138 /* Languages.swift */; };
+		5133C41D241D6F9D00CC3138 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C41A241D6F9D00CC3138 /* Languages.swift */; };
+		5133C41E241D6F9D00CC3138 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5133C41A241D6F9D00CC3138 /* Languages.swift */; };
 		5151CACD240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
 		5151CACE240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
 		5151CACF240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */; };
@@ -1186,6 +1190,7 @@
 		5133C408241CCA8200CC3138 /* ID3ChapterFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ChapterFrame.swift; sourceTree = "<group>"; };
 		5133C410241CDAC600CC3138 /* TableOfContentsStringAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsStringAdapter.swift; sourceTree = "<group>"; };
 		5133C415241CDB1E00CC3138 /* ID3TableOfContentsStringAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TableOfContentsStringAdapter.swift; sourceTree = "<group>"; };
+		5133C41A241D6F9D00CC3138 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameWithIntegerContent.swift; sourceTree = "<group>"; };
 		5151CAD1240D9253002A7C05 /* ID3ItunesMovementCountFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementCountFrame.swift; sourceTree = "<group>"; };
 		5151CAD6240D943D002A7C05 /* ID3ItunesMovementCountFrameContentParsingOperationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3ItunesMovementCountFrameContentParsingOperationFactory.swift; sourceTree = "<group>"; };
@@ -1615,6 +1620,7 @@
 				51A1906C241ADF7C001A6B52 /* ID3FrameConfiguration.swift */,
 				51A1906D241ADF7C001A6B52 /* ID3FrameLanguage.swift */,
 				51A1906E241ADF7D001A6B52 /* ISO_639_2_Codes.swift */,
+				5133C41A241D6F9D00CC3138 /* Languages.swift */,
 				45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */,
 				45B4337021DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift */,
 				5151CACC240D8E60002A7C05 /* ID3FrameWithIntegerContent.swift */,
@@ -2767,6 +2773,7 @@
 				45B4336C21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift in Sources */,
 				519C34012405041E008F3BDE /* ID3PublisherFrameCreator.swift in Sources */,
 				4562C1F021173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */,
+				5133C41B241D6F9D00CC3138 /* Languages.swift in Sources */,
 				4528AF37210B869C00CB7A2E /* ID3TitleFrameContentParsingOperationFactory.swift in Sources */,
 				5133C409241CCA8200CC3138 /* ID3ChapterFrame.swift in Sources */,
 				45231DE321DBFFAF008FDCE7 /* ID3FrameAttachedPicture.swift in Sources */,
@@ -3039,6 +3046,7 @@
 				45B4336D21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift in Sources */,
 				519C34022405041E008F3BDE /* ID3PublisherFrameCreator.swift in Sources */,
 				C5067B769579DD6F6E8BB521 /* ID3AttachedPictureFrameCreator.swift in Sources */,
+				5133C41C241D6F9D00CC3138 /* Languages.swift in Sources */,
 				4562C1F121173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */,
 				5133C40A241CCA8200CC3138 /* ID3ChapterFrame.swift in Sources */,
 				45231DE421DBFFAF008FDCE7 /* ID3FrameAttachedPicture.swift in Sources */,
@@ -3311,6 +3319,7 @@
 				45541BBD20598FA60025A8BF /* TagProperties.swift in Sources */,
 				519C34032405041E008F3BDE /* ID3PublisherFrameCreator.swift in Sources */,
 				45541BBE20598FA60025A8BF /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
+				5133C41D241D6F9D00CC3138 /* Languages.swift in Sources */,
 				4562C1F221173C8C00AFE22E /* ID3RecordingDayMonthContentParsingOperationFactory.swift in Sources */,
 				5133C40B241CCA8200CC3138 /* ID3ChapterFrame.swift in Sources */,
 				45231DE521DBFFAF008FDCE7 /* ID3FrameAttachedPicture.swift in Sources */,
@@ -3583,6 +3592,7 @@
 				45F83428205905EF0046C804 /* TagProperties.swift in Sources */,
 				519C34042405041E008F3BDE /* ID3PublisherFrameCreator.swift in Sources */,
 				45F83429205905EF0046C804 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
+				5133C41E241D6F9D00CC3138 /* Languages.swift in Sources */,
 				4528AF0D210B833400CB7A2E /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
 				5133C40C241CCA8200CC3138 /* ID3ChapterFrame.swift in Sources */,
 				45231DE621DBFFAF008FDCE7 /* ID3FrameAttachedPicture.swift in Sources */,
