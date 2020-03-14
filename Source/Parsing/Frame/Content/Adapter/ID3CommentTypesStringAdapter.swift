@@ -19,11 +19,11 @@ class ID3CommentTypesStringAdapter: CommentTypesStringAdapter {
     }
 
     private func getLanguageFrom(contentComponents: [String]) -> ISO_639_2_Codes {
-        let stringToLanguageCode = contentComponents.first.map({ ISO_639_2_Codes(rawValue: $0) })
-        #warning("fatal error with the unwrapping here. I need to fix this.")
-        return stringToLanguageCode!!
+        return contentComponents.first.map({ (ISO_639_2_Codes(rawValue: $0 ) ?? .und)})
+        ?? .und
     }
-    
+
+
     private func getDescriptionFrom(contentComponents: [String]) -> String? {
         return (contentComponents.count > 1 ? String(contentComponents[1]) : nil) ?? ""
     }

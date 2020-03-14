@@ -11,10 +11,8 @@ import XCTest
 class ID3UserDefinedTextInformationFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoUserDefinedText() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        #warning("I'm getting an error here: Extra argument 'frameCreator' in call")
-        #warning("I'm having a hard time figuring out why.")
 
-        let id3UserTextFrameCreator = ID3UserDefinedTextFrameCreator(
+        let id3UserTextFrameCreator = ID3UserDefinedTextInformationFrameCreator(
             frameCreator: MockUserTextFrameContentCreator(
                 fakeNewFrameAsByte: [],
                 frameTypeToBeChecked: .UserDefinedTextInformation
