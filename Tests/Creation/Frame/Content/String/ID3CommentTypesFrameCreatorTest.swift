@@ -29,9 +29,3 @@ class ID3CommentTypesFrameCreatorTest: XCTestCase {
         XCTAssertEqual(frameBytes, [0x22, 0x11, 0x00, /* insert .und in bytes*/ /* insert "description in bytes followed by null character*/ 0x01, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, 0x00])
     }
 }
-
-class MockCommentTypesStringToBytesAdapter: StringToBytesAdapter {
-    func adapt(string: String, for version: ID3Version) -> [UInt8] {
-        return [0x01, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, 0x00]
-    }
-}

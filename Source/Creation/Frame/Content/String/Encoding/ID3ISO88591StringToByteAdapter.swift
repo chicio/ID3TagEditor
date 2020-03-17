@@ -15,9 +15,19 @@ class ID3ISO88591StringToByteAdapter: StringToBytesAdapter {
         self.paddingAdder = paddingAdder
         self.frameConfiguration = frameConfiguration
     }
-    
-    func adapt(string: String, for version: ID3Version) -> [UInt8] {
-        return frameConfiguration.encodingByteFor(version: version, encoding: .ISO88591) +
-            paddingAdder.addTo(content:[UInt8](string.utf8), numberOfByte: 1)
+
+    func encoding(for version: ID3Version) -> [UInt8] {
+      return frameConfiguration.encodingByteFor(version: version, encoding: .ISO88591)
+    }
+
+    func termination() -> [UInt8] {
+      return [UInt8](repeating: 0, count: 1)
+    }
+
+    func adapt(stringOnly string: String) -> [UInt8] {
+      #warning("Throwing would probably be a better API.")
+      // If the string is not actually representable in ISO 8859‐1, falling back to UTF‐8 enables any ASCII portions to remain legible, but will garble anything else. (It will be “valid” gibberish.)
+      return string.data(using: .isoLatin1).map({ [UInt8]($0) })
+        ?? [UInt8](string.utf8)
     }
 }
