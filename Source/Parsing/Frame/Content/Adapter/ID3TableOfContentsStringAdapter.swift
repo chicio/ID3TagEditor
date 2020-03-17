@@ -9,15 +9,24 @@
 import Foundation
 
 class ID3TableOfContentsStringAdapter: TableOfContentsStringAdapter {
-     
-    func adapt(content: String) -> ID3FrameCommentTypes {
+
+    func adapt(content: String) -> ID3FrameTableOfContents {
         let contentComponents = content.components(separatedBy: ":")
         let elementID = getElementIDFrom(contentComponents: contentComponents)
         let topLevelFlag = getTopLevelFlagFrom(contentComponents: contentComponents)
         let orderedFlag = getOrderedFlagFrom(contentComponents: contentComponents)
         let entryCount = getEntryCountFrom(contentComponents: contentComponents)
         let childElementIDs = getChildElementIDsFrom(contentComponents: contentComponents)
-        return ID3FrameCommentTypes(language: language, description: description, content: content)
+        return ID3FrameTableOfContents(
+          elementID: elementID,
+          topLevelFlag: topLevelFlag,
+          orderedFlag: orderedFlag,
+          entryCount: UInt8(entryCount),
+          childElementIDs: childElementIDs.compactMap({ $0 }),
+          embeddedSubFrames: [])
+        #warning("↑ Why is the entry count an integer, but the table of contents needs an unsigned 8‐bit integer?")
+        #warning("↑ Why are the child element IDs optional strings, but the table of contents needs non‐optionals?")
+        #warning("↑ Where are the subframes supposed to come from?")
     }
 
     private func getElementIDFrom(contentComponents: [String]) -> String {
