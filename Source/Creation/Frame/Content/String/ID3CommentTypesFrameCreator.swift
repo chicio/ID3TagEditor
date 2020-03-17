@@ -22,23 +22,44 @@ class ID3CommentTypesFrameCreator: CommentTypesFrameCreator {
         self.stringToBytesAdapter = stringToBytesAdapter
     }
 
-    func createFrame(frameIdentifier: [UInt8], version: ID3Version, language: ISO_639_2_Codes, description: String?, content: String) -> [UInt8] {
-        var frame: [UInt8] = frameIdentifier
+    func createFrame(
+      frameIdentifier: [UInt8],
+      version: ID3Version,
+      language: ISO_639_2_Codes,
+      description: String?,
+      content: String
+    ) -> [UInt8] {
+      let frameContents = [UInt8](
+        [
+          stringToBytesAdapter.encoding(for: version),
+          stringToBytesAdapter.adapt(
+            string: language.rawValue,
+            for: version,
+            includingEncoding: false,
+            includingTermination: false
+          ),
+          stringToBytesAdapter.adapt(
+            string: description ?? "",
+            for: version,
+            includingEncoding: false,
+            includingTermination: true
+          ),
+          stringToBytesAdapter.adapt(
+            string: content,
+            for: version,
+            includingEncoding: false,
+            includingTermination: false
+          )
+      ].joined()
+      )
 
-        let languageAsBytes = stringToBytesAdapter.adapt(string: language.rawValue, for: version)
-        let terminatedString = String(decoding: (description?.nullTerminated)!, as: UTF8.self)
-        let descriptionAsBytes = stringToBytesAdapter.adapt(string: terminatedString, for: version)
-        let contentAsBytes = stringToBytesAdapter.adapt(string: content, for: version)
-
-        frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: languageAsBytes, version: version))
-        frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: descriptionAsBytes, version: version))
-        frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: version))
-
-        frame.append(contentsOf: frameFlagsCreator.createFor(version: version))
-        frame.append(contentsOf: languageAsBytes)
-        frame.append(contentsOf: descriptionAsBytes)
-        frame.append(contentsOf: contentAsBytes)
-        return frame
+      return [UInt8](
+        [
+          frameIdentifier,
+          frameContentSizeCalculator.calculateSizeOf(content: frameContents, version: version),
+          frameContents
+        ].joined()
+      )
     }
 }
 
