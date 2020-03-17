@@ -23,8 +23,7 @@ class ID3TableOfContentsStringAdapter: TableOfContentsStringAdapter {
           orderedFlag: orderedFlag,
           entryCount: entryCount,
           childElementIDs: childElementIDs,
-          embeddedSubFrames: [])
-        #warning("↑ Where are the subframes supposed to come from?")
+          embeddedSubFrames: getSubFramesFrom(contentComponents: contentComponents))
     }
 
     private func getElementIDFrom(contentComponents: [String]) -> String {
