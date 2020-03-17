@@ -60,7 +60,7 @@ class ID3TableOfContentsStringAdapter: TableOfContentsStringAdapter {
     }
 
     private func getSubFramesFrom(contentComponents: [String]) -> [ID3Frame] {
-        #warning("No idea how to handle this conversion")
-        return contentComponents
+         #warning("What is this supposed to do?")
+        return []
     }
 }
