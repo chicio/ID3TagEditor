@@ -21,10 +21,9 @@ class ID3TableOfContentsStringAdapter: TableOfContentsStringAdapter {
           elementID: elementID,
           topLevelFlag: topLevelFlag,
           orderedFlag: orderedFlag,
-          entryCount: UInt8(entryCount),
+          entryCount: entryCount,
           childElementIDs: childElementIDs.compactMap({ $0 }),
           embeddedSubFrames: [])
-        #warning("↑ Why is the entry count an integer, but the table of contents needs an unsigned 8‐bit integer?")
         #warning("↑ Why are the child element IDs optional strings, but the table of contents needs non‐optionals?")
         #warning("↑ Where are the subframes supposed to come from?")
     }
@@ -51,8 +50,9 @@ class ID3TableOfContentsStringAdapter: TableOfContentsStringAdapter {
         }
     }
 
-    private func getEntryCountFrom(contentComponents: [String]) -> Int {
-        return Int(contentComponents[3]) ?? 0
+    private func getEntryCountFrom(contentComponents: [String]) -> UInt8 {
+        #warning("Is falling back to zero really the right thing to do?")
+        return UInt8(contentComponents[3]) ?? 0
     }
 
     private func getChildElementIDsFrom(contentComponents: [String]) -> [String?] {
