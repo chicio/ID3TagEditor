@@ -47,6 +47,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, "UnsyncedLyrics V2")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "lyricsTest V2")
+        #warning("COM is never detected. However, the garbled “ULT” tag is immediately followed by a “#[null]u” tag which gets discarded as invalid. The data that frame reports is a whopping 158206 bytes, and starting from the “u” in the tag name, it begins with “und”, two nulls and then “lyricsTest V2”. It seems the previous tag extends beyond its own declared end. Either the file was encoded wrong or I am working from the wrong specification. Either way, the root of the problem lies at the point when the frames themselves are split up, before individual frames are interpreted.")
         XCTAssertEqual(id3Tag?.frames[.Comment]?.id3Identifier, "COM")
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, "Comment V2")
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
