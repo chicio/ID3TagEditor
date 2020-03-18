@@ -133,7 +133,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     }
     
     func testReadNewFramesV4() throws {
-        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3"))
+        let path = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
+        // See testReadNewFramesV2 for an explanation of the duplication.
+        _ = try? id3TagEditor.read(from: path)
+        let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.id3Identifier, "TCOM")
