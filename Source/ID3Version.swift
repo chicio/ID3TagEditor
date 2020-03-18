@@ -18,6 +18,15 @@ public enum ID3Version: UInt8, Comparable {
     /// ID3 2.4 version.
     case version4 = 4
 
+    internal var identifierSize: Int {
+      switch self {
+      case .version2:
+        return 3
+      case .version3, .version4:
+        return 4
+      }
+    }
+
     /**
      Compare two version values.
      

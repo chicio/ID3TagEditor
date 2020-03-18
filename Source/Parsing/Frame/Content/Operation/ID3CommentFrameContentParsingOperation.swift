@@ -14,12 +14,13 @@ struct ID3CommentFrameContentParsingOperation: FrameContentParsingOperation {
 
   func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
     var parsing = frame[...]
-    let name = parsing.extractFirst(3)
+    let name = parsing.extractFirst(version.identifierSize)
     assert(
-      String(ascii: name) == "ULT",
-      "Mismatched frame name: \(String(ascii: name)) ≠ ULT"
+      String(ascii: name) == frameName.fourByteString
+        || String(ascii: name) == frameName.threeByteString,
+      "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.fourByteString!)/\(frameName.fourByteString!)"
     )
-    _ = parsing.extractFirst(3) // Size
+    _ = parsing.extractFirst(version.identifierSize) // Size
 
     #warning("Should be able to throw or otherwise signal that the encoding flag was invalid. Falling back to the most standard encoding could cause trouble down the line.")
     let encoding = parsing.extractFirst(1).first.flatMap({ ID3StringEncoding(rawValue: $0) })

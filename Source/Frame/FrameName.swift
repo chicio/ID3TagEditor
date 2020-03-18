@@ -90,4 +90,22 @@ public enum FrameName: Hashable {
     case TableOfContents
     /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
     case Chapter
+
+    internal var fourByteString: String? {
+      switch self {
+      case .UnsyncedLyrics:
+        return "USLT"
+      default:
+        return nil
+      }
+    }
+
+    internal var threeByteString: String? {
+      switch self {
+      case .UnsyncedLyrics:
+        return "ULT"
+      default:
+        return nil
+      }
+    }
 }
