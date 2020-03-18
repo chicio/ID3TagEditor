@@ -196,10 +196,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     
     //MARK: write
     
-    func testWriteNewFramesV2() {
+    func testWriteNewFramesV2() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
-        let pathMp3Generated = PathLoader.testOutputDirectory
-          .appendingPathComponent("example-newframes-v2-generated.mp3").path
+        let generationURL = PathLoader.testOutputDirectory
+          .appendingPathComponent("example-newframes-v2-generated.mp3")
+        try? FileManager.default.removeItem(at: generationURL)
+        let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
@@ -222,22 +224,26 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V2"),
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
             andSaveTo: pathMp3Generated
             ))
+        let generated = try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))
+        let expected = try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         XCTAssertEqual(
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+            generated,
+            expected
         )
     }
     
     func testWriteNewFramesV3() {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
-        let pathMp3Generated = PathLoader.testOutputDirectory
-          .appendingPathComponent("example-newframes-v3-generated.mp3").path
+        let generationURL = PathLoader.testOutputDirectory
+          .appendingPathComponent("example-newframes-v3-generated.mp3")
+        try? FileManager.default.removeItem(at: generationURL)
+        let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -283,8 +289,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     
     func testWriteNewFramesV4() {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
-        let pathMp3Generated = PathLoader.testOutputDirectory
-          .appendingPathComponent("example-newframes-v4-generated.mp3").path
+        let generationURL = PathLoader.testOutputDirectory
+          .appendingPathComponent("example-newframes-v4-generated.mp3")
+        try? FileManager.default.removeItem(at: generationURL)
+        let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
