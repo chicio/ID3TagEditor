@@ -14,8 +14,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     //MARK: read
     
     func testReadNewFramesV2() throws {
-        _ = try? id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3"))
-        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3"))
+        let path = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
+        // Attempting twice allows it to succeed even if the operating system rejects the first attempt. This can happen if the previous test run crashed in the middle without telling the system it was done with the file.
+        _ = try? id3TagEditor.read(from: path)
+        let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCM")
@@ -64,7 +66,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     }
     
     func testReadNewFramesV3() throws {
-        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3"))
+        let path = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
+        // See testReadNewFramesV2 for an explanation of the duplication.
+        _ = try? id3TagEditor.read(from: path)
+        let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCOM")
