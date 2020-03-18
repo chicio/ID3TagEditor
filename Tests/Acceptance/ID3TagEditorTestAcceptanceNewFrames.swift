@@ -232,6 +232,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             ))
         let generated = try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))
         let expected = try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #warning("We are comparing against the same corrupted file from the read tests.")
         XCTAssertEqual(
             generated,
             expected,
