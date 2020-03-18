@@ -234,7 +234,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         let expected = try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         XCTAssertEqual(
             generated,
-            expected
+            expected,
+            generated.describeDifference(from: expected)
         )
     }
     
