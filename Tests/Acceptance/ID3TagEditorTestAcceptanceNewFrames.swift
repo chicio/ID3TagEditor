@@ -43,6 +43,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V2")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "ULT")
+        #warning("The data in the “ULT” tag is “55 4C 54 00 00 05 00 00 10 00 00”. That appears to mean “ULT”, a 5‐byte size, a text encoding of Latin‐1, a language of “null, data escape, null”, and nothing more. But that is nonsense. The expected string is not present. What is actually in the file?")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, "UnsyncedLyrics V2")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "lyricsTest V2")
