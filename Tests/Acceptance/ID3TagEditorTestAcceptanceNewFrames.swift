@@ -13,8 +13,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     
     //MARK: read
     
-    func testReadNewFramesV2() {
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3"))
+    func testReadNewFramesV2() throws {
+        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3"))
         
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCM")
@@ -59,8 +59,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
     }
     
-    func testReadNewFramesV3() {
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3"))
+    func testReadNewFramesV3() throws {
+        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3"))
         
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCOM")
@@ -122,8 +122,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
     }
     
-    func testReadNewFramesV4() {
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3"))
+    func testReadNewFramesV4() throws {
+        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3"))
         
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.id3Identifier, "TCOM")
