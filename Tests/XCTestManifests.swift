@@ -340,14 +340,6 @@ extension ID3TrackPositionStringAdapterTest {
     ]
 }
 
-extension ID3CommentTypesStringAdapterTest {
-    static let __allTests = [
-        ("testAdaptNotACountryCode", testAdaptNotACountryCode),
-        ("testAdaptCommentWithoutDescription", testAdaptCommentWithoutDescription),
-        ("testAdaptCommentWithDescription", testAdaptCommentWithDescription),
-    ]
-}
-
 extension ID3DiscPositionStringAdapterTest {
     static let __allTests = [
         ("testAdaptNotANumberDiscPosition", testAdaptNotANumberDiscPosition),
