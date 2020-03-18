@@ -28,8 +28,13 @@ struct ID3CommentFrameContentParsingOperation: FrameContentParsingOperation {
     let language = ISO_639_2_Codes(rawValue: String(ascii: parsing.extractFirst(3))) ?? .und
 
     let description = parsing.extractPrefixAsStringUntilNullTermination(encoding)
-    let content = parsing.extractPrefixAsStringUntilNullTermination(encoding)
-    let constructed = ID3FrameCommentTypes(language: language, description: description, content: content)
+    #warning("Upon encoding failure, this falls back to an empty string, losing information. It ought to throw or something instead.")
+    let content = parsing.extractPrefixAsStringUntilNullTermination(encoding) ?? ""
+    let constructed = ID3FrameCommentTypes(
+      language: language,
+      description: description,
+      content: content
+    )
     completed(frameName, constructed)
   }
 }

@@ -12,7 +12,39 @@ extension Data.SubSequence {
   /// Removes and returns a null‐terminated string from the beginning of the subsequence (which only mutates the subsequence’s bounds, not the underlying `Data` instance).
   ///
   /// If there is no null‐termination, the string will be constructed from the entire subsequence.
-  internal mutating func extractPrefixAsStringUntilNullTermination(_ encoding: ID3StringEncoding) -> String {
-    return ""
+  internal mutating func extractPrefixAsStringUntilNullTermination(_ encoding: ID3StringEncoding) -> String? {
+    let double: Bool
+    switch encoding {
+    case .ISO88591, .UTF8:
+      double = false
+    case .UTF16:
+      double = true
+    }
+    var remainder = self
+    search: while let null = remainder.firstIndex(of: 0) {
+      remainder = self[null...].dropFirst()
+      if double {
+        if remainder.first == 0 {
+          // Found double‐byte null.
+          remainder = remainder.dropFirst()
+          break search
+        } else {
+          // Single only, keep looking.
+          continue search
+        }
+      } else {
+        // Found single‐byte null.
+        break search
+      }
+    }
+
+    var stringBytes = self[..<remainder.startIndex]
+    self = remainder
+    stringBytes = stringBytes.dropLast()
+    if double {
+      stringBytes = stringBytes.dropLast()
+    }
+
+    return String(data: Data(stringBytes), encoding: encoding.standardLibraryEncoding)
   }
 }
