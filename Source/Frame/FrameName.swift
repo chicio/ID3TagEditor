@@ -93,6 +93,8 @@ public enum FrameName: Hashable {
 
     internal var fourByteString: String? {
       switch self {
+      case .Comment:
+        return "COMM"
       case .UnsyncedLyrics:
         return "USLT"
       default:
@@ -102,6 +104,8 @@ public enum FrameName: Hashable {
 
     internal var threeByteString: String? {
       switch self {
+      case .Comment:
+        return "COM"
       case .UnsyncedLyrics:
         return "ULT"
       default:

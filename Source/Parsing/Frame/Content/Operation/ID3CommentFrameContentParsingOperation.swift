@@ -18,7 +18,7 @@ struct ID3CommentFrameContentParsingOperation: FrameContentParsingOperation {
     assert(
       String(ascii: name) == frameName.fourByteString
         || String(ascii: name) == frameName.threeByteString,
-      "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.fourByteString!)/\(frameName.fourByteString!)"
+      "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.fourByteString!)/\(frameName.threeByteString!)"
     )
     _ = parsing.extractFirst(version.identifierSize) // Size
 
