@@ -8,2241 +8,975 @@
 
 import Foundation
 
-//
-//  Languages.swift
-//  AudiobookTagger
-//
-//  Created by Nolaine Crusher on 3/14/20.
-//  Copyright © 2020 Nolaine Crusher. All rights reserved.
-//
-
-import Foundation
-
-enum languages {
-    /// Afar
-    case Afar
-    /// Abkhazian
-    case Abkhazian
-    /// Achinese
-    case Achinese
-    /// Acoli
-    case Acoli
-    /// Adangme
-    case Adangme
-    /// Adyghe
-    case Adyghe
-    /// Adygei
-    case Adygei
-    /// Afro-Asiatic Languages
-    case AfroAsiaticLanguages
-    /// Afrihili
-    case Afrihili
-    /// Afrikaans
-    case Afrikaans
-    /// Ainu
-    case Ainu
-    /// Akan
-    case Akan
-    /// Akkadian
-    case Akkadian
-    /// Albanian
-    case Albanian
-    /// Aleut
-    case Aleut
-    /// Algonquian Languages
-    case AlgonquianLanguages
-    /// Southern Altai
-    case SouthernAltai
-    /// Amharic
-    case Amharic
-    /// English: Old (ca.4501100)
-    case OldEnglish
-    /// Angika
-    case Angika
-    /// Apache Languages
-    case ApacheLanguages
-    /// Arabic
-    case Arabic
-    /// Official Aramaic (700-300 BCE)
-    case OfficialAramaic
-    /// Imperial Aramaic (700-300 BCE)
-    case ImperialAramaic
-    /// Aragonese
-    case Aragonese
-    /// Armenian
-    case Armenian
-    /// Mapudungun
-    case Mapudungun
-    /// Mapuche
-    case Mapuche
-    /// Arapaho
-    case Arapaho
-    /// Artificial Languages
-    case ArtificialLanguages
-    /// Arawak
-    case Arawak
-    /// Assamese
-    case Assamese
-    /// Asturian
-    case Asturian
-    /// Bable
-    case Bable
-    /// Leonese
-    case Leonese
-    /// Asturleonese
-    case Asturleonese
-    /// Athapascan Languages
-    case AthapascanLanguages
-    /// Australian Languages
-    case AustralianLanguages
-    /// Avaric
-    case Avaric
-    /// Avestan
-    case Avestan
-    /// Awadhi
-    case Awadhi
-    /// Aymara
-    case Aymara
-    /// Azerbaijani
-    case Azerbaijani
-    /// Banda Languages
-    case BandaLanguages
-    /// Bamileke Languages
-    case BamilekeLanguages
-    /// Bashkir
-    case Bashkir
-    /// Baluchi
-    case Baluchi
-    /// Bambara
-    case Bambara
-    /// Balinese
-    case Balinese
-    /// Basque
-    case Basque
-    /// Basa
-    case Basa
-    /// Baltic Languages
-    case BalticLanguages
-    /// Beja
-    case Beja
-    /// Bedawiyet
-    case Bedawiyet
-    /// Belarusian
-    case Belarusian
-    /// Bemba
-    case Bemba
-    /// Bengali
-    case Bengali
-    /// Berber Languages
-    case BerberLanguages
-    /// Bhojpuri
-    case Bhojpuri
-    /// Bihari Languages
-    case BihariLanguages
-    /// Bikol
-    case Bikol
-    /// Bini
-    case Bini
-    /// Edo
-    case Edo
-    /// Bislama
-    case Bislama
-    /// Siksika
-    case Siksika
-    /// Bantu Languages
-    case BantuLanguages
-    /// Bosnian
-    case Bosnian
-    /// Braj
-    case Braj
-    /// Breton
-    case Breton
-    /// Batak Languages
-    case BatakLanguages
-    /// Buriat
-    case Buriat
-    /// Buginese
-    case Buginese
-    /// Bulgarian
-    case Bulgarian
-    /// Burmese
-    case Burmese
-    /// Blin
-    case Blin
-    /// Bilin
-    case Bilin
-    /// Caddo
-    case Caddo
-    /// Central American Indian Languages
-    case CentralAmericanIndianLanguages
-    /// Galibi Carib
-    case GalibiCarib
-    /// Catalan
-    case Catalan
-    /// Valencian
-    case Valencian
-    /// Caucasian Languages
-    case CaucasianLanguages
-    /// Cebuano
-    case Cebuano
-    /// Celtic Languages
-    case CelticLanguages
-    /// Chamorro
-    case Chamorro
-    /// Chibcha
-    case Chibcha
-    /// Chechen
-    case Chechen
-    /// Chagatai
-    case Chagatai
-    /// Chinese
-    case Chinese
-    /// Chuukese
-    case Chuukese
-    /// Mari
-    case Mari
-    /// Chinook jargon
-    case ChinookJargon
-    /// Choctaw
-    case Choctaw
-    /// Chipewyan
-    case Chipewyan
-    /// Dene Suline
-    case DeneSuline
-    /// Cherokee
-    case Cherokee
-    /// Church Slavic
-    case ChurchSlavic
-    /// Old Slavonic
-    case OldSlavonic
-    /// Church Slavonic
-    case ChurchSlavonic
-    /// Old Bulgarian
-    case OldBulgarian
-    /// Old Church Slavonic
-    case OldChurchSlavonic
-    /// Chuvash
-    case Chuvash
-    /// Cheyenne
-    case Cheyenne
-    /// Chamic Languages
-    case ChamicLanguages
+enum languages: String {
+    
+    /// Undefined
+    case Undefined
     /// Montenegrin
     case Montenegrin
-    /// Coptic
-    case Coptic
-    /// Cornish
-    case Cornish
-    /// Corsican
-    case Corsican
-    /// Creoles and pidgins: English-based
+    /// Standard Moroccan Tamazight
+    case StandardMoroccanTamazight
+    /// Hmong; Mong
+    case Hmong
+    /// Hmong; Mong
+    case Mong
+    /// Bihari languages
+    case BihariLanguage
+    /// Himachali languages; Western Pahari languages
+    case HimachaliLanguages
+    /// Himachali languages; Western Pahari languages
+    case WesternPahariLanguages
+    /// Afro-Asiatic languages
+    case AfroAsiaticLanguage
+    /// Apache Languages
+    case ApacheLanguages
+    /// Artificial Languages
+    case ArtificialLanguages
+    /// Bamileke Languages
+    case BamilekeLanguages
+    /// Baltic Languages
+    case BalticLanguages
+    /// Berber Languages
+    case BerberLanguages
+    /// Bantu Languages
+    case BantuLanguages
+    /// Central American Indian Languages
+    case CentralAmericanIndianLanguages
+    /// Caucasian Languages
+    case CaucasianLanguages
+    /// Celtic Languages
+    case CelticLanguages
+    /// Creoles and Pidgins; English-based
     case EnglishCreolesAndPidgins
-    /// Creoles and pidgins: French-based
+    /// Creoles and Pidgins; French-based
     case FrenchCreolesAndPidgins
-    /// Creoles and pidgins: Portuguese-based
-    case PortgueseCreolesAndPidgins
-    /// Cree
-    case Cree
-    /// Crimean Tatar
-    case CrimeanTatar
-    /// Crimean Turkish
-    case CrimeanTurkish
-    /// Creoles and pidgins
+    /// Creoles and Pidgins, Portugese-based
+    case PortugeseCreolesAndPidgins
+    /// Creoles and Pidgins
     case CreolesAndPidgins
-    /// Kashubian
-    case Kashubian
     /// Cushitic Languages
     case CushiticLanguages
-    /// Czech
-    case Czech
-    /// Dakota
-    case Dakota
-    /// Danish
-    case Danish
-    /// Dargwa
-    case Dargwa
-    /// Land Dayak Languages
-    case LandDayakLanguages
-    /// Delaware
-    case Delaware
-    /// Slave (Athapascan)
-    case SlaveAthapascan
-    /// Dogrib
-    case Dogrib
-    /// Dinka
-    case Dinka
-    /// Divehi
-    case Divehi
-    /// Dhivehi
-    case Dhivehi
-    /// Maldivian
-    case Maldivian
-    /// Dogri
-    case Dogri
     /// Dravidian Languages
     case DravidianLanguages
-    /// Lower Sorbian
-    case LowerSorbian
-    /// Duala
-    case Duala
-    /// Dutch: Middle (ca.10501350)
-    case MiddleDutch
-    /// Dutch
-    case Dutch
-    /// Flemish
-    case Flemish
-    /// Dyula
-    case Dyula
-    /// Dzongkha
-    case Dzongkha
-    /// Efik
-    case Efik
-    /// Egyptian (Ancient)
-    case AncientEgyptian
-    /// Ekajuk
-    case Ekajuk
-    /// Elamite
-    case Elamite
-    /// English
-    case English
-    /// English: Middle (11001500)
-    case MiddleEnglish
-    /// Esperanto
-    case Esperanto
-    /// Estonian
-    case Estonian
-    /// Ewe
-    case Ewe
-    /// Ewondo
-    case Ewondo
-    /// Fang
-    case Fang
-    /// Faroese
-    case Faroese
-    /// Fanti
-    case Fanti
-    /// Fijian
-    case Fijian
-    /// Filipino
-    case Filipino
-    /// Pilipino
-    case Pilipino
-    /// Finnish
-    case Finnish
     /// Finno-Ugrian Languages
     case FinnoUgrianLanguages
-    /// Fon
-    case Fon
-    /// French
-    case French
-    /// French: Middle (ca.14001600)
-    case MiddleFrench
-    /// French: Old (842ca.1400)
-    case OldFrench
-    /// Northern Frisian
-    case NorthernFrisian
-    /// Eastern Frisian
-    case EasternFrisian
-    /// Western Frisian
-    case WesternFrisian
-    /// Fulah
-    case Fulah
-    /// Friulian
-    case Friulian
-    /// Ga
-    case Ga
-    /// Gayo
-    case Gayo
-    /// Gbaya
-    case Gbaya
     /// Germanic Languages
     case GermanicLanguages
-    /// Georgian
-    case Georgian
-    /// German
-    case German
-    /// Geez
-    case Geez
-    /// Gilbertese
-    case Gilbertese
-    /// Gaelic
-    case Gaelic
-    /// Scottish Gaelic
-    case ScottishGaelic
-    /// Irish
-    case Irish
-    /// Galician
-    case Galician
-    /// Manx
-    case Manx
-    /// German: Middle High (ca.1050-1500)
-    case MiddleHighGerman
-    /// German: Old High (ca.750-1050)
-    case OldHighGerman
-    /// Gondi
-    case Gondi
-    /// Gorontalo
-    case Gorontalo
-    /// Gothic
-    case Gothic
-    /// Grebo
-    case Grebo
-    /// Greek: Ancient (to 1453)
-    case AncientGreek
-    /// Greek: Modern (1453)
-    case ModernGreen
-    /// Guarani
-    case Guarani
-    /// Swiss German
-    case SwissGerman
-    /// Alemannic
-    case Alemannic
-    /// Alsatian
-    case Alsatian
-    /// Gujarati
-    case Gujarati
-    /// Gwich'in
-    case Gwichin
-    /// Haida
-    case Haida
-    /// Haitian
-    case Haitian
-    /// Haitian Creole
-    case HaitianCreole
-    /// Hausa
-    case Hausa
-    /// Hawaiian
-    case Hawaiian
-    /// Hebrew
-    case Hebrew
-    /// Herero
-    case Herero
-    /// Hiligaynon
-    case Hiligaynon
-    /// Himachali Languages
-    case HimachaliLanguages
-    /// Western Pahari Languages
-    case WesternPahariLanguages
-    /// Hindi
-    case Hindi
-    /// Hittite
-    case Hittite
-    /// Hmong
-    case Hmong
-    /// Mong
-    case Mong
-    /// Hiri Motu
-    case HiriMotu
-    /// Croatian
-    case Croatian
-    /// Upper Sorbian
-    case UpperSorbian
-    /// Hungarian
-    case Hungarian
-    /// Hupa
-    case Hupa
-    /// Iban
-    case Iban
-    /// Igbo
-    case Igbo
-    /// Icelandic
-    case Icelandic
-    /// Ido
-    case Ido
-    /// Sichuan Yi
-    case SichuanYi
-    /// Nuosu
-    case Nuosu
-    /// Ijo Languages
-    case IjoLanguages
-    /// Inuktitut
-    case Inuktitut
-    /// Interlingue
-    case Interlingue
-    /// Occidental
-    case Occidental
-    /// Iloko
-    case Iloko
-    /// Interlingua (International Auxiliary Language Association)
-    case Interlingua
     /// Indic Languages
     case IndicLanguages
-    /// Indonesian
-    case Indonesian
-    /// Indo-European Languages
+    /// Indi-European Languages
     case IndoEuropeanLanguages
-    /// Ingush
-    case Ingush
-    /// Inupiaq
-    case Inupiaq
     /// Iranian Languages
     case IranianLanguages
     /// Iroquoian Languages
     case IroquoianLanguages
-    /// Italian
-    case Italian
-    /// Javanese
-    case Javanese
-    /// Lojban
-    case Lojban
-    /// Japanese
-    case Japanese
-    /// Judeo-Persian
-    case JudeoPersian
-    /// Judeo-Arabic
-    case JudeoArabic
-    /// Kara
-    case KaraKalpak
-    /// Kabyle
-    case Kabyle
-    /// Kachin
-    case Kachin
-    /// Jingpho
-    case Jingpho
-    /// Kalaallisut
-    case Kalaallisut
-    /// Greenlandic
-    case Greenlandic
-    /// Kamba
-    case Kamba
-    /// Kannada
-    case Kannada
-    /// Karen Languages
-    case KarenLanguages
-    /// Kashmiri
-    case Kashmiri
-    /// Kanuri
-    case Kanuri
-    /// Kawi
-    case Kawi
-    /// Kazakh
-    case Kazakh
-    /// Kabardian
-    case Kabardian
-    /// Khasi
-    case Khasi
     /// Khoisan Languages
     case KhoisanLanguages
-    /// Central Khmer
-    case CentralKhmer
-    /// Khotanese
-    case Khotanese
-    /// Sakan
-    case Sakan
-    /// Kikuyu; Gikuyu
-    case Kikuyu
-    /// Gikuyu
-    case Gikuyu
-    /// Kinyarwanda
-    case Kinyarwanda
-    /// Kirghiz
-    case Kirghiz
-    /// Kyrgyz
-    case Kyrgyz
-    /// Kimbundu
-    case Kimbundu
-    /// Konkani
-    case Konkani
-    /// Komi
-    case Komi
-    /// Kongo
-    case Kongo
-    /// Korean
-    case Korean
-    /// Kosraean
-    case Kosraean
-    /// Kpelle
-    case Kpelle
-    /// Karachay
-    case KarachayBalkar
-    /// Karelian
-    case Karelian
-    /// Kru Languages
-    case KruLanguages
-    /// Kurukh
-    case Kurukh
-    /// Kuanyama
-    case Kuanyama
-    /// Kwanyama
-    case Kwanyama
-    /// Kumyk
-    case Kumyk
-    /// Kurdish
-    case Kurdish
-    /// Kutenai
-    case Kutenai
-    /// Ladino
-    case Ladino
-    /// Lahnda
-    case Lahnda
-    /// Lamba
-    case Lamba
-    /// Lao
-    case Lao
-    /// Latin
-    case Latin
-    /// Latvian
-    case Latvian
-    /// Lezghian
-    case Lezghian
-    /// Limburgan
-    case Limburgan
-    /// Limburger
-    case Limburger
-    /// Limburgish
-    case Limburgish
-    /// Lingala
-    case Lingala
-    /// Lithuanian
-    case Lithuanian
-    /// Mongo
-    case Mongo
-    /// Lozi
-    case Lozi
-    /// Luxembourgish
-    case Luxembourgish
-    /// Letzeburgesch
-    case Letzeburgesch
-    /// Luba-Lulua
-    case LubaLulua
-    /// Luba-Katanga
-    case LubaKatanga
-    /// Ganda
-    case Ganda
-    /// Luiseno
-    case Luiseno
-    /// Lunda
-    case Lunda
-    /// Luo (Kenya and Tanzania)
-    case LuoKenyaAndTanzania
-    /// Lushai
-    case Lushai
-    /// Macedonian
-    case Macedonian
-    /// Madurese
-    case Madurese
-    /// Magahi
-    case Magahi
-    /// Marshallese
-    case Marshallese
-    /// Maithili
-    case Maithili
-    /// Makasar
-    case Makasar
-    /// Malayalam
-    case Malayalam
-    /// Mandingo
-    case Mandingo
-    /// Maori
-    case Maori
     /// Austronesian Languages
     case AustronesianLanguages
-    /// Marathi
-    case Marathi
-    /// Masai
-    case Masai
-    /// Malay
-    case Malay
-    /// Moksha
-    case Moksha
-    /// Mandar
-    case Mandar
-    /// Mende
-    case Mende
-    /// Irish: Middle (900-1200)
-    case MiddleIrish
-    /// Mi'kmaq; Micmac
-    case Mikmaq
-    /// Micmac
-    case Micmac
-    /// Minangkabau
-    case Minangkabau
-    /// Uncoded Languages
-    case UncodedLanguages
-    /// Mon'Khmer Languages
+    /// Mon-Khmer Languages
     case MonKhmerLanguages
-    /// Malagasy
-    case Malagasy
-    /// Maltese
-    case Maltese
-    /// Manchu
-    case Manchu
-    /// Manipuri
-    case Manipuri
-    /// Manobo Languages
-    case ManoboLanguages
-    /// Mohawk
-    case Mohawk
-    /// Mongolian
-    case Mongolian
-    /// Mossi
-    case Mossi
-    /// Multiple Languages
-    case MultipleLanguages
-    /// Munda Languages
-    case MundaLanguages
-    /// Creek
-    case Creek
-    /// Mirandese
-    case Mirandese
-    /// Marwari
-    case Marwari
-    /// Mayan Languages
-    case MayanLanguages
-    /// Erzya
-    case Erzya
-    /// Nahuatl Languages
-    case NahuatlLanguages
     /// North American Indian Languages
     case NorthAmericanIndianLanguages
-    /// Neapolitan
-    case Neapolitan
-    /// Nauru
-    case Nauru
-    /// Navajo
-    case Navajo
-    /// Navaho
-    case Navaho
-    /// Ndebele: South; South Ndebele
-    case SouthNdebele
-    /// Ndebele: North; North Ndebele
-    case NorthNdebele
-    /// Ndonga
-    case Ndonga
-    /// Low German; German, Low
-    case LowGerman
-    /// Low Saxon; Saxon, Low
-    case LowSaxon
-    /// Nepali
-    case Nepali
-    /// Nepal Bhasa
-    case NepalBhasa
-    /// Newari
-    case Newari
-    /// Nias
-    case Nias
-    /// Niger-Kordofanian Languages
-    case NigerKordofanianLanguages
-    /// Niuean
-    case Niuean
-    /// Norwegian Nynorsk; Nynorsk, Norwegian
-    case NorwegianNynorsk
-    /// Bokmål, Norwegian; Norwegian Bokmål
-    case NorwegianBokmål
-    /// Nogai
-    case Nogai
-    /// Norse: Old
-    case OldNorse
-    /// Norwegian
-    case Norwegian
-    /// N'Ko
-    case NKo
-    /// Pedi Sepedi
-    case Pedi
-    /// Sepedi
-    case Sepedi
-    /// Northern Sotho
-    case NorthernSotho
-    /// Nubian Languages
-    case NubianLanguages
-    /// Classical Newari
-    case ClassicalNewari
-    /// Old Newari
-    case OldNewari
-    /// Classical Nepal Bhasa
-    case ClassicalNepalBhasa
-    /// Chichewa
-    case Chichewa
-    /// Chewa
-    case Chewa
-    /// Nyanja
-    case Nyanja
-    /// Nyamwezi
-    case Nyamwezi
-    /// Nyankole
-    case Nyankole
-    /// Nyoro
-    case Nyoro
-    /// Nzima
-    case Nzima
-    /// Occitan (post 1500)
-    case Occitan
-    /// Ojibwa
-    case Ojibwa
-    /// Oriya
-    case Oriya
-    /// Oromo
-    case Oromo
-    /// Osage
-    case Osage
-    /// Ossetian
-    case Ossetian
-    /// Ossetic
-    case Ossetic
-    /// Turkish: Ottoman (1500-1928)
-    case TurkishOttoman
+    /// Niger-Kordofian Languages
+    case NigerKordofianLanguages
     /// Otomian Languages
     case OtomianLanguages
     /// Papuan Languages
     case PapuanLanguages
-    /// Pangasinan
-    case Pangasinan
-    /// Pahlavi
-    case Pahlavi
-    /// Pampanga
-    case Pampanga
-    /// Kapampangan
-     case Kapampangan
-    /// Panjabi; Punjabi
-    case Panjabi
-    /// Punjabi
-    case Punjabi
-    /// Papiamento
-    case Papiamento
-    /// Palauan
-    case Palauan
-    /// Persian: Old (ca.600-400 B.C.)
-    case OldPersian
-    /// Persian
-    case Persian
     /// Philippine Languages
     case PhilippineLanguages
-    /// Phoenician
-    case Phoenician
-    /// Pali
-    case Pali
-    /// Polish
-    case Polish
-    /// Pohnpeian
-    case Pohnpeian
-    /// Portuguese
-    case Portuguese
     /// Prakrit Languages
     case PrakritLanguages
-    /// Provençal: Old (to 1500)
-    case OldProvençal
-    /// Occitan: Old (to 1500)
-    case OldOccitan
-    /// Pushto
-    case Pushto
-    /// Pashto
-    case Pashto
-    /// Quechua
-    case Quechua
-    /// Rajasthani
-    case Rajasthani
-    /// Rapanui
-    case Rapanui
-    /// Rarotongan
-    case Rarotongan
-    /// Cook Islands Maori
-    case CookIslandsMaori
     /// Romance Languages
     case RomanceLanguages
-    /// Romansh
-    case Romansh
-    /// Romany
-    case Romany
-    /// Romanian
-    case Romanian
-    /// Moldavian;
-    case Moldavian
-    /// Moldovan
-    case Moldovan
-    /// Rundi
-    case Rundi
-    /// Aromanian; Arumanian; Macedo Romanian
-    case Aromanian
-    /// Arumanian
-    case Arumanian
-    /// Macedo Romanian
-    case MacedoRomanian
-    /// Russian
-    case Russian
-    /// Sandawe
-    case Sandawe
-    /// Sango
-    case Sango
-    /// Yakut
-    case Yakut
     /// South American Indian Languages
     case SouthAmericanIndianLanguages
     /// Salishan Languages
     case SalishanLanguages
-    /// Samaritan Aramaic
-    case SamaritanAramaic
-    /// Sanskrit
-    case Sanskrit
-    /// Sasak
-    case Sasak
-    /// Santali
-    case Santali
-    /// Sicilian
-    case Sicilian
-    /// Scots
-    case Scots
-    /// Selkup
-    case Selkup
     /// Semitic Languages
     case SemiticLanguages
-    /// Irish: Old (to 900)
-    case OldIrish
-    /// Sign Languages
-    case SignLanguages
-    /// Shan
-    case Shan
-    /// Sidamo
-    case Sidamo
-    /// Sinhala; Sinhalese
-    case Sinhala
-    /// Sinhalese
-    case Sinhalese
-    /// Siouan Languages
-    case SiouanLanguages
     /// Sino-Tibetan Languages
     case SinoTibetanLanguages
-    /// Slavic Languages
+    /// SlavicLanguages
     case SlavicLanguages
-    /// Slovak
-    case Slovak
-    /// Slovenian
-    case Slovenian
-    /// Southern Sami
-    case SouthernSami
-    /// Northern Sami
-    case NorthernSami
     /// Sami Languages
     case SamiLanguages
+    /// Nilo-Saharan Languages
+    case NiloSaharanLanguages
+    /// Tai Languages
+    case TaiLanguages
+    /// Altaic Languages
+    case AltaicLanguages
+    /// Wakasha Languages
+    case WakashaLanguages
+    /// Moldavian; Moldovan
+    case Moldavian
+    /// Moldavian; Moldovan
+    case Moldavan
+    /// Khotanese; Sakan
+    case Khotanese
+    /// Khotanese; Sakan
+    case Sakan
+    /// Occitan (post 1500)
+    case Occitan
+    /// Provençal, Old (to 1500); Occitan, Old (to 1500)
+    case Provençal
+    /// Wolaitta; Wolaytta
+    case Walaitta
+    /// Wolaitta; Wolaytta
+    case Wolaytta
+    /// Serbian
+    case Serbian
+    /// Croatian
+    case Croatian
+    /// No Linguistic Content
+    case NotApplicable
+    /// Swiss German; Alemannic; Alsatian
+    case SwissGerman
+    /// Swiss German; Alemannic; Alsatian
+    case Alemannic
+    /// Swiss German; Alemannic; Alsatian
+    case Alsatian
+    /// Pushto; Pashto
+    case Pushto
+    /// Pushto; Pashto
+    case Pashto
+    /// Asturian; Bable; Leonese; Asturleonese
+    case Asturian
+    /// Asturian; Bable; Leonese; Asturleonese
+    case Bable
+    /// Asturian; Bable; Leonese; Asturleonese
+    case Leonese
+    /// Asturian; Bable; Leonese; Asturleonese
+    case Asturleonese
+    /// Beja; Bedawiyet
+    case Beja
+    /// Beja; Bedawiyet
+    case Bedawiyet
+    /// Chipewyan; Dene Suline
+    case Chipewyan
+    /// Chipewyan; Dene Suline
+    case DeneSuline
+    /// Sichuan Yi; Nuosu
+    case SichuanYi
+    /// Sichuan Yi; Nuosu
+    case Nuosu
+    /// Interlingue; Occidental
+    case Interlingue
+    /// Interlingue; Occidental
+    case Occidental
+    /// Pampanga; Kapampangan
+    case Pampanga
+    /// Pampanga; Kapampangan
+    case Kapampangan
+    /// Blissymbols; Blissymbolics; Bliss"
+    case Blissymbols
+    /// Blissymbols; Blissymbolics; Bliss"
+    case Blissymbolics
+    /// Blissymbols; Blissymbolics; Bliss"
+    case Bliss
+    /// Uncoded Languages
+    case UncodedLanguages
+    /// Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)
+    case OfficialAramaic
+    /// Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)
+    case ImperialAramaic
+    /// case Classical Syriac
+    case ClassicalSyriac
+    /// Bini; Edo
+    case Bini
+    /// Bini; Edo
+    case Edo
+    /// Galibi Carib
+    case Galibi
+    /// Galibi Carib
+    case Carib
+    /// Banda languages
+    case BandaLanguages
+    /// Batak languages
+    case BatakLanguages
+    /// Land Dayak languages
+    case LandDayakLanguages
+    /// Ijo languages
+    case IjoLanguages
+    /// Karen languages
+    case KarenLanguages
+    /// Kru languages
+    case KruLanguages
+    /// Nahuatl languages
+    case NahuatlLanguages
+    /// Songhai languages
+    case SonghaiLanguages
+    /// Sranan Tongo
+    case SrananTongo
+    /// Zande languages
+    case ZandeLanguages
+    /// Kachin; Jingpho
+    case Kachin
+    /// Kachin; Jingpho
+    case Jingpho
+    /// Central Khmer
+    case CentralKhmer
+    /// Mapudungun; Mapuche
+    case Mapudungun
+    /// Mapudungun; Mapuche
+    case Mapuche
+    /// Rarotongan; Cook Islands Maori
+    case Rarotongan
+    /// Rarotongan; Cook Islands Maori
+    case CookIslandsMaori
+    /// Romansh
+    case Romansh
+    /// Kirghiz; Kyrgyz
+    case Kirghiz
+    /// Kirghiz; Kyrgyz
+    case Kyrgyz
+    /// Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+    case Zaza
+    /// Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+    case Dimili
+    /// Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+    case Dimli
+    /// Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+    case Kirdki
+    /// Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+    case Kirmanjki
+    /// Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki
+    case Zazaki
+    /// Divehi; Dhivehi; Maldivian
+    case Divehi
+    /// Divehi; Dhivehi; Maldivian
+    case Dhivehi
+    /// Divehi; Dhivehi; Maldivian
+    case Maldivian
+    /// N'Ko
+    case NKo
+    /// Karelian
+    case Karelian
+    /// Eastern Frisian
+    case EasternFrisian
+    /// Western Frisian
+    case WesternFrisian
+    /// Angika
+    case Angika
+    /// Northern Frisian
+    case NorthernFrisian
+    /// Aromanian; Arumanian; Macedo-Romanian
+    case Aromanian
+    /// Aromanian; Arumanian; Macedo-Romanian
+    case Arumianian
+    /// Aromanian; Arumanian; Macedo-Romanian
+    case MacedoRomanian
+    /// Ainu
+    case Ainu
+    /// Galician
+    case Galician
+    /// Southern Altai
+    case SouthernAltai
+    /// Kalmyk; Oirat
+    case Kalmyk
+    /// Kalmyk; Oirat
+    case Oirat
+    /// Mi'kmaq; Micmac
+    case Mikmaq
+    /// Mi'kmaq; Micmac
+    case Micmac
+    /// Pedi; Sepedi; Northern Sotho
+    case Pedi
+    /// Pedi; Sepedi; Northern Sotho
+    case Sepedi
+    /// Pedi; Sepedi; Northern Sotho
+    case NorthernSotho
+    /// Sinhala; Sinhalese
+    case Sinhala
+    /// Sinhala; Sinhalese
+    case Sinhalese
+    /// Filipino; Pilipino
+    case Filipino
+    /// Filipino; Pilipino
+    case Philipino
+    /// Mirandese
+    case Mirandese
+    /// Sicilian
+    case Sicilian
+    /// Classical Newari; Old Newari; Classical Nepal Bhasa
+    case ClassicalNewari
+    /// Classical Newari; Old Newari; Classical Nepal Bhasa
+    case OldNewari
+    /// Classical Newari; Old Newari; Classical Nepal Bhasa
+    case ClassicalNepalBhasa
+    /// Blin; Bilin
+    case Blin
+    /// Blin; Bilin
+    case Bilin
+    /// Lojban
+    case Lojban
+    /// Lower Sorbian
+    case LowerSorbian
+    /// Upper Sorbian
+    case UpperSorbian
+    /// Kashubian
+    case Kashubian
+    /// Crimean Tatar; Crimean Turkish
+    case CrimeanTatar
+    /// Crimean Tatar; Crimean Turkish
+    case CrimeanTurkish
+    /// Adyghe; Adygei
+    case Adyghe
+    /// Adyghe; Adygei
+    case Adygei
+    /// Karachay-Balkar
+    case KarachayBalkar
+    /// Moksha
+    case Moksha
+    /// Erzya
+    case Erzya
+    /// Udmurt
+    case Udmurt
+    /// Dargwa
+    case Dargwa
+    /// Ingush
+    case Ingush
+    /// Nogai
+    case Nogai
+    /// Haitian; Haitian Creole
+    case Haitian
+    /// Haitian; Haitian Creole
+    case HaitianCreole
+    /// Kabardian
+    case Kabardian
+    /// Aragonese
+    case Aragonese
+    /// Limburgan; Limburger; Limburgish
+    case Limburgan
+    /// Limburgan; Limburger; Limburgish
+    case Limburger
+    /// Limburgan; Limburger; Limburgish
+    case Limburgish
+    /// Neapolitan
+    case Neapolitan
+    /// Southern Sami
+    case SouthernSami
     /// Lule Sami
     case LuleSami
     /// Inari Sami
     case InariSami
-    /// Samoan
-    case Samoan
     /// Skolt Sami
     case SkoltSami
-    /// Shona
-    case Shona
-    /// Sindhi
-    case Sindhi
-    /// Soninke
-    case Soninke
-    /// Sogdian
-    case Sogdian
-    /// Somali
-    case Somali
-    /// Songhai Languages
-    case SonghaiLanguages
-    /// Sotho, Southern
-    case SothoSouthern
-    /// Spanish
-    case Spanish
-    /// Castilian
-    case Castilian
-    /// Sardinian
-    case Sardinian
-    /// Sranan Tongo
-    case SrananTongo
-    /// Serbian
-    case Serbian
-    /// Serer
-    case Serer
-    /// Nilo-Saharan Languages
-    case NiloSaharanLanguages
-    /// Swati
-    case Swati
-    /// Sukuma
-    case Sukuma
-    /// Sundanese
-    case Sundanese
-    /// Susu
-    case Susu
-    /// Sumerian
-    case Sumerian
-    /// Swahili
-    case Swahili
-    /// Swedish
-    case Swedish
-    /// Classical Syriac
-    case ClassicalSyriac
-    /// Syriac
-    case Syriac
-    /// Tahitian
-    case Tahitian
-    /// Tai Languages
-    case TaiLanguages
-    /// Tamil
-    case Tamil
-    /// Tatar
-    case Tatar
-    /// Telugu
-    case Telugu
-    /// Timne
-    case Timne
-    /// Tereno
-    case Tereno
-    /// Tetum
-    case Tetum
-    /// Tajik
-    case Tajik
-    /// Tagalog
-    case Tagalog
-    /// Thai
-    case Thai
-    /// Tibetan
-    case Tibetan
-    /// Tigre
-    case Tigre
-    /// Tigrinya
-    case Tigrinya
-    /// Tiv
-    case Tiv
-    /// Tokelau
-    case Tokelau
-    /// Tlingit
-    case Tlingit
-    /// Tamashek
-    case Tamashek
-    /// Tonga (Nyasa)
-    case TongaNyasa
-    /// Tonga (Tonga Islands)
-    case TongaIslands
-    /// Tok Pisin
-    case TokPisin
-    /// Tsimshian
-    case Tsimshian
-    /// Tswana
-    case Tswana
-    /// Tsonga
-    case Tsonga
-    /// Turkmen
-    case Turkmen
-    /// Tumbuka
-    case Tumbuka
-    /// Tupi Languages
-    case TupiLanguages
-    /// Turkish
-    case Turkish
-    /// Altaic Languages
-    case AltaicLanguages
-    /// Tuvalu
-    case Tuvalu
-    /// Twi
-    case Twi
-    /// Tuvinian
-    case Tuvinian
-    /// Udmurt
-    case Udmurt
-    /// Ugaritic
-    case Ugaritic
-    /// Uighur
-    case Uighur
-    /// Uyghur
-    case Uyghur
-    /// Ukrainian
-    case Ukrainian
-    /// Umbundu
-    case Umbundu
-    /// Undetermined
-    case Undetermined
-    /// Urdu
-    case Urdu
-    /// Uzbek
-    case Uzbek
-    /// Vai
-    case Vai
-    /// Venda
-    case Venda
-    /// Vietnamese
-    case Vietnamese
-    /// Volapük
-    case Volapük
-    /// Votic
-    case Votic
-    /// Wakashan Languages
-    case WakashanLanguages
-    /// Wolaitta; Wolaytta
-    case Wolaitta
-    /// Wolaytta
-    case Wolaytta
-    /// Waray
-    case Waray
-    /// Washo
-    case Washo
-    /// Welsh
-    case Welsh
-    /// Sorbian Languages
-    case SorbianLanguages
     /// Walloon
     case Walloon
-    /// Wolof
-    case Wolof
-    /// Kalmyk
-    case Kalmyk
-    /// Oirat
-    case Oirat
-    /// Xhosa
-    case Xhosa
-    /// Yao
-    case Yao
-    /// Yapese
-    case Yapese
+    /// Ido
+    case Ido
+    /// Tupi languages
+    case TupiLanguages
+    /// Javanese
+    case Javanese
+    /// Ndebele, South; South Ndebele
+    case SouthNdebele
+    /// Ndebele, North; North Ndebele
+    case NorthNdebele
+    /// Low German; Low Saxon; German, Low; Saxon, Low
+    case LowGerman
+    /// Low German; Low Saxon; German, Low; Saxon, Low
+    case LowSaxon
+    /// Avestan
+    case Avestan
+    /// Bambara
+    case Bambara
+    /// Bosnian
+    case Bosnian
+    /// Chamorro
+    case Chamorro
+    /// Chechen
+    case Chechen
+    /// Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+    case ChurchSlavic
+    /// Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+    case OldSlavic
+    /// Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic
+    case OldBulgarian
+    /// Chuvash
+    case Chuvash
+    /// Herero
+    case Herero
+    /// Hiri Motu
+    case HiriMotu
+    /// Kikuyu; Gikuyu
+    case Kikuyu
+    /// Kikuyu; Gikuyu
+    case Gikuyu
+    /// Komi
+    case Komi
+    /// Kuanyama; Kwanyama
+    case Kuanyama
+    /// Kuanyama; Kwanyama
+    case Kwanyama
+    /// Marshallese
+    case Marshallese
+    /// Manchu
+    case Manchu
+    /// Navajo; Navaho
+    case Navajo
+    /// Navajo; Navaho
+    case Navaho
+    /// Ndonga
+    case Ndonga
+    /// Norwegian Nynorsk; Nynorsk, Norwegian
+    case NorwegianNynorsk
+    /// Bokmål, Norwegian; Norwegian Bokmål
+    case NorwegianBokmål
+    /// Chichewa; Chewa; Nyanja
+    case Chichewa
+    /// Chichewa; Chewa; Nyanja
+    case Chewa
+    /// Chichewa; Chewa; Nyanja
+    case Nyanja
+    /// Ossetian; Ossetic
+    case Ossetian
+    /// Pali
+    case Pali
+    /// Sign Languages
+    case SignLanguages
+    /// Northern Sami
+    case NorthernSami
+    /// Sardinian
+    case Sardinian
+    /// Tahitian
+    case Tahitian
+    /// Akan
+    case Akan
+    /// Avaric
+    case Avaric
+    /// Cree
+    case Cree
+    /// Ewe
+    case Ewe
+    /// Fulah
+    case Fuljah
+    /// Igbo
+    case Igbo
+    /// Kanuri
+    case Kanuri
+    /// Kongo
+    case Kongo
+    /// Luba-Katanga
+    case LubaKatanga
+    /// Ganda
+    case Ganda
+    /// Ojibwa
+    case Ojibwa
+    /// Venda
+    case Venda
+    /// Cornish
+    case Cornish
+    /// Manx
+    case Manx
+    /// Luxembourgish; Letzeburgesch
+    case Luxembourgish
+    /// Luxembourgish; Letzeburgesch
+    case Letzeburgesch
+    /// Hebrew
+    case Hebrew
+    /// Inuktitut
+    case Inuktitut
+    /// Indonesian
+    case Indonesian
+    /// Uighur; Uyghur
+    case Uighru
+    /// Uighur; Uyghur
+    case Uyghur
     /// Yiddish
     case Yiddish
-    /// Yoruba
-    case Yoruba
-    /// Yupik Languages
-    case YupikLanguages
-    /// Zapotec
-    case Zapotec
-    /// Blissymbols
-    case Blissymbols
-    /// Blissymbolics
-    case Blissymbolics
-    /// Bliss
-    case Bliss
-    /// Zenaga
-    case Zenaga
-    /// Standard Moroccan Tamazight
-    case StandardMoroccanTamazight
     /// Zhuang; Chuang
     case Zhuang
-    /// Chuang
+    /// Zhuang; Chuang
     case Chuang
-    /// Zande Languages
-    case ZandeLanguages
-    /// Zulu
-    case Zulu
-    /// Zuni
-    case Zuni
-    /// No linguistic content; Not applicable
-    case NoLinguisticContent
-    /// Zaza Dimili Dimli Kirdki Kirmanjki Zazaki
-    case Zaza
-    /// Dimili
-    case Dimili
-    /// Dimly
-    case Dimli
-    /// Kirdki
-    case Kirdki
-    /// Kirmanjki
-    case Kirmanjki
-    /// Zazaki
-    case Zazaki
-
-
-    var languageCodes: String {
+    
+    public var languageCodes: String {
         switch self {
-            case .Afar:
-                return ISO_639_2_Codes.aar.rawValue
-            case .Abkhazian:
-            return ISO_639_2_Codes.abk.rawValue
-            case .Achinese:
-            return ISO_639_2_Codes.ace.rawValue
-            case .Acoli:
-            return ISO_639_2_Codes.ach.rawValue
-            case .Adangme:
-            return ISO_639_2_Codes.ada.rawValue
-            case .Adyghe:
-            return ISO_639_2_Codes.ady.rawValue
-            case .Adygei:
-            return ISO_639_2_Codes.ady.rawValue
-            case .AfroAsiaticLanguages:
-            return ISO_639_2_Codes.afa.rawValue
-            case .Afrihili:
-            return ISO_639_2_Codes.afh.rawValue
-            case .Afrikaans:
-            return ISO_639_2_Codes.afr.rawValue
-            case .Ainu:
-            return ISO_639_2_Codes.ain.rawValue
-            case .Akan:
-            return ISO_639_2_Codes.aka.rawValue
-            case .Akkadian:
-            return ISO_639_2_Codes.akk.rawValue
-            case .Albanian:
-            return ISO_639_2_Codes.alb.rawValue
-            case .Aleut:
-            return ISO_639_2_Codes.ale.rawValue
-            case .AlgonquianLanguages:
-            return ISO_639_2_Codes.alg.rawValue
-            case .SouthernAltai:
-            return ISO_639_2_Codes.alt.rawValue
-            case .Amharic:
-            return ISO_639_2_Codes.amh.rawValue
-            case .OldEnglish:
-            return ISO_639_2_Codes.ang.rawValue
-            case .Angika:
-            return ISO_639_2_Codes.anp.rawValue
-            case .ApacheLanguages:
-            return ISO_639_2_Codes.apa.rawValue
-            case .Arabic:
-            return ISO_639_2_Codes.ara.rawValue
-            case .OfficialAramaic:
-            return ISO_639_2_Codes.arc.rawValue
-            case .ImperialAramaic:
-            return ISO_639_2_Codes.arc.rawValue
-            case .Aragonese:
-            return ISO_639_2_Codes.arg.rawValue
-            case .Armenian:
-            return ISO_639_2_Codes.hye.rawValue
-            case .Mapudungun:
-            return ISO_639_2_Codes.arn.rawValue
-            case .Mapuche:
-            return ISO_639_2_Codes.arn.rawValue
-            case .Arapaho:
-            return ISO_639_2_Codes.arp.rawValue
-            case .ArtificialLanguages:
-            return ISO_639_2_Codes.art.rawValue
-            case .Arawak:
-            return ISO_639_2_Codes.arw.rawValue
-            case .Assamese:
-            return ISO_639_2_Codes.asm.rawValue
-            case .Asturian:
-            return ISO_639_2_Codes.ast.rawValue
-            case .Bable:
-            return ISO_639_2_Codes.ast.rawValue
-            case .Leonese:
-            return ISO_639_2_Codes.ast.rawValue
-            case .Asturleonese:
-            return ISO_639_2_Codes.ast.rawValue
-            case .AthapascanLanguages:
-            return ISO_639_2_Codes.ath.rawValue
-            case .AustralianLanguages:
-            return ISO_639_2_Codes.aus.rawValue
-            case .Avaric:
-            return ISO_639_2_Codes.ava.rawValue
-            case .Avestan:
-            return ISO_639_2_Codes.ave.rawValue
-            case .Awadhi:
-            return ISO_639_2_Codes.awa.rawValue
-            case .Aymara:
-            return ISO_639_2_Codes.aym.rawValue
-            case .Azerbaijani:
-            return ISO_639_2_Codes.aze.rawValue
-            case .BandaLanguages:
-            return ISO_639_2_Codes.bad.rawValue
-            case .BamilekeLanguages:
-            return ISO_639_2_Codes.bai.rawValue
-            case .Bashkir:
-            return ISO_639_2_Codes.bak.rawValue
-            case .Baluchi:
-            return ISO_639_2_Codes.bal.rawValue
-            case .Bambara:
-            return ISO_639_2_Codes.bam.rawValue
-            case .Balinese:
-            return ISO_639_2_Codes.ban.rawValue
-            case .Basque:
-            return ISO_639_2_Codes.eus.rawValue
-            case .Basa:
-            return ISO_639_2_Codes.bas.rawValue
-            case .BalticLanguages:
-            return ISO_639_2_Codes.bat.rawValue
-            case .Beja:
-            return ISO_639_2_Codes.bej.rawValue
-            case .Bedawiyet:
-            return ISO_639_2_Codes.bej.rawValue
-            case .Belarusian:
-            return ISO_639_2_Codes.bel.rawValue
-            case .Bemba:
-            return ISO_639_2_Codes.bem.rawValue
-            case .Bengali:
-            return ISO_639_2_Codes.ben.rawValue
-            case .BerberLanguages:
-            return ISO_639_2_Codes.ber.rawValue
-            case .Bhojpuri:
-            return ISO_639_2_Codes.bho.rawValue
-            case .BihariLanguages:
-            return ISO_639_2_Codes.bih.rawValue
-            case .Bikol:
-            return ISO_639_2_Codes.bik.rawValue
-            case .Bini:
-            return ISO_639_2_Codes.bin.rawValue
-            case .Edo:
-            return ISO_639_2_Codes.bin.rawValue
-            case .Bislama:
-            return ISO_639_2_Codes.bis.rawValue
-            case .Siksika:
-            return ISO_639_2_Codes.bla.rawValue
-            case .BantuLanguages:
-            return ISO_639_2_Codes.bnt.rawValue
-            case .Bosnian:
-            return ISO_639_2_Codes.bos.rawValue
-            case .Braj:
-            return ISO_639_2_Codes.bra.rawValue
-            case .Breton:
-            return ISO_639_2_Codes.bre.rawValue
-            case .BatakLanguages:
-            return ISO_639_2_Codes.btk.rawValue
-            case .Buriat:
-            return ISO_639_2_Codes.bua.rawValue
-            case .Buginese:
-            return ISO_639_2_Codes.bug.rawValue
-            case .Bulgarian:
-            return ISO_639_2_Codes.bul.rawValue
-            case .Burmese:
-            return ISO_639_2_Codes.mya.rawValue
-            case .Blin:
-            return ISO_639_2_Codes.byn.rawValue
-            case .Bilin:
-            return ISO_639_2_Codes.byn.rawValue
-            case .Caddo:
-                return ISO_639_2_Codes.cad.rawValue
-            case .CentralAmericanIndianLanguages:
-            return ISO_639_2_Codes.cai.rawValue
-            case .GalibiCarib:
-            return ISO_639_2_Codes.car.rawValue
-            case .Catalan:
-            return ISO_639_2_Codes.cat.rawValue
-            case .Valencian:
-            return ISO_639_2_Codes.cat.rawValue
-            case .CaucasianLanguages:
-            return ISO_639_2_Codes.cau.rawValue
-            case .Cebuano:
-            return ISO_639_2_Codes.ceb.rawValue
-            case .CelticLanguages:
-            return ISO_639_2_Codes.cel.rawValue
-            case .Chamorro:
-            return ISO_639_2_Codes.cha.rawValue
-            case .Chibcha:
-            return ISO_639_2_Codes.chb.rawValue
-            case .Chechen:
-            return ISO_639_2_Codes.che.rawValue
-            case .Chagatai:
-            return ISO_639_2_Codes.chg.rawValue
-            case .Chinese:
-            return ISO_639_2_Codes.zho.rawValue
-            case .Chuukese:
-            return ISO_639_2_Codes.chk.rawValue
-            case .Mari:
-            return ISO_639_2_Codes.chm.rawValue
-            case .ChinookJargon:
-            return ISO_639_2_Codes.chn.rawValue
-            case .Choctaw:
-            return ISO_639_2_Codes.cho.rawValue
-            case .Chipewyan:
-            return ISO_639_2_Codes.chp.rawValue
-            case .DeneSuline:
-            return ISO_639_2_Codes.chp.rawValue
-            case .Cherokee:
-            return ISO_639_2_Codes.chr.rawValue
-            case .ChurchSlavic:
-            return ISO_639_2_Codes.chu.rawValue
-            case .OldSlavonic:
-            return ISO_639_2_Codes.chu.rawValue
-            case .ChurchSlavonic:
-            return ISO_639_2_Codes.chu.rawValue
-            case .OldBulgarian:
-            return ISO_639_2_Codes.chu.rawValue
-            case .OldChurchSlavonic:
-            return ISO_639_2_Codes.chu.rawValue
-            case .Chuvash:
-            return ISO_639_2_Codes.chv.rawValue
-            case .Cheyenne:
-            return ISO_639_2_Codes.chy.rawValue
-            case .ChamicLanguages:
-            return ISO_639_2_Codes.cmc.rawValue
+            case .Undefined:
+                return ISO_639_2_Codes.und.rawValue
             case .Montenegrin:
-            return ISO_639_2_Codes.cnr.rawValue
-            case .Coptic:
-            return ISO_639_2_Codes.cop.rawValue
-            case .Cornish:
-            return ISO_639_2_Codes.cor.rawValue
-            case .Corsican:
-                return ISO_639_2_Codes.cos.rawValue
-            case .EnglishCreolesAndPidgins:
-            return ISO_639_2_Codes.cpe.rawValue
-            case .FrenchCreolesAndPidgins:
-            return ISO_639_2_Codes.cpf.rawValue
-            case .PortgueseCreolesAndPidgins:
-            return ISO_639_2_Codes.cpp.rawValue
-            case .Cree:
-            return ISO_639_2_Codes.cre.rawValue
-            case .CrimeanTatar:
-            return ISO_639_2_Codes.crh.rawValue
-            case .CrimeanTurkish:
-            return ISO_639_2_Codes.crh.rawValue
-            case .CreolesAndPidgins:
-            return ISO_639_2_Codes.crp.rawValue
-            case .Kashubian:
-            return ISO_639_2_Codes.csb.rawValue
-            case .CushiticLanguages:
-            return ISO_639_2_Codes.cus.rawValue
-            case .Czech:
-            return ISO_639_2_Codes.cze.rawValue
-            case .Dakota:
-            return ISO_639_2_Codes.dak.rawValue
-            case .Danish:
-            return ISO_639_2_Codes.dan.rawValue
-            case .Dargwa:
-            return ISO_639_2_Codes.dar.rawValue
-            case .LandDayakLanguages:
-            return ISO_639_2_Codes.day.rawValue
-            case .Delaware:
-            return ISO_639_2_Codes.del.rawValue
-            case .SlaveAthapascan:
-            return ISO_639_2_Codes.den.rawValue
-            case .Dogrib:
-            return ISO_639_2_Codes.deu.rawValue
-            case .Dinka:
-            return ISO_639_2_Codes.din.rawValue
-            case .Divehi:
-            return ISO_639_2_Codes.div.rawValue
-            case .Dhivehi:
-            return ISO_639_2_Codes.div.rawValue
-            case .Maldivian:
-            return ISO_639_2_Codes.div.rawValue
-            case .Dogri:
-            return ISO_639_2_Codes.doi.rawValue
-            case .DravidianLanguages:
-            return ISO_639_2_Codes.dra.rawValue
-            case .LowerSorbian:
-            return ISO_639_2_Codes.dsb.rawValue
-            case .Duala:
-            return ISO_639_2_Codes.dua.rawValue
-            case .MiddleDutch:
-            return ISO_639_2_Codes.dum.rawValue
-            case .Dutch:
-            return ISO_639_2_Codes.nld.rawValue
-            case .Flemish:
-            return ISO_639_2_Codes.nld.rawValue
-            case .Dyula:
-            return ISO_639_2_Codes.dyu.rawValue
-            case .Dzongkha:
-            return ISO_639_2_Codes.dzo.rawValue
-            case .Efik:
-            return ISO_639_2_Codes.efi.rawValue
-            case .AncientEgyptian:
-            return ISO_639_2_Codes.egy.rawValue
-            case .Ekajuk:
-            return ISO_639_2_Codes.eka.rawValue
-            case .Elamite:
-            return ISO_639_2_Codes.ell.rawValue
-            case .English:
-            return ISO_639_2_Codes.eng.rawValue
-            case .MiddleEnglish:
-            return ISO_639_2_Codes.enm.rawValue
-            case .Esperanto:
-            return ISO_639_2_Codes.epo.rawValue
-            case .Estonian:
-            return ISO_639_2_Codes.est.rawValue
-            case .Ewe:
-            return ISO_639_2_Codes.ewe.rawValue
-            case .Ewondo:
-            return ISO_639_2_Codes.ewo.rawValue
-            case .Fang:
-            return ISO_639_2_Codes.fan.rawValue
-            case .Faroese:
-            return ISO_639_2_Codes.fao.rawValue
-            case .Fanti:
-            return ISO_639_2_Codes.fat.rawValue
-            case .Fijian:
-            return ISO_639_2_Codes.fij.rawValue
-            case .Filipino:
-            return ISO_639_2_Codes.fil.rawValue
-            case .Pilipino:
-            return ISO_639_2_Codes.fil.rawValue
-            case .Finnish:
-            return ISO_639_2_Codes.fin.rawValue
-            case .FinnoUgrianLanguages:
-            return ISO_639_2_Codes.fiu.rawValue
-            case .Fon:
-            return ISO_639_2_Codes.fon.rawValue
-            case .French:
-            return ISO_639_2_Codes.fra.rawValue
-            case .MiddleFrench:
-            return ISO_639_2_Codes.frm.rawValue
-            case .OldFrench:
-            return ISO_639_2_Codes.fro.rawValue
-            case .NorthernFrisian:
-            return ISO_639_2_Codes.frr.rawValue
-            case .EasternFrisian:
-            return ISO_639_2_Codes.frs.rawValue
-            case .WesternFrisian:
-            return ISO_639_2_Codes.fry.rawValue
-            case .Fulah:
-            return ISO_639_2_Codes.ful.rawValue
-            case .Friulian:
-            return ISO_639_2_Codes.fur.rawValue
-            case .Ga:
-            return ISO_639_2_Codes.gaa.rawValue
-            case .Gayo:
-            return ISO_639_2_Codes.gay.rawValue
-            case .Gbaya:
-            return ISO_639_2_Codes.gba.rawValue
-            case .GermanicLanguages:
-            return ISO_639_2_Codes.gem.rawValue
-            case .Georgian:
-            return ISO_639_2_Codes.geo.rawValue
-            case .German:
-            return ISO_639_2_Codes.ger.rawValue
-            case .Geez:
-            return ISO_639_2_Codes.gez.rawValue
-            case .Gilbertese:
-            return ISO_639_2_Codes.gil.rawValue
-            case .Gaelic:
-            return ISO_639_2_Codes.gla.rawValue
-            case .ScottishGaelic:
-            return ISO_639_2_Codes.gla.rawValue
-            case .Irish:
-            return ISO_639_2_Codes.gle.rawValue
-            case .Galician:
-            return ISO_639_2_Codes.glg.rawValue
-            case .Manx:
-            return ISO_639_2_Codes.glv.rawValue
-            case .MiddleHighGerman:
-            return ISO_639_2_Codes.gmh.rawValue
-            case .OldHighGerman:
-            return ISO_639_2_Codes.goh.rawValue
-            case .Gondi:
-            return ISO_639_2_Codes.gon.rawValue
-            case .Gorontalo:
-            return ISO_639_2_Codes.gor.rawValue
-            case .Gothic:
-            return ISO_639_2_Codes.got.rawValue
-            case .Grebo:
-            return ISO_639_2_Codes.grb.rawValue
-            case .AncientGreek:
-            return ISO_639_2_Codes.grc.rawValue
-            case .ModernGreen:
-            return ISO_639_2_Codes.gre.rawValue
-            case .Guarani:
-            return ISO_639_2_Codes.grn.rawValue
-            case .SwissGerman:
-            return ISO_639_2_Codes.gsw.rawValue
-            case .Alemannic:
-            return ISO_639_2_Codes.gsw.rawValue
-            case .Alsatian:
-            return ISO_639_2_Codes.gsw.rawValue
-            case .Gujarati:
-            return ISO_639_2_Codes.guj.rawValue
-            case .Gwichin:
-            return ISO_639_2_Codes.gwi.rawValue
-            case .Haida:
-            return ISO_639_2_Codes.hai.rawValue
-            case .Haitian:
-            return ISO_639_2_Codes.hat.rawValue
-            case .HaitianCreole:
-            return ISO_639_2_Codes.hat.rawValue
-            case .Hausa:
-            return ISO_639_2_Codes.hau.rawValue
-            case .Hawaiian:
-            return ISO_639_2_Codes.haw.rawValue
-            case .Hebrew:
-            return ISO_639_2_Codes.heb.rawValue
-            case .Herero:
-            return ISO_639_2_Codes.her.rawValue
-            case .Hiligaynon:
-            return ISO_639_2_Codes.hil.rawValue
-            case .HimachaliLanguages:
-            return ISO_639_2_Codes.him.rawValue
-            case .WesternPahariLanguages:
-            return ISO_639_2_Codes.him.rawValue
-            case .Hindi:
-            return ISO_639_2_Codes.hin.rawValue
-            case .Hittite:
-            return ISO_639_2_Codes.hit.rawValue
-            case .Hmong:
-            return ISO_639_2_Codes.hmn.rawValue
-            case .Mong:
-            return ISO_639_2_Codes.hmn.rawValue
-            case .HiriMotu:
-            return ISO_639_2_Codes.hmo.rawValue
-            case .Croatian:
-            return ISO_639_2_Codes.hrv.rawValue
-            case .UpperSorbian:
-            return ISO_639_2_Codes.hsb.rawValue
-            case .Hungarian:
-            return ISO_639_2_Codes.hun.rawValue
-            case .Hupa:
-            return ISO_639_2_Codes.hup.rawValue
-            case .Iban:
-            return ISO_639_2_Codes.iba.rawValue
-            case .Igbo:
-            return ISO_639_2_Codes.ibo.rawValue
-            case .Icelandic:
-            return ISO_639_2_Codes.ice.rawValue
-            case .Ido:
-            return ISO_639_2_Codes.ido.rawValue
-            case .SichuanYi:
-            return ISO_639_2_Codes.iii.rawValue
-            case .Nuosu:
-            return ISO_639_2_Codes.iii.rawValue
-            case .IjoLanguages:
-            return ISO_639_2_Codes.ijo.rawValue
-            case .Inuktitut:
-            return ISO_639_2_Codes.iku.rawValue
-            case .Interlingue:
-            return ISO_639_2_Codes.ile.rawValue
-            case .Occidental:
-            return ISO_639_2_Codes.ile.rawValue
-            case .Iloko:
-            return ISO_639_2_Codes.ilo.rawValue
-            case .Interlingua:
-            return ISO_639_2_Codes.ina.rawValue
-            case .IndicLanguages:
-            return ISO_639_2_Codes.inc.rawValue
-            case .Indonesian:
-            return ISO_639_2_Codes.ind.rawValue
-            case .IndoEuropeanLanguages:
-            return ISO_639_2_Codes.ine.rawValue
-            case .Ingush:
-            return ISO_639_2_Codes.inh.rawValue
-            case .Inupiaq:
-            return ISO_639_2_Codes.ipk.rawValue
-            case .IranianLanguages:
-            return ISO_639_2_Codes.ira.rawValue
-            case .IroquoianLanguages:
-            return ISO_639_2_Codes.iro.rawValue
-            case .Italian:
-            return ISO_639_2_Codes.ita.rawValue
-            case .Javanese:
-            return ISO_639_2_Codes.jav.rawValue
-            case .Lojban:
-            return ISO_639_2_Codes.jbo.rawValue
-            case .Japanese:
-            return ISO_639_2_Codes.jpn.rawValue
-            case .JudeoPersian:
-            return ISO_639_2_Codes.jpr.rawValue
-            case .JudeoArabic:
-            return ISO_639_2_Codes.jrb.rawValue
-            case .KaraKalpak:
-            return ISO_639_2_Codes.kaa.rawValue
-            case .Kabyle:
-            return ISO_639_2_Codes.kab.rawValue
-            case .Kachin:
-            return ISO_639_2_Codes.kac.rawValue
-            case .Jingpho:
-            return ISO_639_2_Codes.kac.rawValue
-            case .Kalaallisut:
-            return ISO_639_2_Codes.kal.rawValue
-            case .Greenlandic:
-            return ISO_639_2_Codes.kal.rawValue
-            case .Kamba:
-            return ISO_639_2_Codes.kam.rawValue
-            case .Kannada:
-            return ISO_639_2_Codes.kan.rawValue
-            case .KarenLanguages:
-            return ISO_639_2_Codes.kar.rawValue
-            case .Kashmiri:
-            return ISO_639_2_Codes.kas.rawValue
-            case .Kanuri:
-            return ISO_639_2_Codes.kau.rawValue
-            case .Kawi:
-            return ISO_639_2_Codes.kaw.rawValue
-            case .Kazakh:
-            return ISO_639_2_Codes.kaz.rawValue
-            case .Kabardian:
-            return ISO_639_2_Codes.kbd.rawValue
-            case .Khasi:
-            return ISO_639_2_Codes.kha.rawValue
-            case .KhoisanLanguages:
-            return ISO_639_2_Codes.khi.rawValue
-            case .CentralKhmer:
-            return ISO_639_2_Codes.khm.rawValue
-            case .Khotanese:
-            return ISO_639_2_Codes.kho.rawValue
-            case .Sakan:
-            return ISO_639_2_Codes.kho.rawValue
-            case .Kikuyu:
-            return ISO_639_2_Codes.kik.rawValue
-            case .Gikuyu:
-            return ISO_639_2_Codes.kik.rawValue
-            case .Kinyarwanda:
-            return ISO_639_2_Codes.kin.rawValue
-            case .Kirghiz:
-            return ISO_639_2_Codes.kir.rawValue
-            case .Kyrgyz:
-            return ISO_639_2_Codes.kir.rawValue
-            case .Kimbundu:
-            return ISO_639_2_Codes.kmb.rawValue
-            case .Konkani:
-            return ISO_639_2_Codes.kok.rawValue
-            case .Komi:
-            return ISO_639_2_Codes.kom.rawValue
-            case .Kongo:
-            return ISO_639_2_Codes.kon.rawValue
-            case .Korean:
-            return ISO_639_2_Codes.kor.rawValue
-            case .Kosraean:
-            return ISO_639_2_Codes.kos.rawValue
-            case .Kpelle:
-            return ISO_639_2_Codes.kpe.rawValue
-            case .KarachayBalkar:
-            return ISO_639_2_Codes.krc.rawValue
-            case .Karelian:
-            return ISO_639_2_Codes.krl.rawValue
-            case .KruLanguages:
-            return ISO_639_2_Codes.kro.rawValue
-            case .Kurukh:
-            return ISO_639_2_Codes.kru.rawValue
-            case .Kuanyama:
-            return ISO_639_2_Codes.kua.rawValue
-            case .Kwanyama:
-            return ISO_639_2_Codes.kua.rawValue
-            case .Kumyk:
-            return ISO_639_2_Codes.kum.rawValue
-            case .Kurdish:
-            return ISO_639_2_Codes.kur.rawValue
-            case .Kutenai:
-            return ISO_639_2_Codes.kut.rawValue
-            case .Ladino:
-            return ISO_639_2_Codes.lad.rawValue
-            case .Lahnda:
-            return ISO_639_2_Codes.lah.rawValue
-            case .Lamba:
-            return ISO_639_2_Codes.lam.rawValue
-            case .Lao:
-            return ISO_639_2_Codes.lao.rawValue
-            case .Latin:
-            return ISO_639_2_Codes.lat.rawValue
-            case .Latvian:
-            return ISO_639_2_Codes.lav.rawValue
-            case .Lezghian:
-            return ISO_639_2_Codes.lez.rawValue
-            case .Limburgan:
-            return ISO_639_2_Codes.lim.rawValue
-            case .Limburger:
-            return ISO_639_2_Codes.lim.rawValue
-            case .Limburgish:
-            return ISO_639_2_Codes.lim.rawValue
-            case .Lingala:
-            return ISO_639_2_Codes.lin.rawValue
-            case .Lithuanian:
-            return ISO_639_2_Codes.lit.rawValue
-            case .Mongo:
-            return ISO_639_2_Codes.lol.rawValue
-            case .Lozi:
-            return ISO_639_2_Codes.loz.rawValue
-            case .Luxembourgish:
-            return ISO_639_2_Codes.ltz.rawValue
-            case .Letzeburgesch:
-            return ISO_639_2_Codes.ltz.rawValue
-            case .LubaLulua:
-            return ISO_639_2_Codes.lua.rawValue
-            case .LubaKatanga:
-            return ISO_639_2_Codes.lub.rawValue
-            case .Ganda:
-            return ISO_639_2_Codes.lug.rawValue
-            case .Luiseno:
-            return ISO_639_2_Codes.lui.rawValue
-            case .Lunda:
-            return ISO_639_2_Codes.lun.rawValue
-            case .LuoKenyaAndTanzania:
-            return ISO_639_2_Codes.luo.rawValue
-            case .Lushai:
-            return ISO_639_2_Codes.lus.rawValue
-            case .Macedonian:
-            return ISO_639_2_Codes.mac.rawValue
-            case .Madurese:
-            return ISO_639_2_Codes.mad.rawValue
-            case .Magahi:
-            return ISO_639_2_Codes.mag.rawValue
-            case .Marshallese:
-            return ISO_639_2_Codes.mah.rawValue
-            case .Maithili:
-            return ISO_639_2_Codes.mai.rawValue
-            case .Makasar:
-            return ISO_639_2_Codes.mak.rawValue
-            case .Malayalam:
-            return ISO_639_2_Codes.mal.rawValue
-            case .Mandingo:
-            return ISO_639_2_Codes.man.rawValue
-            case .Maori:
-            return ISO_639_2_Codes.mri.rawValue
-            case .AustronesianLanguages:
-            return ISO_639_2_Codes.map.rawValue
-            case .Marathi:
-            return ISO_639_2_Codes.mar.rawValue
-            case .Masai:
-            return ISO_639_2_Codes.mas.rawValue
-            case .Malay:
-            return ISO_639_2_Codes.msa.rawValue
-            case .Moksha:
-            return ISO_639_2_Codes.mdf.rawValue
-            case .Mandar:
-            return ISO_639_2_Codes.mdr.rawValue
-            case .Mende:
-            return ISO_639_2_Codes.men.rawValue
-            case .MiddleIrish:
-            return ISO_639_2_Codes.mga.rawValue
-            case .Mikmaq:
-            return ISO_639_2_Codes.mic.rawValue
-            case .Micmac:
-            return ISO_639_2_Codes.mic.rawValue
-            case .Minangkabau:
-            return ISO_639_2_Codes.min.rawValue
-            case .UncodedLanguages:
-            return ISO_639_2_Codes.mis.rawValue
-            case .MonKhmerLanguages:
-            return ISO_639_2_Codes.mkd.rawValue
-            case .Malagasy:
-            return ISO_639_2_Codes.mlg.rawValue
-            case .Maltese:
-            return ISO_639_2_Codes.mlt.rawValue
-            case .Manchu:
-            return ISO_639_2_Codes.mnc.rawValue
-            case .Manipuri:
-            return ISO_639_2_Codes.mni.rawValue
-            case .ManoboLanguages:
-            return ISO_639_2_Codes.mno.rawValue
-            case .Mohawk:
-            return ISO_639_2_Codes.moh.rawValue
-            case .Mongolian:
-            return ISO_639_2_Codes.mon.rawValue
-            case .Mossi:
-            return ISO_639_2_Codes.mos.rawValue
-            case .MultipleLanguages:
-            return ISO_639_2_Codes.mul.rawValue
-            case .MundaLanguages:
-            return ISO_639_2_Codes.mun.rawValue
-            case .Creek:
-            return ISO_639_2_Codes.mus.rawValue
-            case .Mirandese:
-            return ISO_639_2_Codes.mwl.rawValue
-            case .Marwari:
-            return ISO_639_2_Codes.mwr.rawValue
-            case .MayanLanguages:
-            return ISO_639_2_Codes.myn.rawValue
-            case .Erzya:
-            return ISO_639_2_Codes.myv.rawValue
-            case .NahuatlLanguages:
-            return ISO_639_2_Codes.nah.rawValue
-            case .NorthAmericanIndianLanguages:
-            return ISO_639_2_Codes.nai.rawValue
-            case .Neapolitan:
-            return ISO_639_2_Codes.nap.rawValue
-            case .Nauru:
-            return ISO_639_2_Codes.nau.rawValue
-            case .Navajo:
-            return ISO_639_2_Codes.nav.rawValue
-            case .Navaho:
-            return ISO_639_2_Codes.nav.rawValue
-            case .SouthNdebele:
-            return ISO_639_2_Codes.nbl.rawValue
-            case .NorthNdebele:
-            return ISO_639_2_Codes.nde.rawValue
-            case .Ndonga:
-            return ISO_639_2_Codes.ndo.rawValue
-            case .LowGerman:
-            return ISO_639_2_Codes.nds.rawValue
-            case .LowSaxon:
-            return ISO_639_2_Codes.nds.rawValue
-            case .Nepali:
-            return ISO_639_2_Codes.nep.rawValue
-            case .NepalBhasa:
-            return ISO_639_2_Codes.new.rawValue
-            case .Newari:
-            return ISO_639_2_Codes.new.rawValue
-            case .Nias:
-            return ISO_639_2_Codes.nia.rawValue
-            case .NigerKordofanianLanguages:
-            return ISO_639_2_Codes.nic.rawValue
-            case .Niuean:
-            return ISO_639_2_Codes.niu.rawValue
-            case .NorwegianNynorsk:
-            return ISO_639_2_Codes.nno.rawValue
-            case .NorwegianBokmål:
-            return ISO_639_2_Codes.nob.rawValue
-            case .Nogai:
-            return ISO_639_2_Codes.nog.rawValue
-            case .OldNorse:
-            return ISO_639_2_Codes.non.rawValue
-            case .Norwegian:
-            return ISO_639_2_Codes.nor.rawValue
-            case .NKo:
-            return ISO_639_2_Codes.nqo.rawValue
-            case .Pedi:
-            return ISO_639_2_Codes.nso.rawValue
-            case .Sepedi:
-            return ISO_639_2_Codes.nso.rawValue
-            case .NorthernSotho:
-            return ISO_639_2_Codes.nso.rawValue
-            case .NubianLanguages:
-            return ISO_639_2_Codes.nub.rawValue
-            case .ClassicalNewari:
-            return ISO_639_2_Codes.nwc.rawValue
-            case .OldNewari:
-            return ISO_639_2_Codes.nwc.rawValue
-            case .ClassicalNepalBhasa:
-            return ISO_639_2_Codes.nwc.rawValue
-            case .Chichewa:
-            return ISO_639_2_Codes.nya.rawValue
-            case .Chewa:
-            return ISO_639_2_Codes.nya.rawValue
-            case .Nyanja:
-            return ISO_639_2_Codes.nya.rawValue
-            case .Nyamwezi:
-            return ISO_639_2_Codes.nym.rawValue
-            case .Nyankole:
-            return ISO_639_2_Codes.nyn.rawValue
-            case .Nyoro:
-            return ISO_639_2_Codes.nyo.rawValue
-            case .Nzima:
-            return ISO_639_2_Codes.nzi.rawValue
-            case .Occitan:
-            return ISO_639_2_Codes.oci.rawValue
-            case .Ojibwa:
-            return ISO_639_2_Codes.oji.rawValue
-            case .Oriya:
-            return ISO_639_2_Codes.ori.rawValue
-            case .Oromo:
-            return ISO_639_2_Codes.orm.rawValue
-            case .Osage:
-            return ISO_639_2_Codes.osa.rawValue
-            case .Ossetian:
-            return ISO_639_2_Codes.oss.rawValue
-            case .Ossetic:
-            return ISO_639_2_Codes.oss.rawValue
-            case .TurkishOttoman:
-            return ISO_639_2_Codes.ota.rawValue
-            case .OtomianLanguages:
-            return ISO_639_2_Codes.oto.rawValue
-            case .PapuanLanguages:
-            return ISO_639_2_Codes.paa.rawValue
-            case .Pangasinan:
-            return ISO_639_2_Codes.pag.rawValue
-            case .Pahlavi:
-            return ISO_639_2_Codes.pal.rawValue
-            case .Pampanga:
-            return ISO_639_2_Codes.pam.rawValue
-            case .Kapampangan:
-            return ISO_639_2_Codes.pam.rawValue
-            case .Panjabi:
-            return ISO_639_2_Codes.pan.rawValue
-            case .Punjabi:
-            return ISO_639_2_Codes.pan.rawValue
-            case .Papiamento:
-            return ISO_639_2_Codes.pap.rawValue
-            case .Palauan:
-            return ISO_639_2_Codes.pau.rawValue
-            case .OldPersian:
-            return ISO_639_2_Codes.per.rawValue
-            case .Persian:
-            return ISO_639_2_Codes.fas.rawValue
-            case .PhilippineLanguages:
-            return ISO_639_2_Codes.phi.rawValue
-            case .Phoenician:
-            return ISO_639_2_Codes.phn.rawValue
-            case .Pali:
-            return ISO_639_2_Codes.pli.rawValue
-            case .Polish:
-            return ISO_639_2_Codes.pol.rawValue
-            case .Pohnpeian:
-            return ISO_639_2_Codes.pon.rawValue
-            case .Portuguese:
-            return ISO_639_2_Codes.por.rawValue
-            case .PrakritLanguages:
-            return ISO_639_2_Codes.pra.rawValue
-            case .OldProvençal:
-            return ISO_639_2_Codes.pro.rawValue
-            case .OldOccitan:
-            return ISO_639_2_Codes.pro.rawValue
-            case .Pushto:
-            return ISO_639_2_Codes.pus.rawValue
-            case .Pashto:
-            return ISO_639_2_Codes.pus.rawValue
-            case .Quechua:
-            return ISO_639_2_Codes.que.rawValue
-            case .Rajasthani:
-            return ISO_639_2_Codes.raj.rawValue
-            case .Rapanui:
-            return ISO_639_2_Codes.rap.rawValue
-            case .Rarotongan:
-            return ISO_639_2_Codes.rar.rawValue
-            case .CookIslandsMaori:
-            return ISO_639_2_Codes.rar.rawValue
-            case .RomanceLanguages:
-            return ISO_639_2_Codes.roa.rawValue
-            case .Romansh:
-            return ISO_639_2_Codes.roh.rawValue
-            case .Romany:
-            return ISO_639_2_Codes.rom.rawValue
-            case .Romanian:
-            return ISO_639_2_Codes.ron.rawValue
-            case .Moldavian:
-            return ISO_639_2_Codes.ron.rawValue
-            case .Moldovan:
-            return ISO_639_2_Codes.ron.rawValue
-            case .Rundi:
-            return ISO_639_2_Codes.run.rawValue
-            case .Aromanian:
-            return ISO_639_2_Codes.rup.rawValue
-            case .Arumanian:
-            return ISO_639_2_Codes.rup.rawValue
-            case .MacedoRomanian:
-            return ISO_639_2_Codes.rup.rawValue
-            case .Russian:
-            return ISO_639_2_Codes.rus.rawValue
-            case .Sandawe:
-            return ISO_639_2_Codes.sad.rawValue
-            case .Sango:
-            return ISO_639_2_Codes.sag.rawValue
-            case .Yakut:
-            return ISO_639_2_Codes.sah.rawValue
-            case .SouthAmericanIndianLanguages:
-            return ISO_639_2_Codes.sai.rawValue
-            case .SalishanLanguages:
-            return ISO_639_2_Codes.sal.rawValue
-            case .SamaritanAramaic:
-            return ISO_639_2_Codes.sam.rawValue
-            case .Sanskrit:
-            return ISO_639_2_Codes.san.rawValue
-            case .Sasak:
-            return ISO_639_2_Codes.sas.rawValue
-            case .Santali:
-            return ISO_639_2_Codes.sat.rawValue
-            case .Sicilian:
-            return ISO_639_2_Codes.scn.rawValue
-            case .Scots:
-            return ISO_639_2_Codes.sco.rawValue
-            case .Selkup:
-            return ISO_639_2_Codes.sel.rawValue
-            case .SemiticLanguages:
-            return ISO_639_2_Codes.sem.rawValue
-            case .OldIrish:
-            return ISO_639_2_Codes.sga.rawValue
-            case .SignLanguages:
-            return ISO_639_2_Codes.sgn.rawValue
-            case .Shan:
-            return ISO_639_2_Codes.shn.rawValue
-            case .Sidamo:
-            return ISO_639_2_Codes.sid.rawValue
-            case .Sinhala:
-            return ISO_639_2_Codes.sin.rawValue
-            case .Sinhalese:
-            return ISO_639_2_Codes.sin.rawValue
-            case .SiouanLanguages:
-            return ISO_639_2_Codes.sio.rawValue
-            case .SinoTibetanLanguages:
-            return ISO_639_2_Codes.sit.rawValue
-            case .SlavicLanguages:
-            return ISO_639_2_Codes.sla.rawValue
-            case .Slovak:
-            return ISO_639_2_Codes.slk.rawValue
-            case .Slovenian:
-            return ISO_639_2_Codes.slv.rawValue
-            case .SouthernSami:
-            return ISO_639_2_Codes.sma.rawValue
-            case .NorthernSami:
-            return ISO_639_2_Codes.sme.rawValue
-            case .SamiLanguages:
-            return ISO_639_2_Codes.smi.rawValue
-            case .LuleSami:
-            return ISO_639_2_Codes.smj.rawValue
-            case .InariSami:
-            return ISO_639_2_Codes.smn.rawValue
-            case .Samoan:
-            return ISO_639_2_Codes.smo.rawValue
-            case .SkoltSami:
-            return ISO_639_2_Codes.sms.rawValue
-            case .Shona:
-            return ISO_639_2_Codes.sna.rawValue
-            case .Sindhi:
-            return ISO_639_2_Codes.snd.rawValue
-            case .Soninke:
-            return ISO_639_2_Codes.snk.rawValue
-            case .Sogdian:
-            return ISO_639_2_Codes.sog.rawValue
-            case .Somali:
-            return ISO_639_2_Codes.som.rawValue
-            case .SonghaiLanguages:
-            return ISO_639_2_Codes.son.rawValue
-            case .SothoSouthern:
-            return ISO_639_2_Codes.sot.rawValue
-            case .Spanish:
-            return ISO_639_2_Codes.spa.rawValue
-            case .Castilian:
-            return ISO_639_2_Codes.spa.rawValue
-            case .Sardinian:
-            return ISO_639_2_Codes.sqi.rawValue
-            case .SrananTongo:
-            return ISO_639_2_Codes.srd.rawValue
-            case .Serbian:
-            return ISO_639_2_Codes.srn.rawValue
-            case .Serer:
-            return ISO_639_2_Codes.srp.rawValue
-            case .NiloSaharanLanguages:
-            return ISO_639_2_Codes.ssa.rawValue
-            case .Swati:
-            return ISO_639_2_Codes.ssw.rawValue
-            case .Sukuma:
-            return ISO_639_2_Codes.suk.rawValue
-            case .Sundanese:
-            return ISO_639_2_Codes.sun.rawValue
-            case .Susu:
-            return ISO_639_2_Codes.sus.rawValue
-            case .Sumerian:
-            return ISO_639_2_Codes.sux.rawValue
-            case .Swahili:
-            return ISO_639_2_Codes.swa.rawValue
-            case .Swedish:
-            return ISO_639_2_Codes.swe.rawValue
-            case .ClassicalSyriac:
-            return ISO_639_2_Codes.syc.rawValue
-            case .Syriac:
-            return ISO_639_2_Codes.syr.rawValue
-            case .Tahitian:
-            return ISO_639_2_Codes.tah.rawValue
-            case .TaiLanguages:
-            return ISO_639_2_Codes.tai.rawValue
-            case .Tamil:
-            return ISO_639_2_Codes.tam.rawValue
-            case .Tatar:
-            return ISO_639_2_Codes.tat.rawValue
-            case .Telugu:
-            return ISO_639_2_Codes.tel.rawValue
-            case .Timne:
-            return ISO_639_2_Codes.tem.rawValue
-            case .Tereno:
-            return ISO_639_2_Codes.ter.rawValue
-            case .Tetum:
-            return ISO_639_2_Codes.tet.rawValue
-            case .Tajik:
-            return ISO_639_2_Codes.tgk.rawValue
-            case .Tagalog:
-            return ISO_639_2_Codes.tgl.rawValue
-            case .Thai:
-            return ISO_639_2_Codes.tha.rawValue
-            case .Tibetan:
-            return ISO_639_2_Codes.tib.rawValue
-            case .Tigre:
-            return ISO_639_2_Codes.tig.rawValue
-            case .Tigrinya:
-            return ISO_639_2_Codes.tir.rawValue
-            case .Tiv:
-            return ISO_639_2_Codes.tiv.rawValue
-            case .Tokelau:
-            return ISO_639_2_Codes.tkl.rawValue
-            case .Tlingit:
-            return ISO_639_2_Codes.tli.rawValue
-            case .Tamashek:
-            return ISO_639_2_Codes.tmh.rawValue
-            case .TongaNyasa:
-            return ISO_639_2_Codes.tog.rawValue
-            case .TongaIslands:
-            return ISO_639_2_Codes.ton.rawValue
-            case .TokPisin:
-            return ISO_639_2_Codes.tpi.rawValue
-            case .Tsimshian:
-            return ISO_639_2_Codes.tsi.rawValue
-            case .Tswana:
-            return ISO_639_2_Codes.tsn.rawValue
-            case .Tsonga:
-            return ISO_639_2_Codes.tso.rawValue
-            case .Turkmen:
-            return ISO_639_2_Codes.tuk.rawValue
-            case .Tumbuka:
-            return ISO_639_2_Codes.tum.rawValue
-            case .TupiLanguages:
-            return ISO_639_2_Codes.tup.rawValue
-            case .Turkish:
-            return ISO_639_2_Codes.tur.rawValue
-            case .AltaicLanguages:
-            return ISO_639_2_Codes.tut.rawValue
-            case .Tuvalu:
-            return ISO_639_2_Codes.tvl.rawValue
-            case .Twi:
-            return ISO_639_2_Codes.twi.rawValue
-            case .Tuvinian:
-            return ISO_639_2_Codes.tyv.rawValue
-            case .Udmurt:
-            return ISO_639_2_Codes.udm.rawValue
-            case .Ugaritic:
-            return ISO_639_2_Codes.uga.rawValue
-            case .Uighur:
-            return ISO_639_2_Codes.uig.rawValue
-            case .Uyghur:
-            return ISO_639_2_Codes.uig.rawValue
-            case .Ukrainian:
-            return ISO_639_2_Codes.ukr.rawValue
-            case .Umbundu:
-            return ISO_639_2_Codes.umb.rawValue
-            case .Undetermined:
-            return ISO_639_2_Codes.und.rawValue
-            case .Urdu:
-            return ISO_639_2_Codes.urd.rawValue
-            case .Uzbek:
-            return ISO_639_2_Codes.uzb.rawValue
-            case .Vai:
-            return ISO_639_2_Codes.vai.rawValue
-            case .Venda:
-            return ISO_639_2_Codes.ven.rawValue
-            case .Vietnamese:
-            return ISO_639_2_Codes.vie.rawValue
-            case .Volapük:
-            return ISO_639_2_Codes.vol.rawValue
-            case .Votic:
-            return ISO_639_2_Codes.vot.rawValue
-            case .WakashanLanguages:
-            return ISO_639_2_Codes.wak.rawValue
-            case .Wolaitta:
-            return ISO_639_2_Codes.wal.rawValue
-            case .Wolaytta:
-            return ISO_639_2_Codes.wal.rawValue
-            case .Waray:
-            return ISO_639_2_Codes.war.rawValue
-            case .Washo:
-            return ISO_639_2_Codes.was.rawValue
-            case .Welsh:
-            return ISO_639_2_Codes.cym.rawValue
-            case .SorbianLanguages:
-            return ISO_639_2_Codes.wen.rawValue
-            case .Walloon:
-            return ISO_639_2_Codes.wln.rawValue
-            case .Wolof:
-            return ISO_639_2_Codes.wol.rawValue
-            case .Kalmyk:
-            return ISO_639_2_Codes.wol.rawValue
-            case .Oirat:
-            return ISO_639_2_Codes.xal.rawValue
-            case .Xhosa:
-            return ISO_639_2_Codes.zho.rawValue
-            case .Yao:
-            return ISO_639_2_Codes.yao.rawValue
-            case .Yapese:
-            return ISO_639_2_Codes.yap.rawValue
-            case .Yiddish:
-            return ISO_639_2_Codes.yid.rawValue
-            case .Yoruba:
-            return ISO_639_2_Codes.yor.rawValue
-            case .YupikLanguages:
-            return ISO_639_2_Codes.ypk.rawValue
-            case .Zapotec:
-            return ISO_639_2_Codes.zap.rawValue
-            case .Blissymbols:
-            return ISO_639_2_Codes.zbl.rawValue
-            case .Blissymbolics:
-            return ISO_639_2_Codes.zbl.rawValue
-            case .Bliss:
-            return ISO_639_2_Codes.zbl.rawValue
-            case .Zenaga:
-            return ISO_639_2_Codes.zen.rawValue
+                return ISO_639_2_Codes.cnr.rawValue
             case .StandardMoroccanTamazight:
-            return ISO_639_2_Codes.zgh.rawValue
-            case .Zhuang:
-            return ISO_639_2_Codes.zha.rawValue
-            case .Chuang:
-            return ISO_639_2_Codes.zha.rawValue
+                return ISO_639_2_Codes.zgh.rawValue
+            case .Hmong:
+                return ISO_639_2_Codes.hmn.rawValue
+            case .Mong:
+                return ISO_639_2_Codes.hmn.rawValue
+            case .BihariLanguage:
+                return ISO_639_2_Codes.bih.rawValue
+            case .HimachaliLanguages:
+                return ISO_639_2_Codes.him.rawValue
+            case .WesternPahariLanguages:
+                return ISO_639_2_Codes.him.rawValue
+            case .AfroAsiaticLanguage:
+                return ISO_639_2_Codes.afa.rawValue
+            case .ApacheLanguages:
+                return ISO_639_2_Codes.apa.rawValue
+            case .ArtificialLanguages:
+                return ISO_639_2_Codes.art.rawValue
+            case .BamilekeLanguages:
+                return ISO_639_2_Codes.bai.rawValue
+            case .BalticLanguages:
+                return ISO_639_2_Codes.bat.rawValue
+            case .BerberLanguages:
+                return ISO_639_2_Codes.ber.rawValue
+            case .BantuLanguages:
+                return ISO_639_2_Codes.bnt.rawValue
+            case .CentralAmericanIndianLanguages:
+                return ISO_639_2_Codes.cai.rawValue
+            case .CaucasianLanguages:
+                return ISO_639_2_Codes.cau.rawValue
+            case .CelticLanguages:
+                return ISO_639_2_Codes.cel.rawValue
+            case .EnglishCreolesAndPidgins:
+                return ISO_639_2_Codes.cpe.rawValue
+            case .FrenchCreolesAndPidgins:
+                return ISO_639_2_Codes.cpf.rawValue
+            case .PortugeseCreolesAndPidgins:
+                return ISO_639_2_Codes.cpp.rawValue
+            case .CreolesAndPidgins:
+                return ISO_639_2_Codes.crp.rawValue
+            case .CushiticLanguages:
+                return ISO_639_2_Codes.cus.rawValue
+            case .DravidianLanguages:
+                return ISO_639_2_Codes.dra.rawValue
+            case .FinnoUgrianLanguages:
+                return ISO_639_2_Codes.fiu.rawValue
+            case .GermanicLanguages:
+                return ISO_639_2_Codes.gem.rawValue
+            case .IndicLanguages:
+                return ISO_639_2_Codes.inc.rawValue
+            case .IndoEuropeanLanguages:
+                return ISO_639_2_Codes.ine.rawValue
+            case .IranianLanguages:
+                return ISO_639_2_Codes.ira.rawValue
+            case .IroquoianLanguages:
+                return ISO_639_2_Codes.iro.rawValue
+            case .KhoisanLanguages:
+                return ISO_639_2_Codes.khi.rawValue
+            case .AustronesianLanguages:
+                return ISO_639_2_Codes.map.rawValue
+            case .MonKhmerLanguages:
+                return ISO_639_2_Codes.mkh.rawValue
+            case .NorthAmericanIndianLanguages:
+                return ISO_639_2_Codes.nai.rawValue
+            case .NigerKordofianLanguages:
+                return ISO_639_2_Codes.nic.rawValue
+            case .OtomianLanguages:
+                return ISO_639_2_Codes.oto.rawValue
+            case .PapuanLanguages:
+                return ISO_639_2_Codes.paa.rawValue
+            case .PhilippineLanguages:
+                return ISO_639_2_Codes.phi.rawValue
+            case .PrakritLanguages:
+                return ISO_639_2_Codes.pra.rawValue
+            case .RomanceLanguages:
+                return ISO_639_2_Codes.roa.rawValue
+            case .SouthAmericanIndianLanguages:
+                return ISO_639_2_Codes.sai.rawValue
+            case .SalishanLanguages:
+                return ISO_639_2_Codes.sal.rawValue
+            case .SemiticLanguages:
+                return ISO_639_2_Codes.sem.rawValue
+            case .SinoTibetanLanguages:
+                return ISO_639_2_Codes.sit.rawValue
+            case .SlavicLanguages:
+                return ISO_639_2_Codes.sla.rawValue
+            case .SamiLanguages:
+                return ISO_639_2_Codes.smi.rawValue
+            case .NiloSaharanLanguages:
+                return ISO_639_2_Codes.ssa.rawValue
+            case .TaiLanguages:
+                return ISO_639_2_Codes.tai.rawValue
+            case .AltaicLanguages:
+                return ISO_639_2_Codes.tut.rawValue
+            case .WakashaLanguages:
+                return ISO_639_2_Codes.wak.rawValue
+            case .Moldavian:
+                return ISO_639_2_Codes.mol.rawValue
+            case .Moldavan:
+                return ISO_639_2_Codes.mol.rawValue
+            case .Khotanese:
+                return ISO_639_2_Codes.kho.rawValue
+            case .Sakan:
+                return ISO_639_2_Codes.kho.rawValue
+            case .Occitan:
+                return ISO_639_2_Codes.oci.rawValue
+            case .Provençal:
+                return ISO_639_2_Codes.pro.rawValue
+            case .Walaitta:
+                return ISO_639_2_Codes.wal.rawValue
+            case .Wolaytta:
+                return ISO_639_2_Codes.wal.rawValue
+            case .Serbian:
+                return ISO_639_2_Codes.srp.rawValue
+            case .Croatian:
+                return ISO_639_2_Codes.hrv.rawValue
+            case .NotApplicable:
+                return ISO_639_2_Codes.zxx.rawValue
+            case .SwissGerman:
+                return ISO_639_2_Codes.gsw.rawValue
+            case .Alemannic:
+                return ISO_639_2_Codes.gsw.rawValue
+            case .Alsatian:
+                return ISO_639_2_Codes.gsw.rawValue
+            case .Pushto:
+                return ISO_639_2_Codes.pus.rawValue
+            case .Pashto:
+                return ISO_639_2_Codes.pus.rawValue
+            case .Asturian:
+                return ISO_639_2_Codes.ast.rawValue
+            case .Bable:
+                return ISO_639_2_Codes.ast.rawValue
+            case .Leonese:
+                return ISO_639_2_Codes.ast.rawValue
+            case .Asturleonese:
+                return ISO_639_2_Codes.ast.rawValue
+            case .Beja:
+                return ISO_639_2_Codes.bej.rawValue
+            case .Bedawiyet:
+                return ISO_639_2_Codes.bej.rawValue
+            case .Chipewyan:
+                return ISO_639_2_Codes.chp.rawValue
+            case .DeneSuline:
+                return ISO_639_2_Codes.chp.rawValue
+            case .SichuanYi:
+                return ISO_639_2_Codes.iii.rawValue
+            case .Nuosu:
+                return ISO_639_2_Codes.iii.rawValue
+            case .Interlingue:
+                return ISO_639_2_Codes.ile.rawValue
+            case .Occidental:
+                return ISO_639_2_Codes.ile.rawValue
+            case .Pampanga:
+                return ISO_639_2_Codes.pam.rawValue
+            case .Kapampangan:
+                return ISO_639_2_Codes.pam.rawValue
+            case .Blissymbols:
+                return ISO_639_2_Codes.zbl.rawValue
+            case .Blissymbolics:
+                return ISO_639_2_Codes.zbl.rawValue
+            case .Bliss:
+                return ISO_639_2_Codes.zbl.rawValue
+            case .UncodedLanguages:
+                return ISO_639_2_Codes.mis.rawValue
+            case .OfficialAramaic:
+                return ISO_639_2_Codes.arc.rawValue
+            case .ImperialAramaic:
+                return ISO_639_2_Codes.arc.rawValue
+            case .ClassicalSyriac:
+                return ISO_639_2_Codes.syc.rawValue
+            case .Bini:
+                return ISO_639_2_Codes.bin.rawValue
+            case .Edo:
+                return ISO_639_2_Codes.bin.rawValue
+            case .Galibi:
+                return ISO_639_2_Codes.car.rawValue
+            case .Carib:
+                return ISO_639_2_Codes.car.rawValue
+            case .BandaLanguages:
+                return ISO_639_2_Codes.bad.rawValue
+            case .BatakLanguages:
+                return ISO_639_2_Codes.btk.rawValue
+            case .LandDayakLanguages:
+                return ISO_639_2_Codes.day.rawValue
+            case .IjoLanguages:
+                return ISO_639_2_Codes.ijo.rawValue
+            case .KarenLanguages:
+                return ISO_639_2_Codes.kar.rawValue
+            case .KruLanguages:
+                return ISO_639_2_Codes.kro.rawValue
+            case .NahuatlLanguages:
+                return ISO_639_2_Codes.nah.rawValue
+            case .SonghaiLanguages:
+                return ISO_639_2_Codes.son.rawValue
+            case .SrananTongo:
+                return ISO_639_2_Codes.srn.rawValue
             case .ZandeLanguages:
-            return ISO_639_2_Codes.znd.rawValue
-            case .Zulu:
-            return ISO_639_2_Codes.zul.rawValue
-            case .Zuni:
-            return ISO_639_2_Codes.zun.rawValue
-            case .NoLinguisticContent:
-            return ISO_639_2_Codes.zxx.rawValue
+                return ISO_639_2_Codes.znd.rawValue
+            case .Kachin:
+                return ISO_639_2_Codes.kac.rawValue
+            case .Jingpho:
+                return ISO_639_2_Codes.kac.rawValue
+            case .CentralKhmer:
+                return ISO_639_2_Codes.khm.rawValue
+            case .Mapudungun:
+                return ISO_639_2_Codes.arn.rawValue
+            case .Mapuche:
+                return ISO_639_2_Codes.arn.rawValue
+            case .Rarotongan:
+                return ISO_639_2_Codes.rar.rawValue
+            case .CookIslandsMaori:
+                return ISO_639_2_Codes.rar.rawValue
+            case .Romansh:
+                return ISO_639_2_Codes.roh.rawValue
+            case .Kirghiz:
+                return ISO_639_2_Codes.kir.rawValue
+            case .Kyrgyz:
+                return ISO_639_2_Codes.kir.rawValue
             case .Zaza:
-            return ISO_639_2_Codes.zza.rawValue
+                return ISO_639_2_Codes.zza.rawValue
             case .Dimili:
-            return ISO_639_2_Codes.zza.rawValue
+                return ISO_639_2_Codes.zza.rawValue
             case .Dimli:
-            return ISO_639_2_Codes.zza.rawValue
+                return ISO_639_2_Codes.zza.rawValue
             case .Kirdki:
-            return ISO_639_2_Codes.zza.rawValue
+                return ISO_639_2_Codes.zza.rawValue
             case .Kirmanjki:
-            return ISO_639_2_Codes.zza.rawValue
+                return ISO_639_2_Codes.zza.rawValue
             case .Zazaki:
-            return ISO_639_2_Codes.zza.rawValue
+                return ISO_639_2_Codes.zza.rawValue
+            case .Divehi:
+                return ISO_639_2_Codes.div.rawValue
+            case .Dhivehi:
+                return ISO_639_2_Codes.div.rawValue
+            case .Maldivian:
+                return ISO_639_2_Codes.div.rawValue
+            case .NKo:
+                return ISO_639_2_Codes.nqo.rawValue
+            case .Karelian:
+                return ISO_639_2_Codes.krl.rawValue
+            case .EasternFrisian:
+                return ISO_639_2_Codes.frs.rawValue
+            case .WesternFrisian:
+                return ISO_639_2_Codes.fry.rawValue
+            case .Angika:
+                return ISO_639_2_Codes.anp.rawValue
+            case .NorthernFrisian:
+                return ISO_639_2_Codes.frr.rawValue
+            case .Aromanian:
+                return ISO_639_2_Codes.rup.rawValue
+            case .Arumianian:
+                return ISO_639_2_Codes.rup.rawValue
+            case .MacedoRomanian:
+                return ISO_639_2_Codes.rup.rawValue
+            case .Ainu:
+                return ISO_639_2_Codes.ain.rawValue
+            case .Galician:
+                return ISO_639_2_Codes.glg.rawValue
+            case .SouthernAltai:
+                return ISO_639_2_Codes.alt.rawValue
+            case .Kalmyk:
+                return ISO_639_2_Codes.xal.rawValue
+            case .Oirat:
+                return ISO_639_2_Codes.xal.rawValue
+            case .Mikmaq:
+                return ISO_639_2_Codes.mic.rawValue
+            case .Micmac:
+                return ISO_639_2_Codes.mic.rawValue
+            case .Pedi:
+                return ISO_639_2_Codes.nso.rawValue
+            case .Sepedi:
+                return ISO_639_2_Codes.nso.rawValue
+            case .NorthernSotho:
+                return ISO_639_2_Codes.nso.rawValue
+            case .Sinhala:
+                return ISO_639_2_Codes.sin.rawValue
+            case .Sinhalese:
+                return ISO_639_2_Codes.sin.rawValue
+            case .Filipino:
+                return ISO_639_2_Codes.fil.rawValue
+            case .Philipino:
+                return ISO_639_2_Codes.fil.rawValue
+            case .Mirandese:
+                return ISO_639_2_Codes.mwl.rawValue
+            case .Sicilian:
+                return ISO_639_2_Codes.scn.rawValue
+            case .ClassicalNewari:
+                return ISO_639_2_Codes.nwc.rawValue
+            case .OldNewari:
+                return ISO_639_2_Codes.nwc.rawValue
+            case .ClassicalNepalBhasa:
+                return ISO_639_2_Codes.nwc.rawValue
+            case .Blin:
+                return ISO_639_2_Codes.byn.rawValue
+            case .Bilin:
+                return ISO_639_2_Codes.byn.rawValue
+            case .Lojban:
+                return ISO_639_2_Codes.jbo.rawValue
+            case .LowerSorbian:
+                return ISO_639_2_Codes.dsb.rawValue
+            case .UpperSorbian:
+                return ISO_639_2_Codes.hsb.rawValue
+            case .Kashubian:
+                return ISO_639_2_Codes.csb.rawValue
+            case .CrimeanTatar:
+                return ISO_639_2_Codes.crh.rawValue
+            case .CrimeanTurkish:
+                return ISO_639_2_Codes.crh.rawValue
+            case .Adyghe:
+                return ISO_639_2_Codes.ady.rawValue
+            case .Adygei:
+                return ISO_639_2_Codes.ady.rawValue
+            case .KarachayBalkar:
+                return ISO_639_2_Codes.krc.rawValue
+            case .Moksha:
+                return ISO_639_2_Codes.mdf.rawValue
+            case .Erzya:
+                return ISO_639_2_Codes.myv.rawValue
+            case .Udmurt:
+                return ISO_639_2_Codes.udm.rawValue
+            case .Dargwa:
+                return ISO_639_2_Codes.dar.rawValue
+            case .Ingush:
+                return ISO_639_2_Codes.inh.rawValue
+            case .Nogai:
+                return ISO_639_2_Codes.nog.rawValue
+            case .Haitian:
+                return ISO_639_2_Codes.hat.rawValue
+            case .HaitianCreole:
+                return ISO_639_2_Codes.hat.rawValue
+            case .Kabardian:
+                return ISO_639_2_Codes.kbd.rawValue
+            case .Aragonese:
+                return ISO_639_2_Codes.arg.rawValue
+            case .Limburgan:
+                return ISO_639_2_Codes.lim.rawValue
+            case .Limburger:
+                return ISO_639_2_Codes.lim.rawValue
+            case .Limburgish:
+                return ISO_639_2_Codes.lim.rawValue
+            case .Neapolitan:
+                return ISO_639_2_Codes.nap.rawValue
+            case .SouthernSami:
+                return ISO_639_2_Codes.sma.rawValue
+            case .LuleSami:
+                return ISO_639_2_Codes.smj.rawValue
+            case .InariSami:
+                return ISO_639_2_Codes.smn.rawValue
+            case .SkoltSami:
+                return ISO_639_2_Codes.sms.rawValue
+            case .Walloon:
+                return ISO_639_2_Codes.wln.rawValue
+            case .Ido:
+                return ISO_639_2_Codes.ido.rawValue
+            case .TupiLanguages:
+                return ISO_639_2_Codes.tup.rawValue
+            case .Javanese:
+                return ISO_639_2_Codes.jav.rawValue
+            case .SouthNdebele:
+                return ISO_639_2_Codes.nbl.rawValue
+            case .NorthNdebele:
+                return ISO_639_2_Codes.nde.rawValue
+            case .LowGerman:
+                return ISO_639_2_Codes.nds.rawValue
+            case .LowSaxon:
+                return ISO_639_2_Codes.nds.rawValue
+            case .Avestan:
+                return ISO_639_2_Codes.ave.rawValue
+            case .Bambara:
+                return ISO_639_2_Codes.bam.rawValue
+            case .Bosnian:
+                return ISO_639_2_Codes.bos.rawValue
+            case .Chamorro:
+                return ISO_639_2_Codes.cha.rawValue
+            case .Chechen:
+                return ISO_639_2_Codes.che.rawValue
+            case .ChurchSlavic:
+                return ISO_639_2_Codes.chu.rawValue
+            case .OldSlavic:
+                return ISO_639_2_Codes.chu.rawValue
+            case .OldBulgarian:
+                return ISO_639_2_Codes.chu.rawValue
+            case .Chuvash:
+                return ISO_639_2_Codes.chv.rawValue
+            case .Herero:
+                return ISO_639_2_Codes.her.rawValue
+            case .HiriMotu:
+                return ISO_639_2_Codes.hmo.rawValue
+            case .Kikuyu:
+                return ISO_639_2_Codes.kik.rawValue
+            case .Gikuyu:
+                return ISO_639_2_Codes.kik.rawValue
+            case .Komi:
+                return ISO_639_2_Codes.kom.rawValue
+            case .Kuanyama:
+                return ISO_639_2_Codes.kua.rawValue
+            case .Kwanyama:
+                return ISO_639_2_Codes.kua.rawValue
+            case .Marshallese:
+                return ISO_639_2_Codes.mah.rawValue
+            case .Manchu:
+                return ISO_639_2_Codes.mnc.rawValue
+            case .Navajo:
+                return ISO_639_2_Codes.nav.rawValue
+            case .Navaho:
+                return ISO_639_2_Codes.nav.rawValue
+            case .Ndonga:
+                return ISO_639_2_Codes.ndo.rawValue
+            case .NorwegianNynorsk:
+                return ISO_639_2_Codes.nno.rawValue
+            case .NorwegianBokmål:
+                return ISO_639_2_Codes.nob.rawValue
+            case .Chichewa:
+                return ISO_639_2_Codes.nya.rawValue
+            case .Chewa:
+                return ISO_639_2_Codes.nya.rawValue
+            case .Nyanja:
+                return ISO_639_2_Codes.nya.rawValue
+            case .Ossetian:
+                return ISO_639_2_Codes.oss.rawValue
+            case .Pali:
+                return ISO_639_2_Codes.pli.rawValue
+            case .SignLanguages:
+                return ISO_639_2_Codes.sgn.rawValue
+            case .NorthernSami:
+                return ISO_639_2_Codes.sme.rawValue
+            case .Sardinian:
+                return ISO_639_2_Codes.srd.rawValue
+            case .Tahitian:
+                return ISO_639_2_Codes.tah.rawValue
+            case .Akan:
+                return ISO_639_2_Codes.aka.rawValue
+            case .Avaric:
+                return ISO_639_2_Codes.ava.rawValue
+            case .Cree:
+                return ISO_639_2_Codes.cre.rawValue
+            case .Ewe:
+                return ISO_639_2_Codes.ewe.rawValue
+            case .Fuljah:
+                return ISO_639_2_Codes.ful.rawValue
+            case .Igbo:
+                return ISO_639_2_Codes.ibo.rawValue
+            case .Kanuri:
+                return ISO_639_2_Codes.kau.rawValue
+            case .Kongo:
+                return ISO_639_2_Codes.kon.rawValue
+            case .LubaKatanga:
+                return ISO_639_2_Codes.lub.rawValue
+            case .Ganda:
+                return ISO_639_2_Codes.lug.rawValue
+            case .Ojibwa:
+                return ISO_639_2_Codes.oji.rawValue
+            case .Venda:
+                return ISO_639_2_Codes.ven.rawValue
+            case .Cornish:
+                return ISO_639_2_Codes.cor.rawValue
+            case .Manx:
+                return ISO_639_2_Codes.glv.rawValue
+            case .Luxembourgish:
+                return ISO_639_2_Codes.ltz.rawValue
+            case .Letzeburgesch:
+                return ISO_639_2_Codes.ltz.rawValue
+            case .Hebrew:
+                return ISO_639_2_Codes.heb.rawValue
+            case .Inuktitut:
+                return ISO_639_2_Codes.iku.rawValue
+            case .Indonesian:
+                return ISO_639_2_Codes.ind.rawValue
+            case .Uighru:
+                return ISO_639_2_Codes.uig.rawValue
+            case .Uyghur:
+                return ISO_639_2_Codes.uig.rawValue
+            case .Yiddish:
+                return ISO_639_2_Codes.yid.rawValue
+            case .Zhuang:
+                return ISO_639_2_Codes.zha.rawValue
+            case .Chuang:
+                return ISO_639_2_Codes.zha.rawValue
         }
     }
 }
