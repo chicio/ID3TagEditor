@@ -32,12 +32,7 @@ class ID3CommentTypesFrameCreator: CommentTypesFrameCreator {
       let frameContents = [UInt8](
         [
           stringToBytesAdapter.encoding(for: version),
-          stringToBytesAdapter.adapt(
-            string: language.rawValue,
-            for: version,
-            includingEncoding: false,
-            includingTermination: false
-          ),
+          Array(language.rawValue.utf8), // Actually ASCII, but for that range UTF‐8 is the same.
           stringToBytesAdapter.adapt(
             string: description ?? "",
             for: version,
