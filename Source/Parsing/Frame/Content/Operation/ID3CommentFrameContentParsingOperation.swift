@@ -20,13 +20,15 @@ struct ID3CommentFrameContentParsingOperation: FrameContentParsingOperation {
         || String(ascii: name) == frameName.threeByteString,
       "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.fourByteString!)/\(frameName.threeByteString!)"
     )
-    _ = parsing.extractFirst(version.identifierSize) // Size
+    _ = parsing.extractFirst(version.sizeSize)
+    _ = parsing.extractFirst(version.flagSize)
 
     #warning("Should be able to throw or otherwise signal that the encoding flag was invalid. Falling back to the most standard encoding could cause trouble down the line.")
     let encoding = parsing.extractFirst(1).first.flatMap({ ID3StringEncoding(rawValue: $0) })
       ?? ID3StringEncoding.UTF8
 
-    let language = ISO_639_2_Codes(rawValue: String(ascii: parsing.extractFirst(3))) ?? .und
+    let languageCode = String(ascii: parsing.extractFirst(3))
+    let language = ISO_639_2_Codes(rawValue: languageCode) ?? .und
 
     let description = parsing.extractPrefixAsStringUntilNullTermination(encoding)
     #warning("Upon encoding failure, this falls back to an empty string, losing information. It ought to throw or something instead.")

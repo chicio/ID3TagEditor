@@ -27,6 +27,24 @@ public enum ID3Version: UInt8, Comparable {
       }
     }
 
+    internal var sizeSize: Int {
+      switch self {
+      case .version2:
+        return 3
+      case .version3, .version4:
+        return 4
+      }
+    }
+
+    internal var flagSize: Int {
+      switch self {
+      case .version2:
+        return 0
+      case .version3, .version4:
+        return 2
+      }
+    }
+
     /**
      Compare two version values.
      

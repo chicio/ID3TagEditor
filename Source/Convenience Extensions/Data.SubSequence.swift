@@ -38,13 +38,20 @@ extension Data.SubSequence {
       }
     }
 
-    var stringBytes = self[..<remainder.startIndex]
-    self = remainder
-    stringBytes = stringBytes.dropLast()
-    if double {
+    var stringBytes: Data.SubSequence
+    if remainder.startIndex == self.startIndex {
+      // No null found.
+      stringBytes = self
+      self = self[self.endIndex...]
+    } else {
+      // Null found.
+      stringBytes = self[..<remainder.startIndex]
+      self = remainder
       stringBytes = stringBytes.dropLast()
+      if double {
+        stringBytes = stringBytes.dropLast()
+      }
     }
-
     return String(data: Data(stringBytes), encoding: encoding.standardLibraryEncoding)
   }
 }
