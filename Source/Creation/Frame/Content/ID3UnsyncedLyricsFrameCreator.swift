@@ -24,21 +24,10 @@ class ID3UnsyncedLyricsFrameCreator: ID3FrameCreatorsChain {
                         version: id3Tag.properties.version
                     ),
                     version: id3Tag.properties.version, language: lyricsFrame.language, description: lyricsFrame.description,
-                    content: adapt(lyrics: lyricsFrame)
+                    content: lyricsFrame.content
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
-    }
-
-    private func adapt(lyrics: ID3FrameCommentTypes) -> String {
-        var lyricsString = ""
-        let lyricsLanguage = lyrics.language
-        lyricsString = lyricsString + "\(lyricsLanguage)"
-        if let lyricsDescription = lyrics.description {
-            lyricsString = lyricsString + "\(lyricsDescription)"
-        }
-        lyricsString = lyricsString + "\(lyrics.content)"
-        return lyricsString
     }
 }
