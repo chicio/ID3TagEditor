@@ -57,6 +57,7 @@ class ID3CommentTypesFrameCreator: CommentTypesFrameCreator {
         [
           frameIdentifier,
           frameContentSizeCalculator.calculateSizeOf(content: frameContents, version: version),
+          frameFlagsCreator.createFor(version: version),
           frameContents
         ].joined()
       )
