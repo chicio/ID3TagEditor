@@ -43,7 +43,5 @@ class ID3CommentTypesFrameCreatorTest: XCTestCase {
             0xFF, 0xFE, 0x74, 0x00, 0x65, 0x00, 0x73, 0x00, 0x74, 0x00 // “test”
           ]
         )
-        #warning("Encoding flag is UCS‐2, which is not UTF‐16.")
-        #warning("The leading FF FE on each string is a byte order mark. Is that valid?")
     }
 }
