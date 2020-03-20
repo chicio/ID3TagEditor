@@ -17,7 +17,7 @@ class ID3UTF16StringToByteAdapter: StringToBytesAdapter {
     }
 
     func encoding(for version: ID3Version) -> [UInt8] {
-      return frameConfiguration.encodingByteFor(version: version, encoding: .UTF16)
+      return frameConfiguration.encodingByteFor(version: version, encoding: .utf16WithBOM)
     }
 
     func termination() -> [UInt8] {

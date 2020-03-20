@@ -15,9 +15,9 @@ extension Data.SubSequence {
   internal mutating func extractPrefixAsStringUntilNullTermination(_ encoding: ID3StringEncoding) -> String? {
     let double: Bool
     switch encoding {
-    case .ISO88591, .UTF8:
+    case .utf8, .isoLatin1:
       double = false
-    case .UTF16:
+    case .utf16BigEndian, .utf16WithBOM:
       double = true
     }
     var remainder = self
