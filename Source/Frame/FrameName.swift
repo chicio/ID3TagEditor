@@ -97,6 +97,8 @@ public enum FrameName: Hashable {
         return "COMM"
       case .UnsyncedLyrics:
         return "USLT"
+      case .UserDefinedTextInformation:
+        return "TXXX"
       default:
         return nil
       }
@@ -108,6 +110,8 @@ public enum FrameName: Hashable {
         return "COM"
       case .UnsyncedLyrics:
         return "ULT"
+      case .UserDefinedTextInformation:
+        return "TXX"
       default:
         return nil
       }

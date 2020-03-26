@@ -1,14 +1,6 @@
-//
-//  ID3CommentFrameContentParsingOperation.swift
-//  ID3TagEditor
-//
-//  Created by Nolaine Crusher on 3/7/20.
-//  Copyright © 2020 Fabrizio Duroni. All rights reserved.
-//
-
 import Foundation
 
-struct ID3CommentFrameContentParsingOperation: FrameContentParsingOperation, FrameParser {
+struct ID3UserTextFrameContentParsingOperation: FrameContentParsingOperation, FrameParser {
 
   let frameName: FrameName
 
