@@ -10,16 +10,10 @@ struct ID3UserTextFrameContentParsingOperation: FrameContentParsingOperation, Fr
 
     let encoding = extractEncoding(from: &parsing)
 
-    let languageCode = String(ascii: parsing.extractFirst(3))
-    let language = ISO_639_2_Codes(rawValue: languageCode) ?? .und
-
-    let description = parsing.extractPrefixAsStringUntilNullTermination(encoding)
-    #warning("Upon encoding failure, this falls back to an empty string, losing information. It ought to throw or something instead.")
-    let content = parsing.extractPrefixAsStringUntilNullTermination(encoding) ?? ""
-    let constructed = ID3FrameCommentTypes(
-      language: language,
-      description: description,
-      content: content
+    let parsed = extractDescriptionAndValue(from: &parsing, encoding: encoding)
+    let constructed = ID3FrameUserDefinedText(
+      description: parsed.description,
+      content: parsed.value
     )
     completed(frameName, constructed)
   }

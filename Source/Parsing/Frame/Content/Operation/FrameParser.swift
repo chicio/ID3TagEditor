@@ -22,4 +22,14 @@ extension FrameParser {
     return frameData.extractFirst(1).first.flatMap({ ID3StringEncoding(rawValue: $0) })
       ?? .utf8
   }
+
+  internal func extractDescriptionAndValue(
+    from frameData: inout Data.SubSequence,
+    encoding: ID3StringEncoding
+  ) -> (description: String?, value: String) {
+    let description = frameData.extractPrefixAsStringUntilNullTermination(encoding)
+    #warning("Upon encoding failure, this falls back to an empty string, losing information. It ought to throw or something instead.")
+    let content = frameData.extractPrefixAsStringUntilNullTermination(encoding) ?? ""
+    return (description: description, value: content)
+  }
 }
