@@ -283,7 +283,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V4", content: "UnsyncedLyrics V3"),
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V3", content: "UnsyncedLyrics V3"),
                 .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V3", content: "Comments V3"),
                 .Language : ID3FrameLanguage(language: .und),
             ]
