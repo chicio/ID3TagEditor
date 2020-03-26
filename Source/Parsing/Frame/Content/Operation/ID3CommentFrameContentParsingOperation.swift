@@ -16,9 +16,7 @@ struct ID3CommentFrameContentParsingOperation: FrameContentParsingOperation, Fra
     var parsing = frame[...]
     extractHeader(from: &parsing, version: version)
 
-    #warning("Should be able to throw or otherwise signal that the encoding flag was invalid. Falling back to the most standard encoding could cause trouble down the line.")
-    let encoding = parsing.extractFirst(1).first.flatMap({ ID3StringEncoding(rawValue: $0) })
-      ?? .utf8
+    let encoding = extractEncoding(from: &parsing)
 
     let languageCode = String(ascii: parsing.extractFirst(3))
     let language = ISO_639_2_Codes(rawValue: languageCode) ?? .und
