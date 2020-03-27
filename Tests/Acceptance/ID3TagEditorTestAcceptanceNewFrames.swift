@@ -10,17 +10,6 @@ import XCTest
 
 class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     let id3TagEditor = ID3TagEditor()
-
-    func testTemporary() throws {
-      #warning("Remove this when done with it.")
-      let path = NSHomeDirectory() + "/Downloads/mp3-v4-full-meta.mp3"
-      _ = try? id3TagEditor.read(from: path)
-      let id3Tag = try id3TagEditor.read(from: path)
-      for (name, frame) in id3Tag?.frames ?? [:] {
-        print(name)
-        print(frame)
-      }
-    }
     
     //MARK: read
     
