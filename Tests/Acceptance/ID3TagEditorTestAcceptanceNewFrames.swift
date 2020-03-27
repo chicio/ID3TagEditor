@@ -13,7 +13,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
 
     func testTemporary() throws {
       #warning("Remove this when done with it.")
-      let path = NSHomeDirectory() + "/Downloads/mp3-v3-full-meta.mp3"
+      let path = NSHomeDirectory() + "/Downloads/mp3-v4-full-meta.mp3"
       _ = try? id3TagEditor.read(from: path)
       let id3Tag = try id3TagEditor.read(from: path)
       for (name, frame) in id3Tag?.frames ?? [:] {
@@ -200,7 +200,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, "Comments V4")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.id3Identifier, "TLAN")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.id3Identifier, "TXXX")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.id3Identifier, "TXXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V4")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
     }
