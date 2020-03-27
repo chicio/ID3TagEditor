@@ -13,10 +13,12 @@ class ID3UserDefinedTextInformationFrameCreatorTest: XCTestCase {
         let tagBytes: [UInt8] = [1, 1, 1]
 
         let id3UserTextFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: MockUserTextFrameContentCreator(
-                fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .UserDefinedTextInformation
-            ),
+            frameCreator:
+              ID3CommentTypesFrameCreator(
+                frameContentSizeCalculator: MockFrameContentSizeCalculator(),
+                frameFlagsCreator: MockFrameFlagsCreator(),
+                stringToBytesAdapter: MockStringToBytesAdapter()
+              ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
@@ -33,10 +35,12 @@ class ID3UserDefinedTextInformationFrameCreatorTest: XCTestCase {
             frames: [.UserDefinedTextInformation: ID3FrameUserDefinedText(description: "test", content: "::some sample text::")]
         )
         let id3UserTextFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: MockUserTextFrameContentCreator(
-                fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .UserDefinedTextInformation
-            ),
+            frameCreator:
+              ID3CommentTypesFrameCreator(
+                frameContentSizeCalculator: MockFrameContentSizeCalculator(),
+                frameFlagsCreator: MockFrameFlagsCreator(),
+                stringToBytesAdapter: MockStringToBytesAdapter()
+              ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
