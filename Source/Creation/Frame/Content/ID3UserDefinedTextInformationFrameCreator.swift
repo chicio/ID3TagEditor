@@ -8,10 +8,10 @@
 import Foundation
 
 class ID3UserDefinedTextInformationFrameCreator: ID3FrameCreatorsChain {
-    private let frameCreator: UserDefinedTextFrameCreator
+    private let frameCreator: ID3CommentTypesFrameCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
     
-    init(frameCreator: UserDefinedTextFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+    init(frameCreator: ID3CommentTypesFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
     }
@@ -24,20 +24,11 @@ class ID3UserDefinedTextInformationFrameCreator: ID3FrameCreatorsChain {
                         frameType: .UserDefinedTextInformation,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version, description: userTextFrame.description,
-                    content: adapt(content: userTextFrame)
+                    version: id3Tag.properties.version, language: nil, description: userTextFrame.description,
+                    content: userTextFrame.content
             )
          return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
-    }
-    
-    private func adapt(content: ID3FrameUserDefinedText) -> String {
-        var userTextString = ""
-        if let userTextDescription = content.description {
-            userTextString = userTextString + "\(userTextDescription)"
-        }
-        userTextString = userTextString + "\(content.content)"
-        return userTextString
     }
 }

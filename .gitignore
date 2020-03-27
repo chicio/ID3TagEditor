@@ -84,3 +84,6 @@ Tests/alice-in-chains-with-tag.mp3
 Demo/**/Package.resolved
 Demo/**/.build
 
+# Tests
+
+Tests/Output

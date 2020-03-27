@@ -72,12 +72,6 @@ extension ID3FrameFromStringContentCreatorTest {
     ]
 }
 
-extension ID3ContentTypesFrameCreatorTest {
-    static let __allTests = [
-        ("testCreatorFrameFromStringContent", testCreatorFrameFromStringContent),
-    ]
-}
-
 extension ID3GenreFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAGenre", testFrameCreationWhenThereIsAGenre),
@@ -315,10 +309,6 @@ extension ID3UnsyncedLyricsFrameCreatorTest {
 }
 
 extension ID3CommentFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsNoComment", testFrameCreationWhenThereIsNoComment),
-        ("testNoFrameCreationWhenThereAreAComment", testNoFrameCreationWhenThereIsAComment),
-    ]
 }
 
 extension ID3LanguageFrameCreatorTest {
@@ -342,39 +332,11 @@ extension ID3DiscPositionCreatorTest {
     ]
 }
 
-extension ID3ItunesMovementIndexCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
-        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex),
-    ]
-}
-
-extension ID3ItunesMovementCountCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMovementCount", testFrameCreationWhenThereIsAMovementCount),
-        ("testNoFrameCreationWhenThereIsNoMovementCount", testNoFrameCreationWhenThereIsNoMovementCount),
-    ]
-}
-extension ID3UserDefinedTextInformationCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsUserDefinedText", testFrameCreationWhenThereIsUserDefinedText),
-        ("testNoFrameCreationWhenThereIsNoUserDefinedText", testNoFrameCreationWhenThereIsNoUserDefinedText),
-    ]
-}
-
 extension ID3TrackPositionStringAdapterTest {
     static let __allTests = [
         ("testAdaptNotANumberTrackPosition", testAdaptNotANumberTrackPosition),
         ("testAdaptTrackPositionWithoutTotalTracks", testAdaptTrackPositionWithoutTotalTracks),
         ("testAdaptTrackPositionWithTotalTrack", testAdaptTrackPositionWithTotalTrack),
-    ]
-}
-
-extension ID3CommentTypesStringAdapterTest {
-    static let __allTests = [
-        ("testAdaptNotACountryCode", testAdaptNotACountryCode),
-        ("testAdaptCommentWithoutDescription", testAdaptCommentWithoutDescription),
-        ("testAdaptCommentWithDescription", testAdaptCommentWithDescription),
     ]
 }
 

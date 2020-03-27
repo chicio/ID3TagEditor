@@ -13,8 +13,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     
     //MARK: read
     
-    func testReadNewFramesV2() {
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3"))
+    func testReadNewFramesV2() throws {
+        let path = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
+        // Attempting twice allows it to succeed even if the operating system rejects the first attempt. This can happen if the previous test run crashed in the middle without telling the system it was done with the file.
+        _ = try? id3TagEditor.read(from: path)
+        let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCM")
@@ -59,8 +62,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
     }
     
-    func testReadNewFramesV3() {
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3"))
+    func testReadNewFramesV3() throws {
+        let path = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
+        // See testReadNewFramesV2 for an explanation of the duplication.
+        _ = try? id3TagEditor.read(from: path)
+        let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCOM")
@@ -122,8 +128,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
     }
     
-    func testReadNewFramesV4() {
-        let id3Tag = try! id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3"))
+    func testReadNewFramesV4() throws {
+        let path = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
+        // See testReadNewFramesV2 for an explanation of the duplication.
+        _ = try? id3TagEditor.read(from: path)
+        let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.id3Identifier, "TCOM")
@@ -176,16 +185,19 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, "Comments V4")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.id3Identifier, "TLAN")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.id3Identifier, "TXXX")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.id3Identifier, "TXXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V4")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
     }
     
     //MARK: write
     
-    func testWriteNewFramesV2() {
+    func testWriteNewFramesV2() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v2-generated.mp3"
+        let generationURL = PathLoader.testOutputDirectory
+          .appendingPathComponent("example-newframes-v2-generated.mp3")
+        try? FileManager.default.removeItem(at: generationURL)
+        let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
@@ -208,21 +220,27 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V2"),
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
             andSaveTo: pathMp3Generated
             ))
+        let generated = try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))
+        let expected = try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         XCTAssertEqual(
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+            generated,
+            expected,
+            generated.describeDifference(from: expected)
         )
     }
     
     func testWriteNewFramesV3() {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v3-generated.mp3"
+        let generationURL = PathLoader.testOutputDirectory
+          .appendingPathComponent("example-newframes-v3-generated.mp3")
+        try? FileManager.default.removeItem(at: generationURL)
+        let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -249,7 +267,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
-                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V4", content: "UnsyncedLyrics V3"),
+                .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V3", content: "UnsyncedLyrics V3"),
                 .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V3", content: "Comments V3"),
                 .Language : ID3FrameLanguage(language: .und),
             ]
@@ -268,7 +286,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     
     func testWriteNewFramesV4() {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v4-generated.mp3"
+        let generationURL = PathLoader.testOutputDirectory
+          .appendingPathComponent("example-newframes-v4-generated.mp3")
+        try? FileManager.default.removeItem(at: generationURL)
+        let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [

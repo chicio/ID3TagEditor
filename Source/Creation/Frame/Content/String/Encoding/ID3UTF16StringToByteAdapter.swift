@@ -15,9 +15,16 @@ class ID3UTF16StringToByteAdapter: StringToBytesAdapter {
         self.paddingAdder = paddingAdder
         self.frameConfiguration = frameConfiguration
     }
-    
-    func adapt(string: String, for version: ID3Version) -> [UInt8] {
-        return frameConfiguration.encodingByteFor(version: version, encoding: .UTF16) +
-            paddingAdder.addTo(content: [UInt8](string.data(using: .utf16) ?? Data()), numberOfByte: 2)
+
+    func encoding(for version: ID3Version) -> [UInt8] {
+      return frameConfiguration.encodingByteFor(version: version, encoding: .utf16WithBOM)
+    }
+
+    func termination() -> [UInt8] {
+      return Array<UInt8>(repeating: 0, count: 2)
+    }
+
+    func adapt(stringOnly string: String) -> [UInt8] {
+        return [UInt8](string.data(using: .utf16) ?? Data())
     }
 }

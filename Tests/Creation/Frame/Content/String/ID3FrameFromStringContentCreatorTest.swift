@@ -27,7 +27,16 @@ class ID3FrameFromStringContentCreatorTest: XCTestCase {
 }
 
 class MockStringToBytesAdapter: StringToBytesAdapter {
-    func adapt(string: String, for version: ID3Version) -> [UInt8] {
-        return [0x01, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, 0x00]
+
+    func encoding(for version: ID3Version) -> [UInt8] {
+      return [0x01, 0x00, 0x00]
+    }
+
+    func termination() -> [UInt8] {
+      return [0x00, 0x00]
+    }
+
+    func adapt(stringOnly: String) -> [UInt8] {
+        return [0x74, 0x65, 0x73, 0x74]
     }
 }

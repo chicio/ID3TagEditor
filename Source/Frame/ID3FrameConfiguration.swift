@@ -186,21 +186,6 @@ class ID3FrameConfiguration {
         .version4 : 10
     ]
     private let encodingSizeInBytes: Int = 1
-    private let encodingByte: [ID3Version : [ID3StringEncoding : [UInt8]]] = [
-        .version2 : [
-            .ISO88591 : [0x00],
-            .UTF16 : [0x01]
-        ],
-        .version3 : [
-            .ISO88591 : [0x00],
-            .UTF16 : [0x01]
-        ],
-        .version4 : [
-            .ISO88591 : [0x00],
-            .UTF16 : [0x01],
-            .UTF8 : [0x03]
-        ]
-    ]
     
     init() {
         self.identifiers[.version3] = self.identifiers[.version3]?.merging(commonFourLetterIdentifiers) { $1 }
@@ -242,6 +227,6 @@ class ID3FrameConfiguration {
     }
 
     func encodingByteFor(version: ID3Version, encoding: ID3StringEncoding) -> [UInt8] {
-        return encodingByte[version]![encoding]!
+        return [encoding.rawValue]
     }
 }
