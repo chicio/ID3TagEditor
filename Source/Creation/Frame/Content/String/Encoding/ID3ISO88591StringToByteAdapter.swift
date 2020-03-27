@@ -25,7 +25,7 @@ class ID3ISO88591StringToByteAdapter: StringToBytesAdapter {
     }
 
     func adapt(stringOnly string: String) -> [UInt8] {
-      #warning("Throwing would probably be a better API.")
+      #warning("Shouldn’t this throw instead?")
       // If the string is not actually representable in ISO 8859‐1, falling back to UTF‐8 enables any ASCII portions to remain legible, but will garble anything else. (It will be “valid” gibberish.)
       return string.data(using: .isoLatin1).map({ [UInt8]($0) })
         ?? [UInt8](string.utf8)

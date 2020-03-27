@@ -45,16 +45,13 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V2")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "ULT")
-        #warning("The data in the “ULT” tag is “55 4C 54 00 00 05 00 00 10 00 00”. That appears to mean “ULT”, a 5‐byte size, a text encoding of Latin‐1, a language of “null, data escape, null”, and nothing more. But that is nonsense. The expected string is not present. What is actually in the file?")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, "UnsyncedLyrics V2")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "lyricsTest V2")
-        #warning("COM is never detected. However, the garbled “ULT” tag is immediately followed by a “#[null]u” tag which gets discarded as invalid. The data that frame reports is a whopping 158206 bytes, and starting from the “u” in the tag name, it begins with “und”, two nulls and then “lyricsTest V2”. It seems the previous tag extends beyond its own declared end. Either the file was encoded wrong or I am working from the wrong specification. Either way, the root of the problem lies at the point when the frames themselves are split up, before individual frames are interpreted.")
         XCTAssertEqual(id3Tag?.frames[.Comment]?.id3Identifier, "COM")
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, "Comment V2")
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.description, "commentTest V2")
-        #warning("None of the following frames exist. Presumably they’re in the unparsable stuff after “ULT”.")
         XCTAssertEqual(id3Tag?.frames[.Language]?.id3Identifier, "TLA")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
         XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXX")
@@ -116,7 +113,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V3")
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
-        #warning("This appears to be the same sort of issue as version 2; “USLT” is followed by “#[null][null][null]”.")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "USLT")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, "UnsyncedLyrics V3")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
@@ -232,7 +228,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             ))
         let generated = try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))
         let expected = try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
-        #warning("We are comparing against the same corrupted file from the read tests.")
         XCTAssertEqual(
             generated,
             expected,

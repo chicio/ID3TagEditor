@@ -9,7 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3UTF16StringToByteAdapterTest: XCTestCase {
-    #warning("UCS‐2 + byte order mark seems to defy specification.")
     private let ENCODING: [UInt8] = [0x01]
     private let BOM: [UInt8] = [0xFF, 0xFE]
     private let STRING: [UInt8] = [0x3A, 0x0, 0x3A, 0x0, 0x61, 0x0, 0x20, 0x0, 0x73, 0x0, 0x74, 0x0,
