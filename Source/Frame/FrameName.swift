@@ -20,25 +20,25 @@ public enum FrameName: Hashable {
     /// Artist frame name.
     case Artist
     /// Artist Website URL frame name
-    case ArtistUrl
+    //case ArtistUrl
     /// AudioSource URL frame name
-    case AudioSourceUrl
+    //case AudioSourceUrl
     /// Beats per Minute frame
     case BPM
     /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
-    case Chapter
+    //case Chapter
     /// Comment frame name
     case Comment
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
     case Conductor
-    /// ContentGrouping frame name.
-    case ContentGrouping
+    /// ContentGroup frame name. AKA WorkName
+    case ContentGroup
     /// Copyright frame name.
     case Copyright
     /// Copyright URL frame name
-    case CopyrightUrl
+    //case CopyrightUrl
     /// Disc Position frame name.
     case DiscPosition
     /// EncodedBy frame name.
@@ -46,19 +46,19 @@ public enum FrameName: Hashable {
     /// EncoderSettings frame name.
     case EncoderSettings
     /// Encoding Time frame name
-    case EncodingTime
+    //case EncodingTime
     /// File Owner frame name. Version 2.3 and 2.4 only.
     case FileOwner
     /// File type frame name.
     case FileType
     /// File URL frame name
-    case FileUrl
+    //case FileUrl
     /// Genre frame name.
     case Genre
     /// Initial Key frame name
     case InitialKey
     /// InvolvedPeople frame name
-    case InvolvedPeople
+    //case InvolvedPeople
     /// ISRC frame name
     case ISRC
     /// Grouping frame name. Version 2.3 and 2.4 only.
@@ -72,29 +72,31 @@ public enum FrameName: Hashable {
     /// Language frame name
     case Language
     /// Length frame name
-    case Length
+    //case Length
     /// Lyricist frame name
     case Lyricist
     /// Media type frame name.
     case MediaType
+    /// Mood frame name
+    case Mood
     /// MusicianCredits frame name
-    case MusicianCredits
+    //case MusicianCredits
     /// Original Album frame name
     case OriginalAlbum
     /// OriginalArtist frame name
     case OriginalArtist
     /// Original Date frame name
-    case OriginalDate
+    //case OriginalDate
     /// Original Filename frame name
     case OriginalFilename
     /// Original Lyricist frame name
     case OriginalLyricist
     /// Payment URL frame name
-    case PaymentUrl
+    //case PaymentUrl
     /// Playlist Delay frame name
-    case PlaylistDelay
+    //case PlaylistDelay
     /// Podcast frame name
-    case Podcast
+    //case Podcast
     /// Podcast category frame name. Version 2.3 and 2.4 only.
     case PodcastCategory
     /// Podcast Description frame name. Version 2.3 and 2.4 only.
@@ -104,19 +106,19 @@ public enum FrameName: Hashable {
     /// Podcast keywords frame name, Version 2.3 and 2.4 only.
     case PodcastKeywords
     /// PodcastURL frame name
-    case PodcastUrl
+    //case PodcastUrl
     /// ProducedNotice frame name
-    case ProducedNotice
+    //case ProducedNotice
     /// Publisher frame name.
     case Publisher
     /// Publisher URL frame name
-    case PublisherUrl
+    //case PublisherUrl
     /// Radio Station frame name
     case RadioStation
     /// Radio Station Owner frame name
     case RadioStationOwner
     /// Radio Station URL frame name
-    case RadioStationUrl
+    //case RadioStationUrl
     /// Album Sort frame name
     case SortAlbum
     /// AlbumArtist Sort frame name
@@ -126,9 +128,9 @@ public enum FrameName: Hashable {
     /// Subtitle frame name
     case Subtitle
     /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
-    case TableOfContents
+    //case TableOfContents
     /// Tagging Date frame name
-    case TaggingDate
+    //case TaggingDate
     /// Title frame name.
     case Title
     /// Track Position frame name.
@@ -138,7 +140,7 @@ public enum FrameName: Hashable {
     /// User Defined Text Information
     case UserDefinedTextInformation
     /// User Defined URL frame name
-    case UserDefinedUrl
+    //case UserDefinedUrl
     /// RecordingDayMonth frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
     case RecordingDayMonth
     /// RecordingYear frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.

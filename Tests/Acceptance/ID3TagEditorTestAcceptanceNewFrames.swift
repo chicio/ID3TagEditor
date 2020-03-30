@@ -24,8 +24,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.content, "Composer V2")
         XCTAssertEqual(id3Tag?.frames[.Conductor]?.id3Identifier, "TP3")
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.content, "Conductor V2")
-        XCTAssertEqual(id3Tag?.frames[.ContentGrouping]?.id3Identifier, "TT1")
-        XCTAssertEqual((id3Tag?.frames[.ContentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V2")
+        XCTAssertEqual(id3Tag?.frames[.ContentGroup]?.id3Identifier, "TT1")
+        XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content, "ContentGroup V2")
         XCTAssertEqual(id3Tag?.frames[.Copyright]?.id3Identifier, "TCR")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.content, "Copyright V2")
         XCTAssertEqual(id3Tag?.frames[.EncodedBy]?.id3Identifier, "TEN")
@@ -75,8 +75,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.content, "Conductor V3")
         XCTAssertEqual(id3Tag?.frames[.Copyright]?.id3Identifier, "TCOP")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.content, "Copyright V3")
-        XCTAssertEqual(id3Tag?.frames[.ContentGrouping]?.id3Identifier, "TIT1")
-        XCTAssertEqual((id3Tag?.frames[.ContentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V3")
+        XCTAssertEqual(id3Tag?.frames[.ContentGroup]?.id3Identifier, "TIT1")
+        XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content, "ContentGroup V3")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPOS")
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
@@ -141,8 +141,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.content, "Conductor V4")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.id3Identifier, "TCOP")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.content, "Copyright V4")
-        XCTAssertEqual((id3Tag?.frames[.ContentGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "TIT1")
-        XCTAssertEqual((id3Tag?.frames[.ContentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V4")
+        XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.id3Identifier, "TIT1")
+        XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content, "ContentGroup V4")
         XCTAssertEqual((id3Tag?.frames[.EncodedBy] as? ID3FrameWithStringContent)?.id3Identifier, "TENC")
         XCTAssertEqual((id3Tag?.frames[.EncodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V4")
         XCTAssertEqual((id3Tag?.frames[.EncoderSettings] as? ID3FrameWithStringContent)?.id3Identifier, "TSSE")
@@ -203,7 +203,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             frames: [
                 .Composer : ID3FrameWithStringContent(content: "Composer V2"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V2"),
-                .ContentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V2"),
+                .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V2"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V2"),
                 .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V2"),
@@ -246,7 +246,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             frames: [
                 .Composer : ID3FrameWithStringContent(content: "Composer V3"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V3"),
-                .ContentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V3"),
+                .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V3"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V3"),
                 .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V3"),
@@ -295,7 +295,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             frames: [
                 .Composer : ID3FrameWithStringContent(content: "Composer V4"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V4"),
-                .ContentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V4"),
+                .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V4"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V4"),
                 .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V4"),

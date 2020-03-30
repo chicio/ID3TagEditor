@@ -14,7 +14,7 @@ enum FrameType: String, Equatable {
     case Artist = "artist"
     case Composer = "composer"
     case Conductor = "conductor"
-    case ContentGrouping = "contentGrouping"
+    case ContentGroup = "ContentGroup"
     case Copyright = "copyright"
     case EncodedBy = "encodedBy"
     case EncoderSettings = "encoderSettings"

@@ -169,7 +169,7 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `.AttachedPicture(_ pictureType: ID3PictureType)` the attached picture frame
 * `Composer`
 * `Conductor`
-* `ContentGrouping`
+* `ContentGroup`
 * `Copyright`
 * `DiscPosition`
 * `EncodedBy`

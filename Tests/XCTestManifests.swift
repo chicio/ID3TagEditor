@@ -182,10 +182,10 @@ extension ID3ConductorFrameCreatorTest {
     ]
 }
 
-extension ID3ContentGroupingFrameCreatorTest {
+extension ID3ContentGroupFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAContentGrouping", testFrameCreationWhenThereIsAContentGrouping),
-        ("testNoFrameCreationWhenThereIsNoContentGrouping", testNoFrameCreationWhenThereIsNoContentGrouping),
+        ("testFrameCreationWhenThereIsAContentGroup", testFrameCreationWhenThereIsAContentGroup),
+        ("testNoFrameCreationWhenThereIsNoContentGroup", testNoFrameCreationWhenThereIsNoContentGroup),
     ]
 }
 
@@ -380,7 +380,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3ArtistFrameCreatorTest.__allTests),
         testCase(ID3ComposerFrameCreatorTest.__allTests),
         testCase(ID3ConductorFrameCreatorTest.__allTests),
-        testCase(ID3ContentGroupingFrameCreatorTest.__allTests),
+        testCase(ID3ContentGroupFrameCreatorTest.__allTests),
         testCase(ID3CopyrightFrameCreatorTest.__allTests),
         testCase(ID3DiscPositionFrameCreatorTest.__allTests),
         testCase(ID3EncodedByFrameCreatorTest.__allTests),

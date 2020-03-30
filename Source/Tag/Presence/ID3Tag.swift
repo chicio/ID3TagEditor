@@ -26,7 +26,7 @@ public class ID3Tag: CustomDebugStringConvertible {
         - artist: \((self.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "-")
         - composer: \((self.frames[.Composer] as? ID3FrameWithStringContent)?.content ?? "-")
         - conductor: \((self.frames[.Conductor] as? ID3FrameWithStringContent)?.content ?? "-")
-        - contentGrouping: \((self.frames[.ContentGrouping] as? ID3FrameWithStringContent)?.content ?? "-")
+        - ContentGroup: \((self.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content ?? "-")
         - copyright: \((self.frames[.Copyright] as? ID3FrameWithStringContent)?.content ?? "-")
         - encodedBy: \((self.frames[.EncodedBy] as? ID3FrameWithStringContent)?.content ?? "-")
         - encoderSettings: \((self.frames[.EncoderSettings] as? ID3FrameWithStringContent)?.content ?? "-")

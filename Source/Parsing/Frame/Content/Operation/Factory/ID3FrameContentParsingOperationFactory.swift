@@ -15,7 +15,7 @@ class ID3FrameContentParsingOperationFactory {
             .Album: ID3AlbumFrameContentParsingOperationFactory.make(),
             .Composer: ID3ComposerFrameContentParsingOperationFactory.make(),
             .Conductor: ID3ConductorFrameContentParsingOperationFactory.make(),
-            .ContentGrouping: ID3ContentGroupingFrameContentParsingOperationFactory.make(),
+            .ContentGroup: ID3ContentGroupFrameContentParsingOperationFactory.make(),
             .Copyright: ID3CopyrightFrameContentParsingOperationFactory.make(),
             .DiscPosition: ID3DiscPositionFrameContentParsingOperationFactory.make(),
             .EncodedBy: ID3EncodedByFrameContentParsingOperationFactory.make(),
