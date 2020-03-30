@@ -20,8 +20,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version2)
+        XCTAssertEqual(id3Tag?.frames[.Arranger]?.id3Identifier, "TP4")
+        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V2")
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCM")
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.content, "Composer V2")
+        XCTAssertEqual(id3Tag?.frames[.BPM]?.id3Identifier, "TBP")
+        XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.content, "BPM V2")
         XCTAssertEqual(id3Tag?.frames[.Conductor]?.id3Identifier, "TP3")
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.content, "Conductor V2")
         XCTAssertEqual(id3Tag?.frames[.ContentGroup]?.id3Identifier, "TT1")
@@ -34,12 +38,26 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.EncoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V2")
         XCTAssertEqual(id3Tag?.frames[.FileType]?.id3Identifier, "TFT")
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "FileType V2")
+        XCTAssertEqual(id3Tag?.frames[.InitialKey]?.id3Identifier, "TKE")
+        XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "Initial Key V2")
+        XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TRC")
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "ISRC V2")
+        XCTAssertEqual(id3Tag?.frames[.Length]?.id3Identifier, "TLE")
+        XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithStringContent)?.content, "Length V2")
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V2")
         XCTAssertEqual(id3Tag?.frames[.MediaType]?.id3Identifier, "TMT")
         XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "MediaType V2")
-        XCTAssertEqual(id3Tag?.frames[.Arranger]?.id3Identifier, "TP4")
-        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V2")
+        XCTAssertEqual(id3Tag?.frames[.OriginalAlbum]?.id3Identifier, "TOT")
+        XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content, "Original Album V2")
+        XCTAssertEqual(id3Tag?.frames[.OriginalArtist]?.id3Identifier, "TOA")
+        XCTAssertEqual((id3Tag?.frames[.OriginalArtist] as? ID3FrameWithStringContent)?.content, "Original Artist V2")
+        XCTAssertEqual(id3Tag?.frames[.OriginalFilename]?.id3Identifier, "TOF")
+        XCTAssertEqual((id3Tag?.frames[.OriginalFilename] as? ID3FrameWithStringContent)?.content, "Original Filename V2")
+        XCTAssertEqual(id3Tag?.frames[.OriginalLyricist]?.id3Identifier, "TOL")
+        XCTAssertEqual((id3Tag?.frames[.OriginalLyricist] as? ID3FrameWithStringContent)?.content, "Original Lyricist V2")
+        XCTAssertEqual(id3Tag?.frames[.PlaylistDelay]?.id3Identifier, "TDY")
+        XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithStringContent)?.content, "Playlist Delay V2")
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V2")
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TT3")
@@ -69,6 +87,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version3)
+        XCTAssertEqual(id3Tag?.frames[.Arranger]?.id3Identifier, "TPE4")
+        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V3")
+        XCTAssertEqual(id3Tag?.frames[.BPM]?.id3Identifier, "TBPM")
+        XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.content, "BPM V3")
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCOM")
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.content, "Composer V3")
         XCTAssertEqual(id3Tag?.frames[.Conductor]?.id3Identifier, "TPE3")
@@ -84,14 +106,18 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.EncodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V3")
         XCTAssertEqual(id3Tag?.frames[.EncoderSettings]?.id3Identifier, "TSSE")
         XCTAssertEqual((id3Tag?.frames[.EncoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V3")
+        XCTAssertEqual(id3Tag?.frames[.InitialKey]?.id3Identifier, "TKEY")
+        XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "Initial Key V3")
+        XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TSRC")
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "ISRC V3")
         XCTAssertEqual(id3Tag?.frames[.ITunesGrouping]?.id3Identifier, "GRP1")
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "ItunesGrouping V3")
+        XCTAssertEqual(id3Tag?.frames[.Length]?.id3Identifier, "TLEN")
+        XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithStringContent)?.content, "Length V3")
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TEXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V3")
         XCTAssertEqual(id3Tag?.frames[.MediaType]?.id3Identifier, "TMED")
         XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "MediaType V3")
-        XCTAssertEqual(id3Tag?.frames[.Arranger]?.id3Identifier, "TPE4")
-        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V3")
         XCTAssertEqual(id3Tag?.frames[.FileType]?.id3Identifier, "TFLT")
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "FileType V3")
         XCTAssertEqual(id3Tag?.frames[.FileOwner]?.id3Identifier, "TOWN")
@@ -101,6 +127,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.ITunesMovementIndex]?.id3Identifier, "MVIN")
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
+        XCTAssertEqual(id3Tag?.frames[.OriginalAlbum]?.id3Identifier, "TOAL")
+        XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content, "Original Album V3")
+        XCTAssertEqual(id3Tag?.frames[.OriginalArtist]?.id3Identifier, "TOPE")
+        XCTAssertEqual((id3Tag?.frames[.OriginalArtist] as? ID3FrameWithStringContent)?.content, "Original Artist V3")
+        XCTAssertEqual(id3Tag?.frames[.OriginalFilename]?.id3Identifier, "TOFN")
+        XCTAssertEqual((id3Tag?.frames[.OriginalFilename] as? ID3FrameWithStringContent)?.content, "Original Filename V3")
+        XCTAssertEqual(id3Tag?.frames[.OriginalLyricist]?.id3Identifier, "TOLY")
+        XCTAssertEqual((id3Tag?.frames[.OriginalLyricist] as? ID3FrameWithStringContent)?.content, "Original Lyricist V3")
+        XCTAssertEqual(id3Tag?.frames[.PlaylistDelay]?.id3Identifier, "TDLY")
+        XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithStringContent)?.content, "Playlist Delay V3")
         XCTAssertEqual(id3Tag?.frames[.PodcastCategory]?.id3Identifier, "TCAT")
         XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content, "PodcastCategory V3")
         XCTAssertEqual(id3Tag?.frames[.PodcastDescription]?.id3Identifier, "TDES")
@@ -111,6 +147,20 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V3")
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPUB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V3")
+        XCTAssertEqual(id3Tag?.frames[.RadioStation]?.id3Identifier, "TRSN")
+        XCTAssertEqual((id3Tag?.frames[.RadioStation] as? ID3FrameWithStringContent)?.content, "Radio Station V3")
+        XCTAssertEqual(id3Tag?.frames[.RadioStationOwner]?.id3Identifier, "TRSO")
+        XCTAssertEqual((id3Tag?.frames[.RadioStationOwner] as? ID3FrameWithStringContent)?.content, "Radio Station Owner V3")
+        XCTAssertEqual(id3Tag?.frames[.SortAlbum]?.id3Identifier, "TSOA")
+        XCTAssertEqual((id3Tag?.frames[.SortAlbum] as? ID3FrameWithStringContent)?.content, "Sort Album V3")
+        XCTAssertEqual(id3Tag?.frames[.SortAlbumArtist]?.id3Identifier, "TSO2")
+        XCTAssertEqual((id3Tag?.frames[.SortAlbumArtist] as? ID3FrameWithStringContent)?.content, "Sort Album Artist V3")
+        XCTAssertEqual(id3Tag?.frames[.SortArtist]?.id3Identifier, "TSOP")
+        XCTAssertEqual((id3Tag?.frames[.SortArtist] as? ID3FrameWithStringContent)?.content, "Sort Artist V3")
+        XCTAssertEqual(id3Tag?.frames[.SortComposer]?.id3Identifier, "TSOC")
+        XCTAssertEqual((id3Tag?.frames[.SortComposer] as? ID3FrameWithStringContent)?.content, "Sort Composer V3")
+        XCTAssertEqual(id3Tag?.frames[.SortTitle]?.id3Identifier, "TSOT")
+        XCTAssertEqual((id3Tag?.frames[.SortTitle] as? ID3FrameWithStringContent)?.content, "Sort Title V3")
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "USLT")
@@ -135,6 +185,14 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         let id3Tag = try id3TagEditor.read(from: path)
         
         XCTAssertEqual(id3Tag?.properties.version, .version4)
+        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.id3Identifier, "TPE4")
+        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V4")
+        XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.id3Identifier, "TBPM")
+        XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.content, "BPM V4")
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.id3Identifier, "COMM")
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.description, "CommentTest V4")
+        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, "Comments V4")
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.id3Identifier, "TCOM")
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.content, "Composer V4")
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.id3Identifier, "TPE3")
@@ -151,18 +209,36 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.FileOwner] as? ID3FrameWithStringContent)?.content, "FileOwner V4")
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.id3Identifier, "TFLT")
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "FileType V4")
+        XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.id3Identifier, "TKEY")
+        XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "InitialKey V4")
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.id3Identifier, "TSRC")
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "ISRC V4")
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "GRP1")
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "ItunesGrouping V4")
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V4")
+        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.id3Identifier, "TLAN")
+        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
+        XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithStringContent)?.id3Identifier, "TLEN")
+        XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithStringContent)?.content, "Length V4")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.id3Identifier, "TEXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V4")
         XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.id3Identifier, "TMED")
         XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "MediaType V4")
-        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.id3Identifier, "TPE4")
-        XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V4")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V4")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
+        XCTAssertEqual((id3Tag?.frames[.Mood] as? ID3FrameWithStringContent)?.id3Identifier, "TMOO")
+        XCTAssertEqual((id3Tag?.frames[.Mood] as? ID3FrameWithStringContent)?.content, "Mood V4")
+        XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.id3Identifier, "TOAL")
+        XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content, "Original Album V4")
+        XCTAssertEqual((id3Tag?.frames[.OriginalArtist] as? ID3FrameWithStringContent)?.id3Identifier, "TOPE")
+        XCTAssertEqual((id3Tag?.frames[.OriginalArtist] as? ID3FrameWithStringContent)?.content, "Original Artist V4")
+        XCTAssertEqual((id3Tag?.frames[.OriginalFilename] as? ID3FrameWithStringContent)?.id3Identifier, "TOFN")
+        XCTAssertEqual((id3Tag?.frames[.OriginalFilename] as? ID3FrameWithStringContent)?.content, "Original Filename V4")
+        XCTAssertEqual((id3Tag?.frames[.OriginalLyricist] as? ID3FrameWithStringContent)?.id3Identifier, "TOLY")
+        XCTAssertEqual((id3Tag?.frames[.OriginalLyricist] as? ID3FrameWithStringContent)?.content, "Original Lyricist V4")
+        XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithStringContent)?.id3Identifier, "TDLY")
+        XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithStringContent)?.content, "Playlist Delay V4")
         XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.id3Identifier, "TCAT")
         XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content, "PodcastCategory V4")
         XCTAssertEqual((id3Tag?.frames[.PodcastDescription] as? ID3FrameWithStringContent)?.id3Identifier, "TDES")
@@ -173,18 +249,28 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V4")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.id3Identifier, "TPUB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V4")
+        XCTAssertEqual((id3Tag?.frames[.RadioStation] as? ID3FrameWithStringContent)?.id3Identifier, "TRSN")
+        XCTAssertEqual((id3Tag?.frames[.RadioStation] as? ID3FrameWithStringContent)?.content, "Radio Station V4")
+        XCTAssertEqual((id3Tag?.frames[.RadioStationOwner] as? ID3FrameWithStringContent)?.id3Identifier, "TRSO")
+        XCTAssertEqual((id3Tag?.frames[.RadioStationOwner] as? ID3FrameWithStringContent)?.content, "Radio Station Owner V4")
+        XCTAssertEqual((id3Tag?.frames[.SetSubtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TSST")
+        XCTAssertEqual((id3Tag?.frames[.SetSubtitle] as? ID3FrameWithStringContent)?.content, "Set Subtitle V4")
+        XCTAssertEqual((id3Tag?.frames[.SortAlbum] as? ID3FrameWithStringContent)?.id3Identifier, "TSOA")
+        XCTAssertEqual((id3Tag?.frames[.SortAlbum] as? ID3FrameWithStringContent)?.content, "Sort Album V4")
+        XCTAssertEqual((id3Tag?.frames[.SortAlbumArtist] as? ID3FrameWithStringContent)?.id3Identifier, "TSO2")
+        XCTAssertEqual((id3Tag?.frames[.SortAlbumArtist] as? ID3FrameWithStringContent)?.content, "Sort Album Artist V4")
+        XCTAssertEqual((id3Tag?.frames[.SortArtist] as? ID3FrameWithStringContent)?.id3Identifier, "TSOP")
+        XCTAssertEqual((id3Tag?.frames[.SortArtist] as? ID3FrameWithStringContent)?.content, "Sort Artist V4")
+        XCTAssertEqual((id3Tag?.frames[.SortComposer] as? ID3FrameWithStringContent)?.id3Identifier, "TSOC")
+        XCTAssertEqual((id3Tag?.frames[.SortComposer] as? ID3FrameWithStringContent)?.content, "Sort Composer V4")
+        XCTAssertEqual((id3Tag?.frames[.SortTitle] as? ID3FrameWithStringContent)?.id3Identifier, "TSOT")
+        XCTAssertEqual((id3Tag?.frames[.SortTitle] as? ID3FrameWithStringContent)?.content, "Sort Title V4")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V4")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.id3Identifier, "USLT")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.description, "LyricsTest V4")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameCommentTypes)?.content, "UnsyncedLyrics V4")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.id3Identifier, "COMM")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.language, .und)
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.description, "CommentTest V4")
-        XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.content, "Comments V4")
-        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.id3Identifier, "TLAN")
-        XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .und)
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.id3Identifier, "TXXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V4")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
@@ -195,12 +281,15 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     func testWriteNewFramesV2() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
         let generationURL = PathLoader.testOutputDirectory
-          .appendingPathComponent("example-newframes-v2-generated.mp3")
+            .appendingPathComponent("example-newframes-v2-generated.mp3")
         try? FileManager.default.removeItem(at: generationURL)
         let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
+                .Arranger : ID3FrameWithStringContent(content: "Arranger V2"),
+                .BPM : ID3FrameWithStringContent(content: "BPM V2"),
+                .Comment : ID3FrameCommentTypes(language: .und, description: "commentTest V2", content: "Comment V2"),
                 .Composer : ID3FrameWithStringContent(content: "Composer V2"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V2"),
                 .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V2"),
@@ -209,18 +298,24 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V2"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V2"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V2"),
+                .InitialKey : ID3FrameWithStringContent(content: "Initial Key V2"),
+                .ISRC : ID3FrameWithStringContent(content: "ISRC V2"),
+                .Language : ID3FrameLanguage(language: .und),
+                .Length : ID3FrameWithStringContent(content: "Length V2"),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist V2"),
                 .MediaType : ID3FrameWithStringContent(content: "MediaType V2"),
-                .Arranger : ID3FrameWithStringContent(content: "Arranger V2"),
+                .OriginalAlbum : ID3FrameWithStringContent(content: "Original Album V2"),
+                .OriginalArtist : ID3FrameWithStringContent(content: "Original Artist V2"),
+                .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename V2"),
+                .OriginalLyricist : ID3FrameWithStringContent(content: "Original Lyricist V2"),
+                .PlaylistDelay : ID3FrameWithStringContent(content: "Playlist Delay V2"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V2"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
-                .Language : ID3FrameLanguage(language: .und),
                 .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "lyricsTest V2", content: "UnsyncedLyrics V2"),
-                .Comment : ID3FrameCommentTypes(language: .und, description: "commentTest V2", content: "Comment V2"),
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V2"),
             ]
         )
-
+        
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
@@ -238,12 +333,15 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     func testWriteNewFramesV3() {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
         let generationURL = PathLoader.testOutputDirectory
-          .appendingPathComponent("example-newframes-v3-generated.mp3")
+             .appendingPathComponent("example-newframes-v3-generated.mp3")
         try? FileManager.default.removeItem(at: generationURL)
         let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
+                .Arranger : ID3FrameWithStringContent(content: "Arranger V3"),
+                .BPM : ID3FrameWithStringContent(content: "BPM V3"),
+                .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V3", content: "Comments V3"),
                 .Composer : ID3FrameWithStringContent(content: "Composer V3"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V3"),
                 .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V3"),
@@ -253,23 +351,36 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V3"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V3"),
                 .FileOwner : ID3FrameWithStringContent(content: "FileOwner V3"),
+                .InitialKey : ID3FrameWithStringContent(content: "Initial Key V3"),
+                .ISRC : ID3FrameWithStringContent(content: "ISRC V3"),
                 .ITunesGrouping : ID3FrameWithStringContent(content: "ItunesGrouping V3"),
+                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 13),
+                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
+                .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V3"),
+                .Language : ID3FrameLanguage(language: .und),
+                .Length : ID3FrameWithStringContent(content: "Length V3"),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist V3"),
                 .MediaType : ID3FrameWithStringContent(content: "MediaType V3"),
-                .Arranger : ID3FrameWithStringContent(content: "Arranger V3"),
-                .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V3"),
-                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
-                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 13),
+                .OriginalAlbum : ID3FrameWithStringContent(content: "Original Album V3"),
+                .OriginalArtist : ID3FrameWithStringContent(content: "Original Artist V3"),
+                .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename V3"),
+                .OriginalLyricist : ID3FrameWithStringContent(content: "Original Lyricist V3"),
+                .PlaylistDelay : ID3FrameWithStringContent(content: "Playlist Delay V3"),
                 .PodcastCategory : ID3FrameWithStringContent(content: "PodcastCategory V3"),
                 .PodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V3"),
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V3"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
-                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V3"),
+                .RadioStation : ID3FrameWithStringContent(content: "Radio Station V3"),
+                .RadioStationOwner : ID3FrameWithStringContent(content: "Radio Station Owner V3"),
+                .SortAlbum : ID3FrameWithStringContent(content: "Sort Album V3"),
+                .SortArtist : ID3FrameWithStringContent(content: "Sort Artist V3"),
+                .SortAlbumArtist : ID3FrameWithStringContent(content: "Sort Album Artist V3"),
+                .SortComposer : ID3FrameWithStringContent(content: "Sort Composer V3"),
+                .SortTitle : ID3FrameWithStringContent(content: "Sort Title V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
                 .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V3", content: "UnsyncedLyrics V3"),
-                .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V3", content: "Comments V3"),
-                .Language : ID3FrameLanguage(language: .und),
+                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V3"),
             ]
         )
         
@@ -287,12 +398,15 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
     func testWriteNewFramesV4() {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
         let generationURL = PathLoader.testOutputDirectory
-          .appendingPathComponent("example-newframes-v4-generated.mp3")
+            .appendingPathComponent("example-newframes-v4-generated.mp3")
         try? FileManager.default.removeItem(at: generationURL)
         let pathMp3Generated = generationURL.path
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
+                .Arranger : ID3FrameWithStringContent(content: "Arranger V4"),
+                .BPM : ID3FrameWithStringContent(content: "BPM V4"),
+                .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V4", content: "Comments V4"),
                 .Composer : ID3FrameWithStringContent(content: "Composer V4"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V4"),
                 .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V4"),
@@ -302,23 +416,38 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V4"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V4"),
                 .FileOwner : ID3FrameWithStringContent(content: "FileOwner V4"),
+                .InitialKey : ID3FrameWithStringContent(content: "InitialKey V4"),
+                .ISRC : ID3FrameWithStringContent(content: "ISRC V4"),
                 .ITunesGrouping : ID3FrameWithStringContent(content: "ItunesGrouping V4"),
+                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 13),
+                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
+                .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V4"),
+                .Language : ID3FrameLanguage(language: .und),
+                .Length : ID3FrameWithStringContent(content: "Length V4"),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist V4"),
                 .MediaType : ID3FrameWithStringContent(content: "MediaType V4"),
-                .Arranger : ID3FrameWithStringContent(content: "Arranger V4"),
-                .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V4"),
-                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
-                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 13),
+                .Mood : ID3FrameWithStringContent(content: "Mood V4"),
+                .OriginalAlbum : ID3FrameWithStringContent(content: "Original Album V4"),
+                .OriginalArtist : ID3FrameWithStringContent(content: "Original Artist V4"),
+                .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename V4"),
+                .OriginalLyricist : ID3FrameWithStringContent(content: "Original Lyricist V4"),
+                .PlaylistDelay : ID3FrameWithStringContent(content: "Playlist Delay V4"),
                 .PodcastCategory : ID3FrameWithStringContent(content: "PodcastCategory V4"),
                 .PodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V4"),
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V4"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V4"),
-                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V4"),
+                .RadioStation : ID3FrameWithStringContent(content: "Radio Station V4"),
+                .RadioStationOwner : ID3FrameWithStringContent(content: "Radio Station Owner V4"),
+                .SetSubtitle : ID3FrameWithStringContent(content: "Set Subtitle V4"),
+                .SortAlbum : ID3FrameWithStringContent(content: "Sort Album V4"),
+                .SortAlbumArtist : ID3FrameWithStringContent(content: "Sort Album Artist V4"),
+                .SortArtist : ID3FrameWithStringContent(content: "Sort Artist V4"),
+                .SortComposer : ID3FrameWithStringContent(content: "Sort Composer V4"),
+                .SortTitle : ID3FrameWithStringContent(content: "Sort Title V4"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
                 .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V4", content: "UnsyncedLyrics V4"),
-                .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V4", content: "Comments V4"),
-                .Language : ID3FrameLanguage(language: .und),
+                .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V4"),
             ]
         )
         
