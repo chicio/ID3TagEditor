@@ -96,7 +96,7 @@ public enum FrameName: Hashable {
     /// Payment URL frame name
     //case PaymentUrl
     /// Playlist Delay frame name
-    //case PlaylistDelay
+    case PlaylistDelay
     /// Podcast frame name
     //case Podcast
     /// Podcast category frame name. Version 2.3 and 2.4 only.

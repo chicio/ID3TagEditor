@@ -49,7 +49,15 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let arrangerFrameCreator = ID3ArrangerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let artistFrameCreator = ID3ArtistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let bpmFrameCreator = ID3BPMFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -85,7 +93,19 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let initialKeyFrameCreator = ID3InitialKeyFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let isrcFrameCreator = ID3ISRCFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let lengthFrameCreator = ID3LengthFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -97,11 +117,31 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let ArrangerFrameCreator = ID3ArrangerFrameCreator(
+        let moodFrameCreator = ID3MoodFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let iTunesMovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let originalAlbumFrameCreator = ID3OriginalAlbumFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let originalArtistFrameCreator = ID3OriginalArtistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let originalFilenameFrameCreator = ID3OriginalFilenameFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let originalLyricistFrameCreator = ID3OriginalLyricistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let playlistDelayFrameCreator = ID3PlaylistDelayFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -122,6 +162,38 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let publisherFrameCreator = ID3PublisherFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let radioStationFrameCreator = ID3RadioStationFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let radioStationOwnerFrameCreator = ID3RadioStationOwnerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let setSubtitleFrameCreator = ID3SetSubtitleFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let sortAlbumFrameCreator = ID3SortAlbumFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let sortAlbumArtistFrameCreator = ID3SortAlbumArtistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let sortArtistFrameCreator = ID3SortArtistFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let sortComposerFrameCreator = ID3SortComposerFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let sortTitleFrameCreator = ID3SortTitleFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -215,8 +287,8 @@ class ID3FrameCreatorsChainFactory {
         fileTypeFrameCreator.nextCreator = iTunesGroupingFrameCreator
         iTunesGroupingFrameCreator.nextCreator = lyricistFrameCreator
         lyricistFrameCreator.nextCreator = mediaTypeFrameCreator
-        mediaTypeFrameCreator.nextCreator = ArrangerFrameCreator
-        ArrangerFrameCreator.nextCreator = iTunesMovementNameFrameCreator
+        mediaTypeFrameCreator.nextCreator = arrangerFrameCreator
+        arrangerFrameCreator.nextCreator = iTunesMovementNameFrameCreator
         iTunesMovementNameFrameCreator.nextCreator = iTunesMovementIndexFrameCreator
         iTunesMovementIndexFrameCreator.nextCreator = iTunesMovementCountFrameCreator
         iTunesMovementCountFrameCreator.nextCreator = podcastCategoryFrameCreator
@@ -230,6 +302,24 @@ class ID3FrameCreatorsChainFactory {
         commentFrameCreator.nextCreator = languageFrameCreator
         languageFrameCreator.nextCreator = discPositionFrameCreator
         discPositionFrameCreator.nextCreator = userDefinedTextInformationFrameCreator
+        userDefinedTextInformationFrameCreator.nextCreator = bpmFrameCreator
+        bpmFrameCreator.nextCreator = initialKeyFrameCreator
+        initialKeyFrameCreator.nextCreator = isrcFrameCreator
+        isrcFrameCreator.nextCreator = lengthFrameCreator
+        lengthFrameCreator.nextCreator = moodFrameCreator
+        moodFrameCreator.nextCreator = originalAlbumFrameCreator
+        originalAlbumFrameCreator.nextCreator = originalArtistFrameCreator
+        originalArtistFrameCreator.nextCreator = originalFilenameFrameCreator
+        originalFilenameFrameCreator.nextCreator = originalLyricistFrameCreator
+        originalLyricistFrameCreator.nextCreator = playlistDelayFrameCreator
+        playlistDelayFrameCreator.nextCreator = radioStationFrameCreator
+        radioStationFrameCreator.nextCreator = radioStationOwnerFrameCreator
+        radioStationOwnerFrameCreator.nextCreator = setSubtitleFrameCreator
+        setSubtitleFrameCreator.nextCreator = sortAlbumFrameCreator
+        sortAlbumFrameCreator.nextCreator = sortAlbumArtistFrameCreator
+        sortAlbumArtistFrameCreator.nextCreator = sortArtistFrameCreator
+        sortArtistFrameCreator.nextCreator = sortComposerFrameCreator
+        sortComposerFrameCreator.nextCreator = sortTitleFrameCreator
         return albumFrameCreator
     }
 }
