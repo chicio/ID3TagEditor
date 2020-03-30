@@ -21,6 +21,55 @@ extension ID3ArtistFrameCreatorTest {
     ]
 }
 
+extension ID3BPMFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsABPM", testFrameCreationWhenThereIsABPM),
+        ("testNoFrameCreationWhenThereIsNoBPM", testNoFrameCreationWhenThereIsNoBPM),
+    ]
+}
+
+extension ID3InitialKeyFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnInitialKey", testFrameCreationWhenThereIsAnInitialKey),
+        ("testNoFrameCreationWhenThereIsNoInitialKey", testNoFrameCreationWhenThereIsNoInitialKey),
+    ]
+}
+
+extension ID3ISRCFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnISRC", testFrameCreationWhenThereIsAnISRC),
+        ("testNoFrameCreationWhenThereIsNoISRC", testNoFrameCreationWhenThereIsNoISRC),
+    ]
+}
+
+extension ID3OriginalAlbumFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnOriginalAlbum", testFrameCreationWhenThereIsAnOriginalAlbum),
+        ("testNoFrameCreationWhenThereIsNoOriginalAlbum", testNoFrameCreationWhenThereIsNoOriginalAlbum),
+    ]
+}
+
+extension ID3OriginalArtistFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnOriginalArtist", testFrameCreationWhenThereIsAnOriginalArtist),
+        ("testNoFrameCreationWhenThereIsNoOriginalArtist", testNoFrameCreationWhenThereIsNoOriginalArtist),
+    ]
+}
+
+extension ID3OriginalFilenameFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnOriginalFilename", testFrameCreationWhenThereIsAnOriginalFilename),
+        ("testNoFrameCreationWhenThereIsNoOriginalFilename", testNoFrameCreationWhenThereIsNoOriginalFilename),
+    ]
+}
+
+extension ID3OriginalLyricistFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnOriginalLyricist", testFrameCreationWhenThereIsAnOriginalLyricist),
+        ("testNoFrameCreationWhenThereIsNoOriginalLyricist", testNoFrameCreationWhenThereIsNoOriginalLyricist),
+    ]
+}
+
 extension ID3AttachedPictureFrameContentParsingOperationTest {
     static let __allTests = [
         ("testSetTagAttachedPictureJpg", testSetTagAttachedPictureJpg),
@@ -165,6 +214,83 @@ extension ID3TitleFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsATitle", testFrameCreationWhenThereIsATitle),
         ("testNoFrameCreationWhenThereIsNoTitle", testNoFrameCreationWhenThereIsNoTitle),
+    ]
+}
+
+extension ID3LengthFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsALength", testFrameCreationWhenThereIsALength),
+        ("testNoFrameCreationWhenThereIsNoLength", testNoFrameCreationWhenThereIsNoLength),
+    ]
+}
+
+extension ID3MoodFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAMood", testFrameCreationWhenThereIsAMood),
+        ("testNoFrameCreationWhenThereIsNoMood", testNoFrameCreationWhenThereIsNoMood),
+    ]
+}
+
+extension ID3PlaylistDelayFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAPlaylistDelay", testFrameCreationWhenThereIsAPlaylistDelay),
+        ("testNoFrameCreationWhenThereIsNoPlaylistDelay", testNoFrameCreationWhenThereIsNoPlaylistDelay),
+    ]
+}
+
+extension ID3RadioStationFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsARadioStation", testFrameCreationWhenThereIsARadioStation),
+        ("testNoFrameCreationWhenThereIsNoRadioStation", testNoFrameCreationWhenThereIsNoRadioStation),
+    ]
+}
+
+extension ID3RadioStationOwnerFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsARadioStationOwner", testFrameCreationWhenThereIsARadioStationOwner),
+        ("testNoFrameCreationWhenThereIsNoRadioStationOwner", testNoFrameCreationWhenThereIsNoRadioStationOwner),
+    ]
+}
+
+extension ID3SetSubtitleFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsASetSubtitle", testFrameCreationWhenThereIsASetSubtitle),
+        ("testNoFrameCreationWhenThereIsNoSetSubtitle", testNoFrameCreationWhenThereIsNoSetSubtitle),
+    ]
+}
+
+extension ID3SortAlbumFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsASortAlbum", testFrameCreationWhenThereIsASortAlbum),
+        ("testNoFrameCreationWhenThereIsNoSortAlbum", testNoFrameCreationWhenThereIsNoSortAlbum),
+    ]
+}
+
+extension ID3SortAlbumArtistFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsASortAlbumArtist", testFrameCreationWhenThereIsASortAlbumArtist),
+        ("testNoFrameCreationWhenThereIsNoSortAlbumArtist", testNoFrameCreationWhenThereIsNoSortAlbumArtist),
+    ]
+}
+
+extension ID3SortArtistFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsASortArtist", testFrameCreationWhenThereIsASortArtist),
+        ("testNoFrameCreationWhenThereIsNoSortArtist", testNoFrameCreationWhenThereIsNoSortArtist),
+    ]
+}
+
+extension ID3SortComposerFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsASortComposer", testFrameCreationWhenThereIsASortComposer),
+        ("testNoFrameCreationWhenThereIsNoSortComposer", testNoFrameCreationWhenThereIsNoSortComposer),
+    ]
+}
+
+extension ID3SortTitleFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsASortTitle", testFrameCreationWhenThereIsASortTitle),
+        ("testNoFrameCreationWhenThereIsNoSortTitle", testNoFrameCreationWhenThereIsNoSortTitle),
     ]
 }
 

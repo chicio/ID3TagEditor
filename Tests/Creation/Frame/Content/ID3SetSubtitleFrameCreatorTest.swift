@@ -19,7 +19,7 @@ class ID3SetSubtitleFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
-        let newTagBytes = id3SetSubtitleFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+        let newTagBytes = id3SetSubtitleFrameCreator.createFrames(id3Tag: ID3Tag(version: .version4, frames: [:]), tag: tagBytes)
         
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -28,7 +28,7 @@ class ID3SetSubtitleFrameCreatorTest: XCTestCase {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
-            version: .version3,
+            version: .version4,
             frames: [.SetSubtitle : ID3FrameWithStringContent(content: ":: example subtitle::")]
         )
         let id3SetSubtitleFrameCreator = ID3SetSubtitleFrameCreator(

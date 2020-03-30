@@ -19,7 +19,7 @@ class ID3MoodFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
         
-        let newTagBytes = id3MoodFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+        let newTagBytes = id3MoodFrameCreator.createFrames(id3Tag: ID3Tag(version: .version4, frames: [:]), tag: tagBytes)
         
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -28,7 +28,7 @@ class ID3MoodFrameCreatorTest: XCTestCase {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
-            version: .version3,
+            version: .version4,
             frames: [.Mood : ID3FrameWithStringContent(content: ":: example mood::")]
         )
         let id3MoodFrameCreator = ID3MoodFrameCreator(
