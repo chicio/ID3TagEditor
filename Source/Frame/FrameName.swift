@@ -72,7 +72,7 @@ public enum FrameName: Hashable {
     /// Language frame name
     case Language
     /// Length frame name
-    //case Length
+    case Length
     /// Lyricist frame name
     case Lyricist
     /// Media type frame name.
@@ -125,6 +125,10 @@ public enum FrameName: Hashable {
     case SortAlbumArtist
     /// Artist Sort frame name
     case SortArtist
+    /// Composer Sort frame name
+    case SortComposer
+    /// TitleSort frame name
+    case SortTitle
     /// Subtitle frame name
     case Subtitle
     /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
