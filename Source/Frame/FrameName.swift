@@ -29,6 +29,8 @@ public enum FrameName: Hashable {
     //case Chapter
     /// Comment frame name
     case Comment
+    /// Compilation flag. ITunes Specific. Bool?
+    case Compilation
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
@@ -45,7 +47,7 @@ public enum FrameName: Hashable {
     case EncodedBy
     /// EncoderSettings frame name.
     case EncoderSettings
-    /// Encoding Time frame name
+    /// Encoding Time frame name. Version 2.4 only
     //case EncodingTime
     /// File Owner frame name. Version 2.3 and 2.4 only.
     case FileOwner
@@ -57,7 +59,7 @@ public enum FrameName: Hashable {
     case Genre
     /// Initial Key frame name
     case InitialKey
-    /// InvolvedPeople frame name
+    /// InvolvedPeople frame name. IPLS for version 2.3, TIPL for version 2.4
     //case InvolvedPeople
     /// ISRC frame name
     case ISRC
@@ -85,8 +87,8 @@ public enum FrameName: Hashable {
     case OriginalAlbum
     /// OriginalArtist frame name
     case OriginalArtist
-    /// Original Date frame name
-    //case OriginalDate
+    /// Original Date frame name. TORY for 2.3, TDOR for 2.4
+    //case OriginalYear
     /// Original Filename frame name
     case OriginalFilename
     /// Original Lyricist frame name
@@ -119,6 +121,8 @@ public enum FrameName: Hashable {
     case RadioStationOwner
     /// Radio Station URL frame name
     //case RadioStationUrl
+    /// Set Subtitle frame name. Version 2.4 only
+    case SetSubtitle
     /// Album Sort frame name
     case SortAlbum
     /// AlbumArtist Sort frame name
@@ -133,7 +137,7 @@ public enum FrameName: Hashable {
     case Subtitle
     /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
     //case TableOfContents
-    /// Tagging Date frame name
+    /// Tagging Date frame name. Version 2.4 only.
     //case TaggingDate
     /// Title frame name.
     case Title
