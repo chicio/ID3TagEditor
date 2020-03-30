@@ -434,7 +434,60 @@ extension ID3UnsyncedLyricsFrameCreatorTest {
     ]
 }
 
-extension ID3CommentFrameCreatorTest {
+extension ID3ArtistUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnArtistUrl", testFrameCreationWhenThereIsAnArtistUrl),
+        ("testNoFrameCreationWhenThereIsNoArtistUrl", testNoFrameCreationWhenThereIsNoArtistUrl),
+    ]
+}
+
+extension ID3AudioSourceUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnAudioSourceUrl", testFrameCreationWhenThereIsAnAudioSourceUrl),
+        ("testNoFrameCreationWhenThereIsNoAudioSourceUrl", testNoFrameCreationWhenThereIsNoAudioSourceUrl),
+    ]
+}
+
+extension ID3AudioFileUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAnAudioFileUrl", testFrameCreationWhenThereIsAnAudioFileUrl),
+        ("testNoFrameCreationWhenThereIsNoAudioFileUrl", testNoFrameCreationWhenThereIsNoAudioFileUrl),
+    ]
+}
+
+extension ID3CopyrightUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsACopyrightUrl", testFrameCreationWhenThereIsACopyrightUrl),
+        ("testNoFrameCreationWhenThereIsNoCopyrightUrl", testNoFrameCreationWhenThereIsNoCopyrightUrl),
+    ]
+}
+
+extension ID3PodcastUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAPodcastUrl", testFrameCreationWhenThereIsAPodcastUrl),
+        ("testNoFrameCreationWhenThereIsNoPodcastUrl", testNoFrameCreationWhenThereIsNoPodcastUrl),
+    ]
+}
+
+extension ID3RadioStationUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsARadioStationUrl", testFrameCreationWhenThereIsARadioStationUrl),
+        ("testNoFrameCreationWhenThereIsNoRadioStationUrl", testNoFrameCreationWhenThereIsNoRadioStationUrl),
+    ]
+}
+
+extension ID3PublisherUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAPublisherUrl", testFrameCreationWhenThereIsAPublisherUrl),
+        ("testNoFrameCreationWhenThereIsNoPublisherUrl", testNoFrameCreationWhenThereIsNoPublisherUrl),
+    ]
+}
+
+extension ID3UserDefinedUrlFrameCreatorTest {
+    static let __allTests = [
+        ("testFrameCreationWhenThereIsAUserDefinedUrl", testFrameCreationWhenThereIsAUserDefinedUrl),
+        ("testNoFrameCreationWhenThereIsNoUserDefinedUrl", testNoFrameCreationWhenThereIsNoUserDefinedUrl),
+    ]
 }
 
 extension ID3LanguageFrameCreatorTest {

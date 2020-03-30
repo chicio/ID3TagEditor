@@ -22,6 +22,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.Arranger]?.id3Identifier, "TP4")
         XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V2")
+        XCTAssertEqual(id3Tag?.frames[.ArtistUrl]?.id3Identifier, "WAR")
+        XCTAssertEqual((id3Tag?.frames[.ArtistUrl] as? ID3FrameWithStringContent)?.content, "http://V2ArtistUrl.com")
+        XCTAssertEqual(id3Tag?.frames[.AudioFileUrl]?.id3Identifier, "WAF")
+        XCTAssertEqual((id3Tag?.frames[.AudioFileUrl] as? ID3FrameWithStringContent)?.content, "http://V2AudioFileUrl.com")
+        XCTAssertEqual(id3Tag?.frames[.AudioSourceUrl]?.id3Identifier, "WAS")
+        XCTAssertEqual((id3Tag?.frames[.AudioSourceUrl] as? ID3FrameWithStringContent)?.content, "http://V2AudioSourceUrl.com")
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCM")
         XCTAssertEqual((id3Tag?.frames[.Composer] as? ID3FrameWithStringContent)?.content, "Composer V2")
         XCTAssertEqual(id3Tag?.frames[.BPM]?.id3Identifier, "TBP")
@@ -32,6 +38,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content, "ContentGroup V2")
         XCTAssertEqual(id3Tag?.frames[.Copyright]?.id3Identifier, "TCR")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.content, "Copyright V2")
+        XCTAssertEqual(id3Tag?.frames[.CopyrightUrl]?.id3Identifier, "WCP")
+        XCTAssertEqual((id3Tag?.frames[.CopyrightUrl] as? ID3FrameWithStringContent)?.content, "http://V2CopyrightUrl.com")
         XCTAssertEqual(id3Tag?.frames[.EncodedBy]?.id3Identifier, "TEN")
         XCTAssertEqual((id3Tag?.frames[.EncodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V2")
         XCTAssertEqual(id3Tag?.frames[.EncoderSettings]?.id3Identifier, "TSS")
@@ -60,6 +68,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithStringContent)?.content, "Playlist Delay V2")
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V2")
+        XCTAssertEqual(id3Tag?.frames[.PublisherUrl]?.id3Identifier, "WPB")
+        XCTAssertEqual((id3Tag?.frames[.PublisherUrl] as? ID3FrameWithStringContent)?.content, "http://V2PublisherUrl.com")
         XCTAssertEqual(id3Tag?.frames[.Subtitle]?.id3Identifier, "TT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V2")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "ULT")
@@ -75,6 +85,9 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V2")
+        XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "WXX")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedUrl] as? ID3FrameUserDefinedText)?.description, "UserDefinedUrl")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedUrl] as? ID3FrameUserDefinedText)?.content, "http://V2UserDefinedUrl.com")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPA")
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
@@ -89,6 +102,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.frames[.Arranger]?.id3Identifier, "TPE4")
         XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V3")
+        XCTAssertEqual(id3Tag?.frames[.ArtistUrl]?.id3Identifier, "WOAR")
+        XCTAssertEqual((id3Tag?.frames[.ArtistUrl] as? ID3FrameWithStringContent)?.content, "http://V3ArtistUrl.com")
+        XCTAssertEqual(id3Tag?.frames[.AudioFileUrl]?.id3Identifier, "WOAF")
+        XCTAssertEqual((id3Tag?.frames[.AudioFileUrl] as? ID3FrameWithStringContent)?.content, "http://V3AudioFileUrl.com")
+        XCTAssertEqual(id3Tag?.frames[.AudioSourceUrl]?.id3Identifier, "WOAS")
+        XCTAssertEqual((id3Tag?.frames[.AudioSourceUrl] as? ID3FrameWithStringContent)?.content, "http://V3AudioSourceUrl.com")
         XCTAssertEqual(id3Tag?.frames[.BPM]?.id3Identifier, "TBPM")
         XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.content, "BPM V3")
         XCTAssertEqual(id3Tag?.frames[.Composer]?.id3Identifier, "TCOM")
@@ -97,6 +116,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.content, "Conductor V3")
         XCTAssertEqual(id3Tag?.frames[.Copyright]?.id3Identifier, "TCOP")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.content, "Copyright V3")
+        XCTAssertEqual(id3Tag?.frames[.CopyrightUrl]?.id3Identifier, "WCOP")
+        XCTAssertEqual((id3Tag?.frames[.CopyrightUrl] as? ID3FrameWithStringContent)?.content, "http://V3CopyrightUrl.com")
         XCTAssertEqual(id3Tag?.frames[.ContentGroup]?.id3Identifier, "TIT1")
         XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content, "ContentGroup V3")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPOS")
@@ -145,12 +166,18 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.PodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V3")
         XCTAssertEqual(id3Tag?.frames[.PodcastKeywords]?.id3Identifier, "TKWD")
         XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V3")
+        XCTAssertEqual(id3Tag?.frames[.PodcastUrl]?.id3Identifier, "WFED")
+        XCTAssertEqual((id3Tag?.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.content, "http://V3PodcastUrl.com")
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPUB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V3")
+        XCTAssertEqual(id3Tag?.frames[.PublisherUrl]?.id3Identifier, "WPUB")
+        XCTAssertEqual((id3Tag?.frames[.PublisherUrl] as? ID3FrameWithStringContent)?.content, "http://V3PublisherUrl.com")
         XCTAssertEqual(id3Tag?.frames[.RadioStation]?.id3Identifier, "TRSN")
         XCTAssertEqual((id3Tag?.frames[.RadioStation] as? ID3FrameWithStringContent)?.content, "Radio Station V3")
         XCTAssertEqual(id3Tag?.frames[.RadioStationOwner]?.id3Identifier, "TRSO")
         XCTAssertEqual((id3Tag?.frames[.RadioStationOwner] as? ID3FrameWithStringContent)?.content, "Radio Station Owner V3")
+        XCTAssertEqual(id3Tag?.frames[.RadioStationUrl]?.id3Identifier, "WORS")
+        XCTAssertEqual((id3Tag?.frames[.RadioStationUrl] as? ID3FrameWithStringContent)?.content, "http://V3RadioStationUrl.com")
         XCTAssertEqual(id3Tag?.frames[.SortAlbum]?.id3Identifier, "TSOA")
         XCTAssertEqual((id3Tag?.frames[.SortAlbum] as? ID3FrameWithStringContent)?.content, "Sort Album V3")
         XCTAssertEqual(id3Tag?.frames[.SortAlbumArtist]?.id3Identifier, "TSO2")
@@ -176,6 +203,9 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V3")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
+        XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "WXXX")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "http://V3UserDefinedUrl.com")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "UserDefinedUrl")
     }
     
     func testReadNewFramesV4() throws {
@@ -187,6 +217,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.id3Identifier, "TPE4")
         XCTAssertEqual((id3Tag?.frames[.Arranger] as? ID3FrameWithStringContent)?.content, "Arranger V4")
+        XCTAssertEqual((id3Tag?.frames[.ArtistUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WOAR")
+        XCTAssertEqual((id3Tag?.frames[.ArtistUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4ArtistUrl.com")
+        XCTAssertEqual((id3Tag?.frames[.AudioFileUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WOAF")
+        XCTAssertEqual((id3Tag?.frames[.AudioFileUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4AudioFileUrl.com")
+        XCTAssertEqual((id3Tag?.frames[.AudioSourceUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WOAS")
+        XCTAssertEqual((id3Tag?.frames[.AudioSourceUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4AudioSourceUrl.com")
         XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.id3Identifier, "TBPM")
         XCTAssertEqual((id3Tag?.frames[.BPM] as? ID3FrameWithStringContent)?.content, "BPM V4")
         XCTAssertEqual((id3Tag?.frames[.Comment] as? ID3FrameCommentTypes)?.id3Identifier, "COMM")
@@ -199,6 +235,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Conductor] as? ID3FrameWithStringContent)?.content, "Conductor V4")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.id3Identifier, "TCOP")
         XCTAssertEqual((id3Tag?.frames[.Copyright] as? ID3FrameWithStringContent)?.content, "Copyright V4")
+        XCTAssertEqual((id3Tag?.frames[.CopyrightUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WCOP")
+        XCTAssertEqual((id3Tag?.frames[.CopyrightUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4CopyrightUrl.com")
         XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.id3Identifier, "TIT1")
         XCTAssertEqual((id3Tag?.frames[.ContentGroup] as? ID3FrameWithStringContent)?.content, "ContentGroup V4")
         XCTAssertEqual((id3Tag?.frames[.EncodedBy] as? ID3FrameWithStringContent)?.id3Identifier, "TENC")
@@ -247,12 +285,18 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.PodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V4")
         XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.id3Identifier, "TKWD")
         XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V4")
+        XCTAssertEqual((id3Tag?.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WFED")
+        XCTAssertEqual((id3Tag?.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4PodcastUrl.com")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.id3Identifier, "TPUB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher V4")
+        XCTAssertEqual((id3Tag?.frames[.PublisherUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WPUB")
+        XCTAssertEqual((id3Tag?.frames[.PublisherUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4PublisherUrl.com")
         XCTAssertEqual((id3Tag?.frames[.RadioStation] as? ID3FrameWithStringContent)?.id3Identifier, "TRSN")
         XCTAssertEqual((id3Tag?.frames[.RadioStation] as? ID3FrameWithStringContent)?.content, "Radio Station V4")
         XCTAssertEqual((id3Tag?.frames[.RadioStationOwner] as? ID3FrameWithStringContent)?.id3Identifier, "TRSO")
         XCTAssertEqual((id3Tag?.frames[.RadioStationOwner] as? ID3FrameWithStringContent)?.content, "Radio Station Owner V4")
+        XCTAssertEqual((id3Tag?.frames[.RadioStationUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WORS")
+        XCTAssertEqual((id3Tag?.frames[.RadioStationUrl] as? ID3FrameWithStringContent)?.id3Identifier, "http://www.V4RadioStationUrl.com")
         XCTAssertEqual((id3Tag?.frames[.SetSubtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TSST")
         XCTAssertEqual((id3Tag?.frames[.SetSubtitle] as? ID3FrameWithStringContent)?.content, "Set Subtitle V4")
         XCTAssertEqual((id3Tag?.frames[.SortAlbum] as? ID3FrameWithStringContent)?.id3Identifier, "TSOA")
@@ -274,6 +318,9 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.id3Identifier, "TXXX")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content, "UserDefinedTextInformation V4")
         XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "description")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedUrl] as? ID3FrameUserDefinedText)?.id3Identifier, "WXXX")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedUrl] as? ID3FrameUserDefinedText)?.content, "http://V4UserDefinedUrl.com")
+        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.description, "UserDefinedUrl")
     }
     
     //MARK: write
@@ -288,12 +335,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             version: .version2,
             frames: [
                 .Arranger : ID3FrameWithStringContent(content: "Arranger V2"),
+                .ArtistUrl : ID3FrameWithStringContent(content: "http://V2ArtistUrl.com"),
+                .AudioFileUrl : ID3FrameWithStringContent(content: "http://V2AudioFileUrl.com"),
+                .AudioSourceUrl : ID3FrameWithStringContent(content: "http://V2AudioSourceUrl.com"),
                 .BPM : ID3FrameWithStringContent(content: "BPM V2"),
                 .Comment : ID3FrameCommentTypes(language: .und, description: "commentTest V2", content: "Comment V2"),
                 .Composer : ID3FrameWithStringContent(content: "Composer V2"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V2"),
                 .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V2"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V2"),
+                .CopyrightUrl : ID3FrameWithStringContent(content: "http://V2CopyrightUrl.com"),
                 .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V2"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V2"),
@@ -310,9 +361,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .OriginalLyricist : ID3FrameWithStringContent(content: "Original Lyricist V2"),
                 .PlaylistDelay : ID3FrameWithStringContent(content: "Playlist Delay V2"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V2"),
+                .PublisherUrl : ID3FrameWithStringContent(content: "http://V2PublisherUrl.com"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
                 .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "lyricsTest V2", content: "UnsyncedLyrics V2"),
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V2"),
+                .UserDefinedUrl : ID3FrameUserDefinedText(description: "UserDefinedUrl", content: "http://V2UserDefinedUrl.com"),
+
             ]
         )
         
@@ -340,12 +394,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             version: .version3,
             frames: [
                 .Arranger : ID3FrameWithStringContent(content: "Arranger V3"),
+                .ArtistUrl : ID3FrameWithStringContent(content: "http://V3ArtistUrl.com"),
+                .AudioFileUrl : ID3FrameWithStringContent(content: "http://V3AudioFileUrl.com"),
+                .AudioSourceUrl : ID3FrameWithStringContent(content: "http://V3AudioSourceUrl.com"),
                 .BPM : ID3FrameWithStringContent(content: "BPM V3"),
                 .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V3", content: "Comments V3"),
                 .Composer : ID3FrameWithStringContent(content: "Composer V3"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V3"),
                 .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V3"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V3"),
+                .CopyrightUrl : ID3FrameWithStringContent(content: "http://V3CopyrightUrl.com"),
                 .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V3"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V3"),
@@ -370,9 +428,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V3"),
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V3"),
+                .PodcastUrl : ID3FrameWithStringContent(content: "http://V3PodcastUrl.com"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
+                .PublisherUrl : ID3FrameWithStringContent(content: "http://V3PublisherUrl.com"),
                 .RadioStation : ID3FrameWithStringContent(content: "Radio Station V3"),
                 .RadioStationOwner : ID3FrameWithStringContent(content: "Radio Station Owner V3"),
+                .RadioStationUrl : ID3FrameWithStringContent(content: "http://V3RadioStationUrl.com"),
                 .SortAlbum : ID3FrameWithStringContent(content: "Sort Album V3"),
                 .SortArtist : ID3FrameWithStringContent(content: "Sort Artist V3"),
                 .SortAlbumArtist : ID3FrameWithStringContent(content: "Sort Album Artist V3"),
@@ -381,6 +442,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
                 .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V3", content: "UnsyncedLyrics V3"),
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V3"),
+                .UserDefinedUrl : ID3FrameUserDefinedText(description: "UserDefinedUrl", content: "http://V3UserDefinedUrl.com"),
             ]
         )
         
@@ -405,12 +467,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             version: .version4,
             frames: [
                 .Arranger : ID3FrameWithStringContent(content: "Arranger V4"),
+                .ArtistUrl : ID3FrameWithStringContent(content: "http://V4ArtistUrl.com"),
+                .AudioFileUrl : ID3FrameWithStringContent(content: "http://V4AudioFileUrl.com"),
+                .AudioSourceUrl : ID3FrameWithStringContent(content: "http://V4AudioSourceUrl.com"),
                 .BPM : ID3FrameWithStringContent(content: "BPM V4"),
                 .Comment : ID3FrameCommentTypes(language: .und, description: "CommentTest V4", content: "Comments V4"),
                 .Composer : ID3FrameWithStringContent(content: "Composer V4"),
                 .Conductor : ID3FrameWithStringContent(content: "Conductor V4"),
                 .ContentGroup : ID3FrameWithStringContent(content: "ContentGroup V4"),
                 .Copyright : ID3FrameWithStringContent(content: "Copyright V4"),
+                .CopyrightUrl : ID3FrameWithStringContent(content: "http://V4CopyrightUrl.com"),
                 .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
                 .EncodedBy : ID3FrameWithStringContent(content: "EncodedBy V4"),
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V4"),
@@ -436,9 +502,12 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V4"),
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V4"),
+                .PodcastUrl : ID3FrameWithStringContent(content: "http://V4PodcastUrl.com"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V4"),
+                .PublisherUrl : ID3FrameWithStringContent(content: "http://V4PublisherUrl.com"),
                 .RadioStation : ID3FrameWithStringContent(content: "Radio Station V4"),
                 .RadioStationOwner : ID3FrameWithStringContent(content: "Radio Station Owner V4"),
+                .RadioStationUrl : ID3FrameWithStringContent(content: "http://V4RadioStationUrl.com"),
                 .SetSubtitle : ID3FrameWithStringContent(content: "Set Subtitle V4"),
                 .SortAlbum : ID3FrameWithStringContent(content: "Sort Album V4"),
                 .SortAlbumArtist : ID3FrameWithStringContent(content: "Sort Album Artist V4"),
@@ -448,6 +517,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
                 .UnsyncedLyrics : ID3FrameCommentTypes(language: .und, description: "LyricsTest V4", content: "UnsyncedLyrics V4"),
                 .UserDefinedTextInformation : ID3FrameUserDefinedText(description: "description", content: "UserDefinedTextInformation V4"),
+                .UserDefinedUrl : ID3FrameUserDefinedText(description: "UserDefinedUrl", content: "http://V4UserDefinedUrl.com"),
             ]
         )
         
