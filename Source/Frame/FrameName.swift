@@ -171,6 +171,8 @@ public enum FrameName: Hashable {
         return "USLT"
       case .UserDefinedTextInformation:
         return "TXXX"
+      case .UserDefinedUrl:
+        return "WXXX"
       default:
         return nil
       }
@@ -184,6 +186,8 @@ public enum FrameName: Hashable {
         return "ULT"
       case .UserDefinedTextInformation:
         return "TXX"
+      case .UserDefinedUrl:
+        return "WXX"
       default:
         return nil
       }
