@@ -179,7 +179,7 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `iTunesGrouping`
 * `Lyricist`
 * `Media Type`
-* `MixArtist`
+* `Arranger`
 * `iTunesMovementName`
 * `iTunesMovementIndex` (aka movement number)
 * `iTunesMovementCount`

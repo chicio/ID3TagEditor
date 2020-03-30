@@ -97,7 +97,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let mixArtistFrameCreator = ID3MixArtistFrameCreator(
+        let ArrangerFrameCreator = ID3ArrangerFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -215,8 +215,8 @@ class ID3FrameCreatorsChainFactory {
         fileTypeFrameCreator.nextCreator = iTunesGroupingFrameCreator
         iTunesGroupingFrameCreator.nextCreator = lyricistFrameCreator
         lyricistFrameCreator.nextCreator = mediaTypeFrameCreator
-        mediaTypeFrameCreator.nextCreator = mixArtistFrameCreator
-        mixArtistFrameCreator.nextCreator = iTunesMovementNameFrameCreator
+        mediaTypeFrameCreator.nextCreator = ArrangerFrameCreator
+        ArrangerFrameCreator.nextCreator = iTunesMovementNameFrameCreator
         iTunesMovementNameFrameCreator.nextCreator = iTunesMovementIndexFrameCreator
         iTunesMovementIndexFrameCreator.nextCreator = iTunesMovementCountFrameCreator
         iTunesMovementCountFrameCreator.nextCreator = podcastCategoryFrameCreator

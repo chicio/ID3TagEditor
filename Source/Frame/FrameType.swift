@@ -9,6 +9,8 @@ import Foundation
 
 enum FrameType: String, Equatable {
     case Title = "title"
+    case Album = "album"
+    case AlbumArtist = "albumArtist"
     case Artist = "artist"
     case Composer = "composer"
     case Conductor = "conductor"
@@ -21,7 +23,7 @@ enum FrameType: String, Equatable {
     case ITunesGrouping = "iTunesGrouping"
     case Lyricist = "lyricist"
     case MediaType = "mediaType"
-    case MixArtist = "mixArtist"
+    case Arranger = "Arranger"
     case ITunesMovementName = "iTunesMovementName"
     case ITunesMovementIndex = "iTunesMovementIndex"
     case ITunesMovementCount = "iTunesMovementCount"
@@ -34,7 +36,6 @@ enum FrameType: String, Equatable {
     case UnsyncedLyrics = "unsyncedLyrics"
     case Comment = "comment"
     case Language = "language"
-    case Album = "album"
     case AttachedPicture = "artwork"
     case RecordingDayMonth = "recordingDayMonth"
     case RecordingYear = "recordingYear"
@@ -44,7 +45,6 @@ enum FrameType: String, Equatable {
     case TrackPosition = "trackPosition"
     case DiscPosition = "discPosition"
     case UserDefinedTextInformation = "userDefinedTextInformation"
-    case AlbumArtist = "albumArtist"
     case TableOfContents = "tableOfContents"
     case Chapter = "chapter"
     case Invalid = ""

@@ -25,7 +25,7 @@ class ID3FrameContentParsingOperationFactory {
             .ITunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
             .Lyricist: ID3LyricistFrameContentParsingOperationFactory.make(),
             .MediaType: ID3MediaTypeFrameContentParsingOperationFactory.make(),
-            .MixArtist: ID3MixArtistFrameContentParsingOperationFactory.make(),
+            .Arranger: ID3ArrangerFrameContentParsingOperationFactory.make(),
             .ITunesMovementIndex: ID3ITunesMovementIndexFrameContentParsingOperationFactory.make(),
             .ITunesMovementCount: ID3ITunesMovementCountFrameContentParsingOperationFactory.make(),
             .ITunesMovementName: ID3ItunesMovementNameFrameContentParsingOperationFactory.make(),

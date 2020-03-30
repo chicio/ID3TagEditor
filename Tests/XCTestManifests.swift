@@ -245,10 +245,10 @@ extension ID3MediaTypeFrameCreatorTest {
     ]
 }
 
-extension ID3MixArtistFrameCreatorTest {
+extension ID3ArrangerFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAMixArtist", testFrameCreationWhenThereIsAMixArtist),
-        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist),
+        ("testFrameCreationWhenThereIsAArranger", testFrameCreationWhenThereIsAArranger),
+        ("testNoFrameCreationWhenThereIsNoArranger", testNoFrameCreationWhenThereIsNoArranger),
     ]
 }
 
@@ -390,7 +390,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3iTunesGroupingFrameCreatorTest.__allTests),
         testCase(ID3LyricistFrameCreatorTest.__allTests),
         testCase(ID3MediaTypeFrameCreatorTest.__allTests),
-        testCase(ID3MixArtistFrameCreatorTest.__allTests),
+        testCase(ID3ArrangerFrameCreatorTest.__allTests),
         testCase(ID3ItunesMovementIndexFrameCreatorTest.__allTests),
         testCase(ID3ItunesMovementNameFrameCreatorTest.__allTests),
         testCase(ID3PodcastCategoryFrameCreatorTest.__allTests),

@@ -11,14 +11,24 @@ import Foundation
 /// An enum used to identify the different types of frame parsed by the ID3TagEditor. This must be used to acces the frame data as identifier inside the dictionary
 /// of frame in the `ID3tag` `frames` properties.
 public enum FrameName: Hashable {
-    /// Title frame name.
-    case Title
     /// Album frame name.
     case Album
     /// AlbumArtist  frame name.
     case AlbumArtist
+    /// Arranger/Remixer frame name.
+    case Arranger
     /// Artist frame name.
     case Artist
+    /// Artist Website URL frame name
+    case ArtistUrl
+    /// AudioSource URL frame name
+    case AudioSourceUrl
+    /// Beats per Minute frame
+    case BPM
+    /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
+    case Chapter
+    /// Comment frame name
+    case Comment
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
@@ -27,28 +37,64 @@ public enum FrameName: Hashable {
     case ContentGrouping
     /// Copyright frame name.
     case Copyright
+    /// Copyright URL frame name
+    case CopyrightUrl
+    /// Disc Position frame name.
+    case DiscPosition
     /// EncodedBy frame name.
     case EncodedBy
     /// EncoderSettings frame name.
     case EncoderSettings
+    /// Encoding Time frame name
+    case EncodingTime
     /// File Owner frame name. Version 2.3 and 2.4 only.
     case FileOwner
     /// File type frame name.
     case FileType
+    /// File URL frame name
+    case FileUrl
+    /// Genre frame name.
+    case Genre
+    /// Initial Key frame name
+    case InitialKey
+    /// InvolvedPeople frame name
+    case InvolvedPeople
+    /// ISRC frame name
+    case ISRC
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case ITunesGrouping
+    /// Movement Count frame name. Version 2.3 and 2.4 only
+    case ITunesMovementCount
+    /// Movement Index frame name. Version 2.3 and 2.4 only.
+    case ITunesMovementIndex
+    ///Movement name frame name.
+    case ITunesMovementName
+    /// Language frame name
+    case Language
+    /// Length frame name
+    case Length
     /// Lyricist frame name
     case Lyricist
     /// Media type frame name.
     case MediaType
-    /// Mix Artist frame name.
-    case MixArtist
-    ///Movement name frame name.
-    case ITunesMovementName
-    /// Movement Index frame name. Version 2.3 and 2.4 only.
-    case ITunesMovementIndex
-    /// Movement Count frame name. Version 2.3 and 2.4 only
-    case ITunesMovementCount
+    /// MusicianCredits frame name
+    case MusicianCredits
+    /// Original Album frame name
+    case OriginalAlbum
+    /// OriginalArtist frame name
+    case OriginalArtist
+    /// Original Date frame name
+    case OriginalDate
+    /// Original Filename frame name
+    case OriginalFilename
+    /// Original Lyricist frame name
+    case OriginalLyricist
+    /// Payment URL frame name
+    case PaymentUrl
+    /// Playlist Delay frame name
+    case PlaylistDelay
+    /// Podcast frame name
+    case Podcast
     /// Podcast category frame name. Version 2.3 and 2.4 only.
     case PodcastCategory
     /// Podcast Description frame name. Version 2.3 and 2.4 only.
@@ -57,24 +103,42 @@ public enum FrameName: Hashable {
     case PodcastID
     /// Podcast keywords frame name, Version 2.3 and 2.4 only.
     case PodcastKeywords
+    /// PodcastURL frame name
+    case PodcastUrl
+    /// ProducedNotice frame name
+    case ProducedNotice
     /// Publisher frame name.
     case Publisher
+    /// Publisher URL frame name
+    case PublisherUrl
+    /// Radio Station frame name
+    case RadioStation
+    /// Radio Station Owner frame name
+    case RadioStationOwner
+    /// Radio Station URL frame name
+    case RadioStationUrl
+    /// Album Sort frame name
+    case SortAlbum
+    /// AlbumArtist Sort frame name
+    case SortAlbumArtist
+    /// Artist Sort frame name
+    case SortArtist
     /// Subtitle frame name
     case Subtitle
-    /// Unsynced lyrics frame name
-    case UnsyncedLyrics
-    /// Comment frame name
-    case Comment
-    /// Language frame name
-    case Language
-    /// Genre frame name.
-    case Genre
-    /// Disc Position frame name.
-    case DiscPosition
+    /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
+    case TableOfContents
+    /// Tagging Date frame name
+    case TaggingDate
+    /// Title frame name.
+    case Title
     /// Track Position frame name.
     case TrackPosition
+    /// Unsynced lyrics frame name
+    case UnsyncedLyrics
     /// User Defined Text Information
     case UserDefinedTextInformation
+    /// User Defined URL frame name
+    case UserDefinedUrl
     /// RecordingDayMonth frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
     case RecordingDayMonth
     /// RecordingYear frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
@@ -86,10 +150,6 @@ public enum FrameName: Hashable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
-    /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
-    case TableOfContents
-    /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
-    case Chapter
 
     internal var fourByteString: String? {
       switch self {
