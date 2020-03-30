@@ -52,7 +52,7 @@ public class ID3Tag: CustomDebugStringConvertible {
         - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
         - trackPosition: \((self.frames[.TrackPosition] as? ID3FramePartOfTotal)?.debugDescription ?? "-")
         - discPosition: \((self.frames[.DiscPosition] as? ID3FramePartOfTotal)?.debugDescription ?? "-")
-        - userDefinedTextInformation: \((self.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content ?? "-")
+        - userDefinedTextInformation: \((self.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText)?.content ?? "-")
         - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
         - bpm: \((self.frames[.BPM] as? ID3FrameWithStringContent)?.content ?? "-")
         - initialKey: \((self.frames[.InitialKey] as? ID3FrameWithStringContent)?.content ?? "-")
@@ -72,6 +72,14 @@ public class ID3Tag: CustomDebugStringConvertible {
         - sortArtist: \((self.frames[.SortArtist] as? ID3FrameWithStringContent)?.content ?? "-")
         - sortComposer: \((self.frames[.SortComposer] as? ID3FrameWithStringContent)?.content ?? "-")
         - sortTitle: \((self.frames[.SortTitle] as? ID3FrameWithStringContent)?.content ?? "-")
+        - artistUrl: \((self.frames[.ArtistUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - audioFileUrl: \((self.frames[.AudioFileUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - audioSourceUrl: \((self.frames[.AudioSourceUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - copyrightUrl: \((self.frames[.CopyrightUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - podcastUrl: \((self.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - publisherUrl: \((self.frames[.PublisherUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - radioStationUrl: \((self.frames[.RadioStationUrl] as? ID3FrameWithStringContent)?.content ?? "-")
+        - userDefinedUrl: \((self.frames[.UserDefinedUrl] as? ID3FrameUserDefinedText)?.content ?? "-")
         - recordingDateTime: \(
             (self.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.debugDescription ?? "-"
         )
