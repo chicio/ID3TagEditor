@@ -201,7 +201,39 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let artistUrlFrameCreator = ID3ArtistUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let audioSourceUrlFrameCreator = ID3AudioSourceUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let audioFileUrlFrameCreator = ID3AudioFileUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let copyrightUrlFrameCreator = ID3CopyrightUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastUrlFrameCreator = ID3PodcastUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let publisherUrlFrameCreator = ID3PublisherUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
+            frameCreator: frameFromUserTextISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let radioStationUrlFrameCreator = ID3RadioStationUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let userDefinedUrlFrameCreator = ID3UserDefinedUrlFrameCreator(
             frameCreator: frameFromUserTextISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -320,6 +352,14 @@ class ID3FrameCreatorsChainFactory {
         sortAlbumArtistFrameCreator.nextCreator = sortArtistFrameCreator
         sortArtistFrameCreator.nextCreator = sortComposerFrameCreator
         sortComposerFrameCreator.nextCreator = sortTitleFrameCreator
+        sortTitleFrameCreator.nextCreator = artistUrlFrameCreator
+        artistUrlFrameCreator.nextCreator = audioFileUrlFrameCreator
+        audioFileUrlFrameCreator.nextCreator = audioSourceUrlFrameCreator
+        audioSourceUrlFrameCreator.nextCreator = copyrightUrlFrameCreator
+        copyrightUrlFrameCreator.nextCreator = podcastUrlFrameCreator
+        podcastUrlFrameCreator.nextCreator = publisherUrlFrameCreator
+        publisherUrlFrameCreator.nextCreator = radioStationUrlFrameCreator
+        radioStationUrlFrameCreator.nextCreator = userDefinedUrlFrameCreator
         return albumFrameCreator
     }
 }

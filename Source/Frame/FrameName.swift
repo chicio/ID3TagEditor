@@ -54,7 +54,7 @@ public enum FrameName: Hashable {
     /// File type frame name.
     case FileType
     /// File URL frame name
-    case FileUrl
+    case AudioFileUrl
     /// Genre frame name.
     case Genre
     /// Initial Key frame name
