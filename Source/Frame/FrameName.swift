@@ -20,9 +20,9 @@ public enum FrameName: Hashable {
     /// Artist frame name.
     case Artist
     /// Artist Website URL frame name
-    //case ArtistUrl
+    case ArtistUrl
     /// AudioSource URL frame name
-    //case AudioSourceUrl
+    case AudioSourceUrl
     /// Beats per Minute frame
     case BPM
     /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
@@ -30,7 +30,7 @@ public enum FrameName: Hashable {
     /// Comment frame name
     case Comment
     /// Compilation flag. ITunes Specific. Bool?
-    case Compilation
+    //case Compilation
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
@@ -40,7 +40,7 @@ public enum FrameName: Hashable {
     /// Copyright frame name.
     case Copyright
     /// Copyright URL frame name
-    //case CopyrightUrl
+    case CopyrightUrl
     /// Disc Position frame name.
     case DiscPosition
     /// EncodedBy frame name.
@@ -54,7 +54,7 @@ public enum FrameName: Hashable {
     /// File type frame name.
     case FileType
     /// File URL frame name
-    //case FileUrl
+    case FileUrl
     /// Genre frame name.
     case Genre
     /// Initial Key frame name
@@ -94,7 +94,7 @@ public enum FrameName: Hashable {
     /// Original Lyricist frame name
     case OriginalLyricist
     /// Payment URL frame name
-    //case PaymentUrl
+    case PaymentUrl
     /// Playlist Delay frame name
     case PlaylistDelay
     /// Podcast frame name
@@ -108,19 +108,19 @@ public enum FrameName: Hashable {
     /// Podcast keywords frame name, Version 2.3 and 2.4 only.
     case PodcastKeywords
     /// PodcastURL frame name
-    //case PodcastUrl
+    case PodcastUrl
     /// ProducedNotice frame name
     //case ProducedNotice
     /// Publisher frame name.
     case Publisher
     /// Publisher URL frame name
-    //case PublisherUrl
+    case PublisherUrl
     /// Radio Station frame name
     case RadioStation
     /// Radio Station Owner frame name
     case RadioStationOwner
     /// Radio Station URL frame name
-    //case RadioStationUrl
+    case RadioStationUrl
     /// Set Subtitle frame name. Version 2.4 only
     case SetSubtitle
     /// Album Sort frame name
@@ -131,6 +131,8 @@ public enum FrameName: Hashable {
     case SortArtist
     /// Composer Sort frame name
     case SortComposer
+    /// Performer Sort frame name
+    case SortPerformer
     /// TitleSort frame name
     case SortTitle
     /// Subtitle frame name
@@ -148,7 +150,7 @@ public enum FrameName: Hashable {
     /// User Defined Text Information
     case UserDefinedTextInformation
     /// User Defined URL frame name
-    //case UserDefinedUrl
+    case UserDefinedUrl
     /// RecordingDayMonth frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
     case RecordingDayMonth
     /// RecordingYear frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.

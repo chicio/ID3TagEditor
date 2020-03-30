@@ -152,8 +152,10 @@ class ID3FrameConfiguration {
             .Mood : [UInt8]("TMOO".utf8),
             //.MusicianCredits : [UInt8]("TMCL".utf8),
             //.OriginalYear : [UInt8]("TDOR".utf8),
+            //.ProducedNotice : [UInt8]("TPRO".utf8),
             .RecordingDateTime : [UInt8]("TDRC".utf8),
             .SetSubtitle : [UInt8]("TSST".utf8),
+            .SortPerformer : [UInt8]("TSOP".utf8),
             //.TaggingDate : [UInt8]("TDTG".utf8),
         ]
     ]
@@ -201,7 +203,6 @@ class ID3FrameConfiguration {
         "TGID" : .PodcastID,
         "TKWD" : .PodcastKeywords,
         //"WFED" : .PodcastUrl,
-        //"TPRO" : .ProducedNotice,
         "TPUB" : .Publisher,
         //"WPUB" : .PublisherUrl,
         "TRSN" : .RadioStation,
@@ -280,7 +281,8 @@ class ID3FrameConfiguration {
             //"TIPL" : .InvolvedPeople,
             //"TMCL" : .MusicianCredits,
             "TMOO" : .Mood,
-            //"TDOR" : .OriginalYear,
+            "TSOP" : .SortPerformer,
+            //"TPRO" : .ProducedNotice,
             "TDRC" : .RecordingDateTime,
             "TSST" : .SetSubtitle,
             //"TDTG" : .TaggingDate,
