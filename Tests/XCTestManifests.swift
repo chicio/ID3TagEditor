@@ -247,7 +247,7 @@ extension ID3MediaTypeFrameCreatorTest {
 
 extension ID3ArrangerFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAArranger", testFrameCreationWhenThereIsAArranger),
+        ("testFrameCreationWhenThereIsAnArranger", testFrameCreationWhenThereIsAnArranger),
         ("testNoFrameCreationWhenThereIsNoArranger", testNoFrameCreationWhenThereIsNoArranger),
     ]
 }

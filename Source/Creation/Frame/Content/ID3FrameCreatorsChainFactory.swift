@@ -69,7 +69,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let ContentGroupFrameCreator = ID3ContentGroupFrameCreator(
+        let contentGroupFrameCreator = ID3ContentGroupFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -278,8 +278,8 @@ class ID3FrameCreatorsChainFactory {
         trackPositionFrameCreator.nextCreator = attachedPictureFrameCreator
         attachedPictureFrameCreator.nextCreator = composerFrameCreator
         composerFrameCreator.nextCreator = conductorFrameCreator
-        conductorFrameCreator.nextCreator = ContentGroupFrameCreator
-        ContentGroupFrameCreator.nextCreator = copyrightFrameCreator
+        conductorFrameCreator.nextCreator = contentGroupFrameCreator
+        contentGroupFrameCreator.nextCreator = copyrightFrameCreator
         copyrightFrameCreator.nextCreator = encodedByFrameCreator
         encodedByFrameCreator.nextCreator = encoderSettingsFrameCreator
         encoderSettingsFrameCreator.nextCreator = fileOwnerFrameCreator

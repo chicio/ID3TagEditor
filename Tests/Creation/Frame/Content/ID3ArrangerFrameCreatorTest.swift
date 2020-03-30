@@ -24,7 +24,7 @@ class ID3ArrangerFrameCreatorTest: XCTestCase {
         XCTAssertEqual(newTagBytes, tagBytes)
     }
     
-    func testFrameCreationWhenThereIsAArranger() {
+    func testFrameCreationWhenThereIsAnArranger() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(

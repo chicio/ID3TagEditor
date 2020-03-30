@@ -9,8 +9,8 @@ import Foundation
 
 class ID3ArrangerFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let ArrangerFrame = id3Tag.frames[.Arranger] as? ID3FrameWithStringContent {
-            return createFrameUsing(frameType: .Arranger, content: ArrangerFrame.content, id3Tag: id3Tag, andAddItTo: tag)
+        if let arrangerFrame = id3Tag.frames[.Arranger] as? ID3FrameWithStringContent {
+            return createFrameUsing(frameType: .Arranger, content: arrangerFrame.content, id3Tag: id3Tag, andAddItTo: tag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

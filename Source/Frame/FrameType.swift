@@ -10,7 +10,7 @@ import Foundation
 enum FrameType: String, Equatable {
     case Album = "album"
     case AlbumArtist = "albumArtist"
-    case Arranger = "Arranger"
+    case Arranger = "arranger"
     case Artist = "artist"
     //case ArtistUrl = "artistUrl"
     //case AudioSourceUrl = "audioSourceUrl"
@@ -20,7 +20,7 @@ enum FrameType: String, Equatable {
     //case Compilation = "compilation"
     case Composer = "composer"
     case Conductor = "conductor"
-    case ContentGroup = "ContentGroup"
+    case ContentGroup = "contentGroup"
     case Copyright = "copyright"
     //case CopyrightUrl = "copyrightUrl"
     case DiscPosition = "discPosition"
