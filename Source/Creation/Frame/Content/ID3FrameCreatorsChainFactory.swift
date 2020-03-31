@@ -203,7 +203,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let artistUrlFrameCreator = ID3ArtistUrlFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let audioSourceUrlFrameCreator = ID3AudioSourceUrlFrameCreator(
@@ -231,7 +231,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let radioStationUrlFrameCreator = ID3RadioStationUrlFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let userDefinedUrlFrameCreator = ID3UserDefinedUrlFrameCreator(
