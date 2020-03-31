@@ -16,9 +16,9 @@ enum ID3StringEncoding: UInt8 {
     
     func exists(in version: ID3Version) -> Bool {
         switch self {
-            case .utf16WithBOM, .isoLatin1:
+            case .utf16WithBOM, .isoLatin1, .ascii:
                 return true
-            case .utf8, .utf16BigEndian, .ascii:
+            case .utf8, .utf16BigEndian:
                 switch version {
                     case .version2, .version3:
                         return false
