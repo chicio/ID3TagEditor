@@ -29,6 +29,7 @@ class ID3FrameCreatorsChainFactory {
             stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
                                                                  frameConfiguration: frameConfiguration)
         )
+        let frameFromURLStringContentCreator = ID3FrameFromURLStringContentCreator(frameContentSizeCalculator: frameContentSizeCalculator, frameFlagsCreator: frameFlagsCreator)
         let frameFromMultiStringISO88591ContentCreator = ID3CommentTypesFrameCreator(
             frameContentSizeCalculator: frameContentSizeCalculator,
             frameFlagsCreator: frameFlagsCreator,
@@ -201,7 +202,39 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let artistUrlFrameCreator = ID3ArtistUrlFrameCreator(
+            frameCreator: frameFromURLStringContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let audioSourceUrlFrameCreator = ID3AudioSourceUrlFrameCreator(
+            frameCreator: frameFromURLStringContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let audioFileUrlFrameCreator = ID3AudioFileUrlFrameCreator(
+            frameCreator: frameFromURLStringContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let copyrightUrlFrameCreator = ID3CopyrightUrlFrameCreator(
+            frameCreator: frameFromURLStringContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let podcastUrlFrameCreator = ID3PodcastUrlFrameCreator(
+            frameCreator: frameFromStringUTF16ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let publisherUrlFrameCreator = ID3PublisherUrlFrameCreator(
+            frameCreator: frameFromURLStringContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
+            frameCreator: frameFromUserTextISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let radioStationUrlFrameCreator = ID3RadioStationUrlFrameCreator(
+            frameCreator: frameFromURLStringContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
+        let userDefinedUrlFrameCreator = ID3UserDefinedUrlFrameCreator(
             frameCreator: frameFromUserTextISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -320,6 +353,14 @@ class ID3FrameCreatorsChainFactory {
         sortAlbumArtistFrameCreator.nextCreator = sortArtistFrameCreator
         sortArtistFrameCreator.nextCreator = sortComposerFrameCreator
         sortComposerFrameCreator.nextCreator = sortTitleFrameCreator
+        sortTitleFrameCreator.nextCreator = artistUrlFrameCreator
+        artistUrlFrameCreator.nextCreator = audioFileUrlFrameCreator
+        audioFileUrlFrameCreator.nextCreator = audioSourceUrlFrameCreator
+        audioSourceUrlFrameCreator.nextCreator = copyrightUrlFrameCreator
+        copyrightUrlFrameCreator.nextCreator = podcastUrlFrameCreator
+        podcastUrlFrameCreator.nextCreator = publisherUrlFrameCreator
+        publisherUrlFrameCreator.nextCreator = radioStationUrlFrameCreator
+        radioStationUrlFrameCreator.nextCreator = userDefinedUrlFrameCreator
         return albumFrameCreator
     }
 }
