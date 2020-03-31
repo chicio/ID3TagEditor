@@ -9,8 +9,8 @@
 import Foundation
 
 class ID3CopyrightUrlFrameContentParsingOperationFactory {
-    static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+    static func make() -> ID3FrameURLStringContentParsingOperation {
+        return ID3FrameURLStringContentParsingOperationFactory.make() { (content: String) in
             return (.CopyrightUrl, ID3FrameWithStringContent(content: content))
         }
     }
