@@ -18,7 +18,7 @@ enum ID3StringEncoding: UInt8 {
         switch self {
             case .utf16WithBOM, .isoLatin1:
                 return true
-            case .utf8, .utf16BigEndian:
+            case .utf8, .utf16BigEndian, .ascii:
                 switch version {
                     case .version2, .version3:
                         return false

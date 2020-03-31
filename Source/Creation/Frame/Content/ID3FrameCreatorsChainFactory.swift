@@ -29,6 +29,7 @@ class ID3FrameCreatorsChainFactory {
             stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
                                                                  frameConfiguration: frameConfiguration)
         )
+        let frameFromURLStringContentCreator = ID3FrameFromURLStringContentCreator(frameContentSizeCalculator: frameContentSizeCalculator, frameFlagsCreator: frameFlagsCreator)
         let frameFromMultiStringISO88591ContentCreator = ID3CommentTypesFrameCreator(
             frameContentSizeCalculator: frameContentSizeCalculator,
             frameFlagsCreator: frameFlagsCreator,
@@ -206,15 +207,15 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let audioSourceUrlFrameCreator = ID3AudioSourceUrlFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let audioFileUrlFrameCreator = ID3AudioFileUrlFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let copyrightUrlFrameCreator = ID3CopyrightUrlFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let podcastUrlFrameCreator = ID3PodcastUrlFrameCreator(
@@ -222,7 +223,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let publisherUrlFrameCreator = ID3PublisherUrlFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
+            frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
