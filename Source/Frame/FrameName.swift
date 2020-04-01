@@ -58,7 +58,7 @@ public enum FrameName: Hashable {
     /// Initial Key frame name
     case InitialKey
     /// InvolvedPeople frame name. IPLS for version 2.3, TIPL for version 2.4
-    //case InvolvedPeople
+    case InvolvedPeople
     /// ISRC frame name
     case ISRC
     /// Grouping frame name. Version 2.3 and 2.4 only.
@@ -79,8 +79,8 @@ public enum FrameName: Hashable {
     case MediaType
     /// Mood frame name
     case Mood
-    /// MusicianCredits frame name
-    //case MusicianCredits
+    /// MusicianCredits frame name. Version 2.4 only.
+    case MusicianCredits
     /// Original Album frame name
     case OriginalAlbum
     /// OriginalArtist frame name
