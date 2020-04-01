@@ -11,7 +11,7 @@ import Foundation
 class ID3PlaylistDelayFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.PlaylistDelay, ID3FrameWithStringContent(content: content))
+            return (.PlaylistDelay, ID3FrameWithIntegerContent(value: Int(content)))
         }
     }
 }

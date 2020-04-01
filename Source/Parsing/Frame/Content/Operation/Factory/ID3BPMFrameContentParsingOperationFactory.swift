@@ -11,7 +11,8 @@ import Foundation
 class ID3BPMFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.BPM, ID3FrameWithStringContent(content: content))
+            return (.BPM, ID3FrameWithIntegerContent(value: Int(content)))
         }
     }
 }
+

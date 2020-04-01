@@ -11,7 +11,7 @@ import Foundation
 class ID3ISRCFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.ISRC, ID3FrameWithStringContent(content: content))
+            return (.ISRC, ID3FrameWithIntegerContent(value: Int(content)))
         }
     }
 }

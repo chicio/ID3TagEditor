@@ -102,7 +102,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let initialKeyFrameCreator = ID3InitialKeyFrameCreator(
-            frameCreator: frameFromStringISO88591ContentCreator,
+            frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let isrcFrameCreator = ID3ISRCFrameCreator(
