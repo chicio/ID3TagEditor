@@ -1,13 +1,13 @@
 //
 //  ID3FrameFromURLStringContentCreator.swift
 //
-//  Created by NolaineCrusher on 03/30/2020.
+//  Created by Nolaine Crusher on 03/30/2020.
 //  2018 Fabrizio Duroni.
 //
 
 import Foundation
 
-class ID3FrameFromURLStringContentCreator: FrameFromStringContentCreator {
+class ID3FrameFromBooleanContentCreator: FrameFromBooleanContentCreator {
     private let frameContentSizeCalculator: FrameContentSizeCalculator
     private let frameFlagsCreator: FrameFlagsCreator
     
@@ -17,9 +17,14 @@ class ID3FrameFromURLStringContentCreator: FrameFromStringContentCreator {
         self.frameFlagsCreator = frameFlagsCreator
     }
     
-    func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8] {
+    func createFrame(frameIdentifier: [UInt8], version: ID3Version, value: Bool) -> [UInt8] {
         var frame: [UInt8] = frameIdentifier
-        let contentAsBytes = content.data(using: .ascii).map({ [UInt8]($0) }) ?? [UInt8](content.utf8)
+        var contentAsBytes: [UInt8] = []
+        if value == true {
+            contentAsBytes = [0x00, 0x00, 0x00, 0x01]
+        } else {
+            contentAsBytes = [0x00, 0x00, 0x00, 0x00]
+        }
         frame.append(
             contentsOf: frameContentSizeCalculator.calculateSizeOf(
                 content: contentAsBytes,

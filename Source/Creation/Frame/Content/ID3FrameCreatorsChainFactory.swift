@@ -31,6 +31,8 @@ class ID3FrameCreatorsChainFactory {
                 paddingAdder: paddingAdder,
                 frameConfiguration: frameConfiguration)
         )
+        let frameFromBooleanContentCreator = ID3FrameFromBooleanContentCreator(frameContentSizeCalculator: frameContentSizeCalculator, frameFlagsCreator: frameFlagsCreator
+        )
         let frameFromURLStringContentCreator = ID3FrameFromURLStringContentCreator(
             frameContentSizeCalculator: frameContentSizeCalculator,
             frameFlagsCreator: frameFlagsCreator
@@ -298,7 +300,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let podcastFlagFrameCreator = ID3PodcastFlagFrameCreator(
-            frameCreator: frameFromStringISO88591ContentCreator,
+            frameCreator: frameFromBooleanContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let iTunesMovementIndexFrameCreator = ID3ItunesMovementIndexFrameCreator(

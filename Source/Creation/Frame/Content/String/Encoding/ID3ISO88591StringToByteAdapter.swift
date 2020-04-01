@@ -17,7 +17,8 @@ class ID3ISO88591StringToByteAdapter: StringToBytesAdapter {
     }
 
     func encoding(for version: ID3Version) -> [UInt8] {
-      return frameConfiguration.encodingByteFor(version: version, encoding: .isoLatin1)
+      return frameConfiguration.encodingByteFor(
+        version: version, encoding: .isoLatin1)
     }
 
     func termination() -> [UInt8] {
