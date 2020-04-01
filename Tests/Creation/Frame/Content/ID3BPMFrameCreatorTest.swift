@@ -29,7 +29,7 @@ class ID3BPMFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.BPM : ID3FrameWithStringContent(content: ":: example bpm::")]
+            frames: [.BPM : ID3FrameWithIntegerContent(value: 99)]
         )
         let id3BPMFrameCreator = ID3BPMFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

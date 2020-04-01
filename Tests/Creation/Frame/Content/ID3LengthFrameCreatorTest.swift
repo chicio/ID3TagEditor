@@ -29,7 +29,7 @@ class ID3LengthFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Length : ID3FrameWithStringContent(content: ":: example length::")]
+            frames: [.Length : ID3FrameWithIntegerContent(value: 9767)]
         )
         let id3LengthFrameCreator = ID3LengthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

@@ -11,8 +11,7 @@ import Foundation
 class ID3ITunesCompilationFlagFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.ITunesCompilation, ID3FrameWithBooleanContent(value: Bool(content)))
+            return (.ITunesCompilation, ID3BooleanStringAdapter().adapt(boolString: content))
         }
     }
 }
-

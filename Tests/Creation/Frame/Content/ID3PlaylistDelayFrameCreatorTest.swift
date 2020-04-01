@@ -29,7 +29,7 @@ class ID3PlaylistDelayFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.PlaylistDelay : ID3FrameWithStringContent(content: ":: example playlist delay::")]
+            frames: [.PlaylistDelay : ID3FrameWithIntegerContent(value: 20)]
         )
         let id3PlaylistDelayFrameCreator = ID3PlaylistDelayFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

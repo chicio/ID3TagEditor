@@ -9,7 +9,11 @@ class ID3PodcastFlagFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if let podcastFrame = id3Tag.frames[.Podcast] as? ID3FrameWithBooleanContent,
             let podcastSetting = podcastFrame.value {
-            return createFrameUsing(frameType: .Podcast, content: String(podcastSetting), id3Tag: id3Tag, andAddItTo: tag)
+            if podcastSetting == true {
+                return createFrameUsing(frameType: .Podcast, content: "1", id3Tag: id3Tag, andAddItTo: tag)
+            } else {
+                return createFrameUsing(frameType: .Podcast, content: "0", id3Tag: id3Tag, andAddItTo: tag)
+            }
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

@@ -29,7 +29,7 @@ class ID3ISRCFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.ISRC : ID3FrameWithStringContent(content: ":: example isrc::")]
+            frames: [.ISRC : ID3FrameWithIntegerContent(value: 123456789012)]
         )
         let id3ISRCFrameCreator = ID3ISRCFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
