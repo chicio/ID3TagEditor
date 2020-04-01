@@ -49,7 +49,6 @@ enum FrameType: String, Equatable {
     case OriginalFilename = "originalFilename"
     case OriginalLyricist = "originalLyricist"
     case PlaylistDelay = "playlistDelay"
-    case Podcast = "podcast"
     case PodcastCategory = "podcastCategory"
     case PodcastDescription = "podcastDescription"
     case PodcastID = "podcastID"

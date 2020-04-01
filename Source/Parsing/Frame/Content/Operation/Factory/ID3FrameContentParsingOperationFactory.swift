@@ -47,7 +47,6 @@ class ID3FrameContentParsingOperationFactory {
             .OriginalFilename: ID3OriginalFilenameFrameContentParsingOperationFactory.make(),
             .OriginalLyricist: ID3OriginalLyricistFrameContentParsingOperationFactory.make(),
             .PlaylistDelay: ID3PlaylistDelayFrameContentParsingOperationFactory.make(),
-            .Podcast: ID3PodcastFlagFrameContentParsingOperationFactory.make(),
             .PodcastUrl: ID3PodcastUrlFrameContentParsingOperationFactory.make(),
             .PodcastCategory: ID3PodcastCategoryFrameContentParsingOperationFactory.make(),
             .PodcastDescription: ID3PodcastDescriptionFrameContentParsingOperationFactory.make(),

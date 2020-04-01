@@ -40,7 +40,6 @@ public class ID3Tag: CustomDebugStringConvertible {
         - iTunesMovementIndex: \((self.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - iTunesMovementCount: \((self.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - iTunesMovementName: \((self.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content ?? "-")
-        - podcast: \((self.frames[.Podcast] as? ID3FrameWithBooleanContent)?.debugDescription ?? "-")
         - podcastCategory: \((self.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content ?? "-")
         - podcastDescription: \((self.frames[.PodcastDescription] as? ID3FrameWithStringContent)?.content ?? "-")
         - podcastID: \((self.frames[.PodcastID] as? ID3FrameWithStringContent)?.content ?? "-")

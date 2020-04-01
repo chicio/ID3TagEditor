@@ -354,13 +354,6 @@ extension ID3PodcastDescriptionFrameCreatorTest {
     ]
 }
 
-extension ID3PodcastFlagFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenPodcastFlagIsSet", testFrameCreationWhenPodcastFlagIsSet),
-        ("testFrameCreationWhenPodcastFlagIsNotSet", testFrameCreationWhenPodcastFlagIsNotSet),
-    ]
-}
-
 extension ID3PodcastIDFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAPodcastID", testFrameCreationWhenThereIsAPodcastID),
