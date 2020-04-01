@@ -8,7 +8,7 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3TrackPositionCreatorTest: XCTestCase {
+class ID3TrackPositionFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoTrackPosition() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3TrackPositionFrameCreator = ID3TrackPositionFrameCreator(
