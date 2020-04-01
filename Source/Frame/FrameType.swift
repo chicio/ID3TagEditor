@@ -17,7 +17,7 @@ enum FrameType: String, Equatable {
     case BPM = "bpm"
     //case Chapter = "chapter"
     case Comment = "comment"
-    //case Compilation = "compilation"
+    case ITunesCompilation = "compilation"
     case Composer = "composer"
     case Conductor = "conductor"
     case ContentGroup = "contentGroup"
@@ -26,7 +26,6 @@ enum FrameType: String, Equatable {
     case DiscPosition = "discPosition"
     case EncodedBy = "encodedBy"
     case EncoderSettings = "encoderSettings"
-    //case EncodingTime = "encodingTime"
     case FileOwner = "fileOwner"
     case FileType = "fileType"
     case AudioFileUrl = "audioFileUrl"
@@ -46,17 +45,16 @@ enum FrameType: String, Equatable {
     //case MusicianCredits = "musicianCredits"
     case OriginalAlbum = "originalAlbum"
     case OriginalArtist = "originalArtist"
-    //case OriginalYear = "originalYear"
+    case OriginalYear = "originalYear"
     case OriginalFilename = "originalFilename"
     case OriginalLyricist = "originalLyricist"
     case PlaylistDelay = "playlistDelay"
-    //case Podcast = "podcast"
+    case Podcast = "podcast"
     case PodcastCategory = "podcastCategory"
     case PodcastDescription = "podcastDescription"
     case PodcastID = "podcastID"
     case PodcastKeywords = "podcastKeywords"
     case PodcastUrl = "podcastUrl"
-    //case ProducedNotice = "producedNotice"
     case Publisher = "publisher"
     case PublisherUrl = "publisherUrl"
     case RadioStation = "radioStation"
@@ -71,7 +69,6 @@ enum FrameType: String, Equatable {
     case SortTitle = "sortTitle"
     case Subtitle = "subtitle"
     //case TableOfContents = "tableOfContents"
-    //case TaggingDate = "taggingDate"
     case Title = "title"
     case TrackPosition = "trackPosition"
     case UnsyncedLyrics = "unsyncedLyrics"
@@ -83,7 +80,7 @@ enum FrameType: String, Equatable {
     case RecordingDateTime = "recodingDateTime"
     case AttachedPicture = "artwork"
     case Invalid = ""
-
+    
     static func ==(lhs: FrameType, rhs: FrameType) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }

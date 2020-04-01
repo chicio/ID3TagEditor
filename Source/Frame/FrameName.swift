@@ -29,8 +29,8 @@ public enum FrameName: Hashable {
     //case Chapter
     /// Comment frame name
     case Comment
-    /// Compilation flag. ITunes Specific. Bool?
-    //case Compilation
+    /// Compilation flag. ITunes Specific.
+    case ITunesCompilation
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
@@ -47,8 +47,6 @@ public enum FrameName: Hashable {
     case EncodedBy
     /// EncoderSettings frame name.
     case EncoderSettings
-    /// Encoding Time frame name. Version 2.4 only
-    //case EncodingTime
     /// File Owner frame name. Version 2.3 and 2.4 only.
     case FileOwner
     /// File type frame name.
@@ -88,7 +86,7 @@ public enum FrameName: Hashable {
     /// OriginalArtist frame name
     case OriginalArtist
     /// Original Date frame name. TORY for 2.3, TDOR for 2.4
-    //case OriginalYear
+    case OriginalYear
     /// Original Filename frame name
     case OriginalFilename
     /// Original Lyricist frame name
@@ -98,7 +96,7 @@ public enum FrameName: Hashable {
     /// Playlist Delay frame name
     case PlaylistDelay
     /// Podcast frame name
-    //case Podcast
+    case Podcast
     /// Podcast category frame name. Version 2.3 and 2.4 only.
     case PodcastCategory
     /// Podcast Description frame name. Version 2.3 and 2.4 only.
@@ -109,8 +107,6 @@ public enum FrameName: Hashable {
     case PodcastKeywords
     /// PodcastURL frame name
     case PodcastUrl
-    /// ProducedNotice frame name
-    //case ProducedNotice
     /// Publisher frame name.
     case Publisher
     /// Publisher URL frame name
@@ -139,8 +135,6 @@ public enum FrameName: Hashable {
     case Subtitle
     /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
     //case TableOfContents
-    /// Tagging Date frame name. Version 2.4 only.
-    //case TaggingDate
     /// Title frame name.
     case Title
     /// Track Position frame name.
@@ -162,34 +156,34 @@ public enum FrameName: Hashable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
-
+    
     internal var fourByteString: String? {
-      switch self {
-      case .Comment:
-        return "COMM"
-      case .UnsyncedLyrics:
-        return "USLT"
-      case .UserDefinedTextInformation:
-        return "TXXX"
-      case .UserDefinedUrl:
-        return "WXXX"
-      default:
-        return nil
-      }
+        switch self {
+            case .Comment:
+                return "COMM"
+            case .UnsyncedLyrics:
+                return "USLT"
+            case .UserDefinedTextInformation:
+                return "TXXX"
+            case .UserDefinedUrl:
+                return "WXXX"
+            default:
+                return nil
+        }
     }
-
+    
     internal var threeByteString: String? {
-      switch self {
-      case .Comment:
-        return "COM"
-      case .UnsyncedLyrics:
-        return "ULT"
-      case .UserDefinedTextInformation:
-        return "TXX"
-      case .UserDefinedUrl:
-        return "WXX"
-      default:
-        return nil
-      }
+        switch self {
+            case .Comment:
+                return "COM"
+            case .UnsyncedLyrics:
+                return "ULT"
+            case .UserDefinedTextInformation:
+                return "TXX"
+            case .UserDefinedUrl:
+                return "WXX"
+            default:
+                return nil
+        }
     }
 }
