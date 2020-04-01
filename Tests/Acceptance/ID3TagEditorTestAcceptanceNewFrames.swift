@@ -49,7 +49,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.InitialKey]?.id3Identifier, "TKE")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "b#")
         XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TRC")
-        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithIntegerContent)?.value, 012345678901)
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
         XCTAssertEqual(id3Tag?.frames[.Length]?.id3Identifier, "TLE")
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.value, 9767)
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TXT")
@@ -131,9 +131,17 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.InitialKey]?.id3Identifier, "TKEY")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "b#")
         XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TSRC")
-        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithIntegerContent)?.value, 012345678901)
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
+        XCTAssertEqual(id3Tag?.frames[.ITunesCompilation]?.id3Identifier, "TCMP")
+        XCTAssertEqual((id3Tag?.frames[.ITunesCompilation] as? ID3FrameWithBooleanContent)?.value, true)
         XCTAssertEqual(id3Tag?.frames[.ITunesGrouping]?.id3Identifier, "GRP1")
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "Grouping")
+        XCTAssertEqual(id3Tag?.frames[.ITunesMovementCount]?.id3Identifier, "MVCN")
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
+        XCTAssertEqual(id3Tag?.frames[.ITunesMovementIndex]?.id3Identifier, "MVIN")
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 7)
+        XCTAssertEqual(id3Tag?.frames[.ITunesMovementName]?.id3Identifier, "MVNM")
+        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "Movement Name")
         XCTAssertEqual(id3Tag?.frames[.Length]?.id3Identifier, "TLEN")
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.value, 9767)
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TEXT")
@@ -144,11 +152,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "File Type")
         XCTAssertEqual(id3Tag?.frames[.FileOwner]?.id3Identifier, "TOWN")
         XCTAssertEqual((id3Tag?.frames[.FileOwner] as? ID3FrameWithStringContent)?.content, "File Owner")
-        XCTAssertEqual(id3Tag?.frames[.ITunesMovementName]?.id3Identifier, "MVNM")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "Movement Name")
-        XCTAssertEqual(id3Tag?.frames[.ITunesMovementIndex]?.id3Identifier, "MVIN")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 7)
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
         XCTAssertEqual(id3Tag?.frames[.OriginalAlbum]?.id3Identifier, "TOAL")
         XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content, "Original Album")
         XCTAssertEqual(id3Tag?.frames[.OriginalArtist]?.id3Identifier, "TOPE")
@@ -250,8 +253,10 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "File Type")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.id3Identifier, "TKEY")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "b#")
-        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithIntegerContent)?.id3Identifier, "TSRC")
-        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithIntegerContent)?.value, 012345678901)
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.id3Identifier, "TSRC")
+        XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
+        XCTAssertEqual(id3Tag?.frames[.ITunesCompilation]?.id3Identifier, "TCMP")
+        XCTAssertEqual((id3Tag?.frames[.ITunesCompilation] as? ID3FrameWithBooleanContent)?.value, true)
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "GRP1")
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "Grouping")
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
@@ -351,7 +356,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .EncoderSettings : ID3FrameWithStringContent(content: "Encoder Settings"),
                 .FileType : ID3FrameWithStringContent(content: "File Type"),
                 .InitialKey : ID3FrameWithStringContent(content: "b#"),
-                .ISRC : ID3FrameWithIntegerContent(value: 123456789012),
+                .ISRC : ID3FrameWithStringContent(content: "123456789012"),
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist"),
@@ -411,7 +416,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .FileType : ID3FrameWithStringContent(content: "File Type"),
                 .FileOwner : ID3FrameWithStringContent(content: "File Owner"),
                 .InitialKey : ID3FrameWithStringContent(content: "b#"),
-                .ISRC : ID3FrameWithIntegerContent(value: 123456789012),
+                .ISRC : ID3FrameWithStringContent(content: "123456789012"),
                 .ITunesCompilation : ID3FrameWithBooleanContent(value: true),
                 .ITunesGrouping : ID3FrameWithStringContent(content: "Grouping"),
                 .ITunesMovementCount : ID3FrameWithIntegerContent(value: 8),
@@ -485,7 +490,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .FileType : ID3FrameWithStringContent(content: "File Type"),
                 .FileOwner : ID3FrameWithStringContent(content: "File Owner"),
                 .InitialKey : ID3FrameWithStringContent(content: "b#"),
-                .ISRC : ID3FrameWithIntegerContent(value: 123456789012),
+                .ISRC : ID3FrameWithStringContent(content: "123456789012"),
                 .ITunesCompilation : ID3FrameWithBooleanContent(value: true),
                 .ITunesGrouping : ID3FrameWithStringContent(content: "Grouping"),
                 .ITunesMovementCount : ID3FrameWithIntegerContent(value: 8),

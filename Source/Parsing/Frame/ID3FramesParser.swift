@@ -26,7 +26,7 @@ class ID3FramesParser {
                 framePosition: currentFramePosition,
                 version: id3Tag.properties.version)
             let frame = mp3.subdata(with: NSMakeRange(currentFramePosition, min(frameSize, mp3.length - currentFramePosition)))
-            print(frame.hexadecimal())
+//            print(frame.hexadecimal())
             id3FrameParser.parse(frame: frame, frameSize: frameSize, id3Tag: id3Tag)
             currentFramePosition += frame.count;
         }

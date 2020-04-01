@@ -57,7 +57,7 @@ public class ID3Tag: CustomDebugStringConvertible {
         - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
         - bpm: \((self.frames[.BPM] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - initialKey: \((self.frames[.InitialKey] as? ID3FrameWithStringContent)?.content ?? "-")
-        - ISRC: \((self.frames[.ISRC] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
+        - ISRC: \((self.frames[.ISRC] as? ID3FrameWithStringContent)?.content ?? "-")
         - length: \((self.frames[.Length] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - mood: \((self.frames[.Mood] as? ID3FrameWithStringContent)?.content ?? "-")
         - originalAlbum: \((self.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content ?? "-")

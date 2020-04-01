@@ -106,7 +106,7 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration
         )
         let isrcFrameCreator = ID3ISRCFrameCreator(
-            frameCreator: frameFromStringISO88591ContentCreator,
+            frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
         let iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
