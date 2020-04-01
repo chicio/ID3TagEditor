@@ -10,8 +10,9 @@ import Foundation
 
 class ID3ISRCFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let isrcFrame = id3Tag.frames[.ISRC] as? ID3FrameWithStringContent {
-            return createFrameUsing(frameType: .ISRC, content: isrcFrame.content, id3Tag: id3Tag, andAddItTo: tag)
+        if let keyFrame = id3Tag.frames[.InitialKey] as? ID3FrameWithIntegerContent,
+            let key = keyFrame.value {
+            return createFrameUsing(frameType: .InitialKey, content: String(key), id3Tag: id3Tag, andAddItTo: tag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

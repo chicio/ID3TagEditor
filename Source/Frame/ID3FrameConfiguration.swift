@@ -38,7 +38,7 @@ class ID3FrameConfiguration {
         .BPM : [UInt8]("TBPM".utf8),
         //.Chapter : [UInt8]("CHAP".utf8),
         .Comment : [UInt8]("COMM".utf8),
-        //.Compilation : [UInt8]("TCMP".utf8),
+        .ITunesCompilation : [UInt8]("TCMP".utf8),
         .Composer : [UInt8]("TCOM".utf8),
         .Conductor : [UInt8]("TPE3".utf8),
         .ContentGroup : [UInt8]("TIT1".utf8),
@@ -66,7 +66,7 @@ class ID3FrameConfiguration {
         .OriginalFilename : [UInt8]("TOFN".utf8),
         .OriginalLyricist : [UInt8]("TOLY".utf8),
         .PlaylistDelay : [UInt8]("TDLY".utf8),
-//        .Podcast : [UInt8]("PCST".utf8),
+        .Podcast : [UInt8]("PCST".utf8),
         .PodcastCategory : [UInt8]("TCAT".utf8),
         .PodcastDescription : [UInt8]("TDES".utf8),
         .PodcastID : [UInt8]("TGID".utf8),
@@ -147,16 +147,13 @@ class ID3FrameConfiguration {
             .RecordingHourMinute : [UInt8]("TIME".utf8)
         ],
         .version4 : [
-            //.EncodingTime : [UInt8]("TDEN".utf8),
             //.InvolvedPeople : [UInt8]("TIPL".utf8),
             .Mood : [UInt8]("TMOO".utf8),
             //.MusicianCredits : [UInt8]("TMCL".utf8),
             //.OriginalYear : [UInt8]("TDOR".utf8),
-            //.ProducedNotice : [UInt8]("TPRO".utf8),
             .RecordingDateTime : [UInt8]("TDRC".utf8),
             .SetSubtitle : [UInt8]("TSST".utf8),
             .SortPerformer : [UInt8]("TSOP".utf8),
-            //.TaggingDate : [UInt8]("TDTG".utf8),
         ]
     ]
     private let commonNamesForIdentifiers: [String : FrameType] = [
@@ -169,7 +166,7 @@ class ID3FrameConfiguration {
         "TBPM" : .BPM,
         //"CHAP" : .Chapter,
         "COMM" : .Comment,
-        //"TCMP" : .Compilation,
+        "TCMP" : .ITunesCompilation,
         "TCOM" : .Composer,
         "TPE3" : .Conductor,
         "TIT1" : .ContentGroup,
@@ -197,7 +194,7 @@ class ID3FrameConfiguration {
         "TOFN" : .OriginalFilename,
         "TOLY" : .OriginalLyricist,
         "TDLY" : .PlaylistDelay,
-        //"PCST" : .Podcast,
+        "PCST" : .Podcast,
         "TCAT" : .PodcastCategory,
         "TDES" : .PodcastDescription,
         "TGID" : .PodcastID,
@@ -277,15 +274,13 @@ class ID3FrameConfiguration {
             "TIME" : .RecordingHourMinute
         ],
         .version4 : [
-            //"TDEN" : .EncodingTime,
             //"TIPL" : .InvolvedPeople,
             //"TMCL" : .MusicianCredits,
+            //"TDOR" : .OriginalYear,
             "TMOO" : .Mood,
             "TSOP" : .SortPerformer,
-            //"TPRO" : .ProducedNotice,
             "TDRC" : .RecordingDateTime,
             "TSST" : .SetSubtitle,
-            //"TDTG" : .TaggingDate,
         ]
     ]
     private let encodingPositionInBytes: [ID3Version : Int] = [
@@ -301,27 +296,27 @@ class ID3FrameConfiguration {
         self.nameForIdentifier[.version3] = self.nameForIdentifier[.version3]?.merging(commonNamesForIdentifiers) { $1 }
         self.nameForIdentifier[.version4] = self.nameForIdentifier[.version4]?.merging(commonNamesForIdentifiers) { $1 }
     }
-
+    
     func headerSizeFor(version: ID3Version) -> Int {
         return headerSizesInBytes[version]!
     }
-
+    
     func sizeOffsetFor(version: ID3Version) -> Int {
         return sizeOffsetInBytes[version]!
     }
-
+    
     func sizeMaskFor(version: ID3Version) -> UInt32 {
         return sizeMask[version]!
     }
-
+    
     func identifierSizeFor(version: ID3Version) -> Int {
         return identifierSizeInBytes[version]!
     }
-
+    
     func identifierFor(frameType: FrameType, version: ID3Version) -> [UInt8] {
         return identifiers[version]![frameType]!
     }
-
+    
     func frameTypeFor(identifier: String, version: ID3Version) -> FrameType {
         return nameForIdentifier[version]![identifier] ?? .Invalid
     }
@@ -333,7 +328,7 @@ class ID3FrameConfiguration {
     func encodingPositionFor(version: ID3Version) -> Int {
         return encodingPositionInBytes[version]!
     }
-
+    
     func encodingByteFor(version: ID3Version, encoding: ID3StringEncoding) -> [UInt8] {
         return [encoding.rawValue]
     }
