@@ -15,7 +15,7 @@ public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConverti
     public var role: String
     /// The name (or comma-delimited names) of the person performing a particular role.
     public var person: String
-    /// TrackPositionInSet description, useful for debug.
+    /// CreditsList description, useful for debug.
     public var debugDescription: String {
         return "\(role): \(person)"
     }
@@ -37,7 +37,7 @@ public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConverti
      - parameter lhs: left side of compare operation.
      - parameter rhs: right side of compare operation.
      
-     - returns: true if the track positions values are the same, else false.
+     - returns: true if the role values are the same, else false.
      */
     public static func ==(lhs: ID3FrameCreditsList, rhs: ID3FrameCreditsList) -> Bool {
         return lhs.role == rhs.role
