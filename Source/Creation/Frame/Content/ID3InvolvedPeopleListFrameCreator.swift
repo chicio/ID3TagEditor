@@ -8,31 +8,30 @@
 import Foundation
 
 class ID3InvolvedPeopleListFrameCreator: ID3FrameCreatorsChain {
-    private let frameCreator: FrameFromStringContentCreator
+    private let frameCreator: CreditsListFrameCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
     
-    init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+    init(frameCreator: CreditsListFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
     }
     
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let creditFrame = id3Tag.frames[.InvolvedPeople] as? ID3FrameCredits {
+        if let creditFrame = id3Tag.frames[.InvolvedPeople] as? ID3FrameCreditsList {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
                         frameType: .InvolvedPeople,
-                        version: id3Tag.properties.version
-                    ),
+                        version: id3Tag.properties.version),
                     version: id3Tag.properties.version,
-                    content: adapt(creditedRole: creditFrame)
-            )
+                    role: creditFrame.role,
+                    person: creditFrame.person)
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
     
-    private func adapt(creditedRole: ID3FrameCredits) -> String {
+    private func adapt(creditedRole: ID3FrameCreditsList) -> String {
         let roleString = creditedRole.role
         let personString = creditedRole.person
         return "\(roleString): \(personString)"

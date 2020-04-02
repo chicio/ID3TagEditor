@@ -1,7 +1,7 @@
 //
-//  ID3FrameCredits.swift
+//  ID3FrameCreditsList.swift
 //
-//  Created by Fabrizio Duroni on 07/03/2018.
+//  Created by Nolaine Crusher 4/1/20
 //  2018 Fabrizio Duroni.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 /**
  A class used to represent an ID3 involved peeople list or musician credits frame.
  */
-public class ID3FrameCredits: ID3Frame, Equatable, CustomDebugStringConvertible {
+public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The role of the involved person, i.e. instrument, vocal part, or other involvement
     public var role: String
     /// The name (or comma-delimited names) of the person performing a particular role.
@@ -39,7 +39,7 @@ public class ID3FrameCredits: ID3Frame, Equatable, CustomDebugStringConvertible 
      
      - returns: true if the track positions values are the same, else false.
      */
-    public static func ==(lhs: ID3FrameCredits, rhs: ID3FrameCredits) -> Bool {
+    public static func ==(lhs: ID3FrameCreditsList, rhs: ID3FrameCreditsList) -> Bool {
         return lhs.role == rhs.role
     }
 }

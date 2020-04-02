@@ -24,10 +24,12 @@ class ID3UserDefinedTextInformationFrameCreator: ID3FrameCreatorsChain {
                         frameType: .UserDefinedTextInformation,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version, language: nil, description: userTextFrame.description,
+                    version: id3Tag.properties.version,
+                    language: nil,
+                    description: userTextFrame.description,
                     content: userTextFrame.content
             )
-         return super.createFrames(id3Tag: id3Tag, tag: newTag)
+            return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
