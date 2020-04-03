@@ -12,6 +12,5 @@ protocol CreditsListFrameCreator {
     func createFrame(
         frameIdentifier: [UInt8],
         version: ID3Version,
-        role: String,
-        person: String) -> [UInt8]
+        entries: [(role: String, person: String)]) -> [UInt8]
 }

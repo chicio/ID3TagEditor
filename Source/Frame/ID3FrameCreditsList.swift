@@ -12,11 +12,7 @@ import Foundation
  */
 public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// An array of the role:person tuples
-    public var entries: Array<(String, String)>
-    /// The role of the involved person, i.e. instrument, vocal part, production function, or other involvement
-    public var role: String
-    /// The name (or comma-delimited names) of the person(s) performing a particular role.
-    public var person: String
+    public var entries: [(String, String)]
     /// CreditsList description, useful for debug.
     public var debugDescription: String {
         return "entries"
@@ -30,8 +26,6 @@ public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConverti
      */
     public init(entries: [(role:String, person:String)]) {
         self.entries = entries
-        self.role = role
-        self.person = person
     }
     
     /**

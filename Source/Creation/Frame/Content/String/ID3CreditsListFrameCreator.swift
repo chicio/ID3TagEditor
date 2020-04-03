@@ -25,23 +25,24 @@ class ID3CreditsListFrameCreator: CreditsListFrameCreator {
     func createFrame(
         frameIdentifier: [UInt8],
         version: ID3Version,
-        role: String,
-        person: String
+        entries: [(role: String, person: String)]
     ) -> [UInt8] {
         let frameContents = [UInt8](
             [
-                stringToBytesAdapter.adapt(
-                    string: role,
-                    for: version,
-                    includingEncoding: true,
-                    includingTermination: true
-                ),
-                stringToBytesAdapter.adapt(
-                    string: person,
-                    for: version,
-                    includingEncoding: false,
-                    includingTermination: true
-                )
+                entries: [(
+                    stringToBytesAdapter.adapt(
+                        string: role,
+                        for: version,
+                        includingEncoding: true,
+                        includingTermination: true
+                    ),
+                    stringToBytesAdapter.adapt(
+                        string: person,
+                        for: version,
+                        includingEncoding: false,
+                        includingTermination: true
+                    )
+                    )]
                 ].joined()
         )
         

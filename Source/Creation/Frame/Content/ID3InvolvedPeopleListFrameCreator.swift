@@ -24,16 +24,14 @@ class ID3InvolvedPeopleListFrameCreator: ID3FrameCreatorsChain {
                         frameType: .InvolvedPeople,
                         version: id3Tag.properties.version),
                     version: id3Tag.properties.version,
-                    role: creditFrame.role,
-                    person: creditFrame.person)
+                    entries: creditFrame.entries
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
     
     private func adapt(creditedRole: ID3FrameCreditsList) -> String {
-        let roleString = creditedRole.role
-        let personString = creditedRole.person
-        return "\(roleString): \(personString)"
+        let entryString = creditedRole.entries
+        return "\(entryString)"
     }
 }
