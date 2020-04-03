@@ -17,7 +17,7 @@ class ID3CreditsListFrameCreatorTest: XCTestCase {
                 synchsafeEncoder: SynchsafeIntegerEncoder()
             ),
             frameFlagsCreator: ID3FrameFlagsCreator(),
-            stringToBytesAdapter: ID3UTF16StringToByteAdapter(
+            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(
                 paddingAdder: PaddingAdderToEndOfContentUsingNullChar(),
                 frameConfiguration: ID3FrameConfiguration()
             )
@@ -42,17 +42,3 @@ class ID3CreditsListFrameCreatorTest: XCTestCase {
         )
     }
 }
-
-/* XCTAssertEqual failed: ("[
- 34, (identifier)
- 0, 0, 0, 52, (size)
- 0, 0, (flags)
- 1, (encoding?)
- 255, 254, 109, 0, (what are these?)
- 117, 0, 115, 0, 105, 0, 99, 0, 105, 0, 97, 0, 110, (Musician)
- 0, (termination)
- 0, 0, 1, (another flag and encoding?)
- 255, 254, 77, 0, (???)
- 117, 0, 115, 0, 105, 0, 99, 0, 105, 0, 97, 0, 110, 0, 32, 0, 78, 0, 97, 0, 109, 0, 101, 0, 0, 0
- ]") is not equal to ("[34, 0, 0, 0, 52, 0, 0, 1, 109, 117, 115, 105, 99, 105, 97, 110, 0, 77, 117, 115, 105, 99, 105, 97, 110, 32, 78, 97, 109, 101, 0]")
- why is it including a zero between every character */

@@ -1,7 +1,7 @@
 //
 //  ID3FrameURLStringContentParsingOperation.swift
 //
-//  Created by Fabrizio Duroni on 26/02/2018.
+//  Created by Nolaine Crusher on 3/30/20.
 //  2018 Fabrizio Duroni.
 //
 
