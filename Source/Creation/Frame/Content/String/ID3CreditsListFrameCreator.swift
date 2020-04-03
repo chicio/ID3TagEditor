@@ -39,7 +39,7 @@ class ID3CreditsListFrameCreator: CreditsListFrameCreator {
                 stringToBytesAdapter.adapt(
                     string: person,
                     for: version,
-                    includingEncoding: true,
+                    includingEncoding: false,
                     includingTermination: true
                 )
                 ].joined()
