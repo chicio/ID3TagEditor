@@ -29,20 +29,21 @@ class ID3CreditsListFrameCreator: CreditsListFrameCreator {
     ) -> [UInt8] {
         let frameContents = [UInt8](
             [
-                entries: [(
-                    stringToBytesAdapter.adapt(
-                        string: role,
-                        for: version,
-                        includingEncoding: true,
-                        includingTermination: true
-                    ),
-                    stringToBytesAdapter.adapt(
-                        string: person,
-                        for: version,
-                        includingEncoding: false,
-                        includingTermination: true
-                    )
-                    )]
+                stringToBytesAdapter.encoding(for: version),
+                entries: [
+                stringToBytesAdapter.adapt(
+                string: role,
+                for: version,
+                includingEncoding: true,
+                includingTermination: true
+                ),
+                stringToBytesAdapter.adapt(
+                string: person,
+                for: version,
+                includingEncoding: false,
+                includingTermination: true
+                )
+                ]
                 ].joined()
         )
         
@@ -50,7 +51,8 @@ class ID3CreditsListFrameCreator: CreditsListFrameCreator {
             [
                 frameIdentifier,
                 frameContentSizeCalculator.calculateSizeOf(
-                    content: frameContents, version: version),
+                    content: frameContents,
+                    version: version),
                 frameFlagsCreator.createFor(version: version),
                 frameContents
                 ].joined()
