@@ -155,31 +155,52 @@ public enum FrameName: Hashable {
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
     
-    internal var fourByteString: String? {
+    internal func identifier(version: ID3Version) -> String? {
         switch self {
             case .Comment:
-                return "COMM"
+                switch version {
+                    case .version2:
+                        return "COM"
+                    case .version3, .version4:
+                        return "COMM"
+            }
+            case .InvolvedPeople:
+                switch version {
+                    case .version2:
+                        return "IPL"
+                    case .version3:
+                        return "IPLS"
+                    case .version4:
+                        return "TIPL"
+            }
+            case .MusicianCredits:
+                switch version {
+                    case .version2, .version3:
+                        return nil
+                    case .version4:
+                        return "TMCL"
+            }
             case .UnsyncedLyrics:
-                return "USLT"
+                switch version {
+                    case .version2:
+                        return "ULT"
+                    case .version3, .version4:
+                        return "USLT"
+            }
             case .UserDefinedTextInformation:
-                return "TXXX"
+                switch version {
+                    case .version2:
+                        return "TXX"
+                    case .version3, .version4:
+                        return "TXXX"
+            }
             case .UserDefinedUrl:
-                return "WXXX"
-            default:
-                return nil
-        }
-    }
-    
-    internal var threeByteString: String? {
-        switch self {
-            case .Comment:
-                return "COM"
-            case .UnsyncedLyrics:
-                return "ULT"
-            case .UserDefinedTextInformation:
-                return "TXX"
-            case .UserDefinedUrl:
-                return "WXX"
+                switch version {
+                    case .version2:
+                        return "WXX"
+                    case .version3, .version4:
+                        return "WXXX"
+            }
             default:
                 return nil
         }

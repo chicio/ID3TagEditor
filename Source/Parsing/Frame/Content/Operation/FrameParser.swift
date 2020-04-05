@@ -9,9 +9,8 @@ extension FrameParser {
     internal func extractHeader(from frameData: inout Data.SubSequence, version: ID3Version) {
         let name = frameData.extractFirst(version.identifierSize)
         assert(
-            String(ascii: name) == frameName.fourByteString
-                || String(ascii: name) == frameName.threeByteString,
-            "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.fourByteString!)/\(frameName.threeByteString!)"
+            String(ascii: name) == frameName.identifier(version: version),
+            "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.identifier)"
         )
         _ = frameData.extractFirst(version.sizeSize)
         _ = frameData.extractFirst(version.flagSize)
@@ -36,10 +35,15 @@ extension FrameParser {
     internal func extractCreditStrings(
         from frameData: inout Data.SubSequence,
         encoding: ID3StringEncoding
-    ) -> (role: String?, person: String?) {
-        let role = frameData.extractPrefixAsStringUntilNullTermination(encoding)
-        let person = frameData.extractPrefixAsStringUntilNullTermination(encoding)
-        return (role: role, person: person)
+    ) -> [(String, String)] {
+        var strings: [String] = []
+        
+        while !frameData.isEmpty,
+            let next = frameData.extractPrefixAsStringUntilNullTermination(encoding) {
+                strings.append(next)
+        }
+        let rolePersonArray = strings.pairs()
+        return rolePersonArray
     }
     
 }
