@@ -48,6 +48,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "File Type")
         XCTAssertEqual(id3Tag?.frames[.InitialKey]?.id3Identifier, "TKE")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "b#")
+        XCTAssertEqual(id3Tag?.frames[.InvolvedPeople]?.id3Identifier, "IPL")
+//        XCTAssertEqual((id3Tag?.frames[.InvolvedPeople] as? ID3FrameCreditsList)?.entries, [("Producer", "Producer Name"), ("Director", "Director Name")])
         XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TRC")
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
         XCTAssertEqual(id3Tag?.frames[.Length]?.id3Identifier, "TLE")
@@ -130,6 +132,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.EncoderSettings] as? ID3FrameWithStringContent)?.content, "Encoder Settings")
         XCTAssertEqual(id3Tag?.frames[.InitialKey]?.id3Identifier, "TKEY")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "b#")
+        XCTAssertEqual(id3Tag?.frames[.InvolvedPeople]?.id3Identifier, "IPLS")
+//        XCTAssertEqual((id3Tag?.frames[.InvolvedPeople] as? ID3FrameCreditsList)?.entries, [("Director", "Director Name"), ("Producer", "Producer Name")])
         XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TSRC")
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
         XCTAssertEqual(id3Tag?.frames[.ITunesCompilation]?.id3Identifier, "TCMP")
@@ -253,6 +257,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "File Type")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.id3Identifier, "TKEY")
         XCTAssertEqual((id3Tag?.frames[.InitialKey] as? ID3FrameWithStringContent)?.content, "b#")
+        XCTAssertEqual(id3Tag?.frames[.InvolvedPeople]?.id3Identifier, "TIPL")
+//        XCTAssertEqual((id3Tag?.frames[.InvolvedPeople] as? ID3FrameCreditsList)?.entries, [("Director", "Director Name"), ("Producer", "Producer Name")])
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.id3Identifier, "TSRC")
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
         XCTAssertEqual(id3Tag?.frames[.ITunesCompilation]?.id3Identifier, "TCMP")
@@ -273,6 +279,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "Media Type")
         XCTAssertEqual((id3Tag?.frames[.Mood] as? ID3FrameWithStringContent)?.id3Identifier, "TMOO")
         XCTAssertEqual((id3Tag?.frames[.Mood] as? ID3FrameWithStringContent)?.content, "Mood")
+        XCTAssertEqual(id3Tag?.frames[.MusicianCredits]?.id3Identifier, "TMCL")
+//        XCTAssertEqual((id3Tag?.frames[.MusicianCredits] as? ID3FrameCreditsList)?.entries, [("Musician", "Musician Name"), ("Singer", "Singer Name")])
         XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.id3Identifier, "TOAL")
         XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content, "Original Album")
         XCTAssertEqual((id3Tag?.frames[.OriginalArtist] as? ID3FrameWithStringContent)?.id3Identifier, "TOPE")
@@ -356,6 +364,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .EncoderSettings : ID3FrameWithStringContent(content: "Encoder Settings"),
                 .FileType : ID3FrameWithStringContent(content: "File Type"),
                 .InitialKey : ID3FrameWithStringContent(content: "b#"),
+                .InvolvedPeople : ID3FrameCreditsList(entries: [(role: "Producer", person: "Producer Name")]),
                 .ISRC : ID3FrameWithStringContent(content: "123456789012"),
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
