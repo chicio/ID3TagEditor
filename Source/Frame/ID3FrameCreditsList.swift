@@ -15,7 +15,7 @@ public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConverti
     public var entries: [(role: String, person: String)]
     /// CreditsList description, useful for debug.
     public var debugDescription: String {
-        return "entries"
+        return "\(entries)"
     }
     
     /**

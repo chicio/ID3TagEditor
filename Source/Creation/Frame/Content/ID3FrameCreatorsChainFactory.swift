@@ -303,7 +303,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let musicianCreditsListFrameCreator = ID3InvolvedPeopleListFrameCreator(
+        let musicianCreditsListFrameCreator = ID3MusicianCreditsListFrameCreator(
             frameCreator: frameFromCreditsListISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
