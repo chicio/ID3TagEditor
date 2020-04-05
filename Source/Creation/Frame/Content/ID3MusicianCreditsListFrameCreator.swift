@@ -1,5 +1,5 @@
 //
-//  ID3MusicanCreditsListFrameCreator.swift
+//  ID3MusicianCreditsListFrameCreator.swift
 //
 //  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
@@ -24,16 +24,14 @@ class ID3MusicianCreditsListFrameCreator: ID3FrameCreatorsChain {
                         frameType: .MusicianCredits,
                         version: id3Tag.properties.version),
                     version: id3Tag.properties.version,
-                    role: creditFrame.role,
-                    person: creditFrame.person)
+                    entries: creditFrame.entries)
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }
     
     private func adapt(creditedRole: ID3FrameCreditsList) -> String {
-        let roleString = creditedRole.role
-        let personString = creditedRole.person
-        return "\(roleString): \(personString)"
+        let entryString = creditedRole.entries
+        return "\(entryString)"
     }
 }

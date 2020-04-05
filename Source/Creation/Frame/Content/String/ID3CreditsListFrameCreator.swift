@@ -27,25 +27,27 @@ class ID3CreditsListFrameCreator: CreditsListFrameCreator {
         version: ID3Version,
         entries: [(role: String, person: String)]
     ) -> [UInt8] {
-        let frameContents = [UInt8](
-            [
-                stringToBytesAdapter.encoding(for: version),
-                entries: [
-                stringToBytesAdapter.adapt(
-                string: role,
-                for: version,
-                includingEncoding: true,
-                includingTermination: true
-                ),
-                stringToBytesAdapter.adapt(
-                string: person,
+        var frameContents:[UInt8] = []
+        frameContents.append(contentsOf: stringToBytesAdapter.encoding(for: version))
+        
+        for entry in entries {
+            var rolePersonPair: [UInt8] = []
+            let adaptedRole = stringToBytesAdapter.adapt(
+                string: entry.role,
                 for: version,
                 includingEncoding: false,
                 includingTermination: true
-                )
-                ]
-                ].joined()
-        )
+            )
+            let adaptedPerson = stringToBytesAdapter.adapt(
+                string: entry.person,
+                for: version,
+                includingEncoding: false,
+                includingTermination: true
+            )
+            rolePersonPair.append(contentsOf: adaptedRole)
+            rolePersonPair.append(contentsOf: adaptedPerson)
+            frameContents.append(contentsOf: rolePersonPair)
+        }
         
         return [UInt8](
             [

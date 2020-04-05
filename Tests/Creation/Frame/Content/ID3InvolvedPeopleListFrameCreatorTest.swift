@@ -39,9 +39,7 @@ class ID3InvolvedPeopleListFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.InvolvedPeople: ID3FrameCreditsList(
-                role: "Musician",
-                person: "Musician Name")]
+            frames: [.InvolvedPeople: ID3FrameCreditsList(entries: [("Musician", "Musician Name")])]
         )
         let configuration = ID3FrameConfiguration()
         let id3InvolvedPeopleListFrameCreator = ID3InvolvedPeopleListFrameCreator(
@@ -74,9 +72,7 @@ class ID3InvolvedPeopleListFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version4,
-            frames: [.InvolvedPeople: ID3FrameCreditsList(
-                role: "Musician",
-                person: "Musician Name")]
+            frames: [.InvolvedPeople: ID3FrameCreditsList(entries: [("Musician", "Musician Name")])]
         )
         let configuration = ID3FrameConfiguration()
         let id3InvolvedPeopleListFrameCreator = ID3InvolvedPeopleListFrameCreator(

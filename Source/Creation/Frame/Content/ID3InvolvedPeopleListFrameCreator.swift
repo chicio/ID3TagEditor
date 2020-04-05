@@ -24,7 +24,7 @@ class ID3InvolvedPeopleListFrameCreator: ID3FrameCreatorsChain {
                         frameType: .InvolvedPeople,
                         version: id3Tag.properties.version),
                     version: id3Tag.properties.version,
-                    entries: creditFrame.entries
+                    entries: creditFrame.entries)
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)

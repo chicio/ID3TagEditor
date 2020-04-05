@@ -12,7 +12,7 @@ import Foundation
  */
 public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// An array of the role:person tuples
-    public var entries: [(String, String)]
+    public var entries: [(role: String, person: String)]
     /// CreditsList description, useful for debug.
     public var debugDescription: String {
         return "entries"
@@ -24,19 +24,19 @@ public class ID3FrameCreditsList: ID3Frame, Equatable, CustomDebugStringConverti
      - parameter role: the role of the involved person.
      - parameter person: the name (or comma-delimited names) of the person fulfilling a given role.
      */
-    public init(entries: [(role:String, person:String)]) {
+    public init(entries: [(role: String, person: String)]) {
         self.entries = entries
     }
     
     /**
-     Compare two roles.
+     Compare two entries.
      
      - parameter lhs: left side of compare operation.
      - parameter rhs: right side of compare operation.
      
-     - returns: true if the role values are the same, else false.
+     - returns: true if the entries are the same, else false.
      */
-    public static func ==(lhs: ID3FrameCreditsList, rhs: ID3FrameCreditsList) -> Bool {
-        return lhs.role == rhs.role
+    public static func == (lhs: ID3FrameCreditsList, rhs: ID3FrameCreditsList) -> Bool {
+        return lhs.entries.elementsEqual(rhs.entries, by: { $0 == $1 })
     }
 }

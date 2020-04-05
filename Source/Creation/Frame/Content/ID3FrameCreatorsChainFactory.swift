@@ -303,7 +303,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let musicianCredisListFrameCreator = ID3InvolvedPeopleListFrameCreator(
+        let musicianCreditsListFrameCreator = ID3InvolvedPeopleListFrameCreator(
             frameCreator: frameFromCreditsListISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -398,7 +398,7 @@ class ID3FrameCreatorsChainFactory {
         radioStationUrlFrameCreator.nextCreator = userDefinedUrlFrameCreator
         userDefinedUrlFrameCreator.nextCreator = iTunesCompilationFlagFrameCreator
         iTunesCompilationFlagFrameCreator.nextCreator = involvedPeopleListFrameCreator
-        involvedPeopleListFrameCreator.nextCreator = musicianCredisListFrameCreator
+        involvedPeopleListFrameCreator.nextCreator = musicianCreditsListFrameCreator
         return albumFrameCreator
     }
 }

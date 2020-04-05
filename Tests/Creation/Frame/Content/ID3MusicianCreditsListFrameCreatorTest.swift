@@ -39,9 +39,7 @@ class ID3MusicianCreditsListFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version4,
-            frames: [.MusicianCredits: ID3FrameCreditsList(
-                role: "Musician",
-                person: "Musician Name")]
+            frames: [.MusicianCredits: ID3FrameCreditsList(entries: [("Musician", "Musician Name")])]
         )
         let configuration = ID3FrameConfiguration()
         let id3MusicianCreditsListFrameCreator = ID3MusicianCreditsListFrameCreator(
