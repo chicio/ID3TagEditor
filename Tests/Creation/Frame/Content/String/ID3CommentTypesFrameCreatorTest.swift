@@ -10,7 +10,7 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3CommentTypesFrameCreatorTest: XCTestCase {
-    func testCreatorFrameFromStringContent() {
+    func testCreatorFrameCommentTypes() {
         let id3CommentTypesFrameCreator = ID3CommentTypesFrameCreator(
           frameContentSizeCalculator: ID3FrameContentSizeCalculator(
             uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapterUsingUnsafePointer(),

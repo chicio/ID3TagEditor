@@ -25,7 +25,9 @@ class ID3CommentFrameCreator: ID3FrameCreatorsChain {
                         frameType: .Comment,
                         version: id3Tag.properties.version
                     ),
-                    version: id3Tag.properties.version, language: commentFrame.language, description: commentFrame.description,
+                    version: id3Tag.properties.version,
+                    language: commentFrame.language,
+                    description: commentFrame.description,
                     content: commentFrame.content
             )
             return super.createFrames(id3Tag: id3Tag, tag: newTag)

@@ -9,8 +9,8 @@ import Foundation
 
 class ID3FrameCreatorsChainFactory {
     static func make() -> ID3FrameCreatorsChain {
-
-// MARK: General Frame Creators
+        
+        // MARK: General Frame Creators
         let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
         let frameConfiguration = ID3FrameConfiguration()
         let uInt32ToByteArrayAdapter = UInt32ToByteArrayAdapterUsingUnsafePointer()
@@ -51,8 +51,15 @@ class ID3FrameCreatorsChainFactory {
                 paddingAdder: paddingAdder,
                 frameConfiguration: frameConfiguration)
         )
-
-// MARK: Specific Frame Creators (Text)
+        let frameFromCreditsListISO88591ContentCreator = ID3CreditsListFrameCreator(
+            frameContentSizeCalculator: frameContentSizeCalculator,
+            frameFlagsCreator: frameFlagsCreator,
+            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(
+                paddingAdder: paddingAdder,
+                frameConfiguration: frameConfiguration)
+        )
+        
+        // MARK: Specific Frame Creators (Text)
         let albumFrameCreator = ID3AlbumFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -205,11 +212,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: frameFromUserTextISO88591ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
-// MARK: URL Frame Creators
+        // MARK: URL Frame Creators
         let artistUrlFrameCreator = ID3ArtistUrlFrameCreator(
             frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -242,8 +245,8 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromUserTextISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-
-// MARK: Other Non-UTF16 Frame Creators
+        
+        // MARK: Other Non-UTF16 Frame Creators
         let attachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
             attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
@@ -276,6 +279,10 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let involvedPeopleListFrameCreator = ID3InvolvedPeopleListFrameCreator(
+            frameCreator: frameFromCreditsListISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let iTunesCompilationFlagFrameCreator = ID3ItunesCompilationFlagFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -296,6 +303,10 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let musicianCreditsListFrameCreator = ID3MusicianCreditsListFrameCreator(
+            frameCreator: frameFromCreditsListISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let playlistDelayFrameCreator = ID3PlaylistDelayFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -313,12 +324,16 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromMultiStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
+        let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
+            frameCreator: frameFromUserTextISO88591ContentCreator,
+            id3FrameConfiguration: frameConfiguration
+        )
         let yearFrameCreator = ID3RecordingYearFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-
-// MARK: Chain
+        
+        // MARK: Chain
         albumFrameCreator.nextCreator = albumArtistCreator
         albumArtistCreator.nextCreator = artistFrameCreator
         artistFrameCreator.nextCreator = titleFrameCreator
@@ -382,6 +397,8 @@ class ID3FrameCreatorsChainFactory {
         publisherUrlFrameCreator.nextCreator = radioStationUrlFrameCreator
         radioStationUrlFrameCreator.nextCreator = userDefinedUrlFrameCreator
         userDefinedUrlFrameCreator.nextCreator = iTunesCompilationFlagFrameCreator
+        iTunesCompilationFlagFrameCreator.nextCreator = involvedPeopleListFrameCreator
+        involvedPeopleListFrameCreator.nextCreator = musicianCreditsListFrameCreator
         return albumFrameCreator
     }
 }

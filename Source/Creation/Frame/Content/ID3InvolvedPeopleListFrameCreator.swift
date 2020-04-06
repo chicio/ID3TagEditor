@@ -1,5 +1,5 @@
 //
-//  ID3UserDefinedTextInformationFrameCreator.swift
+//  ID3InvolvedPeopleListFrameCreator.swift
 //
 //  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
@@ -7,30 +7,31 @@
 
 import Foundation
 
-class ID3UserDefinedTextInformationFrameCreator: ID3FrameCreatorsChain {
-    private let frameCreator: ID3CommentTypesFrameCreator
+class ID3InvolvedPeopleListFrameCreator: ID3FrameCreatorsChain {
+    private let frameCreator: CreditsListFrameCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
     
-    init(frameCreator: ID3CommentTypesFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+    init(frameCreator: CreditsListFrameCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
     }
     
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let userTextFrame = id3Tag.frames[.UserDefinedTextInformation] as? ID3FrameUserDefinedText {
+        if let creditFrame = id3Tag.frames[.InvolvedPeople] as? ID3FrameCreditsList {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .UserDefinedTextInformation,
-                        version: id3Tag.properties.version
-                    ),
+                        frameType: .InvolvedPeople,
+                        version: id3Tag.properties.version),
                     version: id3Tag.properties.version,
-                    language: nil,
-                    description: userTextFrame.description,
-                    content: userTextFrame.content
-            )
+                    entries: creditFrame.entries)
             return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
+    }
+    
+    private func adapt(creditedRole: ID3FrameCreditsList) -> String {
+        let entryString = creditedRole.entries
+        return "\(entryString)"
     }
 }

@@ -167,37 +167,67 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `.TrackPosition`, track position frame
 * `.Genre`, the genre frame
 * `.AttachedPicture(_ pictureType: ID3PictureType)` the attached picture frame
+* `Arranger` (i.e. MixArtist)
+* `ArtistURL`
+* `AudioFileURL`
+* `AudioSourceURL`
+* `BPM`
+* `Comments`
 * `Composer`
 * `Conductor`
 * `ContentGroup`
 * `Copyright`
+* `CopyrightURL`
 * `DiscPosition`
 * `EncodedBy`
 * `EncoderSettings`
 * `FileType`
 * `FileOwner`
+* `InitialKey`
+* `InvolvedPeopleList`
+* `ISRC`
+* `iTunesCompilation`
 * `iTunesGrouping`
+* `iTunesMovementCount`
+* `iTunesMovementIndex` (aka movement number)
+* `iTunesMovementName`
+* `Language`
+* `Length`
 * `Lyricist`
 * `Media Type`
-* `Arranger`
-* `iTunesMovementName`
-* `iTunesMovementIndex` (aka movement number)
-* `iTunesMovementCount`
+* `Mood`
+* `OriginalAlbum`
+* `OriginalArtist`
+* `OriginalFilename`
+* `OriginalLyricist`
+* `PlaylistDelay`
 * `PodcastCategory`
 * `PodcastDescription`
 * `PodcastID`
 * `PodcastKeyword`
+* `PodcastURL`
 * `Publisher`
+* `PublisherURl`
+* `RadioStation`
+* `RadioStationOwner`
+* `RadioStationUrl`
+* `SetSubtitle`
+* `SortAlbum`
+* `SortArtist`
+* `SortAlbumArtist`
+* `SortComposer`
+* `SortTitle`
 * `Subtitle`
 * `UnsyncedLyrics`
 * `UserDefinedTextInformation`
+* `UserDefinedURL`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
 ***
 ### Contributor
-The latter ~25 frames were contributed by [Nolaine Crusher](https://github.com/NCrusher74) 
+The latter ~60 frames were contributed by [Nolaine Crusher](https://github.com/NCrusher74) and refined by [Jeremy David Giesbrecht](https://github.com/SDGGiesbrecht).
 
 ***
 
