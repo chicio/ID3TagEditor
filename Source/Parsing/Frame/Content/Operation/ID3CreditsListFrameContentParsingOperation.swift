@@ -18,8 +18,12 @@ struct ID3CreditsListFrameContentParsingOperation: FrameContentParsingOperation,
         let encoding = extractEncoding(from: &parsing)
         
         let parsed = extractCreditStrings(from: &parsing, encoding: encoding)
+        var entries: [(role: String, person: String)] = []
+        for pair in parsed {
+            entries.append((role: pair.0, person: pair.1))
+        }
         let constructed = ID3FrameCreditsList(
-            entries: parsed[(role: String, person: String)]
+            entries: entries
         )
         completed(frameName, constructed)
     }

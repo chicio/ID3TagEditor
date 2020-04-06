@@ -10,7 +10,7 @@ extension FrameParser {
         let name = frameData.extractFirst(version.identifierSize)
         assert(
             String(ascii: name) == frameName.identifier(version: version),
-            "Mismatched frame name: \(String(ascii: name)) ≠ \(frameName.identifier)"
+            "Mismatched frame name: \(String(ascii: name)) ≠ \(String(describing: frameName.identifier))"
         )
         _ = frameData.extractFirst(version.sizeSize)
         _ = frameData.extractFirst(version.flagSize)
@@ -43,7 +43,7 @@ extension FrameParser {
                 strings.append(next)
         }
         let rolePersonArray = strings.pairs()
-        return rolePersonArray
+        return rolePersonArray as! [(String, String)]
     }
     
 }
