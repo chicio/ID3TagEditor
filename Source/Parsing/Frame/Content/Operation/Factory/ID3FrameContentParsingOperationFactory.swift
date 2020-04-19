@@ -21,7 +21,6 @@ class ID3FrameContentParsingOperationFactory {
             .EncodedBy: ID3EncodedByFrameContentParsingOperationFactory.make(),
             .EncoderSettings: ID3EncoderSettingsFrameContentParsingOperationFactory.make(),
             .FileOwner: ID3FileOwnerFrameContentParsingOperationFactory.make(),
-            .FileType: ID3FileTypeFrameContentParsingOperationFactory.make(),
             .Lyricist: ID3LyricistFrameContentParsingOperationFactory.make(),
             .MixArtist: ID3MixArtistFrameContentParsingOperationFactory.make(),
             .PodcastCategory: ID3PodcastCategoryFrameContentParsingOperationFactory.make(),

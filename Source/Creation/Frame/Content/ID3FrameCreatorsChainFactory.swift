@@ -69,10 +69,6 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let fileTypeFrameCreator = ID3FileTypeFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
         let iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -179,8 +175,7 @@ class ID3FrameCreatorsChainFactory {
         copyrightFrameCreator.nextCreator = encodedByFrameCreator
         encodedByFrameCreator.nextCreator = encoderSettingsFrameCreator
         encoderSettingsFrameCreator.nextCreator = fileOwnerFrameCreator
-        fileOwnerFrameCreator.nextCreator = fileTypeFrameCreator
-        fileTypeFrameCreator.nextCreator = iTunesGroupingFrameCreator
+        fileOwnerFrameCreator.nextCreator = iTunesGroupingFrameCreator
         iTunesGroupingFrameCreator.nextCreator = lyricistFrameCreator
         lyricistFrameCreator.nextCreator = mixArtistFrameCreator
         mixArtistFrameCreator.nextCreator = iTunesMovementNameFrameCreator

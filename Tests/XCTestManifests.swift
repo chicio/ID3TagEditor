@@ -217,13 +217,6 @@ extension ID3FileOwnerFrameCreatorTest {
     ]
 }
 
-extension ID3FileTypeFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAFileType", testFrameCreationWhenThereIsAFileType),
-        ("testNoFrameCreationWhenThereIsNoFileType", testNoFrameCreationWhenThereIsNoFileType),
-    ]
-}
-
 extension ID3iTunesGroupingFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
@@ -375,7 +368,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3DiscPositionFrameCreatorTest.__allTests),
         testCase(ID3EncodedByFrameCreatorTest.__allTests),
         testCase(ID3EncoderSettingsFrameCreatorTest.__allTests),
-        testCase(ID3FileTypeFrameCreatorTest.__allTests),
         testCase(ID3FileOwnerFrameCreatorTest.__allTests),
         testCase(ID3iTunesGroupingFrameCreatorTest.__allTests),
         testCase(ID3LyricistFrameCreatorTest.__allTests),

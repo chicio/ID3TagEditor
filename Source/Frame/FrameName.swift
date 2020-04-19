@@ -33,8 +33,6 @@ public enum FrameName: Hashable {
     case EncoderSettings
     /// File Owner frame name. Version 2.3 and 2.4 only.
     case FileOwner
-    /// File type frame name.
-    case FileType
     /// Lyricist frame name
     case Lyricist
     /// Mix Artist frame name.

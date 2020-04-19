@@ -174,7 +174,6 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `DiscPosition`
 * `EncodedBy`
 * `EncoderSettings`
-* `FileType`
 * `FileOwner`
 * `iTunesGrouping`
 * `Lyricist`
