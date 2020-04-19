@@ -34,7 +34,6 @@ public class ID3Tag: CustomDebugStringConvertible {
         - fileType: \((self.frames[.FileType] as? ID3FrameWithStringContent)?.content ?? "-")
         - iTunesGrouping: \((self.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content ?? "-")
         - lyricist: \((self.frames[.Lyricist] as? ID3FrameWithStringContent)?.content ?? "-")
-        - mediaType: \((self.frames[.MediaType] as? ID3FrameWithStringContent)?.content ?? "-")
         - mixArtist: \((self.frames[.MixArtist] as? ID3FrameWithStringContent)?.content ?? "-")
         - iTunesMovementIndex: \((self.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - iTunesMovementCount: \((self.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")

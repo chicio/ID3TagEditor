@@ -33,8 +33,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "FileType V2")
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V2")
-        XCTAssertEqual(id3Tag?.frames[.MediaType]?.id3Identifier, "TMT")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "MediaType V2")
         XCTAssertEqual(id3Tag?.frames[.MixArtist]?.id3Identifier, "TP4")
         XCTAssertEqual((id3Tag?.frames[.MixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V2")
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPB")
@@ -69,8 +67,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "ItunesGrouping V3")
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TEXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V3")
-        XCTAssertEqual(id3Tag?.frames[.MediaType]?.id3Identifier, "TMED")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "MediaType V3")
         XCTAssertEqual(id3Tag?.frames[.MixArtist]?.id3Identifier, "TPE4")
         XCTAssertEqual((id3Tag?.frames[.MixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V3")
         XCTAssertEqual(id3Tag?.frames[.FileType]?.id3Identifier, "TFLT")
@@ -120,8 +116,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "ItunesGrouping V4")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.id3Identifier, "TEXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V4")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.id3Identifier, "TMED")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "MediaType V4")
         XCTAssertEqual((id3Tag?.frames[.MixArtist] as? ID3FrameWithStringContent)?.id3Identifier, "TPE4")
         XCTAssertEqual((id3Tag?.frames[.MixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V4")
         XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
@@ -159,7 +153,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .EncoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V2"),
                 .FileType : ID3FrameWithStringContent(content: "FileType V2"),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist V2"),
-                .MediaType : ID3FrameWithStringContent(content: "MediaType V2"),
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V2"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V2"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
@@ -194,7 +187,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .FileOwner : ID3FrameWithStringContent(content: "FileOwner V3"),
                 .ITunesGrouping : ID3FrameWithStringContent(content: "ItunesGrouping V3"),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist V3"),
-                .MediaType : ID3FrameWithStringContent(content: "MediaType V3"),
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V3"),
                 .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V3"),
                 .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
@@ -236,7 +228,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .FileOwner : ID3FrameWithStringContent(content: "FileOwner V4"),
                 .ITunesGrouping : ID3FrameWithStringContent(content: "ItunesGrouping V4"),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist V4"),
-                .MediaType : ID3FrameWithStringContent(content: "MediaType V4"),
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V4"),
                 .ITunesMovementName : ID3FrameWithStringContent(content: "MovementName V4"),
                 .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6),

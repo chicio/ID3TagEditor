@@ -22,13 +22,8 @@ class ID3FrameContentParsingOperationFactory {
             .EncoderSettings: ID3EncoderSettingsFrameContentParsingOperationFactory.make(),
             .FileOwner: ID3FileOwnerFrameContentParsingOperationFactory.make(),
             .FileType: ID3FileTypeFrameContentParsingOperationFactory.make(),
-            .ITunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
             .Lyricist: ID3LyricistFrameContentParsingOperationFactory.make(),
-            .MediaType: ID3MediaTypeFrameContentParsingOperationFactory.make(),
             .MixArtist: ID3MixArtistFrameContentParsingOperationFactory.make(),
-            .ITunesMovementIndex: ID3ITunesMovementIndexFrameContentParsingOperationFactory.make(),
-            .ITunesMovementCount: ID3ITunesMovementCountFrameContentParsingOperationFactory.make(),
-            .ITunesMovementName: ID3ItunesMovementNameFrameContentParsingOperationFactory.make(),
             .PodcastCategory: ID3PodcastCategoryFrameContentParsingOperationFactory.make(),
             .PodcastDescription: ID3PodcastDescriptionFrameContentParsingOperationFactory.make(),
             .PodcastID: ID3PodcastIDFrameContentParsingOperationFactory.make(),
@@ -42,7 +37,11 @@ class ID3FrameContentParsingOperationFactory {
             .RecordingHourMinute: ID3RecordingHourMinuteFrameContentParsingOperationFactory.make(),
             .RecordingDateTime: ID3RecordingTimeFrameContentParsingOperationFactory.make(),
             .Genre: ID3GenreFrameContentParsingOperationFactory.make(),
-            .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make()
+            .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make(),
+            .ITunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
+            .ITunesMovementIndex: ID3ITunesMovementIndexFrameContentParsingOperationFactory.make(),
+            .ITunesMovementCount: ID3ITunesMovementCountFrameContentParsingOperationFactory.make(),
+            .ITunesMovementName: ID3ItunesMovementNameFrameContentParsingOperationFactory.make()
         ]
     }
 }

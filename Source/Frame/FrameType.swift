@@ -20,7 +20,6 @@ enum FrameType: String, Equatable {
     case FileType = "fileType"
     case ITunesGrouping = "iTunesGrouping"
     case Lyricist = "lyricist"
-    case MediaType = "mediaType"
     case MixArtist = "mixArtist"
     case ITunesMovementName = "iTunesMovementName"
     case ITunesMovementIndex = "iTunesMovementIndex"

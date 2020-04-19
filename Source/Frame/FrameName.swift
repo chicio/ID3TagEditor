@@ -35,20 +35,10 @@ public enum FrameName: Hashable {
     case FileOwner
     /// File type frame name.
     case FileType
-    /// Grouping frame name. Version 2.3 and 2.4 only.
-    case ITunesGrouping
     /// Lyricist frame name
     case Lyricist
-    /// Media type frame name.
-    case MediaType
     /// Mix Artist frame name.
     case MixArtist
-    ///Movement name frame name.
-    case ITunesMovementName
-    /// Movement Index frame name. Version 2.3 and 2.4 only.
-    case ITunesMovementIndex
-    /// Movement Count frame name. Version 2.3 and 2.4 only
-    case ITunesMovementCount
     /// Podcast category frame name. Version 2.3 and 2.4 only.
     case PodcastCategory
     /// Podcast Description frame name. Version 2.3 and 2.4 only.
@@ -78,4 +68,12 @@ public enum FrameName: Hashable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
+    /// Grouping frame name. Version 2.3 and 2.4 only.
+    case ITunesGrouping
+    ///Movement name frame name.
+    case ITunesMovementName
+    /// Movement Index frame name. Version 2.3 and 2.4 only.
+    case ITunesMovementIndex
+    /// Movement Count frame name. Version 2.3 and 2.4 only
+    case ITunesMovementCount
 }
