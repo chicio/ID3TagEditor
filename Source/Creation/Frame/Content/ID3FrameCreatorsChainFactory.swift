@@ -117,10 +117,6 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let unsyncedLyricsFrameCreator = ID3UnsyncedLyricsFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
         let titleFrameCreator = ID3TitleFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -201,8 +197,7 @@ class ID3FrameCreatorsChainFactory {
         podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator
         podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
         publisherFrameCreator.nextCreator = subtitleFrameCreator
-        subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
-        unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
+        subtitleFrameCreator.nextCreator = discPositionFrameCreator
         return albumFrameCreator
     }
 }

@@ -301,13 +301,6 @@ extension ID3SubtitleFrameCreatorTest {
     ]
 }
 
-extension ID3UnsyncedLyricsFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereAreUnsyncedLyrics", testFrameCreationWhenThereAreUnsyncedLyrics),
-        ("testNoFrameCreationWhenThereAreNoUnsyncedLyrics", testNoFrameCreationWhenThereAreNoUnsyncedLyrics),
-    ]
-}
-
 extension ID3TrackPositionCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsATrackPosition", testFrameCreationWhenThereIsATrackPosition),
@@ -403,7 +396,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3PodcastKeywordsFrameCreatorTest.__allTests),
         testCase(ID3PublisherFrameCreatorTest.__allTests),
         testCase(ID3SubtitleFrameCreatorTest.__allTests),
-        testCase(ID3UnsyncedLyricsFrameCreatorTest.__allTests),
         testCase(ID3DiscPositionFrameCreatorTest.__allTests),
         testCase(ID3AttachedPictureFrameContentParsingOperationTest.__allTests),
         testCase(ID3AttachedPicturesFramesCreatorTest.__allTests),

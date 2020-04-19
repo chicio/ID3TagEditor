@@ -45,7 +45,6 @@ public class ID3Tag: CustomDebugStringConvertible {
         - podcastKeywords: \((self.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content ?? "-")
         - publisher: \((self.frames[.Publisher] as? ID3FrameWithStringContent)?.content ?? "-")
         - subtitle: \((self.frames[.Subtitle] as? ID3FrameWithStringContent)?.content ?? "-")
-        - unsyncedLyrics: \((self.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content ?? "-")
         - albumArtist: \((self.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content ?? "-")
         - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
         - trackPosition: \((self.frames[.TrackPosition] as? ID3FramePartOfTotal)?.debugDescription ?? "-")

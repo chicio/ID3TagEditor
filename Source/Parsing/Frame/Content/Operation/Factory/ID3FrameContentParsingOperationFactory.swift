@@ -35,7 +35,6 @@ class ID3FrameContentParsingOperationFactory {
             .PodcastKeywords: ID3PodcastKeywordsFrameContentParsingOperationFactory.make(),
             .Publisher: ID3PublisherFrameContentParsingOperationFactory.make(),
             .Subtitle: ID3SubtitleFrameContentParsingOperationFactory.make(),
-            .UnsyncedLyrics: ID3UnsyncedLyricsFrameContentParsingOperationFactory.make(),
             .Title: ID3TitleFrameContentParsingOperationFactory.make(),
             .AttachedPicture: ID3AttachedPictureFrameContentParsingOperationFactory.make(),
             .RecordingDayMonth: ID3RecordingDayMonthFrameContentParsingOperationFactory.make(),
