@@ -335,12 +335,6 @@ extension ID3ItunesMovementCountCreatorTest {
         ("testNoFrameCreationWhenThereIsNoMovementCount", testNoFrameCreationWhenThereIsNoMovementCount),
     ]
 }
-extension ID3UserDefinedTextInformationCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsUserDefinedText", testFrameCreationWhenThereIsUserDefinedText),
-        ("testNoFrameCreationWhenThereIsNoUserDefinedText", testNoFrameCreationWhenThereIsNoUserDefinedText),
-    ]
-}
 
 extension ID3TrackPositionStringAdapterTest {
     static let __allTests = [
@@ -411,7 +405,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3SubtitleFrameCreatorTest.__allTests),
         testCase(ID3UnsyncedLyricsFrameCreatorTest.__allTests),
         testCase(ID3DiscPositionFrameCreatorTest.__allTests),
-        testCase(ID3UserDefinedTextInformationFrameCreatorTest.__allTests),
         testCase(ID3AttachedPictureFrameContentParsingOperationTest.__allTests),
         testCase(ID3AttachedPicturesFramesCreatorTest.__allTests),
         testCase(ID3FrameConfigurationTest.__allTests),
@@ -437,7 +430,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3DiscPositionStringAdapterTest.__allTests),
         testCase(ID3ItunesMovementIndexCreatorTest.__allTests),
         testCase(ID3ItunesMovementCountCreatorTest.__allTests),
-        testCase(ID3UserDefinedTextInformationCreatorTest.__allTests),
         testCase(ID3UTF16StringToByteAdapterTest.__allTests),
         testCase(PaddingAdderUsingNullCharTest.__allTests),
         testCase(PaddingRemoverUsingTrimmingTest.__allTests),

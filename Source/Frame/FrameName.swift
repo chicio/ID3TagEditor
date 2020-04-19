@@ -69,8 +69,6 @@ public enum FrameName: Hashable {
     case DiscPosition
     /// Track Position frame name.
     case TrackPosition
-    /// User Defined Text Information
-    case UserDefinedTextInformation
     /// RecordingDayMonth frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
     case RecordingDayMonth
     /// RecordingYear frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.

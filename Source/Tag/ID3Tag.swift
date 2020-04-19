@@ -50,7 +50,6 @@ public class ID3Tag: CustomDebugStringConvertible {
         - title: \((self.frames[.Title] as? ID3FrameWithStringContent)?.content ?? "-")
         - trackPosition: \((self.frames[.TrackPosition] as? ID3FramePartOfTotal)?.debugDescription ?? "-")
         - discPosition: \((self.frames[.DiscPosition] as? ID3FramePartOfTotal)?.debugDescription ?? "-")
-        - userDefinedTextInformation: \((self.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content ?? "-")
         - album: \((self.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "-")
         - recordingDateTime: \(
             (self.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.debugDescription ?? "-"
