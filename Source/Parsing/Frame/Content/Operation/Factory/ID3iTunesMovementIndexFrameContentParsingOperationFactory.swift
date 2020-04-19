@@ -10,7 +10,7 @@ import Foundation
 class ID3iTunesMovementIndexFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.ITunesMovementIndex, ID3FrameWithIntegerContent(value: Int(content)))
+            return (.iTunesMovementIndex, ID3FrameWithIntegerContent(value: Int(content)))
         }
     }
 }

@@ -23,10 +23,10 @@ class ID3FrameContentParsingOperationFactory {
             .FileOwner: ID3FileOwnerFrameContentParsingOperationFactory.make(),
             .Lyricist: ID3LyricistFrameContentParsingOperationFactory.make(),
             .MixArtist: ID3MixArtistFrameContentParsingOperationFactory.make(),
-            .PodcastCategory: ID3PodcastCategoryFrameContentParsingOperationFactory.make(),
-            .PodcastDescription: ID3PodcastDescriptionFrameContentParsingOperationFactory.make(),
-            .PodcastID: ID3PodcastIDFrameContentParsingOperationFactory.make(),
-            .PodcastKeywords: ID3PodcastKeywordsFrameContentParsingOperationFactory.make(),
+            .iTunesPodcastCategory: ID3iTunesPodcastCategoryFrameContentParsingOperationFactory.make(),
+            .iTunesPodcastDescription: ID3iTunesPodcastDescriptionFrameContentParsingOperationFactory.make(),
+            .iTunesPodcastID: ID3iTunesPodcastIDFrameContentParsingOperationFactory.make(),
+            .iTunesPodcastKeywords: ID3iTunesPodcastKeywordsFrameContentParsingOperationFactory.make(),
             .Publisher: ID3PublisherFrameContentParsingOperationFactory.make(),
             .Subtitle: ID3SubtitleFrameContentParsingOperationFactory.make(),
             .Title: ID3TitleFrameContentParsingOperationFactory.make(),
@@ -37,10 +37,10 @@ class ID3FrameContentParsingOperationFactory {
             .RecordingDateTime: ID3RecordingTimeFrameContentParsingOperationFactory.make(),
             .Genre: ID3GenreFrameContentParsingOperationFactory.make(),
             .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make(),
-            .ITunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
-            .ITunesMovementIndex: ID3iTunesMovementIndexFrameContentParsingOperationFactory.make(),
-            .ITunesMovementCount: ID3iTunesMovementCountFrameContentParsingOperationFactory.make(),
-            .ITunesMovementName: ID3iTunesMovementNameFrameContentParsingOperationFactory.make()
+            .iTunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
+            .iTunesMovementIndex: ID3iTunesMovementIndexFrameContentParsingOperationFactory.make(),
+            .iTunesMovementCount: ID3iTunesMovementCountFrameContentParsingOperationFactory.make(),
+            .iTunesMovementName: ID3iTunesMovementNameFrameContentParsingOperationFactory.make()
         ]
     }
 }

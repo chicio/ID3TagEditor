@@ -10,7 +10,7 @@ import Foundation
 class ID3iTunesGroupingFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.ITunesGrouping, ID3FrameWithStringContent(content: content))
+            return (.iTunesGrouping, ID3FrameWithStringContent(content: content))
         }
     }
 }

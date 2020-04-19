@@ -14,7 +14,7 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
         let id3MovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .ITunesMovementIndex
+                        frameTypeToBeChecked: .iTunesMovementIndex
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -29,12 +29,12 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.ITunesMovementIndex : ID3FrameWithIntegerContent(value: 6)]
+            frames: [.iTunesMovementIndex : ID3FrameWithIntegerContent(value: 6)]
         )
         let id3MovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameTypeToBeChecked: .ITunesMovementIndex
+                        frameTypeToBeChecked: .iTunesMovementIndex
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

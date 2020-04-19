@@ -37,14 +37,6 @@ public enum FrameName: Hashable {
     case Lyricist
     /// Mix Artist frame name.
     case MixArtist
-    /// Podcast category frame name. Version 2.3 and 2.4 only.
-    case PodcastCategory
-    /// Podcast Description frame name. Version 2.3 and 2.4 only.
-    case PodcastDescription
-    /// Podcast ID frame name, Version 2.3 and 2.4 only.
-    case PodcastID
-    /// Podcast keywords frame name, Version 2.3 and 2.4 only.
-    case PodcastKeywords
     /// Publisher frame name.
     case Publisher
     /// Subtitle frame name
@@ -67,11 +59,20 @@ public enum FrameName: Hashable {
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
     /// Grouping frame name. Version 2.3 and 2.4 only.
-    case ITunesGrouping
+    case iTunesGrouping
     ///Movement name frame name.
-    case ITunesMovementName
+    case iTunesMovementName
     /// Movement Index frame name. Version 2.3 and 2.4 only.
-    case ITunesMovementIndex
+    case iTunesMovementIndex
     /// Movement Count frame name. Version 2.3 and 2.4 only
-    case ITunesMovementCount
+    case iTunesMovementCount
+    /// Podcast category frame name. Version 2.3 and 2.4 only.
+    case iTunesPodcastCategory
+    /// Podcast Description frame name. Version 2.3 and 2.4 only.
+    case iTunesPodcastDescription
+    /// Podcast ID frame name, Version 2.3 and 2.4 only.
+    case iTunesPodcastID
+    /// Podcast keywords frame name, Version 2.3 and 2.4 only.
+    case iTunesPodcastKeywords
+
 }

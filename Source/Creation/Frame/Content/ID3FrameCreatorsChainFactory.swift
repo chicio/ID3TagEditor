@@ -85,19 +85,19 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastCategoryFrameCreator = ID3PodcastCategoryFrameCreator(
+        let podcastCategoryFrameCreator = ID3iTunesPodcastCategoryFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastDescriptionFrameCreator = ID3PodcastDescriptionFrameCreator(
+        let podcastDescriptionFrameCreator = ID3iTunesPodcastDescriptionFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastIDFrameCreator = ID3PodcastIDFrameCreator(
+        let podcastIDFrameCreator = ID3iTunesPodcastIDFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastKeywordsFrameCreator = ID3PodcastKeywordsFrameCreator(
+        let podcastKeywordsFrameCreator = ID3iTunesPodcastKeywordsFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )

@@ -1,5 +1,5 @@
 //
-//  ID3PodcastIDFrameCreatorTest.swift
+//  ID3iTunesPodcastIDFrameCreatorTest.swift
 //
 //  Created by Nolaine Crusher on 02/24/2020.
 //  2018 Fabrizio Duroni.
@@ -8,13 +8,13 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3PodcastIDFrameCreatorTest: XCTestCase {
+class ID3iTunesPodcastIDFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoPodcastID() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3PodcastIDFrameCreator = ID3PodcastIDFrameCreator(
+        let id3PodcastIDFrameCreator = ID3iTunesPodcastIDFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .PodcastID
+                frameTypeToBeChecked: .iTunesPodcastID
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -29,12 +29,12 @@ class ID3PodcastIDFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.PodcastID : ID3FrameWithStringContent(content: "::an example podcast ID::")]
+            frames: [.iTunesPodcastID : ID3FrameWithStringContent(content: "::an example podcast ID::")]
         )
-        let id3PodcastIDFrameCreator = ID3PodcastIDFrameCreator(
+        let id3PodcastIDFrameCreator = ID3iTunesPodcastIDFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .PodcastID
+                frameTypeToBeChecked: .iTunesPodcastID
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

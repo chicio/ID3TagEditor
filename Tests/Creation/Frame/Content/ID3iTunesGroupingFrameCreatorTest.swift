@@ -14,7 +14,7 @@ class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
         let id3iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .ITunesGrouping
+                frameTypeToBeChecked: .iTunesGrouping
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -29,12 +29,12 @@ class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.ITunesGrouping : ID3FrameWithStringContent(content: "::an example grouping::")]
+            frames: [.iTunesGrouping : ID3FrameWithStringContent(content: "::an example grouping::")]
         )
         let id3iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .ITunesGrouping
+                frameTypeToBeChecked: .iTunesGrouping
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

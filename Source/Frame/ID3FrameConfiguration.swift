@@ -37,16 +37,9 @@ class ID3FrameConfiguration {
         .EncodedBy : [UInt8]("TENC".utf8),
         .EncoderSettings : [UInt8]("TSSE".utf8),
         .FileOwner : [UInt8]("TOWN".utf8),
-        .ITunesGrouping : [UInt8]("GRP1".utf8),
+        .iTunesGrouping : [UInt8]("GRP1".utf8),
         .Lyricist : [UInt8]("TEXT".utf8),
         .MixArtist : [UInt8]("TPE4".utf8),
-        .ITunesMovementName : [UInt8]("MVNM".utf8),
-        .ITunesMovementIndex : [UInt8]("MVIN".utf8),
-        .ITunesMovementCount : [UInt8]("MVCN".utf8),
-        .PodcastCategory : [UInt8]("TCAT".utf8),
-        .PodcastDescription : [UInt8]("TDES".utf8),
-        .PodcastID : [UInt8]("TGID".utf8),
-        .PodcastKeywords : [UInt8]("TKWD".utf8),
         .Publisher : [UInt8]("TPUB".utf8),
         .Subtitle : [UInt8]("TIT3".utf8),
         .AlbumArtist : [UInt8]("TPE2".utf8),
@@ -55,7 +48,14 @@ class ID3FrameConfiguration {
         .AttachedPicture : [UInt8]("APIC".utf8),
         .Genre : [UInt8]("TCON".utf8),
         .TrackPosition : [UInt8]("TRCK".utf8),
-        .DiscPosition : [UInt8]("TPOS".utf8)
+        .DiscPosition : [UInt8]("TPOS".utf8),
+        .iTunesMovementName : [UInt8]("MVNM".utf8),
+        .iTunesMovementIndex : [UInt8]("MVIN".utf8),
+        .iTunesMovementCount : [UInt8]("MVCN".utf8),
+        .iTunesPodcastCategory : [UInt8]("TCAT".utf8),
+        .iTunesPodcastDescription : [UInt8]("TDES".utf8),
+        .iTunesPodcastID : [UInt8]("TGID".utf8),
+        .iTunesPodcastKeywords : [UInt8]("TKWD".utf8)
     ]
     private var identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
@@ -99,16 +99,9 @@ class ID3FrameConfiguration {
         "TENC" : .EncodedBy,
         "TSSE" : .EncoderSettings,
         "TOWN" : .FileOwner,
-        "GRP1" : .ITunesGrouping,
+        "GRP1" : .iTunesGrouping,
         "TEXT" : .Lyricist,
         "TPE4" : .MixArtist,
-        "MVNM" : .ITunesMovementName,
-        "MVIN" : .ITunesMovementIndex,
-        "MVCN" : .ITunesMovementCount,
-        "TCAT" : .PodcastCategory,
-        "TDES" : .PodcastDescription,
-        "TGID" : .PodcastID,
-        "TKWD" : .PodcastKeywords,
         "TPUB" : .Publisher,
         "TIT3" : .Subtitle,
         "TPE2" : .AlbumArtist,
@@ -117,7 +110,14 @@ class ID3FrameConfiguration {
         "APIC" : .AttachedPicture,
         "TCON" : .Genre,
         "TRCK" : .TrackPosition,
-        "TPOS" : .DiscPosition
+        "TPOS" : .DiscPosition,
+        "MVNM" : .iTunesMovementName,
+        "MVIN" : .iTunesMovementIndex,
+        "MVCN" : .iTunesMovementCount,
+        "TCAT" : .iTunesPodcastCategory,
+        "TDES" : .iTunesPodcastDescription,
+        "TGID" : .iTunesPodcastID,
+        "TKWD" : .iTunesPodcastKeywords
     ]
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
