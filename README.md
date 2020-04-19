@@ -10,7 +10,7 @@
 ![ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file](https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Assets/icon-logo-background.png 
 "ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file")
 
-A swift library to read and modify ID3 Tag of any mp3 file. 
+A swift library to read and modify ID3 Tag of any mp3 file. Listed in the [implementation section of the official id3.org website](http://id3.org/Implementations "id3.org swift")
 
 ***
 
