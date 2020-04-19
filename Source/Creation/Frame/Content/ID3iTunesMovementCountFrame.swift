@@ -1,5 +1,5 @@
 //
-//  ID3ItunesMovementCountFrame.swift
+//  ID3iTunesMovementCountFrame.swift
 //  ID3TagEditor
 //
 //  Created by Nolaine Crusher on 3/2/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ID3ItunesMovementCountFrameCreator: ID3StringFrameCreator {
+class ID3iTunesMovementCountFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if let countFrame = id3Tag.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent,
             let count = countFrame.value {

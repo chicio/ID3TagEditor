@@ -38,9 +38,9 @@ class ID3FrameContentParsingOperationFactory {
             .Genre: ID3GenreFrameContentParsingOperationFactory.make(),
             .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make(),
             .ITunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
-            .ITunesMovementIndex: ID3ITunesMovementIndexFrameContentParsingOperationFactory.make(),
-            .ITunesMovementCount: ID3ITunesMovementCountFrameContentParsingOperationFactory.make(),
-            .ITunesMovementName: ID3ItunesMovementNameFrameContentParsingOperationFactory.make()
+            .ITunesMovementIndex: ID3iTunesMovementIndexFrameContentParsingOperationFactory.make(),
+            .ITunesMovementCount: ID3iTunesMovementCountFrameContentParsingOperationFactory.make(),
+            .ITunesMovementName: ID3iTunesMovementNameFrameContentParsingOperationFactory.make()
         ]
     }
 }

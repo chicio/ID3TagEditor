@@ -1,5 +1,5 @@
 //
-//  ID3ItunesMovementCountFrameCreatorTest.swift
+//  ID3iTunesMovementCountFrameCreatorTest.swift
 //  ID3TagEditor
 //
 //  Created by Nolaine Crusher on 3/2/20.
@@ -9,10 +9,10 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3ItunesMovementCountFrameCreatorTest: XCTestCase {
+class ID3iTunesMovementCountFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoMovementCount() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3MovementCountFrameCreator = ID3ItunesMovementCountFrameCreator(
+        let id3MovementCountFrameCreator = ID3iTunesMovementCountFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
                         frameTypeToBeChecked: .ITunesMovementCount
@@ -32,7 +32,7 @@ class ID3ItunesMovementCountFrameCreatorTest: XCTestCase {
             version: .version3,
             frames: [.ITunesMovementCount : ID3FrameWithIntegerContent(value: 13)]
         )
-        let id3MovementCountFrameCreator = ID3ItunesMovementCountFrameCreator(
+        let id3MovementCountFrameCreator = ID3iTunesMovementCountFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
                         frameTypeToBeChecked: .ITunesMovementCount

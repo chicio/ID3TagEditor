@@ -145,11 +145,11 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let iTunesMovementIndexFrameCreator = ID3ItunesMovementIndexFrameCreator(
+        let iTunesMovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let iTunesMovementCountFrameCreator = ID3ItunesMovementCountFrameCreator(
+        let iTunesMovementCountFrameCreator = ID3iTunesMovementCountFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
