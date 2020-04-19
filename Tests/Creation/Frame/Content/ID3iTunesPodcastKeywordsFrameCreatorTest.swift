@@ -8,7 +8,7 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3PodcastKeywordsFrameCreatorTest: XCTestCase {
+class ID3iTunesPodcastKeywordsFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereAreNoPodcastKeywords() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3PodcastKeywordsFrameCreator = ID3iTunesPodcastKeywordsFrameCreator(
