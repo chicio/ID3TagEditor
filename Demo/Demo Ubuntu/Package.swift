@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Demo Ubuntu",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.2.0")
     ],
     targets: [
         .target(
