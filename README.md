@@ -154,7 +154,7 @@ Three versions of the tag are supported. They are described in the `ID3Version` 
 * version 2.3, described by the enum value `.version3`  
 * version 2.4, described by the enum value `.version4`
 
-The ID3 supported frames supported are (see the enum `FrameName`):
+The ID3 supported offcial frames supported are (see the enum `FrameName`):
 
 * `.Artist`, artists frame 
 * `.AlbumArtist`, album artist frame 
@@ -174,30 +174,33 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `DiscPosition`
 * `EncodedBy`
 * `EncoderSettings`
-* `FileType`
 * `FileOwner`
-* `iTunesGrouping`
 * `Lyricist`
-* `Media Type`
 * `MixArtist`
+* `Publisher`
+* `Subtitle`
+
+In addition, ID3TagEditor supports the following iTunes only unofficial frames:
+
+* `iTunesGrouping`
 * `iTunesMovementName`
 * `iTunesMovementIndex` (aka movement number)
 * `iTunesMovementCount`
-* `PodcastCategory`
-* `PodcastDescription`
-* `PodcastID`
-* `PodcastKeyword`
-* `Publisher`
-* `Subtitle`
-* `UnsyncedLyrics`
-* `UserDefinedTextInformation`
+* `iTunesPodcastCategory`
+* `iTunesPodcastDescription`
+* `iTunesPodcastID`
+* `iTunesPodcastKeyword`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
+
 ***
-### Contributor
-The latter ~25 frames were contributed by [Nolaine Crusher](https://github.com/NCrusher74) 
+### Contributors
+
+* [Nolaine Crusher](https://github.com/NCrusher74) (added 12 official frames + all unofficial non standard frames)
+* [woko666](https://github.com/woko666) (added read from `Data` api)
+* [martinjbaker](https://github.com/martinjbaker) (minor fixies)
 
 ***
 
