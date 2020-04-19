@@ -121,10 +121,6 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let userDefinedTextInformationFrameCreator = ID3UserDefinedTextInformationFrameCreator(
-            frameCreator: frameFromStringUTF16ContentCreator,
-            id3FrameConfiguration: frameConfiguration
-        )
         let titleFrameCreator = ID3TitleFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -207,7 +203,6 @@ class ID3FrameCreatorsChainFactory {
         publisherFrameCreator.nextCreator = subtitleFrameCreator
         subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
         unsyncedLyricsFrameCreator.nextCreator = discPositionFrameCreator
-        discPositionFrameCreator.nextCreator = userDefinedTextInformationFrameCreator
         return albumFrameCreator
     }
 }

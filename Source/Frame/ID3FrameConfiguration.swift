@@ -58,8 +58,7 @@ class ID3FrameConfiguration {
         .AttachedPicture : [UInt8]("APIC".utf8),
         .Genre : [UInt8]("TCON".utf8),
         .TrackPosition : [UInt8]("TRCK".utf8),
-        .DiscPosition : [UInt8]("TPOS".utf8),
-        .UserDefinedTextInformation : [UInt8]("TXXX".utf8)
+        .DiscPosition : [UInt8]("TPOS".utf8)
     ]
     private var identifiers: [ID3Version : [FrameType : [UInt8]]] = [
         .version2 : [
@@ -87,7 +86,6 @@ class ID3FrameConfiguration {
             .Genre : [UInt8]("TCO".utf8),
             .TrackPosition : [UInt8]("TRK".utf8),
             .DiscPosition : [UInt8]("TPA".utf8),
-            .UserDefinedTextInformation : [UInt8]("TXX".utf8)
         ],
         .version3 : [
             .RecordingDayMonth : [UInt8]("TDAT".utf8),
@@ -128,8 +126,7 @@ class ID3FrameConfiguration {
         "APIC" : .AttachedPicture,
         "TCON" : .Genre,
         "TRCK" : .TrackPosition,
-        "TPOS" : .DiscPosition,
-        "TXXX" : .UserDefinedTextInformation
+        "TPOS" : .DiscPosition
     ]
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
@@ -156,8 +153,7 @@ class ID3FrameConfiguration {
             "TIM" : .RecordingHourMinute,
             "TCO" : .Genre,
             "TRK" : .TrackPosition,
-            "TPA" : .DiscPosition,
-            "TXX" : .UserDefinedTextInformation
+            "TPA" : .DiscPosition
         ],
         .version3 : [
             "TDAT" : .RecordingDayMonth,

@@ -43,8 +43,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V2")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "ULT")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content, "UnsyncedLyrics V2")
-        XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXX")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V2")
         XCTAssertEqual(id3Tag?.frames[.DiscPosition]?.id3Identifier, "TPA")
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
         XCTAssertEqual((id3Tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
@@ -100,8 +98,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
         XCTAssertEqual(id3Tag?.frames[.UnsyncedLyrics]?.id3Identifier, "USLT")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content, "UnsyncedLyrics V3")
-        XCTAssertEqual(id3Tag?.frames[.UserDefinedTextInformation]?.id3Identifier, "TXXX")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V3")
     }
     
     func testReadNewFramesV4() {
@@ -150,8 +146,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V4")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.id3Identifier, "USLT")
         XCTAssertEqual((id3Tag?.frames[.UnsyncedLyrics] as? ID3FrameWithStringContent)?.content, "UnsyncedLyrics V4")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.id3Identifier, "TXXX")
-        XCTAssertEqual((id3Tag?.frames[.UserDefinedTextInformation] as? ID3FrameWithStringContent)?.content, "UserDefinedTextInformation V4")
     }
         
     //MARK: write
@@ -175,8 +169,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .MixArtist : ID3FrameWithStringContent(content: "MixArtist V2"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V2"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
-                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V2"),
-                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V2")
+                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V2")
             ]
         )
         
@@ -218,9 +211,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V3"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V3"),
-                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V3"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
-                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V3"),
+                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V3")
             ]
         )
         
@@ -262,9 +254,8 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .PodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),
                 .PodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V4"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher V4"),
-                .UserDefinedTextInformation : ID3FrameWithStringContent(content: "UserDefinedTextInformation V4"),
                 .Subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
-                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V4"),
+                .UnsyncedLyrics : ID3FrameWithStringContent(content: "UnsyncedLyrics V4")
             ]
         )
         
