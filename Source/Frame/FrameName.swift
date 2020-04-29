@@ -25,12 +25,8 @@ public enum FrameName: Hashable {
     case AudioSourceUrl
     /// Beats per Minute frame
     case BPM
-    /// Chapter frame nme. Valid only for tag version 2.3 and 2.4
-    //case Chapter
     /// Comment frame name
     case Comment
-    /// Compilation flag. ITunes Specific.
-    case ITunesCompilation
     /// Composer frame name.
     case Composer
     /// Conductor frame name.
@@ -61,14 +57,6 @@ public enum FrameName: Hashable {
     case InvolvedPeople
     /// ISRC frame name
     case ISRC
-    /// Grouping frame name. Version 2.3 and 2.4 only.
-    case ITunesGrouping
-    /// Movement Count frame name. Version 2.3 and 2.4 only
-    case ITunesMovementCount
-    /// Movement Index frame name. Version 2.3 and 2.4 only.
-    case ITunesMovementIndex
-    ///Movement name frame name.
-    case ITunesMovementName
     /// Language frame name
     case Language
     /// Length frame name
@@ -93,16 +81,6 @@ public enum FrameName: Hashable {
     case PaymentUrl
     /// Playlist Delay frame name
     case PlaylistDelay
-    /// Podcast category frame name. Version 2.3 and 2.4 only.
-    case PodcastCategory
-    /// Podcast Description frame name. Version 2.3 and 2.4 only.
-    case PodcastDescription
-    /// Podcast ID frame name, Version 2.3 and 2.4 only.
-    case PodcastID
-    /// Podcast keywords frame name, Version 2.3 and 2.4 only.
-    case PodcastKeywords
-    /// PodcastURL frame name
-    case PodcastUrl
     /// Publisher frame name.
     case Publisher
     /// Publisher URL frame name
@@ -129,8 +107,6 @@ public enum FrameName: Hashable {
     case SortTitle
     /// Subtitle frame name
     case Subtitle
-    /// Table of Contents frame name. Valid only for tag version 2.3 and 2.4
-    //case TableOfContents
     /// Title frame name.
     case Title
     /// Track Position frame name.
@@ -152,7 +128,27 @@ public enum FrameName: Hashable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
-    
+    /// Compilation flag. iTunes Specific.
+    case iTunesCompilation
+    /// Grouping frame name. Version 2.3 and 2.4 only.
+    case iTunesGrouping
+    /// Movement Count frame name. Version 2.3 and 2.4 only
+    case iTunesMovementCount
+    /// Movement Index frame name. Version 2.3 and 2.4 only.
+    case iTunesMovementIndex
+    ///Movement name frame name.
+    case iTunesMovementName
+    /// iTunesPodcast category frame name. Version 2.3 and 2.4 only.
+    case iTunesPodcastCategory
+    /// iTunesPodcast Description frame name. Version 2.3 and 2.4 only.
+    case iTunesPodcastDescription
+    /// iTunesPodcast ID frame name, Version 2.3 and 2.4 only.
+    case iTunesPodcastID
+    /// iTunesPodcast keywords frame name, Version 2.3 and 2.4 only.
+    case iTunesPodcastKeywords
+    /// iTunesPodcastURL frame name
+    case iTunesPodcastUrl
+
     internal func identifier(version: ID3Version) -> String? {
         switch self {
             case .Comment:

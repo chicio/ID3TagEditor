@@ -1,5 +1,5 @@
 //
-//  ID3ITunesCompilationFlagFrameContentParsingOperationFactory.swift
+//  ID3iTunesCompilationFlagFrameContentParsingOperationFactory.swift
 //
 //
 //  Created by Nolaine Crusher on 3/31/20.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ID3ITunesCompilationFlagFrameContentParsingOperationFactory {
+class ID3iTunesCompilationFlagFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.ITunesCompilation, ID3BooleanStringAdapter().adapt(boolString: content))
+            return (.iTunesCompilation, ID3BooleanStringAdapter().adapt(boolString: content))
         }
     }
 }

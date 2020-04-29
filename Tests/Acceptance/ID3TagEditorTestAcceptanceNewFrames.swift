@@ -138,16 +138,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertTrue(involvedPeopleArray.elementsEqual(involvedPeopleFrame, by: { $0 == $1 }))
         XCTAssertEqual(id3Tag?.frames[.ISRC]?.id3Identifier, "TSRC")
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
-        XCTAssertEqual(id3Tag?.frames[.ITunesCompilation]?.id3Identifier, "TCMP")
-        XCTAssertEqual((id3Tag?.frames[.ITunesCompilation] as? ID3FrameWithBooleanContent)?.value, true)
-        XCTAssertEqual(id3Tag?.frames[.ITunesGrouping]?.id3Identifier, "GRP1")
-        XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "Grouping")
-        XCTAssertEqual(id3Tag?.frames[.ITunesMovementCount]?.id3Identifier, "MVCN")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
-        XCTAssertEqual(id3Tag?.frames[.ITunesMovementIndex]?.id3Identifier, "MVIN")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 7)
-        XCTAssertEqual(id3Tag?.frames[.ITunesMovementName]?.id3Identifier, "MVNM")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "Movement Name")
+        XCTAssertEqual(id3Tag?.frames[.iTunesCompilation]?.id3Identifier, "TCMP")
+        XCTAssertEqual((id3Tag?.frames[.iTunesCompilation] as? ID3FrameWithBooleanContent)?.value, true)
+        XCTAssertEqual(id3Tag?.frames[.iTunesGrouping]?.id3Identifier, "GRP1")
+        XCTAssertEqual((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content, "Grouping")
+        XCTAssertEqual(id3Tag?.frames[.iTunesMovementCount]?.id3Identifier, "MVCN")
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
+        XCTAssertEqual(id3Tag?.frames[.iTunesMovementIndex]?.id3Identifier, "MVIN")
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 7)
+        XCTAssertEqual(id3Tag?.frames[.iTunesMovementName]?.id3Identifier, "MVNM")
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "Movement Name")
         XCTAssertEqual(id3Tag?.frames[.Length]?.id3Identifier, "TLEN")
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.value, 9767)
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TEXT")
@@ -166,16 +166,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.OriginalLyricist] as? ID3FrameWithStringContent)?.content, "Original Lyricist")
         XCTAssertEqual(id3Tag?.frames[.PlaylistDelay]?.id3Identifier, "TDLY")
         XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithIntegerContent)?.value, 20)
-        XCTAssertEqual(id3Tag?.frames[.PodcastCategory]?.id3Identifier, "TCAT")
-        XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content, "Podcast Category")
-        XCTAssertEqual(id3Tag?.frames[.PodcastDescription]?.id3Identifier, "TDES")
-        XCTAssertEqual((id3Tag?.frames[.PodcastDescription] as? ID3FrameWithStringContent)?.content, "Podcast Description")
-        XCTAssertEqual(id3Tag?.frames[.PodcastID]?.id3Identifier, "TGID")
-        XCTAssertEqual((id3Tag?.frames[.PodcastID] as? ID3FrameWithStringContent)?.content, "Podcast ID")
-        XCTAssertEqual(id3Tag?.frames[.PodcastKeywords]?.id3Identifier, "TKWD")
-        XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content, "Podcast Keywords")
-        XCTAssertEqual(id3Tag?.frames[.PodcastUrl]?.id3Identifier, "WFED")
-        XCTAssertEqual((id3Tag?.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.content, "http://PodcastUrl.com")
+        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastCategory]?.id3Identifier, "TCAT")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content, "Podcast Category")
+        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastDescription]?.id3Identifier, "TDES")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "Podcast Description")
+        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastID]?.id3Identifier, "TGID")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "Podcast ID")
+        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastKeywords]?.id3Identifier, "TKWD")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "Podcast Keywords")
+        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastUrl]?.id3Identifier, "WFED")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastUrl] as? ID3FrameWithStringContent)?.content, "http://PodcastUrl.com")
         XCTAssertEqual(id3Tag?.frames[.Publisher]?.id3Identifier, "TPUB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher")
         XCTAssertEqual(id3Tag?.frames[.PublisherUrl]?.id3Identifier, "WPUB")
@@ -263,14 +263,14 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertTrue(involvedPeopleArray.elementsEqual(involvedPeopleFrame, by: { $0 == $1 }))
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.id3Identifier, "TSRC")
         XCTAssertEqual((id3Tag?.frames[.ISRC] as? ID3FrameWithStringContent)?.content, "123456789012")
-        XCTAssertEqual(id3Tag?.frames[.ITunesCompilation]?.id3Identifier, "TCMP")
-        XCTAssertEqual((id3Tag?.frames[.ITunesCompilation] as? ID3FrameWithBooleanContent)?.value, true)
-        XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "GRP1")
-        XCTAssertEqual((id3Tag?.frames[.ITunesGrouping] as? ID3FrameWithStringContent)?.content, "Grouping")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 7)
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
-        XCTAssertEqual((id3Tag?.frames[.ITunesMovementName] as? ID3FrameWithStringContent)?.content, "Movement Name")
+        XCTAssertEqual(id3Tag?.frames[.iTunesCompilation]?.id3Identifier, "TCMP")
+        XCTAssertEqual((id3Tag?.frames[.iTunesCompilation] as? ID3FrameWithBooleanContent)?.value, true)
+        XCTAssertEqual((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "GRP1")
+        XCTAssertEqual((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content, "Grouping")
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 8)
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 7)
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
+        XCTAssertEqual((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "Movement Name")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.id3Identifier, "TLAN")
         XCTAssertEqual((id3Tag?.frames[.Language] as? ID3FrameLanguage)?.language, .eng)
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.id3Identifier, "TLEN")
@@ -293,16 +293,16 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.OriginalLyricist] as? ID3FrameWithStringContent)?.content, "Original Lyricist")
         XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithIntegerContent)?.id3Identifier, "TDLY")
         XCTAssertEqual((id3Tag?.frames[.PlaylistDelay] as? ID3FrameWithIntegerContent)?.value, 20)
-        XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.id3Identifier, "TCAT")
-        XCTAssertEqual((id3Tag?.frames[.PodcastCategory] as? ID3FrameWithStringContent)?.content, "Podcast Category")
-        XCTAssertEqual((id3Tag?.frames[.PodcastDescription] as? ID3FrameWithStringContent)?.id3Identifier, "TDES")
-        XCTAssertEqual((id3Tag?.frames[.PodcastDescription] as? ID3FrameWithStringContent)?.content, "Podcast Description")
-        XCTAssertEqual((id3Tag?.frames[.PodcastID] as? ID3FrameWithStringContent)?.id3Identifier, "TGID")
-        XCTAssertEqual((id3Tag?.frames[.PodcastID] as? ID3FrameWithStringContent)?.content, "Podcast ID")
-        XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.id3Identifier, "TKWD")
-        XCTAssertEqual((id3Tag?.frames[.PodcastKeywords] as? ID3FrameWithStringContent)?.content, "Podcast Keywords")
-        XCTAssertEqual((id3Tag?.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WFED")
-        XCTAssertEqual((id3Tag?.frames[.PodcastUrl] as? ID3FrameWithStringContent)?.content, "http://PodcastUrl.com")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.id3Identifier, "TCAT")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content, "Podcast Category")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.id3Identifier, "TDES")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "Podcast Description")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.id3Identifier, "TGID")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "Podcast ID")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.id3Identifier, "TKWD")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "Podcast Keywords")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WFED")
+        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastUrl] as? ID3FrameWithStringContent)?.content, "http://PodcastUrl.com")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.id3Identifier, "TPUB")
         XCTAssertEqual((id3Tag?.frames[.Publisher] as? ID3FrameWithStringContent)?.content, "Publisher")
         XCTAssertEqual((id3Tag?.frames[.PublisherUrl] as? ID3FrameWithStringContent)?.id3Identifier, "WPUB")
@@ -428,11 +428,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .InitialKey : ID3FrameWithStringContent(content: "b#"),
                 .InvolvedPeople : ID3FrameCreditsList(entries: [(role: "Producer", person: "Producer Name"), (role: "Director", person: "Director Name")]),
                 .ISRC : ID3FrameWithStringContent(content: "123456789012"),
-                .ITunesCompilation : ID3FrameWithBooleanContent(value: true),
-                .ITunesGrouping : ID3FrameWithStringContent(content: "Grouping"),
-                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 8),
-                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 7),
-                .ITunesMovementName : ID3FrameWithStringContent(content: "Movement Name"),
+                .iTunesCompilation : ID3FrameWithBooleanContent(value: true),
+                .iTunesGrouping : ID3FrameWithStringContent(content: "Grouping"),
+                .iTunesMovementCount : ID3FrameWithIntegerContent(value: 8),
+                .iTunesMovementIndex : ID3FrameWithIntegerContent(value: 7),
+                .iTunesMovementName : ID3FrameWithStringContent(content: "Movement Name"),
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist"),
@@ -441,11 +441,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename"),
                 .OriginalLyricist : ID3FrameWithStringContent(content: "Original Lyricist"),
                 .PlaylistDelay : ID3FrameWithIntegerContent(value: 20),
-                .PodcastCategory : ID3FrameWithStringContent(content: "Podcast Category"),
-                .PodcastDescription : ID3FrameWithStringContent(content: "Podcast Description"),
-                .PodcastID : ID3FrameWithStringContent(content: "Podcast ID"),
-                .PodcastKeywords : ID3FrameWithStringContent(content: "Podcast Keywords"),
-                .PodcastUrl : ID3FrameWithStringContent(content: "http://PodcastUrl.com"),
+                .iTunesPodcastCategory : ID3FrameWithStringContent(content: "Podcast Category"),
+                .iTunesPodcastDescription : ID3FrameWithStringContent(content: "Podcast Description"),
+                .iTunesPodcastID : ID3FrameWithStringContent(content: "Podcast ID"),
+                .iTunesPodcastKeywords : ID3FrameWithStringContent(content: "Podcast Keywords"),
+                .iTunesPodcastUrl : ID3FrameWithStringContent(content: "http://PodcastUrl.com"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher"),
                 .PublisherUrl : ID3FrameWithStringContent(content: "http://PublisherUrl.com"),
                 .RadioStation : ID3FrameWithStringContent(content: "Radio Station"),
@@ -502,11 +502,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .InitialKey : ID3FrameWithStringContent(content: "b#"),
                 .InvolvedPeople : ID3FrameCreditsList(entries: [(role: "Producer", person: "Producer Name"), (role: "Director", person: "Director Name")]),
                 .ISRC : ID3FrameWithStringContent(content: "123456789012"),
-                .ITunesCompilation : ID3FrameWithBooleanContent(value: true),
-                .ITunesGrouping : ID3FrameWithStringContent(content: "Grouping"),
-                .ITunesMovementCount : ID3FrameWithIntegerContent(value: 8),
-                .ITunesMovementIndex : ID3FrameWithIntegerContent(value: 7),
-                .ITunesMovementName : ID3FrameWithStringContent(content: "Movement Name"),
+                .iTunesCompilation : ID3FrameWithBooleanContent(value: true),
+                .iTunesGrouping : ID3FrameWithStringContent(content: "Grouping"),
+                .iTunesMovementCount : ID3FrameWithIntegerContent(value: 8),
+                .iTunesMovementIndex : ID3FrameWithIntegerContent(value: 7),
+                .iTunesMovementName : ID3FrameWithStringContent(content: "Movement Name"),
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist"),
@@ -517,11 +517,11 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename"),
                 .OriginalLyricist : ID3FrameWithStringContent(content: "Original Lyricist"),
                 .PlaylistDelay : ID3FrameWithIntegerContent(value: 20),
-                .PodcastCategory : ID3FrameWithStringContent(content: "Podcast Category"),
-                .PodcastDescription : ID3FrameWithStringContent(content: "Podcast Description"),
-                .PodcastID : ID3FrameWithStringContent(content: "Podcast ID"),
-                .PodcastKeywords : ID3FrameWithStringContent(content: "Podcast Keywords"),
-                .PodcastUrl : ID3FrameWithStringContent(content: "http://PodcastUrl.com"),
+                .iTunesPodcastCategory : ID3FrameWithStringContent(content: "Podcast Category"),
+                .iTunesPodcastDescription : ID3FrameWithStringContent(content: "Podcast Description"),
+                .iTunesPodcastID : ID3FrameWithStringContent(content: "Podcast ID"),
+                .iTunesPodcastKeywords : ID3FrameWithStringContent(content: "Podcast Keywords"),
+                .iTunesPodcastUrl : ID3FrameWithStringContent(content: "http://PodcastUrl.com"),
                 .Publisher : ID3FrameWithStringContent(content: "Publisher"),
                 .PublisherUrl : ID3FrameWithStringContent(content: "http://PublisherUrl.com"),
                 .RadioStation : ID3FrameWithStringContent(content: "Radio Station"),

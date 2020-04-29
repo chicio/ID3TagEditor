@@ -186,11 +186,6 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `InitialKey`
 * `InvolvedPeopleList`
 * `ISRC`
-* `iTunesCompilation`
-* `iTunesGrouping`
-* `iTunesMovementCount`
-* `iTunesMovementIndex` (aka movement number)
-* `iTunesMovementName`
 * `Language`
 * `Length`
 * `Lyricist`
@@ -201,11 +196,6 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `OriginalFilename`
 * `OriginalLyricist`
 * `PlaylistDelay`
-* `PodcastCategory`
-* `PodcastDescription`
-* `PodcastID`
-* `PodcastKeyword`
-* `PodcastURL`
 * `Publisher`
 * `PublisherURl`
 * `RadioStation`
@@ -221,6 +211,16 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `UnsyncedLyrics`
 * `UserDefinedTextInformation`
 * `UserDefinedURL`
+* `iTunesCompilation`
+* `iTunesGrouping`
+* `iTunesMovementCount`
+* `iTunesMovementIndex` (aka movement number)
+* `iTunesMovementName`
+* `iTunesPodcastCategory`
+* `iTunesPodcastDescription`
+* `iTunesPodcastID`
+* `iTunesPodcastKeyword`
+* `iTunesPodcastURL`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 

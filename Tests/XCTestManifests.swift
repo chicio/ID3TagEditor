@@ -225,7 +225,7 @@ extension ID3ISRCFrameCreatorTest {
     ]
 }
 
-extension ID3ITunesCompilationFlagFrameCreatorTest {
+extension ID3iTunesCompilationFlagFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenCompilationFlagIsSet", testFrameCreationWhenCompilationFlagIsSet),
         ("testNoFrameCreationWhenCompilationFlagIsNotSet", testFrameCreationWhenCompilationFlagIsNotSet),
@@ -240,7 +240,7 @@ extension ID3iTunesGroupingFrameCreatorTest {
 }
 
 
-extension ID3ItunesMovementNameFrameCreatorTest {
+extension ID3iTunesMovementNameFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMovementName", testFrameCreationWhenThereIsAMovementName),
         ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName),
@@ -333,38 +333,38 @@ extension ID3PlaylistDelayFrameCreatorTest {
     ]
 }
 
-extension ID3PodcastCategoryFrameCreatorTest {
+extension ID3iTunesPodcastCategoryFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAPodcastCategory", testFrameCreationWhenThereIsAPodcastCategory),
-        ("testNoFrameCreationWhenThereIsNoPodcastCategory", testNoFrameCreationWhenThereIsNoPodcastCategory),
+        ("testFrameCreationWhenThereIsAiTunesPodcastCategory", testFrameCreationWhenThereIsAiTunesPodcastCategory),
+        ("testNoFrameCreationWhenThereIsNoiTunesPodcastCategory", testNoFrameCreationWhenThereIsNoiTunesPodcastCategory),
     ]
 }
 
-extension ID3PodcastDescriptionFrameCreatorTest {
+extension ID3iTunesPodcastDescriptionFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAPodcastDescription", testFrameCreationWhenThereIsAPodcastDescription),
-        ("testNoFrameCreationWhenThereIsNoPodcastDescription", testNoFrameCreationWhenThereIsNoPodcastDescription),
+        ("testFrameCreationWhenThereIsAiTunesPodcastDescription", testFrameCreationWhenThereIsAiTunesPodcastDescription),
+        ("testNoFrameCreationWhenThereIsNoiTunesPodcastDescription", testNoFrameCreationWhenThereIsNoiTunesPodcastDescription),
     ]
 }
 
-extension ID3PodcastIDFrameCreatorTest {
+extension ID3iTunesPodcastIDFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAPodcastID", testFrameCreationWhenThereIsAPodcastID),
-        ("testNoFrameCreationWhenThereIsNoPodcastID", testNoFrameCreationWhenThereIsNoPodcastID),
+        ("testFrameCreationWhenThereIsAiTunesPodcastID", testFrameCreationWhenThereIsAiTunesPodcastID),
+        ("testNoFrameCreationWhenThereIsNoiTunesPodcastID", testNoFrameCreationWhenThereIsNoiTunesPodcastID),
     ]
 }
 
-extension ID3PodcastKeywordsFrameCreatorTest {
+extension ID3iTunesPodcastKeywordsFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereArePodcastKeywords", testFrameCreationWhenThereArePodcastKeywords),
-        ("testNoFrameCreationWhenThereAreNoPodcastKeywords", testNoFrameCreationWhenThereAreNoPodcastKeywords),
+        ("testFrameCreationWhenThereAreiTunesPodcastKeywords", testFrameCreationWhenThereAreiTunesPodcastKeywords),
+        ("testNoFrameCreationWhenThereAreNoiTunesPodcastKeywords", testNoFrameCreationWhenThereAreNoiTunesPodcastKeywords),
     ]
 }
 
-extension ID3PodcastUrlFrameCreatorTest {
+extension ID3iTunesPodcastUrlFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsAPodcastUrl", testFrameCreationWhenThereIsAPodcastUrl),
-        ("testNoFrameCreationWhenThereIsNoPodcastUrl", testNoFrameCreationWhenThereIsNoPodcastUrl),
+        ("testFrameCreationWhenThereIsAiTunesPodcastUrl", testFrameCreationWhenThereIsAiTunesPodcastUrl),
+        ("testNoFrameCreationWhenThereIsNoiTunesPodcastUrl", testNoFrameCreationWhenThereIsNoiTunesPodcastUrl),
     ]
 }
 
@@ -585,11 +585,11 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3FileTypeFrameCreatorTest.__allTests),
         testCase(ID3GenreFrameCreatorTest.__allTests),
         testCase(ID3InitialKeyFrameCreatorTest.__allTests),
-        testCase(ID3ITunesCompilationFlagFrameCreatorTest.__allTests),
+        testCase(ID3iTunesCompilationFlagFrameCreatorTest.__allTests),
         testCase(ID3iTunesGroupingFrameCreatorTest.__allTests),
-        testCase(ID3ItunesMovementCountFrameCreatorTest.__allTests),
-        testCase(ID3ItunesMovementIndexFrameCreatorTest.__allTests),
-        testCase(ID3ItunesMovementNameFrameCreatorTest.__allTests),
+        testCase(ID3iTunesMovementCountFrameCreatorTest.__allTests),
+        testCase(ID3iTunesMovementIndexFrameCreatorTest.__allTests),
+        testCase(ID3iTunesMovementNameFrameCreatorTest.__allTests),
         testCase(ID3LanguageFrameCreatorTest.__allTests),
         testCase(ID3LyricistFrameCreatorTest.__allTests),
         testCase(ID3LengthFrameCreatorTest.__allTests),
@@ -599,11 +599,11 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3OriginalFilenameFrameCreatorTest.__allTests),
         testCase(ID3OriginalLyricistFrameCreatorTest.__allTests),
         testCase(ID3PlaylistDelayFrameCreatorTest.__allTests),
-        testCase(ID3PodcastCategoryFrameCreatorTest.__allTests),
-        testCase(ID3PodcastDescriptionFrameCreatorTest.__allTests),
-        testCase(ID3PodcastFlagFrameCreatorTest.__allTests),
-        testCase(ID3PodcastIDFrameCreatorTest.__allTests),
-        testCase(ID3PodcastKeywordsFrameCreatorTest.__allTests),
+        testCase(ID3iTunesPodcastCategoryFrameCreatorTest.__allTests),
+        testCase(ID3iTunesPodcastDescriptionFrameCreatorTest.__allTests),
+        testCase(ID3iTunesPodcastFlagFrameCreatorTest.__allTests),
+        testCase(ID3iTunesPodcastIDFrameCreatorTest.__allTests),
+        testCase(ID3iTunesPodcastKeywordsFrameCreatorTest.__allTests),
         testCase(ID3PublisherFrameCreatorTest.__allTests),
         testCase(ID3PublisherUrlFrameCreatorTest.__allTests),
         testCase(ID3RadioStationFrameCreatorTest.__allTests),

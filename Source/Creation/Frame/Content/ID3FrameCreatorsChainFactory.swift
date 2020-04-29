@@ -120,7 +120,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let iTunesMovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(
+        let iTunesMovementNameFrameCreator = ID3iTunesMovementNameFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -148,19 +148,19 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastCategoryFrameCreator = ID3PodcastCategoryFrameCreator(
+        let iTunesPodcastCategoryFrameCreator = ID3iTunesPodcastCategoryFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastDescriptionFrameCreator = ID3PodcastDescriptionFrameCreator(
+        let iTunesPodcastDescriptionFrameCreator = ID3iTunesPodcastDescriptionFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastIDFrameCreator = ID3PodcastIDFrameCreator(
+        let iTunesPodcastIDFrameCreator = ID3iTunesPodcastIDFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastKeywordsFrameCreator = ID3PodcastKeywordsFrameCreator(
+        let iTunesPodcastKeywordsFrameCreator = ID3iTunesPodcastKeywordsFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -225,7 +225,7 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromURLStringContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let podcastUrlFrameCreator = ID3PodcastUrlFrameCreator(
+        let iTunesPodcastUrlFrameCreator = ID3iTunesPodcastUrlFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -279,15 +279,15 @@ class ID3FrameCreatorsChainFactory {
             frameCreator: frameFromCreditsListISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let iTunesCompilationFlagFrameCreator = ID3ItunesCompilationFlagFrameCreator(
+        let iTunesCompilationFlagFrameCreator = ID3iTunesCompilationFlagFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let iTunesMovementCountFrameCreator = ID3ItunesMovementCountFrameCreator(
+        let iTunesMovementCountFrameCreator = ID3iTunesMovementCountFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
-        let iTunesMovementIndexFrameCreator = ID3ItunesMovementIndexFrameCreator(
+        let iTunesMovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
             frameCreator: frameFromStringISO88591ContentCreator,
             id3FrameConfiguration: frameConfiguration
         )
@@ -354,11 +354,11 @@ class ID3FrameCreatorsChainFactory {
         arrangerFrameCreator.nextCreator = iTunesMovementNameFrameCreator
         iTunesMovementNameFrameCreator.nextCreator = iTunesMovementIndexFrameCreator
         iTunesMovementIndexFrameCreator.nextCreator = iTunesMovementCountFrameCreator
-        iTunesMovementCountFrameCreator.nextCreator = podcastCategoryFrameCreator
-        podcastCategoryFrameCreator.nextCreator = podcastDescriptionFrameCreator
-        podcastDescriptionFrameCreator.nextCreator = podcastIDFrameCreator
-        podcastIDFrameCreator.nextCreator = podcastKeywordsFrameCreator
-        podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
+        iTunesMovementCountFrameCreator.nextCreator = iTunesPodcastCategoryFrameCreator
+        iTunesPodcastCategoryFrameCreator.nextCreator = iTunesPodcastDescriptionFrameCreator
+        iTunesPodcastDescriptionFrameCreator.nextCreator = iTunesPodcastIDFrameCreator
+        iTunesPodcastIDFrameCreator.nextCreator = iTunesPodcastKeywordsFrameCreator
+        iTunesPodcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
         publisherFrameCreator.nextCreator = subtitleFrameCreator
         subtitleFrameCreator.nextCreator = unsyncedLyricsFrameCreator
         unsyncedLyricsFrameCreator.nextCreator = commentFrameCreator
@@ -387,8 +387,8 @@ class ID3FrameCreatorsChainFactory {
         artistUrlFrameCreator.nextCreator = audioFileUrlFrameCreator
         audioFileUrlFrameCreator.nextCreator = audioSourceUrlFrameCreator
         audioSourceUrlFrameCreator.nextCreator = copyrightUrlFrameCreator
-        copyrightUrlFrameCreator.nextCreator = podcastUrlFrameCreator
-        podcastUrlFrameCreator.nextCreator = publisherUrlFrameCreator
+        copyrightUrlFrameCreator.nextCreator = iTunesPodcastUrlFrameCreator
+        iTunesPodcastUrlFrameCreator.nextCreator = publisherUrlFrameCreator
         publisherUrlFrameCreator.nextCreator = radioStationUrlFrameCreator
         radioStationUrlFrameCreator.nextCreator = userDefinedUrlFrameCreator
         userDefinedUrlFrameCreator.nextCreator = iTunesCompilationFlagFrameCreator

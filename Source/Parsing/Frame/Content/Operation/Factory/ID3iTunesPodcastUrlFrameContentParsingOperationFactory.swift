@@ -1,5 +1,5 @@
 //
-//  ID3PodcastUrlFrameContentParsingOperationFactory.swift
+//  ID3iTunesPodcastUrlFrameContentParsingOperationFactory.swift
 //
 //
 //  Created by Nolaine Crusher on 3/30/20.
@@ -9,10 +9,10 @@
 import Foundation
 
 // NOTE: WFED frame is actually a string frame, not a URL frame
-class ID3PodcastUrlFrameContentParsingOperationFactory {
+class ID3iTunesPodcastUrlFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.PodcastUrl, ID3FrameWithStringContent(content: content))
+            return (.iTunesPodcastUrl, ID3FrameWithStringContent(content: content))
         }
     }
 }
