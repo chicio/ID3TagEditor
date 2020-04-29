@@ -10,7 +10,7 @@
 ![ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file](https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Assets/icon-logo-background.png 
 "ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file")
 
-A swift library to read and modify ID3 Tag of any mp3 file. 
+A swift library to read and modify ID3 Tag of any mp3 file. Listed in the implementations section of the [official ID3 standard website id3.org](http://id3.org/Implementations "id3.org swift").
 
 ***
 
@@ -41,7 +41,7 @@ Add the dependency to your Podfile (choose the release version you prefer):
 
 ```
 target 'MyApp' do
-    pod 'ID3TagEditor', '~> 3.0'
+pod 'ID3TagEditor', '~> 3.0'
 end
 ```
 
@@ -52,8 +52,8 @@ and then run pod install (or pod update).
 ID3TagEditor is also available as Swift Package for the Swift Package Manager. To use it simply add it to your dependecies in the Swift  `Package.swift`.
 After that you can build your project with the command `swift build`, and eventually run you project (if it is an executable type) with the command `swift run`.
 If you want you can also run tests using `swift test`.  
-  
-  *IMPORTANT: at the moment some tests are excluded from  `swift test` because some test api are missing (eg. `XCTestExpectation`) or 
+
+*IMPORTANT: at the moment some tests are excluded from  `swift test` because some test api are missing (eg. `XCTestExpectation`) or 
 because the Bundle of resources in the test target doesn't work as expected.* 
 
 ```
@@ -62,16 +62,16 @@ because the Bundle of resources in the test target doesn't work as expected.*
 import PackageDescription
 
 let package = Package(
-    name: "Demo Ubuntu",
-    dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
-    ],
-    targets: [
-        .target(
-            name: "Demo Ubuntu",
-            dependencies: ["ID3TagEditor"]
-        )
-    ]
+name: "Demo Ubuntu",
+dependencies: [
+.package(url: "https://github.com/chicio/ID3TagEditor.git", from: "3.0.0")
+],
+targets: [
+.target(
+name: "Demo Ubuntu",
+dependencies: ["ID3TagEditor"]
+)
+]
 )
 ```
 
@@ -95,25 +95,32 @@ Below you can find a sample code of the api usage.
 
 ```swift
 do {
-    let id3TagEditor = ID3TagEditor()
+let id3TagEditor = ID3TagEditor()
 
-    if let id3Tag = try id3TagEditor.read(from: "<valid path to the mp3 file>") {
-        // ...use the tag...
-        // For example to read the title, album and artist content you can do something similar
-        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
-    }
-    
-    if let id3Tag = try id3TagEditor.read(mp3: "<valid mp3 file passed as Data>") {
-        // ...use the tag...
-        // For example to read the title, album and artist content you can do something similar
-        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
-    }    
+if let id3Tag = try id3TagEditor.read(from: "<valid path to the mp3 file>") {
+// ...use the tag...
+// For example to read the title, album and artist content you can do something similar
+print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
+print((id3Tag.frames[.Comment] as? ID3FrameCommentTypes)?.language ?? "und")
+print((id3Tag.frames[.Comment] as? ID3FrameCommentTypes)?.description ?? "")
+print((id3Tag.frames[.Comment] as? ID3FrameCommentTypes)?.content ?? "")
+print((id3Tag.frames[.bpm] as? ID3FrameWithIntegerContent)?.value ?? 0)
+print((id3Tag.frames[.TrackPosition] as? ID3FramePartOfTotal)?.part ?? 0)
+print((id3Tag.frames[.TrackPosition] as? ID3FramePartOfTotal)?.total ?? 0)
+print((id3Tag.frames[.InvolvedPeople] as? ID3FrameCreditsList)?.role ?? "")
+print((id3Tag.frames[.InvolvedPeople] as? ID3FrameCreditsList)?.person ?? "")}
+
+if let id3Tag = try id3TagEditor.read(mp3: "<valid mp3 file passed as Data>") {
+// ...use the tag...
+// For example to read the title, album and artist content you can do something similar
+print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
+print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
+print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
+}    
 } catch {
-    print(error)
+print(error)
 }  
 ```
 
@@ -125,24 +132,28 @@ Below you can find a sample code of the api usage.
 
 ```swift
 do {
-    let id3Tag = ID3Tag(
-       version: .version3,
-       frames: [
-         .Artist : ID3FrameWithStringContent(content: "A New Artist"),
-         .AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-         .Album : ID3FrameWithStringContent(content: "A New Album"),
-         .Title : ID3FrameWithStringContent(content:  "A New title"),
-         .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-       ]
-    )
-    
-    try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
-    try id3TagEditor.write(tag: id3Tag, 
-                           to: "<valid path to the mp3 file>",
-                           andSaveTo: "<new path where you want to save the mp3>")
-    let newMp3: Data = try id3TagEditor.write(tag: id3Tag, mp3: <valid mp3 file passed as Data>)                          
+let id3Tag = ID3Tag(
+version: .version3,
+frames: [
+.Artist : ID3FrameWithStringContent(content: "A New Artist"),
+.AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
+.Album : ID3FrameWithStringContent(content: "A New Album"),
+.Title : ID3FrameWithStringContent(content:  "A New title"),
+.InvolvedPeople : ID3FrameCreditsList(entries: [(role: "Producer", person: "Producer Name"), (role: "Director", person: "Director Name")])
+.iTunesCompilation : ID3FrameWithBooleanContent(value: true),
+.UnsyncedLyrics : ID3FrameCommentTypes(language: .eng, description: "LyricsTest", content: "Unsynced Lyrics"),
+.UserDefinedTextInformation : ID3FrameUserDefinedText(description: "UserText", content: "User Defined Text")
+.AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
+]
+)
+
+try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
+try id3TagEditor.write(tag: id3Tag, 
+to: "<valid path to the mp3 file>",
+andSaveTo: "<new path where you want to save the mp3>")
+let newMp3: Data = try id3TagEditor.write(tag: id3Tag, mp3: <valid mp3 file passed as Data>)                          
 } catch {
-    print(error)
+print(error)
 }    
 ```  
 
@@ -154,7 +165,7 @@ Three versions of the tag are supported. They are described in the `ID3Version` 
 * version 2.3, described by the enum value `.version3`  
 * version 2.4, described by the enum value `.version4`
 
-The ID3 supported frames supported are (see the enum `FrameName`):
+The ID3 supported offcial frames supported are (see the enum `FrameName`):
 
 * `.Artist`, artists frame 
 * `.AlbumArtist`, album artist frame 
@@ -211,23 +222,31 @@ The ID3 supported frames supported are (see the enum `FrameName`):
 * `UnsyncedLyrics`
 * `UserDefinedTextInformation`
 * `UserDefinedURL`
-* `iTunesCompilation`
+
+In addition, ID3TagEditor supports the following iTunes only unofficial frames:
+
+*`iTunesCompilation`
 * `iTunesGrouping`
-* `iTunesMovementCount`
-* `iTunesMovementIndex` (aka movement number)
 * `iTunesMovementName`
+* `iTunesMovementIndex` (aka movement number)
+* `iTunesMovementCount`
 * `iTunesPodcastCategory`
 * `iTunesPodcastDescription`
 * `iTunesPodcastID`
 * `iTunesPodcastKeyword`
-* `iTunesPodcastURL`
+*`iTunesPodcastUrl`
 
 Only the `version` field is mandatory. The other fields are optional.
 The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
 The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
+
 ***
-### Contributor
-The latter ~60 frames were contributed by [Nolaine Crusher](https://github.com/NCrusher74) and refined by [Jeremy David Giesbrecht](https://github.com/SDGGiesbrecht).
+### Contributors
+
+* [Nolaine Crusher](https://github.com/NCrusher74) (added ~50 official frames + all unofficial non standard frames)
+* [Jeremy David Giesbrecht](https://github.com/SDGGiesbrecht) (refined User Text, Language, Comment, and Unsynced Lyrics frames and provided advice on other non-string-content frames)
+* [woko666](https://github.com/woko666) (added read from `Data` api)
+* [martinjbaker](https://github.com/martinjbaker) (minor fixies)
 
 ***
 
