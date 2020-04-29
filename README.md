@@ -200,7 +200,6 @@ The ID3 supported offcial frames supported are (see the enum `FrameName`):
 * `Language`
 * `Length`
 * `Lyricist`
-* `Media Type`
 * `Mood`
 * `OriginalAlbum`
 * `OriginalArtist`
