@@ -40,7 +40,6 @@ enum FrameType: String, Equatable {
     case Language = "language"
     case Length = "length"
     case Lyricist = "lyricist"
-    case MediaType = "mediaType"
     case Mood = "Mood"
     case MusicianCredits = "musicianCredits"
     case OriginalAlbum = "originalAlbum"

@@ -41,7 +41,6 @@ class ID3FrameContentParsingOperationFactory {
             .Language: ID3LanguageFrameContentParsingOperationFactory.make(),
             .Length: ID3LengthFrameContentParsingOperationFactory.make(),
             .Lyricist: ID3LyricistFrameContentParsingOperationFactory.make(),
-            .MediaType: ID3MediaTypeFrameContentParsingOperationFactory.make(),
             .Mood: ID3MoodFrameContentParsingOperationFactory.make(),
             .MusicianCredits: ID3CreditsListFrameContentParsingOperation(frameName: .MusicianCredits),
             .OriginalAlbum: ID3OriginalAlbumFrameContentParsingOperationFactory.make(),

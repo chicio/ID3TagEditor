@@ -270,13 +270,6 @@ extension ID3LyricistFrameCreatorTest {
 }
 
 // MARK: M-P
-extension ID3MediaTypeFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMediaType", testFrameCreationWhenThereIsAMediaType),
-        ("testNoFrameCreationWhenThereIsNoMediaType", testNoFrameCreationWhenThereIsNoMediaType),
-    ]
-}
-
 extension ID3MoodFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMood", testFrameCreationWhenThereIsAMood),
@@ -600,7 +593,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3LanguageFrameCreatorTest.__allTests),
         testCase(ID3LyricistFrameCreatorTest.__allTests),
         testCase(ID3LengthFrameCreatorTest.__allTests),
-        testCase(ID3MediaTypeFrameCreatorTest.__allTests),
         testCase(ID3MoodFrameCreatorTest.__allTests),
         testCase(ID3OriginalAlbumFrameCreatorTest.__allTests),
         testCase(ID3OriginalArtistFrameCreatorTest.__allTests),

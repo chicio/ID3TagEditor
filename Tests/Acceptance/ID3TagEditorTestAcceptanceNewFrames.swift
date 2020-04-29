@@ -58,8 +58,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.value, 9767)
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist")
-        XCTAssertEqual(id3Tag?.frames[.MediaType]?.id3Identifier, "TMT")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "Media Type")
         XCTAssertEqual(id3Tag?.frames[.OriginalAlbum]?.id3Identifier, "TOT")
         XCTAssertEqual((id3Tag?.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content, "Original Album")
         XCTAssertEqual(id3Tag?.frames[.OriginalArtist]?.id3Identifier, "TOA")
@@ -154,8 +152,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.value, 9767)
         XCTAssertEqual(id3Tag?.frames[.Lyricist]?.id3Identifier, "TEXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist")
-        XCTAssertEqual(id3Tag?.frames[.MediaType]?.id3Identifier, "TMED")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "Media Type")
         XCTAssertEqual(id3Tag?.frames[.FileType]?.id3Identifier, "TFLT")
         XCTAssertEqual((id3Tag?.frames[.FileType] as? ID3FrameWithStringContent)?.content, "File Type")
         XCTAssertEqual(id3Tag?.frames[.FileOwner]?.id3Identifier, "TOWN")
@@ -281,8 +277,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Length] as? ID3FrameWithIntegerContent)?.value, 9767)
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.id3Identifier, "TEXT")
         XCTAssertEqual((id3Tag?.frames[.Lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.id3Identifier, "TMED")
-        XCTAssertEqual((id3Tag?.frames[.MediaType] as? ID3FrameWithStringContent)?.content, "Media Type")
         XCTAssertEqual((id3Tag?.frames[.Mood] as? ID3FrameWithStringContent)?.id3Identifier, "TMOO")
         XCTAssertEqual((id3Tag?.frames[.Mood] as? ID3FrameWithStringContent)?.content, "Mood")
         XCTAssertEqual(id3Tag?.frames[.MusicianCredits]?.id3Identifier, "TMCL")
@@ -377,7 +371,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist"),
-                .MediaType : ID3FrameWithStringContent(content: "Media Type"),
                 .OriginalAlbum : ID3FrameWithStringContent(content: "Original Album"),
                 .OriginalArtist : ID3FrameWithStringContent(content: "Original Artist"),
                 .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename"),
@@ -443,7 +436,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist"),
-                .MediaType : ID3FrameWithStringContent(content: "Media Type"),
                 .OriginalAlbum : ID3FrameWithStringContent(content: "Original Album"),
                 .OriginalArtist : ID3FrameWithStringContent(content: "Original Artist"),
                 .OriginalFilename : ID3FrameWithStringContent(content: "Original Filename"),
@@ -518,7 +510,6 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
                 .Language : ID3FrameLanguage(language: .eng),
                 .Length : ID3FrameWithIntegerContent(value: 9767),
                 .Lyricist : ID3FrameWithStringContent(content: "Lyricist"),
-                .MediaType : ID3FrameWithStringContent(content: "Media Type"),
                 .Mood : ID3FrameWithStringContent(content: "Mood"),
                 .MusicianCredits : ID3FrameCreditsList(entries: [(role: "Musician", person: "Musician Name"), (role: "Singer", person: "Singer Name")]),
                 .OriginalAlbum : ID3FrameWithStringContent(content: "Original Album"),

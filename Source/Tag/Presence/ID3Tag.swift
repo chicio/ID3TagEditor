@@ -54,7 +54,6 @@ public class ID3Tag: CustomDebugStringConvertible {
         - language: \((self.frames[.Language] as? ID3FrameWithStringContent)?.content ?? "-")
         - length: \((self.frames[.Length] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - lyricist: \((self.frames[.Lyricist] as? ID3FrameWithStringContent)?.content ?? "-")
-        - mediaType: \((self.frames[.MediaType] as? ID3FrameWithStringContent)?.content ?? "-")
         - mood: \((self.frames[.Mood] as? ID3FrameWithStringContent)?.content ?? "-")
         - musicianCredits: \((self.frames[.MusicianCredits] as? ID3FrameCreditsList)?.debugDescription ?? "-")
         - originalAlbum: \((self.frames[.OriginalAlbum] as? ID3FrameWithStringContent)?.content ?? "-")

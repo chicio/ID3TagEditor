@@ -75,8 +75,6 @@ public enum FrameName: Hashable {
     case Length
     /// Lyricist frame name
     case Lyricist
-    /// Media type frame name.
-    case MediaType
     /// Mood frame name
     case Mood
     /// MusicianCredits frame name. Version 2.4 only.
