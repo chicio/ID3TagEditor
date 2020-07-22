@@ -996,7 +996,6 @@
 		45541C25205999A20025A8BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		455CF9862340C14B004C880A /* ID3TagEditor.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ID3TagEditor.podspec; sourceTree = "<group>"; };
 		455CF9872340C31F004C880A /* generate_docs */ = {isa = PBXFileReference; lastKnownFileType = text; path = generate_docs; sourceTree = "<group>"; };
-		455CF9882340C4C5004C880A /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		455CF9892340C4D7004C880A /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		455CF98A2340C4D7004C880A /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		455CF98B2340C4E1004C880A /* PULL_REQUEST_TEMPLATE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PULL_REQUEST_TEMPLATE.md; sourceTree = "<group>"; };
@@ -1252,7 +1251,6 @@
 				45AB7194204AD842004A2239 /* LICENSE.md */,
 				455CF9862340C14B004C880A /* ID3TagEditor.podspec */,
 				455CF9872340C31F004C880A /* generate_docs */,
-				455CF9882340C4C5004C880A /* .travis.yml */,
 				4553D64521946A3000540631 /* LinuxMain.swift */,
 				45AB7193204AD842004A2239 /* Package.swift */,
 				452831C72044C40700458375 /* Source */,
