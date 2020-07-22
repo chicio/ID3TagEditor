@@ -1,7 +1,9 @@
 # ID3TagEditor
 
 ![Build iOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20iOS/badge.svg)
-[![Build Status](https://travis-ci.org/chicio/ID3TagEditor.svg?branch=master)](https://travis-ci.org/chicio/ID3TagEditor?branch=master)
+![Build macOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20macOS/badge.svg)
+![Build watchOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20watchOS/badge.svg)
+![Build tvOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20tvOS/badge.svg)
 [![codebeat badge](https://codebeat.co/badges/cb9699d0-4287-4723-96f9-e1a72fa05406)](https://codebeat.co/projects/github-com-chicio-id3tageditor-master)
 [![codecov](https://codecov.io/gh/chicio/ID3TagEditor/branch/master/graph/badge.svg)](https://codecov.io/gh/chicio/ID3TagEditor)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chicio/ID3TagEditor/master/LICENSE.md)
