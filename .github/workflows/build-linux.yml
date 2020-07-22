@@ -1,0 +1,22 @@
+name: Build Linux
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Swift
+        uses: sersoft-gmbh/SwiftyActions@v1
+        with:
+            release-version: 5.2.2
+      - name: Build Linux framework
+        run: |
+           swift build
+           swift test

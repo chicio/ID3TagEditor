@@ -1032,6 +1032,7 @@
 		45C286C124C8CBBB00171A88 /* build-watchos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-watchos.yml"; sourceTree = "<group>"; };
 		45C286C224C8CBBB00171A88 /* build-tvos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-tvos.yml"; sourceTree = "<group>"; };
 		45C286C324C8CBBB00171A88 /* build-macos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-macos.yml"; sourceTree = "<group>"; };
+		45C286C424C8CE5100171A88 /* build-linux.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-linux.yml"; sourceTree = "<group>"; };
 		45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CCD210CB85000E820C8 /* TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
@@ -1687,6 +1688,7 @@
 				45C286C124C8CBBB00171A88 /* build-watchos.yml */,
 				45C286C224C8CBBB00171A88 /* build-tvos.yml */,
 				45C286C324C8CBBB00171A88 /* build-macos.yml */,
+				45C286C424C8CE5100171A88 /* build-linux.yml */,
 			);
 			name = workflows;
 			path = .github/workflows;
