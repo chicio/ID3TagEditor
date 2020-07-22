@@ -1028,6 +1028,10 @@
 		45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingDayMonth.swift; sourceTree = "<group>"; };
 		45B4337021DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingYear.swift; sourceTree = "<group>"; };
 		45B4337521DD308A00BE0DC5 /* ID3FrameRecordingHourMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingHourMinute.swift; sourceTree = "<group>"; };
+		45C286C024C8CBBB00171A88 /* build-ios.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-ios.yml"; sourceTree = "<group>"; };
+		45C286C124C8CBBB00171A88 /* build-watchos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-watchos.yml"; sourceTree = "<group>"; };
+		45C286C224C8CBBB00171A88 /* build-tvos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-tvos.yml"; sourceTree = "<group>"; };
+		45C286C324C8CBBB00171A88 /* build-macos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-macos.yml"; sourceTree = "<group>"; };
 		45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CCD210CB85000E820C8 /* TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
@@ -1253,6 +1257,7 @@
 				455CF9872340C31F004C880A /* generate_docs */,
 				4553D64521946A3000540631 /* LinuxMain.swift */,
 				45AB7193204AD842004A2239 /* Package.swift */,
+				45C286BF24C8CBBB00171A88 /* workflows */,
 				452831C72044C40700458375 /* Source */,
 				452831D22044C40700458375 /* Tests */,
 				452831C62044C40700458375 /* Products */,
@@ -1673,6 +1678,18 @@
 				45775EE62107C37A00B1B3FE /* ID3StringEncodingConverter.swift */,
 			);
 			path = StringEncoding;
+			sourceTree = "<group>";
+		};
+		45C286BF24C8CBBB00171A88 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				45C286C024C8CBBB00171A88 /* build-ios.yml */,
+				45C286C124C8CBBB00171A88 /* build-watchos.yml */,
+				45C286C224C8CBBB00171A88 /* build-tvos.yml */,
+				45C286C324C8CBBB00171A88 /* build-macos.yml */,
+			);
+			name = workflows;
+			path = .github/workflows;
 			sourceTree = "<group>";
 		};
 		45D58CCC210CB83C00E820C8 /* Timestamp */ = {
