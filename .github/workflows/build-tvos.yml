@@ -1,0 +1,20 @@
+name: Build tvOS
+
+on:
+  push:
+    branches: 
+      - '*'
+
+jobs:
+  build:      
+    name: Build tvOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build tvOS framework
+        run: |
+           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor iOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=13.6" | xcpretty
+      - name: Build tvOS Demo
+        run: | 
+           set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=13.6" | xcpretty
