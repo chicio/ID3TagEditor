@@ -292,7 +292,6 @@
 		45541C0C205995F60025A8BF /* ID3FrameSizeParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067736CB14E36F76777344 /* ID3FrameSizeParserTest.swift */; };
 		45541C0D205995F60025A8BF /* ID3FrameContentSizeParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067DFAEB45D59D6AC3D1F7 /* ID3FrameContentSizeParserTest.swift */; };
 		45541C0E205995F60025A8BF /* ID3AttachedPictureFrameContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067A77786CE7640011760E /* ID3AttachedPictureFrameContentParsingOperationTest.swift */; };
-		45541C0F205995F60025A8BF /* ID3FrameStringContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF1853204B64BE00343B25 /* ID3FrameStringContentParsingOperationTest.swift */; };
 		45541C10205995F60025A8BF /* ID3GenreStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C506750E1974F38E2AD04B6A /* ID3GenreStringAdapterTest.swift */; };
 		45541C11205995F60025A8BF /* ID3PictureTypeAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50675D67C5E12BAE08DB28A /* ID3PictureTypeAdapterTest.swift */; };
 		45541C12205995F60025A8BF /* ID3TrackPositionStringAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067735F928B1F4911987D4 /* ID3TrackPositionStringAdapterTest.swift */; };
@@ -397,8 +396,6 @@
 		45AD069320461505003C570B /* ID3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5067ED87F78D196E8980F49 /* ID3Version.swift */; };
 		45AF1851204B647600343B25 /* ID3FrameStringContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF1850204B647600343B25 /* ID3FrameStringContentParsingOperation.swift */; };
 		45AF1852204B647600343B25 /* ID3FrameStringContentParsingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF1850204B647600343B25 /* ID3FrameStringContentParsingOperation.swift */; };
-		45AF1856204B64D500343B25 /* ID3FrameStringContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF1853204B64BE00343B25 /* ID3FrameStringContentParsingOperationTest.swift */; };
-		45AF1857204B64D500343B25 /* ID3FrameStringContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF1853204B64BE00343B25 /* ID3FrameStringContentParsingOperationTest.swift */; };
 		45B4336C21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */; };
 		45B4336D21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */; };
 		45B4336E21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */; };
@@ -740,6 +737,9 @@
 		5F6A0D2C251E3F2200989D7E /* PathLoaderXcodeProj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D2B251E3F2200989D7E /* PathLoaderXcodeProj.swift */; };
 		5F6A0D2D251E3F2200989D7E /* PathLoaderXcodeProj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D2B251E3F2200989D7E /* PathLoaderXcodeProj.swift */; };
 		5F6A0D2E251E3F2200989D7E /* PathLoaderXcodeProj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D2B251E3F2200989D7E /* PathLoaderXcodeProj.swift */; };
+		5F6A0D63251E497600989D7E /* ID3StringContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D62251E497600989D7E /* ID3StringContentParsingOperationTest.swift */; };
+		5F6A0D64251E497600989D7E /* ID3StringContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D62251E497600989D7E /* ID3StringContentParsingOperationTest.swift */; };
+		5F6A0D65251E497600989D7E /* ID3StringContentParsingOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A0D62251E497600989D7E /* ID3StringContentParsingOperationTest.swift */; };
 		5FA1CF6021CE891B008D74CE /* SynchsafeIntegerDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB70B421CD18B3008CC07F /* SynchsafeIntegerDecoder.swift */; };
 		5FA1CF6121CE891C008D74CE /* SynchsafeIntegerDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB70B421CD18B3008CC07F /* SynchsafeIntegerDecoder.swift */; };
 		5FA1CF6221CE891D008D74CE /* SynchsafeIntegerDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DB70B421CD18B3008CC07F /* SynchsafeIntegerDecoder.swift */; };
@@ -1024,7 +1024,6 @@
 		45AB7194204AD842004A2239 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		45AB7195204AD842004A2239 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45AF1850204B647600343B25 /* ID3FrameStringContentParsingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameStringContentParsingOperation.swift; sourceTree = "<group>"; };
-		45AF1853204B64BE00343B25 /* ID3FrameStringContentParsingOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameStringContentParsingOperationTest.swift; sourceTree = "<group>"; };
 		45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingDayMonth.swift; sourceTree = "<group>"; };
 		45B4337021DD0EEE00BE0DC5 /* ID3FrameRecordingYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingYear.swift; sourceTree = "<group>"; };
 		45B4337521DD308A00BE0DC5 /* ID3FrameRecordingHourMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingHourMinute.swift; sourceTree = "<group>"; };
@@ -1110,6 +1109,7 @@
 		51CDFE1324085F2600B06F29 /* ID3TagEditorTestAcceptanceNewFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TagEditorTestAcceptanceNewFrames.swift; sourceTree = "<group>"; };
 		51CDFE2B24087A1300B06F29 /* example-newframes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-newframes.mp3"; sourceTree = "<group>"; };
 		5F6A0D2B251E3F2200989D7E /* PathLoaderXcodeProj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoaderXcodeProj.swift; sourceTree = "<group>"; };
+		5F6A0D62251E497600989D7E /* ID3StringContentParsingOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3StringContentParsingOperationTest.swift; sourceTree = "<group>"; };
 		5FAF8DA121CECCD70049798C /* SynchsafeEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchsafeEncoder.swift; sourceTree = "<group>"; };
 		5FAF8DA621CED8600049798C /* example-v4-additional-data.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v4-additional-data.mp3"; sourceTree = "<group>"; };
 		5FAF8DAE21CED92F0049798C /* MockSynchsafeEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSynchsafeEncoder.swift; sourceTree = "<group>"; };
@@ -2018,8 +2018,8 @@
 		C5067F39049205056A522242 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				5F6A0D62251E497600989D7E /* ID3StringContentParsingOperationTest.swift */,
 				C5067A77786CE7640011760E /* ID3AttachedPictureFrameContentParsingOperationTest.swift */,
-				45AF1853204B64BE00343B25 /* ID3FrameStringContentParsingOperationTest.swift */,
 				45775F00210A65E400B1B3FE /* ID3RecordingTimestampOperationTest.swift */,
 			);
 			path = Operation;
@@ -2569,11 +2569,11 @@
 				C5067BD2D0DA084ED571C2B1 /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				519C352F240507D4008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift in Sources */,
 				C506731A8470956B3A6E6785 /* MockUInt32ToByteArrayAdapter.swift in Sources */,
-				45AF1856204B64D500343B25 /* ID3FrameStringContentParsingOperationTest.swift in Sources */,
 				45FA7DCA209917BF000A7484 /* ID3AlbumArtistFrameCreatorTest.swift in Sources */,
 				519C34FF240507D4008F3BDE /* ID3ConductorFrameCreatorTest.swift in Sources */,
 				C506712F0396A58E1E3F8D25 /* ID3TagCreatorTest.swift in Sources */,
 				45775EDD210714EB00B1B3FE /* UInt16+Bytes.swift in Sources */,
+				5F6A0D63251E497600989D7E /* ID3StringContentParsingOperationTest.swift in Sources */,
 				519C350B240507D4008F3BDE /* ID3PublisherFrameCreatorTest.swift in Sources */,
 				C5067317C5D4E530E584629E /* PaddingAdderUsingNullCharTest.swift in Sources */,
 				519C3532240507D4008F3BDE /* ID3iTunesMovementNameFrameCreatorTest.swift in Sources */,
@@ -2802,11 +2802,11 @@
 				C50673F417940FFC88D07142 /* ID3FrameContentSizeCalculatorTest.swift in Sources */,
 				519C3530240507D4008F3BDE /* ID3ContentGroupingFrameCreatorTest.swift in Sources */,
 				C50677CCA43334F0B8280A0A /* MockUInt32ToByteArrayAdapter.swift in Sources */,
-				45AF1857204B64D500343B25 /* ID3FrameStringContentParsingOperationTest.swift in Sources */,
 				45FA7DCB209917BF000A7484 /* ID3AlbumArtistFrameCreatorTest.swift in Sources */,
 				519C3500240507D4008F3BDE /* ID3ConductorFrameCreatorTest.swift in Sources */,
 				C50673D948A7F9F93AEE1267 /* ID3TagCreatorTest.swift in Sources */,
 				45775EDE210714EB00B1B3FE /* UInt16+Bytes.swift in Sources */,
+				5F6A0D64251E497600989D7E /* ID3StringContentParsingOperationTest.swift in Sources */,
 				519C350C240507D4008F3BDE /* ID3PublisherFrameCreatorTest.swift in Sources */,
 				C5067B5F4001A87FBDC6DDA7 /* PaddingAdderUsingNullCharTest.swift in Sources */,
 				519C3533240507D4008F3BDE /* ID3iTunesMovementNameFrameCreatorTest.swift in Sources */,
@@ -3040,6 +3040,7 @@
 				519C3501240507D4008F3BDE /* ID3ConductorFrameCreatorTest.swift in Sources */,
 				45541BFF205995F60025A8BF /* MockID3FrameCreatorsChain.swift in Sources */,
 				45775EDF210714EB00B1B3FE /* UInt16+Bytes.swift in Sources */,
+				5F6A0D65251E497600989D7E /* ID3StringContentParsingOperationTest.swift in Sources */,
 				519C350D240507D4008F3BDE /* ID3PublisherFrameCreatorTest.swift in Sources */,
 				45541C00205995F60025A8BF /* MockPaddingAdder.swift in Sources */,
 				519C3534240507D4008F3BDE /* ID3iTunesMovementNameFrameCreatorTest.swift in Sources */,
@@ -3067,7 +3068,6 @@
 				45541C0D205995F60025A8BF /* ID3FrameContentSizeParserTest.swift in Sources */,
 				45775EDB21070B3000B1B3FE /* String+UTF16Bytes.swift in Sources */,
 				45541C0E205995F60025A8BF /* ID3AttachedPictureFrameContentParsingOperationTest.swift in Sources */,
-				45541C0F205995F60025A8BF /* ID3FrameStringContentParsingOperationTest.swift in Sources */,
 				519C3537240507D4008F3BDE /* ID3iTunesPodcastIDFrameCreatorTest.swift in Sources */,
 				45541C10205995F60025A8BF /* ID3GenreStringAdapterTest.swift in Sources */,
 				45541C11205995F60025A8BF /* ID3PictureTypeAdapterTest.swift in Sources */,

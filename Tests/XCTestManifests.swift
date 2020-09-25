@@ -373,6 +373,20 @@ extension ID3StringContentParsingOperationTest {
     ]
 }
 
+extension ID3FrameSizeParserTest {
+    static let __allTests = [
+        ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
+        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
+    ]
+}
+
+extension ID3TagSizeParserTest {
+    static let __allTests = [
+        ("testParseTagSizeV2", testParseTagSizeV2),
+        ("testParseFrameContentSizeV3", testParseTagSizeV3),
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -427,6 +441,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3iTunesPodcastDescriptionFrameCreatorTest.__allTests),
         testCase(ID3FrameContentSizeParserTest.__allTests),
         testCase(ID3StringContentParsingOperationTest.__allTests),
+        testCase(ID3FrameSizeParserTest.__allTests),
+        testCase(ID3TagSizeParserTest.__allTests),
     ]
 }
 #endif
