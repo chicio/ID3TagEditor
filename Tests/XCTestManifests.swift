@@ -419,6 +419,17 @@ extension ID3TagEditorTestAcceptanceTest {
     ]
 }
 
+extension ID3TagEditorTestAcceptanceNewFrames {
+    static let __allTests = [
+        ("testReadNewFramesV2", testReadNewFramesV2),
+        ("testReadNewFramesV3", testReadNewFramesV3),
+        ("testReadNewFramesV4", testReadNewFramesV4),
+        ("testWriteNewFramesV2", testWriteNewFramesV2),
+        ("testWriteNewFramesV3", testWriteNewFramesV3),
+        ("testWriteNewFramesV4", testWriteNewFramesV4),
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -477,6 +488,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3TagSizeParserTest.__allTests),
         testCase(Mp3FileReaderTest.__allTests),
         testCase(ID3TagEditorTestAcceptanceTest.__allTests),
+        testCase(ID3TagEditorTestAcceptanceNewFrames.__allTests),
     ]
 }
 #endif
