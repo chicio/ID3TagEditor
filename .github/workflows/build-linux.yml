@@ -15,7 +15,7 @@ jobs:
       - name: Install Swift
         uses: sersoft-gmbh/SwiftyActions@v1
         with:
-            release-version: 5.2.2
+            release-version: 5.3
       - name: Build Linux framework
         run: |
            swift build
