@@ -355,6 +355,24 @@ extension UInt32ToByteArrayAdapterUsingUnsafePointerTest {
     ]
 }
 
+extension ID3FrameContentSizeParserTest {
+    static let __allTests = [
+        ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
+        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
+        ("testParseFrameContentSizeV4", testParseFrameContentSizeV4),
+    ]
+}
+
+extension ID3StringContentParsingOperationTest {
+    static let __allTests = [
+        ("testFrameContentParsedV2", testFrameContentParsedV2),
+        ("testFrameContentParsedV3", testFrameContentParsedV3),
+        ("testFrameContentParsedV2utf16", testFrameContentParsedV2utf16),
+        ("testFrameContentParsedV3utf16", testFrameContentParsedV3utf16),
+        ("testFrameContentParsedV4utf8", testFrameContentParsedV4utf8),
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -407,6 +425,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3iTunesPodcastIDFrameCreatorTest.__allTests),
         testCase(ID3iTunesPodcastKeywordsFrameCreatorTest.__allTests),
         testCase(ID3iTunesPodcastDescriptionFrameCreatorTest.__allTests),
+        testCase(ID3FrameContentSizeParserTest.__allTests),
+        testCase(ID3StringContentParsingOperationTest.__allTests),
     ]
 }
 #endif
