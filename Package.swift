@@ -21,6 +21,7 @@ let package = Package(
             name: "ID3TagEditorTests",
             dependencies: ["ID3TagEditor"],
             path: "./Tests",
+            exclude: ["Utils/PathLoaderXcodeProj.swift"],
             resources: [.process("Examples")]
         )
     ],
