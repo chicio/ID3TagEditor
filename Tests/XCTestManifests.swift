@@ -394,6 +394,31 @@ extension Mp3FileReaderTest {
     ]
 }
 
+extension ID3TagEditorTestAcceptanceTest {
+    static let __allTests = [
+        ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
+        ("testReadTagV2", testReadTagV2),
+        ("testParseTagV3", testParseTagV3),
+        ("testParseTagV3AdditionalData", testParseTagV3AdditionalData),
+        ("testReadTagV4", testReadTagV4),
+        ("testReadTagV4WithImage", testReadTagV4WithImage),
+        ("testReadAsMp3", testReadAsMp3),
+        ("testReadInvalidFile", testReadInvalidFile),
+        ("testReadUtf16String", testReadUtf16String),
+        ("testWriteTagV2", testWriteTagV2),
+        ("testWriteTagV3WhenItAlreadyExists", testWriteTagV3WhenItAlreadyExists),
+        ("testWriteTagV3WithJpg", testWriteTagV3WithJpg),
+        ("testWriteTagV3WithPng", testWriteTagV3WithPng),
+        ("testWriteTagV3WithCustomPathThatDoesNotExists", testWriteTagV3WithCustomPathThatDoesNotExists),
+        ("testWriteTagV3WithSamePath", testWriteTagV3WithSamePath),
+        ("testWriteTagV3WithAdditionalData", testWriteTagV3WithAdditionalData),
+        ("testWriteTagV3ToMp3AsData", testWriteTagV3ToMp3AsData),
+        ("testWriteTagV4", testWriteTagV4),
+        ("testWriteTagV4WithPng", testWriteTagV4WithPng),
+
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -451,6 +476,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3FrameSizeParserTest.__allTests),
         testCase(ID3TagSizeParserTest.__allTests),
         testCase(Mp3FileReaderTest.__allTests),
+        testCase(ID3TagEditorTestAcceptanceTest.__allTests),
     ]
 }
 #endif
