@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -21,16 +21,8 @@ let package = Package(
             name: "ID3TagEditorTests",
             dependencies: ["ID3TagEditor"],
             path: "./Tests",
-            exclude: [
-                "Parsing/Frame/Content/Size/ID3FrameContentSizeParserTest.swift",
-                "Parsing/Frame/Content/Operation/ID3FrameStringContentParsingOperationTest.swift",
-                "Parsing/Frame/Size/ID3FrameSizeParserTest.swift",
-                "Parsing/Tag/Size/ID3TagSizeParserTest.swift",
-                "Parsing/Tag/Version/ID3TagVersionParserTest.swift",
-                "Acceptance/ID3TagEditorTestAcceptanceTest.swift",
-                "Mp3/Mp3FileReaderTest.swift"
-            ]
-        ),
+            resources: [.process("Examples")]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

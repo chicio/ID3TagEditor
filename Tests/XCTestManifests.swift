@@ -355,7 +355,7 @@ extension UInt32ToByteArrayAdapterUsingUnsafePointerTest {
     ]
 }
 
-#if !os(macOS)
+#if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(ID3AlbumArtistFrameCreatorTest.__allTests),
