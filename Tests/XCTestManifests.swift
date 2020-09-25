@@ -387,6 +387,13 @@ extension ID3TagSizeParserTest {
     ]
 }
 
+extension Mp3FileReaderTest {
+    static let __allTests = [
+        ("testNotAnMp3file", testNotAnMp3file),
+        ("testMp3File", testMp3File),
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -443,6 +450,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3StringContentParsingOperationTest.__allTests),
         testCase(ID3FrameSizeParserTest.__allTests),
         testCase(ID3TagSizeParserTest.__allTests),
+        testCase(Mp3FileReaderTest.__allTests),
     ]
 }
 #endif
