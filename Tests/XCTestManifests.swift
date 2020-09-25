@@ -355,7 +355,82 @@ extension UInt32ToByteArrayAdapterUsingUnsafePointerTest {
     ]
 }
 
-#if !os(macOS)
+extension ID3FrameContentSizeParserTest {
+    static let __allTests = [
+        ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
+        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
+        ("testParseFrameContentSizeV4", testParseFrameContentSizeV4),
+    ]
+}
+
+extension ID3StringContentParsingOperationTest {
+    static let __allTests = [
+        ("testFrameContentParsedV2", testFrameContentParsedV2),
+        ("testFrameContentParsedV3", testFrameContentParsedV3),
+        ("testFrameContentParsedV2utf16", testFrameContentParsedV2utf16),
+        ("testFrameContentParsedV3utf16", testFrameContentParsedV3utf16),
+        ("testFrameContentParsedV4utf8", testFrameContentParsedV4utf8),
+    ]
+}
+
+extension ID3FrameSizeParserTest {
+    static let __allTests = [
+        ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
+        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
+    ]
+}
+
+extension ID3TagSizeParserTest {
+    static let __allTests = [
+        ("testParseTagSizeV2", testParseTagSizeV2),
+        ("testParseFrameContentSizeV3", testParseTagSizeV3),
+    ]
+}
+
+extension Mp3FileReaderTest {
+    static let __allTests = [
+        ("testNotAnMp3file", testNotAnMp3file),
+        ("testMp3File", testMp3File),
+    ]
+}
+
+extension ID3TagEditorTestAcceptanceTest {
+    static let __allTests = [
+        ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
+        ("testReadTagV2", testReadTagV2),
+        ("testParseTagV3", testParseTagV3),
+        ("testParseTagV3AdditionalData", testParseTagV3AdditionalData),
+        ("testReadTagV4", testReadTagV4),
+        ("testReadTagV4WithImage", testReadTagV4WithImage),
+        ("testReadAsMp3", testReadAsMp3),
+        ("testReadInvalidFile", testReadInvalidFile),
+        ("testReadUtf16String", testReadUtf16String),
+        ("testWriteTagV2", testWriteTagV2),
+        ("testWriteTagV3WhenItAlreadyExists", testWriteTagV3WhenItAlreadyExists),
+        ("testWriteTagV3WithJpg", testWriteTagV3WithJpg),
+        ("testWriteTagV3WithPng", testWriteTagV3WithPng),
+        ("testWriteTagV3WithCustomPathThatDoesNotExists", testWriteTagV3WithCustomPathThatDoesNotExists),
+        ("testWriteTagV3WithSamePath", testWriteTagV3WithSamePath),
+        ("testWriteTagV3WithAdditionalData", testWriteTagV3WithAdditionalData),
+        ("testWriteTagV3ToMp3AsData", testWriteTagV3ToMp3AsData),
+        ("testWriteTagV4", testWriteTagV4),
+        ("testWriteTagV4WithPng", testWriteTagV4WithPng),
+
+    ]
+}
+
+extension ID3TagEditorTestAcceptanceNewFrames {
+    static let __allTests = [
+        ("testReadNewFramesV2", testReadNewFramesV2),
+        ("testReadNewFramesV3", testReadNewFramesV3),
+        ("testReadNewFramesV4", testReadNewFramesV4),
+        ("testWriteNewFramesV2", testWriteNewFramesV2),
+        ("testWriteNewFramesV3", testWriteNewFramesV3),
+        ("testWriteNewFramesV4", testWriteNewFramesV4),
+    ]
+}
+
+#if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(ID3AlbumArtistFrameCreatorTest.__allTests),
@@ -407,6 +482,13 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3iTunesPodcastIDFrameCreatorTest.__allTests),
         testCase(ID3iTunesPodcastKeywordsFrameCreatorTest.__allTests),
         testCase(ID3iTunesPodcastDescriptionFrameCreatorTest.__allTests),
+        testCase(ID3FrameContentSizeParserTest.__allTests),
+        testCase(ID3StringContentParsingOperationTest.__allTests),
+        testCase(ID3FrameSizeParserTest.__allTests),
+        testCase(ID3TagSizeParserTest.__allTests),
+        testCase(Mp3FileReaderTest.__allTests),
+        testCase(ID3TagEditorTestAcceptanceTest.__allTests),
+        testCase(ID3TagEditorTestAcceptanceNewFrames.__allTests),
     ]
 }
 #endif

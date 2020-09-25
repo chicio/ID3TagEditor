@@ -24,15 +24,9 @@ class ViewController: UIViewController {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             titleLabel.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
             artistLabel.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
-            yearLabel.text = String((id3Tag?.frames[.RecordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year ?? 0)
-            genreLabel.text = """
-                \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)
-                \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description ?? "")
-            """
-            trackPositionLabel.text = """
-                Track \((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.part ?? -1) of
-                \((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.total ?? -1)
-            """
+            yearLabel.text = String((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year ?? 0)
+            genreLabel.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0) \((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description ?? "")"
+            trackPositionLabel.text = "Track \((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.part ?? -1) of \((id3Tag?.frames[.TrackPosition] as? ID3FramePartOfTotal)?.total ?? -1)"
             if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)
             }

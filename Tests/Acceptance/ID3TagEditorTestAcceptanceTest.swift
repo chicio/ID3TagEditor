@@ -8,7 +8,7 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3TagEditorTest: XCTestCase {
+class ID3TagEditorTestAcceptanceTest: XCTestCase {
     let id3TagEditor = ID3TagEditor()
     
     func testFailWrongFilePathFilePath() {

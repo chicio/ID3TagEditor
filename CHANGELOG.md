@@ -1,6 +1,15 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.3.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.0)
+Release date: 2020-03-19
+
+#### Added
+- upgrade to Xcode 12
+- upgrade to SPM swift tools 5.3
+- added support for resources to SPM: now all tests can be launched on all platforms (including acceptance tests)
+
+
 ## [3.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.2.0)
 Release date: 2020-03-19
 
