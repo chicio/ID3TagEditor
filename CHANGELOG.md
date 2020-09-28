@@ -1,8 +1,15 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.3.1](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.1)
+Release date: 2020-09-28
+
+#### Fixed
+- removed Info.plist from SwiftPM build 
+
+
 ## [3.3.0](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.0)
-Release date: 2020-03-19
+Release date: 2020-09-25
 
 #### Added
 - upgrade to Xcode 12
