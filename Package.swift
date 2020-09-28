@@ -15,13 +15,14 @@ let package = Package(
         .target(
             name: "ID3TagEditor",
             dependencies: [],
-            path: "./Source"
+            path: "./Source",
+            exclude: ["Info.plist"]
         ),
         .testTarget(
             name: "ID3TagEditorTests",
             dependencies: ["ID3TagEditor"],
             path: "./Tests",
-            exclude: ["Utils/PathLoaderXcodeProj.swift"],
+            exclude: ["Utils/PathLoaderXcodeProj.swift", "Info.plist"],
             resources: [.process("Examples")]
         )
     ],
