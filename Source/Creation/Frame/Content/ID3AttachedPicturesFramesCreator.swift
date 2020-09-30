@@ -12,6 +12,7 @@ class ID3AttachedPicturesFramesCreator: ID3FrameCreatorsChain {
 
     init(attachedPictureFrameCreator: AttachedPictureFrameCreator) {
         self.attachedPictureFrameCreator = attachedPictureFrameCreator
+        super.init()
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
@@ -22,9 +23,6 @@ class ID3AttachedPicturesFramesCreator: ID3FrameCreatorsChain {
                 frames.append(contentsOf: frame)
             }
         }
-        if frames.count > 0 {
-            return tag + frames
-        }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return super.createFrames(id3Tag: id3Tag, tag: tag + frames)
     }
 }

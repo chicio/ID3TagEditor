@@ -14,6 +14,7 @@ class ID3DiscPositionFrameCreator: ID3FrameCreatorsChain {
     init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
+        super.init()
     }
 
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
