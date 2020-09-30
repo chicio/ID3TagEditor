@@ -1,6 +1,13 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.3.2](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.2)
+Release date: 2020-09-30
+
+#### Fixed
+- Fixed #36: tags not wirtten after attached pictures frame
+
+
 ## [3.3.1](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.1)
 Release date: 2020-09-28
 
