@@ -129,7 +129,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.Subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V4")
     }
-        
+    
     //MARK: write
     
     func testWriteNewFramesV2() {
@@ -156,7 +156,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -196,7 +196,7 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -236,12 +236,34 @@ class ID3TagEditorTestAcceptanceNewFrames: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-
+    
+    func testFramesAfterAttachdPicturesAreWritten() {
+        let path = PathLoader().pathFor(name: "folder", fileType: "jpg")
+        let pathMp3Generated = NSHomeDirectory() + "/frames-after-attached-picture.mp3"
+        let cover = try! Data(contentsOf: URL(fileURLWithPath: path))
+        let id3Tag = ID3Tag(
+            version: .version3,
+            frames: [
+                .DiscPosition : ID3FramePartOfTotal(part: 1, total: 3),
+                .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: cover, type: .FrontCover, format: .Jpeg),
+            ]
+        )
+        
+        let id3TagEditor = ID3TagEditor()
+        
+        XCTAssertNoThrow(try! id3TagEditor.write(tag: id3Tag,
+                                                 to: PathLoader().pathFor(name: "frames-after-attached-picture", fileType: "mp3"),
+                                                 andSaveTo: pathMp3Generated))
+        
+        let tag = try! id3TagEditor.read(from: pathMp3Generated)
+        XCTAssertEqual((tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.part, 1)
+        XCTAssertEqual((tag?.frames[.DiscPosition] as? ID3FramePartOfTotal)?.total, 3)
+    }
 }
