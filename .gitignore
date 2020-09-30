@@ -83,4 +83,4 @@ Tests/alice-in-chains-with-tag.mp3
 .build
 Demo/**/Package.resolved
 Demo/**/.build
-
+.swiftpm
