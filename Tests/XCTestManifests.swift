@@ -427,6 +427,7 @@ extension ID3TagEditorTestAcceptanceNewFrames {
         ("testWriteNewFramesV2", testWriteNewFramesV2),
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
+        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten)
     ]
 }
 
