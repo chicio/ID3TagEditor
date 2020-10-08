@@ -289,6 +289,9 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
             ))
+        
+        let tag = try! id3TagEditor.read(from: NSHomeDirectory() + "/example-v3-png.mp3")
+        print("")
     }
     
     func testWriteTagV3WithCustomPathThatDoesNotExists() {
@@ -454,10 +457,36 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
             ))
-        
+                
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
+    }
+    
+    func testWriteTagV4SynchsafeIntegers() {
+        let art: Data = try! Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
+        )
+        let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4-synchsafe.mp3"
+        let id3Tag = ID3Tag(
+            version: .version4,
+            frames: [
+                .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Png)
+            ]
+        )
+        
+        XCTAssertNoThrow(try id3TagEditor.write(
+            tag: id3Tag,
+            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+            andSaveTo: pathMp3Generated
+            ))
+        
+        let id3TagWritten = try! id3TagEditor.read(from: pathMp3Generated)
+        
+        XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture, art)
+        XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.format, .Png)
+        XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.type, .FrontCover)
+        XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.size, 243723)
     }
 }

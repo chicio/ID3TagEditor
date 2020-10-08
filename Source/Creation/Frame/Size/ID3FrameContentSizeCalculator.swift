@@ -17,15 +17,14 @@ class ID3FrameContentSizeCalculator: FrameContentSizeCalculator {
     }
 
     func calculateSizeOf(content: [UInt8], version: ID3Version) -> [UInt8] {
-        var size = UInt32(content.count)
-        size = synchsafeEncodeIfVersion4(size: size, version: version)
-        var sizeBytes = uInt32ToByteArrayAdapter.adapt(uInt32: UInt32(content.count))
+        let size = synchsafeEncodeIfVersion4(size: UInt32(content.count), version: version)
+        var sizeBytes = uInt32ToByteArrayAdapter.adapt(uInt32: size)
         sizeBytes = removeFirstByteIfVersion2From(size: sizeBytes, version: version)
         return sizeBytes
     }
     
     private func synchsafeEncodeIfVersion4(size: UInt32, version: ID3Version) -> UInt32 {
-        if version <= .version4 {
+        if version == .version4 {
             return synchsafeEncoder.encode(integer: size)
         }
         return size
