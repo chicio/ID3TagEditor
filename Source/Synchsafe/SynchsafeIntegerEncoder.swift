@@ -10,7 +10,7 @@ import Foundation
 /**
  Synchsafe integer encoder
  
- - SeeAlso https://en.wikipedia.org/wiki/Synchsafe
+ - SeeAlso https://handwiki.org/wiki/Synchsafe
  */
 class SynchsafeIntegerEncoder: SynchsafeEncoder {
     func encode(integer: UInt32) -> UInt32 {
