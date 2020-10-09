@@ -10,7 +10,7 @@ import Foundation
 /**
  The attached picture format supported by the ID3 tag.
  */
-public enum ID3PictureFormat {
+public enum ID3PictureFormat: Equatable, Hashable, CaseIterable  {
     /// Jpeg image.
     case Jpeg
     /// Png image.

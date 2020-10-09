@@ -10,7 +10,7 @@ import Foundation
 /**
  An enum that contains the genres supported by the ID3 standard using specific identifiers.
  */
-public enum ID3Genre: Int, Equatable {
+public enum ID3Genre: Int, Equatable, Hashable, CaseIterable {
     /// Blues genre.
     case Blues = 0
     /// Classic rock genre.
