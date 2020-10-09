@@ -40,8 +40,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     .AlbumArtist : ID3FrameWithStringContent(content: albumArtistField.text ?? ""),
                     .Title : ID3FrameWithStringContent(content: titleTextField.text ?? ""),
                     .Album : ID3FrameWithStringContent(content: albumTextField.text ?? ""),
-                    .RecordingYear : ID3FrameRecordingYear(year: 2019),
-                    .Genre : ID3FrameGenre(genre: .ClassicRock, description: "Rock & Roll"),
+                    .RecordingYear : ID3FrameRecordingYear(year: Int(yearField.text ?? "2019") ?? 2019),
+                    .Genre : ID3FrameGenre(genre: ID3Genre(rawValue: Int(genreIdentifierField.text ?? "1") ?? 1) ?? ID3Genre(rawValue: 1)!,
+                                           description: genreDescriptionField.text ?? "Rock and roll"),
                     .TrackPosition: ID3FramePartOfTotal(part: 2, total: 9)
                 ]
             )
@@ -66,16 +67,41 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func load(_ sender: Any) {
         do {
-            let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
+            var id3Tag: ID3Tag?
+            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+            let url = NSURL(fileURLWithPath: path)
+            if let pathComponent = url.appendingPathComponent("example.mp3") {
+                let filePath = pathComponent.path
+                let fileManager = FileManager.default
+                if fileManager.fileExists(atPath: filePath) {
+                    let documentDirectory = try FileManager.default.url(
+                        for: .documentDirectory,
+                        in: .userDomainMask,
+                        appropriateFor:nil,
+                        create:false
+                    )
+                    let newPath = documentDirectory.appendingPathComponent("example.mp3").path
+                    id3Tag = try id3TagEditor.read(from: newPath)
+                } else {
+                    id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
+                }
+            } else {
+                id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
+            }
+            
             titleTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
             albumTextField.text = (id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content
             albumArtistField.text = (id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content
             artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
-            genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0)"
+            // genre is setted only by the
+            genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? -1)"
             genreDescriptionField.text = (id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description
             yearField.text = "\((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
             if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)
+            } else {
+                //image is removed when the user press the update button
+                attachedPictureImage.image = nil
             }
         } catch {
             print(error)
