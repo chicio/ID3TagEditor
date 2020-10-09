@@ -415,6 +415,7 @@ extension ID3TagEditorTestAcceptanceTest {
         ("testWriteTagV3ToMp3AsData", testWriteTagV3ToMp3AsData),
         ("testWriteTagV4", testWriteTagV4),
         ("testWriteTagV4WithPng", testWriteTagV4WithPng),
+        ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers)
 
     ]
 }

@@ -10,7 +10,64 @@ import Foundation
 
 /// An enum used to identify the different types of frame parsed by the ID3TagEditor. This must be used to acces the frame data as identifier inside the dictionary
 /// of frame in the `ID3tag` `frames` properties.
-public enum FrameName: Hashable {
+public enum FrameName: Equatable, Hashable, CaseIterable {
+    public static var allCases: [FrameName] {
+        return [
+            .Title,
+            .Album,
+            .AlbumArtist,
+            .Artist,
+            .Composer,
+            .Conductor,
+            .ContentGrouping,
+            .Copyright,
+            .EncodedBy,
+            .EncoderSettings,
+            .FileOwner,
+            .Lyricist,
+            .MixArtist,
+            .Publisher,
+            .Subtitle,
+            .Genre,
+            .DiscPosition,
+            .TrackPosition,
+            .RecordingDayMonth,
+            .RecordingYear,
+            .RecordingHourMinute,
+            .RecordingDateTime,
+            .AttachedPicture(.Other),
+            .AttachedPicture(.Other),
+            .AttachedPicture(.fileIcon),
+            .AttachedPicture(.OtherFileIcon),
+            .AttachedPicture(.FrontCover),
+            .AttachedPicture(.BackCover),
+            .AttachedPicture(.LeafletPage),
+            .AttachedPicture(.Media),
+            .AttachedPicture(.LeadArtistLeadPerformerSoloist),
+            .AttachedPicture(.ArtistPerformer),
+            .AttachedPicture(.Conductor),
+            .AttachedPicture(.BandOrchestra),
+            .AttachedPicture(.Composer),
+            .AttachedPicture(.LyricistTextWriter),
+            .AttachedPicture(.RecordingLocation),
+            .AttachedPicture(.DuringRecording),
+            .AttachedPicture(.DuringPerformance),
+            .AttachedPicture(.MovieVideoScreenCapture),
+            .AttachedPicture(.ABrightColouredFish),
+            .AttachedPicture(.Illustration),
+            .AttachedPicture(.BandArtistLogotype),
+            .AttachedPicture(.PublisherStudioLogotype),
+            .iTunesGrouping,
+            .iTunesMovementName,
+            .iTunesMovementIndex,
+            .iTunesMovementCount,
+            .iTunesPodcastCategory,
+            .iTunesPodcastDescription,
+            .iTunesPodcastID,
+            .iTunesPodcastKeywords
+        ]
+    }
+    
     /// Title frame name.
     case Title
     /// Album frame name.

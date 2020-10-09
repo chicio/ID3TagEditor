@@ -10,7 +10,7 @@ import Foundation
 /**
  An enum that describes the ID3 picture type supported.
  */
-public enum ID3PictureType: UInt8, Equatable, CaseIterable {
+public enum ID3PictureType: UInt8, Equatable, Hashable, CaseIterable {
     /// Other image.
     case Other = 0x00
     /// File icon image.
@@ -53,16 +53,4 @@ public enum ID3PictureType: UInt8, Equatable, CaseIterable {
     case BandArtistLogotype = 0x13
     /// Publisher logo image.
     case PublisherStudioLogotype = 0x14
-
-    /**
-     Compare two ID3PictureType.
-
-     - parameter lhs: left side of compare operation.
-     - parameter rhs: right side of compare operation.
-
-     - returns: true if the picture types are the same, else false.
-     */
-    public static func ==(lhs: ID3PictureType, rhs: ID3PictureType) -> Bool {
-        return lhs.rawValue == rhs.rawValue
-    }
 }

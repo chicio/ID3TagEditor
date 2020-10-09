@@ -288,10 +288,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
-            ))
-        
-        let tag = try! id3TagEditor.read(from: NSHomeDirectory() + "/example-v3-png.mp3")
-        print("")
+            ))        
     }
     
     func testWriteTagV3WithCustomPathThatDoesNotExists() {

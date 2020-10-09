@@ -10,7 +10,7 @@ import Foundation
 /**
  An enum that contains the genres supported by the ID3 standard using specific identifiers.
  */
-public enum ID3Genre: Int, Equatable {
+public enum ID3Genre: Int, Equatable, Hashable, CaseIterable {
     /// Blues genre.
     case Blues = 0
     /// Classic rock genre.
@@ -175,16 +175,4 @@ public enum ID3Genre: Int, Equatable {
     case Remix = 80
     /// Cover genre.
     case Cover = 81
-
-    /**
-     Compare two ID3Genre.
-
-     - parameter lhs: left side of compare operation.
-     - parameter rhs: right side of compare operation.
-
-     - returns: true if the genre values are the same, else false.
-     */
-    public static func ==(lhs: ID3Genre, rhs: ID3Genre) -> Bool {
-        return lhs.rawValue == rhs.rawValue
-    }
 }
