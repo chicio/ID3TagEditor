@@ -57,6 +57,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .AttachedPicture(.Illustration),
             .AttachedPicture(.BandArtistLogotype),
             .AttachedPicture(.PublisherStudioLogotype),
+            .UnsynchronizedLyrics(.ita),
             .iTunesGrouping,
             .iTunesMovementName,
             .iTunesMovementIndex,
@@ -115,6 +116,9 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
+    /// Unsynchronized lyrics frame name
+    /// - language: language of the lyrics, according to the ISO-639-2 standard
+    case UnsynchronizedLyrics(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
     ///Movement name frame name.

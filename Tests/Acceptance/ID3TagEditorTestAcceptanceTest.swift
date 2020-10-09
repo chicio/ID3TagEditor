@@ -205,7 +205,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -233,7 +233,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-with-tag-already-setted", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
@@ -262,7 +262,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -288,7 +288,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
-            ))        
+        ))
     }
     
     func testWriteTagV3WithCustomPathThatDoesNotExists() {
@@ -365,7 +365,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: NSHomeDirectory() + "/example-v3-additional-data.mp3"
-            ))
+        ))
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -424,7 +424,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
@@ -453,8 +453,8 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
-                
+        ))
+        
         XCTAssertEqual(
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
@@ -477,7 +477,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
-            ))
+        ))
         
         let id3TagWritten = try! id3TagEditor.read(from: pathMp3Generated)
         
@@ -485,5 +485,36 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.format, .Png)
         XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.type, .FrontCover)
         XCTAssertEqual((id3TagWritten?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.size, 243723)
+    }
+    
+    
+    func testWriteUnsynchronizdLyrics() {
+        let pathMp3Generated = NSHomeDirectory() + "/example-write-unsynched-lyrics-v3.mp3"
+        
+        let id3Tag = ID3Tag(
+            version: .version4,
+            frames: [
+                .UnsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita,
+                                                                          content: """
+                        Test lyrics
+                        On multiline
+                        Ohhhh yeah!!!
+                """)
+            ]
+        )
+        
+        try! id3TagEditor.write(
+            tag: id3Tag,
+            to: PathLoader().pathFor(name: "example-write-unsynched-lyrics", fileType: "mp3"),
+            andSaveTo: pathMp3Generated
+        )
+        
+        let id3TagWritten = try! id3TagEditor.read(from: pathMp3Generated)
+        
+        XCTAssertEqual((id3TagWritten?.frames[.UnsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.content, """
+                        Test lyrics
+                        On multiline
+                        Ohhhh yeah!!!
+                """)
     }
 }
