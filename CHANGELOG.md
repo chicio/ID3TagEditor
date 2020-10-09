@@ -1,6 +1,16 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [3.3.3](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.3)
+Release date: 2020-10-09
+
+#### Added
+- All public API enums now are iterable, equatable and hashable
+
+#### Fixed
+- Fixed #37: ID3 v2.4 AttachedPicture synchsafe size error 
+
+
 ## [3.3.2](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.2)
 Release date: 2020-09-30
 
