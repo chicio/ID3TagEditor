@@ -488,7 +488,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
     }
     
     
-    func testWriteUnsynchronizdLyrics() {
+    func testWriteUnsynchronisedLyrics() {
         let pathMp3Generated = NSHomeDirectory() + "/example-write-unsynched-lyrics-v3.mp3"
         
         let id3Tag = ID3Tag(

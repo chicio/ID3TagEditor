@@ -415,8 +415,8 @@ extension ID3TagEditorTestAcceptanceTest {
         ("testWriteTagV3ToMp3AsData", testWriteTagV3ToMp3AsData),
         ("testWriteTagV4", testWriteTagV4),
         ("testWriteTagV4WithPng", testWriteTagV4WithPng),
-        ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers)
-
+        ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers),
+        ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics)
     ]
 }
 
@@ -428,8 +428,7 @@ extension ID3TagEditorTestAcceptanceNewFrames {
         ("testWriteNewFramesV2", testWriteNewFramesV2),
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
-        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten),
-        ("testWriteUnsynchronizdLyrics", testWriteUnsynchronizdLyrics)
+        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten)
     ]
 }
 
