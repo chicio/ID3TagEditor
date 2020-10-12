@@ -492,7 +492,7 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
         let pathMp3Generated = NSHomeDirectory() + "/example-write-unsynched-lyrics-v3.mp3"
         
         let id3Tag = ID3Tag(
-            version: .version4,
+            version: .version3,
             frames: [
                 .UnsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita,
                                                                           content: """

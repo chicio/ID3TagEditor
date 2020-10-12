@@ -429,6 +429,7 @@ extension ID3TagEditorTestAcceptanceNewFrames {
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
         ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten)
+        ("testWriteUnsynchronizdLyrics", testWriteUnsynchronizdLyrics)
     ]
 }
 
