@@ -37,6 +37,7 @@ class ID3FrameContentParsingOperationFactory {
             .RecordingDateTime: ID3RecordingTimeFrameContentParsingOperationFactory.make(),
             .Genre: ID3GenreFrameContentParsingOperationFactory.make(),
             .TrackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make(),
+            .UnsyncronisedLyrics: ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make(),
             .iTunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
             .iTunesMovementIndex: ID3iTunesMovementIndexFrameContentParsingOperationFactory.make(),
             .iTunesMovementCount: ID3iTunesMovementCountFrameContentParsingOperationFactory.make(),
