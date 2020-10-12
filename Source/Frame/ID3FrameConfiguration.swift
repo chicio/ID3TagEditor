@@ -119,7 +119,8 @@ class ID3FrameConfiguration {
         "TCAT" : .iTunesPodcastCategory,
         "TDES" : .iTunesPodcastDescription,
         "TGID" : .iTunesPodcastID,
-        "TKWD" : .iTunesPodcastKeywords
+        "TKWD" : .iTunesPodcastKeywords,
+        "USLT" : .UnsyncronisedLyrics
     ]
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
@@ -143,7 +144,8 @@ class ID3FrameConfiguration {
             "TIM" : .RecordingHourMinute,
             "TCO" : .Genre,
             "TRK" : .TrackPosition,
-            "TPA" : .DiscPosition
+            "TPA" : .DiscPosition,
+            "ULT" : .UnsyncronisedLyrics
         ],
         .version3 : [
             "TDAT" : .RecordingDayMonth,
