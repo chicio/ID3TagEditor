@@ -66,7 +66,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .iTunesPodcastDescription,
             .iTunesPodcastID,
             .iTunesPodcastKeywords
-        ]
+        ]        
     }
     
     /// Title frame name.
