@@ -35,29 +35,6 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .RecordingYear,
             .RecordingHourMinute,
             .RecordingDateTime,
-            .AttachedPicture(.Other),
-            .AttachedPicture(.Other),
-            .AttachedPicture(.fileIcon),
-            .AttachedPicture(.OtherFileIcon),
-            .AttachedPicture(.FrontCover),
-            .AttachedPicture(.BackCover),
-            .AttachedPicture(.LeafletPage),
-            .AttachedPicture(.Media),
-            .AttachedPicture(.LeadArtistLeadPerformerSoloist),
-            .AttachedPicture(.ArtistPerformer),
-            .AttachedPicture(.Conductor),
-            .AttachedPicture(.BandOrchestra),
-            .AttachedPicture(.Composer),
-            .AttachedPicture(.LyricistTextWriter),
-            .AttachedPicture(.RecordingLocation),
-            .AttachedPicture(.DuringRecording),
-            .AttachedPicture(.DuringPerformance),
-            .AttachedPicture(.MovieVideoScreenCapture),
-            .AttachedPicture(.ABrightColouredFish),
-            .AttachedPicture(.Illustration),
-            .AttachedPicture(.BandArtistLogotype),
-            .AttachedPicture(.PublisherStudioLogotype),
-            .UnsynchronizedLyrics(.ita),
             .iTunesGrouping,
             .iTunesMovementName,
             .iTunesMovementIndex,
@@ -66,7 +43,9 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .iTunesPodcastDescription,
             .iTunesPodcastID,
             .iTunesPodcastKeywords
-        ]        
+        ]
+        + ID3PictureType.allCases.map({ .AttachedPicture($0) })
+        + ID3FrameContentLanguage.allCases.map({ .UnsynchronizedLyrics($0) })
     }
     
     /// Title frame name.
