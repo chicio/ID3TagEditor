@@ -23,7 +23,7 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperation: FrameContentParsingOp
         let headerSize = id3FrameConfiguration.headerSizeFor(version: version)
 
         let encoding = stringEncodingDetector.detect(frame: frame, version: version)
-        let content = String(data: frame.subdata(in: (headerSize + 5)..<frame.count),
+        let content = String(data: frame.subdata(in: (headerSize + 6)..<frame.count),
                              encoding: encoding)! //5 = 1 byte encoding + 3 byte language + 1 byte content descriptor
         let language = ID3FrameContentLanguage(rawValue: String(data: frame.subdata(in: headerSize + 1 ..< headerSize + 4), encoding: .utf8)!)!
         
