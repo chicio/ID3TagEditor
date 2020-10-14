@@ -11,9 +11,11 @@ import Foundation
 
 public class ID3FrameUnsynchronisedLyrics: ID3FrameWithStringContent {
     public let language: ID3FrameContentLanguage
+    public let contentDescription: String
     
-    public init(language: ID3FrameContentLanguage, content: String) {
+    public init(language: ID3FrameContentLanguage, contentDescription: String, content: String) {
         self.language = language
+        self.contentDescription = contentDescription
         super.init(content: content)
     }
 }

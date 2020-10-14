@@ -13,6 +13,7 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationFactory {
         let id3FrameConfiguration = ID3FrameConfiguration()
         return ID3UnsynchronisedLyricsFrameContentParsingOperation(
             id3FrameConfiguration: id3FrameConfiguration,
+            paddingRemover: PaddingRemoverUsingTrimming(),
             stringEncodingDetector:  ID3FrameStringEncodingDetector(
                 id3FrameConfiguration: id3FrameConfiguration,
                 id3StringEncodingConverter: ID3StringEncodingConverter()
