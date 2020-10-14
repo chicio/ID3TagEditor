@@ -31,504 +31,1002 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case afh
     /// Afrikaans language.
     case afr
-    /// 
+    /// Ainu language.
     case ain
+    /// Akan language.
     case aka
+    /// Akkadian language.
     case akk
+    /// Albanian (B) language.
     case alb
+    /// Albanian (T) language.
     case sqi
+    /// Aleut language.
     case ale
+    /// Algonquian languages.
     case alg
+    /// Southern Altai language.
     case alt
+    /// Amharic language.
     case amh
+    /// Old English (ca.450-1100) language.
     case ang
+    /// Angika language.
     case anp
+    /// Apache languages.
     case apa
+    /// language.
     case ara
+    /// language.
     case arc
+    /// language.
     case arg
+    /// language.
     case arm
+    /// language.
     case hye
+    /// language.
     case arn
+    /// language.
     case arp
+    /// language.
     case art
+    /// language.
     case arw
+    /// language.
     case asm
+    /// language.
     case ast
+    /// language.
     case ath
+    /// language.
     case aus
+    /// language.
     case ava
+    /// language.
     case ave
+    /// language.
     case awa
+    /// language.
     case aym
+    /// language.
     case aze
+    /// language.
     case bad
+    /// language.
     case bai
+    /// language.
     case bak
+    /// language.
     case bal
+    /// language.
     case bam
+    /// language.
     case ban
+    /// language.
     case baq
+    /// language.
     case eus
+    /// language.
     case bas
+    /// language.
     case bat
+    /// language.
     case bej
+    /// language.
     case bel
+    /// language.
     case bem
+    /// language.
     case ben
+    /// language.
     case ber
+    /// language.
     case bho
+    /// language.
     case bih
+    /// language.
     case bik
+    /// language.
     case bin
+    /// language.
     case bis
+    /// language.
     case bla
+    /// language.
     case bnt
+    /// language.
     case tib
+    /// language.
     case bod
+    /// language.
     case bos
+    /// language.
     case bra
+    /// language.
     case bre
+    /// language.
     case btk
+    /// language.
     case bua
+    /// language.
     case bug
+    /// language.
     case bul
+    /// language.
     case bur
+    /// language.
     case mya
+    /// language.
     case byn
+    /// language.
     case cad
+    /// language.
     case cai
+    /// language.
     case car
+    /// language.
     case cat
+    /// language.
     case cau
+    /// language.
     case ceb
+    /// language.
     case cel
+    /// language.
     case cze
+    /// language.
     case ces
+    /// language.
     case cha
+    /// language.
     case chb
+    /// language.
     case che
+    /// language.
     case chg
+    /// language.
     case chi
+    /// language.
     case zho
+    /// language.
     case chk
+    /// language.
     case chm
+    /// language.
     case chn
+    /// language.
     case cho
+    /// language.
     case chp
+    /// language.
     case chr
+    /// language.
     case chu
+    /// language.
     case chv
+    /// language.
     case chy
+    /// language.
     case cmc
+    /// language.
     case cnr
+    /// language.
     case cop
+    /// language.
     case cor
+    /// language.
     case cos
+    /// language.
     case cpe
+    /// language.
     case cpf
+    /// language.
     case cpp
+    /// language.
     case cre
+    /// language.
     case crh
+    /// language.
     case crp
+    /// language.
     case csb
+    /// language.
     case cus
+    /// language.
     case wel
+    /// language.
     case cym
+    /// language.
     case dak
+    /// language.
     case dan
+    /// language.
     case dar
+    /// language.
     case day
+    /// language.
     case del
+    /// language.
     case den
+    /// language.
     case ger
+    /// language.
     case deu
+    /// language.
     case dgr
+    /// language.
     case din
+    /// language.
     case div
+    /// language.
     case doi
+    /// language.
     case dra
+    /// language.
     case dsb
+    /// language.
     case dua
+    /// language.
     case dum
+    /// language.
     case dut
+    /// language.
     case nld
+    /// language.
     case dyu
+    /// language.
     case dzo
+    /// language.
     case efi
+    /// language.
     case egy
+    /// language.
     case eka
+    /// language.
     case gre
+    /// language.
     case ell
+    /// language.
     case elx
+    /// language.
     case eng
+    /// language.
     case enm
+    /// language.
     case epo
+    /// language.
     case est
+    /// language.
     case ewe
+    /// language.
     case ewo
+    /// language.
     case fan
+    /// language.
     case fao
+    /// language.
     case per
+    /// language.
     case fas
+    /// language.
     case fat
+    /// language.
     case fij
+    /// language.
     case fil
+    /// language.
     case fin
+    /// language.
     case fiu
+    /// language.
     case fon
+    /// language.
     case fre
+    /// language.
     case fra
+    /// language.
     case frm
+    /// language.
     case fro
+    /// language.
     case frr
+    /// language.
     case frs
+    /// language.
     case fry
+    /// language.
     case ful
+    /// language.
     case fur
+    /// language.
     case gaa
+    /// language.
     case gay
+    /// language.
     case gba
+    /// language.
     case gem
+    /// language.
     case geo
+    /// language.
     case kat
+    /// language.
     case gez
+    /// language.
     case gil
+    /// language.
     case gla
+    /// language.
     case gle
+    /// language.
     case glg
+    /// language.
     case glv
+    /// language.
     case gmh
+    /// language.
     case goh
+    /// language.
     case gon
+    /// language.
     case gor
+    /// language.
     case got
+    /// language.
     case grb
+    /// language.
     case grc
+    /// language.
     case grn
+    /// language.
     case gsw
+    /// language.
     case guj
+    /// language.
     case gwi
+    /// language.
     case hai
+    /// language.
     case hat
+    /// language.
     case hau
+    /// language.
     case haw
+    /// language.
     case heb
+    /// language.
     case her
+    /// language.
     case hil
+    /// language.
     case him
+    /// language.
     case hin
+    /// language.
     case hit
+    /// language.
     case hmn
+    /// language.
     case hmo
+    /// language.
     case hrv
+    /// language.
     case hsb
+    /// language.
     case hun
+    /// language.
     case hup
+    /// language.
     case iba
+    /// language.
     case ibo
+    /// language.
     case ice
+    /// language.
     case isl
+    /// language.
     case ido
+    /// language.
     case iii
+    /// language.
     case ijo
+    /// language.
     case iku
+    /// language.
     case ile
+    /// language.
     case ilo
+    /// language.
     case ina
+    /// language.
     case inc
+    /// language.
     case ind
+    /// language.
     case ine
+    /// language.
     case inh
+    /// language.
     case ipk
+    /// language.
     case ira
+    /// language.
     case iro
+    /// language.
     case ita
+    /// language.
     case jav
+    /// language.
     case jbo
+    /// language.
     case jpn
+    /// language.
     case jpr
+    /// language.
     case jrb
+    /// language.
     case kaa
+    /// language.
     case kab
+    /// language.
     case kac
+    /// language.
     case kal
+    /// language.
     case kam
+    /// language.
     case kan
+    /// language.
     case kar
+    /// language.
     case kas
+    /// language.
     case kau
+    /// language.
     case kaw
+    /// language.
     case kaz
+    /// language.
     case kbd
+    /// language.
     case kha
+    /// language.
     case khi
+    /// language.
     case khm
+    /// language.
     case kho
+    /// language.
     case kik
+    /// language.
     case kin
+    /// language.
     case kir
+    /// language.
     case kmb
+    /// language.
     case kok
+    /// language.
     case kom
+    /// language.
     case kon
+    /// language.
     case kor
+    /// language.
     case kos
+    /// language.
     case kpe
+    /// language.
     case krc
+    /// language.
     case krl
+    /// language.
     case kro
+    /// language.
     case kru
+    /// language.
     case kua
+    /// language.
     case kum
+    /// language.
     case kur
+    /// language.
     case kut
+    /// language.
     case lad
+    /// language.
     case lah
+    /// language.
     case lam
+    /// language.
     case lao
+    /// language.
     case lat
+    /// language.
     case lav
+    /// language.
     case lez
+    /// language.
     case lim
+    /// language.
     case lin
+    /// language.
     case lit
+    /// language.
     case lol
+    /// language.
     case loz
+    /// language.
     case ltz
+    /// language.
     case lua
+    /// language.
     case lub
+    /// language.
     case lug
+    /// language.
     case lui
+    /// language.
     case lun
+    /// language.
     case luo
+    /// language.
     case lus
+    /// language.
     case mac
+    /// language.
     case mkd
+    /// language.
     case mad
+    /// language.
     case mag
+    /// language.
     case mah
+    /// language.
     case mai
+    /// language.
     case mak
+    /// language.
     case mal
+    /// language.
     case man
+    /// language.
     case mao
+    /// language.
     case mri
+    /// language.
     case map
+    /// language.
     case mar
+    /// language.
     case mas
+    /// language.
     case may
+    /// language.
     case msa
+    /// language.
     case mdf
+    /// language.
     case mdr
+    /// language.
     case men
+    /// language.
     case mga
+    /// language.
     case mic
+    /// language.
     case min
+    /// language.
     case mis
+    /// language.
     case mkh
+    /// language.
     case mlg
+    /// language.
     case mlt
+    /// language.
     case mnc
+    /// language.
     case mni
+    /// language.
     case mno
+    /// language.
     case moh
+    /// language.
     case mon
+    /// language.
     case mos
+    /// language.
     case mul
+    /// language.
     case mun
+    /// language.
     case mus
+    /// language.
     case mwl
+    /// language.
     case mwr
+    /// language.
     case myn
+    /// language.
     case myv
+    /// language.
     case nah
+    /// language.
     case nai
+    /// language.
     case nap
+    /// language.
     case nau
+    /// language.
     case nav
+    /// language.
     case nbl
+    /// language.
     case nde
+    /// language.
     case ndo
+    /// language.
     case nds
+    /// language.
     case nep
+    /// language.
     case new
+    /// language.
     case nia
+    /// language.
     case nic
+    /// language.
     case niu
+    /// language.
     case nno
+    /// language.
     case nob
+    /// language.
     case nog
+    /// language.
     case non
+    /// language.
     case nor
+    /// language.
     case nqo
+    /// language.
     case nso
+    /// language.
     case nub
+    /// language.
     case nwc
+    /// language.
     case nya
+    /// language.
     case nym
+    /// language.
     case nyn
+    /// language.
     case nyo
+    /// language.
     case nzi
+    /// language.
     case oci
+    /// language.
     case oji
+    /// language.
     case ori
+    /// language.
     case orm
+    /// language.
     case osa
+    /// language.
     case oss
+    /// language.
     case ota
+    /// language.
     case oto
+    /// language.
     case paa
+    /// language.
     case pag
+    /// language.
     case pal
+    /// language.
     case pam
+    /// language.
     case pan
+    /// language.
     case pap
+    /// language.
     case pau
+    /// language.
     case peo
+    /// language.
     case phi
+    /// language.
     case phn
+    /// language.
     case pli
+    /// language.
     case pol
+    /// language.
     case pon
+    /// language.
     case por
+    /// language.
     case pra
+    /// language.
     case pro
+    /// language.
     case pus
+    /// language.
     case qaa
+    /// language.
     case que
+    /// language.
     case raj
+    /// language.
     case rap
+    /// language.
     case rar
+    /// language.
     case roa
+    /// language.
     case roh
+    /// language.
     case rom
+    /// language.
     case rum
+    /// language.
     case ron
+    /// language.
     case run
+    /// language.
     case rup
+    /// language.
     case rus
+    /// language.
     case sad
+    /// language.
     case sag
+    /// language.
     case sah
+    /// language.
     case sai
+    /// language.
     case sal
+    /// language.
     case sam
+    /// language.
     case san
+    /// language.
     case sas
+    /// language.
     case sat
+    /// language.
     case scn
+    /// language.
     case sco
+    /// language.
     case sel
+    /// language.
     case sem
+    /// language.
     case sga
+    /// language.
     case sgn
+    /// language.
     case shn
+    /// language.
     case sid
+    /// language.
     case sin
+    /// language.
     case sio
+    /// language.
     case sit
+    /// language.
     case sla
+    /// language.
     case slo
+    /// language.
     case slk
+    /// language.
     case slv
+    /// language.
     case sma
+    /// language.
     case sme
+    /// language.
     case smi
+    /// language.
     case smj
+    /// language.
     case smn
+    /// language.
     case smo
+    /// language.
     case sms
+    /// language.
     case sna
+    /// language.
     case snd
+    /// language.
     case snk
+    /// language.
     case sog
+    /// language.
     case som
+    /// language.
     case son
+    /// language.
     case sot
+    /// language.
     case spa
+    /// language.
     case srd
+    /// language.
     case srn
+    /// language.
     case srp
+    /// language.
     case srr
+    /// language.
     case ssa
+    /// language.
     case ssw
+    /// language.
     case suk
+    /// language.
     case sun
+    /// language.
     case sus
+    /// language.
     case sux
+    /// language.
     case swa
+    /// language.
     case swe
+    /// language.
     case syc
+    /// language.
     case syr
+    /// language.
     case tah
+    /// language.
     case tai
+    /// language.
     case tam
+    /// language.
     case tat
+    /// language.
     case tel
+    /// language.
     case tem
+    /// language.
     case ter
+    /// language.
     case tet
+    /// language.
     case tgk
+    /// language.
     case tgl
+    /// language.
     case tha
+    /// language.
     case tig
+    /// language.
     case tir
+    /// language.
     case tiv
+    /// language.
     case tkl
+    /// language.
     case tlh
+    /// language.
     case tli
+    /// language.
     case tmh
+    /// language.
     case tog
+    /// language.
     case ton
+    /// language.
     case tpi
+    /// language.
     case tsi
+    /// language.
     case tsn
+    /// language.
     case tso
+    /// language.
     case tuk
+    /// language.
     case tum
+    /// language.
     case tup
+    /// language.
     case tur
+    /// language.
     case tut
+    /// language.
     case tvl
+    /// language.
     case twi
+    /// language.
     case tyv
+    /// language.
     case udm
+    /// language.
     case uga
+    /// language.
     case uig
+    /// language.
     case ukr
+    /// language.
     case umb
+    /// language.
     case und
+    /// language.
     case urd
+    /// language.
     case uzb
+    /// language.
     case vai
+    /// language.
     case ven
+    /// language.
     case vie
+    /// language.
     case vol
+    /// language.
     case vot
+    /// language.
     case wak
+    /// language.
     case wal
+    /// language.
     case war
+    /// language.
     case was
+    /// language.
     case wen
+    /// language.
     case wln
+    /// language.
     case wol
+    /// language.
     case xal
+    /// language.
     case xho
+    /// language.
     case yao
+    /// language.
     case yap
+    /// language.
     case yid
+    /// language.
     case yor
+    /// language.
     case ypk
+    /// language.
     case zap
+    /// language.
     case zbl
+    /// language.
     case zen
+    /// language.
     case zgh
+    /// language.
     case zha
+    /// language.
     case znd
+    /// language.
     case zul
+    /// language.
     case zun
+    /// language.
     case zxx
+    /// language.
     case zza
+    /// language.
     case unknown
 }
