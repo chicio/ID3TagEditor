@@ -496,7 +496,11 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
             frames: [
                 .UnsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita,
                                                                           contentDescription: "CD",
-                                                                          content: "a")
+                                                                          content: """
+                        Lyrics
+                        Multiline
+                        Oh yeah!!
+                    """)
             ]
         )
         
@@ -508,12 +512,12 @@ class ID3TagEditorTestAcceptanceTest: XCTestCase {
         
         let id3TagWritten = try! id3TagEditor.read(from: pathMp3Generated)
         
-        let a = String(bytes: "a".data(using: .utf16)!, encoding: .utf16)
         XCTAssertEqual((id3TagWritten?.frames[.UnsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.language, .ita)
         XCTAssertEqual((id3TagWritten?.frames[.UnsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.contentDescription, "CD")
-        XCTAssertEqual((id3TagWritten?.frames[.UnsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)!.content, a)
+        XCTAssertEqual((id3TagWritten?.frames[.UnsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)!.content, """
+                        Lyrics
+                        Multiline
+                        Oh yeah!!
+                    """)
     }
 }
-//XCTAssertEqual failed: (
-//"﻿        Test lyrics        On multiline        Ohhhh yeah!!!") is not equal to(
-//"        Test lyrics        On multiline        Ohhhh yeah!!!")

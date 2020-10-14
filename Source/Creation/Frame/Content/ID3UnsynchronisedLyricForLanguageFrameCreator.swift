@@ -31,7 +31,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLangu
 
     func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, id3Tag: ID3Tag) -> [UInt8] {
         let stringContent = paddingAdder.addTo(content:[UInt8](unsynchronisedLyric.contentDescription.data(using: .utf16)!), numberOfByte: 2)
-            + paddingAdder.addTo(content:[UInt8](unsynchronisedLyric.content.data(using: .utf16)!), numberOfByte: 1)
+            + unsynchronisedLyric.content.data(using: .utf16)!
         let contentAsBytes = id3FrameConfiguration.encodingByteFor(version: id3Tag.properties.version, encoding: .UTF16)
             + [UInt8](unsynchronisedLyric.language.rawValue.data(using: .utf8)!)
             + stringContent
