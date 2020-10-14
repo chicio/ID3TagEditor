@@ -13,17 +13,25 @@ import Foundation
  The list of supported languages corresponds to the ISO-639-2 standard
  */
 public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
-    /// Afar language
+    /// Afar language.
     case aar
-    /// Abkhazian language
+    /// Abkhazian language.
     case abk
+    /// Achinese laguage.
     case ace
+    /// Acoli language.
     case ach
+    /// Adangme language.
     case ada
+    /// Adyghe;-Adygei language.
     case ady
+    /// Afro-Asiatic languages.
     case afa
+    /// Afrihili language.
     case afh
+    /// Afrikaans language.
     case afr
+    /// 
     case ain
     case aka
     case akk
