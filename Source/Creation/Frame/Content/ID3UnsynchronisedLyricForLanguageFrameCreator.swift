@@ -2,8 +2,8 @@
 //  ID3UnsyncronisedLyricsFrameCreator.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 09.10.20.
-//  Copyright © 2020 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 14/10/20.
+//  2020 Fabrizio Duroni.
 //
 
 import Foundation
