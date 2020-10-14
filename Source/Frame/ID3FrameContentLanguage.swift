@@ -11,4 +11,5 @@ import Foundation
 
 public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case ita
+    case invalid
 }

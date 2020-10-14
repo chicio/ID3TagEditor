@@ -432,6 +432,21 @@ extension ID3TagEditorTestAcceptanceNewFrames {
     ]
 }
 
+extension ID3UnsynchronisedLyricForLanguageFrameCreatorTest {
+    static let __allTests = [
+        ("testCreatev2", testCreatev2),
+        ("testCreatev3", testCreatev3),
+        ("testCreatev4", testCreatev4)
+    ]
+}
+
+extension ID3UnsyncronizedLyricsFrameCreatorTest {
+    static let __allTests = [
+        ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet)
+        ("testCreateFrameForValidDat", testCreateFrameForValidDat)
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -491,6 +506,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(Mp3FileReaderTest.__allTests),
         testCase(ID3TagEditorTestAcceptanceTest.__allTests),
         testCase(ID3TagEditorTestAcceptanceNewFrames.__allTests),
+        testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
+        testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests)
     ]
 }
 #endif
