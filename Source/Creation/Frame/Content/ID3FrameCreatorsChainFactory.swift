@@ -161,8 +161,11 @@ class ID3FrameCreatorsChainFactory {
         let unsynchronisedLyrics = ID3UnsyncronizedLyricsFrameCreator(unsynchronisedLyricForLanguageFrameCreator:
                                                                         ID3UnsynchronisedLyricForLanguageFrameCreator(
                                                                             id3FrameConfiguration: frameConfiguration,
-                                                                            frameContentSizeCalculator: frameContentSizeCalculator,
-                                                                            frameFlagsCreator: frameFlagsCreator,
+                                                                            frameHeaderCreator: ID3FrameHeaderCreator(
+                                                                                id3FrameConfiguration: frameConfiguration,
+                                                                                frameContentSizeCalculator: frameContentSizeCalculator,
+                                                                                frameFlagsCreator: frameFlagsCreator
+                                                                            ),
                                                                             paddingAdder: paddingAdder)
         )
         albumFrameCreator.nextCreator = albumArtistCreator

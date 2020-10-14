@@ -14,35 +14,21 @@ protocol UnsynchronisedLyricForLanguageFrameCreator {
 
 class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLanguageFrameCreator {
     private let id3FrameConfiguration: ID3FrameConfiguration
-    private let frameContentSizeCalculator: FrameContentSizeCalculator
-    private let frameFlagsCreator: FrameFlagsCreator
+    private let frameHeaderCreator: FrameHeaderCreator
     private let paddingAdder: PaddingAdder
 
     init(id3FrameConfiguration: ID3FrameConfiguration,
-         frameContentSizeCalculator: FrameContentSizeCalculator,
-         frameFlagsCreator: FrameFlagsCreator,
+         frameHeaderCreator: FrameHeaderCreator,
          paddingAdder: PaddingAdder
     ) {
         self.id3FrameConfiguration = id3FrameConfiguration
-        self.frameContentSizeCalculator = frameContentSizeCalculator
-        self.frameFlagsCreator = frameFlagsCreator
+        self.frameHeaderCreator = frameHeaderCreator
         self.paddingAdder = paddingAdder
     }
 
     func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, id3Tag: ID3Tag) -> [UInt8] {
         let frameBody = createFrameBodyUsing(unsynchronisedLyric: unsynchronisedLyric,  id3Tag: id3Tag)
-        var frame: [UInt8] = id3FrameConfiguration.identifierFor(
-                frameType: .UnsyncronisedLyrics,
-                version: id3Tag.properties.version
-        )
-        frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(
-                content: frameBody,
-                version: id3Tag.properties.version
-        ))
-        frame.append(contentsOf: frameFlagsCreator.createFor(version: id3Tag.properties.version))
-        frame.append(contentsOf: frameBody)
-        
-        return frame
+        return frameHeaderCreator.createUsing(version: id3Tag.properties.version, frameType: .UnsyncronisedLyrics, frameBody: frameBody) + frameBody
     }
     
     private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, id3Tag: ID3Tag) -> [UInt8] {
