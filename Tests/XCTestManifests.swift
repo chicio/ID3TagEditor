@@ -442,7 +442,7 @@ extension ID3UnsynchronisedLyricForLanguageFrameCreatorTest {
 
 extension ID3UnsyncronizedLyricsFrameCreatorTest {
     static let __allTests = [
-        ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet)
+        ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet),
         ("testCreateFrameForValidDat", testCreateFrameForValidDat)
     ]
 }
