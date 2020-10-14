@@ -453,6 +453,13 @@ extension ID3FrameHeaderCreatorTest {
     ]
 }
 
+extension ID3UnsynchronisedLyricsFrameContentParsingOperationTest {
+    static let __allTests = [
+        ("testParsingValidFrame", testParsingValidFrame),
+        ("testParsingInvalidLanguage", testParsingInvalidLanguage)
+    ]
+}
+
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -514,7 +521,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3TagEditorTestAcceptanceNewFrames.__allTests),
         testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
         testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
-        testCase(ID3FrameHeaderCreatorTest.__allTests)
+        testCase(ID3FrameHeaderCreatorTest.__allTests),
+        testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests)
     ]
 }
 #endif
