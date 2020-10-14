@@ -50,6 +50,6 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperation: FrameContentParsingOp
             return id3Language
         }
         
-        return .invalid
+        return .unknown
     }
 }
