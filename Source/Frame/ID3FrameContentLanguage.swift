@@ -440,177 +440,177 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case ilo
     /// Interlingua language.
     case ina
-    /// language.
+    /// Indic languages.
     case inc
-    /// language.
+    /// Indonesian language.
     case ind
-    /// language.
+    /// Indo-European languages.
     case ine
-    /// language.
+    /// Ingush language.
     case inh
-    /// language.
+    /// Inupiaq language.
     case ipk
-    /// language.
+    /// Iranian languages.
     case ira
-    /// language.
+    /// Iroquoian languages.
     case iro
-    /// language.
+    /// Italian language.
     case ita
-    /// language.
+    /// Javanese language.
     case jav
-    /// language.
+    /// Lojban language.
     case jbo
-    /// language.
+    /// Japanese language.
     case jpn
-    /// language.
+    /// Judeo-Persian language.
     case jpr
-    /// language.
+    /// Judeo-Arabic language.
     case jrb
-    /// language.
+    /// Kara-Kalpak language.
     case kaa
-    /// language.
+    /// Kabyle language.
     case kab
-    /// language.
+    /// Kachin - Jingpho language.
     case kac
-    /// language.
+    /// Kalaallisut - Greenlandic language.
     case kal
-    /// language.
+    /// Kamba language.
     case kam
-    /// language.
+    /// Kannada language.
     case kan
-    /// language.
+    /// Karen languages.
     case kar
-    /// language.
+    /// Kashmiri language.
     case kas
-    /// language.
+    /// Georgian language.
     case kau
-    /// language.
+    /// Kanuri language.
     case kaw
-    /// language.
+    /// Kazakh language.
     case kaz
-    /// language.
+    /// Kabardian language.
     case kbd
-    /// language.
+    /// Khasi language.
     case kha
-    /// language.
+    /// Khoisan languages.
     case khi
-    /// language.
+    /// Central Khmer language.
     case khm
-    /// language.
+    /// Khotanese - Sakan language.
     case kho
-    /// language.
+    /// Kikuyu - Gikuyu language.
     case kik
-    /// language.
+    /// Kinyarwanda language.
     case kin
-    /// language.
+    /// Kirghiz language.
     case kir
-    /// language.
+    /// Kimbundu language.
     case kmb
-    /// language.
+    /// Konkani language.
     case kok
-    /// language.
+    /// Komi language.
     case kom
-    /// language.
+    /// Kongo language.
     case kon
-    /// language.
+    /// Korean language.
     case kor
-    /// language.
+    /// Kosraean language.
     case kos
-    /// language.
+    /// Kpelle language.
     case kpe
-    /// language.
+    /// Karachay-Balkar language.
     case krc
-    /// language.
+    /// Karelian language.
     case krl
-    /// language.
+    /// Kru languages.
     case kro
     /// language.
     case kru
     /// language.
     case kua
-    /// language.
+    /// Kurukh language.
     case kum
-    /// language.
+    /// Kuanyama - Kwanyama language.
     case kur
-    /// language.
+    /// Kutenai language.
     case kut
-    /// language.
+    /// Ladino language.
     case lad
-    /// language.
+    /// Lahnda language.
     case lah
-    /// language.
+    /// Lamba language.
     case lam
-    /// language.
+    /// Lao language.
     case lao
-    /// language.
+    /// Latin language.
     case lat
-    /// language.
+    /// Latvian language.
     case lav
-    /// language.
+    /// Lezghian language.
     case lez
-    /// language.
+    /// Limburgan - Limburger - Limburgish language.
     case lim
-    /// language.
+    /// Lingala language.
     case lin
-    /// language.
+    /// Lithuanian language.
     case lit
-    /// language.
+    /// Mongo language.
     case lol
-    /// language.
+    /// Lozi language.
     case loz
-    /// language.
+    /// Luxembourgish language.
     case ltz
-    /// language.
+    /// Luba-Lulua language.
     case lua
-    /// language.
+    /// Luba-Katanga language.
     case lub
-    /// language.
+    /// Ganda language.
     case lug
-    /// language.
+    /// Luiseno language.
     case lui
-    /// language.
+    /// Lunda language.
     case lun
-    /// language.
+    /// Luo (Kenya and Tanzania) language.
     case luo
-    /// language.
+    /// Lushai language.
     case lus
-    /// language.
+    /// Macedonian (B) language.
     case mac
-    /// language.
+    /// Macedonian (T) language.
     case mkd
-    /// language.
+    /// Madurese language.
     case mad
-    /// language.
+    /// Magahi language.
     case mag
-    /// language.
+    /// Marshallese language.
     case mah
-    /// language.
+    /// Maithili language.
     case mai
-    /// language.
+    /// Makasar language.
     case mak
-    /// language.
+    /// Malayalam language.
     case mal
-    /// language.
+    /// Mandingo language.
     case man
-    /// language.
+    /// Maori (B) language.
     case mao
-    /// language.
+    /// Maori (T) language.
     case mri
-    /// language.
+    /// Austronesian languages.
     case map
-    /// language.
+    /// Marathi language.
     case mar
-    /// language.
+    /// Masai language.
     case mas
-    /// language.
+    /// Malay (B) language.
     case may
-    /// language.
+    /// Malay (T) language.
     case msa
-    /// language.
+    /// Moksha language.
     case mdf
-    /// language.
+    /// Mandar language.
     case mdr
-    /// language.
+    /// Mende language.
     case men
     /// language.
     case mga
