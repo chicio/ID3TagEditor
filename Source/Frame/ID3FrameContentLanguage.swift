@@ -612,147 +612,147 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case mdr
     /// Mende language.
     case men
-    /// language.
+    /// Irish, Middle (900-1200) language.
     case mga
-    /// language.
+    /// Mi'kmaq language.
     case mic
-    /// language.
+    /// Minangkabau language.
     case min
-    /// language.
+    /// Uncoded languages.
     case mis
-    /// language.
+    /// Mon-Khmer languages.
     case mkh
-    /// language.
+    /// Malagasy language.
     case mlg
-    /// language.
+    /// Maltese language.
     case mlt
-    /// language.
+    /// Manchu language.
     case mnc
-    /// language.
+    /// Manipuri language.
     case mni
-    /// language.
+    /// Manobo languages.
     case mno
-    /// language.
+    /// Mohawk language.
     case moh
-    /// language.
+    /// Mongolian language.
     case mon
-    /// language.
+    /// Mossi language.
     case mos
-    /// language.
+    /// Multiple languages.
     case mul
-    /// language.
+    /// Munda languages.
     case mun
-    /// language.
+    /// Creek language.
     case mus
-    /// language.
+    /// Mirandese language.
     case mwl
-    /// language.
+    /// Marwari language.
     case mwr
-    /// language.
+    /// Burmese language.
     case myn
-    /// language.
+    /// Mayan languages.
     case myv
-    /// language.
+    /// Nahuatl languages.
     case nah
-    /// language.
+    /// North American Indian languages.
     case nai
-    /// language.
+    /// Neapolitan language.
     case nap
-    /// language.
+    /// Nauru language.
     case nau
-    /// language.
+    /// Navajo - Navaho language.
     case nav
-    /// language.
+    /// South Ndebele language.
     case nbl
-    /// language.
+    /// North Ndebele language.
     case nde
-    /// language.
+    /// Ndonga language.
     case ndo
-    /// language.
+    /// Low German; Low Saxon; German, Low; Saxon, Low language.
     case nds
-    /// language.
+    /// Nepali language.
     case nep
-    /// language.
+    /// Nepal Bhasa; Newari language.
     case new
-    /// language.
+    /// Nias language.
     case nia
-    /// language.
+    /// Niger-Kordofanian languages.
     case nic
-    /// language.
+    /// Niuean language.
     case niu
-    /// language.
+    /// Nynorsk, Norwegian language.
     case nno
-    /// language.
+    /// Bokmål, Norwegian language.
     case nob
-    /// language.
+    /// Nogai language.
     case nog
-    /// language.
+    /// Old Norse language.
     case non
-    /// language.
+    /// Norwegian language.
     case nor
-    /// language.
+    /// N'Ko language.
     case nqo
-    /// language.
+    /// Northern Sotho language.
     case nso
-    /// language.
+    /// Nubian languages.
     case nub
-    /// language.
+    /// Classical Nepal Bhasa.
     case nwc
-    /// language.
+    /// Chichewa; Chewa; Nyanja language.
     case nya
-    /// language.
+    /// Nyamwezi language.
     case nym
-    /// language.
+    /// Nyankole language.
     case nyn
-    /// language.
+    /// Nyoro language.
     case nyo
-    /// language.
+    /// Nzima language.
     case nzi
-    /// language.
+    /// Occitan (post 1500) language.
     case oci
-    /// language.
+    /// Ojibwa language.
     case oji
-    /// language.
+    /// Oriya language.
     case ori
-    /// language.
+    /// Oromo language.
     case orm
-    /// language.
+    /// Osage language.
     case osa
-    /// language.
+    /// Ossetian; Ossetic language.
     case oss
-    /// language.
+    /// Turkish, Ottoman (1500-1928) language.
     case ota
-    /// language.
+    /// Otomian languages.
     case oto
-    /// language.
+    /// Papuan languages.
     case paa
-    /// language.
+    /// Pangasinan language.
     case pag
-    /// language.
+    /// Pahlavi language.
     case pal
-    /// language.
+    /// Pampanga language.
     case pam
-    /// language.
+    /// Panjabi; Punjabi language.
     case pan
-    /// language.
+    /// Papiamento language.
     case pap
-    /// language.
+    /// Palauan language.
     case pau
-    /// language.
+    /// Persian, Old (ca.600-400 B.C.) language.
     case peo
-    /// language.
+    /// Philippine languages.
     case phi
-    /// language.
+    /// Phoenician language.
     case phn
-    /// language.
+    /// Pali language.
     case pli
-    /// language.
+    /// Polish language.
     case pol
-    /// language.
+    /// Pohnpeian language.
     case pon
-    /// language.
+    /// Portuguese language.
     case por
-    /// language.
+    /// Prakrit languages.
     case pra
     /// language.
     case pro
