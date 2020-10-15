@@ -238,207 +238,207 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case wel
     /// Welsh (T) language.
     case cym
-    /// language.
+    /// Dakota language.
     case dak
-    /// language.
+    /// Danish language.
     case dan
-    /// language.
+    /// Dargwa language.
     case dar
-    /// language.
+    /// Land Dayak languages    .
     case day
-    /// language.
+    /// Delaware language.
     case del
-    /// language.
+    /// Slave (Athapascan) language.
     case den
-    /// language.
+    /// German (B) language.
     case ger
-    /// language.
+    /// German (T) language.
     case deu
-    /// language.
+    /// Dogrib language.
     case dgr
-    /// language.
+    /// Dinka language.
     case din
-    /// language.
+    /// Divehi - Dhivehi - Maldivian language.
     case div
-    /// language.
+    /// Dogri language.
     case doi
-    /// language.
+    /// Dravidian languages.
     case dra
-    /// language.
+    /// Lower Sorbian language.
     case dsb
-    /// language.
+    /// Duala language.
     case dua
-    /// language.
+    /// Dutch, Middle (ca.1050-1350) language.
     case dum
-    /// language.
+    /// Dutch - Flemish (B) language.
     case dut
-    /// language.
+    /// Dutch - Flemish (T) language.
     case nld
-    /// language.
+    /// Dyula language.
     case dyu
-    /// language.
+    /// Dzongkha language.
     case dzo
-    /// language.
+    /// Efik language.
     case efi
-    /// language.
+    /// Egyptian (Ancient) language.
     case egy
-    /// language.
+    /// Ekajuk language.
     case eka
-    /// language.
+    /// Greek, Modern (1453-)  (B) language.
     case gre
-    /// language.
+    /// Greek, Modern (1453-)  (T) language.
     case ell
-    /// language.
+    /// Elamite language.
     case elx
-    /// language.
+    /// English language.
     case eng
-    /// language.
+    /// English, Middle (1100-1500) language.
     case enm
-    /// language.
+    /// Esperanto language.
     case epo
-    /// language.
+    /// Estonian language.
     case est
-    /// language.
+    /// Ewe language.
     case ewe
-    /// language.
+    /// Ewondo language.
     case ewo
-    /// language.
+    /// Fang language.
     case fan
-    /// language.
+    /// Faroese language.
     case fao
-    /// language.
+    /// Persian (B) language.
     case per
-    /// language.
+    /// Persian (T) language.
     case fas
-    /// language.
+    /// Fanti language.
     case fat
-    /// language.
+    /// Fijian language.
     case fij
-    /// language.
+    /// Filipino language.
     case fil
-    /// language.
+    /// Finnish language.
     case fin
-    /// language.
+    /// Finno-Ugrian languages.
     case fiu
-    /// language.
+    /// Fon language.
     case fon
-    /// language.
+    /// French (B) language.
     case fre
-    /// language.
+    /// French (T) language.
     case fra
-    /// language.
+    /// French, Middle (ca.1400-1600) language.
     case frm
-    /// language.
+    /// French, Old (842-ca.1400) language.
     case fro
-    /// language.
+    /// Northern Frisian language.
     case frr
-    /// language.
+    /// Eastern Frisian language.
     case frs
-    /// language.
+    /// Western Frisian language.
     case fry
-    /// language.
+    /// Fulah language.
     case ful
-    /// language.
+    /// Friulian language.
     case fur
-    /// language.
+    /// Ga language.
     case gaa
-    /// language.
+    /// Gayo language.
     case gay
-    /// language.
+    /// Gbaya language.
     case gba
-    /// language.
+    /// Germanic languages.
     case gem
-    /// language.
+    /// Georgian (B) language.
     case geo
-    /// language.
+    /// Georgian (T) language.
     case kat
-    /// language.
+    /// Geez language.
     case gez
-    /// language.
+    /// Gilbertese language.
     case gil
-    /// language.
+    /// Gaelic - Scottish Gaelic language.
     case gla
-    /// language.
+    /// Irish language.
     case gle
-    /// language.
+    /// Galician language.
     case glg
-    /// language.
+    /// Manx language.
     case glv
-    /// language.
+    /// German, Middle High (ca.1050-1500) language.
     case gmh
-    /// language.
+    /// German, Old High (ca.750-1050) language.
     case goh
-    /// language.
+    /// Gondi language.
     case gon
-    /// language.
+    /// Gorontalo language.
     case gor
-    /// language.
+    /// Gothic language.
     case got
-    /// language.
+    /// Grebo language.
     case grb
-    /// language.
+    /// Greek, Ancient (to 1453) language.
     case grc
-    /// language.
+    /// Guarani language.
     case grn
-    /// language.
+    /// Swiss German - Alemannic - Alsatian language.
     case gsw
-    /// language.
+    /// Gujarati language.
     case guj
-    /// language.
+    /// Gwich'in language.
     case gwi
-    /// language.
+    /// Haida language.
     case hai
-    /// language.
+    /// Haitian - Haitian Creole language.
     case hat
-    /// language.
+    /// Hausa language.
     case hau
-    /// language.
+    /// Hawaiian language.
     case haw
-    /// language.
+    /// Hebrew language.
     case heb
-    /// language.
+    /// Herero language.
     case her
-    /// language.
+    /// Hiligaynon language.
     case hil
-    /// language.
+    /// Himachali - Western Pahari languages.
     case him
-    /// language.
+    /// Hindi language.
     case hin
-    /// language.
+    /// Hittite language.
     case hit
-    /// language.
+    /// Hmong - Mong language.
     case hmn
-    /// language.
+    /// Hiri Motu language.
     case hmo
-    /// language.
+    /// Croatian language.
     case hrv
-    /// language.
+    /// Upper Sorbian language.
     case hsb
-    /// language.
+    /// Hungarian language.
     case hun
-    /// language.
+    /// Hupa language.
     case hup
-    /// language.
+    /// Iban language.
     case iba
-    /// language.
+    /// Igbo language.
     case ibo
-    /// language.
+    /// Icelandic (B) language.
     case ice
-    /// language.
+    /// Icelandic (T) language.
     case isl
-    /// language.
+    /// Ido language.
     case ido
-    /// language.
+    /// Sichuan Yi - Nuosu language.
     case iii
-    /// language.
+    /// Ijo languages.
     case ijo
-    /// language.
+    /// Inuktitut language.
     case iku
-    /// language.
+    /// Interlingue - Occidental language.
     case ile
-    /// language.
+    /// Iloko language.
     case ilo
-    /// language.
+    /// Interlingua language.
     case ina
     /// language.
     case inc
