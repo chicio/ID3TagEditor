@@ -18,3 +18,5 @@ jobs:
       - name: Build iOS Demo
         run: | 
            set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=latest" | xcpretty
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1

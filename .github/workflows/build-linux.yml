@@ -20,3 +20,5 @@ jobs:
         run: |
            swift build
            swift test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
