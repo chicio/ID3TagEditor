@@ -394,7 +394,7 @@ extension Mp3FileReaderTest {
     ]
 }
 
-extension ID3TagEditorTestAcceptanceTest {
+extension ID3TagEditorAcceptanceTest {
     static let __allTests = [
         ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
         ("testReadTagV2", testReadTagV2),
@@ -416,12 +416,7 @@ extension ID3TagEditorTestAcceptanceTest {
         ("testWriteTagV4", testWriteTagV4),
         ("testWriteTagV4WithPng", testWriteTagV4WithPng),
         ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers),
-        ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics)
-    ]
-}
-
-extension ID3TagEditorTestAcceptanceNewFrames {
-    static let __allTests = [
+        ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics),
         ("testReadNewFramesV2", testReadNewFramesV2),
         ("testReadNewFramesV3", testReadNewFramesV3),
         ("testReadNewFramesV4", testReadNewFramesV4),
@@ -429,6 +424,14 @@ extension ID3TagEditorTestAcceptanceNewFrames {
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
         ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten)
+    ]
+}
+
+extension ID3TagEditorWriteReadAcceptanceTest {
+    static let __allTests = [
+        ("testReadWritev2", testReadWritev2)
+        ("testReadWritev3", testReadWritev3)
+        ("testReadWritev4", testReadWritev4)
     ]
 }
 
@@ -523,6 +526,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
         testCase(ID3FrameHeaderCreatorTest.__allTests),
         testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests)
+        testCase(ID3TagEditorWriteReadAcceptanceTest.__allTests)
     ]
 }
 #endif
