@@ -18,5 +18,3 @@ jobs:
       - name: Build watchOS Demo
         run: | 
            set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=latest" | xcpretty
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
