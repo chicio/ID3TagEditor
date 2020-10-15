@@ -525,7 +525,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
         testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
         testCase(ID3FrameHeaderCreatorTest.__allTests),
-        testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests)
+        testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests),
         testCase(ID3TagEditorWriteReadAcceptanceTest.__allTests)
     ]
 }
