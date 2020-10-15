@@ -2,8 +2,8 @@
 //  ID3FrameContentLanguage.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 09.10.20.
-//  Copyright © 2020 Fabrizio Duroni. All rights reserved.
+//  Created by Fabrizio Duroni on 09/10/2020.
+//  2020 Fabrizio Duroni
 //
 
 import Foundation
@@ -754,95 +754,97 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case por
     /// Prakrit languages.
     case pra
-    /// language.
+    /// Provençal, Old (to 1500) - Occitan, Old (to 1500) language.
     case pro
-    /// language.
+    /// Pushto - Pashto language.
     case pus
-    /// language.
+    /// Reserved for local use language.
     case qaa
-    /// language.
+    /// Reserved for local use language.
+    case qtz
+    /// Quechua language.
     case que
-    /// language.
+    /// Rajasthani language.
     case raj
-    /// language.
+    /// Rapanui language.
     case rap
-    /// language.
+    /// Rarotongan- Cook Islands Maori language.
     case rar
-    /// language.
+    /// Romance language.
     case roa
-    /// language.
+    /// Romansh language.
     case roh
-    /// language.
+    /// Romany language.
     case rom
-    /// language.
+    /// Romanian/Moldavian/Moldovan (B) language.
     case rum
-    /// language.
+    /// Romanian/Moldavian/Moldovan (B) language.
     case ron
-    /// language.
+    /// Rundi language.
     case run
-    /// language.
+    /// Aromanian/Arumanian/Macedo-Romanian language.
     case rup
-    /// language.
+    /// Russian language.
     case rus
-    /// language.
+    /// Sandawe language.
     case sad
-    /// language.
+    /// Sango language.
     case sag
-    /// language.
+    /// Yakut language.
     case sah
-    /// language.
+    /// South American Indian languages.
     case sai
-    /// language.
+    /// Salishan languages.
     case sal
-    /// language.
+    /// Samaritan Aramaic.
     case sam
-    /// language.
+    /// Sanskrit language.
     case san
-    /// language.
+    /// Sasak language.
     case sas
-    /// language.
+    /// Santali language.
     case sat
-    /// language.
+    /// Sicilian language.
     case scn
-    /// language.
+    /// Scots language.
     case sco
-    /// language.
+    /// Selkup language.
     case sel
-    /// language.
+    /// Semitic languages.
     case sem
-    /// language.
+    /// Old Irish (to 900) language.
     case sga
-    /// language.
+    /// Sign Languages.
     case sgn
-    /// language.
+    /// Shan language.
     case shn
-    /// language.
+    /// Sidamo language.
     case sid
-    /// language.
+    /// Sinhala - Sinhalese language.
     case sin
-    /// language.
+    /// Siouan languages language.
     case sio
-    /// language.
+    /// Sino-Tibetan languages.
     case sit
-    /// language.
+    /// Slavic languages language.
     case sla
-    /// language.
+    /// Slovak (B) language.
     case slo
-    /// language.
+    /// Slovak (T) language.
     case slk
-    /// language.
+    /// Slovenian language.
     case slv
-    /// language.
+    /// Southern Sami language.
     case sma
-    /// language.
+    /// Northern Sami language.
     case sme
-    /// language.
+    /// Sami languages language.
     case smi
-    /// language.
+    /// Lule Sami language.
     case smj
-    /// language.
+    /// Inari Sami language.
     case smn
-    /// language.
+    /// Samoan language.
     case smo
     /// language.
     case sms
