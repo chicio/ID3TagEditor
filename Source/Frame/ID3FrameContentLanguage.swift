@@ -10,7 +10,8 @@ import Foundation
 
 /**
  List of language identifier used in frames that support localized content with language indication.
- The list of supported languages corresponds to the ISO-639-2 standard
+ The list of supported languages corresponds to the ISO-639-2 standard.
+ Languages with multiple code are distinguished by "B" (bibliographic) or "T" (terminology).
  */
 public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     /// Afar language.
@@ -55,187 +56,187 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case anp
     /// Apache languages.
     case apa
-    /// language.
+    /// Arabic language.
     case ara
-    /// language.
+    /// Official Aramaic (700-300 BCE) - Imperial Aramaic (700-300 BCE) language.
     case arc
-    /// language.
+    /// Aragonese language.
     case arg
-    /// language.
+    /// Armenian (B) language.
     case arm
-    /// language.
+    /// Armenian (T) language.
     case hye
-    /// language.
+    /// Mapudungun - Mapuche language.
     case arn
-    /// language.
+    /// Arapaho language.
     case arp
-    /// language.
+    /// Artificial languages.
     case art
-    /// language.
+    /// Arawak language.
     case arw
-    /// language.
+    /// Assamese language.
     case asm
-    /// language.
+    /// Asturian - Bable - Leonese - Asturleonese languages.
     case ast
-    /// language.
+    /// Athapascan languages.
     case ath
-    /// language.
+    /// Australian languages.
     case aus
-    /// language.
+    /// Avaric language.
     case ava
-    /// language.
+    /// Avestan language.
     case ave
-    /// language.
+    /// Awadhi language.
     case awa
-    /// language.
+    /// Aymara language.
     case aym
-    /// language.
+    /// Azerbaijani language.
     case aze
-    /// language.
+    /// Banda languages.
     case bad
-    /// language.
+    /// Bamileke languages.
     case bai
-    /// language.
+    /// Bashkir language.
     case bak
-    /// language.
+    /// Baluchi language.
     case bal
-    /// language.
+    /// Bambara language.
     case bam
-    /// language.
+    /// Balinese language.
     case ban
-    /// language.
+    /// Basque (B) language.
     case baq
-    /// language.
+    /// Basque (T) language.
     case eus
-    /// language.
+    /// Basa language.
     case bas
-    /// language.
+    /// Baltic languages.
     case bat
-    /// language.
+    /// Beja - Bedawiyet language.
     case bej
-    /// language.
+    /// Belarusian language.
     case bel
-    /// language.
+    /// Bemba language.
     case bem
-    /// language.
+    /// Bengali language.
     case ben
-    /// language.
+    /// Berber languages.
     case ber
-    /// language.
+    /// Bhojpuri language.
     case bho
-    /// language.
+    /// Bihari languages.
     case bih
-    /// language.
+    /// Bikol language.
     case bik
-    /// language.
+    /// Bini - Edo language.
     case bin
-    /// language.
+    /// Bislama language.
     case bis
-    /// language.
+    /// Siksika language.
     case bla
-    /// language.
+    /// Bantu languages.
     case bnt
-    /// language.
+    /// Tibetan (B) language.
     case tib
-    /// language.
+    /// Tibetan (T) language.
     case bod
-    /// language.
+    /// Bosnian language.
     case bos
-    /// language.
+    /// Braj language.
     case bra
-    /// language.
+    /// Breton language.
     case bre
-    /// language.
+    /// Batak languages.
     case btk
-    /// language.
+    /// Buriat language.
     case bua
-    /// language.
+    /// Buginese language.
     case bug
-    /// language.
+    /// Bulgarian language.
     case bul
-    /// language.
+    /// Burmese (B) language.
     case bur
-    /// language.
+    /// Burmese (T) language.
     case mya
-    /// language.
+    /// Blin - Bilin language.
     case byn
-    /// language.
+    /// Caddo language.
     case cad
-    /// language.
+    /// Central American Indian languages.
     case cai
-    /// language.
+    /// Galibi Carib language.
     case car
-    /// language.
+    /// Catalan - Valencian language.
     case cat
-    /// language.
+    /// Caucasian languages.
     case cau
-    /// language.
+    /// Cebuano language.
     case ceb
-    /// language.
+    /// Celtic languages.
     case cel
-    /// language.
+    /// Czech (B) language.
     case cze
-    /// language.
+    /// Czech (T) language.
     case ces
-    /// language.
+    /// Chamorro language.
     case cha
-    /// language.
+    /// Chibcha language.
     case chb
-    /// language.
+    /// Chechen language.
     case che
-    /// language.
+    /// Chagatai language.
     case chg
-    /// language.
+    /// Chinese (B) language.
     case chi
-    /// language.
+    /// Chinese (T) language.
     case zho
-    /// language.
+    /// Chuukese language.
     case chk
-    /// language.
+    /// Mari language.
     case chm
-    /// language.
+    /// Chinook jargon language.
     case chn
-    /// language.
+    /// Choctaw language.
     case cho
-    /// language.
+    /// Chipewyan - Dene Suline language.
     case chp
-    /// language.
+    /// Cherokee language.
     case chr
-    /// language.
+    /// Church Slavic - Old Slavonic - Church Slavonic - Old Bulgarian - Old Church Slavonic language.
     case chu
-    /// language.
+    /// Chuvash language.
     case chv
-    /// language.
+    /// Cheyenne language.
     case chy
-    /// language.
+    /// Chamic languages.
     case cmc
-    /// language.
+    /// Montenegrin language.
     case cnr
-    /// language.
+    /// Coptic language.
     case cop
-    /// language.
+    /// Cornish language.
     case cor
-    /// language.
+    /// Corsican language.
     case cos
-    /// language.
+    /// Creoles and pidgins, English based language.
     case cpe
-    /// language.
+    /// Creoles and pidgins, French-based language.
     case cpf
-    /// language.
+    /// Creoles and pidgins, Portuguese-based language.
     case cpp
-    /// language.
+    /// Cree language.
     case cre
-    /// language.
+    /// Crimean Tatar - Crimean Turkish language.
     case crh
-    /// language.
+    /// Creoles and pidgins language.
     case crp
-    /// language.
+    /// Kashubian language.
     case csb
-    /// language.
+    /// Cushitic languages.
     case cus
-    /// language.
+    /// Welsh (B) language.
     case wel
-    /// language.
+    /// Welsh (T) language.
     case cym
     /// language.
     case dak
