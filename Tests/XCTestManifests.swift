@@ -521,7 +521,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3TagSizeParserTest.__allTests),
         testCase(Mp3FileReaderTest.__allTests),
         testCase(ID3TagEditorTestAcceptanceTest.__allTests),
-        testCase(ID3TagEditorTestAcceptanceNewFrames.__allTests),
         testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
         testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
         testCase(ID3FrameHeaderCreatorTest.__allTests),
