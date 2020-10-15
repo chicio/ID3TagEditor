@@ -49,6 +49,7 @@ class ID3FrameConfiguration {
         .Genre : [UInt8]("TCON".utf8),
         .TrackPosition : [UInt8]("TRCK".utf8),
         .DiscPosition : [UInt8]("TPOS".utf8),
+        .UnsyncronisedLyrics: [UInt8]("USLT".utf8),
         .iTunesMovementName : [UInt8]("MVNM".utf8),
         .iTunesMovementIndex : [UInt8]("MVIN".utf8),
         .iTunesMovementCount : [UInt8]("MVCN".utf8),
@@ -80,6 +81,7 @@ class ID3FrameConfiguration {
             .Genre : [UInt8]("TCO".utf8),
             .TrackPosition : [UInt8]("TRK".utf8),
             .DiscPosition : [UInt8]("TPA".utf8),
+            .UnsyncronisedLyrics: [UInt8]("ULT".utf8)
         ],
         .version3 : [
             .RecordingDayMonth : [UInt8]("TDAT".utf8),
@@ -117,7 +119,8 @@ class ID3FrameConfiguration {
         "TCAT" : .iTunesPodcastCategory,
         "TDES" : .iTunesPodcastDescription,
         "TGID" : .iTunesPodcastID,
-        "TKWD" : .iTunesPodcastKeywords
+        "TKWD" : .iTunesPodcastKeywords,
+        "USLT" : .UnsyncronisedLyrics
     ]
     private var nameForIdentifier: [ID3Version : [String : FrameType]] = [
         .version2 : [
@@ -141,7 +144,8 @@ class ID3FrameConfiguration {
             "TIM" : .RecordingHourMinute,
             "TCO" : .Genre,
             "TRK" : .TrackPosition,
-            "TPA" : .DiscPosition
+            "TPA" : .DiscPosition,
+            "ULT" : .UnsyncronisedLyrics
         ],
         .version3 : [
             "TDAT" : .RecordingDayMonth,

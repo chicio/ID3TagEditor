@@ -158,6 +158,16 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration,
             timestampCreator: ID3TimestampCreator()
         )
+        let unsynchronisedLyrics = ID3UnsyncronizedLyricsFrameCreator(unsynchronisedLyricForLanguageFrameCreator:
+                                                                        ID3UnsynchronisedLyricForLanguageFrameCreator(
+                                                                            id3FrameConfiguration: frameConfiguration,
+                                                                            frameHeaderCreator: ID3FrameHeaderCreator(
+                                                                                id3FrameConfiguration: frameConfiguration,
+                                                                                frameContentSizeCalculator: frameContentSizeCalculator,
+                                                                                frameFlagsCreator: frameFlagsCreator
+                                                                            ),
+                                                                            paddingAdder: paddingAdder)
+        )
         albumFrameCreator.nextCreator = albumArtistCreator
         albumArtistCreator.nextCreator = artistFrameCreator
         artistFrameCreator.nextCreator = titleFrameCreator
@@ -188,6 +198,7 @@ class ID3FrameCreatorsChainFactory {
         podcastKeywordsFrameCreator.nextCreator = publisherFrameCreator
         publisherFrameCreator.nextCreator = subtitleFrameCreator
         subtitleFrameCreator.nextCreator = discPositionFrameCreator
+        discPositionFrameCreator.nextCreator = unsynchronisedLyrics
         return albumFrameCreator
     }
 }

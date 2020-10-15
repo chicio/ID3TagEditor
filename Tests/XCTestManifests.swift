@@ -394,7 +394,7 @@ extension Mp3FileReaderTest {
     ]
 }
 
-extension ID3TagEditorTestAcceptanceTest {
+extension ID3TagEditorAcceptanceTest {
     static let __allTests = [
         ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
         ("testReadTagV2", testReadTagV2),
@@ -415,13 +415,8 @@ extension ID3TagEditorTestAcceptanceTest {
         ("testWriteTagV3ToMp3AsData", testWriteTagV3ToMp3AsData),
         ("testWriteTagV4", testWriteTagV4),
         ("testWriteTagV4WithPng", testWriteTagV4WithPng),
-        ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers)
-
-    ]
-}
-
-extension ID3TagEditorTestAcceptanceNewFrames {
-    static let __allTests = [
+        ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers),
+        ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics),
         ("testReadNewFramesV2", testReadNewFramesV2),
         ("testReadNewFramesV3", testReadNewFramesV3),
         ("testReadNewFramesV4", testReadNewFramesV4),
@@ -429,6 +424,42 @@ extension ID3TagEditorTestAcceptanceNewFrames {
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
         ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten)
+    ]
+}
+
+extension ID3TagEditorWriteReadAcceptanceTest {
+    static let __allTests = [
+        ("testReadWritev2", testReadWritev2),
+        ("testReadWritev3", testReadWritev3),
+        ("testReadWritev4", testReadWritev4)
+    ]
+}
+
+extension ID3UnsynchronisedLyricForLanguageFrameCreatorTest {
+    static let __allTests = [
+        ("testCreatev2", testCreatev2),
+        ("testCreatev3", testCreatev3),
+        ("testCreatev4", testCreatev4)
+    ]
+}
+
+extension ID3UnsyncronizedLyricsFrameCreatorTest {
+    static let __allTests = [
+        ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet),
+        ("testCreateFrameForValidData", testCreateFrameForValidData)
+    ]
+}
+
+extension ID3FrameHeaderCreatorTest {
+    static let __allTests = [
+        ("testCreate", testCreate)
+    ]
+}
+
+extension ID3UnsynchronisedLyricsFrameContentParsingOperationTest {
+    static let __allTests = [
+        ("testParsingValidFrame", testParsingValidFrame),
+        ("testParsingInvalidLanguage", testParsingInvalidLanguage)
     ]
 }
 
@@ -489,8 +520,12 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3FrameSizeParserTest.__allTests),
         testCase(ID3TagSizeParserTest.__allTests),
         testCase(Mp3FileReaderTest.__allTests),
-        testCase(ID3TagEditorTestAcceptanceTest.__allTests),
-        testCase(ID3TagEditorTestAcceptanceNewFrames.__allTests),
+        testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
+        testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
+        testCase(ID3FrameHeaderCreatorTest.__allTests),
+        testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests),
+        testCase(ID3TagEditorAcceptanceTest.__allTests),
+        testCase(ID3TagEditorWriteReadAcceptanceTest.__allTests)
     ]
 }
 #endif

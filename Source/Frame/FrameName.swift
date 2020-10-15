@@ -35,28 +35,6 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .RecordingYear,
             .RecordingHourMinute,
             .RecordingDateTime,
-            .AttachedPicture(.Other),
-            .AttachedPicture(.Other),
-            .AttachedPicture(.fileIcon),
-            .AttachedPicture(.OtherFileIcon),
-            .AttachedPicture(.FrontCover),
-            .AttachedPicture(.BackCover),
-            .AttachedPicture(.LeafletPage),
-            .AttachedPicture(.Media),
-            .AttachedPicture(.LeadArtistLeadPerformerSoloist),
-            .AttachedPicture(.ArtistPerformer),
-            .AttachedPicture(.Conductor),
-            .AttachedPicture(.BandOrchestra),
-            .AttachedPicture(.Composer),
-            .AttachedPicture(.LyricistTextWriter),
-            .AttachedPicture(.RecordingLocation),
-            .AttachedPicture(.DuringRecording),
-            .AttachedPicture(.DuringPerformance),
-            .AttachedPicture(.MovieVideoScreenCapture),
-            .AttachedPicture(.ABrightColouredFish),
-            .AttachedPicture(.Illustration),
-            .AttachedPicture(.BandArtistLogotype),
-            .AttachedPicture(.PublisherStudioLogotype),
             .iTunesGrouping,
             .iTunesMovementName,
             .iTunesMovementIndex,
@@ -66,6 +44,8 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .iTunesPodcastID,
             .iTunesPodcastKeywords
         ]
+        + ID3PictureType.allCases.map({ .AttachedPicture($0) })
+        + ID3FrameContentLanguage.allCases.map({ .UnsynchronizedLyrics($0) })
     }
     
     /// Title frame name.
@@ -115,6 +95,9 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     /// AttachedPicture frame name
     /// - pictureType:
     case AttachedPicture(_ pictureType: ID3PictureType)
+    /// Unsynchronized lyrics frame name
+    /// - language: language of the lyrics, according to the ISO-639-2 standard
+    case UnsynchronizedLyrics(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
     ///Movement name frame name.

@@ -21,8 +21,8 @@ class ID3FrameFromStringContentCreator: FrameFromStringContentCreator {
     }
 
     func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8] {
-        var frame: [UInt8] = frameIdentifier
         let contentAsBytes = stringToBytesAdapter.adapt(string: content, for: version)
+        var frame: [UInt8] = frameIdentifier
         frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: version))
         frame.append(contentsOf: frameFlagsCreator.createFor(version: version))
         frame.append(contentsOf: contentAsBytes)
