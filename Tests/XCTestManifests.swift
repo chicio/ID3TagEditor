@@ -429,8 +429,8 @@ extension ID3TagEditorAcceptanceTest {
 
 extension ID3TagEditorWriteReadAcceptanceTest {
     static let __allTests = [
-        ("testReadWritev2", testReadWritev2)
-        ("testReadWritev3", testReadWritev3)
+        ("testReadWritev2", testReadWritev2),
+        ("testReadWritev3", testReadWritev3),
         ("testReadWritev4", testReadWritev4)
     ]
 }
