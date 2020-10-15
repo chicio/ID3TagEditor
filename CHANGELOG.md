@@ -1,6 +1,15 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [In progress](https://github.com/chicio/ID3TagEditor/releases/tag/XXX)
+Release date: To be defined
+
+#### Added
+- Added Unsynchronised lyrics frame support
+
+#### Fixed
+
+
 ## [3.3.3](https://github.com/chicio/ID3TagEditor/releases/tag/3.3.3)
 Release date: 2020-10-09
 
