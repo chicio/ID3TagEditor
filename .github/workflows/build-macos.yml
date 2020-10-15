@@ -18,3 +18,5 @@ jobs:
       - name: Build macOS Demo
         run: | 
            set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo macOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=macOS,arch=x86_64" | xcpretty
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
