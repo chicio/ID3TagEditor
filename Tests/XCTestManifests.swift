@@ -520,11 +520,11 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3FrameSizeParserTest.__allTests),
         testCase(ID3TagSizeParserTest.__allTests),
         testCase(Mp3FileReaderTest.__allTests),
-        testCase(ID3TagEditorTestAcceptanceTest.__allTests),
         testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
         testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
         testCase(ID3FrameHeaderCreatorTest.__allTests),
         testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests),
+        testCase(ID3TagEditorAcceptanceTest.__allTests),
         testCase(ID3TagEditorWriteReadAcceptanceTest.__allTests)
     ]
 }
