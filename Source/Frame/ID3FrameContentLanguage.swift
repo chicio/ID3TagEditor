@@ -846,190 +846,190 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     case smn
     /// Samoan language.
     case smo
-    /// language.
+    /// Skolt Sami language.
     case sms
-    /// language.
+    /// Shona language.
     case sna
-    /// language.
+    /// Sindhi language.
     case snd
-    /// language.
+    /// Soninke language.
     case snk
-    /// language.
+    /// Sogdian language.
     case sog
-    /// language.
+    /// Somali language.
     case som
-    /// language.
+    /// Songhai languages.
     case son
-    /// language.
+    /// Sotho, Southern language.
     case sot
-    /// language.
+    /// Spanish - Castilian language.
     case spa
-    /// language.
+    /// Sardinian language.
     case srd
-    /// language.
+    /// Sranan Tongo language.
     case srn
-    /// language.
+    /// Serbian language.
     case srp
-    /// language.
+    /// Serer language.
     case srr
-    /// language.
+    /// Nilo-Saharan languages.
     case ssa
-    /// language.
+    /// Swati language.
     case ssw
-    /// language.
+    /// Sukuma language.
     case suk
-    /// language.
+    /// Sundanese language.
     case sun
-    /// language.
+    /// Susu language.
     case sus
-    /// language.
+    /// Sumerian language.
     case sux
-    /// language.
+    /// Swahili language.
     case swa
-    /// language.
+    /// Swedish language.
     case swe
-    /// language.
+    /// Classical Syriac language.
     case syc
-    /// language.
+    /// Syriac language.
     case syr
-    /// language.
+    /// Tahitian language.
     case tah
-    /// language.
+    /// Tai languages.
     case tai
-    /// language.
+    /// Tamil language.
     case tam
-    /// language.
+    /// Tatar language.
     case tat
-    /// language.
+    /// Telugu language.
     case tel
-    /// language.
+    /// Timne language.
     case tem
-    /// language.
+    /// Tereno language.
     case ter
-    /// language.
+    /// Tetum language.
     case tet
-    /// language.
+    /// Tajik language.
     case tgk
-    /// language.
+    /// Tagalog language.
     case tgl
-    /// language.
+    /// Thai language.
     case tha
-    /// language.
+    /// Tigre language.
     case tig
-    /// language.
+    /// Tigrinya language.
     case tir
-    /// language.
+    /// Tiv language.
     case tiv
-    /// language.
+    /// Tokelau language.
     case tkl
-    /// language.
+    /// Klingon - tlhIngan-Hol language.
     case tlh
-    /// language.
+    /// Tlingit language.
     case tli
-    /// language.
+    /// Tamashek language.
     case tmh
-    /// language.
+    /// Tonga (Nyasa) language.
     case tog
-    /// language.
+    /// Tonga (Tonga Islands) language.
     case ton
-    /// language.
+    /// Tok Pisin language.
     case tpi
-    /// language.
+    /// Tsimshian language.
     case tsi
-    /// language.
+    /// Tswana language.
     case tsn
-    /// language.
+    /// Tsonga language.
     case tso
-    /// language.
+    /// Turkmen language.
     case tuk
-    /// language.
+    /// Tumbuka language.
     case tum
-    /// language.
+    /// Tupi languages.
     case tup
-    /// language.
+    /// Turkish language.
     case tur
-    /// language.
+    /// Altaic languages.
     case tut
-    /// language.
+    /// Tuvalu language.
     case tvl
-    /// language.
+    /// Twi language.
     case twi
-    /// language.
+    /// Tuvinian language.
     case tyv
-    /// language.
+    /// Udmurt language.
     case udm
-    /// language.
+    /// Ugaritic language.
     case uga
-    /// language.
+    /// Uighur - Uyghur language.
     case uig
-    /// language.
+    /// Ukrainian language.
     case ukr
-    /// language.
+    /// Umbundu language.
     case umb
-    /// language.
+    /// Undetermined language.
     case und
-    /// language.
+    /// Urdu language.
     case urd
-    /// language.
+    /// Uzbek language.
     case uzb
-    /// language.
+    /// Vai language.
     case vai
-    /// language.
+    /// Venda language.
     case ven
-    /// language.
+    /// Vietnamese language.
     case vie
-    /// language.
+    /// Volapük language.
     case vol
-    /// language.
+    /// Votic language.
     case vot
-    /// language.
+    /// Wakashan languages.
     case wak
-    /// language.
+    /// Wolaitta - Wolaytta language.
     case wal
-    /// language.
+    /// Waray language.
     case war
-    /// language.
+    /// Washo language.
     case was
-    /// language.
+    /// Sorbian languages.
     case wen
-    /// language.
+    /// Walloon language.
     case wln
-    /// language.
+    /// Wolof language.
     case wol
-    /// language.
+    /// Kalmyk - Oirat language.
     case xal
-    /// language.
+    /// Xhosa language.
     case xho
-    /// language.
+    /// Yao language.
     case yao
-    /// language.
+    /// Yapese language.
     case yap
-    /// language.
+    /// Yiddish language.
     case yid
-    /// language.
+    /// Yoruba language.
     case yor
-    /// language.
+    /// Yupik languages.
     case ypk
-    /// language.
+    /// Zapotec language.
     case zap
-    /// language.
+    /// Blissymbols - Blissymbolics - Bliss language.
     case zbl
-    /// language.
+    /// Zenaga language.
     case zen
-    /// language.
+    /// Standard Moroccan Tamazight language.
     case zgh
-    /// language.
+    /// Zhuang - Chuang language.
     case zha
-    /// language.
+    /// Zande languages.
     case znd
-    /// language.
+    /// Zulu language.
     case zul
-    /// language.
+    /// Zuni language.
     case zun
-    /// language.
+    /// No linguistic content; Not applicable
     case zxx
-    /// language.
+    /// Zaza - Dimili - Dimli - Kirdki - Kirmanjki - Zazaki language.
     case zza
-    /// language.
+    /// Invalid/Unknown language.
     case unknown
 }
