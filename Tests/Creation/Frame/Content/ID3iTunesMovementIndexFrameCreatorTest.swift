@@ -23,13 +23,13 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
+
     func testFrameCreationWhenThereIsAMovementIndex() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.iTunesMovementIndex : ID3FrameWithIntegerContent(value: 6)]
+            frames: [.iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6)]
         )
         let id3MovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(

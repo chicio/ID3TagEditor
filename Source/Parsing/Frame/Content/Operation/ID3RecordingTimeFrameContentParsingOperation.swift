@@ -9,18 +9,18 @@ import Foundation
 
 class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation {
     private let stringContentParser: ID3FrameStringContentParser
-    
+
     init(stringContentParser: ID3FrameStringContentParser) {
         self.stringContentParser = stringContentParser
     }
-    
-    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> Void) {
         if let frameContent = stringContentParser.parse(frame: frame, version: version) {
             parse(content: frameContent, completed: completed)
         }
     }
 
-    private func parse(content: String, completed: (FrameName, ID3Frame) -> ()) {
+    private func parse(content: String, completed: (FrameName, ID3Frame) -> Void) {
         var recordingDateTime: RecordingDateTime = RecordingDateTime(
             date: RecordingDate(day: nil, month: nil, year: nil),
             time: RecordingTime(hour: nil, minute: nil)

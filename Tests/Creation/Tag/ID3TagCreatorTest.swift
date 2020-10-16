@@ -24,12 +24,12 @@ class ID3TagCreatorTest: XCTestCase {
         let id3TagHeaderCreator = ID3TagHeaderCreator(uInt32ToByteArrayAdapter: MockUInt32ToByteArrayAdapter(),
                                                       id3TagConfiguration: ID3TagConfiguration())
         let id3TagCreator = ID3TagCreator(id3FramesCreator: id3FramesCreator, id3TagHeaderCreator: id3TagHeaderCreator)
-        
+
         XCTAssertThrowsError(try id3TagCreator.create(id3Tag: ID3Tag(version: .version3, frames: [:])))
     }
 
     func testGenerateValidData() {
-        let id3FrameCreatorChain = MockID3FrameCreatorsChain(frames:  [0x22, 0x33])
+        let id3FrameCreatorChain = MockID3FrameCreatorsChain(frames: [0x22, 0x33])
         let id3FramesCreator = ID3FramesCreator(id3FrameCreatorsChain: id3FrameCreatorChain)
         let id3TagHeaderCreator = ID3TagHeaderCreator(uInt32ToByteArrayAdapter: MockUInt32ToByteArrayAdapter(),
                                                       id3TagConfiguration: ID3TagConfiguration())

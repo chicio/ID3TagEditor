@@ -10,13 +10,13 @@ import Foundation
 class ID3FrameStringEncodingDetector {
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let id3StringEncodingConverter: ID3StringEncodingConverter
-    
+
     init(id3FrameConfiguration: ID3FrameConfiguration,
          id3StringEncodingConverter: ID3StringEncodingConverter) {
         self.id3FrameConfiguration = id3FrameConfiguration
         self.id3StringEncodingConverter = id3StringEncodingConverter
     }
-    
+
     func detect(frame: Data, version: ID3Version) -> String.Encoding {
         let encodingBytePosition = id3FrameConfiguration.encodingPositionFor(version: version)
         let encoding = id3StringEncodingConverter.convert(

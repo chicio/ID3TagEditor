@@ -19,14 +19,14 @@ extension ID3AlbumFrameCreatorTest {
 extension ID3ArtistFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAnArtist", testFrameCreationWhenThereIsAnArtist),
-        ("testNoFrameCreationWhenThereIsNoArtist", testNoFrameCreationWhenThereIsNoArtist),
+        ("testNoFrameCreationWhenThereIsNoArtist", testNoFrameCreationWhenThereIsNoArtist)
     ]
 }
 
 extension ID3AttachedPictureFrameContentParsingOperationTest {
     static let __allTests = [
         ("testSetTagAttachedPictureJpg", testSetTagAttachedPictureJpg),
-        ("testSetTagAttachedPicturePng", testSetTagAttachedPicturePng),
+        ("testSetTagAttachedPicturePng", testSetTagAttachedPicturePng)
     ]
 }
 
@@ -37,47 +37,47 @@ extension ID3AttachedPicturesFramesCreatorTest {
         ("testFrameCreationWithPngForAnotherTypeOfCover", testFrameCreationWithPngForAnotherTypeOfCover),
         ("testFrameCreationWithPngForVersion2", testFrameCreationWithPngForVersion2),
         ("testFrameCreationWithPngForVersion3", testFrameCreationWithPngForVersion3),
-        ("testNoFrameCreationWhenThereIsNoImage", testNoFrameCreationWhenThereIsNoImage),
+        ("testNoFrameCreationWhenThereIsNoImage", testNoFrameCreationWhenThereIsNoImage)
     ]
 }
 
 extension ID3FrameConfigurationTest {
     static let __allTests = [
-        ("testInvalidIdentifierName", testInvalidIdentifierName),
+        ("testInvalidIdentifierName", testInvalidIdentifierName)
     ]
 }
 
 extension ID3FrameContentSizeCalculatorTest {
     static let __allTests = [
         ("testContentCalculateSizeForVersion2", testContentCalculateSizeForVersion2),
-        ("testContentCalculateSizeForVersion3", testContentCalculateSizeForVersion3),
+        ("testContentCalculateSizeForVersion3", testContentCalculateSizeForVersion3)
     ]
 }
 
 extension ID3FrameCreatorsChainTest {
     static let __allTests = [
         ("testCurrentTagBytesAreReturnedWhenThereIsNotANextCreator", testCurrentTagBytesAreReturnedWhenThereIsNotANextCreator),
-        ("testNextCreatorCalled", testNextCreatorCalled),
+        ("testNextCreatorCalled", testNextCreatorCalled)
     ]
 }
 
 extension ID3FrameFlagsCreatorTest {
     static let __allTests = [
         ("testFlagsForVersion2", testFlagsForVersion2),
-        ("testFlagsForVersion3", testFlagsForVersion3),
+        ("testFlagsForVersion3", testFlagsForVersion3)
     ]
 }
 
 extension ID3FrameFromStringContentCreatorTest {
     static let __allTests = [
-        ("testCreatorFrameFromStringContent", testCreatorFrameFromStringContent),
+        ("testCreatorFrameFromStringContent", testCreatorFrameFromStringContent)
     ]
 }
 
 extension ID3GenreFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAGenre", testFrameCreationWhenThereIsAGenre),
-        ("testNoFrameCreationWhenThereIsNoGenre", testNoFrameCreationWhenThereIsNoGenre),
+        ("testNoFrameCreationWhenThereIsNoGenre", testNoFrameCreationWhenThereIsNoGenre)
     ]
 }
 
@@ -86,13 +86,13 @@ extension ID3GenreStringAdapterTest {
         ("testAdaptGenreWithDescription", testAdaptGenreWithDescription),
         ("testAdaptGenreWithoutDescription", testAdaptGenreWithoutDescription),
         ("testAdaptGenreWithoutGenreIdentifier", testAdaptGenreWithoutGenreIdentifier),
-        ("testAdaptID3v3NewGenresNotNumeric", testAdaptID3v3NewGenresNotNumeric),
+        ("testAdaptID3v3NewGenresNotNumeric", testAdaptID3v3NewGenresNotNumeric)
     ]
 }
 
 extension ID3ISO88591StringToByteAdapterTest {
     static let __allTests = [
-        ("testEncodeStringToISO88591WithEncodingByte", testEncodeStringToISO88591WithEncodingByte),
+        ("testEncodeStringToISO88591WithEncodingByte", testEncodeStringToISO88591WithEncodingByte)
     ]
 }
 
@@ -101,13 +101,13 @@ extension ID3PictureTypeAdapterTest {
         ("testExtractTypeFromV2TagJpg", testExtractTypeFromV2TagJpg),
         ("testExtractTypeFromV2TagPng", testExtractTypeFromV2TagPng),
         ("testExtractTypeFromV3TagJpg", testExtractTypeFromV3TagJpg),
-        ("testExtractTypeFromV3TagPng", testExtractTypeFromV3TagPng),
+        ("testExtractTypeFromV3TagPng", testExtractTypeFromV3TagPng)
     ]
 }
 
 extension ID3RecordingDateTimeFrameCreatorTest {
     static let __allTests = [
-        ("testFrameCreationWhenThereIsACompleteRecordingDateTime", testFrameCreationWhenThereIsACompleteRecordingDateTime),
+        ("testFrameCreationWhenThereIsACompleteRecordingDateTime", testFrameCreationWhenThereIsACompleteRecordingDateTime)
     ]
 }
 
@@ -116,14 +116,14 @@ extension ID3RecordingDayMonthFrameCreatorTest {
         ("testFrameCreationWhenThereIsADayAndAMonth", testFrameCreationWhenThereIsADayAndAMonth),
         ("testNoFrameCreationWhenIsMajorThanVersion3", testNoFrameCreationWhenIsMajorThanVersion3),
         ("testNoFrameCreationWhenThereIsNoDay", testNoFrameCreationWhenThereIsNoDay),
-        ("testNoFrameCreationWhenThereIsNoMonth", testNoFrameCreationWhenThereIsNoMonth),
+        ("testNoFrameCreationWhenThereIsNoMonth", testNoFrameCreationWhenThereIsNoMonth)
     ]
 }
 
 extension ID3RecordingTimeFrameContentParsingOperationTest {
     static let __allTests = [
         ("testframeContentValidTimestamp", testframeContentValidTimestamp),
-        ("testframeContentWithYearInsteadOfTimestamp", testframeContentWithYearInsteadOfTimestamp),
+        ("testframeContentWithYearInsteadOfTimestamp", testframeContentWithYearInsteadOfTimestamp)
     ]
 }
 
@@ -131,7 +131,7 @@ extension ID3RecordingYearFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAnYear", testFrameCreationWhenThereIsAnYear),
         ("testNoFrameCreationWhenIsMajorThanVersion3", testNoFrameCreationWhenIsMajorThanVersion3),
-        ("testNoFrameCreationWhenThereIsNoYear", testNoFrameCreationWhenThereIsNoYear),
+        ("testNoFrameCreationWhenThereIsNoYear", testNoFrameCreationWhenThereIsNoYear)
     ]
 }
 
@@ -139,7 +139,7 @@ extension ID3TagCreatorTest {
     static let __allTests = [
         ("testGenerateValidData", testGenerateValidData),
         ("testNoValidFrameData", testNoValidFrameData),
-        ("testTagTooBig", testTagTooBig),
+        ("testTagTooBig", testTagTooBig)
     ]
 }
 
@@ -148,7 +148,7 @@ extension ID3TagPresenceTest {
         ("testHeaderVersion2IsPresent", testHeaderVersion2IsPresent),
         ("testHeaderVersion3IsPresent", testHeaderVersion3IsPresent),
         ("testTagNotPresent", testTagNotPresent),
-        ("testTagNotPresentSizeTooSmall", testTagNotPresentSizeTooSmall),
+        ("testTagNotPresentSizeTooSmall", testTagNotPresentSizeTooSmall)
     ]
 }
 
@@ -159,161 +159,161 @@ extension ID3TimestampCreatorTest {
         ("testNilHour", testNilHour),
         ("testNilMinute", testNilMinute),
         ("testNilMonth", testNilMonth),
-        ("testNilYear", testNilYear),
+        ("testNilYear", testNilYear)
     ]
 }
 
 extension ID3TitleFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsATitle", testFrameCreationWhenThereIsATitle),
-        ("testNoFrameCreationWhenThereIsNoTitle", testNoFrameCreationWhenThereIsNoTitle),
+        ("testNoFrameCreationWhenThereIsNoTitle", testNoFrameCreationWhenThereIsNoTitle)
     ]
 }
 
 extension ID3ComposerFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAComposer", testFrameCreationWhenThereIsAComposer),
-        ("testNoFrameCreationWhenThereIsNoComposer", testNoFrameCreationWhenThereIsNoComposer),
+        ("testNoFrameCreationWhenThereIsNoComposer", testNoFrameCreationWhenThereIsNoComposer)
     ]
 }
 
 extension ID3ConductorFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAConductor", testFrameCreationWhenThereIsAConductor),
-        ("testNoFrameCreationWhenThereIsNoConductor", testNoFrameCreationWhenThereIsNoConductor),
+        ("testNoFrameCreationWhenThereIsNoConductor", testNoFrameCreationWhenThereIsNoConductor)
     ]
 }
 
 extension ID3ContentGroupingFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAContentGrouping", testFrameCreationWhenThereIsAContentGrouping),
-        ("testNoFrameCreationWhenThereIsNoContentGrouping", testNoFrameCreationWhenThereIsNoContentGrouping),
+        ("testNoFrameCreationWhenThereIsNoContentGrouping", testNoFrameCreationWhenThereIsNoContentGrouping)
     ]
 }
 
 extension ID3CopyrightFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsACopyright", testFrameCreationWhenThereIsACopyright),
-        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoCopyright),
+        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoCopyright)
     ]
 }
 
 extension ID3EncodedByFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAnEncodedBy", testFrameCreationWhenThereIsAnEncodedBy),
-        ("testNoFrameCreationWhenThereIsNoEncodedBy", testNoFrameCreationWhenThereIsNoEncodedBy),
+        ("testNoFrameCreationWhenThereIsNoEncodedBy", testNoFrameCreationWhenThereIsNoEncodedBy)
     ]
 }
 
 extension ID3EncoderSettingsFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereAreEncoderSettings", testFrameCreationWhenThereAreEncoderSettings),
-        ("testNoFrameCreationWhenThereAreNoEncoderSettings", testNoFrameCreationWhenThereAreNoEncoderSettings),
+        ("testNoFrameCreationWhenThereAreNoEncoderSettings", testNoFrameCreationWhenThereAreNoEncoderSettings)
     ]
 }
 
 extension ID3FileOwnerFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAFileOwner", testFrameCreationWhenThereIsAFileOwner),
-        ("testNoFrameCreationWhenThereIsNoFileOwner", testNoFrameCreationWhenThereIsNoFileOwner),
+        ("testNoFrameCreationWhenThereIsNoFileOwner", testNoFrameCreationWhenThereIsNoFileOwner)
     ]
 }
 
 extension ID3iTunesGroupingFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
-        ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping),
+        ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping)
     ]
 }
 
 extension ID3LyricistFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsALyricist", testFrameCreationWhenThereIsALyricist),
-        ("testNoFrameCreationWhenThereIsNoLyricist", testNoFrameCreationWhenThereIsNoLyricist),
+        ("testNoFrameCreationWhenThereIsNoLyricist", testNoFrameCreationWhenThereIsNoLyricist)
     ]
 }
 
 extension ID3MixArtistFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMixArtist", testFrameCreationWhenThereIsAMixArtist),
-        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist),
+        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist)
     ]
 }
 
 extension ID3iTunesMovementNameFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMovementName", testFrameCreationWhenThereIsAMovementName),
-        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName),
+        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName)
     ]
 }
 
 extension ID3iTunesPodcastCategoryFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAPodcastCategory", testFrameCreationWhenThereIsAPodcastCategory),
-        ("testNoFrameCreationWhenThereIsNoPodcastCategory", testNoFrameCreationWhenThereIsNoPodcastCategory),
+        ("testNoFrameCreationWhenThereIsNoPodcastCategory", testNoFrameCreationWhenThereIsNoPodcastCategory)
     ]
 }
 
 extension ID3iTunesPodcastDescriptionFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAPodcastDescription", testFrameCreationWhenThereIsAPodcastDescription),
-        ("testNoFrameCreationWhenThereIsNoPodcastDescription", testNoFrameCreationWhenThereIsNoPodcastDescription),
+        ("testNoFrameCreationWhenThereIsNoPodcastDescription", testNoFrameCreationWhenThereIsNoPodcastDescription)
     ]
 }
 
 extension ID3iTunesPodcastIDFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAPodcastID", testFrameCreationWhenThereIsAPodcastID),
-        ("testNoFrameCreationWhenThereIsNoPodcastID", testNoFrameCreationWhenThereIsNoPodcastID),
+        ("testNoFrameCreationWhenThereIsNoPodcastID", testNoFrameCreationWhenThereIsNoPodcastID)
     ]
 }
 
 extension ID3iTunesPodcastKeywordsFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereArePodcastKeywords", testFrameCreationWhenThereArePodcastKeywords),
-        ("testNoFrameCreationWhenThereAreNoPodcastKeywords", testNoFrameCreationWhenThereAreNoPodcastKeywords),
+        ("testNoFrameCreationWhenThereAreNoPodcastKeywords", testNoFrameCreationWhenThereAreNoPodcastKeywords)
     ]
 }
 
 extension ID3PublisherFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAPublisher", testFrameCreationWhenThereIsAPublisher),
-        ("testNoFrameCreationWhenThereIsNoPublisher", testNoFrameCreationWhenThereIsNoPublisher),
+        ("testNoFrameCreationWhenThereIsNoPublisher", testNoFrameCreationWhenThereIsNoPublisher)
     ]
 }
 
 extension ID3SubtitleFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsASubtitle", testFrameCreationWhenThereIsASubtitle),
-        ("testNoFrameCreationWhenThereIsNoSubtitle", testNoFrameCreationWhenThereIsNoSubtitle),
+        ("testNoFrameCreationWhenThereIsNoSubtitle", testNoFrameCreationWhenThereIsNoSubtitle)
     ]
 }
 
 extension ID3TrackPositionCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsATrackPosition", testFrameCreationWhenThereIsATrackPosition),
-        ("testNoFrameCreationWhenThereIsNoTrackPosition", testNoFrameCreationWhenThereIsNoTrackPosition),
+        ("testNoFrameCreationWhenThereIsNoTrackPosition", testNoFrameCreationWhenThereIsNoTrackPosition)
     ]
 }
 
 extension ID3DiscPositionFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsADiscPosition", testFrameCreationWhenThereIsADiscPosition),
-        ("testNoFrameCreationWhenThereIsNoDiscPosition", testNoFrameCreationWhenThereIsNoDiscPosition),
+        ("testNoFrameCreationWhenThereIsNoDiscPosition", testNoFrameCreationWhenThereIsNoDiscPosition)
     ]
 }
 
 extension ID3iTunesMovementIndexFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
-        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex),
+        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex)
     ]
 }
 
 extension ID3iTunesMovementCountFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAMovementCount", testFrameCreationWhenThereIsAMovementCount),
-        ("testNoFrameCreationWhenThereIsNoMovementCount", testNoFrameCreationWhenThereIsNoMovementCount),
+        ("testNoFrameCreationWhenThereIsNoMovementCount", testNoFrameCreationWhenThereIsNoMovementCount)
     ]
 }
 
@@ -321,7 +321,7 @@ extension ID3TrackPositionStringAdapterTest {
     static let __allTests = [
         ("testAdaptNotANumberTrackPosition", testAdaptNotANumberTrackPosition),
         ("testAdaptTrackPositionWithoutTotalTracks", testAdaptTrackPositionWithoutTotalTracks),
-        ("testAdaptTrackPositionWithTotalTrack", testAdaptTrackPositionWithTotalTrack),
+        ("testAdaptTrackPositionWithTotalTrack", testAdaptTrackPositionWithTotalTrack)
     ]
 }
 
@@ -329,31 +329,31 @@ extension ID3DiscPositionStringAdapterTest {
     static let __allTests = [
         ("testAdaptNotANumberDiscPosition", testAdaptNotANumberDiscPosition),
         ("testAdaptDiscPositionWithoutTotalDiscs", testAdaptDiscPositionWithoutTotalDiscs),
-        ("testAdaptDiscPositionWithTotalDiscs", testAdaptDiscPositionWithTotalDiscs),
+        ("testAdaptDiscPositionWithTotalDiscs", testAdaptDiscPositionWithTotalDiscs)
     ]
 }
 
 extension ID3UTF16StringToByteAdapterTest {
     static let __allTests = [
-        ("testEncodeStringToUTF16WithEncodingByte", testEncodeStringToUTF16WithEncodingByte),
+        ("testEncodeStringToUTF16WithEncodingByte", testEncodeStringToUTF16WithEncodingByte)
     ]
 }
 
 extension PaddingAdderUsingNullCharTest {
     static let __allTests = [
-        ("testAddPadding", testAddPadding),
+        ("testAddPadding", testAddPadding)
     ]
 }
 
 extension PaddingRemoverUsingTrimmingTest {
     static let __allTests = [
-        ("testRemovePadding", testRemovePadding),
+        ("testRemovePadding", testRemovePadding)
     ]
 }
 
 extension UInt32ToByteArrayAdapterUsingUnsafePointerTest {
     static let __allTests = [
-        ("testAdapt32BitUnsignedInteger", testAdapt32BitUnsignedInteger),
+        ("testAdapt32BitUnsignedInteger", testAdapt32BitUnsignedInteger)
     ]
 }
 
@@ -361,7 +361,7 @@ extension ID3FrameContentSizeParserTest {
     static let __allTests = [
         ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
         ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
-        ("testParseFrameContentSizeV4", testParseFrameContentSizeV4),
+        ("testParseFrameContentSizeV4", testParseFrameContentSizeV4)
     ]
 }
 
@@ -371,28 +371,28 @@ extension ID3StringContentParsingOperationTest {
         ("testFrameContentParsedV3", testFrameContentParsedV3),
         ("testFrameContentParsedV2utf16", testFrameContentParsedV2utf16),
         ("testFrameContentParsedV3utf16", testFrameContentParsedV3utf16),
-        ("testFrameContentParsedV4utf8", testFrameContentParsedV4utf8),
+        ("testFrameContentParsedV4utf8", testFrameContentParsedV4utf8)
     ]
 }
 
 extension ID3FrameSizeParserTest {
     static let __allTests = [
         ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
-        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
+        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3)
     ]
 }
 
 extension ID3TagSizeParserTest {
     static let __allTests = [
         ("testParseTagSizeV2", testParseTagSizeV2),
-        ("testParseFrameContentSizeV3", testParseTagSizeV3),
+        ("testParseFrameContentSizeV3", testParseTagSizeV3)
     ]
 }
 
 extension Mp3FileReaderTest {
     static let __allTests = [
         ("testNotAnMp3file", testNotAnMp3file),
-        ("testMp3File", testMp3File),
+        ("testMp3File", testMp3File)
     ]
 }
 

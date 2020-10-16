@@ -27,18 +27,28 @@ class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLangu
     }
 
     func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8] {
-        let frameBody = createFrameBodyUsing(unsynchronisedLyric: unsynchronisedLyric,  version: version)
-        return frameHeaderCreator.createUsing(version: version, frameType: .unsyncronisedLyrics, frameBody: frameBody) + frameBody
+        let frameBody = createFrameBodyUsing(unsynchronisedLyric: unsynchronisedLyric, version: version)
+        let frameHeader = frameHeaderCreator.createUsing(
+            version: version,
+            frameType: .unsyncronisedLyrics,
+            frameBody: frameBody
+        )
+        return frameHeader + frameBody
     }
-    
-    private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8] {
+
+    private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics,
+                                      version: ID3Version) -> [UInt8] {
         return id3FrameConfiguration.encodingByteFor(version: version, encoding: .UTF16)
             + [UInt8](unsynchronisedLyric.language.rawValue.data(using: .utf8)!)
             + createFrameTextContentFrom(unsynchronisedLyric: unsynchronisedLyric)
     }
-    
+
     private func createFrameTextContentFrom(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics) -> [UInt8] {
-        return paddingAdder.addTo(content:[UInt8](unsynchronisedLyric.contentDescription.data(using: .utf16)!), numberOfByte: 2)
-            + unsynchronisedLyric.content.data(using: .utf16)!
+        let contentDescriptor = paddingAdder.addTo(
+            content: [UInt8](unsynchronisedLyric.contentDescription.data(using: .utf16)!),
+            numberOfByte: 2
+        )
+        let content = unsynchronisedLyric.content.data(using: .utf16)!
+        return contentDescriptor + content
     }
 }

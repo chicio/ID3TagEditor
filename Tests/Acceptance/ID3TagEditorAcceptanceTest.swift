@@ -12,20 +12,20 @@ import XCTest
 
 class ID3TagEditorAcceptanceTest: XCTestCase {
     let id3TagEditor = ID3TagEditor()
-    
+
     func testFailWrongFilePathFilePath() {
         XCTAssertThrowsError(try id3TagEditor.read(from: "::a wrong path::"))
-        XCTAssertThrowsError(try id3TagEditor.write(tag: ID3Tag(version: .version2,frames: [:]), to: ""))
+        XCTAssertThrowsError(try id3TagEditor.write(tag: ID3Tag(version: .version2, frames: [:]), to: ""))
     }
-    
-    //MARK: read
-    
+
+    // MARK: read
+
     func testReadTagV2() throws {
         let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
-        
+
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.title]?.id3Identifier, "TT2")
         XCTAssertEqual(id3Tag?.frames[.title]?.size, 35)
@@ -45,13 +45,13 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .jpeg)
     }
-    
+
     func testParseTagV3() throws {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
-        
+
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
         XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
@@ -60,15 +60,15 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
     }
-    
+
     func testParseTagV3AdditionalData() throws {
         let pathFront = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let pathBack = PathLoader().pathFor(name: "cover2", fileType: "jpg")
         let coverFront = try Data(contentsOf: URL(fileURLWithPath: pathFront))
         let coverBack = try Data(contentsOf: URL(fileURLWithPath: pathBack))
-        
+
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v3-additional-data", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.frames[.title]?.id3Identifier, "TIT2")
         XCTAssertEqual(id3Tag?.frames[.title]?.size, 37)
@@ -112,10 +112,10 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.hour, 15)
         XCTAssertEqual((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.minute, 39)
     }
-    
+
     func testReadTagV4() throws {
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual(id3Tag?.frames[.title]?.size, 37)
         XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.id3Identifier, "TIT2")
@@ -127,13 +127,13 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.id3Identifier, "TPE1")
         XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
     }
-    
+
     func testReadTagV4WithImage() throws {
         let path = PathLoader().pathFor(name: "cover-v4", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
-        
+
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4-png", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual(id3Tag?.frames[.artist]?.id3Identifier, "TPE1")
         XCTAssertEqual(id3Tag?.frames[.artist]?.size, 19)
@@ -148,14 +148,14 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
     }
-    
+
     func testReadAsMp3() throws {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
         let mp3 = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3")))
-        
+
         let id3Tag = try id3TagEditor.read(mp3: mp3)
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
         XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
@@ -163,29 +163,29 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
     }
-    
+
     func testReadInvalidFile() throws {
         let mp3 = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-corrupted", fileType: "mp3")))
-        
+
         XCTAssertThrowsError(try id3TagEditor.read(mp3: mp3))
     }
-    
+
     func testReadUtf16String() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3 = PathLoader().pathFor(name: "example-utf16", fileType: "mp3")
-        
+
         let id3Tag = try id3TagEditor.read(from: pathMp3)
-        
+
         XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "Om Tryumbacom")
         XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "Laraaji")
         XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "Vision Songs Vol. 1")
         XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year, 2018)
         XCTAssertEqual((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part, 10)
     }
-    
+
     func testReadNewFramesV2() throws {
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version2)
         XCTAssertEqual(id3Tag?.frames[.composer]?.id3Identifier, "TCM")
         XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content, "Composer V2")
@@ -211,10 +211,10 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part, 1)
         XCTAssertEqual((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total, 3)
     }
-    
+
     func testReadNewFramesV3() throws {
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version3)
         XCTAssertEqual(id3Tag?.frames[.composer]?.id3Identifier, "TCOM")
         XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content, "Composer V3")
@@ -257,10 +257,10 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual(id3Tag?.frames[.subtitle]?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
     }
-    
+
     func testReadNewFramesV4() throws {
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3"))
-        
+
         XCTAssertEqual(id3Tag?.properties.version, .version4)
         XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.id3Identifier, "TCOM")
         XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content, "Composer V4")
@@ -299,10 +299,9 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TIT3")
         XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V4")
     }
-    
-    
+
     // MARK: write
-    
+
     func testWriteTagV2() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -312,14 +311,14 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "example artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "example album artist"),
-                .album : ID3FrameWithStringContent(content: "example album"),
-                .title : ID3FrameWithStringContent(content: "example song"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
+                .artist: ID3FrameWithStringContent(content: "example artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "example album artist"),
+                .album: ID3FrameWithStringContent(content: "example album"),
+                .title: ID3FrameWithStringContent(content: "example song"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example", fileType: "mp3"),
@@ -330,7 +329,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteTagV3WhenItAlreadyExists() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -340,26 +339,26 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-with-tag-already-setted", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         ))
-        
+
         XCTAssertEqual(
             try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteTagV3WithJpg() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -369,14 +368,14 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
@@ -387,7 +386,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteTagV3WithPng() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
@@ -395,21 +394,21 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
         ))
     }
-    
+
     func testWriteTagV3WithCustomPathThatDoesNotExists() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -418,21 +417,21 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         ))
     }
-    
+
     func testWriteTagV3WithSamePath() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -440,20 +439,20 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3")
         ))
     }
-    
+
     func testWriteTagV3WithAdditionalData() throws {
         let artFront: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -466,20 +465,20 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
-                .attachedPicture(.backCover) : ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
-                .genre :  ID3FrameGenre(genre: .metal, description: "Metalcore"),
-                .trackPosition : ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingYear : ID3FrameRecordingYear(year: 2018),
-                .recordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
-                .recordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
+                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
+                .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
+                .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
+                .recordingYear: ID3FrameRecordingYear(year: 2018),
+                .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
+                .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
@@ -490,7 +489,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteTagV3ToMp3AsData() throws {
         let artFront: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -501,56 +500,56 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
-                .attachedPicture(.backCover) : ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
-                .genre :  ID3FrameGenre(genre: .metal, description: "Metalcore"),
-                .trackPosition : ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingYear : ID3FrameRecordingYear(year: 2018),
-                .recordingDayMonth : ID3FrameRecordingDayMonth(day: 5, month: 8),
-                .recordingHourMinute : ID3FrameRecordingHourMinute(hour: 15, minute: 39)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
+                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
+                .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
+                .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
+                .recordingYear: ID3FrameRecordingYear(year: 2018),
+                .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
+                .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ]
         )
         let mp3 = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
                                                                                   fileType: "mp3")))
-        
+
         let newMp3 = try id3TagEditor.write(tag: id3Tag, mp3: mp3)
-        
+
         XCTAssertEqual(
             newMp3,
             try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
                                                                             fileType: "mp3")))
         )
     }
-    
+
     func testWriteTagV4() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-v4", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title")
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title")
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         ))
-        
+
         XCTAssertEqual(
             try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteTagV4WithPng() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
@@ -560,46 +559,46 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
-                .artist : ID3FrameWithStringContent(content: "A New Artist"),
-                .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-                .album : ID3FrameWithStringContent(content: "A New Album"),
-                .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
+                .artist: ID3FrameWithStringContent(content: "A New Artist"),
+                .albumArtist: ID3FrameWithStringContent(content: "A New Album Artist"),
+                .album: ID3FrameWithStringContent(content: "A New Album"),
+                .title: ID3FrameWithStringContent(content: "A New title"),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         ))
-        
+
         XCTAssertEqual(
             try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteNewFramesV2() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v2-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
-                .composer : ID3FrameWithStringContent(content: "Composer V2"),
-                .conductor : ID3FrameWithStringContent(content: "Conductor V2"),
-                .contentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V2"),
-                .copyright : ID3FrameWithStringContent(content: "Copyright V2"),
-                .discPosition : ID3FramePartOfTotal(part: 1, total: 3),
-                .encodedBy : ID3FrameWithStringContent(content: "EncodedBy V2"),
-                .encoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V2"),
-                .lyricist : ID3FrameWithStringContent(content: "Lyricist V2"),
-                .mixArtist : ID3FrameWithStringContent(content: "MixArtist V2"),
-                .publisher : ID3FrameWithStringContent(content: "Publisher V2"),
-                .subtitle : ID3FrameWithStringContent(content: "Subtitle V2"),
+                .composer: ID3FrameWithStringContent(content: "Composer V2"),
+                .conductor: ID3FrameWithStringContent(content: "Conductor V2"),
+                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V2"),
+                .copyright: ID3FrameWithStringContent(content: "Copyright V2"),
+                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
+                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V2"),
+                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V2"),
+                .lyricist: ID3FrameWithStringContent(content: "Lyricist V2"),
+                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V2"),
+                .publisher: ID3FrameWithStringContent(content: "Publisher V2"),
+                .subtitle: ID3FrameWithStringContent(content: "Subtitle V2")
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
@@ -610,36 +609,36 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteNewFramesV3() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v3-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .composer : ID3FrameWithStringContent(content: "Composer V3"),
-                .conductor : ID3FrameWithStringContent(content: "Conductor V3"),
-                .contentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V3"),
-                .copyright : ID3FrameWithStringContent(content: "Copyright V3"),
-                .discPosition : ID3FramePartOfTotal(part: 1, total: 3),
-                .encodedBy : ID3FrameWithStringContent(content: "EncodedBy V3"),
-                .encoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V3"),
-                .fileOwner : ID3FrameWithStringContent(content: "FileOwner V3"),
-                .lyricist : ID3FrameWithStringContent(content: "Lyricist V3"),
-                .mixArtist : ID3FrameWithStringContent(content: "MixArtist V3"),
-                .subtitle : ID3FrameWithStringContent(content: "Subtitle V3"),
-                .publisher : ID3FrameWithStringContent(content: "Publisher V3"),
-                .iTunesGrouping : ID3FrameWithStringContent(content: "ItunesGrouping V3"),
-                .iTunesMovementName : ID3FrameWithStringContent(content: "MovementName V3"),
-                .iTunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
-                .iTunesMovementCount : ID3FrameWithIntegerContent(value: 13),
-                .iTunesPodcastCategory : ID3FrameWithStringContent(content: "PodcastCategory V3"),
-                .iTunesPodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V3"),
-                .iTunesPodcastID : ID3FrameWithStringContent(content: "PodcastID V3"),
-                .iTunesPodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V3"),
+                .composer: ID3FrameWithStringContent(content: "Composer V3"),
+                .conductor: ID3FrameWithStringContent(content: "Conductor V3"),
+                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V3"),
+                .copyright: ID3FrameWithStringContent(content: "Copyright V3"),
+                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
+                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V3"),
+                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V3"),
+                .fileOwner: ID3FrameWithStringContent(content: "FileOwner V3"),
+                .lyricist: ID3FrameWithStringContent(content: "Lyricist V3"),
+                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V3"),
+                .subtitle: ID3FrameWithStringContent(content: "Subtitle V3"),
+                .publisher: ID3FrameWithStringContent(content: "Publisher V3"),
+                .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V3"),
+                .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V3"),
+                .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
+                .iTunesMovementCount: ID3FrameWithIntegerContent(value: 13),
+                .iTunesPodcastCategory: ID3FrameWithStringContent(content: "PodcastCategory V3"),
+                .iTunesPodcastDescription: ID3FrameWithStringContent(content: "PodcastDescription V3"),
+                .iTunesPodcastID: ID3FrameWithStringContent(content: "PodcastID V3"),
+                .iTunesPodcastKeywords: ID3FrameWithStringContent(content: "PodcastKeywords V3")
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
@@ -650,48 +649,48 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testWriteNewFramesV4() throws {
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v4-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
-                .composer : ID3FrameWithStringContent(content: "Composer V4"),
-                .conductor : ID3FrameWithStringContent(content: "Conductor V4"),
-                .contentGrouping : ID3FrameWithStringContent(content: "ContentGrouping V4"),
-                .copyright : ID3FrameWithStringContent(content: "Copyright V4"),
-                .discPosition : ID3FramePartOfTotal(part: 1, total: 3),
-                .encodedBy : ID3FrameWithStringContent(content: "EncodedBy V4"),
-                .encoderSettings : ID3FrameWithStringContent(content: "EncoderSettings V4"),
-                .fileOwner : ID3FrameWithStringContent(content: "FileOwner V4"),
-                .lyricist : ID3FrameWithStringContent(content: "Lyricist V4"),
-                .mixArtist : ID3FrameWithStringContent(content: "MixArtist V4"),
-                .publisher : ID3FrameWithStringContent(content: "Publisher V4"),
-                .subtitle : ID3FrameWithStringContent(content: "Subtitle V4"),
-                .iTunesGrouping : ID3FrameWithStringContent(content: "ItunesGrouping V4"),
-                .iTunesMovementName : ID3FrameWithStringContent(content: "MovementName V4"),
-                .iTunesMovementIndex : ID3FrameWithIntegerContent(value: 6),
-                .iTunesMovementCount : ID3FrameWithIntegerContent(value: 13),
-                .iTunesPodcastCategory : ID3FrameWithStringContent(content: "PodcastCategory V4"),
-                .iTunesPodcastDescription : ID3FrameWithStringContent(content: "PodcastDescription V4"),
-                .iTunesPodcastID : ID3FrameWithStringContent(content: "PodcastID V4"),
-                .iTunesPodcastKeywords : ID3FrameWithStringContent(content: "PodcastKeywords V4"),
+                .composer: ID3FrameWithStringContent(content: "Composer V4"),
+                .conductor: ID3FrameWithStringContent(content: "Conductor V4"),
+                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V4"),
+                .copyright: ID3FrameWithStringContent(content: "Copyright V4"),
+                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
+                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V4"),
+                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V4"),
+                .fileOwner: ID3FrameWithStringContent(content: "FileOwner V4"),
+                .lyricist: ID3FrameWithStringContent(content: "Lyricist V4"),
+                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V4"),
+                .publisher: ID3FrameWithStringContent(content: "Publisher V4"),
+                .subtitle: ID3FrameWithStringContent(content: "Subtitle V4"),
+                .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V4"),
+                .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V4"),
+                .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
+                .iTunesMovementCount: ID3FrameWithIntegerContent(value: 13),
+                .iTunesPodcastCategory: ID3FrameWithStringContent(content: "PodcastCategory V4"),
+                .iTunesPodcastDescription: ID3FrameWithStringContent(content: "PodcastDescription V4"),
+                .iTunesPodcastID: ID3FrameWithStringContent(content: "PodcastID V4"),
+                .iTunesPodcastKeywords: ID3FrameWithStringContent(content: "PodcastKeywords V4")
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         ))
-        
+
         XCTAssertEqual(
             try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
             try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
         )
     }
-    
+
     func testFramesAfterAttachdPicturesAreWritten() throws {
         let path = PathLoader().pathFor(name: "folder", fileType: "jpg")
         let pathMp3Generated = NSHomeDirectory() + "/frames-after-attached-picture.mp3"
@@ -699,22 +698,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .discPosition : ID3FramePartOfTotal(part: 1, total: 3),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: cover, type: .frontCover, format: .jpeg),
+                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: cover, type: .frontCover, format: .jpeg)
             ]
         )
-        
+
         let id3TagEditor = ID3TagEditor()
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag,
                                                  to: PathLoader().pathFor(name: "frames-after-attached-picture", fileType: "mp3"),
                                                  andSaveTo: pathMp3Generated))
-        
+
         let tag = try id3TagEditor.read(from: pathMp3Generated)
         XCTAssertEqual((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part, 1)
         XCTAssertEqual((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total, 3)
     }
-    
+
     func testWriteTagV4SynchsafeIntegers() throws {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
@@ -723,28 +722,27 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
             ]
         )
-        
+
         XCTAssertNoThrow(try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         ))
-        
+
         let id3TagWritten = try id3TagEditor.read(from: pathMp3Generated)
-        
+
         XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, art)
         XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
         XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
         XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.size, 243723)
     }
-    
-    
+
     func testWriteUnsynchronisedLyrics() throws {
         let pathMp3Generated = NSHomeDirectory() + "/example-write-unsynched-lyrics-v3.mp3"
-        
+
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -757,15 +755,15 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                     """)
             ]
         )
-        
+
         try id3TagEditor.write(
             tag: id3Tag,
             to: PathLoader().pathFor(name: "example-write-unsynched-lyrics", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         )
-        
+
         let id3TagWritten = try id3TagEditor.read(from: pathMp3Generated)
-        
+
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.language, .ita)
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)!.content, """

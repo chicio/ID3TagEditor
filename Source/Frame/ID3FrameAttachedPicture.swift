@@ -12,7 +12,7 @@ import Foundation
  */
 public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConvertible {
     /// The image bytes as `Data`.
-    public let picture: Data;
+    public let picture: Data
     /// The ID3 type of the image (see `ID3PictureType`).
     public let type: ID3PictureType
     /// The file format. Only Jpeg and Png are supported by the standard (cross compatibility).
@@ -44,7 +44,7 @@ public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConv
 
      - returns: true if the attached pictures values are the same, else false.
      */
-    public static func ==(lhs: ID3FrameAttachedPicture, rhs: ID3FrameAttachedPicture) -> Bool {
+    public static func == (lhs: ID3FrameAttachedPicture, rhs: ID3FrameAttachedPicture) -> Bool {
         return lhs.picture == rhs.picture && lhs.format == rhs.format && lhs.type == rhs.type
     }
 }

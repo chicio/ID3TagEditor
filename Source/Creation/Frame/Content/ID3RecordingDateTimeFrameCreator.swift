@@ -9,14 +9,14 @@ import Foundation
 
 class ID3RecordingDateTimeFrameCreator: ID3StringFrameCreator {
     private let timestampCreator: TimestampCreator
-    
+
     init(frameCreator: FrameFromStringContentCreator,
          id3FrameConfiguration: ID3FrameConfiguration,
          timestampCreator: TimestampCreator) {
         self.timestampCreator = timestampCreator
         super.init(frameCreator: frameCreator, id3FrameConfiguration: id3FrameConfiguration)
     }
-    
+
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if id3Tag.properties.version >= .version4,
             let recordingDateTimeFrame = id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime,

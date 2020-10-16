@@ -13,13 +13,14 @@ class ViewController: NSViewController {
     private let id3TagEditor = ID3TagEditor()
     @IBOutlet weak var attachedPictureImage: NSImageView!
     @IBOutlet weak var informations: NSTextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
             let mp3 = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3")))
             let id3Tag = try id3TagEditor.read(mp3: mp3)!
-            if let attachedPicture = (id3Tag.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture {
+            if let frameAttachedPicture = id3Tag.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture,
+                let attachedPicture = frameAttachedPicture.picture {
                 attachedPictureImage.image = NSImage(data: attachedPicture)
             }
             informations.stringValue = """
@@ -38,7 +39,7 @@ class ViewController: NSViewController {
             print(error)
         }
     }
-    
+
     override var representedObject: Any? {
         didSet {}
     }

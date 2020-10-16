@@ -48,7 +48,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
         + ID3PictureType.allCases.map({ .attachedPicture($0) })
         + ID3FrameContentLanguage.allCases.map({ .unsynchronizedLyrics($0) })
     }
-    
+
     /// Title frame name.
     case title
     /// Album frame name.

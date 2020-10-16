@@ -11,11 +11,11 @@ import Foundation
 class MockTimestampCreator: TimestampCreator {
     var createFromRecordingDateTimeHasBeenCalled: Bool = false
     private let returnValue: String
-    
+
     init(returnValue: String) {
         self.returnValue = returnValue
     }
-    
+
     func createFrom(recordingDateTime: RecordingDateTime) -> String? {
         createFromRecordingDateTimeHasBeenCalled = true
         return returnValue

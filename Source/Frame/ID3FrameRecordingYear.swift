@@ -8,7 +8,8 @@
 import Foundation
 
 /**
- A class used to represent an ID3 recording year frame to be used in the ID3 tag. Valid only for ID3 tag version 2.3 and 2.2.
+ A class used to represent an ID3 recording year frame to be used in the ID3 tag.
+ Valid only for ID3 tag version 2.3 and 2.2.
  */
 public class ID3FrameRecordingYear: ID3Frame, CustomDebugStringConvertible {
     /// Recording year of the song.

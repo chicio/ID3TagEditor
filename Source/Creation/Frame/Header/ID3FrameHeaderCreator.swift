@@ -12,7 +12,7 @@ class ID3FrameHeaderCreator: FrameHeaderCreator {
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let frameContentSizeCalculator: FrameContentSizeCalculator
     private let frameFlagsCreator: FrameFlagsCreator
-    
+
     init(id3FrameConfiguration: ID3FrameConfiguration,
          frameContentSizeCalculator: FrameContentSizeCalculator,
          frameFlagsCreator: FrameFlagsCreator
@@ -21,7 +21,7 @@ class ID3FrameHeaderCreator: FrameHeaderCreator {
         self.frameContentSizeCalculator = frameContentSizeCalculator
         self.frameFlagsCreator = frameFlagsCreator
     }
-    
+
     func createUsing(version: ID3Version, frameType: FrameType, frameBody: [UInt8]) -> [UInt8] {
         var frameHeader: [UInt8] = id3FrameConfiguration.identifierFor(
                 frameType: frameType,

@@ -22,18 +22,18 @@ class ID3FrameContentSizeCalculator: FrameContentSizeCalculator {
         sizeBytes = removeFirstByteIfVersion2From(size: sizeBytes, version: version)
         return sizeBytes
     }
-    
+
     private func synchsafeEncodeIfVersion4(size: UInt32, version: ID3Version) -> UInt32 {
         if version == .version4 {
             return synchsafeEncoder.encode(integer: size)
         }
         return size
     }
-    
+
     private func removeFirstByteIfVersion2From(size: [UInt8], version: ID3Version) -> [UInt8] {
         var newSize = size
         if version <= .version2 {
-            newSize.removeFirst();
+            newSize.removeFirst()
         }
         return newSize
     }

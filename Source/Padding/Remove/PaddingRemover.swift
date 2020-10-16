@@ -9,4 +9,4 @@ import Foundation
 
 protocol PaddingRemover {
     func removeFrom(string: String) -> String
-}    
+}

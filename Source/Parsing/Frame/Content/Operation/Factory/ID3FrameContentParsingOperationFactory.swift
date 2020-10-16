@@ -8,7 +8,7 @@
 import Foundation
 
 class ID3FrameContentParsingOperationFactory {
-    static func make() -> [FrameType : FrameContentParsingOperation] {
+    static func make() -> [FrameType: FrameContentParsingOperation] {
         return [
             .artist: ID3ArtistFrameContentParsingOperationFactory.make(),
             .albumArtist: ID3AlbumArtistFrameContentParsingOperationFactory.make(),

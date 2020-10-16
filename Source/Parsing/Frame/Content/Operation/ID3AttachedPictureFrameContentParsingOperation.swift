@@ -18,7 +18,7 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
         self.pictureTypeAdapter = pictureTypeAdapter
     }
 
-    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> Void) {
         parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber,
                                           format: .jpeg,
                                           frame: frame,
@@ -35,7 +35,7 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
                                                    format: ID3PictureFormat,
                                                    frame: Data,
                                                    version: ID3Version,
-                                                   completed: (FrameName, ID3Frame) -> ()) {
+                                                   completed: (FrameName, ID3Frame) -> Void) {
         if let magicNumberRange = frame.range(of: magicNumber) {
             let pictureType = pictureTypeAdapter.adapt(frame: frame, format: format, version: version)
             let attachedPictureFrame = ID3FrameAttachedPicture(

@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var trackPositionLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
@@ -25,9 +25,12 @@ class ViewController: UIViewController {
             titleLabel.text = (id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content
             artistLabel.text = (id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content
             yearLabel.text = String((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year ?? 0)
-            genreLabel.text = "\((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0) \((id3Tag?.frames[.genre] as? ID3FrameGenre)?.description ?? "")"
-            trackPositionLabel.text = "Track \((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part ?? -1) of \((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.total ?? -1)"
-            if let attachedPicture = (id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture {
+            let genreFrame = id3Tag?.frames[.genre] as? ID3FrameGenre
+            genreLabel.text = "\(genreFrame?.identifier?.rawValue ?? 0) \(genreFrame?.description ?? "")"
+            let trackPositionFrame = id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal
+            trackPositionLabel.text = "Track \(trackPositionLabel?.part ?? -1) of \(trackPositionLabel?.total ?? -1)"
+            if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture
+                let attachedPicture = attachedPictureFrame?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {

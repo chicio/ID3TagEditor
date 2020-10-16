@@ -8,7 +8,7 @@
 
 class ID3iTunesMovementCountFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
             return (.iTunesMovementCount, ID3FrameWithIntegerContent(value: Int(content)))
         }
     }

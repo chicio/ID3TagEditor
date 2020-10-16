@@ -25,7 +25,7 @@ class ID3FrameContentSizeCalculatorTest: XCTestCase {
 
         XCTAssertEqual(size, [0x3, 0x2])
     }
-    
+
     func testContentCalculateSizeForVersion4() {
         let size = id3FrameContentSizeCalculator.calculateSizeOf(content: [0x1, 0x1], version: .version4)
 

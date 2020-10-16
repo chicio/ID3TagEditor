@@ -8,7 +8,7 @@ let package = Package(
         .library(
             name: "ID3TagEditor",
             targets: ["ID3TagEditor"]
-        ),
+        )
     ],
     dependencies: [],
     targets: [

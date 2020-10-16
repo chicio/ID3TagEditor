@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var titleLabel: WKInterfaceLabel!
     @IBOutlet var albumLabel: WKInterfaceLabel!
     @IBOutlet var genreLabel: WKInterfaceLabel!
-    
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         do {
@@ -31,11 +31,11 @@ class InterfaceController: WKInterfaceController {
             print(error)
         }
     }
-    
+
     override func willActivate() {
         super.willActivate()
     }
-    
+
     override func didDeactivate() {
         super.didDeactivate()
     }

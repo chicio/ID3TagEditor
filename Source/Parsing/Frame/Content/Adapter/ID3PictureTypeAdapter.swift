@@ -31,4 +31,3 @@ class ID3PictureTypeAdapter: PictureTypeAdapter {
         return .other
     }
 }
-

@@ -18,18 +18,18 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3FileOwnerFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
+
     func testFrameCreationWhenThereIsAFileOwner() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.fileOwner : ID3FrameWithStringContent(content: "::an example file owner::")]
+            frames: [.fileOwner: ID3FrameWithStringContent(content: "::an example file owner::")]
         )
         let id3FileOwnerFrameCreator = ID3FileOwnerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
@@ -38,9 +38,9 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3FileOwnerFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class ID3DiscPositionFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
             return (.discPosition, ID3PartOfTotalStringAdapter().adapt(partOfTotal: content))
         }
     }

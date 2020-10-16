@@ -17,7 +17,7 @@ class SynchsafeIntegerEncoder: SynchsafeEncoder {
         var encodedInteger: UInt32 = 0
         var mask: UInt32 = 0x7F
         var partiallyEncodedInteger = integer
-        while (mask != 0x7FFFFFFF) {
+        while mask != 0x7FFFFFFF {
             encodedInteger = partiallyEncodedInteger & ~mask
             encodedInteger = encodedInteger << 1
             encodedInteger = encodedInteger | partiallyEncodedInteger & mask

@@ -18,18 +18,18 @@ class ID3iTunesPodcastCategoryFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3PodcastCategoryFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
+
     func testFrameCreationWhenThereIsAPodcastCategory() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.iTunesPodcastCategory : ID3FrameWithStringContent(content: "::an example podcast Category::")]
+            frames: [.iTunesPodcastCategory: ID3FrameWithStringContent(content: "::an example podcast Category::")]
         )
         let id3PodcastCategoryFrameCreator = ID3iTunesPodcastCategoryFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
@@ -38,9 +38,9 @@ class ID3iTunesPodcastCategoryFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3PodcastCategoryFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

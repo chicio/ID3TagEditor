@@ -10,7 +10,12 @@ import Foundation
 class ID3SubtitleFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if let subtitleFrame = id3Tag.frames[.subtitle] as? ID3FrameWithStringContent {
-            return createFrameUsing(frameType: .subtitle, content: subtitleFrame.content, id3Tag: id3Tag, andAddItTo: tag)
+            return createFrameUsing(
+                frameType: .subtitle,
+                content: subtitleFrame.content,
+                id3Tag: id3Tag,
+                andAddItTo: tag
+            )
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

@@ -5,7 +5,7 @@
 //  2018 Fabrizio Duroni.
 //
 
-import Foundation;
+import Foundation
 
 /**
  A class to edit the ID3 tag of an mp3 file.
@@ -41,7 +41,7 @@ public class ID3TagEditor {
         let mp3 = try mp3FileReader.readFrom(path: path)
         return try self.id3TagParser.parse(mp3: mp3)
     }
-    
+
     /**
      Read the ID3 tag contained in the mp3 file passed as `Data`.
      
@@ -73,7 +73,7 @@ public class ID3TagEditor {
         let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
         try mp3FileWriter.write(mp3: mp3WithId3Tag, path: newPath ?? path)
     }
-    
+
     /**
      Write the ID3 tag passed as parameter to the mp3 file passed as `Data`.
      

@@ -9,6 +9,6 @@ import Foundation
 
 class PathLoader {
     func pathFor(name: String, fileType: String) -> String {
-        return Bundle.module.path(forResource: name, ofType: fileType)!;
+        return Bundle.module.path(forResource: name, ofType: fileType)!
     }
 }

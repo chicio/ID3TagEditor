@@ -18,18 +18,18 @@ class ID3MixArtistFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3MixArtistFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
+
     func testFrameCreationWhenThereIsAMixArtist() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.mixArtist : ID3FrameWithStringContent(content: "::an example mix artist::")]
+            frames: [.mixArtist: ID3FrameWithStringContent(content: "::an example mix artist::")]
         )
         let id3MixArtistFrameCreator = ID3MixArtistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
@@ -38,9 +38,9 @@ class ID3MixArtistFrameCreatorTest: XCTestCase {
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3MixArtistFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

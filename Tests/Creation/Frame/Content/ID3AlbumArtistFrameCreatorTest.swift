@@ -29,7 +29,7 @@ class ID3AlbumArtistFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.albumArtist : ID3FrameWithStringContent(content: "::an example album artist::")]
+            frames: [.albumArtist: ID3FrameWithStringContent(content: "::an example album artist::")]
         )
         let id3AlbumArtistFrameCreator = ID3AlbumArtistFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(

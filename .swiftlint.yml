@@ -1,6 +1,14 @@
 excluded: 
   - Demo/Demo Ubuntu/.build
   
+type_name:
+  min_length: 4
+  max_length:
+    warning: 70
+    error: 80
   
-  
-  
+identifier_name:
+  min_length: 3
+  max_length:
+    warning: 70
+    error: 80

@@ -11,7 +11,7 @@ class ID3FrameStringContentParser {
     private let stringEncodingDetector: ID3FrameStringEncodingDetector
     private let paddingRemover: PaddingRemover
     private let id3FrameConfiguration: ID3FrameConfiguration
-    
+
     init(stringEncodingDetector: ID3FrameStringEncodingDetector,
          paddingRemover: PaddingRemover,
          id3FrameConfiguration: ID3FrameConfiguration) {
@@ -19,7 +19,7 @@ class ID3FrameStringContentParser {
         self.paddingRemover = paddingRemover
         self.id3FrameConfiguration = id3FrameConfiguration
     }
-    
+
     func parse(frame: Data, version: ID3Version) -> String? {
         let headerSize = id3FrameConfiguration.headerSizeFor(version: version)
         let frameContentRangeStart = headerSize + id3FrameConfiguration.encodingSize()

@@ -12,15 +12,15 @@ import XCTest
 class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
     func testNothingIsCreatedWheLyricsDataIsNotSet() {
         let creator = ID3UnsyncronizedLyricsFrameCreator(unsynchronisedLyricForLanguageFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator())
-        
+
         let frame = creator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: [])
-        
+
         XCTAssertEqual(frame, [])
     }
-    
+
     func testCreateFrameForValidData() {
         let creator = ID3UnsyncronizedLyricsFrameCreator(unsynchronisedLyricForLanguageFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator())
-        
+
         let frame = creator.createFrames(id3Tag: ID3Tag(version: .version3,
                                                         frames: [
                                                             .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(
@@ -29,7 +29,7 @@ class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
                                                                 content: "content"
                                                             )]),
                                          tag: [])
-        
+
         XCTAssertEqual(frame, [0x01])
     }
 }
