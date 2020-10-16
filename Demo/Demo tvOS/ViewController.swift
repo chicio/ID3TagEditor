@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             yearLabel.text = String((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year ?? 0)
             genreLabel.text = "\((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier?.rawValue ?? 0) \((id3Tag?.frames[.genre] as? ID3FrameGenre)?.description ?? "")"
             trackPositionLabel.text = "Track \((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part ?? -1) of \((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.total ?? -1)"
-            if let attachedPicture = (id3Tag?.frames[.attachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
+            if let attachedPicture = (id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture {
                 attachedPictureImage.image = UIImage(data: attachedPicture)
             }
         } catch {
