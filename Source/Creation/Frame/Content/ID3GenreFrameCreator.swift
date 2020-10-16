@@ -21,7 +21,7 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .Genre,
+                        frameType: .genre,
                         version: id3Tag.properties.version
                     ),
                     version: id3Tag.properties.version,

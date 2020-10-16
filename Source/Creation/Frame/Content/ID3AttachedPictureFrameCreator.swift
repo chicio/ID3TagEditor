@@ -29,7 +29,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
 
     func createFrame(using attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
         var frame: [UInt8] = id3FrameConfiguration.identifierFor(
-                frameType: .AttachedPicture,
+                frameType: .attachedPicture,
                 version: id3Tag.properties.version
         )
         var contentAsBytes: [UInt8] = [UInt8]()

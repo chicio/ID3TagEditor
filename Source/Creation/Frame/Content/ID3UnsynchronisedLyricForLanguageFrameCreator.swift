@@ -28,7 +28,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLangu
 
     func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8] {
         let frameBody = createFrameBodyUsing(unsynchronisedLyric: unsynchronisedLyric,  version: version)
-        return frameHeaderCreator.createUsing(version: version, frameType: .UnsyncronisedLyrics, frameBody: frameBody) + frameBody
+        return frameHeaderCreator.createUsing(version: version, frameType: .unsyncronisedLyrics, frameBody: frameBody) + frameBody
     }
     
     private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8] {

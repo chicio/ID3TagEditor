@@ -21,7 +21,7 @@ class ID3TrackPositionFrameCreator: ID3FrameCreatorsChain {
             let newTag = tag +
                 frameCreator.createFrame(
                     frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .TrackPosition,
+                        frameType: .trackPosition,
                         version: id3Tag.properties.version
                     ),
                     version: id3Tag.properties.version,

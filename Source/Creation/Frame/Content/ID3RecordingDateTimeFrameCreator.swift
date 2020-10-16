@@ -30,7 +30,7 @@ class ID3RecordingDateTimeFrameCreator: ID3StringFrameCreator {
              */
             let timestamp = timestampCreator
                 .createFrom(recordingDateTime: recordingDateTimeFrame.recordingDateTime) ?? String(recordingYear)
-            return createFrameUsing(frameType: .RecordingDateTime, content: timestamp, id3Tag: id3Tag, andAddItTo: tag)
+            return createFrameUsing(frameType: .recordingDateTime, content: timestamp, id3Tag: id3Tag, andAddItTo: tag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

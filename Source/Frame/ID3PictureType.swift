@@ -12,45 +12,45 @@ import Foundation
  */
 public enum ID3PictureType: UInt8, Equatable, Hashable, CaseIterable {
     /// Other image.
-    case Other = 0x00
+    case other = 0x00
     /// File icon image.
     case fileIcon = 0x01
     /// Other file icon image.
-    case OtherFileIcon = 0x02
+    case otherFileIcon = 0x02
     /// Front cover image.
-    case FrontCover = 0x03
+    case frontCover = 0x03
     /// Back cover image.
-    case BackCover = 0x04
+    case backCover = 0x04
     /// LeafketPage image.
-    case LeafletPage = 0x05
+    case leafletPage = 0x05
     /// Media image.
-    case Media = 0x06
+    case media = 0x06
     /// Lead artist image image.
-    case LeadArtistLeadPerformerSoloist = 0x07
+    case leadArtistLeadPerformerSoloist = 0x07
     /// Artist image image.
-    case ArtistPerformer = 0x08
+    case artistPerformer = 0x08
     /// Conductor image.
-    case Conductor = 0x09
+    case conductor = 0x09
     /// Orchestra/band image.
-    case BandOrchestra = 0x0A
+    case bandOrchestra = 0x0A
     /// Composer image.
-    case Composer = 0x0B
+    case composer = 0x0B
     /// Lyricist Text Writer image.
-    case LyricistTextWriter = 0x0C
+    case lyricistTextWriter = 0x0C
     /// Recording location image.
-    case RecordingLocation = 0x0D
+    case recordingLocation = 0x0D
     /// During recording image.
-    case DuringRecording = 0x0E
+    case duringRecording = 0x0E
     /// Performance image.
-    case DuringPerformance = 0x0F
+    case duringPerformance = 0x0F
     /// Movie image.
-    case MovieVideoScreenCapture = 0x10
+    case movieVideoScreenCapture = 0x10
     /// ABrightColouredFish image.
-    case ABrightColouredFish = 0x11
+    case aBrightColouredFish = 0x11
     /// Illustration image.
-    case Illustration = 0x12
+    case illustration = 0x12
     /// Band logo image.
-    case BandArtistLogotype = 0x13
+    case bandArtistLogotype = 0x13
     /// Publisher logo image.
-    case PublisherStudioLogotype = 0x14
+    case publisherStudioLogotype = 0x14
 }

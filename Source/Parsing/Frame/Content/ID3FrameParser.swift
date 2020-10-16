@@ -40,7 +40,7 @@ class ID3FrameParser {
     }
 
     private func isAValid(frameType: FrameType) -> Bool {
-        return frameType != .Invalid
+        return frameType != .invalid
     }
 
     private func toString(frameIdentifier: [UInt8]) -> String {

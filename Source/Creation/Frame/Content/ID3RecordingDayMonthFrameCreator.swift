@@ -16,7 +16,7 @@ class ID3RecordingDayMonthFrameCreator: ID3StringFrameCreator {
             let dayAsString = String(format: "%02d", day)
             let monthAsString = String(format: "%02d", month)
             let recordingDayMonth = dayAsString + monthAsString
-            return createFrameUsing(frameType: .RecordingDayMonth,
+            return createFrameUsing(frameType: .recordingDayMonth,
                                     content: recordingDayMonth,
                                     id3Tag: id3Tag,
                                     andAddItTo: tag)

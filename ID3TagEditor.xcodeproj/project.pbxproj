@@ -1107,6 +1107,9 @@
 		45D4C3672538D51E00501417 /* example-write-read-v3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-write-read-v3.mp3"; sourceTree = "<group>"; };
 		45D4C3682538D51E00501417 /* example-write-read-v2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-write-read-v2.mp3"; sourceTree = "<group>"; };
 		45D4C3692538D51E00501417 /* example-write-read-v4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-write-read-v4.mp3"; sourceTree = "<group>"; };
+		45D4C39A25399ABD00501417 /* .codebeatignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .codebeatignore; sourceTree = "<group>"; };
+		45D4C39B25399ABD00501417 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		45D4C39C25399ABD00501417 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CCD210CB85000E820C8 /* TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
@@ -1343,6 +1346,9 @@
 				455CF9872340C31F004C880A /* generate_docs */,
 				4553D64521946A3000540631 /* LinuxMain.swift */,
 				45AB7193204AD842004A2239 /* Package.swift */,
+				45D4C39A25399ABD00501417 /* .codebeatignore */,
+				45D4C39C25399ABD00501417 /* .gitignore */,
+				45D4C39B25399ABD00501417 /* .swiftlint.yml */,
 				45C286BF24C8CBBB00171A88 /* workflows */,
 				452831C72044C40700458375 /* Source */,
 				452831D22044C40700458375 /* Tests */,
