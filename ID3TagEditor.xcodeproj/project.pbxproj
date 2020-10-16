@@ -2198,6 +2198,7 @@
 				452831C12044C40700458375 /* Frameworks */,
 				452831C22044C40700458375 /* Headers */,
 				452831C32044C40700458375 /* Resources */,
+				45D4C38F2539977B00501417 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2234,6 +2235,7 @@
 				452831E12044C4F500458375 /* Frameworks */,
 				452831E22044C4F500458375 /* Headers */,
 				452831E32044C4F500458375 /* Resources */,
+				45D4C390253997A300501417 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2270,6 +2272,7 @@
 				45541B7320598F6C0025A8BF /* Frameworks */,
 				45541B7420598F6C0025A8BF /* Headers */,
 				45541B7520598F6C0025A8BF /* Resources */,
+				45D4C391253997B200501417 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2306,6 +2309,7 @@
 				45F833DF205904680046C804 /* Frameworks */,
 				45F833E0205904680046C804 /* Headers */,
 				45F833E1205904680046C804 /* Resources */,
+				45D4C392253997BA00501417 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2519,6 +2523,77 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45D4C38F2539977B00501417 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		45D4C390253997A300501417 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		45D4C391253997B200501417 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		45D4C392253997BA00501417 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		452831C02044C40700458375 /* Sources */ = {
