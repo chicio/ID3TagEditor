@@ -23,7 +23,7 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
         let id3TitleFrameCreator = ID3RecordingDateTimeFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .RecordingDateTime
+                frameTypeToBeChecked: .recordingDateTime
             ),
             id3FrameConfiguration: ID3FrameConfiguration(),
             timestampCreator: timestampCreator

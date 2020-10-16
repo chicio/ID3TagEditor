@@ -14,7 +14,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
         let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .RecordingDayMonth
+                frameTypeToBeChecked: .recordingDayMonth
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -33,7 +33,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
         let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .RecordingDayMonth
+                frameTypeToBeChecked: .recordingDayMonth
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -52,7 +52,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
         let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [2, 2],
-                frameTypeToBeChecked: .RecordingDayMonth
+                frameTypeToBeChecked: .recordingDayMonth
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -76,7 +76,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
         let id3TitleFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .RecordingDayMonth
+                frameTypeToBeChecked: .recordingDayMonth
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

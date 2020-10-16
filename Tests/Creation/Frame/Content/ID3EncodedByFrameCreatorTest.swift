@@ -14,7 +14,7 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
         let id3EncodedByFrameCreator = ID3EncodedByFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .EncodedBy
+                frameTypeToBeChecked: .encodedBy
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
         let id3EncodedByFrameCreator = ID3EncodedByFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .EncodedBy
+                frameTypeToBeChecked: .encodedBy
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

@@ -14,7 +14,7 @@ class ID3ContentGroupingFrameCreatorTest: XCTestCase {
         let id3ContentGroupingFrameCreator = ID3ContentGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .ContentGrouping
+                frameTypeToBeChecked: .contentGrouping
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3ContentGroupingFrameCreatorTest: XCTestCase {
         let id3ContentGroupingFrameCreator = ID3ContentGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .ContentGrouping
+                frameTypeToBeChecked: .contentGrouping
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

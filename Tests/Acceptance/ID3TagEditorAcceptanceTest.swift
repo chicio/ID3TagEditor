@@ -344,7 +344,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                 .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
                 .album : ID3FrameWithStringContent(content: "A New Album"),
                 .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .jpeg)
+                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .jpeg)
             ]
         )
         
@@ -399,7 +399,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                 .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
                 .album : ID3FrameWithStringContent(content: "A New Album"),
                 .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .png)
+                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
             ]
         )
         
@@ -470,8 +470,8 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                 .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
                 .album : ID3FrameWithStringContent(content: "A New Album"),
                 .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: artFront, type: .FrontCover, format: .jpeg),
-                .attachedPicture(.backCover) : ID3FrameAttachedPicture(picture: artBack, type: .BackCover, format: .jpeg),
+                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
+                .attachedPicture(.backCover) : ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
                 .genre :  ID3FrameGenre(genre: .metal, description: "Metalcore"),
                 .trackPosition : ID3FramePartOfTotal(part: 2, total: 9),
                 .recordingYear : ID3FrameRecordingYear(year: 2018),
@@ -505,8 +505,8 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                 .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
                 .album : ID3FrameWithStringContent(content: "A New Album"),
                 .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: artFront, type: .FrontCover, format: .jpeg),
-                .attachedPicture(.backCover) : ID3FrameAttachedPicture(picture: artBack, type: .BackCover, format: .jpeg),
+                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
+                .attachedPicture(.backCover) : ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
                 .genre :  ID3FrameGenre(genre: .metal, description: "Metalcore"),
                 .trackPosition : ID3FramePartOfTotal(part: 2, total: 9),
                 .recordingYear : ID3FrameRecordingYear(year: 2018),
@@ -564,7 +564,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                 .albumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
                 .album : ID3FrameWithStringContent(content: "A New Album"),
                 .title : ID3FrameWithStringContent(content:  "A New title"),
-                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .png)
+                .attachedPicture(.frontCover) : ID3FrameAttachedPicture(picture: art, type: .frontCover, format: .png)
             ]
         )
         

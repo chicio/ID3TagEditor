@@ -14,7 +14,7 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
         let id3CopyrightFrameCreator = ID3CopyrightFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Copyright
+                frameTypeToBeChecked: .copyright
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
         let id3CopyrightFrameCreator = ID3CopyrightFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Copyright
+                frameTypeToBeChecked: .copyright
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

@@ -14,7 +14,7 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
         let id3FileOwnerFrameCreator = ID3FileOwnerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .FileOwner
+                frameTypeToBeChecked: .fileOwner
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
         let id3FileOwnerFrameCreator = ID3FileOwnerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .FileOwner
+                frameTypeToBeChecked: .fileOwner
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

@@ -15,7 +15,7 @@ class ID3FrameHeaderCreatorTest: XCTestCase {
                                                   frameContentSizeCalculator: MockFrameContentSizeCalculatorForHeader(),
                                                   frameFlagsCreator: MockFrameFlagsCreator())
         
-        let header = headerCreator.createUsing(version: .version3, frameType: .UnsyncronisedLyrics, frameBody: [0x11])
+        let header = headerCreator.createUsing(version: .version3, frameType: .unsyncronisedLyrics, frameBody: [0x11])
         
         XCTAssertEqual(header, [UInt8]("USLT".utf8) + [0x11, 0x00])
     }

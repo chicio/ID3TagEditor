@@ -14,7 +14,7 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
         let id3DiscPositionFrameCreator = ID3DiscPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .DiscPosition
+                        frameTypeToBeChecked: .discPosition
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
         let id3GenreFrameCreator = ID3DiscPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameTypeToBeChecked: .DiscPosition
+                        frameTypeToBeChecked: .discPosition
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

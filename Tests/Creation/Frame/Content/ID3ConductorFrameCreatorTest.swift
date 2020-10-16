@@ -14,7 +14,7 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Conductor
+                frameTypeToBeChecked: .conductor
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Conductor
+                frameTypeToBeChecked: .conductor
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

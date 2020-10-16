@@ -14,7 +14,7 @@ class ID3SubtitleFrameCreatorTest: XCTestCase {
         let id3SubtitleFrameCreator = ID3SubtitleFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Subtitle
+                frameTypeToBeChecked: .subtitle
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3SubtitleFrameCreatorTest: XCTestCase {
         let id3SubtitleFrameCreator = ID3SubtitleFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Subtitle
+                frameTypeToBeChecked: .subtitle
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

@@ -14,7 +14,7 @@ class ID3PublisherFrameCreatorTest: XCTestCase {
         let id3PublisherFrameCreator = ID3PublisherFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Publisher
+                frameTypeToBeChecked: .publisher
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3PublisherFrameCreatorTest: XCTestCase {
         let id3PublisherFrameCreator = ID3PublisherFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Publisher
+                frameTypeToBeChecked: .publisher
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )

@@ -14,7 +14,7 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
         let id3AlbumFrameCreator = ID3AlbumFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .Album
+                        frameTypeToBeChecked: .album
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
         let id3AlbumFrameCreator = ID3AlbumFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameTypeToBeChecked: .Album
+                        frameTypeToBeChecked: .album
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

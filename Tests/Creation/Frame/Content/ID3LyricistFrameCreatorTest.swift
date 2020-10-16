@@ -14,7 +14,7 @@ class ID3LyricistFrameCreatorTest: XCTestCase {
         let id3LyricistFrameCreator = ID3LyricistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Lyricist
+                frameTypeToBeChecked: .lyricist
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
@@ -34,7 +34,7 @@ class ID3LyricistFrameCreatorTest: XCTestCase {
         let id3LyricistFrameCreator = ID3LyricistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Lyricist
+                frameTypeToBeChecked: .lyricist
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
