@@ -5,6 +5,8 @@
 //  2018 Fabrizio Duroni.
 //
 
+// swiftlint:disable function_body_length
+
 import Foundation
 
 class ID3FrameCreatorsChainFactory {

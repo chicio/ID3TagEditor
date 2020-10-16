@@ -1,16 +1,18 @@
+// swiftlint:disable identifier_name
+
 import XCTest
 
 extension ID3AlbumArtistFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAnAlbumArtist", testFrameCreationWhenThereIsAnAlbumArtist),
-        ("testNoFrameCreationWhenThereIsNoAlbumArtist", testNoFrameCreationWhenThereIsNoAlbumArtist),
+        ("testNoFrameCreationWhenThereIsNoAlbumArtist", testNoFrameCreationWhenThereIsNoAlbumArtist)
     ]
 }
 
 extension ID3AlbumFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAnAlbum", testFrameCreationWhenThereIsAnAlbum),
-        ("testNoFrameCreationWhenThereIsNoAlbum", testNoFrameCreationWhenThereIsNoAlbum),
+        ("testNoFrameCreationWhenThereIsNoAlbum", testNoFrameCreationWhenThereIsNoAlbum)
     ]
 }
 

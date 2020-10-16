@@ -18,7 +18,7 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         recordingTimeParsingOperation.parse(frame: frameV4utf8Valid(),
                                             version: .version4,
                                             completed: {(frameName, frame) in
-                                                XCTAssertEqual(frameName, .RecordingDateTime)
+                                                XCTAssertEqual(frameName, .recordingDateTime)
                                                 XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day, 27)
                                                 XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month, 7)
                                                 XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2018)
@@ -38,7 +38,7 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         recordingTimeParsingOperation.parse(frame: frameV4utf8Invalid(),
                                             version: .version4,
                                             completed: {(frameName, frame) in
-                                                XCTAssertEqual(frameName, .RecordingDateTime)
+                                                XCTAssertEqual(frameName, .recordingDateTime)
                                                 XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day)
                                                 XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month)
                                                 XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2016)

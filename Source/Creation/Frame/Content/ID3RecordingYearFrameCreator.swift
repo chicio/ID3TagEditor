@@ -10,7 +10,7 @@ import Foundation
 class ID3RecordingYearFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
         if id3Tag.properties.version < .version4,
-            let yearFrame = id3Tag.frames[.RecordingYear] as? ID3FrameRecordingYear,
+            let yearFrame = id3Tag.frames[.recordingYear] as? ID3FrameRecordingYear,
             let year = yearFrame.year {
             return createFrameUsing(frameType: .recordingYear, content: String(year), id3Tag: id3Tag, andAddItTo: tag)
         }        

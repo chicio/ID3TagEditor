@@ -10,7 +10,7 @@ import Foundation
 class ID3EncodedByFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.EncodedBy, ID3FrameWithStringContent(content: content))
+            return (.encodedBy, ID3FrameWithStringContent(content: content))
         }
     }
 }

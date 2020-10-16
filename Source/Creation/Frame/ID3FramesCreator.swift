@@ -17,7 +17,7 @@ class ID3FramesCreator {
     func createFramesUsing(id3Tag: ID3Tag) throws -> [UInt8] {
         var frames = id3FrameCreatorsChain.createFrames(id3Tag: id3Tag, tag: [UInt8]())
         if thereIsNotValidDataIn(frames: frames) {
-            throw ID3TagEditorError.InvalidTagData
+            throw ID3TagEditorError.invalidTagData
         }
         frames.append(contentsOf: createFramesEnd())
         return frames

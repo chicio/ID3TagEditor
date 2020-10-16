@@ -29,7 +29,7 @@ class ID3SubtitleFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Subtitle : ID3FrameWithStringContent(content: "::an example subtitle::")]
+            frames: [.subtitle : ID3FrameWithStringContent(content: "::an example subtitle::")]
         )
         let id3SubtitleFrameCreator = ID3SubtitleFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

@@ -442,6 +442,9 @@
 		45D4C3702538D51E00501417 /* example-write-read-v4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D4C3692538D51E00501417 /* example-write-read-v4.mp3 */; };
 		45D4C3712538D51E00501417 /* example-write-read-v4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D4C3692538D51E00501417 /* example-write-read-v4.mp3 */; };
 		45D4C3722538D51E00501417 /* example-write-read-v4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45D4C3692538D51E00501417 /* example-write-read-v4.mp3 */; };
+		45D4C3AD2539CF3300501417 /* MockFrameHeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4C3AC2539CF3300501417 /* MockFrameHeaderCreator.swift */; };
+		45D4C3AE2539CF3300501417 /* MockFrameHeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4C3AC2539CF3300501417 /* MockFrameHeaderCreator.swift */; };
+		45D4C3AF2539CF3300501417 /* MockFrameHeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4C3AC2539CF3300501417 /* MockFrameHeaderCreator.swift */; };
 		45D58CC9210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */; };
 		45D58CCA210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */; };
 		45D58CCB210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */; };
@@ -1110,6 +1113,7 @@
 		45D4C39A25399ABD00501417 /* .codebeatignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .codebeatignore; sourceTree = "<group>"; };
 		45D4C39B25399ABD00501417 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		45D4C39C25399ABD00501417 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		45D4C3AC2539CF3300501417 /* MockFrameHeaderCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFrameHeaderCreator.swift; sourceTree = "<group>"; };
 		45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CCD210CB85000E820C8 /* TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
@@ -2045,6 +2049,7 @@
 				5FAF8DAE21CED92F0049798C /* MockSynchsafeEncoder.swift */,
 				45D95424253721C1008AA05D /* MockUnsynchronisedLyricForLanguageFrameCreator.swift */,
 				45D95443253782E7008AA05D /* MockFrameContentSizeCalculatorForHeader.swift */,
+				45D4C3AC2539CF3300501417 /* MockFrameHeaderCreator.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -2838,6 +2843,7 @@
 				4528AF52210C7D0B00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */,
 				C506705D2D3EA84FC56C8F74 /* ID3GenreStringAdapterTest.swift in Sources */,
 				45D58CC9210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */,
+				45D4C3AD2539CF3300501417 /* MockFrameHeaderCreator.swift in Sources */,
 				519C352C240507D4008F3BDE /* ID3DiscPositionFrameCreatorTest.swift in Sources */,
 				C506748043B2D609710824BA /* ID3TrackPositionFrameCreatorTest.swift in Sources */,
 				45D95425253721C1008AA05D /* MockUnsynchronisedLyricForLanguageFrameCreator.swift in Sources */,
@@ -3085,6 +3091,7 @@
 				4528AF53210C7D0C00CB7A2E /* ID3RecordingDateTimeFrameCreatorTest.swift in Sources */,
 				C506730C7ADDAACABB7405E4 /* ID3GenreStringAdapterTest.swift in Sources */,
 				45D58CCA210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */,
+				45D4C3AE2539CF3300501417 /* MockFrameHeaderCreator.swift in Sources */,
 				519C352D240507D4008F3BDE /* ID3DiscPositionFrameCreatorTest.swift in Sources */,
 				C5067A86F9BBE3A9DA610A7D /* ID3TrackPositionFrameCreatorTest.swift in Sources */,
 				45D95426253721C1008AA05D /* MockUnsynchronisedLyricForLanguageFrameCreator.swift in Sources */,
@@ -3332,6 +3339,7 @@
 				5FAF8DB121CED92F0049798C /* MockSynchsafeEncoder.swift in Sources */,
 				45541C12205995F60025A8BF /* ID3TrackPositionStringAdapterTest.swift in Sources */,
 				45541C13205995F60025A8BF /* ID3TagPresenceTest.swift in Sources */,
+				45D4C3AF2539CF3300501417 /* MockFrameHeaderCreator.swift in Sources */,
 				45D58CCB210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */,
 				519C352E240507D4008F3BDE /* ID3DiscPositionFrameCreatorTest.swift in Sources */,
 				45D95427253721C1008AA05D /* MockUnsynchronisedLyricForLanguageFrameCreator.swift in Sources */,

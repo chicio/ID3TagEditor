@@ -29,7 +29,7 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Conductor : ID3FrameWithStringContent(content: "::an example conductor::")]
+            frames: [.conductor : ID3FrameWithStringContent(content: "::an example conductor::")]
         )
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

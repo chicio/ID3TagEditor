@@ -20,8 +20,8 @@ class ID3AttachedPictureFrameContentParsingOperationTest: XCTestCase {
             frame: Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]),
             version: .version3,
             completed: {(frameName, frame) in
-                    XCTAssertEqual(frameName, .AttachedPicture(.FrontCover))
-                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.format, .Png)
+                    XCTAssertEqual(frameName, .attachedPicture(.FrontCover))
+                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.format, .png)
                     XCTAssertEqual(
                         (frame as? ID3FrameAttachedPicture)?.picture,
                         Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11])
@@ -42,8 +42,8 @@ class ID3AttachedPictureFrameContentParsingOperationTest: XCTestCase {
                 frame: Data([0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]),
                 version: .version3,
                 completed: {(frameName, frame) in
-                    XCTAssertEqual(frameName, .AttachedPicture(.FrontCover))
-                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.format, .Jpeg)
+                    XCTAssertEqual(frameName, .attachedPicture(.FrontCover))
+                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.format, .jpeg)
                     XCTAssertEqual(
                         (frame as? ID3FrameAttachedPicture)?.picture,
                         Data([0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11])

@@ -9,7 +9,7 @@ import Foundation
 
 class ID3ConductorFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let conductorFrame = id3Tag.frames[.Conductor] as? ID3FrameWithStringContent {
+        if let conductorFrame = id3Tag.frames[.conductor] as? ID3FrameWithStringContent {
             return createFrameUsing(frameType: .conductor, content: conductorFrame.content, id3Tag: id3Tag, andAddItTo: tag)
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)

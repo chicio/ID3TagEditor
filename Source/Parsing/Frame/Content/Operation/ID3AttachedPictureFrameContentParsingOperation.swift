@@ -20,12 +20,12 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
 
     func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
         parseToCheckIfThereIsAnImageUsing(magicNumber: jpegMagicNumber,
-                                          format: .Jpeg,
+                                          format: .jpeg,
                                           frame: frame,
                                           version: version,
                                           completed: completed)
         parseToCheckIfThereIsAnImageUsing(magicNumber: pngMagicNumber,
-                                          format: .Png,
+                                          format: .png,
                                           frame: frame,
                                           version: version,
                                           completed: completed)
@@ -43,7 +43,7 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
                 type: pictureType,
                 format: format
             )
-            completed(.AttachedPicture(pictureType), attachedPictureFrame)
+            completed(.attachedPicture(pictureType), attachedPictureFrame)
         }
     }
 }

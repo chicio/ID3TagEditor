@@ -45,6 +45,6 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
              */
             recordingDateTime.date?.year = Int(content)
         }
-        completed(.RecordingDateTime, ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
+        completed(.recordingDateTime, ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
     }
 }

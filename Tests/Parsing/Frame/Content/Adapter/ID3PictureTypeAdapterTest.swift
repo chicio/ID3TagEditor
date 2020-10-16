@@ -16,7 +16,7 @@ class ID3PictureTypeAdapterTest: XCTestCase {
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
         )
 
-        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: .version2), .FrontCover)
+        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .jpeg, version: .version2), .FrontCover)
     }
 
     func testExtractTypeFromV2TagPng() {
@@ -26,7 +26,7 @@ class ID3PictureTypeAdapterTest: XCTestCase {
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
         )
 
-        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .Png, version: .version2), .FrontCover)
+        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .png, version: .version2), .FrontCover)
     }
 
     func testExtractTypeFromV3TagJpg() {
@@ -38,7 +38,7 @@ class ID3PictureTypeAdapterTest: XCTestCase {
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
         )
 
-        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .Jpeg, version: .version3), .FrontCover)
+        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .jpeg, version: .version3), .FrontCover)
     }
 
     func testExtractTypeFromV3TagPng() {
@@ -50,6 +50,6 @@ class ID3PictureTypeAdapterTest: XCTestCase {
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration()
         )
 
-        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .Png, version: .version3), .FrontCover)
+        XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .png, version: .version3), .FrontCover)
     }
 }

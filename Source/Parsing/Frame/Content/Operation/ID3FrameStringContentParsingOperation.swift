@@ -7,19 +7,19 @@
 
 import Foundation
 
-typealias createFrameOperation = (String) -> ((FrameName, ID3Frame))
+typealias CreateFrameOperation = (String) -> ((FrameName, ID3Frame))
 
 class ID3FrameStringContentParsingOperation: FrameContentParsingOperation {
     private var stringContentParser: ID3FrameStringContentParser
-    private var createFrameOperation: createFrameOperation
+    private var createFrameOperation: CreateFrameOperation
 
     init(stringContentParser: ID3FrameStringContentParser,
-         assignToTagOperation: @escaping createFrameOperation) {
+         assignToTagOperation: @escaping CreateFrameOperation) {
         self.stringContentParser = stringContentParser
         self.createFrameOperation = assignToTagOperation
     }
 
-    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> Void) {
         if let frameContent = stringContentParser.parse(frame: frame, version: version) {
             let frameNameAndFrame = createFrameOperation(frameContent)
             completed(frameNameAndFrame.0, frameNameAndFrame.1)

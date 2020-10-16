@@ -29,8 +29,8 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithJpgForVersion2() {
-        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .Jpeg)
-        let id3Tag = ID3Tag(version: .version2, frames: [.AttachedPicture(.FrontCover) : attachedPictureFrame])
+        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .jpeg)
+        let id3Tag = ID3Tag(version: .version2, frames: [.attachedPicture(.FrontCover) : attachedPictureFrame])
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
@@ -52,8 +52,8 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithPngForVersion2() {
-        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .Png)
-        let id3Tag = ID3Tag(version: .version2, frames: [.AttachedPicture(.FrontCover) : attachedPictureFrame])
+        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .png)
+        let id3Tag = ID3Tag(version: .version2, frames: [.attachedPicture(.FrontCover) : attachedPictureFrame])
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
@@ -75,8 +75,8 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithJpgForVersion3() {
-        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .Jpeg)
-        let id3Tag = ID3Tag(version: .version3, frames: [.AttachedPicture(.FrontCover) : attachedPictureFrame])
+        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .jpeg)
+        let id3Tag = ID3Tag(version: .version3, frames: [.attachedPicture(.FrontCover) : attachedPictureFrame])
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
@@ -101,8 +101,8 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithPngForVersion3() {
-        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .Png)
-        let id3Tag = ID3Tag(version: .version3, frames: [.AttachedPicture(.FrontCover) : attachedPictureFrame])
+        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .png)
+        let id3Tag = ID3Tag(version: .version3, frames: [.attachedPicture(.FrontCover) : attachedPictureFrame])
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
@@ -126,13 +126,13 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithPngForAnotherTypeOfCover() {
-        let attachedPictureFrameFront = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .Png)
-        let attachedPictureFrameBack = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .BackCover, format: .Png)
+        let attachedPictureFrameFront = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .FrontCover, format: .png)
+        let attachedPictureFrameBack = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .BackCover, format: .png)
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .AttachedPicture(.FrontCover) : attachedPictureFrameFront,
-                .AttachedPicture(.BackCover) : attachedPictureFrameBack
+                .attachedPicture(.FrontCover) : attachedPictureFrameFront,
+                .attachedPicture(.BackCover) : attachedPictureFrameBack
             ]
         )
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(

@@ -5,7 +5,7 @@
 //  2018 Fabrizio Duroni.
 //
 
-import Foundation;
+import Foundation
 
 class ID3TagParser {
     private let tagVersionParser: TagVersionParser
@@ -25,10 +25,10 @@ class ID3TagParser {
         self.framesParser = frameParser
         self.id3TagConfiguration = id3TagConfiguration
     }
-    
+
     func parse(mp3: Data) throws -> ID3Tag? {
         let version = tagVersionParser.parse(mp3: mp3 as Data)
-        if (tagPresence.isTagPresentIn(mp3: mp3 as Data, version: version)) {
+        if tagPresence.isTagPresentIn(mp3: mp3 as Data, version: version) {
             let id3Tag = ID3Tag(version: version, frames: [:])
             parseTagSizeFor(mp3: mp3 as NSData, andSaveInId3Tag: id3Tag)
             try validate(tagSize: id3Tag.properties.size, mp3: mp3)
@@ -39,12 +39,12 @@ class ID3TagParser {
     }
 
     private func parseTagSizeFor(mp3: NSData, andSaveInId3Tag id3Tag: ID3Tag) {
-        id3Tag.properties.size = tagSizeParser.parse(data: mp3);
+        id3Tag.properties.size = tagSizeParser.parse(data: mp3)
     }
-    
+
     func validate(tagSize: UInt32, mp3: Data) throws {
         if mp3.count < (Int(tagSize) + id3TagConfiguration.headerSize()) {
-            throw ID3TagEditorError.CorruptedFile;
+            throw ID3TagEditorError.corruptedFile
         }
     }
 }

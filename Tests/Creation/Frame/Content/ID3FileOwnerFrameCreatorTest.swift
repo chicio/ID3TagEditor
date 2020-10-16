@@ -29,7 +29,7 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.FileOwner : ID3FrameWithStringContent(content: "::an example file owner::")]
+            frames: [.fileOwner : ID3FrameWithStringContent(content: "::an example file owner::")]
         )
         let id3FileOwnerFrameCreator = ID3FileOwnerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

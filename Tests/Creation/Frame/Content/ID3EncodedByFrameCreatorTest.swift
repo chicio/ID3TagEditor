@@ -29,7 +29,7 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.EncodedBy : ID3FrameWithStringContent(content: "::an example encodedBy::")]
+            frames: [.encodedBy : ID3FrameWithStringContent(content: "::an example encodedBy::")]
         )
         let id3EncodedByFrameCreator = ID3EncodedByFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

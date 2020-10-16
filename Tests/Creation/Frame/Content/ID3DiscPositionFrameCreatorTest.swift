@@ -29,7 +29,7 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.DiscPosition : ID3FramePartOfTotal(part: 1, total: 3)]
+            frames: [.discPosition : ID3FramePartOfTotal(part: 1, total: 3)]
         )
         let id3GenreFrameCreator = ID3DiscPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(

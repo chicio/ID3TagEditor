@@ -29,7 +29,7 @@ class ID3PublisherFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Publisher : ID3FrameWithStringContent(content: "::an example publisher::")]
+            frames: [.publisher : ID3FrameWithStringContent(content: "::an example publisher::")]
         )
         let id3PublisherFrameCreator = ID3PublisherFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

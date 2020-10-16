@@ -21,7 +21,7 @@ class ID3TagCreator {
         let header = id3TagHeaderCreator.createTagHeader(contentSize: frames.count, id3Tag: id3Tag)
         let tag = header + frames
         if (isTooBig(tag: tag)) {
-            throw ID3TagEditorError.TagTooBig
+            throw ID3TagEditorError.tagTooBig
         }
         return Data(tag)
     }

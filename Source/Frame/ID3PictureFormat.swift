@@ -12,7 +12,7 @@ import Foundation
  */
 public enum ID3PictureFormat: Equatable, Hashable, CaseIterable  {
     /// Jpeg image.
-    case Jpeg
+    case jpeg
     /// Png image.
-    case Png
+    case png
 }

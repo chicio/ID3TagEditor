@@ -10,7 +10,7 @@ import Foundation
 class ID3LyricistFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.Lyricist, ID3FrameWithStringContent(content: content))
+            return (.lyricist, ID3FrameWithStringContent(content: content))
         }
     }
 }

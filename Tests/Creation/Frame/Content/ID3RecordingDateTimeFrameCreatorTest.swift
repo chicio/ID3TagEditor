@@ -16,7 +16,7 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
                                                   time: RecordingTime(hour: 12, minute: 30))
         let id3tag = ID3Tag(
             version: .version4,
-            frames: [.RecordingDateTime : ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime)]
+            frames: [.recordingDateTime : ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime)]
         )
         let timestampCreator = MockTimestampCreator(returnValue: "123456789")
         

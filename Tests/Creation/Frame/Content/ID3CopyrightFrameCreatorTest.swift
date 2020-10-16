@@ -29,7 +29,7 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Copyright : ID3FrameWithStringContent(content: "::an example copyright::")]
+            frames: [.copyright : ID3FrameWithStringContent(content: "::an example copyright::")]
         )
         let id3CopyrightFrameCreator = ID3CopyrightFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

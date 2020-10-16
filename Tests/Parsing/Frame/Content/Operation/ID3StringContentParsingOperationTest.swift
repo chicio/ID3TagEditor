@@ -23,11 +23,11 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (frameContentWithoutPadding: String) in
-            return (.Title, ID3FrameWithStringContent(content: ":: value ::"))
+            return (.title, ID3FrameWithStringContent(content: ":: value ::"))
         }
         
         id3StringContentParsingOperation.parse(frame: frameV2(), version: .version2, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .Title)
+            XCTAssertEqual(frameName, .title)
             XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: value ::")
             expectation.fulfill()
         })
@@ -38,11 +38,11 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (frameContentWithoutPadding: String) in
-            return (.Title, ID3FrameWithStringContent(content: ":: value ::"))
+            return (.title, ID3FrameWithStringContent(content: ":: value ::"))
         }
         
         id3StringContentParsingOperation.parse(frame: frameV3(), version: .version2, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .Title)
+            XCTAssertEqual(frameName, .title)
             XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: value ::")
             expectation.fulfill()
         })
@@ -53,11 +53,11 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (frameContentWithoutPadding: String) in
-            return (.Title, ID3FrameWithStringContent(content: ":: π value ::"))
+            return (.title, ID3FrameWithStringContent(content: ":: π value ::"))
         }
         
         id3StringContentParsingOperation.parse(frame: frameV2utf16(), version: .version2, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .Title)
+            XCTAssertEqual(frameName, .title)
             XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
             expectation.fulfill()
         })
@@ -68,11 +68,11 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (frameContentWithoutPadding: String) in
-            return (.Title, ID3FrameWithStringContent(content: ":: π value ::"))
+            return (.title, ID3FrameWithStringContent(content: ":: π value ::"))
         }
 
         id3StringContentParsingOperation.parse(frame: frameV3utf16(), version: .version3, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .Title)
+            XCTAssertEqual(frameName, .title)
             XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
             expectation.fulfill()
         })
@@ -83,11 +83,11 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         let id3StringContentParsingOperation = ID3FrameStringContentParsingOperation(
             stringContentParser: stringContentParser
         ) { (frameContentWithoutPadding: String) in
-            return (.Title, ID3FrameWithStringContent(content: ":: π value ::"))
+            return (.title, ID3FrameWithStringContent(content: ":: π value ::"))
         }
         
         id3StringContentParsingOperation.parse(frame: frameV4utf8(), version: .version4, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .Title)
+            XCTAssertEqual(frameName, .title)
             XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
             expectation.fulfill()
         })

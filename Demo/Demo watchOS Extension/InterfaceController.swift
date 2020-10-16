@@ -22,11 +22,11 @@ class InterfaceController: WKInterfaceController {
         do {
             let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             attachedPictureImage.setImageData(
-                (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture
+                (id3Tag?.frames[.attachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture
             )
-            titleLabel.setText((id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content)
-            albumLabel.setText((id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content)
-            genreLabel.setText((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description)
+            titleLabel.setText((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content)
+            albumLabel.setText((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content)
+            genreLabel.setText((id3Tag?.frames[.genre] as? ID3FrameGenre)?.description)
         } catch {
             print(error)
         }

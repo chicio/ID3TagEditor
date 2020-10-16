@@ -11,7 +11,7 @@ class ID3RecordingDayMonthFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
             let dayMonth = ID3CoupleOfNumbersAdapter().adapt(coupleOfNumbers: content)
-            return (.RecordingDayMonth, ID3FrameRecordingDayMonth(day: dayMonth.0, month: dayMonth.1))
+            return (.recordingDayMonth, ID3FrameRecordingDayMonth(day: dayMonth.0, month: dayMonth.1))
         }
     }
 }

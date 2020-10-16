@@ -29,7 +29,7 @@ class ID3ComposerFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Composer : ID3FrameWithStringContent(content: "::an example composer::")]
+            frames: [.composer : ID3FrameWithStringContent(content: "::an example composer::")]
         )
         let id3ComposerFrameCreator = ID3ComposerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(

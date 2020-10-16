@@ -10,7 +10,7 @@ import Foundation
 class ID3RecordingYearFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
         return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.RecordingYear, ID3FrameRecordingYear(year: Int(content)))
+            return (.recordingYear, ID3FrameRecordingYear(year: Int(content)))
         }
     }
 }
