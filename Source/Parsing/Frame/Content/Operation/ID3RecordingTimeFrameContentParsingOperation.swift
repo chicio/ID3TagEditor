@@ -35,7 +35,7 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
             recordingDateTime.time?.hour = calendar.component(.hour, from: date)
             recordingDateTime.time?.minute = calendar.component(.minute, from: date)
         } else {
-            /**
+            /*
              Fallback case:
              A lot mp3 that have a id3 tag version 2.4 use the recording time frame ("TRDC") in a wrong way.
              Instead of a valid timestamp they have a 4 digit number that is equivalent to the year that was

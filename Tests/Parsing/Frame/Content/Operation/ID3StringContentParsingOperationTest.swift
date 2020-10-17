@@ -56,11 +56,13 @@ class ID3StringContentParsingOperationTest: XCTestCase {
             return (.title, ID3FrameWithStringContent(content: ":: π value ::"))
         }
 
-        id3StringContentParsingOperation.parse(frame: frameV2utf16(), version: .version2, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .title)
-            XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
-            expectation.fulfill()
-        })
+        id3StringContentParsingOperation.parse(
+            frame: frameV2utf16(), version: .version2,
+            completed: {(frameName, frame) in
+                XCTAssertEqual(frameName, .title)
+                XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
+                expectation.fulfill()
+            })
     }
 
     func testFrameContentParsedV3utf16() {
@@ -71,10 +73,12 @@ class ID3StringContentParsingOperationTest: XCTestCase {
             return (.title, ID3FrameWithStringContent(content: ":: π value ::"))
         }
 
-        id3StringContentParsingOperation.parse(frame: frameV3utf16(), version: .version3, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .title)
-            XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
-            expectation.fulfill()
+        id3StringContentParsingOperation.parse(
+            frame: frameV3utf16(), version: .version3,
+            completed: {(frameName, frame) in
+                XCTAssertEqual(frameName, .title)
+                XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
+                expectation.fulfill()
         })
     }
 
@@ -86,10 +90,13 @@ class ID3StringContentParsingOperationTest: XCTestCase {
             return (.title, ID3FrameWithStringContent(content: ":: π value ::"))
         }
 
-        id3StringContentParsingOperation.parse(frame: frameV4utf8(), version: .version4, completed: {(frameName, frame) in
-            XCTAssertEqual(frameName, .title)
-            XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
-            expectation.fulfill()
+        id3StringContentParsingOperation.parse(
+            frame: frameV4utf8(),
+            version: .version4,
+            completed: {(frameName, frame) in
+                XCTAssertEqual(frameName, .title)
+                XCTAssertEqual((frame as? ID3FrameWithStringContent)?.content, ":: π value ::")
+                expectation.fulfill()
         })
     }
 
@@ -109,7 +116,7 @@ class ID3StringContentParsingOperationTest: XCTestCase {
 
     private func frameV3() -> Data {
         return Data([UInt8]("TALB".utf8) + [0x00, 0x00, 0x00, 0x0D, 0x00, 0x00] +
-            [0x00] + [UInt8](":: value ::".utf8)
+                        [0x00] + [UInt8](":: value ::".utf8)
         )
     }
 

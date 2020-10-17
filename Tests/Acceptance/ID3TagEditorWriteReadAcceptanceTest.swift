@@ -6,6 +6,10 @@
 //  Copyright © 2020 Fabrizio Duroni. All rights reserved.
 //
 
+// swiftlint:disable type_body_length
+// swiftlint:disable function_body_length
+// swiftlint:disable line_length
+
 import XCTest
 @testable import ID3TagEditor
 
@@ -14,8 +18,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
 
     func testReadWritev2() throws {
         let filename = "example-write-read-v2"
-        let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
-        let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
+        let artFront = try Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
+        )
+        let artBack = try Data(
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg"))
+        )
         let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
 
         let id3Tag = ID3Tag(
@@ -41,10 +49,18 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
                 .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .recordingYear: ID3FrameRecordingYear(year: 2020),
                 .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39),
-                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
-                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
-                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 ita unsync lyrics"),
-                .unsynchronizedLyrics(.eng): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng unsync lyrics")
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront,
+                                                                       type: .frontCover,
+                                                                       format: .jpeg),
+                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack,
+                                                                      type: .backCover,
+                                                                      format: .jpeg),
+                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita,
+                                                                          contentDescription: "CD",
+                                                                          content: "v2 ita unsync lyrics"),
+                .unsynchronizedLyrics(.eng): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng,
+                                                                          contentDescription: "CD",
+                                                                          content: "v2 eng unsync lyrics")
             ]
         )
 
@@ -61,9 +77,15 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.artist] as? ID3FrameWithStringContent)?.content, "artist V2")
         XCTAssertEqual((id3TagWritten?.frames[.composer] as? ID3FrameWithStringContent)?.content, "composer V2")
         XCTAssertEqual((id3TagWritten?.frames[.conductor] as? ID3FrameWithStringContent)?.content, "conductor V2")
-        XCTAssertEqual((id3TagWritten?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V2")
+        XCTAssertEqual(
+            (id3TagWritten?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content,
+            "ContentGrouping V2"
+        )
         XCTAssertEqual((id3TagWritten?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V2")
-        XCTAssertEqual((id3TagWritten?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V2")
+        XCTAssertEqual(
+            (id3TagWritten?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content,
+            "EncoderSettings V2"
+        )
         XCTAssertEqual((id3TagWritten?.frames[.lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V2")
         XCTAssertEqual((id3TagWritten?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V2")
         XCTAssertEqual((id3TagWritten?.frames[.publisher] as? ID3FrameWithStringContent)?.content, "Publisher V2")

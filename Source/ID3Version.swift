@@ -26,7 +26,7 @@ public enum ID3Version: UInt8, Comparable, Equatable, Hashable, CaseIterable {
      
      - returns: true if the version value are the same, else false.
      */
-    public static func <(lhs: ID3Version, rhs: ID3Version) -> Bool {
+    public static func < (lhs: ID3Version, rhs: ID3Version) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 }

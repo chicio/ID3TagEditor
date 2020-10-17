@@ -5,6 +5,8 @@
 //  2018 Fabrizio Duroni.
 //
 
+// swiftlint:disable line_length
+
 import Foundation
 
 /**

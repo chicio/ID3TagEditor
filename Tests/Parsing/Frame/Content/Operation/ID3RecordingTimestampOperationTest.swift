@@ -18,13 +18,13 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         recordingTimeParsingOperation.parse(frame: frameV4utf8Valid(),
                                             version: .version4,
                                             completed: {(frameName, frame) in
-                                                XCTAssertEqual(frameName, .recordingDateTime)
-                                                XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day, 27)
-                                                XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month, 7)
-                                                XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2018)
-                                                XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.hour, 11)
-                                                XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.minute, 35)
-                                                expectation.fulfill()
+            XCTAssertEqual(frameName, .recordingDateTime)
+            XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day, 27)
+            XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month, 7)
+            XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2018)
+            XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.hour, 11)
+            XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.minute, 35)
+            expectation.fulfill()
 
         })
     }
@@ -38,13 +38,13 @@ class ID3RecordingTimeFrameContentParsingOperationTest: XCTestCase {
         recordingTimeParsingOperation.parse(frame: frameV4utf8Invalid(),
                                             version: .version4,
                                             completed: {(frameName, frame) in
-                                                XCTAssertEqual(frameName, .recordingDateTime)
-                                                XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day)
-                                                XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month)
-                                                XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2016)
-                                                XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.hour)
-                                                XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.minute)
-                                                expectation.fulfill()
+            XCTAssertEqual(frameName, .recordingDateTime)
+            XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.day)
+            XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.month)
+            XCTAssertEqual((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.date?.year, 2016)
+            XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.hour)
+            XCTAssertNil((frame as? ID3FrameRecordingDateTime)?.recordingDateTime.time?.minute)
+            expectation.fulfill()
         })
     }
 

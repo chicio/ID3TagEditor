@@ -1,5 +1,3 @@
-// swiftlint:disable identifier_name
-
 import XCTest
 
 extension ID3AlbumArtistFrameCreatorTest {

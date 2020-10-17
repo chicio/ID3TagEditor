@@ -29,7 +29,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithJpgForVersion2() {
-        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .frontCover, format: .jpeg)
+        let attachedPictureFrame = ID3FrameAttachedPicture(
+            picture: Data([0x10, 0x10]),
+            type: .frontCover,
+            format: .jpeg
+        )
         let id3Tag = ID3Tag(version: .version2, frames: [.attachedPicture(.frontCover): attachedPictureFrame])
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
@@ -75,7 +79,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithJpgForVersion3() {
-        let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .frontCover, format: .jpeg)
+        let attachedPictureFrame = ID3FrameAttachedPicture(
+            picture: Data([0x10, 0x10]),
+            type: .frontCover,
+            format: .jpeg
+        )
         let id3Tag = ID3Tag(version: .version3, frames: [.attachedPicture(.frontCover): attachedPictureFrame])
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
@@ -126,8 +134,16 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     func testFrameCreationWithPngForAnotherTypeOfCover() {
-        let attachedPictureFrameFront = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .frontCover, format: .png)
-        let attachedPictureFrameBack = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .backCover, format: .png)
+        let attachedPictureFrameFront = ID3FrameAttachedPicture(
+            picture: Data([0x10, 0x10]),
+            type: .frontCover,
+            format: .png
+        )
+        let attachedPictureFrameBack = ID3FrameAttachedPicture(
+            picture: Data([0x10, 0x10]),
+            type: .backCover,
+            format: .png
+        )
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
