@@ -1,2 +1,2 @@
 ignore:
-  - "Tests/Mock"  # ignore folders and all its contents
+  - "Tests/Mock/**/*"  # ignore folders and all its contents

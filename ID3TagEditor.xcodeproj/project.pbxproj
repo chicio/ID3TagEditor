@@ -1090,6 +1090,7 @@
 		458BED1B20926C9A003C2E14 /* example-utf16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-utf16.mp3"; sourceTree = "<group>"; };
 		458BED2520928CD3003C2E14 /* ID3StringEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3StringEncoding.swift; sourceTree = "<group>"; };
 		45925B99253B4EB4001C8D4F /* codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codecov.yml; sourceTree = "<group>"; };
+		45925B9A253B5277001C8D4F /* codecov.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codecov.yml; sourceTree = "<group>"; };
 		45AB7193204AD842004A2239 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		45AB7194204AD842004A2239 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		45AB7195204AD842004A2239 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1356,6 +1357,7 @@
 				45D4C39A25399ABD00501417 /* .codebeatignore */,
 				45D4C39C25399ABD00501417 /* .gitignore */,
 				45D4C39B25399ABD00501417 /* .swiftlint.yml */,
+				45925B9A253B5277001C8D4F /* codecov.yml */,
 				45C286BF24C8CBBB00171A88 /* workflows */,
 				452831C72044C40700458375 /* Source */,
 				452831D22044C40700458375 /* Tests */,
