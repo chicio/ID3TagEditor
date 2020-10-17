@@ -28,10 +28,9 @@ class ViewController: UIViewController {
             let genreFrame = id3Tag?.frames[.genre] as? ID3FrameGenre
             genreLabel.text = "\(genreFrame?.identifier?.rawValue ?? 0) \(genreFrame?.description ?? "")"
             let trackPositionFrame = id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal
-            trackPositionLabel.text = "Track \(trackPositionLabel?.part ?? -1) of \(trackPositionLabel?.total ?? -1)"
-            if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture
-                let attachedPicture = attachedPictureFrame?.picture {
-                attachedPictureImage.image = UIImage(data: attachedPicture)
+            trackPositionLabel.text = "Track \(trackPositionFrame?.part ?? -1) of \(trackPositionFrame?.total ?? -1)"
+            if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
+                    attachedPictureImage.image = UIImage(data: attachedPictureFrame.picture)
             }
         } catch {
             print(error)
