@@ -14,8 +14,8 @@ import Foundation
 */
 class PathLoader {
     func pathFor(name: String, fileType: String) -> String {
-        let bundle = Bundle(for: type(of: self));
-        let path = bundle.path(forResource: name, ofType: fileType)!;
-        return path;
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: name, ofType: fileType)!
+        return path
     }
 }

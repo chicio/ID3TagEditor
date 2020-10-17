@@ -11,7 +11,7 @@ import Foundation
 
 class MockFrameContentSizeCalculatorForHeader: FrameContentSizeCalculator {
     func calculateSizeOf(content: [UInt8], version: ID3Version) -> [UInt8] {
-        if(content == [0x11]) {
+        if content == [0x11] {
             return [0x11]
         }
         return [0x00]

@@ -39,7 +39,7 @@ public class ID3FramePartOfTotal: ID3Frame, Equatable, CustomDebugStringConverti
 
      - returns: true if the track positions values are the same, else false.
      */
-    public static func ==(lhs: ID3FramePartOfTotal, rhs: ID3FramePartOfTotal) -> Bool {
+    public static func == (lhs: ID3FramePartOfTotal, rhs: ID3FramePartOfTotal) -> Bool {
         return lhs.part == rhs.part && lhs.total == rhs.total
     }
 }

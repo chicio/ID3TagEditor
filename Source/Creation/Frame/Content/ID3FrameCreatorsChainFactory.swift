@@ -5,6 +5,8 @@
 //  2018 Fabrizio Duroni.
 //
 
+// swiftlint:disable function_body_length
+
 import Foundation
 
 class ID3FrameCreatorsChainFactory {
@@ -158,15 +160,17 @@ class ID3FrameCreatorsChainFactory {
             id3FrameConfiguration: frameConfiguration,
             timestampCreator: ID3TimestampCreator()
         )
-        let unsynchronisedLyrics = ID3UnsyncronizedLyricsFrameCreator(unsynchronisedLyricForLanguageFrameCreator:
-                                                                        ID3UnsynchronisedLyricForLanguageFrameCreator(
-                                                                            id3FrameConfiguration: frameConfiguration,
-                                                                            frameHeaderCreator: ID3FrameHeaderCreator(
-                                                                                id3FrameConfiguration: frameConfiguration,
-                                                                                frameContentSizeCalculator: frameContentSizeCalculator,
-                                                                                frameFlagsCreator: frameFlagsCreator
-                                                                            ),
-                                                                            paddingAdder: paddingAdder)
+        let unsynchronisedLyricForLanguageCreator = ID3UnsynchronisedLyricForLanguageFrameCreator(
+            id3FrameConfiguration: frameConfiguration,
+            frameHeaderCreator: ID3FrameHeaderCreator(
+                id3FrameConfiguration: frameConfiguration,
+                frameContentSizeCalculator: frameContentSizeCalculator,
+                frameFlagsCreator: frameFlagsCreator
+            ),
+            paddingAdder: paddingAdder
+        )
+        let unsynchronisedLyrics = ID3UnsyncronizedLyricsFrameCreator(
+            unsynchronisedLyricForLanguageFrameCreator: unsynchronisedLyricForLanguageCreator
         )
         albumFrameCreator.nextCreator = albumArtistCreator
         albumArtistCreator.nextCreator = artistFrameCreator

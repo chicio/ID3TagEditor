@@ -9,8 +9,8 @@ import Foundation
 
 class ID3ConductorFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.Conductor, ID3FrameWithStringContent(content: content))
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
+            return (.conductor, ID3FrameWithStringContent(content: content))
         }
     }
 }

@@ -14,5 +14,5 @@ public class ID3Frame {
     /// The ID3 frame identifier as specified in the ID3 tag standard..
     public internal(set) var id3Identifier: String?
     /// The ID3 frame size as specified in the ID3 tag standard.
-    public internal(set) var size: Int?    
+    public internal(set) var size: Int?
 }

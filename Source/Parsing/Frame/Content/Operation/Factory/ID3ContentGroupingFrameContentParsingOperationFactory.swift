@@ -9,8 +9,8 @@ import Foundation
 
 class ID3ContentGroupingFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.ContentGrouping, ID3FrameWithStringContent(content: content))
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
+            return (.contentGrouping, ID3FrameWithStringContent(content: content))
         }
     }
 }

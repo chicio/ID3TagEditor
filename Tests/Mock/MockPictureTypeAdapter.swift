@@ -10,6 +10,6 @@ import Foundation
 
 class MockPictureTypeAdapter: PictureTypeAdapter {
     func adapt(frame: Data, format: ID3PictureFormat, version: ID3Version) -> ID3PictureType {
-        return .FrontCover
+        return .frontCover
     }
 }

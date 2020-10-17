@@ -9,7 +9,8 @@
 import Foundation
 
 /**
- A class used to represent an ID3 recording hour minute frame to be used in the ID3 tag. Valid only for ID3 tag version 2.3 and 2.2.
+ A class used to represent an ID3 recording hour minute frame to be used in the ID3 tag.
+ Valid only for ID3 tag version 2.3 and 2.2.
  */
 public class ID3FrameRecordingHourMinute: ID3Frame, CustomDebugStringConvertible {
     /// Recording hour of the song.
@@ -20,7 +21,7 @@ public class ID3FrameRecordingHourMinute: ID3Frame, CustomDebugStringConvertible
     public var debugDescription: String {
         return "\(hour ?? 0) \(minute ?? 0)"
     }
-    
+
     /**
      Init an ID3 recording hour minute frame.
      

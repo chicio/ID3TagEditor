@@ -8,27 +8,27 @@
 import Foundation
 
 class ID3AttachedPictureFrameConfiguration {
-    private let commonFrameCoverTypeBytePosition: [ID3PictureFormat : Int] = [
-        .Png : 11,
-        .Jpeg : 12
+    private let commonFrameCoverTypeBytePosition: [ID3PictureFormat: Int] = [
+        .png: 11,
+        .jpeg: 12
     ]
-    private var frameCoverTypeBytePosition: [ID3Version : [ID3PictureFormat : Int]] = [
-        .version2 : [
-            .Png : 4,
-            .Jpeg : 4
+    private var frameCoverTypeBytePosition: [ID3Version: [ID3PictureFormat: Int]] = [
+        .version2: [
+            .png: 4,
+            .jpeg: 4
         ]
     ]
-    private let commonFrameHeaderMimeTypeHeader: [ID3PictureFormat : [UInt8]] = [
-        .Png : [0x00] + [UInt8]("image/png".utf8) + [0x00, 0x03, 0x00],
-        .Jpeg : [0x00] + [UInt8]("image/jpeg".utf8) + [0x00, 0x03, 0x00]
+    private let commonFrameHeaderMimeTypeHeader: [ID3PictureFormat: [UInt8]] = [
+        .png: [0x00] + [UInt8]("image/png".utf8) + [0x00, 0x03, 0x00],
+        .jpeg: [0x00] + [UInt8]("image/jpeg".utf8) + [0x00, 0x03, 0x00]
     ]
-    private var frameHeaderMimeTypeHeader: [ID3Version : [ID3PictureFormat : [UInt8]]] = [
-        .version2 : [
-            .Png : [0x00] + [UInt8]("PNG".utf8) + [0x03, 0x00],
-            .Jpeg : [0x00] + [UInt8]("JPG".utf8) + [0x03, 0x00]
+    private var frameHeaderMimeTypeHeader: [ID3Version: [ID3PictureFormat: [UInt8]]] = [
+        .version2: [
+            .png: [0x00] + [UInt8]("PNG".utf8) + [0x03, 0x00],
+            .jpeg: [0x00] + [UInt8]("JPG".utf8) + [0x03, 0x00]
         ]
     ]
-    
+
     init() {
         self.frameCoverTypeBytePosition[.version3] = commonFrameCoverTypeBytePosition
         self.frameCoverTypeBytePosition[.version4] = commonFrameCoverTypeBytePosition

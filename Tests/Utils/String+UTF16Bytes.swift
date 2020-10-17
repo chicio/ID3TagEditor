@@ -9,8 +9,8 @@ import Foundation
 
 extension String {
     var utf16ToBytes: [UInt8] {
-        return self.utf16.reduce([]) { (a, current) -> [UInt8] in
-            return a + current.toBytes
+        return self.utf16.reduce([]) { (accumulator: [UInt8], current: String.UTF16View.Element) -> [UInt8] in
+            return accumulator + current.toBytes
         }
     }
 }

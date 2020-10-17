@@ -8,7 +8,8 @@
 import Foundation
 
 /**
- A class used to represent an ID3 recording day month frame to be used in the ID3 tag. Valid only for ID3 tag version 2.3 and 2.2.
+ A class used to represent an ID3 recording day month frame to be used in the ID3 tag.
+ Valid only for ID3 tag version 2.3 and 2.2.
  */
 public class ID3FrameRecordingDayMonth: ID3Frame, CustomDebugStringConvertible {
     /// Recording day of the song.
@@ -30,5 +31,4 @@ public class ID3FrameRecordingDayMonth: ID3Frame, CustomDebugStringConvertible {
         self.day = day
         self.month = month
     }
-    
 }

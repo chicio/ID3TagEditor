@@ -15,7 +15,7 @@ class ID3TagPresence: TagPresence {
     }
 
     func isTagPresentIn(mp3: Data, version: ID3Version) -> Bool {
-        if (mp3SizeIsTooSmall(mp3: mp3)) {
+        if mp3SizeIsTooSmall(mp3: mp3) {
             return false
         }
         let header = [UInt8](mp3.subdata(in: 0..<5))

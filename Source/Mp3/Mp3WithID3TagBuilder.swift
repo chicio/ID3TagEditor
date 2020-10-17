@@ -19,7 +19,7 @@ class Mp3WithID3TagBuilder {
     func build(mp3: Data, newId3Tag: ID3Tag, currentId3Tag: ID3Tag?) throws -> Data {
         var tagSizeWithHeader = 0
         if let validCurrentId3Tag = currentId3Tag {
-            tagSizeWithHeader = Int(validCurrentId3Tag.properties.size) + ID3TagConfiguration().headerSize();
+            tagSizeWithHeader = Int(validCurrentId3Tag.properties.size) + ID3TagConfiguration().headerSize()
         }
         var mp3WithTag = try id3TagCreator.create(id3Tag: newId3Tag)
         mp3WithTag.append(mp3.subdata(in: tagSizeWithHeader..<mp3.count))

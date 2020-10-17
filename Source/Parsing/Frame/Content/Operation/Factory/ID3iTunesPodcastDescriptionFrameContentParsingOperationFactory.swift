@@ -9,7 +9,7 @@ import Foundation
 
 class ID3iTunesPodcastDescriptionFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
             return (.iTunesPodcastDescription, ID3FrameWithStringContent(content: content))
         }
     }

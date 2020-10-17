@@ -14,28 +14,28 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
         let expectation = XCTestExpectation(description: "unsynchronised lyrics")
 
         let lyricsOperation = ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make()
-        
-        lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (frameName, frame) in
+
+        lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
             XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.content, "c")
             XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.contentDescription, "cd")
             XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.language, .ita)
             expectation.fulfill()
         }
     }
-    
+
     func testParsingInvalidLanguage() {
         let expectation = XCTestExpectation(description: "unsynchronised lyrics")
 
         let lyricsOperation = ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make()
-        
-        lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (frameName, frame) in
+
+        lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
             XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.content, "c")
             XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.contentDescription, "cd")
             XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.language, .unknown)
             expectation.fulfill()
         }
     }
-    
+
     private func frameV3Valid() -> Data {
         let separator = Data([0x00, 0x00])
         let content = "cd".data(using: .utf16)!
@@ -49,7 +49,7 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
                 + content
         )
     }
-    
+
     private func frameV3InvalidLanguage() -> Data {
         let separator = Data([0x00, 0x00])
         let content = "cd".data(using: .utf16)!

@@ -28,7 +28,6 @@ class ID3PictureTypeAdapter: PictureTypeAdapter {
            let pictureType = ID3PictureType(rawValue: pictureTypeByte[0]) {
             return pictureType
         }
-        return .Other
+        return .other
     }
 }
-

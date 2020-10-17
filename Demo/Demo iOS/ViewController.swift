@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var genreIdentifierField: UITextField!
     @IBOutlet weak var genreDescriptionField: UITextField!
     @IBOutlet weak var yearField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.delegate = self
@@ -30,27 +30,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         genreDescriptionField.delegate = self
         yearField.delegate = self
     }
-    
+
     @IBAction func update(_ sender: Any) {
         do {
+            let defaultGenre = ID3Genre(rawValue: 1)!
+            let genreTextFieldContent = Int(genreIdentifierField.text ?? "1") ?? 1
             let id3Tag = ID3Tag(
                 version: .version3,
                 frames: [
-                    .Artist : ID3FrameWithStringContent(content: artistTextField.text ?? ""),
-                    .AlbumArtist : ID3FrameWithStringContent(content: albumArtistField.text ?? ""),
-                    .Title : ID3FrameWithStringContent(content: titleTextField.text ?? ""),
-                    .Album : ID3FrameWithStringContent(content: albumTextField.text ?? ""),
-                    .RecordingYear : ID3FrameRecordingYear(year: Int(yearField.text ?? "2019") ?? 2019),
-                    .Genre : ID3FrameGenre(genre: ID3Genre(rawValue: Int(genreIdentifierField.text ?? "1") ?? 1) ?? ID3Genre(rawValue: 1)!,
+                    .artist: ID3FrameWithStringContent(content: artistTextField.text ?? ""),
+                    .albumArtist: ID3FrameWithStringContent(content: albumArtistField.text ?? ""),
+                    .title: ID3FrameWithStringContent(content: titleTextField.text ?? ""),
+                    .album: ID3FrameWithStringContent(content: albumTextField.text ?? ""),
+                    .recordingYear: ID3FrameRecordingYear(year: Int(yearField.text ?? "2019") ?? 2019),
+                    .genre: ID3FrameGenre(genre: ID3Genre(rawValue: genreTextFieldContent) ?? defaultGenre,
                                            description: genreDescriptionField.text ?? "Rock and roll"),
-                    .TrackPosition: ID3FramePartOfTotal(part: 2, total: 9)
+                    .trackPosition: ID3FramePartOfTotal(part: 2, total: 9)
                 ]
             )
             let documentDirectory = try FileManager.default.url(
                 for: .documentDirectory,
                 in: .userDomainMask,
-                appropriateFor:nil,
-                create:false
+                appropriateFor: nil,
+                create: false
             )
             let newPath = documentDirectory.appendingPathComponent("example.mp3").path
             print(PathLoader().pathFor(name: "example", fileType: "mp3"))
@@ -64,7 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print(error)
         }
     }
-    
+
     @IBAction func load(_ sender: Any) {
         do {
             var id3Tag: ID3Tag?
@@ -77,8 +79,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     let documentDirectory = try FileManager.default.url(
                         for: .documentDirectory,
                         in: .userDomainMask,
-                        appropriateFor:nil,
-                        create:false
+                        appropriateFor: nil,
+                        create: false
                     )
                     let newPath = documentDirectory.appendingPathComponent("example.mp3").path
                     id3Tag = try id3TagEditor.read(from: newPath)
@@ -88,17 +90,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
             }
-            
-            titleTextField.text = (id3Tag?.frames[.Title] as? ID3FrameWithStringContent)?.content
-            albumTextField.text = (id3Tag?.frames[.Album] as? ID3FrameWithStringContent)?.content
-            albumArtistField.text = (id3Tag?.frames[.AlbumArtist] as? ID3FrameWithStringContent)?.content
-            artistTextField.text = (id3Tag?.frames[.Artist] as? ID3FrameWithStringContent)?.content
+
+            titleTextField.text = (id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content
+            albumTextField.text = (id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content
+            albumArtistField.text = (id3Tag?.frames[.albumArtist] as? ID3FrameWithStringContent)?.content
+            artistTextField.text = (id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content
             // genre is setted only by the
-            genreIdentifierField.text = "\((id3Tag?.frames[.Genre] as? ID3FrameGenre)?.identifier?.rawValue ?? -1)"
-            genreDescriptionField.text = (id3Tag?.frames[.Genre] as? ID3FrameGenre)?.description
-            yearField.text = "\((id3Tag?.frames[.RecordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
-            if let attachedPicture = (id3Tag?.frames[.AttachedPicture(.FrontCover)] as? ID3FrameAttachedPicture)?.picture {
-                attachedPictureImage.image = UIImage(data: attachedPicture)
+            genreIdentifierField.text = "\((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier?.rawValue ?? -1)"
+            genreDescriptionField.text = (id3Tag?.frames[.genre] as? ID3FrameGenre)?.description
+            yearField.text = "\((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
+            if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
+                attachedPictureImage.image = UIImage(data: attachedPictureFrame.picture)
             } else {
                 //image is removed when the user press the update button
                 attachedPictureImage.image = nil
@@ -107,7 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print(error)
         }
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

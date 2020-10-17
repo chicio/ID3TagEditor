@@ -17,7 +17,10 @@ class ID3FrameSizeParserTest: XCTestCase {
         )
 
         XCTAssertEqual(
-                id3FrameSizeParser.parse(mp3: mp3, framePosition: ID3TagConfiguration().headerSize(), version: .version2),
+                id3FrameSizeParser.parse(
+                    mp3: mp3, framePosition: ID3TagConfiguration().headerSize(),
+                    version: .version2
+                ),
                 mp3.length + ID3FrameConfiguration().headerSizeFor(version: .version2)
         )
     }
@@ -30,7 +33,10 @@ class ID3FrameSizeParserTest: XCTestCase {
         )
 
         XCTAssertEqual(
-                id3FrameSizeParser.parse(mp3: mp3, framePosition: ID3TagConfiguration().headerSize(), version: .version3),
+                id3FrameSizeParser.parse(
+                    mp3: mp3, framePosition: ID3TagConfiguration().headerSize(),
+                    version: .version3
+                ),
                 mp3.length + ID3FrameConfiguration().headerSizeFor(version: .version3)
         )
     }

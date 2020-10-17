@@ -9,8 +9,8 @@ import Foundation
 @testable import ID3TagEditor
 
 class MockSynchsafeEncoder: SynchsafeEncoder {
-    private let encodedValue:  UInt32
-    
+    private let encodedValue: UInt32
+
     init(encodedValue: UInt32) {
         self.encodedValue = encodedValue
     }

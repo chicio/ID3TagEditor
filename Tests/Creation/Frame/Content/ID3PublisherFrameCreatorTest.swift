@@ -14,33 +14,36 @@ class ID3PublisherFrameCreatorTest: XCTestCase {
         let id3PublisherFrameCreator = ID3PublisherFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Publisher
+                frameTypeToBeChecked: .publisher
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
-        let newTagBytes = id3PublisherFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
-        
+
+        let newTagBytes = id3PublisherFrameCreator.createFrames(
+            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            tag: tagBytes
+        )
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
+
     func testFrameCreationWhenThereIsAPublisher() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Publisher : ID3FrameWithStringContent(content: "::an example publisher::")]
+            frames: [.publisher: ID3FrameWithStringContent(content: "::an example publisher::")]
         )
         let id3PublisherFrameCreator = ID3PublisherFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Publisher
+                frameTypeToBeChecked: .publisher
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3PublisherFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

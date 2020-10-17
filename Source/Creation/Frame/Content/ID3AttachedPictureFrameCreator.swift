@@ -29,7 +29,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
 
     func createFrame(using attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
         var frame: [UInt8] = id3FrameConfiguration.identifierFor(
-                frameType: .AttachedPicture,
+                frameType: .attachedPicture,
                 version: id3Tag.properties.version
         )
         var contentAsBytes: [UInt8] = [UInt8]()
@@ -38,7 +38,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
                 version: id3Tag.properties.version,
                 format: attachedPicture.format
         ))
-        contentAsBytes.append(contentsOf: [UInt8](attachedPicture.picture));
+        contentAsBytes.append(contentsOf: [UInt8](attachedPicture.picture))
         frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(
                 content: contentAsBytes,
                 version: id3Tag.properties.version

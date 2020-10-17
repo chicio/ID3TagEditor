@@ -8,33 +8,34 @@
 
 import Foundation
 
-/// An enum used to identify the different types of frame parsed by the ID3TagEditor. This must be used to acces the frame data as identifier inside the dictionary
+/// An enum used to identify the different types of frame parsed by the ID3TagEditor.
+/// This must be used to acces the frame data as identifier inside the dictionary
 /// of frame in the `ID3tag` `frames` properties.
 public enum FrameName: Equatable, Hashable, CaseIterable {
     public static var allCases: [FrameName] {
         return [
-            .Title,
-            .Album,
-            .AlbumArtist,
-            .Artist,
-            .Composer,
-            .Conductor,
-            .ContentGrouping,
-            .Copyright,
-            .EncodedBy,
-            .EncoderSettings,
-            .FileOwner,
-            .Lyricist,
-            .MixArtist,
-            .Publisher,
-            .Subtitle,
-            .Genre,
-            .DiscPosition,
-            .TrackPosition,
-            .RecordingDayMonth,
-            .RecordingYear,
-            .RecordingHourMinute,
-            .RecordingDateTime,
+            .title,
+            .album,
+            .albumArtist,
+            .artist,
+            .composer,
+            .conductor,
+            .contentGrouping,
+            .copyright,
+            .encodedBy,
+            .encoderSettings,
+            .fileOwner,
+            .lyricist,
+            .mixArtist,
+            .publisher,
+            .subtitle,
+            .genre,
+            .discPosition,
+            .trackPosition,
+            .recordingDayMonth,
+            .recordingYear,
+            .recordingHourMinute,
+            .recordingDateTime,
             .iTunesGrouping,
             .iTunesMovementName,
             .iTunesMovementIndex,
@@ -44,60 +45,60 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .iTunesPodcastID,
             .iTunesPodcastKeywords
         ]
-        + ID3PictureType.allCases.map({ .AttachedPicture($0) })
-        + ID3FrameContentLanguage.allCases.map({ .UnsynchronizedLyrics($0) })
+        + ID3PictureType.allCases.map({ .attachedPicture($0) })
+        + ID3FrameContentLanguage.allCases.map({ .unsynchronizedLyrics($0) })
     }
-    
+
     /// Title frame name.
-    case Title
+    case title
     /// Album frame name.
-    case Album
+    case album
     /// AlbumArtist  frame name.
-    case AlbumArtist
+    case albumArtist
     /// Artist frame name.
-    case Artist
+    case artist
     /// Composer frame name.
-    case Composer
+    case composer
     /// Conductor frame name.
-    case Conductor
+    case conductor
     /// ContentGrouping frame name.
-    case ContentGrouping
+    case contentGrouping
     /// Copyright frame name.
-    case Copyright
+    case copyright
     /// EncodedBy frame name.
-    case EncodedBy
+    case encodedBy
     /// EncoderSettings frame name.
-    case EncoderSettings
+    case encoderSettings
     /// File Owner frame name. Version 2.3 and 2.4 only.
-    case FileOwner
+    case fileOwner
     /// Lyricist frame name
-    case Lyricist
+    case lyricist
     /// Mix Artist frame name.
-    case MixArtist
+    case mixArtist
     /// Publisher frame name.
-    case Publisher
+    case publisher
     /// Subtitle frame name
-    case Subtitle
+    case subtitle
     /// Genre frame name.
-    case Genre
+    case genre
     /// Disc Position frame name.
-    case DiscPosition
+    case discPosition
     /// Track Position frame name.
-    case TrackPosition
+    case trackPosition
     /// RecordingDayMonth frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
-    case RecordingDayMonth
+    case recordingDayMonth
     /// RecordingYear frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
-    case RecordingYear
+    case recordingYear
     /// RecordingHourMinute frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
-    case RecordingHourMinute
+    case recordingHourMinute
     /// RecordingDateTime frame name. Valid only for tag version 2.4. For version 2.2 and 2.3 use RecordingDateTime.
-    case RecordingDateTime
+    case recordingDateTime
     /// AttachedPicture frame name
     /// - pictureType:
-    case AttachedPicture(_ pictureType: ID3PictureType)
+    case attachedPicture(_ pictureType: ID3PictureType)
     /// Unsynchronized lyrics frame name
     /// - language: language of the lyrics, according to the ISO-639-2 standard
-    case UnsynchronizedLyrics(_ language: ID3FrameContentLanguage)
+    case unsynchronizedLyrics(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
     ///Movement name frame name.
@@ -114,5 +115,4 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case iTunesPodcastID
     /// Podcast keywords frame name, Version 2.3 and 2.4 only.
     case iTunesPodcastKeywords
-
 }

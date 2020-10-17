@@ -12,167 +12,167 @@ import Foundation
  */
 public enum ID3Genre: Int, Equatable, Hashable, CaseIterable {
     /// Blues genre.
-    case Blues = 0
+    case blues = 0
     /// Classic rock genre.
-    case ClassicRock = 1
+    case classicRock = 1
     /// Country genre.
-    case Country = 2
+    case country = 2
     /// Dance genre.
-    case Dance = 3
+    case dance = 3
     /// Disco genre.
-    case Disco = 4
+    case disco = 4
     /// Funk genre.
-    case Funk = 5
+    case funk = 5
     /// Grunge genre.
-    case Grunge = 6
+    case grunge = 6
     /// Hip hop genre.
-    case HipHop = 7
+    case hipHop = 7
     /// Jazz genre.
-    case Jazz = 8
+    case jazz = 8
     /// Metal genre.
-    case Metal = 9
+    case metal = 9
     /// New age genre.
-    case NewAge = 10
+    case newAge = 10
     /// Oldies genre.
-    case Oldies = 11
+    case oldies = 11
     /// Other genre.
-    case Other = 12
+    case other = 12
     /// Pop genre.
-    case Pop = 13
+    case pop = 13
     /// R&B genre.
-    case RAndB = 14
+    case rAndB = 14
     /// Rap genre.
-    case Rap = 15
+    case rap = 15
     /// Reggae genre.
-    case Reggae = 16
+    case reggae = 16
     /// Rock genre.
-    case Rock = 17
+    case rock = 17
     /// Techno genre.
-    case Techno = 18
+    case techno = 18
     /// Industrial genre.
-    case Industrial = 19
+    case industrial = 19
     /// Alternative genre.
-    case Alternative = 20
+    case alternative = 20
     /// Ska genre.
-    case Ska = 21
+    case ska = 21
     /// Death metal genre.
-    case DeathMetal = 22
+    case deathMetal = 22
     /// Pranks genre.
-    case Pranks = 23
+    case pranks = 23
     /// Soundtrack genre.
-    case Soundtrack = 24
+    case soundtrack = 24
     /// Euro techno genre.
-    case EuroTechno = 25
+    case euroTechno = 25
     /// Ambient genre.
-    case Ambient = 26
+    case ambient = 26
     /// Tip hop genre.
-    case TripHop = 27
+    case tripHop = 27
     /// vocal genre.
-    case Vocal = 28
+    case vocal = 28
     /// Jazz funk genre.
-    case JazzFunk = 29
+    case jazzFunk = 29
     /// Fusion genre.
-    case Fusion = 30
+    case fusion = 30
     /// Trance genre.
-    case Trance = 31
+    case trance = 31
     /// Classical genre.
-    case Classical = 32
+    case classical = 32
     /// Instrumental genre.
-    case Instrumental = 33
+    case instrumental = 33
     /// Acid genre.
-    case Acid = 34
+    case acid = 34
     /// House genre.
-    case House = 35
+    case house = 35
     /// Game genre.
-    case Game = 36
+    case game = 36
     /// Soundclip genre.
-    case SoundClip = 37
+    case soundClip = 37
     /// Gospel genre.
-    case Gospel = 38
+    case gospel = 38
     /// Noise genre.
-    case Noise = 39
+    case noise = 39
     /// Altern rock genre.
-    case AlternRock = 40
+    case alternRock = 40
     /// Bass genre.
-    case Bass = 41
+    case bass = 41
     /// Soul genre.
-    case Soul = 42
+    case soul = 42
     /// Punk genre.
-    case Punk = 43
+    case punk = 43
     /// Space genre.
-    case Space = 44
+    case space = 44
     /// Meditative genre.
-    case Meditative = 45
+    case meditative = 45
     /// Instrumental pop genre.
-    case InstrumentalPop = 46
+    case instrumentalPop = 46
     /// Instrumental rock genre.
-    case InstrumentalRock = 47
+    case instrumentalRock = 47
     /// Ethnic genre.
-    case Ethnic = 48
+    case ethnic = 48
     /// Gothic genre.
-    case Gothic = 49
+    case gothic = 49
     /// Darkwave genre.
-    case Darkwave = 50
+    case darkwave = 50
     /// TechnoIndustrial genre.
-    case TechnoIndustrial = 51
+    case technoIndustrial = 51
     /// Electronic genre.
-    case Electronic = 52
+    case electronic = 52
     /// Pop folk genre.
-    case PopFolk = 53
+    case popFolk = 53
     /// Eurodance genre.
-    case Eurodance = 54
+    case eurodance = 54
     /// Dream genre.
-    case Dream = 55
+    case dream = 55
     /// Souther rock genre.
-    case SouthernRock = 56
+    case southernRock = 56
     /// Comedy genre.
-    case Comedy = 57
+    case comedy = 57
     /// Cult genre.
-    case Cult = 58
+    case cult = 58
     /// Gangsta genre.
-    case Gangsta = 59
+    case gangsta = 59
     /// Top 40 genre.
-    case Top40 = 60
+    case top40 = 60
     /// Christian rap genre.
-    case ChristianRap = 61
+    case christianRap = 61
     /// Pop funk genre.
-    case PopFunk = 62
+    case popFunk = 62
     /// Jungle genre.
-    case Jungle = 63
+    case jungle = 63
     /// Native american genre.
-    case NativeAmerican = 64
+    case nativeAmerican = 64
     /// Cabaret genre.
-    case Cabaret = 65
+    case cabaret = 65
     /// New wave genre.
-    case NewWave = 66
+    case newWave = 66
     /// Psychadelic genre.
-    case Psychadelic = 67
+    case psychadelic = 67
     /// Rave genre.
-    case Rave = 68
+    case rave = 68
     /// Showtunes genre.
-    case Showtunes = 69
+    case showtunes = 69
     /// Trailer genre.
-    case Trailer = 70
+    case trailer = 70
     /// Lofi genre.
-    case LoFi = 71
+    case loFi = 71
     /// Tribal genre.
-    case Tribal = 72
+    case tribal = 72
     /// Acid punk genre.
-    case AcidPunk = 73
+    case acidPunk = 73
     /// Acid jazz genre.
-    case AcidJazz = 74
+    case acidJazz = 74
     /// Polka genre.
-    case Polka = 75
+    case polka = 75
     /// Retro genre.
-    case Retro = 76
+    case retro = 76
     /// Musical genre.
-    case Musical = 77
+    case musical = 77
     /// Rock and roll genre.
-    case RockAndRoll = 78
+    case rockAndRoll = 78
     /// Hard rock genre.
-    case HardRock = 79
+    case hardRock = 79
     /// Remix genre.
-    case Remix = 80
+    case remix = 80
     /// Cover genre.
-    case Cover = 81
+    case cover = 81
 }

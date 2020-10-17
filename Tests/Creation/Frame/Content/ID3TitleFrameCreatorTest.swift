@@ -14,12 +14,15 @@ class ID3TitleFrameCreatorTest: XCTestCase {
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .Title
+                        frameTypeToBeChecked: .title
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+        let newTagBytes = id3TitleFrameCreator.createFrames(
+            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            tag: tagBytes
+        )
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -29,12 +32,12 @@ class ID3TitleFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Title : ID3FrameWithStringContent(content: "::an example title::")]
+            frames: [.title: ID3FrameWithStringContent(content: "::an example title::")]
         )
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameTypeToBeChecked: .Title
+                        frameTypeToBeChecked: .title
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

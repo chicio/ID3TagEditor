@@ -12,12 +12,12 @@ class Mp3FileWriter {
         try eventuallyCreateIntermediatesDirectoriesFor(path: path)
         try mp3.write(to: URL(fileURLWithPath: path))
     }
-    
+
     private func eventuallyCreateIntermediatesDirectoriesFor(path: String) throws {
         let fileUrl = URL(fileURLWithPath: NSString(string: path).deletingLastPathComponent)
         var isDirectory: ObjCBool = false
-        if (!FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) ||
-            !isDirectory.boolValue) {
+        if !FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) ||
+            !isDirectory.boolValue {
             try FileManager.default.createDirectory(at: fileUrl, withIntermediateDirectories: true)
         }
     }

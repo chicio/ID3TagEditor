@@ -8,6 +8,9 @@
 
 import Foundation
 
+// swiftlint:disable type_body_length
+// swiftlint:disable file_length
+
 /**
  List of language identifier used in frames that support localized content with language indication.
  The list of supported languages corresponds to the ISO-639-2 standard.

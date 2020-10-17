@@ -24,7 +24,10 @@ class ID3FrameCreatorsChainTest: XCTestCase {
         let id3FrameCreatorsChain = ID3FrameCreatorsChain()
         let currentTagBytes: [UInt8] = [0x1, 0x1]
 
-        let newTagBytes = id3FrameCreatorsChain.createFrames(id3Tag: ID3Tag(version: .version2, frames: [:]), tag: currentTagBytes)
+        let newTagBytes = id3FrameCreatorsChain.createFrames(
+            id3Tag: ID3Tag(version: .version2, frames: [:]),
+            tag: currentTagBytes
+        )
 
         XCTAssertEqual(currentTagBytes, newTagBytes)
     }

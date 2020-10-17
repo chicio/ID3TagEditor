@@ -14,33 +14,36 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
-                frameTypeToBeChecked: .Conductor
+                frameTypeToBeChecked: .conductor
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
-        let newTagBytes = id3ConductorFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
-        
+
+        let newTagBytes = id3ConductorFrameCreator.createFrames(
+            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            tag: tagBytes
+        )
+
         XCTAssertEqual(newTagBytes, tagBytes)
     }
-    
+
     func testFrameCreationWhenThereIsAConductor() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.Conductor : ID3FrameWithStringContent(content: "::an example conductor::")]
+            frames: [.conductor: ID3FrameWithStringContent(content: "::an example conductor::")]
         )
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
-                frameTypeToBeChecked: .Conductor
+                frameTypeToBeChecked: .conductor
             ),
             id3FrameConfiguration: ID3FrameConfiguration()
         )
-        
+
         let newTagBytes = id3ConductorFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
-        
+
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
 }

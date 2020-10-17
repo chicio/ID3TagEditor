@@ -14,12 +14,15 @@ class ID3AlbumArtistFrameCreatorTest: XCTestCase {
         let id3AlbumArtistFrameCreator = ID3AlbumArtistFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .AlbumArtist
+                        frameTypeToBeChecked: .albumArtist
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3AlbumArtistFrameCreator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: tagBytes)
+        let newTagBytes = id3AlbumArtistFrameCreator.createFrames(
+            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            tag: tagBytes
+        )
 
         XCTAssertEqual(newTagBytes, tagBytes)
     }
@@ -29,12 +32,12 @@ class ID3AlbumArtistFrameCreatorTest: XCTestCase {
         let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
-            frames: [.AlbumArtist : ID3FrameWithStringContent(content: "::an example album artist::")]
+            frames: [.albumArtist: ID3FrameWithStringContent(content: "::an example album artist::")]
         )
         let id3AlbumArtistFrameCreator = ID3AlbumArtistFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
-                        frameTypeToBeChecked: .AlbumArtist
+                        frameTypeToBeChecked: .albumArtist
                 ),
                 id3FrameConfiguration: ID3FrameConfiguration()
         )

@@ -9,18 +9,18 @@ import Foundation
 
 class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation {
     private let stringContentParser: ID3FrameStringContentParser
-    
+
     init(stringContentParser: ID3FrameStringContentParser) {
         self.stringContentParser = stringContentParser
     }
-    
-    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> ()) {
+
+    func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> Void) {
         if let frameContent = stringContentParser.parse(frame: frame, version: version) {
             parse(content: frameContent, completed: completed)
         }
     }
 
-    private func parse(content: String, completed: (FrameName, ID3Frame) -> ()) {
+    private func parse(content: String, completed: (FrameName, ID3Frame) -> Void) {
         var recordingDateTime: RecordingDateTime = RecordingDateTime(
             date: RecordingDate(day: nil, month: nil, year: nil),
             time: RecordingTime(hour: nil, minute: nil)
@@ -35,7 +35,7 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
             recordingDateTime.time?.hour = calendar.component(.hour, from: date)
             recordingDateTime.time?.minute = calendar.component(.minute, from: date)
         } else {
-            /**
+            /*
              Fallback case:
              A lot mp3 that have a id3 tag version 2.4 use the recording time frame ("TRDC") in a wrong way.
              Instead of a valid timestamp they have a 4 digit number that is equivalent to the year that was
@@ -45,6 +45,6 @@ class ID3RecordingTimeFrameContentParsingOperation: FrameContentParsingOperation
              */
             recordingDateTime.date?.year = Int(content)
         }
-        completed(.RecordingDateTime, ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
+        completed(.recordingDateTime, ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
     }
 }

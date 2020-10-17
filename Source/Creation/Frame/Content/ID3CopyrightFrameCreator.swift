@@ -9,8 +9,13 @@ import Foundation
 
 class ID3CopyrightFrameCreator: ID3StringFrameCreator {
     override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
-        if let copyrightFrame = id3Tag.frames[.Copyright] as? ID3FrameWithStringContent {
-            return createFrameUsing(frameType: .Copyright, content: copyrightFrame.content, id3Tag: id3Tag, andAddItTo: tag)
+        if let copyrightFrame = id3Tag.frames[.copyright] as? ID3FrameWithStringContent {
+            return createFrameUsing(
+                frameType: .copyright,
+                content: copyrightFrame.content,
+                id3Tag: id3Tag,
+                andAddItTo: tag
+            )
         }
         return super.createFrames(id3Tag: id3Tag, tag: tag)
     }

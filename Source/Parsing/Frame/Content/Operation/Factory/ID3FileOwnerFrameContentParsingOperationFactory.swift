@@ -9,8 +9,8 @@ import Foundation
 
 class ID3FileOwnerFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.FileOwner, ID3FrameWithStringContent(content: content))
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
+            return (.fileOwner, ID3FrameWithStringContent(content: content))
         }
     }
 }

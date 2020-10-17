@@ -19,7 +19,7 @@ public class ID3FrameGenre: ID3Frame, Equatable, CustomDebugStringConvertible {
     public var debugDescription: String {
         return "\(String(describing: identifier)) - \(String(describing: description))"
     }
-    
+
     /**
      Init a ID3 genre frame.
 
@@ -39,7 +39,7 @@ public class ID3FrameGenre: ID3Frame, Equatable, CustomDebugStringConvertible {
 
      - returns: true if the genre values are the same, else false.
      */
-    public static func ==(lhs: ID3FrameGenre, rhs: ID3FrameGenre) -> Bool {
+    public static func == (lhs: ID3FrameGenre, rhs: ID3FrameGenre) -> Bool {
         return lhs.description == rhs.description && lhs.identifier == rhs.identifier
     }
 }

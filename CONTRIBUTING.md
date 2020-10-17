@@ -10,8 +10,8 @@ We love your input! :heart: We want to make contributing to this project as easy
 ## We Develop with Github
 We use github to host code, to track issues and feature requests, as well as accept pull requests.
 
-## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
-Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)). We actively welcome your pull requests:
+## We Use [Github Flow](github flow), So All Code Changes Happen Through Pull Requests
+Pull requests are the best way to propose changes to the codebase (we use [Github Flow](github flow)). We actively welcome your pull requests:
 
 1. Fork the repo and create your branch from `master`.
 2. If you've added code that should be tested, add tests.
@@ -38,9 +38,12 @@ People *love* :cupid: beautiful bug reports.
 We will review every pull request in detail and eventually start discussions about the implementation. We will reject pull request that doesn't respect the code style described below.
 
 ## Coding Style
-* 4 spaces for indentation rather than tabs
-* 120 character line length
-* Add author name to new files
+This project uses [SwiftLint]() for code linting. A Pull Request will not be merged if it doesn't respect the SwiftLint linting rules (default + [some overrides](XXX)).
+In fact one of the checks that a Pull Request must pass is the SwiftLint linting (automatically run by Github Actions).
+
+## Test Coverage
+This project uses Codecov as code coverage tool. Every new Pull Request should have a test coverage equal to or greater than master. 
+Codecov code coverage is one of the Pull Request checks (automatically run by Github Actions). 
 
 ## License
 By contributing, you agree that your contributions will be licensed under its [MIT License](https://github.com/chicio/ID3TagEditor/blob/master/LICENSE.md).

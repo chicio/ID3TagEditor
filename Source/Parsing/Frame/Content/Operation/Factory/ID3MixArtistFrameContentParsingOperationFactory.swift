@@ -9,8 +9,8 @@ import Foundation
 
 class ID3MixArtistFrameContentParsingOperationFactory {
     static func make() -> ID3FrameStringContentParsingOperation {
-        return ID3FrameStringContentParsingOperationFactory.make() { (content: String) in
-            return (.MixArtist, ID3FrameWithStringContent(content: content))
+        return ID3FrameStringContentParsingOperationFactory.make { (content: String) in
+            return (.mixArtist, ID3FrameWithStringContent(content: content))
         }
     }
 }
