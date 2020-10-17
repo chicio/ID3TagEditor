@@ -99,9 +99,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             genreIdentifierField.text = "\((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier?.rawValue ?? -1)"
             genreDescriptionField.text = (id3Tag?.frames[.genre] as? ID3FrameGenre)?.description
             yearField.text = "\((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
-            if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture,
-                let attachedPicture = attachedPictureFrame?.picture {
-                attachedPictureImage.image = UIImage(data: attachedPicture)
+            if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
+                attachedPictureImage.image = UIImage(data: attachedPictureFrame.picture)
             } else {
                 //image is removed when the user press the update button
                 attachedPictureImage.image = nil
