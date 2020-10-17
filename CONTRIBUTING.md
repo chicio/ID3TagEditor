@@ -38,7 +38,7 @@ People *love* :cupid: beautiful bug reports.
 We will review every pull request in detail and eventually start discussions about the implementation. We will reject pull request that doesn't respect the code style described below.
 
 ## Coding Style
-This project uses [SwiftLint]() for code linting. A Pull Request will not be merged if it doesn't respect the SwiftLint linting rules (default + [some overrides](XXX)).
+This project uses [SwiftLint]() for code linting. A Pull Request will not be merged if it doesn't respect the SwiftLint linting rules (default + [some overrides](https://github.com/chicio/ID3TagEditor/blob/master/.swiftlint.yml)).
 In fact one of the checks that a Pull Request must pass is the SwiftLint linting (automatically run by Github Actions).
 
 ## Test Coverage
