@@ -1,0 +1,2 @@
+ignore:
+  - "Tests/Mock"  # ignore folders and all its contents
