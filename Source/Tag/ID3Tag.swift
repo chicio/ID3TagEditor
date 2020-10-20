@@ -57,9 +57,20 @@ public class ID3Tag: CustomDebugStringConvertible {
         - recordingDayMonth: \((self.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.debugDescription ?? "-")
         - recordingHourMinute: \((self.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.debugDescription ?? "-")
         - genre: \((self.frames[.genre] as? ID3FrameGenre)?.debugDescription ?? "-")
-        - attachedPicture: \(ID3PictureType.allCases.reduce("", {
-            $0 + " - " + ((self.frames[.attachedPicture($1)] as? ID3FrameAttachedPicture)?.debugDescription ?? "")
-        }) )
+        - attachedPicture:\(ID3PictureType.allCases.reduce("", { (accumulator: String, current: ID3PictureType) in
+            if let frameDescription = (self.frames[.attachedPicture(current)] as? ID3FrameAttachedPicture)?.debugDescription {
+                return accumulator + "\n" + frameDescription + "\n"
+            }
+
+            return accumulator
+        }))
+        - unsynchronisedLyrics:\(ID3FrameContentLanguage.allCases.reduce("", { (accumulator: String, current: ID3FrameContentLanguage) in
+            if let frameDescription = (self.frames[.unsynchronizedLyrics(current)] as? ID3FrameUnsynchronisedLyrics)?.debugDescription {
+                return accumulator + "\n" + frameDescription + "\n"
+            }
+
+            return accumulator
+        }))
         """
     }
 

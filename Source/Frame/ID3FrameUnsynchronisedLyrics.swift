@@ -8,9 +8,19 @@
 
 import Foundation
 
-public class ID3FrameUnsynchronisedLyrics: ID3FrameWithStringContent {
+public class ID3FrameUnsynchronisedLyrics: ID3FrameWithStringContent, CustomDebugStringConvertible {
+    /// The language of the lyrics contained in the frame
     public let language: ID3FrameContentLanguage
+    /// A short description of the lyrics contained in the frame
     public let contentDescription: String
+    /// ID3FrameAttachedPicture debug description.
+    public var debugDescription: String {
+        return """
+            language: \(language)
+            contentDescription: \(contentDescription)
+            content: \(content)
+            """
+    }
 
     public init(language: ID3FrameContentLanguage, contentDescription: String, content: String) {
         self.language = language
