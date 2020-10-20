@@ -13,8 +13,12 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3TagTest: XCTestCase {
-
-    func testDebugDescription() throws {
+    static let allTests = [
+        ("testDebugDescriptionv3", testDebugDescriptionv3),
+        ("testDebugDescriptionv4", testDebugDescriptionv4)
+    ]
+    
+    func testDebugDescriptionv3() throws {
         let artFront = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -61,7 +65,8 @@ class ID3TagTest: XCTestCase {
             ]
         )
 
-        XCTAssertEqual(id3Tag.debugDescription,
+        XCTAssertEqual(
+            id3Tag.debugDescription,
                        """
             ID3Tag:
             - size: 0
@@ -111,5 +116,101 @@ class ID3TagTest: XCTestCase {
             content: v3 ita unsync lyrics
 
             """)
+    }
+ 
+    func testDebugDescriptionv4() throws {
+        let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
+        let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
+
+        let id3Tag = ID3Tag(
+            version: .version4,
+            frames: [
+                .title: ID3FrameWithStringContent(content: "title V4"),
+                .album: ID3FrameWithStringContent(content: "album V4"),
+                .albumArtist: ID3FrameWithStringContent(content: "album artist V4"),
+                .artist: ID3FrameWithStringContent(content: "artist V4"),
+                .composer: ID3FrameWithStringContent(content: "composer V4"),
+                .conductor: ID3FrameWithStringContent(content: "conductor V4"),
+                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V4"),
+                .copyright: ID3FrameWithStringContent(content: "Copyright V4"),
+                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V4"),
+                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V4"),
+                .fileOwner: ID3FrameWithStringContent(content: "FileOwner V4"),
+                .lyricist: ID3FrameWithStringContent(content: "Lyricist V4"),
+                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V4"),
+                .publisher: ID3FrameWithStringContent(content: "Publisher V4"),
+                .subtitle: ID3FrameWithStringContent(content: "Subtitle V4"),
+                .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
+                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
+                .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
+                .recordingDateTime: ID3FrameRecordingDateTime(recordingDateTime: RecordingDateTime(date: RecordingDate(day: 15, month: 10, year: 2020),
+                                                                                                    time: RecordingTime(hour: 21, minute: 50))),
+                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
+                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
+                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "V4 ita unsync lyrics"),
+                .unsynchronizedLyrics(.eng): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "V4 eng unsync lyrics"),
+                .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V4"),
+                .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V4"),
+                .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
+                .iTunesMovementCount: ID3FrameWithIntegerContent(value: 13),
+                .iTunesPodcastCategory: ID3FrameWithStringContent(content: "PodcastCategory V4"),
+                .iTunesPodcastDescription: ID3FrameWithStringContent(content: "PodcastDescription V4"),
+                .iTunesPodcastID: ID3FrameWithStringContent(content: "PodcastID V4"),
+                .iTunesPodcastKeywords: ID3FrameWithStringContent(content: "PodcastKeywords V4")
+            ]
+        )
+     
+        XCTAssertEqual(
+            id3Tag.debugDescription,
+            """
+            ID3Tag:
+            - size: 0
+            - version: version4
+            - artist: artist V4
+            - composer: composer V4
+            - conductor: conductor V4
+            - contentGrouping: ContentGrouping V4
+            - copyright: Copyright V4
+            - encodedBy: EncodedBy V4
+            - encoderSettings: EncoderSettings V4
+            - fileOwner: FileOwner V4
+            - iTunesGrouping: ItunesGrouping V4
+            - lyricist: Lyricist V4
+            - mixArtist: MixArtist V4
+            - iTunesMovementIndex: 6
+            - iTunesMovementCount: 13
+            - iTunesMovementName: MovementName V4
+            - podcastCategory: PodcastCategory V4
+            - podcastDescription: PodcastDescription V4
+            - podcastID: PodcastID V4
+            - podcastKeywords: PodcastKeywords V4
+            - publisher: Publisher V4
+            - subtitle: Subtitle V4
+            - albumArtist: album artist V4
+            - title: title V4
+            - trackPosition: 2 of 9
+            - discPosition: 1 of 3
+            - album: album V4
+            - recordingDateTime: Date: (15 10 2020 - Time: (21 50)
+            - recordingYear: -
+            - recordingDayMonth: -
+            - recordingHourMinute: -
+            - genre: Optional(ID3TagEditor.ID3Genre.metal) - Optional("Metalcore")
+            - attachedPicture:
+            frontCover jpeg
+
+            backCover jpeg
+
+            - unsynchronisedLyrics:
+            language: eng
+            contentDescription: CD
+            content: V4 eng unsync lyrics
+
+            language: ita
+            contentDescription: CD
+            content: V4 ita unsync lyrics
+
+            """
+        )
     }
 }
