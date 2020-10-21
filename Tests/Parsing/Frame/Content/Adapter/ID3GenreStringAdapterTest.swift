@@ -38,4 +38,11 @@ class ID3GenreStringAdapterTest: XCTestCase {
         XCTAssertNil(id3GenreStringAdapter.adapt(genre: "(XXX)").identifier)
         XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(XXX)").description, "(XXX)")
     }
+
+    static let allTests = [
+        ("testAdaptGenreWithDescription", testAdaptGenreWithDescription),
+        ("testAdaptGenreWithoutDescription", testAdaptGenreWithoutDescription),
+        ("testAdaptGenreWithoutGenreIdentifier", testAdaptGenreWithoutGenreIdentifier),
+        ("testAdaptID3v3NewGenresNotNumeric", testAdaptID3v3NewGenresNotNumeric)
+    ]
 }

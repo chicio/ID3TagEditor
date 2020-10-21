@@ -46,4 +46,9 @@ class ID3iTunesMovementNameFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAMovementName", testFrameCreationWhenThereIsAMovementName),
+        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName)
+    ]
 }

@@ -34,4 +34,9 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
         XCTAssertTrue(timestampCreator.createFromRecordingDateTimeHasBeenCalled)
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsACompleteRecordingDateTime",
+         testFrameCreationWhenThereIsACompleteRecordingDateTime)
+    ]
 }

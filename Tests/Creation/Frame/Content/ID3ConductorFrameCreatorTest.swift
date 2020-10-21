@@ -46,4 +46,9 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAConductor", testFrameCreationWhenThereIsAConductor),
+        ("testNoFrameCreationWhenThereIsNoConductor", testNoFrameCreationWhenThereIsNoConductor)
+    ]
 }

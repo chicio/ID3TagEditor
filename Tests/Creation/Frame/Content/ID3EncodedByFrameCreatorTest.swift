@@ -46,4 +46,9 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAnEncodedBy", testFrameCreationWhenThereIsAnEncodedBy),
+        ("testNoFrameCreationWhenThereIsNoEncodedBy", testNoFrameCreationWhenThereIsNoEncodedBy)
+    ]
 }

@@ -22,4 +22,9 @@ class Mp3FileReaderTest: XCTestCase {
 
         XCTAssertNoThrow(try mp3FileReader.readFrom(path: path))
     }
+
+    static let allTests = [
+        ("testNotAnMp3file", testNotAnMp3file),
+        ("testMp3File", testMp3File)
+    ]
 }

@@ -46,4 +46,9 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAFileOwner", testFrameCreationWhenThereIsAFileOwner),
+        ("testNoFrameCreationWhenThereIsNoFileOwner", testNoFrameCreationWhenThereIsNoFileOwner)
+    ]
 }

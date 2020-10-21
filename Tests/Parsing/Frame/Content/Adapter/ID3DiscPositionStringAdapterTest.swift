@@ -31,4 +31,10 @@ class ID3DiscPositionStringAdapterTest: XCTestCase {
         XCTAssertEqual(discPosition.part, 0)
         XCTAssertNil(discPosition.total)
     }
+
+    static let allTests = [
+        ("testAdaptNotANumberDiscPosition", testAdaptNotANumberDiscPosition),
+        ("testAdaptDiscPositionWithoutTotalDiscs", testAdaptDiscPositionWithoutTotalDiscs),
+        ("testAdaptDiscPositionWithTotalDiscs", testAdaptDiscPositionWithTotalDiscs)
+    ]
 }

@@ -13,11 +13,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3TagTest: XCTestCase {
-    static let allTests = [
-        ("testDebugDescriptionv3", testDebugDescriptionv3),
-        ("testDebugDescriptionv4", testDebugDescriptionv4)
-    ]
-
     func testDebugDescriptionv3() throws {
         let artFront = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -213,4 +208,9 @@ class ID3TagTest: XCTestCase {
             """
         )
     }
+
+    static let allTests = [
+        ("testDebugDescriptionv3", testDebugDescriptionv3),
+        ("testDebugDescriptionv4", testDebugDescriptionv4)
+    ]
 }

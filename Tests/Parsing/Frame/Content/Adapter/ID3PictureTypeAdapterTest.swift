@@ -52,4 +52,11 @@ class ID3PictureTypeAdapterTest: XCTestCase {
 
         XCTAssertEqual(id3PictureTypeAdapter.adapt(frame: frame, format: .png, version: .version3), .frontCover)
     }
+
+    static let allTests = [
+        ("testExtractTypeFromV2TagJpg", testExtractTypeFromV2TagJpg),
+        ("testExtractTypeFromV2TagPng", testExtractTypeFromV2TagPng),
+        ("testExtractTypeFromV3TagJpg", testExtractTypeFromV3TagJpg),
+        ("testExtractTypeFromV3TagPng", testExtractTypeFromV3TagPng)
+    ]
 }

@@ -31,4 +31,10 @@ class ID3TagVersionParserTest: XCTestCase {
         )
         XCTAssertEqual(.version3, id3VersionParser.parse(mp3: mp3WithV2Tag))
     }
+
+    static let allTests = [
+        ("testExtractVersion2", testExtractVersion2),
+        ("testExtractVersion3", testExtractVersion3),
+        ("testDefaultVersion", testDefaultVersion)
+    ]
 }

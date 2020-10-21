@@ -46,4 +46,9 @@ class ID3MixArtistFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAMixArtist", testFrameCreationWhenThereIsAMixArtist),
+        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist)
+    ]
 }

@@ -12,4 +12,8 @@ class ID3FrameConfigurationTest: XCTestCase {
     func testInvalidIdentifierName() {
         XCTAssertEqual(ID3FrameConfiguration().frameTypeFor(identifier: "::not-valid::", version: .version2), .invalid)
     }
+
+    static let allTests = [
+        ("testInvalidIdentifierName", testInvalidIdentifierName)
+    ]
 }

@@ -46,4 +46,9 @@ class ID3ContentGroupingFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAContentGrouping", testFrameCreationWhenThereIsAContentGrouping),
+        ("testNoFrameCreationWhenThereIsNoContentGrouping", testNoFrameCreationWhenThereIsNoContentGrouping)
+    ]
 }

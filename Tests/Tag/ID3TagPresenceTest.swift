@@ -41,4 +41,11 @@ class ID3TagPresenceTest: XCTestCase {
         XCTAssertFalse(presence.isTagPresentIn(mp3: mp3Sample, version: .version2))
         XCTAssertFalse(presence.isTagPresentIn(mp3: mp3Sample, version: .version3))
     }
+
+    static let allTests = [
+        ("testHeaderVersion2IsPresent", testHeaderVersion2IsPresent),
+        ("testHeaderVersion3IsPresent", testHeaderVersion3IsPresent),
+        ("testTagNotPresent", testTagNotPresent),
+        ("testTagNotPresentSizeTooSmall", testTagNotPresentSizeTooSmall)
+    ]
 }

@@ -46,4 +46,9 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
+        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex)
+    ]
 }

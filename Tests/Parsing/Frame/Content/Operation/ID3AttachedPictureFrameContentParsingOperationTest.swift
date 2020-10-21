@@ -52,4 +52,9 @@ class ID3AttachedPictureFrameContentParsingOperationTest: XCTestCase {
                     expectation.fulfill()
         })
     }
+
+    static let allTests = [
+        ("testSetTagAttachedPictureJpg", testSetTagAttachedPictureJpg),
+        ("testSetTagAttachedPicturePng", testSetTagAttachedPicturePng)
+    ]
 }

@@ -46,4 +46,9 @@ class ID3ComposerFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAComposer", testFrameCreationWhenThereIsAComposer),
+        ("testNoFrameCreationWhenThereIsNoComposer", testNoFrameCreationWhenThereIsNoComposer)
+    ]
 }

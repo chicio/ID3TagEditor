@@ -66,4 +66,10 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAnYear", testFrameCreationWhenThereIsAnYear),
+        ("testNoFrameCreationWhenIsMajorThanVersion3", testNoFrameCreationWhenIsMajorThanVersion3),
+        ("testNoFrameCreationWhenThereIsNoYear", testNoFrameCreationWhenThereIsNoYear)
+    ]
 }

@@ -63,4 +63,9 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
                 + content
         )
     }
+
+    static let allTests = [
+        ("testParsingValidFrame", testParsingValidFrame),
+        ("testParsingInvalidLanguage", testParsingInvalidLanguage)
+    ]
 }

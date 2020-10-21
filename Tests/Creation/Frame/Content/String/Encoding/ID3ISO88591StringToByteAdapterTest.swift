@@ -21,4 +21,8 @@ class ID3ISO88591StringToByteAdapterTest: XCTestCase {
 
         XCTAssertEqual(bytes, ENCODING + STRING)
     }
+
+    static let allTests = [
+        ("testEncodeStringToISO88591WithEncodingByte", testEncodeStringToISO88591WithEncodingByte)
+    ]
 }

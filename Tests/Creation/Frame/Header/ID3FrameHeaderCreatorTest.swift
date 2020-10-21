@@ -10,6 +10,10 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3FrameHeaderCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testCreate", testCreate)
+    ]
+
     func testCreate() {
         let headerCreator = ID3FrameHeaderCreator(id3FrameConfiguration: ID3FrameConfiguration(),
                                                   frameContentSizeCalculator: MockFrameContentSizeCalculatorForHeader(),

@@ -31,4 +31,10 @@ class ID3TrackPositionStringAdapterTest: XCTestCase {
         XCTAssertEqual(trackPosition.part, 0)
         XCTAssertNil(trackPosition.total)
     }
+
+    static let allTests = [
+        ("testAdaptNotANumberTrackPosition", testAdaptNotANumberTrackPosition),
+        ("testAdaptTrackPositionWithoutTotalTracks", testAdaptTrackPositionWithoutTotalTracks),
+        ("testAdaptTrackPositionWithTotalTrack", testAdaptTrackPositionWithTotalTrack)
+    ]
 }

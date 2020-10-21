@@ -22,4 +22,8 @@ class ID3UTF16StringToByteAdapterTest: XCTestCase {
 
         XCTAssertEqual(bytes, ENCODING + BOM + STRING)
     }
+
+    static let allTests = [
+        ("testEncodeStringToUTF16WithEncodingByte", testEncodeStringToUTF16WithEncodingByte)
+    ]
 }

@@ -46,4 +46,9 @@ class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
+        ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping)
+    ]
 }

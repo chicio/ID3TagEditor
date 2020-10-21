@@ -46,4 +46,9 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsACopyright", testFrameCreationWhenThereIsACopyright),
+        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoCopyright)
+    ]
 }
