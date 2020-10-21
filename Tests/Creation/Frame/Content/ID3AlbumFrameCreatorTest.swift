@@ -46,4 +46,9 @@ class ID3AlbumFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAnAlbum", testFrameCreationWhenThereIsAnAlbum),
+        ("testNoFrameCreationWhenThereIsNoAlbum", testNoFrameCreationWhenThereIsNoAlbum)
+    ]
 }

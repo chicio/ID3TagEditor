@@ -305,4 +305,10 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V4")
     }
+
+    static let allTests = [
+        ("testReadWritev2", testReadWritev2),
+        ("testReadWritev3", testReadWritev3),
+        ("testReadWritev4", testReadWritev4)
+    ]
 }

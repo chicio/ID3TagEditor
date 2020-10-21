@@ -9,11 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
-    static let allTests = [
-        ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
-        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex)
-    ]
-
     func testNoFrameCreationWhenThereIsNoMovementIndex() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3MovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
@@ -51,4 +46,9 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
+        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex)
+    ]
 }

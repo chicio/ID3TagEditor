@@ -9,11 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3DiscPositionFrameCreatorTest: XCTestCase {
-    static let allTests = [
-        ("testFrameCreationWhenThereIsADiscPosition", testFrameCreationWhenThereIsADiscPosition),
-        ("testNoFrameCreationWhenThereIsNoDiscPosition", testNoFrameCreationWhenThereIsNoDiscPosition)
-    ]
-
     func testNoFrameCreationWhenThereIsNoDiscPosition() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3DiscPositionFrameCreator = ID3DiscPositionFrameCreator(
@@ -51,4 +46,9 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsADiscPosition", testFrameCreationWhenThereIsADiscPosition),
+        ("testNoFrameCreationWhenThereIsNoDiscPosition", testNoFrameCreationWhenThereIsNoDiscPosition)
+    ]
 }

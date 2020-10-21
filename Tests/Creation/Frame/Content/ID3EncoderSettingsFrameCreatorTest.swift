@@ -9,11 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3EncoderSettingsFrameCreatorTest: XCTestCase {
-    static let allTests = [
-        ("testFrameCreationWhenThereAreEncoderSettings", testFrameCreationWhenThereAreEncoderSettings),
-        ("testNoFrameCreationWhenThereAreNoEncoderSettings", testNoFrameCreationWhenThereAreNoEncoderSettings)
-    ]
-
     func testNoFrameCreationWhenThereAreNoEncoderSettings() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3EncoderSettingsFrameCreator = ID3EncoderSettingsFrameCreator(
@@ -51,4 +46,9 @@ class ID3EncoderSettingsFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereAreEncoderSettings", testFrameCreationWhenThereAreEncoderSettings),
+        ("testNoFrameCreationWhenThereAreNoEncoderSettings", testNoFrameCreationWhenThereAreNoEncoderSettings)
+    ]
 }

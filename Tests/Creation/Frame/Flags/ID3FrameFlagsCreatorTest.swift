@@ -18,4 +18,9 @@ class ID3FrameFlagsCreatorTest: XCTestCase {
     func testFlagsForVersion2() {
         XCTAssertEqual(id3FrameFlagsCreator.createFor(version: .version2), [])
     }
+
+    static let allTests = [
+        ("testFlagsForVersion2", testFlagsForVersion2),
+        ("testFlagsForVersion3", testFlagsForVersion3)
+    ]
 }

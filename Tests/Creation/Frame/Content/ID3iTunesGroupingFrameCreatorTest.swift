@@ -9,11 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
-    static let allTests = [
-        ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
-        ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping)
-    ]
-
     func testNoFrameCreationWhenThereIsNoGrouping() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3iTunesGroupingFrameCreator = ID3iTunesGroupingFrameCreator(
@@ -51,4 +46,9 @@ class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
+        ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping)
+    ]
 }

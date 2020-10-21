@@ -46,4 +46,9 @@ class ID3iTunesPodcastIDFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAPodcastID", testFrameCreationWhenThereIsAPodcastID),
+        ("testNoFrameCreationWhenThereIsNoPodcastID", testNoFrameCreationWhenThereIsNoPodcastID)
+    ]
 }

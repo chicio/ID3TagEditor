@@ -31,4 +31,9 @@ class ID3FrameContentSizeCalculatorTest: XCTestCase {
 
         XCTAssertEqual(size, [0x3, 0x2])
     }
+
+    static let allTests = [
+        ("testContentCalculateSizeForVersion2", testContentCalculateSizeForVersion2),
+        ("testContentCalculateSizeForVersion3", testContentCalculateSizeForVersion3)
+    ]
 }

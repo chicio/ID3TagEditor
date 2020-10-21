@@ -9,11 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3ConductorFrameCreatorTest: XCTestCase {
-    static let allTests = [
-        ("testFrameCreationWhenThereIsAConductor", testFrameCreationWhenThereIsAConductor),
-        ("testNoFrameCreationWhenThereIsNoConductor", testNoFrameCreationWhenThereIsNoConductor)
-    ]
-
     func testNoFrameCreationWhenThereIsNoConductor() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
@@ -51,4 +46,9 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAConductor", testFrameCreationWhenThereIsAConductor),
+        ("testNoFrameCreationWhenThereIsNoConductor", testNoFrameCreationWhenThereIsNoConductor)
+    ]
 }

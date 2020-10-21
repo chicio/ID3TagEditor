@@ -46,4 +46,9 @@ class ID3PublisherFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAPublisher", testFrameCreationWhenThereIsAPublisher),
+        ("testNoFrameCreationWhenThereIsNoPublisher", testNoFrameCreationWhenThereIsNoPublisher)
+    ]
 }

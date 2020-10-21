@@ -42,4 +42,10 @@ class ID3TagCreatorTest: XCTestCase {
                 )
         )
     }
+
+    static let allTests = [
+        ("testGenerateValidData", testGenerateValidData),
+        ("testNoValidFrameData", testNoValidFrameData),
+        ("testTagTooBig", testTagTooBig)
+    ]
 }

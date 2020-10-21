@@ -49,4 +49,10 @@ class ID3FrameContentSizeParserTest: XCTestCase {
             14
         )
     }
+
+    static let allTests = [
+        ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
+        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3),
+        ("testParseFrameContentSizeV4", testParseFrameContentSizeV4)
+    ]
 }

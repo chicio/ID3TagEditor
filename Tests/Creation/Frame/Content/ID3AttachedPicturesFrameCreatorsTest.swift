@@ -175,4 +175,13 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                  0x00, 0x04, 0x00, 0x10, 0x10]
         )
     }
+
+    static let allTests = [
+        ("testFrameCreationWithJpgForVersion2", testFrameCreationWithJpgForVersion2),
+        ("testFrameCreationWithJpgForVersion3", testFrameCreationWithJpgForVersion3),
+        ("testFrameCreationWithPngForAnotherTypeOfCover", testFrameCreationWithPngForAnotherTypeOfCover),
+        ("testFrameCreationWithPngForVersion2", testFrameCreationWithPngForVersion2),
+        ("testFrameCreationWithPngForVersion3", testFrameCreationWithPngForVersion3),
+        ("testNoFrameCreationWhenThereIsNoImage", testNoFrameCreationWhenThereIsNoImage)
+    ]
 }

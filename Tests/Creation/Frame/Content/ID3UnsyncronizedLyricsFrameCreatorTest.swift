@@ -36,4 +36,9 @@ class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(frame, [0x01])
     }
+
+    static let allTests = [
+        ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet),
+        ("testCreateFrameForValidData", testCreateFrameForValidData)
+    ]
 }

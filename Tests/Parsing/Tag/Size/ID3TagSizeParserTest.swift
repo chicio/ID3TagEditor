@@ -20,4 +20,9 @@ class ID3TagSizeParserTest: XCTestCase {
         let mp3V23 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))!
         XCTAssertEqual(id3TagSizeParser.parse(data: mp3V23), 245864)
     }
+
+    static let allTests = [
+        ("testParseTagSizeV2", testParseTagSizeV2),
+        ("testParseFrameContentSizeV3", testParseTagSizeV3)
+    ]
 }

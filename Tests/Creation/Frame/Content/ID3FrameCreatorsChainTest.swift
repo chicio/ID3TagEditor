@@ -9,7 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3FrameCreatorsChainTest: XCTestCase {
-
     func testNextCreatorCalled() {
         let id3FrameCreatorsChain = ID3FrameCreatorsChain()
         let anotherFrameCreatorChain = MockID3FrameCreatorsChain()
@@ -31,4 +30,10 @@ class ID3FrameCreatorsChainTest: XCTestCase {
 
         XCTAssertEqual(currentTagBytes, newTagBytes)
     }
+
+    static let allTests = [
+        ("testCurrentTagBytesAreReturnedWhenThereIsNotANextCreator",
+         testCurrentTagBytesAreReturnedWhenThereIsNotANextCreator),
+        ("testNextCreatorCalled", testNextCreatorCalled)
+    ]
 }

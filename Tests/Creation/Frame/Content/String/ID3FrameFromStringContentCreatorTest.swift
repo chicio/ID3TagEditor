@@ -24,6 +24,10 @@ class ID3FrameFromStringContentCreatorTest: XCTestCase {
 
         XCTAssertEqual(frameBytes, [0x22, 0x11, 0x00, 0x01, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, 0x00])
     }
+
+    static let allTests = [
+        ("testCreatorFrameFromStringContent", testCreatorFrameFromStringContent)
+    ]
 }
 
 class MockStringToBytesAdapter: StringToBytesAdapter {

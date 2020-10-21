@@ -46,4 +46,9 @@ class ID3TitleFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsATitle", testFrameCreationWhenThereIsATitle),
+        ("testNoFrameCreationWhenThereIsNoTitle", testNoFrameCreationWhenThereIsNoTitle)
+    ]
 }

@@ -9,11 +9,6 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3MixArtistFrameCreatorTest: XCTestCase {
-    static let allTests = [
-        ("testFrameCreationWhenThereIsAMixArtist", testFrameCreationWhenThereIsAMixArtist),
-        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist)
-    ]
-
     func testNoFrameCreationWhenThereIsNoMixArtist() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3MixArtistFrameCreator = ID3MixArtistFrameCreator(
@@ -51,4 +46,9 @@ class ID3MixArtistFrameCreatorTest: XCTestCase {
 
         XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
     }
+
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAMixArtist", testFrameCreationWhenThereIsAMixArtist),
+        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist)
+    ]
 }
