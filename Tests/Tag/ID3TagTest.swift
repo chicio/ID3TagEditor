@@ -17,7 +17,7 @@ class ID3TagTest: XCTestCase {
         ("testDebugDescriptionv3", testDebugDescriptionv3),
         ("testDebugDescriptionv4", testDebugDescriptionv4)
     ]
-    
+
     func testDebugDescriptionv3() throws {
         let artFront = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
@@ -117,7 +117,7 @@ class ID3TagTest: XCTestCase {
 
             """)
     }
- 
+
     func testDebugDescriptionv4() throws {
         let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
@@ -159,7 +159,7 @@ class ID3TagTest: XCTestCase {
                 .iTunesPodcastKeywords: ID3FrameWithStringContent(content: "PodcastKeywords V4")
             ]
         )
-     
+
         XCTAssertEqual(
             id3Tag.debugDescription,
             """
