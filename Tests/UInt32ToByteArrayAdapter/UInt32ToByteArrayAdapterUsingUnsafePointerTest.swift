@@ -9,9 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class UInt32ToByteArrayAdapterUsingUnsafePointerTest: XCTestCase {
+    let uiInt32ToByteArrayAdapterUsingUnsafePointer = UInt32ToByteArrayAdapterUsingUnsafePointer()
+    
     func testAdapt32BitUnsignedInteger() {
         XCTAssertEqual(
-            UInt32ToByteArrayAdapterUsingUnsafePointer().adapt(uInt32: UInt32(0x11223344)),
+            uiInt32ToByteArrayAdapterUsingUnsafePointer.adapt(uInt32: UInt32(0x11223344)),
             [0x11, 0x22, 0x33, 0x44]
         )
     }
