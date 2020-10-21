@@ -10,7 +10,7 @@ import XCTest
 
 class UInt32ToByteArrayAdapterUsingUnsafePointerTest: XCTestCase {
     let uiInt32ToByteArrayAdapterUsingUnsafePointer = UInt32ToByteArrayAdapterUsingUnsafePointer()
-    
+
     func testAdapt32BitUnsignedInteger() {
         XCTAssertEqual(
             uiInt32ToByteArrayAdapterUsingUnsafePointer.adapt(uInt32: UInt32(0x11223344)),
