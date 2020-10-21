@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3FileOwnerFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAFileOwner", testFrameCreationWhenThereIsAFileOwner),
+        ("testNoFrameCreationWhenThereIsNoFileOwner", testNoFrameCreationWhenThereIsNoFileOwner)
+    ]
+
     func testNoFrameCreationWhenThereIsNoFileOwner() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3FileOwnerFrameCreator = ID3FileOwnerFrameCreator(

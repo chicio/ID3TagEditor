@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3iTunesPodcastCategoryFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAPodcastCategory", testFrameCreationWhenThereIsAPodcastCategory),
+        ("testNoFrameCreationWhenThereIsNoPodcastCategory", testNoFrameCreationWhenThereIsNoPodcastCategory)
+    ]
+
     func testNoFrameCreationWhenThereIsNoPodcastCategory() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3PodcastCategoryFrameCreator = ID3iTunesPodcastCategoryFrameCreator(

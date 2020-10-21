@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3ContentGroupingFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAContentGrouping", testFrameCreationWhenThereIsAContentGrouping),
+        ("testNoFrameCreationWhenThereIsNoContentGrouping", testNoFrameCreationWhenThereIsNoContentGrouping)
+    ]
+
     func testNoFrameCreationWhenThereIsNoContentGrouping() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3ContentGroupingFrameCreator = ID3ContentGroupingFrameCreator(

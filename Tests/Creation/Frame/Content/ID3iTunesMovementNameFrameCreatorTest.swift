@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3iTunesMovementNameFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAMovementName", testFrameCreationWhenThereIsAMovementName),
+        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName)
+    ]
+
     func testNoFrameCreationWhenThereIsNoMovementName() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3MovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(

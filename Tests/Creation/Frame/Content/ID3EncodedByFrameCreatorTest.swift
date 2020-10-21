@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3EncodedByFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAnEncodedBy", testFrameCreationWhenThereIsAnEncodedBy),
+        ("testNoFrameCreationWhenThereIsNoEncodedBy", testNoFrameCreationWhenThereIsNoEncodedBy)
+    ]
+
     func testNoFrameCreationWhenThereIsNoEncodedBy() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3EncodedByFrameCreator = ID3EncodedByFrameCreator(

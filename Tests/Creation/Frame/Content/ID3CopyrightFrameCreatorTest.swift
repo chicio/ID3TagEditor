@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3CopyrightFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsACopyright", testFrameCreationWhenThereIsACopyright),
+        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoCopyright)
+    ]
+
     func testNoFrameCreationWhenThereIsNoCopyright() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3CopyrightFrameCreator = ID3CopyrightFrameCreator(

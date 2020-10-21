@@ -168,90 +168,6 @@ extension ID3TitleFrameCreatorTest {
     ]
 }
 
-extension ID3ComposerFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAComposer", testFrameCreationWhenThereIsAComposer),
-        ("testNoFrameCreationWhenThereIsNoComposer", testNoFrameCreationWhenThereIsNoComposer)
-    ]
-}
-
-extension ID3ConductorFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAConductor", testFrameCreationWhenThereIsAConductor),
-        ("testNoFrameCreationWhenThereIsNoConductor", testNoFrameCreationWhenThereIsNoConductor)
-    ]
-}
-
-extension ID3ContentGroupingFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAContentGrouping", testFrameCreationWhenThereIsAContentGrouping),
-        ("testNoFrameCreationWhenThereIsNoContentGrouping", testNoFrameCreationWhenThereIsNoContentGrouping)
-    ]
-}
-
-extension ID3CopyrightFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsACopyright", testFrameCreationWhenThereIsACopyright),
-        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoCopyright)
-    ]
-}
-
-extension ID3EncodedByFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAnEncodedBy", testFrameCreationWhenThereIsAnEncodedBy),
-        ("testNoFrameCreationWhenThereIsNoEncodedBy", testNoFrameCreationWhenThereIsNoEncodedBy)
-    ]
-}
-
-extension ID3EncoderSettingsFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereAreEncoderSettings", testFrameCreationWhenThereAreEncoderSettings),
-        ("testNoFrameCreationWhenThereAreNoEncoderSettings", testNoFrameCreationWhenThereAreNoEncoderSettings)
-    ]
-}
-
-extension ID3FileOwnerFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAFileOwner", testFrameCreationWhenThereIsAFileOwner),
-        ("testNoFrameCreationWhenThereIsNoFileOwner", testNoFrameCreationWhenThereIsNoFileOwner)
-    ]
-}
-
-extension ID3iTunesGroupingFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAGrouping", testFrameCreationWhenThereIsAGrouping),
-        ("testNoFrameCreationWhenThereIsNoGrouping", testNoFrameCreationWhenThereIsNoGrouping)
-    ]
-}
-
-extension ID3LyricistFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsALyricist", testFrameCreationWhenThereIsALyricist),
-        ("testNoFrameCreationWhenThereIsNoLyricist", testNoFrameCreationWhenThereIsNoLyricist)
-    ]
-}
-
-extension ID3MixArtistFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMixArtist", testFrameCreationWhenThereIsAMixArtist),
-        ("testNoFrameCreationWhenThereIsNoMixArtist", testNoFrameCreationWhenThereIsNoMixArtist)
-    ]
-}
-
-extension ID3iTunesMovementNameFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMovementName", testFrameCreationWhenThereIsAMovementName),
-        ("testNoFrameCreationWhenThereIsNoCopyright", testNoFrameCreationWhenThereIsNoMovementName)
-    ]
-}
-
-extension ID3iTunesPodcastCategoryFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAPodcastCategory", testFrameCreationWhenThereIsAPodcastCategory),
-        ("testNoFrameCreationWhenThereIsNoPodcastCategory", testNoFrameCreationWhenThereIsNoPodcastCategory)
-    ]
-}
-
 extension ID3iTunesPodcastDescriptionFrameCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsAPodcastDescription", testFrameCreationWhenThereIsAPodcastDescription),
@@ -291,27 +207,6 @@ extension ID3TrackPositionCreatorTest {
     static let __allTests = [
         ("testFrameCreationWhenThereIsATrackPosition", testFrameCreationWhenThereIsATrackPosition),
         ("testNoFrameCreationWhenThereIsNoTrackPosition", testNoFrameCreationWhenThereIsNoTrackPosition)
-    ]
-}
-
-extension ID3DiscPositionFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsADiscPosition", testFrameCreationWhenThereIsADiscPosition),
-        ("testNoFrameCreationWhenThereIsNoDiscPosition", testNoFrameCreationWhenThereIsNoDiscPosition)
-    ]
-}
-
-extension ID3iTunesMovementIndexFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMovementIndex", testFrameCreationWhenThereIsAMovementIndex),
-        ("testNoFrameCreationWhenThereIsNoMovementIndex", testNoFrameCreationWhenThereIsNoMovementIndex)
-    ]
-}
-
-extension ID3iTunesMovementCountFrameCreatorTest {
-    static let __allTests = [
-        ("testFrameCreationWhenThereIsAMovementCount", testFrameCreationWhenThereIsAMovementCount),
-        ("testNoFrameCreationWhenThereIsNoMovementCount", testNoFrameCreationWhenThereIsNoMovementCount)
     ]
 }
 
@@ -450,12 +345,6 @@ extension ID3UnsyncronizedLyricsFrameCreatorTest {
     ]
 }
 
-extension ID3FrameHeaderCreatorTest {
-    static let __allTests = [
-        ("testCreate", testCreate)
-    ]
-}
-
 extension ID3UnsynchronisedLyricsFrameContentParsingOperationTest {
     static let __allTests = [
         ("testParsingValidFrame", testParsingValidFrame),
@@ -463,24 +352,24 @@ extension ID3UnsynchronisedLyricsFrameContentParsingOperationTest {
     ]
 }
 
-#if os(Linux)
+#if !canImport(ObjectiveC)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(ID3AlbumArtistFrameCreatorTest.__allTests),
         testCase(ID3AlbumFrameCreatorTest.__allTests),
         testCase(ID3ArtistFrameCreatorTest.__allTests),
-        testCase(ID3ComposerFrameCreatorTest.__allTests),
-        testCase(ID3ConductorFrameCreatorTest.__allTests),
-        testCase(ID3ContentGroupingFrameCreatorTest.__allTests),
-        testCase(ID3CopyrightFrameCreatorTest.__allTests),
+        testCase(ID3ComposerFrameCreatorTest.allTests),
+        testCase(ID3ConductorFrameCreatorTest.allTests),
+        testCase(ID3ContentGroupingFrameCreatorTest.allTests),
+        testCase(ID3CopyrightFrameCreatorTest.allTests),
         testCase(ID3EncodedByFrameCreatorTest.__allTests),
-        testCase(ID3EncoderSettingsFrameCreatorTest.__allTests),
-        testCase(ID3FileOwnerFrameCreatorTest.__allTests),
-        testCase(ID3LyricistFrameCreatorTest.__allTests),
-        testCase(ID3MixArtistFrameCreatorTest.__allTests),
+        testCase(ID3EncoderSettingsFrameCreatorTest.allTests),
+        testCase(ID3FileOwnerFrameCreatorTest.allTests),
+        testCase(ID3LyricistFrameCreatorTest.allTests),
+        testCase(ID3MixArtistFrameCreatorTest.allTests),
         testCase(ID3PublisherFrameCreatorTest.__allTests),
         testCase(ID3SubtitleFrameCreatorTest.__allTests),
-        testCase(ID3DiscPositionFrameCreatorTest.__allTests),
+        testCase(ID3DiscPositionFrameCreatorTest.allTests),
         testCase(ID3AttachedPictureFrameContentParsingOperationTest.__allTests),
         testCase(ID3AttachedPicturesFramesCreatorTest.__allTests),
         testCase(ID3FrameConfigurationTest.__allTests),
@@ -507,11 +396,11 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(PaddingAdderUsingNullCharTest.__allTests),
         testCase(PaddingRemoverUsingTrimmingTest.__allTests),
         testCase(UInt32ToByteArrayAdapterUsingUnsafePointerTest.__allTests),
-        testCase(ID3iTunesMovementCountFrameCreatorTest.__allTests),
-        testCase(ID3iTunesGroupingFrameCreatorTest.__allTests),
-        testCase(ID3iTunesMovementIndexFrameCreatorTest.__allTests),
-        testCase(ID3iTunesMovementNameFrameCreatorTest.__allTests),
-        testCase(ID3iTunesPodcastCategoryFrameCreatorTest.__allTests),
+        testCase(ID3iTunesMovementCountFrameCreatorTest.allTests),
+        testCase(ID3iTunesGroupingFrameCreatorTest.allTests),
+        testCase(ID3iTunesMovementIndexFrameCreatorTest.allTests),
+        testCase(ID3iTunesMovementNameFrameCreatorTest.allTests),
+        testCase(ID3iTunesPodcastCategoryFrameCreatorTest.allTests),
         testCase(ID3iTunesPodcastIDFrameCreatorTest.__allTests),
         testCase(ID3iTunesPodcastKeywordsFrameCreatorTest.__allTests),
         testCase(ID3iTunesPodcastDescriptionFrameCreatorTest.__allTests),
@@ -522,7 +411,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(Mp3FileReaderTest.__allTests),
         testCase(ID3UnsynchronisedLyricForLanguageFrameCreatorTest.__allTests),
         testCase(ID3UnsyncronizedLyricsFrameCreatorTest.__allTests),
-        testCase(ID3FrameHeaderCreatorTest.__allTests),
+        testCase(ID3FrameHeaderCreatorTest.allTests),
         testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.__allTests),
         testCase(ID3TagEditorAcceptanceTest.__allTests),
         testCase(ID3TagEditorWriteReadAcceptanceTest.__allTests),

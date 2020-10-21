@@ -9,6 +9,11 @@ import XCTest
 @testable import ID3TagEditor
 
 class ID3ComposerFrameCreatorTest: XCTestCase {
+    static let allTests = [
+        ("testFrameCreationWhenThereIsAComposer", testFrameCreationWhenThereIsAComposer),
+        ("testNoFrameCreationWhenThereIsNoComposer", testNoFrameCreationWhenThereIsNoComposer)
+    ]
+
     func testNoFrameCreationWhenThereIsNoComposer() {
         let tagBytes: [UInt8] = [1, 1, 1]
         let id3ComposerFrameCreator = ID3ComposerFrameCreator(
