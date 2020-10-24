@@ -85,3 +85,32 @@ public class ID3Tag: CustomDebugStringConvertible {
         self.frames = frames
     }
 }
+
+protocol ID3TagBuilder {
+    var frames: [FrameName: ID3Frame] { get set }
+    func build() -> ID3Tag
+}
+
+public class ID32v2TagBuilder: ID3TagBuilder {
+    var frames: [FrameName: ID3Frame] = [:]
+
+    func title(content: String) {
+        frames[.title] = ID3FrameWithStringContent(content: content)
+    }
+
+    func build() -> ID3Tag {
+        return ID3Tag(version: .version2, frames: frames)
+    }
+}
+
+public class ID32v3TagBuilder: ID3TagBuilder {
+    var frames: [FrameName: ID3Frame] = [:]
+
+    func title(content: String) {
+        frames[.title] = ID3FrameWithStringContent(content: content)
+    }
+
+    func build() -> ID3Tag {
+        return ID3Tag(version: .version3, frames: frames)
+    }
+}
