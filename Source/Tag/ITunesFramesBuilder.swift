@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ITunesFramesBuilder where Self: ID32TagCommonFramesBuilder {
+public protocol ITunesFramesBuilder where Self: ID32TagCommonStringFramesBuilder {
     func iTunesGrouping(frame: ID3FrameWithStringContent) -> Self
     func iTunesMovementName(frame: ID3FrameWithStringContent) -> Self
     func iTunesMovementIndex(frame: ID3FrameWithIntegerContent) -> Self

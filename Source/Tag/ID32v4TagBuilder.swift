@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ID32v4TagBuilder: ID32TagCommonFramesBuilder,
+public class ID32v4TagBuilder: ID32TagCommonCompositeFramesBuilder,
                                TagBuilder,
                                FileOwnerFrameBuilder,
                                ITunesFramesBuilder,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ID32v3TagBuilder: ID32TagCommonFramesBuilder,
+public class ID32v3TagBuilder: ID32TagCommonCompositeFramesBuilder,
                                TagBuilder,
                                RecordingHourMinuteDayMonthYearFramesBuilder,
                                FileOwnerFrameBuilder,

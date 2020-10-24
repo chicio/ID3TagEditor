@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol FileOwnerFrameBuilder where Self: ID32TagCommonFramesBuilder {
+public protocol FileOwnerFrameBuilder where Self: ID32TagCommonStringFramesBuilder {
     func fileOwner(frame: ID3FrameWithStringContent) -> Self
 }
 

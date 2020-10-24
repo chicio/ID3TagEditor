@@ -8,7 +8,9 @@
 
 import Foundation
 
-public class ID32v2TagBuilder: ID32TagCommonFramesBuilder, TagBuilder, RecordingHourMinuteDayMonthYearFramesBuilder {
+public class ID32v2TagBuilder: ID32TagCommonCompositeFramesBuilder,
+                               TagBuilder,
+                               RecordingHourMinuteDayMonthYearFramesBuilder {
     override public init() {}
 
     public func build() -> ID3Tag {

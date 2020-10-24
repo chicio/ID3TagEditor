@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol RecordingDateTimeFrameBuilder: ID32TagCommonFramesBuilder {
+public protocol RecordingDateTimeFrameBuilder: ID32TagCommonStringFramesBuilder {
     func recordingDateTime(frame: ID3FrameRecordingDateTime) -> Self
 }
 

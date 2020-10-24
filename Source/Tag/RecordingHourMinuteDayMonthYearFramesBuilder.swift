@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol RecordingHourMinuteDayMonthYearFramesBuilder where Self: ID32TagCommonFramesBuilder {
+public protocol RecordingHourMinuteDayMonthYearFramesBuilder where Self: ID32TagCommonStringFramesBuilder {
     func recordingDayMonth(frame: ID3FrameRecordingDayMonth) -> Self
     func recordingHourMinute(frame: ID3FrameRecordingHourMinute) -> Self
     func recordingYear(frame: ID3FrameRecordingYear) -> Self
