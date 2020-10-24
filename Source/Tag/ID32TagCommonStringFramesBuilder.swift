@@ -3,24 +3,24 @@
 //  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 24.10.20.
-//  2020 Fabrizio Duroni
+//  2020 Fabrizio Duroni.
 //
 
 import Foundation
 
 /**
- This class is the base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
- ID32v4TagBuilder inherits from this class. It let the user set the string frame that are in common
- to all the ID3 v2 tag specificiation. Don't use this class directly. Use of ID32v2TagBuilder, ID32v3TagBuilder and
- ID32v4TagBuilder classes.
+ This is the base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
+ ID32v4TagBuilder inherits from this class. It let the user set the string frame that are in
+ common to all the ID3 v2 tag specificiation. This class can't be used in user code.
+ Use of ID32v2TagBuilder, ID32v3TagBuilder and ID32v4TagBuilder classes.
  */
 public class ID32TagCommonStringFramesBuilder {
     var frames: [FrameName: ID3Frame] = [:]
-    
+
     /**
       Set the title frame to be written by ID3TagEditor.
      
-      - parameter frame: the title frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the title frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -32,7 +32,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the album frame to be written by ID3TagEditor.
      
-      - parameter frame: the album frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the album frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -44,7 +44,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the albumArtist frame to be written by ID3TagEditor.
      
-      - parameter frame: the albumArtist frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the albumArtist frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -56,7 +56,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the artist frame to be written by ID3TagEditor.
      
-      - parameter frame: the artist frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the artist frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -68,7 +68,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the composer frame to be written by ID3TagEditor.
      
-      - parameter frame: the composer frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the composer frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -80,7 +80,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the conductor frame to be written by ID3TagEditor.
      
-      - parameter frame: the conductor frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the conductor frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -92,7 +92,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the contentGrouping frame to be written by ID3TagEditor.
      
-      - parameter frame: the contentGrouping frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the contentGrouping frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -104,7 +104,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the copyright frame to be written by ID3TagEditor.
      
-      - parameter frame: the copyright frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the copyright frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -116,7 +116,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the encodedBy frame to be written by ID3TagEditor.
      
-      - parameter frame: the encodedBy frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the encodedBy frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -128,7 +128,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the encoderSettings frame to be written by ID3TagEditor.
      
-      - parameter frame: the encoderSettings frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the encoderSettings frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -140,7 +140,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the lyricist frame to be written by ID3TagEditor.
      
-      - parameter frame: the lyricist frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the lyricist frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -152,7 +152,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the mixArtist frame to be written by ID3TagEditor.
      
-      - parameter frame: the mixArtist frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the mixArtist frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -164,7 +164,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the publisher frame to be written by ID3TagEditor.
      
-      - parameter frame: the publisher frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the publisher frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */
@@ -176,7 +176,7 @@ public class ID32TagCommonStringFramesBuilder {
     /**
       Set the subtitle frame to be written by ID3TagEditor.
      
-      - parameter frame: the subtitle frame as a ID3FrameWithStringContent frame.
+      - parameter frame: the subtitle frame as a ID3FrameWithStringContent instance.
      
       - returns: the instance of the builder.
      */

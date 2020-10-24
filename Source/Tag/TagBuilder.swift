@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol TagBuilder: AnyObject {
+protocol TagBuilder: AnyObject {
     func build() -> ID3Tag
 }
