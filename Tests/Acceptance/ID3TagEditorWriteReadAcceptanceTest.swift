@@ -26,6 +26,10 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         )
         let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
 
+        _ = ID32v2TagBuilder()
+            .title(frame: ID3FrameWithStringContent(content: "title V2"))
+            .build()
+
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [

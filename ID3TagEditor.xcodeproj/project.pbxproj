@@ -463,6 +463,14 @@
 		45D551D72544649A003347B7 /* ID32v3TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */; };
 		45D551D82544649A003347B7 /* ID32v3TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */; };
 		45D551D92544649A003347B7 /* ID32v3TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */; };
+		45D551F725446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */; };
+		45D551F825446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */; };
+		45D551F925446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */; };
+		45D551FA25446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */; };
+		45D55203254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D55202254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift */; };
+		45D55204254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D55202254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift */; };
+		45D55205254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D55202254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift */; };
+		45D55206254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D55202254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift */; };
 		45D58CC9210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */; };
 		45D58CCA210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */; };
 		45D58CCB210CB7B300E820C8 /* MockTimestampCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */; };
@@ -1137,6 +1145,8 @@
 		45D551BD254463EF003347B7 /* TagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagBuilder.swift; sourceTree = "<group>"; };
 		45D551C925446431003347B7 /* ID32v2TagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID32v2TagBuilder.swift; sourceTree = "<group>"; };
 		45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID32v3TagBuilder.swift; sourceTree = "<group>"; };
+		45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID32v4TagBuilder.swift; sourceTree = "<group>"; };
+		45D55202254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingHourMinuteDayMonthYearFramesBuilder.swift; sourceTree = "<group>"; };
 		45D58CC8210CB7B300E820C8 /* MockTimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CCD210CB85000E820C8 /* TimestampCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampCreator.swift; sourceTree = "<group>"; };
 		45D58CD2210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDateTimeFrameCreator.swift; sourceTree = "<group>"; };
@@ -1578,6 +1588,8 @@
 				45D551BD254463EF003347B7 /* TagBuilder.swift */,
 				45D551C925446431003347B7 /* ID32v2TagBuilder.swift */,
 				45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */,
+				45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */,
+				45D55202254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift */,
 			);
 			path = Tag;
 			sourceTree = "<group>";
@@ -2682,6 +2694,7 @@
 				4528AF44210BAC7900CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				45D58CD3210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */,
 				452832A02044C7BE00458375 /* ID3TagCreatorFactory.swift in Sources */,
+				45D55203254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */,
 				519C34912405066B008F3BDE /* ID3ContentGroupingFrameContentParsingOperationFactory.swift in Sources */,
 				519C33F92405041E008F3BDE /* ID3iTunesPodcastDescriptionFrameCreator.swift in Sources */,
 				519C346D2405066A008F3BDE /* ID3FileOwnerFrameContentParsingOperationFactory.swift in Sources */,
@@ -2712,6 +2725,7 @@
 				452832582044C7BE00458375 /* FrameContentParser.swift in Sources */,
 				519C34692405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7C21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
+				45D551F725446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */,
 				519C33ED2405041E008F3BDE /* ID3ComposerFrameCreator.swift in Sources */,
 				4584521A21DD00800043FECD /* ID3FrameRecordingDateTime.swift in Sources */,
 				519C34352405041E008F3BDE /* ID3DiscPositionFrameCreator.swift in Sources */,
@@ -2934,6 +2948,7 @@
 				4528AF45210BAE0300CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				45D58CD4210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */,
 				5FA1CF6021CE891B008D74CE /* SynchsafeIntegerDecoder.swift in Sources */,
+				45D55204254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */,
 				519C34922405066B008F3BDE /* ID3ContentGroupingFrameContentParsingOperationFactory.swift in Sources */,
 				519C33FA2405041E008F3BDE /* ID3iTunesPodcastDescriptionFrameCreator.swift in Sources */,
 				519C346E2405066A008F3BDE /* ID3FileOwnerFrameContentParsingOperationFactory.swift in Sources */,
@@ -2964,6 +2979,7 @@
 				452832812044C7BE00458375 /* PaddingRemoverUsingTrimming.swift in Sources */,
 				519C346A2405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7D21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
+				45D551F825446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */,
 				519C33EE2405041E008F3BDE /* ID3ComposerFrameCreator.swift in Sources */,
 				4584521B21DD00800043FECD /* ID3FrameRecordingDateTime.swift in Sources */,
 				519C34362405041E008F3BDE /* ID3DiscPositionFrameCreator.swift in Sources */,
@@ -3186,6 +3202,7 @@
 				4528AF46210BAE0400CB7A2E /* ID3FrameStringContentParserFactory.swift in Sources */,
 				45D58CD5210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */,
 				5FA1CF6121CE891C008D74CE /* SynchsafeIntegerDecoder.swift in Sources */,
+				45D55205254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */,
 				519C34932405066B008F3BDE /* ID3ContentGroupingFrameContentParsingOperationFactory.swift in Sources */,
 				519C33FB2405041E008F3BDE /* ID3iTunesPodcastDescriptionFrameCreator.swift in Sources */,
 				519C346F2405066A008F3BDE /* ID3FileOwnerFrameContentParsingOperationFactory.swift in Sources */,
@@ -3216,6 +3233,7 @@
 				45541B9F20598FA60025A8BF /* FrameContentParsingOperation.swift in Sources */,
 				519C346B2405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7E21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
+				45D551F925446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */,
 				519C33EF2405041E008F3BDE /* ID3ComposerFrameCreator.swift in Sources */,
 				4584521C21DD00800043FECD /* ID3FrameRecordingDateTime.swift in Sources */,
 				519C34372405041E008F3BDE /* ID3DiscPositionFrameCreator.swift in Sources */,
@@ -3438,6 +3456,7 @@
 				4562C1FE211750B500AFE22E /* ID3CoupleOfNumbersAdapter.swift in Sources */,
 				45D58CD6210CB87700E820C8 /* ID3RecordingDateTimeFrameCreator.swift in Sources */,
 				5FA1CF6221CE891D008D74CE /* SynchsafeIntegerDecoder.swift in Sources */,
+				45D55206254474C2003347B7 /* RecordingHourMinuteDayMonthYearFramesBuilder.swift in Sources */,
 				519C34942405066B008F3BDE /* ID3ContentGroupingFrameContentParsingOperationFactory.swift in Sources */,
 				519C33FC2405041E008F3BDE /* ID3iTunesPodcastDescriptionFrameCreator.swift in Sources */,
 				519C34702405066A008F3BDE /* ID3FileOwnerFrameContentParsingOperationFactory.swift in Sources */,
@@ -3468,6 +3487,7 @@
 				45F8340A205905EF0046C804 /* FrameContentParsingOperation.swift in Sources */,
 				519C346C2405066A008F3BDE /* ID3EncodedByFrameContentParsingOperationFactory.swift in Sources */,
 				5FF00B7F21CE9B0000825B92 /* SynchsafeIntegerEncoder.swift in Sources */,
+				45D551FA25446A1B003347B7 /* ID32v4TagBuilder.swift in Sources */,
 				519C33F02405041E008F3BDE /* ID3ComposerFrameCreator.swift in Sources */,
 				4584521D21DD00800043FECD /* ID3FrameRecordingDateTime.swift in Sources */,
 				519C34382405041E008F3BDE /* ID3DiscPositionFrameCreator.swift in Sources */,
