@@ -8,8 +8,25 @@
 
 import Foundation
 
-protocol RecordingHourMinuteDayMonthYearFramesBuilder {
-    func recordingDayMonth(frame: ID3FrameRecordingDayMonth) -> RecordingHourMinuteDayMonthYearFramesBuilder
-    func recordingHourMinute(frame: ID3FrameRecordingHourMinute) -> RecordingHourMinuteDayMonthYearFramesBuilder
-    func recordingYear(frame: ID3FrameRecordingYear) -> RecordingHourMinuteDayMonthYearFramesBuilder
+public protocol RecordingHourMinuteDayMonthYearFramesBuilder where Self: ID32TagCommonFramesBuilder {
+    func recordingDayMonth(frame: ID3FrameRecordingDayMonth) -> Self
+    func recordingHourMinute(frame: ID3FrameRecordingHourMinute) -> Self
+    func recordingYear(frame: ID3FrameRecordingYear) -> Self
+}
+
+public extension RecordingHourMinuteDayMonthYearFramesBuilder {
+    func recordingDayMonth(frame: ID3FrameRecordingDayMonth) -> Self {
+        frames[.recordingDayMonth] = frame
+        return self
+    }
+
+    func recordingHourMinute(frame: ID3FrameRecordingHourMinute) -> Self {
+        frames[.recordingHourMinute] = frame
+        return self
+    }
+
+    func recordingYear(frame: ID3FrameRecordingYear) -> Self {
+        frames[.recordingYear] = frame
+        return self
+    }
 }

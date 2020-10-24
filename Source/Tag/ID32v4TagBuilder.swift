@@ -8,16 +8,14 @@
 
 import Foundation
 
-public class ID32v4TagBuilder: TagBuilder {
-    var frames: [FrameName: ID3Frame] = [:]
+public class ID32v4TagBuilder: ID32TagCommonFramesBuilder,
+                               TagBuilder,
+                               FileOwnerFrameBuilder,
+                               ITunesFramesBuilder,
+                               RecordingDateTimeFrameBuilder {
+    override public init() {}
 
-    public init() { }
-
-    func recordingDateTime(frame: ID3FrameRecordingDateTime) -> ID32v4TagBuilder {
-        return self
-    }
-
-    func build() -> ID3Tag {
+    public func build() -> ID3Tag {
         return ID3Tag(version: .version4, frames: frames)
     }
 }
