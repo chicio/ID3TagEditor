@@ -45,7 +45,7 @@ Add the dependency to your Podfile (choose the release version you prefer):
 
 ```
 target 'MyApp' do
-    pod 'ID3TagEditor', '~> 3.0'
+    pod 'ID3TagEditor', '~> 4.0'
 end
 ```
 
@@ -53,12 +53,9 @@ and then run pod install (or pod update).
 
 **Swift Package Manager**
 
-ID3TagEditor is also available as Swift Package for the Swift Package Manager. To use it simply add it to your dependecies in the Swift  `Package.swift`.
-After that you can build your project with the command `swift build`, and eventually run you project (if it is an executable type) with the command `swift run`.
+ID3TagEditor is also available as a Swift Package for the Swift Package Manager. Add it to your dependecies in your  `Package.swift` file.
+After that you can build your project with the command `swift build`, and eventually run you project (if it is an executable target) with the command `swift run`.
 If you want you can also run tests using `swift test`.  
-  
-  *IMPORTANT: at the moment some tests are excluded from  `swift test` because some test api are missing (eg. `XCTestExpectation`) or 
-because the Bundle of resources in the test target doesn't work as expected.* 
 
 ```
 // swift-tools-version:5.0
@@ -83,7 +80,7 @@ let package = Package(
 
 ### Usage
 
-ID3Tag editor is compatible with the following platforms:
+ID3TagEditor is compatible with the following platforms:
 
 * iOS
 * MacOS
@@ -91,11 +88,15 @@ ID3Tag editor is compatible with the following platforms:
 * Apple TV
 * Linux Ubuntu
 
-To read the ID3 tag of an mp3 file you can choose between two api contained in the `ID3TagEditor` class:
+ID3TagEditor let you read and write ID3Tag to your mp3 files.
+
+#### Read
+
+To read the ID3 tag of an mp3 file you can choose between two API contained in the `ID3TagEditor` class:
 * `public func read(from path: String) throws -> ID3Tag?`
 * `public func read(mp3: Data) throws -> ID3Tag?`
 
-Below you can find a sample code of the api usage.
+Below you can find a sample code of the API usage.
 
 ```swift
 do {
@@ -121,24 +122,57 @@ do {
 }  
 ```
 
-To write a new ID3 tag into an mp3 file you can choose between two api contained in the `ID3TagEditor` class:
+To write a new ID3 tag into an mp3 file you can choose between two API contained in the `ID3TagEditor` class:
+
 * `public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws`
 * `public func write(tag: ID3Tag, mp3: Data) throws -> Data`
 
-Below you can find a sample code of the api usage.
+The only way to create a valid `ID3Tag` you can use one of the tag builder available:
+
+* `ID32v2TagBuilder`, a builder useful to create ID3 tag version 2.2
+* `ID32v3TagBuilder`, a builder useful to create ID3 tag version 2.3
+* `ID32v4TagBuilder`, a builder useful to create ID3 tag version 2.3
+
+You can't create an instance of  `ID3Tag`  without one of the builders above.
+Below you can find a sample code that will write an ID3Tag version 3 with all the frames supported by ID3TagEditor to an mp3 file.
 
 ```swift
 do {
-    let id3Tag = ID3Tag(
-       version: .version3,
-       frames: [
-         .Artist : ID3FrameWithStringContent(content: "A New Artist"),
-         .AlbumArtist : ID3FrameWithStringContent(content: "A New Album Artist"),
-         .Album : ID3FrameWithStringContent(content: "A New Album"),
-         .Title : ID3FrameWithStringContent(content:  "A New title"),
-         .AttachedPicture(.FrontCover) : ID3FrameAttachedPicture(picture: art, type: .FrontCover, format: .Jpeg)
-       ]
-    )
+    let id3Tag = ID32v3TagBuilder()
+        .title(frame: ID3FrameWithStringContent(content: "title V3"))
+        .album(frame: ID3FrameWithStringContent(content: "album V3"))
+        .albumArtist(frame: ID3FrameWithStringContent(content: "album artist V3"))
+        .artist(frame: ID3FrameWithStringContent(content: "artist V3"))
+        .composer(frame: ID3FrameWithStringContent(content: "composer V3"))
+        .conductor(frame: ID3FrameWithStringContent(content: "conductor V3"))
+        .contentGrouping(frame: ID3FrameWithStringContent(content: "ContentGrouping V3"))
+        .copyright(frame: ID3FrameWithStringContent(content: "Copyright V3"))
+        .encodedBy(frame: ID3FrameWithStringContent(content: "EncodedBy V3"))
+        .encoderSettings(frame: ID3FrameWithStringContent(content: "EncoderSettings V3"))
+        .fileOwner(frame: ID3FrameWithStringContent(content: "FileOwner V3"))
+        .lyricist(frame: ID3FrameWithStringContent(content: "Lyricist V3"))
+        .mixArtist(frame: ID3FrameWithStringContent(content: "MixArtist V3"))
+        .publisher(frame: ID3FrameWithStringContent(content: "Publisher V3"))
+        .subtitle(frame: ID3FrameWithStringContent(content: "Subtitle V3"))
+        .genre(frame: ID3FrameGenre(genre: .metal, description: "Metalcore"))
+        .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
+        .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
+        .recordingDayMonth(frame: ID3FrameRecordingDayMonth(day: 5, month: 8))
+        .recordingYear(frame: ID3FrameRecordingYear(year: 2020))
+        .recordingHourMinute(frame: ID3FrameRecordingHourMinute(hour: 15, minute: 39))
+        .attachedPicture(pictureType: .frontCover, frame: ID3FrameAttachedPicture(picture: <picture as Data object>, type: .frontCover, format: .jpeg))
+        .attachedPicture(pictureType: .backCover, frame: ID3FrameAttachedPicture(picture: <picture as Data object>, type: .backCover, format: .jpeg))
+        .unsynchronisedLyrics(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita unsync lyrics"))
+        .unsynchronisedLyrics(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng unsync lyrics"))
+        .iTunesGrouping(frame: ID3FrameWithStringContent(content: "ItunesGrouping V3"))
+        .iTunesMovementName(frame: ID3FrameWithStringContent(content: "MovementName V3"))
+        .iTunesMovementIndex(frame: ID3FrameWithIntegerContent(value: 6))
+        .iTunesMovementCount(frame: ID3FrameWithIntegerContent(value: 13))
+        .iTunesPodcastCategory(frame: ID3FrameWithStringContent(content: "PodcastCategory V3"))
+        .iTunesPodcastDescription(frame: ID3FrameWithStringContent(content: "PodcastDescription V3"))
+        .iTunesPodcastID(frame: ID3FrameWithStringContent(content: "PodcastID V3"))
+        .iTunesPodcastKeywords(frame: ID3FrameWithStringContent(content: "PodcastKeywords V3"))
+        .build()
     
     try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
     try id3TagEditor.write(tag: id3Tag, 
@@ -150,74 +184,69 @@ do {
 }    
 ```  
 
-The above methods use the `ID3Tag` class to describe a valid ID3 tag. This class contains the tag properties in the field `properties` and the 
-list of frames in the `frames` properties.
-Three versions of the tag are supported. They are described in the `ID3Version` enum:
+Below you can find the list of the frame support by ID3TagEditor (see the enum `FrameName` and the builders shown above):
 
-* version 2.2, described by the enum value `.version2`  
-* version 2.3, described by the enum value `.version3`  
-* version 2.4, described by the enum value `.version4`
+* `.title`
+* `.album`
+* `.albumArtist` 
+* `.artist`
+* `.composer`
+* `.conductor`
+* `.contentGrouping`
+* `.copyright`
+* `.encodedBy`
+* `.encoderSettings`
+* `.fileOwner`, available only for ID3 v2.3/v2.4
+* `.lyricist`
+* `.mixArtist`
+* `.publisher`
+* `.subtitle`
+* `.genre`
+* `.discPosition`
+* `.trackPosition`
+* `.recordingDayMonth`, available only for ID3 v2.2/v2.3
+* `.recordingYear`, available only for ID3 v2.2/v2.3
+* `.recordingHourMinute`, available only for ID3 v2.2/v2.3
+* `.recordingDateTime`, available only for ID3 v2.4
+* `.attachedPicture(_ pictureType: ID3PictureType)`, with support for multiple frames in the same tag distinguished by `ID3PictureType`
+* `.unsynchronizedLyrics(_ language: ID3FrameContentLanguage)`, with support for multiple frames in the same tag distinguished by `ID3FrameContentLanguage`
 
-The ID3 supported offcial frames supported are (see the enum `FrameName`):
+In addition, ID3TagEditor supports the following iTunes unofficial frames:
 
-* `.Artist`, artists frame 
-* `.AlbumArtist`, album artist frame 
-* `.Album`, album frame
-* `.Title`, title frame
-* `.RecordingDayMonth`, recording day month frame available only for ID3 v2.2/v2.3
-* `.RecordingYear`, recording year frame available only for ID3 v2.2/v2.3
-* `.RecordingHourMinute`, recording hour minute frame available only for ID3 v2.2/v2.3
-* `.RecordingDateTime`, recording date time frame available only for ID3 v2.4
-* `.TrackPosition`, track position frame
-* `.Genre`, the genre frame
-* `.AttachedPicture(_ pictureType: ID3PictureType)` the attached picture frame
-* `Composer`
-* `Conductor`
-* `ContentGrouping`
-* `Copyright`
-* `DiscPosition`
-* `EncodedBy`
-* `EncoderSettings`
-* `FileOwner`
-* `Lyricist`
-* `MixArtist`
-* `Publisher`
-* `Subtitle`
+* `iTunesGrouping`, available only for ID3 v2.3/v2.4
+* `iTunesMovementName`, available only for ID3 v2.3/v2.4
+* `iTunesMovementIndex`, available only for ID3 v2.3/v2.4
+* `iTunesMovementCount`, available only for ID3 v2.3/v2.4
+* `iTunesPodcastCategory`, available only for ID3 v2.3/v2.4
+* `iTunesPodcastDescription`, available only for ID3 v2.3/v2.4
+* `iTunesPodcastID`, available only for ID3 v2.3/v2.4
+* `iTunesPodcastKeyword`, available only for ID3 v2.3/v2.4
 
-In addition, ID3TagEditor supports the following iTunes only unofficial frames:
-
-* `iTunesGrouping`
-* `iTunesMovementName`
-* `iTunesMovementIndex` (aka movement number)
-* `iTunesMovementCount`
-* `iTunesPodcastCategory`
-* `iTunesPodcastDescription`
-* `iTunesPodcastID`
-* `iTunesPodcastKeyword`
-
-Only the `version` field is mandatory. The other fields are optional.
-The field `artist`,  `albumArtist`, `title` and `album` are encoded/saved using Unicode 16 bit string (as requested by specification). 
-The library is also able to read text frame wrongly encoded with Unicode (for example recordingDateTime must always be a ISO88591 string). 
+All frames are encoded/formatted following the specification:
+* text frames (frames with identifier starting with a capital T) uses UTF-16 to encode text
+* frames with ad hoc encoding/formatting are supported (for example recordingDateTime must always be a ISO88591 string)
+* frames with localized content (e.g. `.unsynchronizedLyrics`) support all the languages identifier contained in the ISO-639-2 (see `ID3FrameContentLanguage` for the complete list of supported languages)
+Refer to the [id3 specification](https://id3.org/Developer%20Information "id3 specification") for additional details.
 
 ***
 ### Contributors
 
 * [Nolaine Crusher](https://github.com/NCrusher74) (added 12 official frames + all unofficial non standard frames)
-* [woko666](https://github.com/woko666) (added read from `Data` api)
+* [woko666](https://github.com/woko666) (added read from `Data` API)
 * [martinjbaker](https://github.com/martinjbaker) (minor fixies)
 
 ***
 
 ### Documentation
 
-You can find the complete api documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
+You can find the complete API documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
 
 ***
 
 ### Examples
 
-In the following screenshots you can find examples of the data extracted/updated. In the demo project you will find an example for each 
-supported target.
+In the following screenshots you can find examples of the data extracted/updated. In the [demo project]( https://github.com/chicio/ID3TagEditor/tree/master/Demo "demo id3tageditor") you will find an example for each 
+supported target. You can also find more usage example in the [read/write acceptance test](https://github.com/chicio/ID3TagEditor/blob/master/Tests/Acceptance/ID3TagEditorWriteReadAcceptanceTest.swift "example acceptance tests").
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/04-example.png">
