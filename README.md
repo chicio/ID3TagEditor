@@ -25,7 +25,7 @@ There are four ways to install ID3TagEditor in your project:
 - manual installation
 - framework 
 - cocoapods
-- Swift Package Manager (support for linux platform)
+- Swift Package Manager (with support for linux platform)
 
 **Manual installation**
 
