@@ -10,7 +10,7 @@ import Foundation
 /**
  A struct that describes the properties of a tag.
  */
-public struct TagProperties {
+public struct ID3TagProperties {
     /// The size of the tag.
     var size: UInt32
     /// The version of the tag (see `ID3Version`).

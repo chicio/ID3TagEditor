@@ -7,7 +7,7 @@
 
 import Foundation
 
-/**.
+/**
  A class that represent an ID3Tag frame. It contains the common information of all the ID3 frames.
  */
 public class ID3Frame {

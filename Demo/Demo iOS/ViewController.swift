@@ -35,19 +35,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         do {
             let defaultGenre = ID3Genre(rawValue: 1)!
             let genreTextFieldContent = Int(genreIdentifierField.text ?? "1") ?? 1
-            let id3Tag = ID3Tag(
-                version: .version3,
-                frames: [
-                    .artist: ID3FrameWithStringContent(content: artistTextField.text ?? ""),
-                    .albumArtist: ID3FrameWithStringContent(content: albumArtistField.text ?? ""),
-                    .title: ID3FrameWithStringContent(content: titleTextField.text ?? ""),
-                    .album: ID3FrameWithStringContent(content: albumTextField.text ?? ""),
-                    .recordingYear: ID3FrameRecordingYear(year: Int(yearField.text ?? "2019") ?? 2019),
-                    .genre: ID3FrameGenre(genre: ID3Genre(rawValue: genreTextFieldContent) ?? defaultGenre,
-                                           description: genreDescriptionField.text ?? "Rock and roll"),
-                    .trackPosition: ID3FramePartOfTotal(part: 2, total: 9)
-                ]
-            )
+            let id3Tag = ID32v3TagBuilder()
+                .title(frame: ID3FrameWithStringContent(content: titleTextField.text ?? ""))
+                .artist(frame: ID3FrameWithStringContent(content: artistTextField.text ?? ""))
+                .albumArtist(frame: ID3FrameWithStringContent(content: albumArtistField.text ?? ""))
+                .album(frame: ID3FrameWithStringContent(content: albumTextField.text ?? ""))
+                .recordingYear(frame: ID3FrameRecordingYear(year: Int(yearField.text ?? "2019") ?? 2019))
+                .genre(frame: ID3FrameGenre(genre: ID3Genre(rawValue: genreTextFieldContent) ?? defaultGenre,
+                                            description: genreDescriptionField.text ?? "Rock and roll"))
+                .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
+                .build()
             let documentDirectory = try FileManager.default.url(
                 for: .documentDirectory,
                 in: .userDomainMask,

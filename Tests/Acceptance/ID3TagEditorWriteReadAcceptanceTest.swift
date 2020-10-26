@@ -26,43 +26,32 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         )
         let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
 
-        let id3Tag = ID3Tag(
-            version: .version2,
-            frames: [
-                .title: ID3FrameWithStringContent(content: "title V2"),
-                .album: ID3FrameWithStringContent(content: "album V2"),
-                .albumArtist: ID3FrameWithStringContent(content: "album artist V2"),
-                .artist: ID3FrameWithStringContent(content: "artist V2"),
-                .composer: ID3FrameWithStringContent(content: "composer V2"),
-                .conductor: ID3FrameWithStringContent(content: "conductor V2"),
-                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V2"),
-                .copyright: ID3FrameWithStringContent(content: "Copyright V2"),
-                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V2"),
-                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V2"),
-                .lyricist: ID3FrameWithStringContent(content: "Lyricist V2"),
-                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V2"),
-                .publisher: ID3FrameWithStringContent(content: "Publisher V2"),
-                .subtitle: ID3FrameWithStringContent(content: "Subtitle V2"),
-                .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
-                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
-                .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
-                .recordingYear: ID3FrameRecordingYear(year: 2020),
-                .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39),
-                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront,
-                                                                       type: .frontCover,
-                                                                       format: .jpeg),
-                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack,
-                                                                      type: .backCover,
-                                                                      format: .jpeg),
-                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita,
-                                                                          contentDescription: "CD",
-                                                                          content: "v2 ita unsync lyrics"),
-                .unsynchronizedLyrics(.eng): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng,
-                                                                          contentDescription: "CD",
-                                                                          content: "v2 eng unsync lyrics")
-            ]
-        )
+        let id3Tag = ID32v2TagBuilder()
+            .title(frame: ID3FrameWithStringContent(content: "title V2"))
+            .album(frame: ID3FrameWithStringContent(content: "album V2"))
+            .albumArtist(frame: ID3FrameWithStringContent(content: "album artist V2"))
+            .artist(frame: ID3FrameWithStringContent(content: "artist V2"))
+            .composer(frame: ID3FrameWithStringContent(content: "composer V2"))
+            .conductor(frame: ID3FrameWithStringContent(content: "conductor V2"))
+            .contentGrouping(frame: ID3FrameWithStringContent(content: "ContentGrouping V2"))
+            .copyright(frame: ID3FrameWithStringContent(content: "Copyright V2"))
+            .encodedBy(frame: ID3FrameWithStringContent(content: "EncodedBy V2"))
+            .encoderSettings(frame: ID3FrameWithStringContent(content: "EncoderSettings V2"))
+            .lyricist(frame: ID3FrameWithStringContent(content: "Lyricist V2"))
+            .mixArtist(frame: ID3FrameWithStringContent(content: "MixArtist V2"))
+            .publisher(frame: ID3FrameWithStringContent(content: "Publisher V2"))
+            .subtitle(frame: ID3FrameWithStringContent(content: "Subtitle V2"))
+            .genre(frame: ID3FrameGenre(genre: .metal, description: "Metalcore"))
+            .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
+            .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
+            .recordingDayMonth(frame: ID3FrameRecordingDayMonth(day: 5, month: 8))
+            .recordingYear(frame: ID3FrameRecordingYear(year: 2020))
+            .recordingHourMinute(frame: ID3FrameRecordingHourMinute(hour: 15, minute: 39))
+            .attachedPicture(pictureType: .frontCover, frame: ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg))
+            .attachedPicture(pictureType: .backCover, frame: ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg))
+            .unsynchronisedLyrics(language: .ita, frame: ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 ita unsync lyrics"))
+            .unsynchronisedLyrics(language: .eng, frame: ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng unsync lyrics"))
+            .build()
 
         try id3TagEditor.write(
             tag: id3Tag,
@@ -120,44 +109,41 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
         let pathMp3Generated = NSHomeDirectory() + "/example-write-read-v3.mp3"
 
-        let id3Tag = ID3Tag(
-            version: .version3,
-            frames: [
-                .title: ID3FrameWithStringContent(content: "title V3"),
-                .album: ID3FrameWithStringContent(content: "album V3"),
-                .albumArtist: ID3FrameWithStringContent(content: "album artist V3"),
-                .artist: ID3FrameWithStringContent(content: "artist V3"),
-                .composer: ID3FrameWithStringContent(content: "composer V3"),
-                .conductor: ID3FrameWithStringContent(content: "conductor V3"),
-                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V3"),
-                .copyright: ID3FrameWithStringContent(content: "Copyright V3"),
-                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V3"),
-                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V3"),
-                .fileOwner: ID3FrameWithStringContent(content: "FileOwner V3"),
-                .lyricist: ID3FrameWithStringContent(content: "Lyricist V3"),
-                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V3"),
-                .publisher: ID3FrameWithStringContent(content: "Publisher V3"),
-                .subtitle: ID3FrameWithStringContent(content: "Subtitle V3"),
-                .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
-                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
-                .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
-                .recordingYear: ID3FrameRecordingYear(year: 2020),
-                .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39),
-                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
-                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
-                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita unsync lyrics"),
-                .unsynchronizedLyrics(.eng): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng unsync lyrics"),
-                .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V3"),
-                .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V3"),
-                .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
-                .iTunesMovementCount: ID3FrameWithIntegerContent(value: 13),
-                .iTunesPodcastCategory: ID3FrameWithStringContent(content: "PodcastCategory V3"),
-                .iTunesPodcastDescription: ID3FrameWithStringContent(content: "PodcastDescription V3"),
-                .iTunesPodcastID: ID3FrameWithStringContent(content: "PodcastID V3"),
-                .iTunesPodcastKeywords: ID3FrameWithStringContent(content: "PodcastKeywords V3")
-            ]
-        )
+        let id3Tag = ID32v3TagBuilder()
+            .title(frame: ID3FrameWithStringContent(content: "title V3"))
+            .album(frame: ID3FrameWithStringContent(content: "album V3"))
+            .albumArtist(frame: ID3FrameWithStringContent(content: "album artist V3"))
+            .artist(frame: ID3FrameWithStringContent(content: "artist V3"))
+            .composer(frame: ID3FrameWithStringContent(content: "composer V3"))
+            .conductor(frame: ID3FrameWithStringContent(content: "conductor V3"))
+            .contentGrouping(frame: ID3FrameWithStringContent(content: "ContentGrouping V3"))
+            .copyright(frame: ID3FrameWithStringContent(content: "Copyright V3"))
+            .encodedBy(frame: ID3FrameWithStringContent(content: "EncodedBy V3"))
+            .encoderSettings(frame: ID3FrameWithStringContent(content: "EncoderSettings V3"))
+            .fileOwner(frame: ID3FrameWithStringContent(content: "FileOwner V3"))
+            .lyricist(frame: ID3FrameWithStringContent(content: "Lyricist V3"))
+            .mixArtist(frame: ID3FrameWithStringContent(content: "MixArtist V3"))
+            .publisher(frame: ID3FrameWithStringContent(content: "Publisher V3"))
+            .subtitle(frame: ID3FrameWithStringContent(content: "Subtitle V3"))
+            .genre(frame: ID3FrameGenre(genre: .metal, description: "Metalcore"))
+            .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
+            .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
+            .recordingDayMonth(frame: ID3FrameRecordingDayMonth(day: 5, month: 8))
+            .recordingYear(frame: ID3FrameRecordingYear(year: 2020))
+            .recordingHourMinute(frame: ID3FrameRecordingHourMinute(hour: 15, minute: 39))
+            .attachedPicture(pictureType: .frontCover, frame: ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg))
+            .attachedPicture(pictureType: .backCover, frame: ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg))
+            .unsynchronisedLyrics(language: .ita, frame: ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita unsync lyrics"))
+            .unsynchronisedLyrics(language: .eng, frame: ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng unsync lyrics"))
+            .iTunesGrouping(frame: ID3FrameWithStringContent(content: "ItunesGrouping V3"))
+            .iTunesMovementName(frame: ID3FrameWithStringContent(content: "MovementName V3"))
+            .iTunesMovementIndex(frame: ID3FrameWithIntegerContent(value: 6))
+            .iTunesMovementCount(frame: ID3FrameWithIntegerContent(value: 13))
+            .iTunesPodcastCategory(frame: ID3FrameWithStringContent(content: "PodcastCategory V3"))
+            .iTunesPodcastDescription(frame: ID3FrameWithStringContent(content: "PodcastDescription V3"))
+            .iTunesPodcastID(frame: ID3FrameWithStringContent(content: "PodcastID V3"))
+            .iTunesPodcastKeywords(frame: ID3FrameWithStringContent(content: "PodcastKeywords V3"))
+            .build()
 
         try id3TagEditor.write(
             tag: id3Tag,
@@ -216,43 +202,39 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
         let pathMp3Generated = NSHomeDirectory() + "/example-write-read-v4.mp3"
 
-        let id3Tag = ID3Tag(
-            version: .version4,
-            frames: [
-                .title: ID3FrameWithStringContent(content: "title V4"),
-                .album: ID3FrameWithStringContent(content: "album V4"),
-                .albumArtist: ID3FrameWithStringContent(content: "album artist V4"),
-                .artist: ID3FrameWithStringContent(content: "artist V4"),
-                .composer: ID3FrameWithStringContent(content: "composer V4"),
-                .conductor: ID3FrameWithStringContent(content: "conductor V4"),
-                .contentGrouping: ID3FrameWithStringContent(content: "ContentGrouping V4"),
-                .copyright: ID3FrameWithStringContent(content: "Copyright V4"),
-                .encodedBy: ID3FrameWithStringContent(content: "EncodedBy V4"),
-                .encoderSettings: ID3FrameWithStringContent(content: "EncoderSettings V4"),
-                .fileOwner: ID3FrameWithStringContent(content: "FileOwner V4"),
-                .lyricist: ID3FrameWithStringContent(content: "Lyricist V4"),
-                .mixArtist: ID3FrameWithStringContent(content: "MixArtist V4"),
-                .publisher: ID3FrameWithStringContent(content: "Publisher V4"),
-                .subtitle: ID3FrameWithStringContent(content: "Subtitle V4"),
-                .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
-                .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
-                .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingDateTime: ID3FrameRecordingDateTime(recordingDateTime: RecordingDateTime(date: RecordingDate(day: 15, month: 10, year: 2020),
-                                                                                                    time: RecordingTime(hour: 21, minute: 50))),
-                .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
-                .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
-                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "V4 ita unsync lyrics"),
-                .unsynchronizedLyrics(.eng): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "V4 eng unsync lyrics"),
-                .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V4"),
-                .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V4"),
-                .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
-                .iTunesMovementCount: ID3FrameWithIntegerContent(value: 13),
-                .iTunesPodcastCategory: ID3FrameWithStringContent(content: "PodcastCategory V4"),
-                .iTunesPodcastDescription: ID3FrameWithStringContent(content: "PodcastDescription V4"),
-                .iTunesPodcastID: ID3FrameWithStringContent(content: "PodcastID V4"),
-                .iTunesPodcastKeywords: ID3FrameWithStringContent(content: "PodcastKeywords V4")
-            ]
-        )
+        let id3Tag = ID32v4TagBuilder()
+            .title(frame: ID3FrameWithStringContent(content: "title V4"))
+            .album(frame: ID3FrameWithStringContent(content: "album V4"))
+            .albumArtist(frame: ID3FrameWithStringContent(content: "album artist V4"))
+            .artist(frame: ID3FrameWithStringContent(content: "artist V4"))
+            .composer(frame: ID3FrameWithStringContent(content: "composer V4"))
+            .conductor(frame: ID3FrameWithStringContent(content: "conductor V4"))
+            .contentGrouping(frame: ID3FrameWithStringContent(content: "ContentGrouping V4"))
+            .copyright(frame: ID3FrameWithStringContent(content: "Copyright V4"))
+            .encodedBy(frame: ID3FrameWithStringContent(content: "EncodedBy V4"))
+            .encoderSettings(frame: ID3FrameWithStringContent(content: "EncoderSettings V4"))
+            .fileOwner(frame: ID3FrameWithStringContent(content: "FileOwner V4"))
+            .lyricist(frame: ID3FrameWithStringContent(content: "Lyricist V4"))
+            .mixArtist(frame: ID3FrameWithStringContent(content: "MixArtist V4"))
+            .publisher(frame: ID3FrameWithStringContent(content: "Publisher V4"))
+            .subtitle(frame: ID3FrameWithStringContent(content: "Subtitle V4"))
+            .genre(frame: ID3FrameGenre(genre: .metal, description: "Metalcore"))
+            .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
+            .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
+            .recordingDateTime(frame: ID3FrameRecordingDateTime(recordingDateTime: RecordingDateTime(date: RecordingDate(day: 15, month: 10, year: 2020), time: RecordingTime(hour: 21, minute: 50))))
+            .attachedPicture(pictureType: .frontCover, frame: ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg))
+            .attachedPicture(pictureType: .backCover, frame: ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg))
+            .unsynchronisedLyrics(language: .ita, frame: ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "V4 ita unsync lyrics"))
+            .unsynchronisedLyrics(language: .eng, frame: ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "V4 eng unsync lyrics"))
+            .iTunesGrouping(frame: ID3FrameWithStringContent(content: "ItunesGrouping V4"))
+            .iTunesMovementName(frame: ID3FrameWithStringContent(content: "MovementName V4"))
+            .iTunesMovementIndex(frame: ID3FrameWithIntegerContent(value: 6))
+            .iTunesMovementCount(frame: ID3FrameWithIntegerContent(value: 13))
+            .iTunesPodcastCategory(frame: ID3FrameWithStringContent(content: "PodcastCategory V4"))
+            .iTunesPodcastDescription(frame: ID3FrameWithStringContent(content: "PodcastDescription V4"))
+            .iTunesPodcastID(frame: ID3FrameWithStringContent(content: "PodcastID V4"))
+            .iTunesPodcastKeywords(frame: ID3FrameWithStringContent(content: "PodcastKeywords V4"))
+            .build()
 
         try id3TagEditor.write(
             tag: id3Tag,

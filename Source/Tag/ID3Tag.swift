@@ -14,7 +14,7 @@ import Foundation
  */
 public class ID3Tag: CustomDebugStringConvertible {
     /// The properties of the tag. The public available property to the user of the frmaework is the versions property.
-    public var properties: TagProperties
+    public var properties: ID3TagProperties
     /// Dictionary that contains the frames extracted or to be added to the id3 tag for an mp3 file.
     public lazy var frames: [FrameName: ID3Frame] = {
         return [:]
@@ -81,7 +81,7 @@ public class ID3Tag: CustomDebugStringConvertible {
      - parameter frames: the list of frames extracted or to be added to the ID3Tag of an mp3 file.
      */
     public init(version: ID3Version, frames: [FrameName: ID3Frame]) {
-        self.properties = TagProperties(version: version, size: 0)
+        self.properties = ID3TagProperties(version: version, size: 0)
         self.frames = frames
     }
 }
