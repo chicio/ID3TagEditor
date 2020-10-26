@@ -229,13 +229,6 @@ All frames are encoded/formatted following the specification:
 Refer to the [id3 specification](https://id3.org/Developer%20Information "id3 specification") for additional details.
 
 ***
-### Contributors
-
-* [Nolaine Crusher](https://github.com/NCrusher74) (added 12 official frames + all unofficial non standard frames)
-* [woko666](https://github.com/woko666) (added read from `Data` API)
-* [martinjbaker](https://github.com/martinjbaker) (minor fixies)
-
-***
 
 ### Documentation
 
@@ -255,3 +248,10 @@ supported target. You can also find more usage example in the [read/write accept
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/05-example.png">
 </p>
+
+***
+### Contributors
+
+* [Nolaine Crusher](https://github.com/NCrusher74) (added 12 official frames + all unofficial non standard frames)
+* [woko666](https://github.com/woko666) (added read from `Data` API)
+* [martinjbaker](https://github.com/martinjbaker) (minor fixies)
