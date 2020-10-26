@@ -17,7 +17,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
             paddingAdder: MockPaddingAdder()
         )
 
-        let frame = creator.createFrame(using: ID3FrameUnsynchronisedLyrics(language: .ita,
+        let frame = creator.createFrame(using: ID3FrameWithLocalizedContent(language: .ita,
                                                                             contentDescription: "content description",
                                                                             content: "lyrics"),
                                         version: .version2)
@@ -38,7 +38,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
             paddingAdder: MockPaddingAdder()
         )
 
-        let frame = creator.createFrame(using: ID3FrameUnsynchronisedLyrics(language: .ita,
+        let frame = creator.createFrame(using: ID3FrameWithLocalizedContent(language: .ita,
                                                                             contentDescription: "content description",
                                                                             content: "lyrics"),
                                         version: .version3)
@@ -59,7 +59,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
             paddingAdder: MockPaddingAdder()
         )
 
-        let frame = creator.createFrame(using: ID3FrameUnsynchronisedLyrics(language: .ita,
+        let frame = creator.createFrame(using: ID3FrameWithLocalizedContent(language: .ita,
                                                                             contentDescription: "content description",
                                                                             content: "lyrics"),
                                         version: .version4)

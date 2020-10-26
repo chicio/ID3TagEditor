@@ -790,7 +790,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
-                .unsynchronizedLyrics(.ita): ID3FrameUnsynchronisedLyrics(language: ID3FrameContentLanguage.ita,
+                .unsynchronizedLyrics(.ita): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita,
                                                                           contentDescription: "CD",
                                                                           content: """
                         Lyrics
@@ -809,15 +809,15 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let id3TagWritten = try id3TagEditor.read(from: pathMp3Generated)
 
         XCTAssertEqual(
-            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.language,
+            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.language,
             .ita
         )
         XCTAssertEqual(
-            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)?.contentDescription,
+            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription,
             "CD"
         )
         XCTAssertEqual(
-            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameUnsynchronisedLyrics)!.content,
+            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)!.content,
             """
                         Lyrics
                         Multiline

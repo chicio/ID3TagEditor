@@ -10,7 +10,7 @@ import Foundation
 @testable import ID3TagEditor
 
 class MockUnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLanguageFrameCreator {
-    func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8] {
+    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent, version: ID3Version) -> [UInt8] {
         return [0x01]
     }
 }

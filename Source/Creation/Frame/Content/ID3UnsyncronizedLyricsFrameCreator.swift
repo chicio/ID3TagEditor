@@ -20,7 +20,7 @@ class ID3UnsyncronizedLyricsFrameCreator: ID3FrameCreatorsChain {
         var frames: [UInt8] = []
         for language in ID3FrameContentLanguage.allCases {
             if let frame = id3Tag.frames[.unsynchronizedLyrics(language)],
-                let unsyncronizedLyrics = frame as? ID3FrameUnsynchronisedLyrics {
+                let unsyncronizedLyrics = frame as? ID3FrameWithLocalizedContent {
                 let frame = unsynchronisedLyricForLanguageFrameCreator.createFrame(using: unsyncronizedLyrics,
                                                                                    version: id3Tag.properties.version)
                 frames.append(contentsOf: frame)

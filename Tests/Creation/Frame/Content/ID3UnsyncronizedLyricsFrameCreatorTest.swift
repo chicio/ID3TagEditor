@@ -32,7 +32,7 @@ class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
 
     private func aTagWithUnsynchronisedLyrics() -> ID3Tag {
         return ID32v3TagBuilder()
-            .unsynchronisedLyrics(language: .ita, frame: ID3FrameUnsynchronisedLyrics(
+            .unsynchronisedLyrics(language: .ita, frame: ID3FrameWithLocalizedContent(
                 language: .ita,
                 contentDescription: "decription",
                 content: "content"

@@ -29,7 +29,7 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperation: FrameContentParsingOp
         let language = parseLanguageFrom(frame: frame, using: headerSize)
 
         completed(.unsynchronizedLyrics(language),
-                  ID3FrameUnsynchronisedLyrics(language: language,
+                  ID3FrameWithLocalizedContent(language: language,
                                                contentDescription: body.contentDescriptor,
                                                content: body.content))
     }

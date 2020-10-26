@@ -16,9 +16,9 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
         let lyricsOperation = ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make()
 
         lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
-            XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.content, "c")
-            XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.contentDescription, "cd")
-            XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.language, .ita)
+            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
+            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.contentDescription, "cd")
+            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.language, .ita)
             expectation.fulfill()
         }
     }
@@ -29,9 +29,9 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
         let lyricsOperation = ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make()
 
         lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
-            XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.content, "c")
-            XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.contentDescription, "cd")
-            XCTAssertEqual((frame as? ID3FrameUnsynchronisedLyrics)?.language, .unknown)
+            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
+            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.contentDescription, "cd")
+            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.language, .unknown)
             expectation.fulfill()
         }
     }

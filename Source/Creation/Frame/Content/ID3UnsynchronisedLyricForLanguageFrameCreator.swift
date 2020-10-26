@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UnsynchronisedLyricForLanguageFrameCreator {
-    func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8]
+    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent, version: ID3Version) -> [UInt8]
 }
 
 class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLanguageFrameCreator {
@@ -26,7 +26,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLangu
         self.paddingAdder = paddingAdder
     }
 
-    func createFrame(using unsynchronisedLyric: ID3FrameUnsynchronisedLyrics, version: ID3Version) -> [UInt8] {
+    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent, version: ID3Version) -> [UInt8] {
         let frameBody = createFrameBodyUsing(unsynchronisedLyric: unsynchronisedLyric, version: version)
         let frameHeader = frameHeaderCreator.createUsing(
             version: version,
@@ -36,14 +36,14 @@ class ID3UnsynchronisedLyricForLanguageFrameCreator: UnsynchronisedLyricForLangu
         return frameHeader + frameBody
     }
 
-    private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics,
+    private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameWithLocalizedContent,
                                       version: ID3Version) -> [UInt8] {
         return id3FrameConfiguration.encodingByteFor(version: version, encoding: .UTF16)
             + [UInt8](unsynchronisedLyric.language.rawValue.data(using: .utf8)!)
             + createFrameTextContentFrom(unsynchronisedLyric: unsynchronisedLyric)
     }
 
-    private func createFrameTextContentFrom(unsynchronisedLyric: ID3FrameUnsynchronisedLyrics) -> [UInt8] {
+    private func createFrameTextContentFrom(unsynchronisedLyric: ID3FrameWithLocalizedContent) -> [UInt8] {
         let contentDescriptor = paddingAdder.addTo(
             content: [UInt8](unsynchronisedLyric.contentDescription.data(using: .utf16)!),
             numberOfByte: 2

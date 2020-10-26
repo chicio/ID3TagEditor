@@ -65,7 +65,7 @@ public class ID3Tag: CustomDebugStringConvertible {
             return accumulator
         }))
         - unsynchronisedLyrics:\(ID3FrameContentLanguage.allCases.reduce("", { (accumulator: String, current: ID3FrameContentLanguage) in
-            if let frameDescription = (self.frames[.unsynchronizedLyrics(current)] as? ID3FrameUnsynchronisedLyrics)?.debugDescription {
+            if let frameDescription = (self.frames[.unsynchronizedLyrics(current)] as? ID3FrameWithLocalizedContent)?.debugDescription {
                 return accumulator + "\n" + frameDescription + "\n"
             }
 

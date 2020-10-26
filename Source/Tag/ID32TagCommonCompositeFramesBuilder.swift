@@ -70,12 +70,12 @@ public class ID32TagCommonCompositeFramesBuilder: ID32TagCommonStringFramesBuild
      unsynchronised lyrics frames per tag, one for each of the languages contained in ID3FrameContentLanguage.
      
       - parameter language: the ID3FrameContentLanguage associated to the unsynchronisedLyrics frame to be set.
-      - parameter frame: the unsynchronisedLyrics frame as a ID3FrameUnsynchronisedLyrics instance.
+      - parameter frame: the unsynchronisedLyrics frame as a ID3FrameWithLocalizedContent instance.
      
       - returns: the instance of the builder.
      */
     public func unsynchronisedLyrics(language: ID3FrameContentLanguage,
-                                     frame: ID3FrameUnsynchronisedLyrics) -> Self {
+                                     frame: ID3FrameWithLocalizedContent) -> Self {
         frames[.unsynchronizedLyrics(language)] = frame
         return self
     }

@@ -26,7 +26,8 @@ public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConv
      Init an ID3 attached picture frame.
 
      - parameter picture: the image bytes as `Data`.
-     - parameter type: the ID3 type of the attached picture. See `ID3PictureType` for a complete list of the available.
+     - parameter type: the ID3 type of the attached picture. See `ID3PictureType`
+     for a complete list of the available picture types.
      - parameter format: the format of the image. See `ID3PictureFormat`.
      types.
      */
