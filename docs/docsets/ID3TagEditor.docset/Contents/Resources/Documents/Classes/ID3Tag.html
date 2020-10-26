@@ -17,7 +17,7 @@
     <a title="ID3Tag Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ID3TagEditor 3.3.3 Docs</a> (100% documented)</p>
+        <p><a href="../index.html">ID3TagEditor 4.0.0 Docs</a> (99% documented)</p>
         <p class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -38,6 +38,21 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v2TagBuilder.html">ID32v2TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v3TagBuilder.html">ID32v3TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v4TagBuilder.html">ID32v4TagBuilder</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Classes/ID3Frame.html">ID3Frame</a>
               </li>
@@ -63,6 +78,9 @@
                 <a href="../Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Classes/ID3FrameUnsynchronisedLyrics.html">ID3FrameUnsynchronisedLyrics</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
               </li>
               <li class="nav-group-task">
@@ -83,6 +101,9 @@
                 <a href="../Enums/FrameName.html">FrameName</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/ID3Genre.html">ID3Genre</a>
               </li>
               <li class="nav-group-task">
@@ -100,8 +121,28 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RecordingDateTimeFrameBuilder.html">RecordingDateTimeFrameBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ID3TagProperties.html">ID3TagProperties</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Structs/RecordingDate.html">RecordingDate</a>
               </li>
@@ -110,9 +151,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/RecordingTime.html">RecordingTime</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Structs/TagProperties.html">TagProperties</a>
               </li>
             </ul>
           </li>
@@ -138,9 +176,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0aB0C10propertiesAA0B10PropertiesVvp"></a>
+                    <a name="/s:12ID3TagEditor0aB0C10propertiesAA0aB10PropertiesVvp"></a>
                     <a name="//apple_ref/swift/Property/properties" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0aB0C10propertiesAA0B10PropertiesVvp">properties</a>
+                    <a class="token" href="#/s:12ID3TagEditor0aB0C10propertiesAA0aB10PropertiesVvp">properties</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -155,7 +193,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">properties</span><span class="p">:</span> <span class="kt"><a href="../Structs/TagProperties.html">TagProperties</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">properties</span><span class="p">:</span> <span class="kt"><a href="../Structs/ID3TagProperties.html">ID3TagProperties</a></span></code></pre>
 
                         </div>
                       </div>
@@ -216,70 +254,12 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12ID3TagEditor0aB0C7version6framesAcA0A7VersionO_SDyAA9FrameNameOAA0aG0CGtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(version:frames:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0aB0C7version6framesAcA0A7VersionO_SDyAA9FrameNameOAA0aG0CGtcfc">init(version:<wbr>frames:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Init an ID3 tag.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3Version.html">ID3Version</a></span><span class="p">,</span> <span class="nv">frames</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/FrameName.html">FrameName</a></span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID3Frame.html">ID3Frame</a></span><span class="p">])</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>version</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the version of the ID3 tag. Versions supported: 2.2, 2.3 and 2.4.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>frames</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the list of frames extracted or to be added to the ID3Tag of an mp3 file.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-10-09)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-10-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

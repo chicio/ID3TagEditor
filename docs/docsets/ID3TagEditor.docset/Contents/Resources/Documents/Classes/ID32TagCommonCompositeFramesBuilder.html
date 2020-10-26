@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ID32TagCommonCompositeFramesBuilder Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ID32TagCommonCompositeFramesBuilder" class="dashAnchor"></a>
+    <a title="ID32TagCommonCompositeFramesBuilder Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ID3TagEditor 4.0.0 Docs</a> (99% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ID3TagEditor Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ID32TagCommonCompositeFramesBuilder Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v2TagBuilder.html">ID32v2TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v3TagBuilder.html">ID32v3TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v4TagBuilder.html">ID32v4TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3Frame.html">ID3Frame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameAttachedPicture.html">ID3FrameAttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameGenre.html">ID3FrameGenre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingDayMonth.html">ID3FrameRecordingDayMonth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameUnsynchronisedLyrics.html">ID3FrameUnsynchronisedLyrics</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3Tag.html">ID3Tag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3TagEditor.html">ID3TagEditor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/FrameName.html">FrameName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3Genre.html">ID3Genre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3PictureFormat.html">ID3PictureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3PictureType.html">ID3PictureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3TagEditorError.html">ID3TagEditorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3Version.html">ID3Version</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RecordingDateTimeFrameBuilder.html">RecordingDateTimeFrameBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ID3TagProperties.html">ID3TagProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingDate.html">RecordingDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingDateTime.html">RecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingTime.html">RecordingTime</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ID32TagCommonCompositeFramesBuilder</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32TagCommonCompositeFramesBuilder</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This is another base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
+ID32v4TagBuilder inherits from this class. It let the user set frames with structured
+content (images, multiple numbers etc.) that are in common to all the ID3 v2 tag specificiation.
+This class can&rsquo;t be used in user code. Use of ID32v2TagBuilder, ID32v3TagBuilder and ID32v4TagBuilder classes.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC5genre5frameACXDAA0A10FrameGenreC_tF"></a>
+                    <a name="//apple_ref/swift/Method/genre(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC5genre5frameACXDAA0A10FrameGenreC_tF">genre(frame:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the genre frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">genre</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameGenre.html">ID3FrameGenre</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the genre frame as a ID3FrameGenre instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC12discPosition5frameACXDAA0A16FramePartOfTotalC_tF"></a>
+                    <a name="//apple_ref/swift/Method/discPosition(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC12discPosition5frameACXDAA0A16FramePartOfTotalC_tF">discPosition(frame:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the discPosition frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">discPosition</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the discPosition frame as a ID3FramePartOfTotal instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC13trackPosition5frameACXDAA0A16FramePartOfTotalC_tF"></a>
+                    <a name="//apple_ref/swift/Method/trackPosition(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC13trackPosition5frameACXDAA0A16FramePartOfTotalC_tF">trackPosition(frame:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the trackPosition frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">trackPosition</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the trackPosition frame as a ID3FramePartOfTotal instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC15attachedPicture11pictureType5frameACXDAA0ajL0O_AA0a13FrameAttachedJ0CtF"></a>
+                    <a name="//apple_ref/swift/Method/attachedPicture(pictureType:frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC15attachedPicture11pictureType5frameACXDAA0ajL0O_AA0a13FrameAttachedJ0CtF">attachedPicture(pictureType:<wbr>frame:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set an attachedPicture frame to be written by ID3TagEditor. You can set multiple
+attached picture frames per tag, one for each of the picture types contained in ID3PictureType.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">attachedPicture</span><span class="p">(</span><span class="nv">pictureType</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3PictureType.html">ID3PictureType</a></span><span class="p">,</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameAttachedPicture.html">ID3FrameAttachedPicture</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>pictureType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the ID3PictureType associated to the attachedPicture frame to be set.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the attachedPicture frame as a ID3FrameAttachedPicture instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC20unsynchronisedLyrics8language5frameACXDAA0A20FrameContentLanguageO_AA0am14UnsynchronisedJ0CtF"></a>
+                    <a name="//apple_ref/swift/Method/unsynchronisedLyrics(language:frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC20unsynchronisedLyrics8language5frameACXDAA0A20FrameContentLanguageO_AA0am14UnsynchronisedJ0CtF">unsynchronisedLyrics(language:<wbr>frame:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set an unsynchronisedLyrics frame to be written by ID3TagEditor. You can set multiple
+unsynchronised lyrics frames per tag, one for each of the languages contained in ID3FrameContentLanguage.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unsynchronisedLyrics</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt"><a href="../Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a></span><span class="p">,</span>
+                                 <span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameUnsynchronisedLyrics.html">ID3FrameUnsynchronisedLyrics</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>language</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the ID3FrameContentLanguage associated to the unsynchronisedLyrics frame to be set.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the unsynchronisedLyrics frame as a ID3FrameUnsynchronisedLyrics instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-10-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

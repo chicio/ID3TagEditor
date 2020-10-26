@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ITunesFramesBuilder Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/ITunesFramesBuilder" class="dashAnchor"></a>
+    <a title="ITunesFramesBuilder Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ID3TagEditor 4.0.0 Docs</a> (99% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ID3TagEditor Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ITunesFramesBuilder Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v2TagBuilder.html">ID32v2TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v3TagBuilder.html">ID32v3TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID32v4TagBuilder.html">ID32v4TagBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3Frame.html">ID3Frame</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameAttachedPicture.html">ID3FrameAttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameGenre.html">ID3FrameGenre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FramePartOfTotal.html">ID3FramePartOfTotal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingDateTime.html">ID3FrameRecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingDayMonth.html">ID3FrameRecordingDayMonth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameUnsynchronisedLyrics.html">ID3FrameUnsynchronisedLyrics</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3Tag.html">ID3Tag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ID3TagEditor.html">ID3TagEditor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/FrameName.html">FrameName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3Genre.html">ID3Genre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3PictureFormat.html">ID3PictureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3PictureType.html">ID3PictureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3TagEditorError.html">ID3TagEditorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ID3Version.html">ID3Version</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RecordingDateTimeFrameBuilder.html">RecordingDateTimeFrameBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ID3TagProperties.html">ID3TagProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingDate.html">RecordingDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingDateTime.html">RecordingDateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RecordingTime.html">RecordingTime</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ITunesFramesBuilder</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ITunesFramesBuilder</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol adopted by ID3Tag builders that support the unofficial iTunes ad-hoc frames. At the
+moment of this writing only ID3Tag version 3 and 4 support these frames. You should not adopt/use this protocol.
+Use ID32v3TagBuilder and ID32v4TagBuilder to create an ID3Tag with this frames.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP14iTunesGrouping5framexAA0A22FrameWithStringContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesGrouping(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP14iTunesGrouping5framexAA0A22FrameWithStringContentC_tF">iTunesGrouping(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesGrouping frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesGrouping frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesGrouping</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesGrouping frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP18iTunesMovementName5framexAA0A22FrameWithStringContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesMovementName(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP18iTunesMovementName5framexAA0A22FrameWithStringContentC_tF">iTunesMovementName(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesGrouping frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesGrouping frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesMovementName</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesMovementName frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP19iTunesMovementIndex5framexAA0A23FrameWithIntegerContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesMovementIndex(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP19iTunesMovementIndex5framexAA0A23FrameWithIntegerContentC_tF">iTunesMovementIndex(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesMovementIndex frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesMovementIndex frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesMovementIndex</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesMovementIndex frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP19iTunesMovementCount5framexAA0A23FrameWithIntegerContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesMovementCount(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP19iTunesMovementCount5framexAA0A23FrameWithIntegerContentC_tF">iTunesMovementCount(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesMovementCount frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesMovementCount frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesMovementCount</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesMovementCount frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP21iTunesPodcastCategory5framexAA0A22FrameWithStringContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesPodcastCategory(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP21iTunesPodcastCategory5framexAA0A22FrameWithStringContentC_tF">iTunesPodcastCategory(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesPodcastCategory frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesPodcastCategory frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesPodcastCategory</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesPodcastCategory frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP24iTunesPodcastDescription5framexAA0A22FrameWithStringContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesPodcastDescription(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP24iTunesPodcastDescription5framexAA0A22FrameWithStringContentC_tF">iTunesPodcastDescription(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesPodcastDescription frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesPodcastDescription frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesPodcastDescription</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesPodcastDescription frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP15iTunesPodcastID5framexAA0A22FrameWithStringContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesPodcastID(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP15iTunesPodcastID5framexAA0A22FrameWithStringContentC_tF">iTunesPodcastID(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesPodcastID frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesPodcastID frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesPodcastID</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesPodcastID frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor19ITunesFramesBuilderP21iTunesPodcastKeywords5framexAA0A22FrameWithStringContentC_tF"></a>
+                    <a name="//apple_ref/swift/Method/iTunesPodcastKeywords(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor19ITunesFramesBuilderP21iTunesPodcastKeywords5framexAA0A22FrameWithStringContentC_tF">iTunesPodcastKeywords(frame:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the iTunesPodcastKeywords frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Set the iTunesPodcastKeywords frame to be written by ID3TagEditor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">iTunesPodcastKeywords</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt"><a href="../Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the iTunesPodcastKeywords frame as a ID3FrameWithStringContent instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the instance of the builder.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-10-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
