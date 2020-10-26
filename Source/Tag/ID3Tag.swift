@@ -80,7 +80,7 @@ public class ID3Tag: CustomDebugStringConvertible {
      - parameter version: the version of the ID3 tag. Versions supported: 2.2, 2.3 and 2.4.
      - parameter frames: the list of frames extracted or to be added to the ID3Tag of an mp3 file.
      */
-    public init(version: ID3Version, frames: [FrameName: ID3Frame]) {
+    init(version: ID3Version, frames: [FrameName: ID3Frame]) {
         self.properties = ID3TagProperties(version: version, size: 0)
         self.frames = frames
     }
