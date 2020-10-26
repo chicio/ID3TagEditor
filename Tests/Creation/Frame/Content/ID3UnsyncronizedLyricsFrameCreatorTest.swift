@@ -14,22 +14,22 @@ class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
         let creator = ID3UnsyncronizedLyricsFrameCreator(
             unsynchronisedLyricForLanguageFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator()
         )
-        
-        let frame = creator.createFrames(id3Tag: ID3Tag(version: .version3, frames: [:]), tag: [])
-        
+
+        let frame = creator.createFrames(id3Tag: ID32v3TagBuilder().build(), tag: [])
+
         XCTAssertEqual(frame, [])
     }
-    
+
     func testCreateFrameForValidData() {
         let creator = ID3UnsyncronizedLyricsFrameCreator(
             unsynchronisedLyricForLanguageFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator()
         )
-        
+
         let frame = creator.createFrames(id3Tag: aTagWithUnsynchronisedLyrics(), tag: [])
-        
+
         XCTAssertEqual(frame, [0x01])
     }
-    
+
     private func aTagWithUnsynchronisedLyrics() -> ID3Tag {
         return ID32v3TagBuilder()
             .unsynchronisedLyrics(language: .ita, frame: ID3FrameUnsynchronisedLyrics(
@@ -39,7 +39,7 @@ class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
             ))
             .build()
     }
-    
+
     static let allTests = [
         ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet),
         ("testCreateFrameForValidData", testCreateFrameForValidData)

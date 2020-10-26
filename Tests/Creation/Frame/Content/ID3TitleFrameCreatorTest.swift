@@ -20,7 +20,7 @@ class ID3TitleFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3TitleFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 
@@ -30,10 +30,10 @@ class ID3TitleFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsATitle() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(
-            version: .version3,
-            frames: [.title: ID3FrameWithStringContent(content: "::an example title::")]
-        )
+        let id3Tag = ID32v3TagBuilder()
+            .title(frame: ID3FrameWithStringContent(content: "::an example title::"))
+            .build()
+
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

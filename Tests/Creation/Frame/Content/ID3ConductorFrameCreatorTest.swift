@@ -33,7 +33,7 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .conductor(frame: ID3FrameWithStringContent(content: "::an example conductor::"))
             .build()
-            
+
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

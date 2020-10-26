@@ -33,7 +33,7 @@ class ID3EncoderSettingsFrameCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .encoderSettings(frame: ID3FrameWithStringContent(content: "::an example encoder settings::"))
             .build()
-            
+
         let id3EncoderSettingsFrameCreator = ID3EncoderSettingsFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

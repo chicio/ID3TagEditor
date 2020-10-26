@@ -21,7 +21,7 @@ class ID3iTunesMovementCountFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3MovementCountFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 

@@ -33,7 +33,7 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
             .build()
-                        
+
         let id3GenreFrameCreator = ID3DiscPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,

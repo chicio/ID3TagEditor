@@ -33,7 +33,7 @@ class ID3ContentGroupingFrameCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .contentGrouping(frame: ID3FrameWithStringContent(content: "::an example content grouping::"))
             .build()
-            
+
         let id3ContentGroupingFrameCreator = ID3ContentGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

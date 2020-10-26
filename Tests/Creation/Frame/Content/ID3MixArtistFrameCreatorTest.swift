@@ -20,7 +20,7 @@ class ID3MixArtistFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3MixArtistFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 

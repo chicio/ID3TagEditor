@@ -33,7 +33,7 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .copyright(frame: ID3FrameWithStringContent(content: "::an example copyright::"))
             .build()
-            
+
         let id3CopyrightFrameCreator = ID3CopyrightFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

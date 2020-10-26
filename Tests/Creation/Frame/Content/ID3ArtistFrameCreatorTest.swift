@@ -20,7 +20,7 @@ class ID3ArtistFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3ArtistFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 
@@ -30,10 +30,9 @@ class ID3ArtistFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsAnArtist() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(
-            version: .version3,
-            frames: [.artist: ID3FrameWithStringContent(content: "::an example artist::")]
-        )
+        let id3Tag = ID32v3TagBuilder()
+            .artist(frame: ID3FrameWithStringContent(content: "::an example artist::"))
+            .build()
         let id3ArtistFrameCreator = ID3ArtistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
