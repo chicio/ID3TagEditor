@@ -20,7 +20,7 @@ class ID3iTunesGroupingFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3iTunesGroupingFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 

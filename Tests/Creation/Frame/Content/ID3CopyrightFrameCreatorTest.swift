@@ -20,7 +20,7 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3CopyrightFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 
@@ -30,10 +30,10 @@ class ID3CopyrightFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsACopyright() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(
-            version: .version3,
-            frames: [.copyright: ID3FrameWithStringContent(content: "::an example copyright::")]
-        )
+        let id3Tag = ID32v3TagBuilder()
+            .copyright(frame: ID3FrameWithStringContent(content: "::an example copyright::"))
+            .build()
+
         let id3CopyrightFrameCreator = ID3CopyrightFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

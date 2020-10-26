@@ -14,7 +14,7 @@ class ID3FrameCreatorsChainTest: XCTestCase {
         let anotherFrameCreatorChain = MockID3FrameCreatorsChain()
         id3FrameCreatorsChain.nextCreator = anotherFrameCreatorChain
 
-        _ = id3FrameCreatorsChain.createFrames(id3Tag: ID3Tag(version: .version2, frames: [:]), tag: [])
+        _ = id3FrameCreatorsChain.createFrames(id3Tag: ID32v2TagBuilder().build(), tag: [])
 
         XCTAssertTrue(anotherFrameCreatorChain.createFramesHasBeenCalled)
     }
@@ -24,7 +24,7 @@ class ID3FrameCreatorsChainTest: XCTestCase {
         let currentTagBytes: [UInt8] = [0x1, 0x1]
 
         let newTagBytes = id3FrameCreatorsChain.createFrames(
-            id3Tag: ID3Tag(version: .version2, frames: [:]),
+            id3Tag: ID32v2TagBuilder().build(),
             tag: currentTagBytes
         )
 

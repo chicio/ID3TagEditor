@@ -20,7 +20,7 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3ConductorFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 
@@ -30,10 +30,10 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsAConductor() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(
-            version: .version3,
-            frames: [.conductor: ID3FrameWithStringContent(content: "::an example conductor::")]
-        )
+        let id3Tag = ID32v3TagBuilder()
+            .conductor(frame: ID3FrameWithStringContent(content: "::an example conductor::"))
+            .build()
+
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,

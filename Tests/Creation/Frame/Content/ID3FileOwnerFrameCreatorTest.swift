@@ -20,7 +20,7 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3FileOwnerFrameCreator.createFrames(
-            id3Tag: ID3Tag(version: .version3, frames: [:]),
+            id3Tag: ID32v3TagBuilder().build(),
             tag: tagBytes
         )
 
@@ -30,10 +30,10 @@ class ID3FileOwnerFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsAFileOwner() {
         let newFrameBytes: [UInt8] = [1, 1]
         let tagAsBytes: [UInt8] = [1, 1, 1]
-        let id3Tag = ID3Tag(
-            version: .version3,
-            frames: [.fileOwner: ID3FrameWithStringContent(content: "::an example file owner::")]
-        )
+        let id3Tag = ID32v3TagBuilder()
+            .fileOwner(frame: ID3FrameWithStringContent(content: "::an example file owner::"))
+            .build()
+
         let id3FileOwnerFrameCreator = ID3FileOwnerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
