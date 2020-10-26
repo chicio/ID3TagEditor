@@ -17,7 +17,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.0.0 Docs</a> (99% documented)</p>
+        <p><a href="index.html">ID3TagEditor 4.0.0 Docs</a> (100% documented)</p>
         <p class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -78,10 +78,10 @@
                 <a href="Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/ID3FrameUnsynchronisedLyrics.html">ID3FrameUnsynchronisedLyrics</a>
+                <a href="Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
+                <a href="Classes/ID3FrameWithLocalizedContent.html">ID3FrameWithLocalizedContent</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a>
@@ -397,34 +397,6 @@ Valid only for ID3 tag version 2.3 and 2.2.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A25FrameUnsynchronisedLyricsC"></a>
-                    <a name="//apple_ref/swift/Class/ID3FrameUnsynchronisedLyrics" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A25FrameUnsynchronisedLyricsC">ID3FrameUnsynchronisedLyrics</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="Classes/ID3FrameUnsynchronisedLyrics.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameUnsynchronisedLyrics</span> <span class="p">:</span> <span class="kt"><a href="Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:12ID3TagEditor0A23FrameWithIntegerContentC"></a>
                     <a name="//apple_ref/swift/Class/ID3FrameWithIntegerContent" class="dashAnchor"></a>
                     <a class="token" href="#/s:12ID3TagEditor0A23FrameWithIntegerContentC">ID3FrameWithIntegerContent</a>
@@ -444,6 +416,37 @@ Valid only for ID3 tag version 2.3 and 2.2.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameWithIntegerContent</span> <span class="p">:</span> <span class="kt"><a href="Classes/ID3Frame.html">ID3Frame</a></span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12ID3TagEditor0A25FrameWithLocalizedContentC"></a>
+                    <a name="//apple_ref/swift/Class/ID3FrameWithLocalizedContent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12ID3TagEditor0A25FrameWithLocalizedContentC">ID3FrameWithLocalizedContent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A class used to represent an ID3 frame that contains localized content to be used in the ID3 tag.
+Only a subset of the ID3 frames support localized content. See the various ID3 tag builders to
+understand which frames admit a locallized content.
+See the official id3 documentation for a full list of frame with localized content.</p>
+
+                        <a href="Classes/ID3FrameWithLocalizedContent.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameWithLocalizedContent</span> <span class="p">:</span> <span class="kt"><a href="Classes/ID3FrameWithStringContent.html">ID3FrameWithStringContent</a></span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
 
                         </div>
                       </div>

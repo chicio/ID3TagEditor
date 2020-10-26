@@ -1,19 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/fduroni/Documents/Fabrizio/Code/ID3TagEditor/Source/Frame/ID3FrameUnsynchronisedLyrics.swift",
-      "line": 11,
-      "symbol": "ID3FrameUnsynchronisedLyrics",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/fduroni/Documents/Fabrizio/Code/ID3TagEditor/Source/Frame/ID3FrameUnsynchronisedLyrics.swift",
-      "line": 25,
-      "symbol": "ID3FrameUnsynchronisedLyrics.init(language:contentDescription:content:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/fduroni/Documents/Fabrizio/Code/ID3TagEditor"
 }

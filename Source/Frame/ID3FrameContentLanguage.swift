@@ -2,7 +2,7 @@
 //  ID3FrameContentLanguage.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 09/10/2020.
+//  Created by Fabrizio Duroni on 09.10.20.
 //  2020 Fabrizio Duroni
 //
 
