@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ Protocol adopted by ID3Tag builders that support the unofficial iTunes ad-hoc frames. At the
+ moment of this writing only ID3Tag version 3 and 4 support these frames. You should not adopt/use this protocol.
+ Use ID32v3TagBuilder and ID32v4TagBuilder to create an ID3Tag with this frames.
+ */
 public protocol ITunesFramesBuilder where Self: ID32TagCommonStringFramesBuilder {
     func iTunesGrouping(frame: ID3FrameWithStringContent) -> Self
     func iTunesMovementName(frame: ID3FrameWithStringContent) -> Self
@@ -19,6 +24,10 @@ public protocol ITunesFramesBuilder where Self: ID32TagCommonStringFramesBuilder
     func iTunesPodcastKeywords(frame: ID3FrameWithStringContent) -> Self
 }
 
+/**
+ Default implementation for all the adopters of ITunesFramesBuilder. This extension let the adopters of
+ ITunesFramesBuilder set unofficial iTunes ad-hoc frames.
+ */
 public extension ITunesFramesBuilder {
     func iTunesGrouping(frame: ID3FrameWithStringContent) -> Self {
         frames[.iTunesGrouping] = frame
