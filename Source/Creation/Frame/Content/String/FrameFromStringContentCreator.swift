@@ -1,12 +1,13 @@
 //
 //  FrameFromStringContentCreator.swift
+//  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 26/02/2018.
-//  2018 Fabrizio Duroni.
+//  Created by Fabrizio Duroni on 27.10.20.
+//  2020 Fabrizio Duroni
 //
 
 import Foundation
 
 protocol FrameFromStringContentCreator {
-    func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8]
+    func createFrame(frameType: FrameType, version: ID3Version, content: String) -> [UInt8]
 }

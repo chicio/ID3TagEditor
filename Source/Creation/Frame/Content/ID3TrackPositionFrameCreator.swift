@@ -20,10 +20,7 @@ class ID3TrackPositionFrameCreator: ID3FrameCreatorsChain {
         if let trackPositionFrame = id3Tag.frames[.trackPosition] as? ID3FramePartOfTotal {
             let newTag = tag +
                 frameCreator.createFrame(
-                    frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .trackPosition,
-                        version: id3Tag.properties.version
-                    ),
+                    frameType: .trackPosition,
                     version: id3Tag.properties.version,
                     content: adapt(trackPosition: trackPositionFrame)
             )

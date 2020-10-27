@@ -8,24 +8,19 @@
 import Foundation
 
 class ID3FrameFromStringContentCreator: FrameFromStringContentCreator {
-    private let frameContentSizeCalculator: FrameContentSizeCalculator
-    private let frameFlagsCreator: FrameFlagsCreator
+    private let frameHeaderCreator: FrameHeaderCreator
     private let stringToBytesAdapter: StringToBytesAdapter
 
-    init(frameContentSizeCalculator: FrameContentSizeCalculator,
-         frameFlagsCreator: FrameFlagsCreator,
+    init(frameHeaderCreator: FrameHeaderCreator,
          stringToBytesAdapter: StringToBytesAdapter) {
-        self.frameContentSizeCalculator = frameContentSizeCalculator
-        self.frameFlagsCreator = frameFlagsCreator
+        self.frameHeaderCreator = frameHeaderCreator
         self.stringToBytesAdapter = stringToBytesAdapter
     }
 
-    func createFrame(frameIdentifier: [UInt8], version: ID3Version, content: String) -> [UInt8] {
-        let contentAsBytes = stringToBytesAdapter.adapt(string: content, for: version)
-        var frame: [UInt8] = frameIdentifier
-        frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(content: contentAsBytes, version: version))
-        frame.append(contentsOf: frameFlagsCreator.createFor(version: version))
-        frame.append(contentsOf: contentAsBytes)
+    func createFrame(frameType: FrameType, version: ID3Version, content: String) -> [UInt8] {
+        let frameBody = stringToBytesAdapter.adapt(string: content, for: version)
+        let frameHeader = frameHeaderCreator.createUsing(version: version, frameType: frameType, frameBody: frameBody)
+        let frame = frameHeader + frameBody
         return frame
     }
 }

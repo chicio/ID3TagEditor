@@ -19,15 +19,18 @@ class ID3FrameCreatorsChainFactory {
             synchsafeEncoder: SynchsafeIntegerEncoder()
         )
         let frameFlagsCreator = ID3FrameFlagsCreator()
-        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(
+        let frameHeaderCreator = ID3FrameHeaderCreator(
+            id3FrameConfiguration: frameConfiguration,
             frameContentSizeCalculator: frameContentSizeCalculator,
-            frameFlagsCreator: frameFlagsCreator,
+            frameFlagsCreator: frameFlagsCreator
+        )
+        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(
+            frameHeaderCreator: frameHeaderCreator,
             stringToBytesAdapter: ID3UTF16StringToByteAdapter(paddingAdder: paddingAdder,
                                                               frameConfiguration: frameConfiguration)
         )
         let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreator(
-            frameContentSizeCalculator: frameContentSizeCalculator,
-            frameFlagsCreator: frameFlagsCreator,
+            frameHeaderCreator: frameHeaderCreator,
             stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
                                                                  frameConfiguration: frameConfiguration)
         )
@@ -162,11 +165,7 @@ class ID3FrameCreatorsChainFactory {
         )
         let unsynchronisedLyricForLanguageCreator = ID3UnsynchronisedLyricForLanguageFrameCreator(
             id3FrameConfiguration: frameConfiguration,
-            frameHeaderCreator: ID3FrameHeaderCreator(
-                id3FrameConfiguration: frameConfiguration,
-                frameContentSizeCalculator: frameContentSizeCalculator,
-                frameFlagsCreator: frameFlagsCreator
-            ),
+            frameHeaderCreator: frameHeaderCreator,
             paddingAdder: paddingAdder
         )
         let unsynchronisedLyrics = ID3UnsyncronizedLyricsFrameCreator(

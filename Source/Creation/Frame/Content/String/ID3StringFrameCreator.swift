@@ -19,10 +19,7 @@ class ID3StringFrameCreator: ID3FrameCreatorsChain {
     func createFrameUsing(frameType: FrameType, content: String, id3Tag: ID3Tag, andAddItTo tag: [UInt8]) -> [UInt8] {
         let newTag = tag +
                 frameCreator.createFrame(
-                        frameIdentifier: id3FrameConfiguration.identifierFor(
-                                frameType: frameType,
-                                version: id3Tag.properties.version
-                        ),
+                        frameType: frameType,
                         version: id3Tag.properties.version,
                         content: content
                 )
