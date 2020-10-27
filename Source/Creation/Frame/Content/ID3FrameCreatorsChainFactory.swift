@@ -9,37 +9,14 @@
 
 import Foundation
 
-class ID3FrameHeaderCreatorChain {
-    static func make() -> ID3FrameHeaderCreator {
-        let frameConfiguration = ID3FrameConfiguration()
-        let frameContentSizeCalculator = ID3FrameContentSizeCalculator(
-            uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapterUsingUnsafePointer(),
-            synchsafeEncoder: SynchsafeIntegerEncoder()
-        )
-        let frameFlagsCreator = ID3FrameFlagsCreator()
-        return ID3FrameHeaderCreator(
-            id3FrameConfiguration: frameConfiguration,
-            frameContentSizeCalculator: frameContentSizeCalculator,
-            frameFlagsCreator: frameFlagsCreator
-        )
-    }
-}
-
 class ID3FrameCreatorsChainFactory {
     static func make() -> ID3FrameCreatorsChain {
         let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
         let frameConfiguration = ID3FrameConfiguration()
         let frameHeaderCreator = ID3FrameHeaderCreatorChain.make()
-        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(
-            frameHeaderCreator: frameHeaderCreator,
-            stringToBytesAdapter: ID3UTF16StringToByteAdapter(paddingAdder: paddingAdder,
-                                                              frameConfiguration: frameConfiguration)
-        )
-        let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreator(
-            frameHeaderCreator: frameHeaderCreator,
-            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
-                                                                 frameConfiguration: frameConfiguration)
-        )
+        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.make()
+        let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreatorWithISO88591EncodingFactory.make()
+
         let albumFrameCreator = ID3AlbumFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
