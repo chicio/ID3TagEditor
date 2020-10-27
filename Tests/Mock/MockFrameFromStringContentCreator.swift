@@ -18,7 +18,7 @@ class MockFrameFromStringContentCreator: FrameFromStringContentCreator {
     }
 
     func createFrame(frameType: FrameType, version: ID3Version, content: String) -> [UInt8] {
-        if ID3FrameConfiguration().identifierFor(frameType: frameType, version: version) != nil {
+        if self.frameType == frameType {
             return fakeNewFrameAsByte
         } else {
             return []

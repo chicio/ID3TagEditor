@@ -15,9 +15,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                        frameHeaderCreator: MockFrameHeaderCreator(),
-                        frameContentSizeCalculator: MockFrameContentSizeCalculator(),
-                        frameFlagsCreator: MockFrameFlagsCreator()
+                        frameHeaderCreator: MockFrameHeaderCreator()
                 )
         )
 
@@ -42,9 +40,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                        frameHeaderCreator: MockFrameHeaderCreator(),
-                        frameContentSizeCalculator: MockFrameContentSizeCalculator(),
-                        frameFlagsCreator: MockFrameFlagsCreator()
+                        frameHeaderCreator: MockFrameHeaderCreator()
                 )
         )
 
@@ -68,9 +64,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                        frameHeaderCreator: MockFrameHeaderCreator(),
-                        frameContentSizeCalculator: MockFrameContentSizeCalculator(),
-                        frameFlagsCreator: MockFrameFlagsCreator()
+                        frameHeaderCreator: MockFrameHeaderCreator()
                 )
         )
 
@@ -98,9 +92,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                        frameHeaderCreator: MockFrameHeaderCreator(),
-                        frameContentSizeCalculator: MockFrameContentSizeCalculator(),
-                        frameFlagsCreator: MockFrameFlagsCreator()
+                        frameHeaderCreator: MockFrameHeaderCreator()
                 )
         )
 
@@ -126,9 +118,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                        frameHeaderCreator: MockFrameHeaderCreator(),
-                        frameContentSizeCalculator: MockFrameContentSizeCalculator(),
-                        frameFlagsCreator: MockFrameFlagsCreator()
+                        frameHeaderCreator: MockFrameHeaderCreator()
                 )
         )
 
@@ -163,9 +153,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                        frameHeaderCreator: MockFrameHeaderCreator(),
-                        frameContentSizeCalculator: MockFrameContentSizeCalculator(),
-                        frameFlagsCreator: MockFrameFlagsCreator()
+                        frameHeaderCreator: MockFrameHeaderCreator()
                 )
         )
 

@@ -15,19 +15,13 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration
     private let frameHeaderCreator: FrameHeaderCreator
-    private let frameContentSizeCalculator: FrameContentSizeCalculator
-    private let frameFlagsCreator: FrameFlagsCreator
 
     init(id3FrameConfiguration: ID3FrameConfiguration,
          id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration,
-         frameHeaderCreator: FrameHeaderCreator,
-         frameContentSizeCalculator: FrameContentSizeCalculator,
-         frameFlagsCreator: FrameFlagsCreator) {
+         frameHeaderCreator: FrameHeaderCreator) {
         self.id3FrameConfiguration = id3FrameConfiguration
         self.id3AttachedPictureFrameConfiguration = id3AttachedPictureFrameConfiguration
         self.frameHeaderCreator = frameHeaderCreator
-        self.frameContentSizeCalculator = frameContentSizeCalculator
-        self.frameFlagsCreator = frameFlagsCreator
     }
 
     func createFrame(using attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
@@ -39,7 +33,7 @@ class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
         )
         return frameHeader + frameBody
     }
-    
+
     private func getFrameBody(attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
         var frameBody: [UInt8] = [UInt8]()
         frameBody.append(contentsOf: getAttachedPictureHeaderFor(

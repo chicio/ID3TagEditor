@@ -9,21 +9,27 @@
 
 import Foundation
 
-class ID3FrameCreatorsChainFactory {
-    static func make() -> ID3FrameCreatorsChain {
-        let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
+class ID3FrameHeaderCreatorChain {
+    static func make() -> ID3FrameHeaderCreator {
         let frameConfiguration = ID3FrameConfiguration()
-        let uInt32ToByteArrayAdapter = UInt32ToByteArrayAdapterUsingUnsafePointer()
         let frameContentSizeCalculator = ID3FrameContentSizeCalculator(
-            uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter,
+            uInt32ToByteArrayAdapter: UInt32ToByteArrayAdapterUsingUnsafePointer(),
             synchsafeEncoder: SynchsafeIntegerEncoder()
         )
         let frameFlagsCreator = ID3FrameFlagsCreator()
-        let frameHeaderCreator = ID3FrameHeaderCreator(
+        return ID3FrameHeaderCreator(
             id3FrameConfiguration: frameConfiguration,
             frameContentSizeCalculator: frameContentSizeCalculator,
             frameFlagsCreator: frameFlagsCreator
         )
+    }
+}
+
+class ID3FrameCreatorsChainFactory {
+    static func make() -> ID3FrameCreatorsChain {
+        let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
+        let frameConfiguration = ID3FrameConfiguration()
+        let frameHeaderCreator = ID3FrameHeaderCreatorChain.make()
         let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(
             frameHeaderCreator: frameHeaderCreator,
             stringToBytesAdapter: ID3UTF16StringToByteAdapter(paddingAdder: paddingAdder,
@@ -122,9 +128,7 @@ class ID3FrameCreatorsChainFactory {
             attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                frameHeaderCreator: frameHeaderCreator,
-                frameContentSizeCalculator: frameContentSizeCalculator,
-                frameFlagsCreator: frameFlagsCreator
+                frameHeaderCreator: frameHeaderCreator
             )
         )
         let yearFrameCreator = ID3RecordingYearFrameCreator(
