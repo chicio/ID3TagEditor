@@ -56,7 +56,26 @@ class ID3FrameConfiguration {
         .iTunesPodcastCategory: [UInt8]("TCAT".utf8),
         .iTunesPodcastDescription: [UInt8]("TDES".utf8),
         .iTunesPodcastID: [UInt8]("TGID".utf8),
-        .iTunesPodcastKeywords: [UInt8]("TKWD".utf8)
+        .iTunesPodcastKeywords: [UInt8]("TKWD".utf8),
+        .beatsPerMinute: [UInt8]("TBPM".utf8),
+        .playlistDelay: [UInt8]("TDLY".utf8),
+        .fileType: [UInt8]("TFLT".utf8),
+        .time: [UInt8]("TIME".utf8),
+        .initialKey: [UInt8]("TKEY".utf8),
+        .languages: [UInt8]("TLAN".utf8),
+        .length: [UInt8]("TLEN".utf8),
+        .mediaType: [UInt8]("TMED".utf8),
+        .originalAlbumTitle: [UInt8]("TOAL".utf8),
+        .originalFilename: [UInt8]("TOFN".utf8),
+        .originalLyricists: [UInt8]("TOLY".utf8),
+        .originalArtists: [UInt8]("TOPE".utf8),
+        .originalReleaseYear: [UInt8]("TORY".utf8),
+        .recordingDate: [UInt8]("TRDA".utf8),
+        .internetRadioStationName: [UInt8]("TRSN".utf8),
+        .internetRadioStationOwner: [UInt8]("TRSO".utf8),
+        .size: [UInt8]("TSIZ".utf8),
+        .internationalStandardRecordingCode: [UInt8]("TSRC".utf8),
+        .year: [UInt8]("TYER".utf8)
     ]
     private var identifiers: [ID3Version: [FrameType: [UInt8]]] = [
         .version2: [
@@ -120,7 +139,26 @@ class ID3FrameConfiguration {
         "TDES": .iTunesPodcastDescription,
         "TGID": .iTunesPodcastID,
         "TKWD": .iTunesPodcastKeywords,
-        "USLT": .unsyncronisedLyrics
+        "USLT": .unsyncronisedLyrics,
+        "TBPM": .beatsPerMinute,
+        "TDLY": .playlistDelay,
+        "TFLT": .fileType,
+        "TIME": .time,
+        "TKEY": .initialKey,
+        "TLAN": .languages,
+        "TLEN": .length,
+        "TMED": .mediaType,
+        "TOAL": .originalAlbumTitle,
+        "TOFN": .originalFilename,
+        "TOLY": .originalLyricists,
+        "TOPE": .originalArtists,
+        "TORY": .originalReleaseYear,
+        "TRDA": .recordingDate,
+        "TRSN": .internetRadioStationName,
+        "TRSO": .internetRadioStationOwner,
+        "TSIZ": .size,
+        "TSRC": .internationalStandardRecordingCode,
+        "TYER": .year,
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
