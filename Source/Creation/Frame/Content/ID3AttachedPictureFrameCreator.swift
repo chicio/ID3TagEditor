@@ -14,38 +14,35 @@ protocol AttachedPictureFrameCreator {
 class ID3AttachedPictureFrameCreator: AttachedPictureFrameCreator {
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration
-    private let frameContentSizeCalculator: FrameContentSizeCalculator
-    private let frameFlagsCreator: FrameFlagsCreator
+    private let frameHeaderCreator: FrameHeaderCreator
 
     init(id3FrameConfiguration: ID3FrameConfiguration,
          id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration,
-         frameContentSizeCalculator: FrameContentSizeCalculator,
-         frameFlagsCreator: FrameFlagsCreator) {
+         frameHeaderCreator: FrameHeaderCreator) {
         self.id3FrameConfiguration = id3FrameConfiguration
         self.id3AttachedPictureFrameConfiguration = id3AttachedPictureFrameConfiguration
-        self.frameContentSizeCalculator = frameContentSizeCalculator
-        self.frameFlagsCreator = frameFlagsCreator
+        self.frameHeaderCreator = frameHeaderCreator
     }
 
     func createFrame(using attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
-        var frame: [UInt8] = id3FrameConfiguration.identifierFor(
-                frameType: .attachedPicture,
-                version: id3Tag.properties.version
+        let frameBody = getFrameBody(attachedPicture: attachedPicture, id3Tag: id3Tag)
+        let frameHeader = frameHeaderCreator.createUsing(
+            version: id3Tag.properties.version,
+            frameType: .attachedPicture,
+            frameBody: frameBody
         )
-        var contentAsBytes: [UInt8] = [UInt8]()
-        contentAsBytes.append(contentsOf: getAttachedPictureHeaderFor(
+        return frameHeader + frameBody
+    }
+
+    private func getFrameBody(attachedPicture: ID3FrameAttachedPicture, id3Tag: ID3Tag) -> [UInt8] {
+        var frameBody: [UInt8] = [UInt8]()
+        frameBody.append(contentsOf: getAttachedPictureHeaderFor(
                 attachedPicture: attachedPicture,
                 version: id3Tag.properties.version,
                 format: attachedPicture.format
         ))
-        contentAsBytes.append(contentsOf: [UInt8](attachedPicture.picture))
-        frame.append(contentsOf: frameContentSizeCalculator.calculateSizeOf(
-                content: contentAsBytes,
-                version: id3Tag.properties.version
-        ))
-        frame.append(contentsOf: frameFlagsCreator.createFor(version: id3Tag.properties.version))
-        frame.append(contentsOf: contentAsBytes)
-        return frame
+        frameBody.append(contentsOf: [UInt8](attachedPicture.picture))
+        return frameBody
     }
 
     private func getAttachedPictureHeaderFor(attachedPicture: ID3FrameAttachedPicture,

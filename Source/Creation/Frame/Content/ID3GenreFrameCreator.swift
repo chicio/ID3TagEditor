@@ -20,10 +20,7 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
         if let genreFrame = id3Tag.frames[.genre] as? ID3FrameGenre {
             let newTag = tag +
                 frameCreator.createFrame(
-                    frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .genre,
-                        version: id3Tag.properties.version
-                    ),
+                    frameType: .genre,
                     version: id3Tag.properties.version,
                     content: adapt(genre: genreFrame)
             )

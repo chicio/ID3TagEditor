@@ -1,2 +1,6 @@
 ignore:
   - "Tests/Mock/**/*"  # ignore folders and all its contents
+
+coverage:
+  status:
+    project: off

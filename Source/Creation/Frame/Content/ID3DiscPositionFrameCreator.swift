@@ -21,10 +21,7 @@ class ID3DiscPositionFrameCreator: ID3FrameCreatorsChain {
         if let discPositionFrame = id3Tag.frames[.discPosition] as? ID3FramePartOfTotal {
             let newTag = tag +
                 frameCreator.createFrame(
-                    frameIdentifier: id3FrameConfiguration.identifierFor(
-                        frameType: .discPosition,
-                        version: id3Tag.properties.version
-                    ),
+                    frameType: .discPosition,
                     version: id3Tag.properties.version,
                     content: adapt(discPosition: discPositionFrame)
             )

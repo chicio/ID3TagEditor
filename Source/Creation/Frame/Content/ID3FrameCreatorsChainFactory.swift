@@ -13,24 +13,10 @@ class ID3FrameCreatorsChainFactory {
     static func make() -> ID3FrameCreatorsChain {
         let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
         let frameConfiguration = ID3FrameConfiguration()
-        let uInt32ToByteArrayAdapter = UInt32ToByteArrayAdapterUsingUnsafePointer()
-        let frameContentSizeCalculator = ID3FrameContentSizeCalculator(
-            uInt32ToByteArrayAdapter: uInt32ToByteArrayAdapter,
-            synchsafeEncoder: SynchsafeIntegerEncoder()
-        )
-        let frameFlagsCreator = ID3FrameFlagsCreator()
-        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreator(
-            frameContentSizeCalculator: frameContentSizeCalculator,
-            frameFlagsCreator: frameFlagsCreator,
-            stringToBytesAdapter: ID3UTF16StringToByteAdapter(paddingAdder: paddingAdder,
-                                                              frameConfiguration: frameConfiguration)
-        )
-        let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreator(
-            frameContentSizeCalculator: frameContentSizeCalculator,
-            frameFlagsCreator: frameFlagsCreator,
-            stringToBytesAdapter: ID3ISO88591StringToByteAdapter(paddingAdder: paddingAdder,
-                                                                 frameConfiguration: frameConfiguration)
-        )
+        let frameHeaderCreator = ID3FrameHeaderCreatorChain.make()
+        let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.make()
+        let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreatorWithISO88591EncodingFactory.make()
+
         let albumFrameCreator = ID3AlbumFrameCreator(
             frameCreator: frameFromStringUTF16ContentCreator,
             id3FrameConfiguration: frameConfiguration
@@ -119,8 +105,7 @@ class ID3FrameCreatorsChainFactory {
             attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                frameContentSizeCalculator: frameContentSizeCalculator,
-                frameFlagsCreator: frameFlagsCreator
+                frameHeaderCreator: frameHeaderCreator
             )
         )
         let yearFrameCreator = ID3RecordingYearFrameCreator(
@@ -162,11 +147,7 @@ class ID3FrameCreatorsChainFactory {
         )
         let unsynchronisedLyricForLanguageCreator = ID3UnsynchronisedLyricForLanguageFrameCreator(
             id3FrameConfiguration: frameConfiguration,
-            frameHeaderCreator: ID3FrameHeaderCreator(
-                id3FrameConfiguration: frameConfiguration,
-                frameContentSizeCalculator: frameContentSizeCalculator,
-                frameFlagsCreator: frameFlagsCreator
-            ),
+            frameHeaderCreator: frameHeaderCreator,
             paddingAdder: paddingAdder
         )
         let unsynchronisedLyrics = ID3UnsyncronizedLyricsFrameCreator(
