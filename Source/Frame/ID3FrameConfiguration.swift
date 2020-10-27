@@ -158,7 +158,7 @@ class ID3FrameConfiguration {
         "TRSO": .internetRadioStationOwner,
         "TSIZ": .size,
         "TSRC": .internationalStandardRecordingCode,
-        "TYER": .year,
+        "TYER": .year
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [

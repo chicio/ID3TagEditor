@@ -61,7 +61,6 @@ enum FrameType: String, Equatable {
     case size = "size"
     case internationalStandardRecordingCode = "internationalStandardRecordingCode"
     case year = "year"
-    
     static func == (lhs: FrameType, rhs: FrameType) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }
