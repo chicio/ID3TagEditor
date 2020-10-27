@@ -15,6 +15,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameHeaderCreator: MockFrameHeaderCreator(),
                         frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                         frameFlagsCreator: MockFrameFlagsCreator()
                 )
@@ -41,6 +42,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameHeaderCreator: MockFrameHeaderCreator(),
                         frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                         frameFlagsCreator: MockFrameFlagsCreator()
                 )
@@ -53,7 +55,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x50, 0x49, 0x43, 0x11, 0x00, 0x00, 0x4A, 0x50, 0x47, 0x03, 0x00, 0x10, 0x10]
+                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x4A, 0x50, 0x47, 0x03, 0x00, 0x10, 0x10]
         )
     }
 
@@ -66,6 +68,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameHeaderCreator: MockFrameHeaderCreator(),
                         frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                         frameFlagsCreator: MockFrameFlagsCreator()
                 )
@@ -78,7 +81,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x50, 0x49, 0x43, 0x11, 0x00, 0x00, 0x50, 0x4E, 0x47, 0x03, 0x00, 0x10, 0x10]
+                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x50, 0x4E, 0x47, 0x03, 0x00, 0x10, 0x10]
         )
     }
 
@@ -95,6 +98,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameHeaderCreator: MockFrameHeaderCreator(),
                         frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                         frameFlagsCreator: MockFrameFlagsCreator()
                 )
@@ -107,8 +111,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x41, 0x50, 0x49, 0x43, 0x11,
-                 0x00, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x6A, 0x70, 0x65, 0x67, 0x00, 0x03, 0x00, 0x10,
                  0x10]
         )
@@ -123,6 +126,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameHeaderCreator: MockFrameHeaderCreator(),
                         frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                         frameFlagsCreator: MockFrameFlagsCreator()
                 )
@@ -135,8 +139,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x41, 0x50, 0x49, 0x43, 0x11,
-                 0x00, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10]
         )
     }
@@ -160,6 +163,7 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
                         id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                        frameHeaderCreator: MockFrameHeaderCreator(),
                         frameContentSizeCalculator: MockFrameContentSizeCalculator(),
                         frameFlagsCreator: MockFrameFlagsCreator()
                 )
@@ -172,10 +176,9 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x41, 0x50, 0x49, 0x43, 0x11,
-                 0x00, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10,
-                 0x41, 0x50, 0x49, 0x43, 0x11, 0x00, 0x00, 0x69,
+                 0x01, 0x02, 0x00, 0x69,
                  0x6D, 0x61, 0x67, 0x65, 0x2F, 0x70, 0x6E, 0x67,
                  0x00, 0x04, 0x00, 0x10, 0x10]
         )

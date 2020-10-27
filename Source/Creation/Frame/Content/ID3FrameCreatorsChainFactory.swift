@@ -122,6 +122,7 @@ class ID3FrameCreatorsChainFactory {
             attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
+                frameHeaderCreator: frameHeaderCreator,
                 frameContentSizeCalculator: frameContentSizeCalculator,
                 frameFlagsCreator: frameFlagsCreator
             )
