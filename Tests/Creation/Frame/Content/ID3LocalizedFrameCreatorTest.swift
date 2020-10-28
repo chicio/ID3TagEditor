@@ -9,7 +9,7 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
+class ID3LocalizedFrameCreatorTest: XCTestCase {
     func testCreatev2() {
         let creator = ID3LocalizedFrameCreator(
             id3FrameConfiguration: ID3FrameConfiguration(),
