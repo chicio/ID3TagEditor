@@ -8,11 +8,13 @@
 
 import Foundation
 
-protocol localizedFrameCreator {
-    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent, version: ID3Version) -> [UInt8]
+protocol LocalizedFrameCreator {
+    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent,
+                     version: ID3Version,
+                     frameType: FrameType) -> [UInt8]
 }
 
-class ID3LocalizedFrameCreator: localizedFrameCreator {
+class ID3LocalizedFrameCreator: LocalizedFrameCreator {
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let frameHeaderCreator: FrameHeaderCreator
     private let paddingAdder: PaddingAdder
@@ -26,21 +28,23 @@ class ID3LocalizedFrameCreator: localizedFrameCreator {
         self.paddingAdder = paddingAdder
     }
 
-    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent, version: ID3Version) -> [UInt8] {
-        let frameBody = createFrameBodyUsing(unsynchronisedLyric: unsynchronisedLyric, version: version)
+    func createFrame(using frameContent: ID3FrameWithLocalizedContent,
+                     version: ID3Version,
+                     frameType: FrameType) -> [UInt8] {
+        let frameBody = createFrameBodyUsing(frameContent: frameContent, version: version)
         let frameHeader = frameHeaderCreator.createUsing(
             version: version,
-            frameType: .unsyncronisedLyrics,
+            frameType: frameType,
             frameBody: frameBody
         )
         return frameHeader + frameBody
     }
 
-    private func createFrameBodyUsing(unsynchronisedLyric: ID3FrameWithLocalizedContent,
+    private func createFrameBodyUsing(frameContent: ID3FrameWithLocalizedContent,
                                       version: ID3Version) -> [UInt8] {
         return id3FrameConfiguration.encodingByteFor(version: version, encoding: .UTF16)
-            + [UInt8](unsynchronisedLyric.language.rawValue.data(using: .utf8)!)
-            + createFrameTextContentFrom(unsynchronisedLyric: unsynchronisedLyric)
+            + [UInt8](frameContent.language.rawValue.data(using: .utf8)!)
+            + createFrameTextContentFrom(unsynchronisedLyric: frameContent)
     }
 
     private func createFrameTextContentFrom(unsynchronisedLyric: ID3FrameWithLocalizedContent) -> [UInt8] {
