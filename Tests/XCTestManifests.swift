@@ -60,7 +60,7 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3LocalizedFrameCreatorTest.allTests),
         testCase(ID3FramesWithLocalizedContentCreatorTest.allTests),
         testCase(ID3FrameHeaderCreatorTest.allTests),
-        testCase(ID3UnsynchronisedLyricsFrameContentParsingOperationTest.allTests),
+        testCase(ID3LocalizedFrameParsingOperationTest.allTests),
         testCase(ID3TagEditorAcceptanceTest.allTests),
         testCase(ID3TagEditorWriteReadAcceptanceTest.allTests),
         testCase(ID3TagTest.allTests),

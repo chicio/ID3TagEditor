@@ -104,6 +104,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v2 eng unsync lyrics")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.language, .ita)
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)!.content, "v2 ita comment")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v2 eng comment")
     }
 
     func testReadWritev3() throws {
@@ -137,8 +143,8 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
             .attachedPicture(pictureType: .backCover, frame: ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg))
             .unsynchronisedLyrics(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita unsync lyrics"))
             .unsynchronisedLyrics(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng unsync lyrics"))
-            .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita comment"))
             .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng comment"))
+            .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita comment"))
             .iTunesGrouping(frame: ID3FrameWithStringContent(content: "ItunesGrouping V3"))
             .iTunesMovementName(frame: ID3FrameWithStringContent(content: "MovementName V3"))
             .iTunesMovementIndex(frame: ID3FrameWithIntegerContent(value: 6))
@@ -151,7 +157,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
 
         try id3TagEditor.write(
             tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-write-unsynched-lyrics", fileType: "mp3"),
+            to: PathLoader().pathFor(name: "example-write-read-v3", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         )
 
@@ -192,12 +198,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v3 eng unsync lyrics")
-//        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.language, .ita)
-//        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
-//        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)!.content, "v3 ita comment lyrics")
-//        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
-//        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
-//        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v3 eng comment lyrics")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.language, .ita)
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)!.content, "v3 ita comment")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v3 eng comment")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V3")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
         XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
@@ -250,7 +256,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
 
         try id3TagEditor.write(
             tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-write-unsynched-lyrics", fileType: "mp3"),
+            to: PathLoader().pathFor(name: "example-write-read-v4", fileType: "mp3"),
             andSaveTo: pathMp3Generated
         )
 
@@ -291,6 +297,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.eng)] as? ID3FrameWithLocalizedContent)!.content, "V4 eng unsync lyrics")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.language, .ita)
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.ita)] as? ID3FrameWithLocalizedContent)!.content, "v4 ita comment")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
+        XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v4 eng comment")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
         XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)

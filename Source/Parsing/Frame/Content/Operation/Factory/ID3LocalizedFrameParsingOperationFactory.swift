@@ -1,5 +1,5 @@
 //
-//  ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.swift
+//  ID3LocalizedFrameParsingOperationFactory.swift
 //  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 12.10.20.
@@ -8,16 +8,17 @@
 
 import Foundation
 
-class ID3UnsynchronisedLyricsFrameContentParsingOperationFactory {
-    static func make() -> ID3UnsynchronisedLyricsFrameContentParsingOperation {
+class ID3LocalizedFrameParsingOperationFactory {
+    static func make(frameName: @escaping (ID3FrameContentLanguage) -> FrameName) -> ID3LocalizedFrameParsingOperation {
         let id3FrameConfiguration = ID3FrameConfiguration()
-        return ID3UnsynchronisedLyricsFrameContentParsingOperation(
+        return ID3LocalizedFrameParsingOperation(
             id3FrameConfiguration: id3FrameConfiguration,
             paddingRemover: PaddingRemoverUsingTrimming(),
             stringEncodingDetector: ID3FrameStringEncodingDetector(
                 id3FrameConfiguration: id3FrameConfiguration,
                 id3StringEncodingConverter: ID3StringEncodingConverter()
-            )
+            ),
+            frameName: frameName
         )
     }
 }

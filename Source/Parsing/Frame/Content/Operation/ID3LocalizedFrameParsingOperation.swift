@@ -1,25 +1,28 @@
 //
-//  ID3UnsynchronisedLyricsFrameContentParsingOperation.swift
+//  ID3LocalizedFrameParsingOperation.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 14/10/20.
+//  Created by Fabrizio Duroni on 14.10.20.
 //  2020 Fabrizio Duroni.
 //
 
 import Foundation
 
-class ID3UnsynchronisedLyricsFrameContentParsingOperation: FrameContentParsingOperation {
+class ID3LocalizedFrameParsingOperation: FrameContentParsingOperation {
     typealias Body = (contentDescriptor: String, content: String)
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let stringEncodingDetector: ID3FrameStringEncodingDetector
     private let paddingRemover: PaddingRemover
+    private let frameName: (ID3FrameContentLanguage) -> FrameName
 
     init(id3FrameConfiguration: ID3FrameConfiguration,
          paddingRemover: PaddingRemover,
-         stringEncodingDetector: ID3FrameStringEncodingDetector) {
+         stringEncodingDetector: ID3FrameStringEncodingDetector,
+         frameName: @escaping (ID3FrameContentLanguage) -> FrameName) {
         self.id3FrameConfiguration = id3FrameConfiguration
         self.stringEncodingDetector = stringEncodingDetector
         self.paddingRemover = paddingRemover
+        self.frameName = frameName
     }
 
     func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> Void) {
@@ -27,11 +30,10 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperation: FrameContentParsingOp
         let encoding = stringEncodingDetector.detect(frame: frame, version: version)
         let body = parseBodyFrom(frame: frame, using: headerSize, and: encoding)
         let language = parseLanguageFrom(frame: frame, using: headerSize)
-
-        completed(.unsynchronizedLyrics(language),
-                  ID3FrameWithLocalizedContent(language: language,
-                                               contentDescription: body.contentDescriptor,
-                                               content: body.content))
+        let frame = ID3FrameWithLocalizedContent(language: language,
+                                                 contentDescription: body.contentDescriptor,
+                                                 content: body.content)
+        completed(frameName(language), frame)
     }
 
     private func parseBodyFrom(frame: Data, using headerSize: Int, and encoding: String.Encoding) -> Body {
