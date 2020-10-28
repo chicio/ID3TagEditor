@@ -47,6 +47,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
         ]
         + ID3PictureType.allCases.map({ .attachedPicture($0) })
         + ID3FrameContentLanguage.allCases.map({ .unsynchronizedLyrics($0) })
+        + ID3FrameContentLanguage.allCases.map({ .comment($0) })
     }
 
     /// Title frame name.
@@ -96,9 +97,12 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     /// AttachedPicture frame name
     /// - pictureType:
     case attachedPicture(_ pictureType: ID3PictureType)
-    /// Unsynchronized lyrics frame name
-    /// - language: language of the lyrics, according to the ISO-639-2 standard
+    /// Unsynchronized lyrics frame name.
+    /// - language: language of the lyrics, according to the ISO-639-2 standard.
     case unsynchronizedLyrics(_ language: ID3FrameContentLanguage)
+    /// Comment frame name.
+    /// - language: language of the comment, according to the ISO-639-2 standard.
+    case comment(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
     ///Movement name frame name. . Version 2.3 and 2.4 only.

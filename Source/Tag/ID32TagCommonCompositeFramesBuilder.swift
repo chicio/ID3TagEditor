@@ -79,4 +79,19 @@ public class ID32TagCommonCompositeFramesBuilder: ID32TagCommonStringFramesBuild
         frames[.unsynchronizedLyrics(language)] = frame
         return self
     }
+
+    /**
+     Set an comment frame to be written by ID3TagEditor. You can set multiple
+     comment frames per tag, one for each of the languages contained in ID3FrameContentLanguage.
+     
+      - parameter language: the ID3FrameContentLanguage associated to the comment frame to be set.
+      - parameter frame: the comment frame as a ID3FrameWithLocalizedContent instance.
+     
+      - returns: the instance of the builder.
+     */
+    public func comment(language: ID3FrameContentLanguage,
+                        frame: ID3FrameWithLocalizedContent) -> Self {
+        frames[.comment(language)] = frame
+        return self
+    }
 }
