@@ -113,9 +113,10 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
     }
 
     func testReadWritev3() throws {
+        let filename = "example-write-read-v3"
         let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
-        let pathMp3Generated = NSHomeDirectory() + "/example-write-read-v3.mp3"
+        let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
 
         let id3Tag = ID32v3TagBuilder()
             .title(frame: ID3FrameWithStringContent(content: "title V3"))
@@ -157,7 +158,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
 
         try id3TagEditor.write(
             tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-write-read-v3", fileType: "mp3"),
+            to: PathLoader().pathFor(name: filename, fileType: "mp3"),
             andSaveTo: pathMp3Generated
         )
 
@@ -214,9 +215,10 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
     }
 
     func testReadWritev4() throws {
+        let filename = "example-write-read-v4"
         let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
-        let pathMp3Generated = NSHomeDirectory() + "/example-write-read-v4.mp3"
+        let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
 
         let id3Tag = ID32v4TagBuilder()
             .title(frame: ID3FrameWithStringContent(content: "title V4"))
@@ -256,7 +258,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
 
         try id3TagEditor.write(
             tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-write-read-v4", fileType: "mp3"),
+            to: PathLoader().pathFor(name: filename, fileType: "mp3"),
             andSaveTo: pathMp3Generated
         )
 
