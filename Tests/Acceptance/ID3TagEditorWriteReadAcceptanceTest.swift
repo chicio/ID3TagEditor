@@ -52,7 +52,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
             .unsynchronisedLyrics(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 ita unsync lyrics"))
             .unsynchronisedLyrics(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng unsync lyrics"))
             .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 ita comment"))
-            .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 eng comment"))
+            .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng comment"))
             .build()
 
         try id3TagEditor.write(
@@ -138,7 +138,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
             .unsynchronisedLyrics(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita unsync lyrics"))
             .unsynchronisedLyrics(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng unsync lyrics"))
             .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita comment"))
-            .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 eng comment"))
+            .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng comment"))
             .iTunesGrouping(frame: ID3FrameWithStringContent(content: "ItunesGrouping V3"))
             .iTunesMovementName(frame: ID3FrameWithStringContent(content: "MovementName V3"))
             .iTunesMovementIndex(frame: ID3FrameWithIntegerContent(value: 6))
@@ -231,7 +231,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
             .unsynchronisedLyrics(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "V4 ita unsync lyrics"))
             .unsynchronisedLyrics(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "V4 eng unsync lyrics"))
             .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v4 ita comment"))
-            .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v4 eng comment"))
+            .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v4 eng comment"))
             .iTunesGrouping(frame: ID3FrameWithStringContent(content: "ItunesGrouping V4"))
             .iTunesMovementName(frame: ID3FrameWithStringContent(content: "MovementName V4"))
             .iTunesMovementIndex(frame: ID3FrameWithIntegerContent(value: 6))
