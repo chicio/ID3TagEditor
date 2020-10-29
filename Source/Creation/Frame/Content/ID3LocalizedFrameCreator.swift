@@ -1,5 +1,5 @@
 //
-//  ID3UnsyncronisedLyricsFrameCreator.swift
+//  ID3LocalizedFrameCreator.swift
 //  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 14/10/20.
@@ -7,12 +7,6 @@
 //
 
 import Foundation
-
-protocol LocalizedFrameCreator {
-    func createFrame(using unsynchronisedLyric: ID3FrameWithLocalizedContent,
-                     version: ID3Version,
-                     frameType: FrameType) -> [UInt8]
-}
 
 class ID3LocalizedFrameCreator: LocalizedFrameCreator {
     private let id3FrameConfiguration: ID3FrameConfiguration
