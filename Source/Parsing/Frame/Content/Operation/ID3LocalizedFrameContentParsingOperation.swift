@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ID3LocalizedFrameParsingOperation: FrameContentParsingOperation {
+class ID3LocalizedFrameContentParsingOperation: FrameContentParsingOperation {
     typealias Body = (contentDescriptor: String, content: String)
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let stringEncodingDetector: ID3FrameStringEncodingDetector

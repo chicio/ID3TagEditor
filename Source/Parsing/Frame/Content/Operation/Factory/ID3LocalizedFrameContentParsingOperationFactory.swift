@@ -9,9 +9,11 @@
 import Foundation
 
 class ID3LocalizedFrameContentParsingOperationFactory {
-    static func make(frameName: @escaping (ID3FrameContentLanguage) -> FrameName) -> ID3LocalizedFrameParsingOperation {
+    static func make(
+        frameName: @escaping (ID3FrameContentLanguage) -> FrameName
+    ) -> ID3LocalizedFrameContentParsingOperation {
         let id3FrameConfiguration = ID3FrameConfiguration()
-        return ID3LocalizedFrameParsingOperation(
+        return ID3LocalizedFrameContentParsingOperation(
             id3FrameConfiguration: id3FrameConfiguration,
             paddingRemover: PaddingRemoverUsingTrimming(),
             stringEncodingDetector: ID3FrameStringEncodingDetector(
