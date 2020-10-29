@@ -10,7 +10,6 @@ import XCTest
 
 class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoMovementIndex() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3MovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAMovementIndex() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [.iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6)]

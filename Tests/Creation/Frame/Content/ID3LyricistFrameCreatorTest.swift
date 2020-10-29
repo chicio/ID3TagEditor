@@ -10,7 +10,6 @@ import XCTest
 
 class ID3LyricistFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoLyricist() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3LyricistFrameCreator = ID3LyricistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3LyricistFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsALyricist() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [.lyricist: ID3FrameWithStringContent(content: "::an example lyricist::")]

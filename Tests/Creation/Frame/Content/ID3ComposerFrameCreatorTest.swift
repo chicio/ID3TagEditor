@@ -10,7 +10,6 @@ import XCTest
 
 class ID3ComposerFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoComposer() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3ComposerFrameCreator = ID3ComposerFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3ComposerFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAComposer() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .composer(frame: ID3FrameWithStringContent(content: "::an example composer::"))
             .build()

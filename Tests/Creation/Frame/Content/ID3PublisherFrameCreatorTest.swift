@@ -10,7 +10,6 @@ import XCTest
 
 class ID3PublisherFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoPublisher() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3PublisherFrameCreator = ID3PublisherFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3PublisherFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAPublisher() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [.publisher: ID3FrameWithStringContent(content: "::an example publisher::")]

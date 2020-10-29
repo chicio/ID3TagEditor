@@ -10,7 +10,6 @@ import XCTest
 
 class ID3iTunesPodcastDescriptionFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoPodcastDescription() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3PodcastDescriptionFrameCreator = ID3iTunesPodcastDescriptionFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -30,7 +29,6 @@ class ID3iTunesPodcastDescriptionFrameCreatorTest: XCTestCase {
         let frameContent = ID3FrameWithStringContent(content: "::an example podcast description::")
         let frames = [FrameName.iTunesPodcastDescription: frameContent]
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: frames

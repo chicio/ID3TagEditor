@@ -28,7 +28,6 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
     }
 
     func testNoFrameCreationWhenThereIsNoMonth() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],

@@ -10,7 +10,6 @@ import XCTest
 
 class ID3MixArtistFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoMixArtist() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3MixArtistFrameCreator = ID3MixArtistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3MixArtistFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAMixArtist() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [.mixArtist: ID3FrameWithStringContent(content: "::an example mix artist::")]

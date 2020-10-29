@@ -10,7 +10,6 @@ import XCTest
 
 class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoImage() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),

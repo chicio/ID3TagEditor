@@ -10,7 +10,6 @@ import XCTest
 
 class ID3ConductorFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoConductor() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3ConductorFrameCreator = ID3ConductorFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3ConductorFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAConductor() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .conductor(frame: ID3FrameWithStringContent(content: "::an example conductor::"))
             .build()

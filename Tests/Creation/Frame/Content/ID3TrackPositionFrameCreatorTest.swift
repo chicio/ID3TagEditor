@@ -10,7 +10,6 @@ import XCTest
 
 class ID3TrackPositionCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoTrackPosition() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3TrackPositionFrameCreator = ID3TrackPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3TrackPositionCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsATrackPosition() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .trackPosition(frame: ID3FramePartOfTotal(part: 1, total: 10))
             .build()

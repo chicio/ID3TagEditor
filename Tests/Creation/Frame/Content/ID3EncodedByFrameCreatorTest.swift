@@ -10,7 +10,6 @@ import XCTest
 
 class ID3EncodedByFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoEncodedBy() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3EncodedByFrameCreator = ID3EncodedByFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -28,7 +27,6 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAnEncodedBy() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .encodedBy(frame: ID3FrameWithStringContent(content: "::an example encodedBy::"))
             .build()

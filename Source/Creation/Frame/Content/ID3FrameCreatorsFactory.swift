@@ -10,6 +10,12 @@
 
 import Foundation
 
+class ID3iTunesFrameCreatorsFactory {
+    static func make() -> [ID3FrameCreator] {
+        return []
+    }
+}
+
 class ID3FrameCreatorsFactory {
     static func make() -> [ID3FrameCreator] {
         let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
@@ -42,9 +48,9 @@ class ID3FrameCreatorsFactory {
             ID3EncodedByFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3EncoderSettingsFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3FileOwnerFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesGroupingFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3LyricistFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3MixArtistFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3iTunesGroupingFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3iTunesMovementNameFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3iTunesMovementIndexFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3iTunesMovementCountFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),

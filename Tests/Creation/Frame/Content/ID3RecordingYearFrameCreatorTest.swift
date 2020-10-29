@@ -10,7 +10,6 @@ import XCTest
 
 class ID3RecordingYearFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoYear() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3YearFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -27,7 +26,6 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
     }
 
     func testNoFrameCreationWhenIsMajorThanVersion3() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3YearFrameCreator = ID3RecordingYearFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [2, 2],
@@ -47,7 +45,6 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
 
     func testFrameCreationWhenThereIsAnYear() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .recordingYear(frame: ID3FrameRecordingYear(year: 2018))
             .build()
