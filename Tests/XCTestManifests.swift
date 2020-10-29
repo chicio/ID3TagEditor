@@ -22,7 +22,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3AttachedPicturesFramesCreatorTest.allTests),
         testCase(ID3FrameConfigurationTest.allTests),
         testCase(ID3FrameContentSizeCalculatorTest.allTests),
-        testCase(ID3FrameCreatorsChainTest.allTests),
         testCase(ID3FrameFlagsCreatorTest.allTests),
         testCase(ID3FrameFromStringContentCreatorTest.allTests),
         testCase(ID3GenreFrameCreatorTest.allTests),

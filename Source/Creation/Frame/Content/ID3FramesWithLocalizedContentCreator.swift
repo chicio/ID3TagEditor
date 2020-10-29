@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ID3FramesWithLocalizedContentCreator: ID3FrameCreatorsChain {
+class ID3FramesWithLocalizedContentCreator: ID3FrameCreator {
     private let localizedFrameNames: [FrameType: [FrameName]]
     private let localizedFrameCreator: LocalizedFrameCreator
 
@@ -16,10 +16,9 @@ class ID3FramesWithLocalizedContentCreator: ID3FrameCreatorsChain {
          localizedFrameCreator: LocalizedFrameCreator) {
         self.localizedFrameNames = localizedFrameNames
         self.localizedFrameCreator = localizedFrameCreator
-        super.init()
     }
 
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         let frames: [UInt8] = localizedFrameNames.reduce([]) { (accumulator, localizedFrameNameElement) in
             return accumulator + generateFramesFor(
                 frameType: localizedFrameNameElement.key,
@@ -27,7 +26,7 @@ class ID3FramesWithLocalizedContentCreator: ID3FrameCreatorsChain {
                 id3Tag: id3Tag
             )
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag + frames)
+        return frames
     }
 
     private func generateFramesFor(frameType: FrameType, localizedFrameNames: [FrameName], id3Tag: ID3Tag) -> [UInt8] {

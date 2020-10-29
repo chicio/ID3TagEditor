@@ -10,7 +10,6 @@ import XCTest
 
 class ID3ArtistFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoArtist() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3ArtistFrameCreator = ID3ArtistFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -20,16 +19,14 @@ class ID3ArtistFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3ArtistFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsAnArtist() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .artist(frame: ID3FrameWithStringContent(content: "::an example artist::"))
             .build()
@@ -41,9 +38,9 @@ class ID3ArtistFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3ArtistFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3ArtistFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

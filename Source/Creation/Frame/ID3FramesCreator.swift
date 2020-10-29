@@ -8,14 +8,16 @@
 import Foundation
 
 class ID3FramesCreator {
-    private let id3FrameCreatorsChain: ID3FrameCreatorsChain
+    private let id3FrameCreators: [ID3FrameCreator]
 
-    init(id3FrameCreatorsChain: ID3FrameCreatorsChain) {
-        self.id3FrameCreatorsChain = id3FrameCreatorsChain
+    init(id3FrameCreators: [ID3FrameCreator]) {
+        self.id3FrameCreators = id3FrameCreators
     }
 
     func createFramesUsing(id3Tag: ID3Tag) throws -> [UInt8] {
-        var frames = id3FrameCreatorsChain.createFrames(id3Tag: id3Tag, tag: [UInt8]())
+        var frames = id3FrameCreators.reduce([]) { (accumulator, frameCreator)  in
+            accumulator + frameCreator.createFrames(id3Tag: id3Tag)
+        }
         if thereIsNotValidDataIn(frames: frames) {
             throw ID3TagEditorError.invalidTagData
         }

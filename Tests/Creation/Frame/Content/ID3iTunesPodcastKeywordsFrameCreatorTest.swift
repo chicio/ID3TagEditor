@@ -10,7 +10,6 @@ import XCTest
 
 class ID3iTunesPodcastKeywordsFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereAreNoPodcastKeywords() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3PodcastKeywordsFrameCreator = ID3iTunesPodcastKeywordsFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -20,16 +19,14 @@ class ID3iTunesPodcastKeywordsFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3PodcastKeywordsFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereArePodcastKeywords() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [.iTunesPodcastKeywords: ID3FrameWithStringContent(content: "::an example podcast keyword::")]
@@ -42,9 +39,9 @@ class ID3iTunesPodcastKeywordsFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3PodcastKeywordsFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3PodcastKeywordsFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

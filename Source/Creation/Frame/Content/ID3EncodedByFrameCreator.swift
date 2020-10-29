@@ -7,16 +7,15 @@
 
 import Foundation
 
-class ID3EncodedByFrameCreator: ID3StringFrameCreator {
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+class ID3EncodedByFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let encodedByFrame = id3Tag.frames[.encodedBy] as? ID3FrameWithStringContent {
             return createFrameUsing(
                 frameType: .encodedBy,
                 content: encodedByFrame.content,
-                id3Tag: id3Tag,
-                andAddItTo: tag
+                id3Tag: id3Tag
             )
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 }

@@ -10,7 +10,6 @@ import XCTest
 
 class ID3EncoderSettingsFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereAreNoEncoderSettings() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3EncoderSettingsFrameCreator = ID3EncoderSettingsFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -20,16 +19,14 @@ class ID3EncoderSettingsFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3EncoderSettingsFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereAreEncoderSettings() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .encoderSettings(frame: ID3FrameWithStringContent(content: "::an example encoder settings::"))
             .build()
@@ -42,9 +39,9 @@ class ID3EncoderSettingsFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3EncoderSettingsFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3EncoderSettingsFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

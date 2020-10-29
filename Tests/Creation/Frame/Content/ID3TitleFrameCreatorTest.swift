@@ -10,7 +10,6 @@ import XCTest
 
 class ID3TitleFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoTitle() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3TitleFrameCreator = ID3TitleFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -20,16 +19,14 @@ class ID3TitleFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3TitleFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsATitle() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .title(frame: ID3FrameWithStringContent(content: "::an example title::"))
             .build()
@@ -42,9 +39,9 @@ class ID3TitleFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

@@ -10,7 +10,6 @@ import XCTest
 
 class ID3ContentGroupingFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoContentGrouping() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3ContentGroupingFrameCreator = ID3ContentGroupingFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -20,16 +19,14 @@ class ID3ContentGroupingFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3ContentGroupingFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsAContentGrouping() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .contentGrouping(frame: ID3FrameWithStringContent(content: "::an example content grouping::"))
             .build()
@@ -42,9 +39,9 @@ class ID3ContentGroupingFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3ContentGroupingFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3ContentGroupingFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

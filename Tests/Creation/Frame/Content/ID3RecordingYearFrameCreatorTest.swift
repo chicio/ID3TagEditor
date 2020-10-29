@@ -10,7 +10,6 @@ import XCTest
 
 class ID3RecordingYearFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoYear() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3YearFrameCreator = ID3RecordingYearFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -20,15 +19,13 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3YearFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testNoFrameCreationWhenIsMajorThanVersion3() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3YearFrameCreator = ID3RecordingYearFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [2, 2],
@@ -41,14 +38,13 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
             .recordingDateTime(frame: ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
             .build()
 
-        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag, tag: tagBytes)
+        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag)
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsAnYear() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID32v3TagBuilder()
             .recordingYear(frame: ID3FrameRecordingYear(year: 2018))
             .build()
@@ -61,9 +57,9 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

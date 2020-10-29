@@ -11,7 +11,6 @@ import XCTest
 class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
     func testFrameCreationWhenThereIsACompleteRecordingDateTime() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let recordingDateTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: 2018),
                                                   time: RecordingTime(hour: 12, minute: 30))
         let id3tag = ID3Tag(
@@ -29,10 +28,10 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
             timestampCreator: timestampCreator
         )
 
-        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3tag, tag: tagAsBytes)
+        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3tag)
 
         XCTAssertTrue(timestampCreator.createFromRecordingDateTimeHasBeenCalled)
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

@@ -10,7 +10,6 @@ import XCTest
 
 class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoImage() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
@@ -19,12 +18,9 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 )
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-                tag: tagBytes
-        )
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: ID32v3TagBuilder().build())
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWithJpgForVersion2() {
@@ -44,14 +40,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 )
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
-                id3Tag: id3Tag,
-                tag: [0x01, 0x01, 0x01]
-        )
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x4A, 0x50, 0x47, 0x03, 0x00, 0x10, 0x10]
+                [0x01, 0x02, 0x00, 0x4A, 0x50, 0x47, 0x03, 0x00, 0x10, 0x10]
         )
     }
 
@@ -68,14 +61,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 )
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
-                id3Tag: id3Tag,
-                tag: [0x01, 0x01, 0x01]
-        )
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x50, 0x4E, 0x47, 0x03, 0x00, 0x10, 0x10]
+                [0x01, 0x02, 0x00, 0x50, 0x4E, 0x47, 0x03, 0x00, 0x10, 0x10]
         )
     }
 
@@ -96,14 +86,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 )
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
-                id3Tag: id3Tag,
-                tag: [0x01, 0x01, 0x01]
-        )
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x6A, 0x70, 0x65, 0x67, 0x00, 0x03, 0x00, 0x10,
                  0x10]
         )
@@ -122,14 +109,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 )
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
-                id3Tag: id3Tag,
-                tag: [0x01, 0x01, 0x01]
-        )
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10]
         )
     }
@@ -157,14 +141,11 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
                 )
         )
 
-        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(
-                id3Tag: id3Tag,
-                tag: [0x01, 0x01, 0x01]
-        )
+        let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
         XCTAssertEqual(
                 newTagBytes,
-                [0x01, 0x01, 0x01, 0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+                [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10,
                  0x01, 0x02, 0x00, 0x69,
                  0x6D, 0x61, 0x67, 0x65, 0x2F, 0x70, 0x6E, 0x67,

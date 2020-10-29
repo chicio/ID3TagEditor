@@ -10,7 +10,6 @@ import XCTest
 
 class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoMovementIndex() {
-        let tagBytes: [UInt8] = [1, 1, 1]
         let id3MovementIndexFrameCreator = ID3iTunesMovementIndexFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -20,16 +19,14 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3MovementIndexFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsAMovementIndex() {
         let newFrameBytes: [UInt8] = [1, 1]
-        let tagAsBytes: [UInt8] = [1, 1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [.iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6)]
@@ -42,9 +39,9 @@ class ID3iTunesMovementIndexFrameCreatorTest: XCTestCase {
                 id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3MovementIndexFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3MovementIndexFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [
