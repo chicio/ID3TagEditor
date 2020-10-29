@@ -1,5 +1,5 @@
 //
-//  ID3LocalizedFrameParsingOperationFactory.swift
+//  ID3LocalizedFrameContentParsingOperationFactory.swift
 //  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 12.10.20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ID3LocalizedFrameParsingOperationFactory {
+class ID3LocalizedFrameContentParsingOperationFactory {
     static func make(frameName: @escaping (ID3FrameContentLanguage) -> FrameName) -> ID3LocalizedFrameParsingOperation {
         let id3FrameConfiguration = ID3FrameConfiguration()
         return ID3LocalizedFrameParsingOperation(
