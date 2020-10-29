@@ -301,6 +301,10 @@
 		455787F5204F104A00EE8756 /* ID3PictureTypeAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50675D67C5E12BAE08DB28A /* ID3PictureTypeAdapterTest.swift */; };
 		455787F6204F129C00EE8756 /* MockPictureTypeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50671FC32F01DE3E7FDAB6A /* MockPictureTypeAdapter.swift */; };
 		455787F7204F129C00EE8756 /* MockPictureTypeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50671FC32F01DE3E7FDAB6A /* MockPictureTypeAdapter.swift */; };
+		455F6F2F254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */; };
+		455F6F30254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */; };
+		455F6F31254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */; };
+		455F6F32254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */; };
 		4562C1E221172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1E121172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift */; };
 		4562C1E321172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1E121172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift */; };
 		4562C1E421172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4562C1E121172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift */; };
@@ -1125,6 +1129,7 @@
 		455CF9892340C4D7004C880A /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		455CF98A2340C4D7004C880A /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		455CF98B2340C4E1004C880A /* PULL_REQUEST_TEMPLATE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PULL_REQUEST_TEMPLATE.md; sourceTree = "<group>"; };
+		455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TagToStringAdapter.swift; sourceTree = "<group>"; };
 		4562C1E121172ED800AFE22E /* ID3RecordingDayMonthFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDayMonthFrameCreator.swift; sourceTree = "<group>"; };
 		4562C1E6211731B100AFE22E /* ID3RecordingHourMinuteFrameCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingHourMinuteFrameCreator.swift; sourceTree = "<group>"; };
 		4562C1EB211737C100AFE22E /* ID3RecordingDayMonthFrameCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3RecordingDayMonthFrameCreatorTest.swift; sourceTree = "<group>"; };
@@ -1628,6 +1633,7 @@
 				45D551C925446431003347B7 /* ID32v2TagBuilder.swift */,
 				45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */,
 				45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */,
+				455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */,
 			);
 			path = Tag;
 			sourceTree = "<group>";
@@ -2696,6 +2702,7 @@
 				4528326E2044C7BE00458375 /* ID3FrameConfiguration.swift in Sources */,
 				519C342D2405041E008F3BDE /* ID3iTunesPodcastCategoryFrameCreator.swift in Sources */,
 				452832822044C7BE00458375 /* PaddingRemover.swift in Sources */,
+				455F6F2F254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */,
 				452832702044C7BE00458375 /* UInt32ToByteArrayAdapterUsingUnsafePointer.swift in Sources */,
 				45775EE72107C37A00B1B3FE /* ID3StringEncodingConverter.swift in Sources */,
 				519C33F12405041E008F3BDE /* ID3FileOwnerFrameCreator.swift in Sources */,
@@ -2960,6 +2967,7 @@
 				4528AEFF210B508400CB7A2E /* ID3RecordingTimeFrameContentParsingOperation.swift in Sources */,
 				519C342E2405041E008F3BDE /* ID3iTunesPodcastCategoryFrameCreator.swift in Sources */,
 				4528326F2044C7BE00458375 /* ID3FrameConfiguration.swift in Sources */,
+				455F6F30254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */,
 				452832832044C7BE00458375 /* PaddingRemover.swift in Sources */,
 				4528AF24210B84D200CB7A2E /* ID3TrackPositionFrameContentParsingOperationFactory.swift in Sources */,
 				519C33F22405041E008F3BDE /* ID3FileOwnerFrameCreator.swift in Sources */,
@@ -3224,6 +3232,7 @@
 				519C34072405041E008F3BDE /* ID3CopyrightFrameCreator.swift in Sources */,
 				4528AF00210B508400CB7A2E /* ID3RecordingTimeFrameContentParsingOperation.swift in Sources */,
 				519C342F2405041E008F3BDE /* ID3iTunesPodcastCategoryFrameCreator.swift in Sources */,
+				455F6F31254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */,
 				45541B8520598FA60025A8BF /* ID3ArtistFrameCreator.swift in Sources */,
 				4528AF25210B84D200CB7A2E /* ID3TrackPositionFrameContentParsingOperationFactory.swift in Sources */,
 				519C33F32405041E008F3BDE /* ID3FileOwnerFrameCreator.swift in Sources */,
@@ -3488,6 +3497,7 @@
 				519C34082405041E008F3BDE /* ID3CopyrightFrameCreator.swift in Sources */,
 				4528AF01210B508400CB7A2E /* ID3RecordingTimeFrameContentParsingOperation.swift in Sources */,
 				519C34302405041E008F3BDE /* ID3iTunesPodcastCategoryFrameCreator.swift in Sources */,
+				455F6F32254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */,
 				45F833F0205905EF0046C804 /* ID3ArtistFrameCreator.swift in Sources */,
 				4528AF26210B84D200CB7A2E /* ID3TrackPositionFrameContentParsingOperationFactory.swift in Sources */,
 				519C33F42405041E008F3BDE /* ID3FileOwnerFrameCreator.swift in Sources */,

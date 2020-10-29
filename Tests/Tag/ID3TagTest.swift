@@ -8,6 +8,7 @@
 
 // swiftlint:disable line_length
 // swiftlint:disable function_body_length
+// swiftlint:disable type_body_length
 
 import XCTest
 @testable import ID3TagEditor
@@ -49,6 +50,8 @@ class ID3TagTest: XCTestCase {
                 .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
                 .unsynchronizedLyrics(.ita): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita unsync lyrics"),
                 .unsynchronizedLyrics(.eng): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng unsync lyrics"),
+                .comment(.ita): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v3 ita comment"),
+                .comment(.eng): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v3 eng comment"),
                 .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V3"),
                 .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V3"),
                 .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
@@ -74,16 +77,8 @@ class ID3TagTest: XCTestCase {
             - encodedBy: EncodedBy V3
             - encoderSettings: EncoderSettings V3
             - fileOwner: FileOwner V3
-            - iTunesGrouping: ItunesGrouping V3
             - lyricist: Lyricist V3
             - mixArtist: MixArtist V3
-            - iTunesMovementIndex: 6
-            - iTunesMovementCount: 13
-            - iTunesMovementName: MovementName V3
-            - podcastCategory: PodcastCategory V3
-            - podcastDescription: PodcastDescription V3
-            - podcastID: PodcastID V3
-            - podcastKeywords: PodcastKeywords V3
             - publisher: Publisher V3
             - subtitle: Subtitle V3
             - albumArtist: album artist V3
@@ -110,6 +105,23 @@ class ID3TagTest: XCTestCase {
             contentDescription: CD
             content: v3 ita unsync lyrics
 
+            - comments:
+            language: eng
+            contentDescription: CD
+            content: v3 eng comment
+
+            language: ita
+            contentDescription: CD
+            content: v3 ita comment
+
+            - iTunesGrouping: ItunesGrouping V3
+            - iTunesMovementIndex: 6
+            - iTunesMovementCount: 13
+            - iTunesMovementName: MovementName V3
+            - iTunesPodcastCategory: PodcastCategory V3
+            - iTunesPodcastDescription: PodcastDescription V3
+            - iTunesPodcastID: PodcastID V3
+            - iTunesPodcastKeywords: PodcastKeywords V3
             """)
     }
 
@@ -144,6 +156,8 @@ class ID3TagTest: XCTestCase {
                 .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),
                 .unsynchronizedLyrics(.ita): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "V4 ita unsync lyrics"),
                 .unsynchronizedLyrics(.eng): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "V4 eng unsync lyrics"),
+                .comment(.ita): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "V4 ita comment"),
+                .comment(.eng): ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "V4 eng comment"),
                 .iTunesGrouping: ID3FrameWithStringContent(content: "ItunesGrouping V4"),
                 .iTunesMovementName: ID3FrameWithStringContent(content: "MovementName V4"),
                 .iTunesMovementIndex: ID3FrameWithIntegerContent(value: 6),
@@ -169,16 +183,8 @@ class ID3TagTest: XCTestCase {
             - encodedBy: EncodedBy V4
             - encoderSettings: EncoderSettings V4
             - fileOwner: FileOwner V4
-            - iTunesGrouping: ItunesGrouping V4
             - lyricist: Lyricist V4
             - mixArtist: MixArtist V4
-            - iTunesMovementIndex: 6
-            - iTunesMovementCount: 13
-            - iTunesMovementName: MovementName V4
-            - podcastCategory: PodcastCategory V4
-            - podcastDescription: PodcastDescription V4
-            - podcastID: PodcastID V4
-            - podcastKeywords: PodcastKeywords V4
             - publisher: Publisher V4
             - subtitle: Subtitle V4
             - albumArtist: album artist V4
@@ -205,6 +211,23 @@ class ID3TagTest: XCTestCase {
             contentDescription: CD
             content: V4 ita unsync lyrics
 
+            - comments:
+            language: eng
+            contentDescription: CD
+            content: V4 eng comment
+
+            language: ita
+            contentDescription: CD
+            content: V4 ita comment
+
+            - iTunesGrouping: ItunesGrouping V4
+            - iTunesMovementIndex: 6
+            - iTunesMovementCount: 13
+            - iTunesMovementName: MovementName V4
+            - iTunesPodcastCategory: PodcastCategory V4
+            - iTunesPodcastDescription: PodcastDescription V4
+            - iTunesPodcastID: PodcastID V4
+            - iTunesPodcastKeywords: PodcastKeywords V4
             """
         )
     }
