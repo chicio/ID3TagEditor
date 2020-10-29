@@ -13,7 +13,7 @@ class ID3FramesWithLocalizedContentCreatorTest: XCTestCase {
     func testNothingIsCreatedWheLyricsDataIsNotSet() {
         let creator = ID3FramesWithLocalizedContentCreator(
             localizedFrameNames: frameNamesWithLocalizedContent,
-            localizedFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator()
+            localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
         let frame = creator.createFrames(id3Tag: ID32v3TagBuilder().build(), tag: [])
@@ -24,7 +24,7 @@ class ID3FramesWithLocalizedContentCreatorTest: XCTestCase {
     func testCreateFrameForValidData() {
         let creator = ID3FramesWithLocalizedContentCreator(
             localizedFrameNames: frameNamesWithLocalizedContent,
-            localizedFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator()
+            localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
         let frame = creator.createFrames(id3Tag: aTagWithUnsynchronisedLyrics(), tag: [])
