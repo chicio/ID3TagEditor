@@ -51,19 +51,18 @@ class ID3TagToStringAdapter {
         - unsynchronisedLyrics:\(adaptFrameWithLocalizedContent(id3Tag: id3Tag, frameName: FrameName.unsynchronizedLyrics))
         - comments:\(adaptFrameWithLocalizedContent(id3Tag: id3Tag, frameName: FrameName.comment))
         - iTunesGrouping: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesGrouping))
-        - iTunesMovementIndex: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesMovementIndex))
-        - iTunesMovementCount: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesMovementCount))
+        - iTunesMovementIndex: \((id3Tag.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
+        - iTunesMovementCount: \((id3Tag.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - iTunesMovementName: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesMovementName))
-        - iTunesGrouping: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesGrouping))
         - iTunesPodcastCategory: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesPodcastCategory))
         - iTunesPodcastDescription: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesPodcastDescription))
-        - iTunesPodcastID: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesPodcastKeywords))
-        - iTunesPodcastKeyword: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesPodcastKeywords))
+        - iTunesPodcastID: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesPodcastID))
+        - iTunesPodcastKeywords: \(adaptFrameWithStringContentFrom(id3Tag: id3Tag, frameName: .iTunesPodcastKeywords))
         """
     }
 
     private func adaptFrameWithStringContentFrom(id3Tag: ID3Tag, frameName: FrameName) -> String {
-        return (id3Tag.frames[frameName] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-"
+        return (id3Tag.frames[frameName] as? ID3FrameWithStringContent)?.content ?? "-"
     }
 
     private func adaptFrameWithLocalizedContent(id3Tag: ID3Tag, frameName: (ID3FrameContentLanguage) -> FrameName) -> String {
