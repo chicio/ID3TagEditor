@@ -16,7 +16,7 @@ class ID3FramesWithLocalizedContentCreatorTest: XCTestCase {
             localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
-        let frame = creator.createFrames(id3Tag: ID32v3TagBuilder().build(), tag: [])
+        let frame = creator.createFrames(id3Tag: ID32v3TagBuilder().build())
 
         XCTAssertEqual(frame, [])
     }
@@ -27,7 +27,7 @@ class ID3FramesWithLocalizedContentCreatorTest: XCTestCase {
             localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
-        let frame = creator.createFrames(id3Tag: aTagWithUnsynchronisedLyrics(), tag: [])
+        let frame = creator.createFrames(id3Tag: aTagWithUnsynchronisedLyrics())
 
         XCTAssertEqual(frame, [0x01])
     }

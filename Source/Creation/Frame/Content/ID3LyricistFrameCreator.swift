@@ -7,16 +7,14 @@
 
 import Foundation
 
-class ID3LyricistFrameCreator: ID3StringFrameCreator {
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+class ID3LyricistFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let lyricistFrame = id3Tag.frames[.lyricist] as? ID3FrameWithStringContent {
             return createFrameUsing(
                 frameType: .lyricist,
                 content: lyricistFrame.content,
-                id3Tag: id3Tag,
-                andAddItTo: tag
-            )
+                id3Tag: id3Tag)
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 }

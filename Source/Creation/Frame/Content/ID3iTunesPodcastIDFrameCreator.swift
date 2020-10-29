@@ -7,16 +7,15 @@
 
 import Foundation
 
-class ID3iTunesPodcastIDFrameCreator: ID3StringFrameCreator {
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+class ID3iTunesPodcastIDFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let podcastIDFrame = id3Tag.frames[.iTunesPodcastID] as? ID3FrameWithStringContent {
             return createFrameUsing(
                 frameType: .iTunesPodcastID,
                 content: podcastIDFrame.content,
-                id3Tag: id3Tag,
-                andAddItTo: tag
+                id3Tag: id3Tag
             )
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 }

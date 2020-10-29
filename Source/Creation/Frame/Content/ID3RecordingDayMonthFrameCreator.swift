@@ -7,8 +7,8 @@
 
 import Foundation
 
-class ID3RecordingDayMonthFrameCreator: ID3StringFrameCreator {
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+class ID3RecordingDayMonthFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if id3Tag.properties.version < .version4,
             let dayMonthFrame = id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth,
             let day = dayMonthFrame.day,
@@ -16,11 +16,8 @@ class ID3RecordingDayMonthFrameCreator: ID3StringFrameCreator {
             let dayAsString = String(format: "%02d", day)
             let monthAsString = String(format: "%02d", month)
             let recordingDayMonth = dayAsString + monthAsString
-            return createFrameUsing(frameType: .recordingDayMonth,
-                                    content: recordingDayMonth,
-                                    id3Tag: id3Tag,
-                                    andAddItTo: tag)
+            return createFrameUsing(frameType: .recordingDayMonth, content: recordingDayMonth, id3Tag: id3Tag)
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 }

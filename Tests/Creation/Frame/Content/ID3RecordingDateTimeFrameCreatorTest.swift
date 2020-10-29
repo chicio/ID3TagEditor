@@ -29,10 +29,10 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
             timestampCreator: timestampCreator
         )
 
-        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3tag, tag: tagAsBytes)
+        let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3tag)
 
         XCTAssertTrue(timestampCreator.createFromRecordingDateTimeHasBeenCalled)
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

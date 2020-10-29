@@ -7,15 +7,14 @@
 
 import Foundation
 
-class ID3AttachedPicturesFramesCreator: ID3FrameCreatorsChain {
+class ID3AttachedPicturesFramesCreator: ID3FrameCreator {
     private let attachedPictureFrameCreator: AttachedPictureFrameCreator
 
     init(attachedPictureFrameCreator: AttachedPictureFrameCreator) {
         self.attachedPictureFrameCreator = attachedPictureFrameCreator
-        super.init()
     }
 
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         var frames: [UInt8] = []
         for pictureType in ID3PictureType.allCases {
             if let attachedPictureFrame = id3Tag.frames[.attachedPicture(pictureType)] as? ID3FrameAttachedPicture {
@@ -23,6 +22,6 @@ class ID3AttachedPicturesFramesCreator: ID3FrameCreatorsChain {
                 frames.append(contentsOf: frame)
             }
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag + frames)
+        return frames
     }
 }

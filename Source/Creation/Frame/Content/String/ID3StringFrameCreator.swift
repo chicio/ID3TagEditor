@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3StringFrameCreator: ID3FrameCreatorsChain {
+class ID3StringFrameCreator {
     let frameCreator: FrameFromStringContentCreator
     let id3FrameConfiguration: ID3FrameConfiguration
 
@@ -16,13 +16,11 @@ class ID3StringFrameCreator: ID3FrameCreatorsChain {
         self.id3FrameConfiguration = id3FrameConfiguration
     }
 
-    func createFrameUsing(frameType: FrameType, content: String, id3Tag: ID3Tag, andAddItTo tag: [UInt8]) -> [UInt8] {
-        let newTag = tag +
-                frameCreator.createFrame(
-                        frameType: frameType,
-                        version: id3Tag.properties.version,
-                        content: content
-                )
-        return super.createFrames(id3Tag: id3Tag, tag: newTag)
+    func createFrameUsing(frameType: FrameType, content: String, id3Tag: ID3Tag) -> [UInt8] {
+        return frameCreator.createFrame(
+            frameType: frameType,
+            version: id3Tag.properties.version,
+            content: content
+        )
     }
 }

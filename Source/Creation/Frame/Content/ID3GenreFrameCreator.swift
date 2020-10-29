@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ID3GenreFrameCreator: ID3FrameCreatorsChain {
+class ID3GenreFrameCreator: ID3FrameCreator {
     private let frameCreator: FrameFromStringContentCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
 
@@ -16,17 +16,15 @@ class ID3GenreFrameCreator: ID3FrameCreatorsChain {
         self.id3FrameConfiguration = id3FrameConfiguration
     }
 
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let genreFrame = id3Tag.frames[.genre] as? ID3FrameGenre {
-            let newTag = tag +
-                frameCreator.createFrame(
+           return frameCreator.createFrame(
                     frameType: .genre,
                     version: id3Tag.properties.version,
                     content: adapt(genre: genreFrame)
             )
-            return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 
     private func adapt(genre: ID3FrameGenre) -> String {

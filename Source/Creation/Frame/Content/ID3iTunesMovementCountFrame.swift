@@ -8,17 +8,15 @@
 
 import Foundation
 
-class ID3iTunesMovementCountFrameCreator: ID3StringFrameCreator {
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+class ID3iTunesMovementCountFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let countFrame = id3Tag.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent,
             let count = countFrame.value {
             return createFrameUsing(
                 frameType: .iTunesMovementCount,
                 content: String(count),
-                id3Tag: id3Tag,
-                andAddItTo: tag
-            )
+                id3Tag: id3Tag)
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 }

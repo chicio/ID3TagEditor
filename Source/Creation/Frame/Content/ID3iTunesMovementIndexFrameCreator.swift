@@ -7,17 +7,15 @@
 
 import Foundation
 
-class ID3iTunesMovementIndexFrameCreator: ID3StringFrameCreator {
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+class ID3iTunesMovementIndexFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let indexFrame = id3Tag.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent,
             let index = indexFrame.value {
             return createFrameUsing(
                 frameType: .iTunesMovementIndex,
                 content: String(index),
-                id3Tag: id3Tag,
-                andAddItTo: tag
-            )
+                id3Tag: id3Tag)
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 }

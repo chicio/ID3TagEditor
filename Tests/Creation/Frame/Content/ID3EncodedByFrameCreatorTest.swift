@@ -20,11 +20,10 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3EncodedByFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsAnEncodedBy() {
@@ -42,9 +41,9 @@ class ID3EncodedByFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3EncodedByFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3EncodedByFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

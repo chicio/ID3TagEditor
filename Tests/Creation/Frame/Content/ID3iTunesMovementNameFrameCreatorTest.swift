@@ -11,7 +11,7 @@ import XCTest
 class ID3iTunesMovementNameFrameCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoMovementName() {
         let tagBytes: [UInt8] = [1, 1, 1]
-        let id3MovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(
+        let id3MovementNameFrameCreator = ID3iTunesMovementNameFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
                 frameTypeToBeChecked: .iTunesMovementName
@@ -20,11 +20,10 @@ class ID3iTunesMovementNameFrameCreatorTest: XCTestCase {
         )
 
         let newTagBytes = id3MovementNameFrameCreator.createFrames(
-            id3Tag: ID32v3TagBuilder().build(),
-            tag: tagBytes
+            id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, tagBytes)
+        XCTAssertEqual(newTagBytes, [])
     }
 
     func testFrameCreationWhenThereIsAMovementName() {
@@ -34,7 +33,7 @@ class ID3iTunesMovementNameFrameCreatorTest: XCTestCase {
             version: .version3,
             frames: [.iTunesMovementName: ID3FrameWithStringContent(content: "::an example movement name::")]
         )
-        let id3MovementNameFrameCreator = ID3ItunesMovementNameFrameCreator(
+        let id3MovementNameFrameCreator = ID3iTunesMovementNameFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
                 frameTypeToBeChecked: .iTunesMovementName
@@ -42,9 +41,9 @@ class ID3iTunesMovementNameFrameCreatorTest: XCTestCase {
             id3FrameConfiguration: ID3FrameConfiguration()
         )
 
-        let newTagBytes = id3MovementNameFrameCreator.createFrames(id3Tag: id3Tag, tag: tagAsBytes)
+        let newTagBytes = id3MovementNameFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, tagAsBytes + newFrameBytes)
+        XCTAssertEqual(newTagBytes, newFrameBytes)
     }
 
     static let allTests = [

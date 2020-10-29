@@ -7,27 +7,24 @@
 
 import Foundation
 
-class ID3DiscPositionFrameCreator: ID3FrameCreatorsChain {
+class ID3DiscPositionFrameCreator: ID3FrameCreator {
     private let frameCreator: FrameFromStringContentCreator
     private var id3FrameConfiguration: ID3FrameConfiguration
 
     init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
         self.frameCreator = frameCreator
         self.id3FrameConfiguration = id3FrameConfiguration
-        super.init()
     }
 
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let discPositionFrame = id3Tag.frames[.discPosition] as? ID3FramePartOfTotal {
-            let newTag = tag +
-                frameCreator.createFrame(
+            return frameCreator.createFrame(
                     frameType: .discPosition,
                     version: id3Tag.properties.version,
                     content: adapt(discPosition: discPositionFrame)
             )
-            return super.createFrames(id3Tag: id3Tag, tag: newTag)
         }
-        return super.createFrames(id3Tag: id3Tag, tag: tag)
+        return []
     }
 
     private func adapt(discPosition: ID3FramePartOfTotal) -> String {

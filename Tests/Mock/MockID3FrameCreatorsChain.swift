@@ -8,7 +8,7 @@
 import Foundation
 @testable import ID3TagEditor
 
-class MockID3FrameCreatorsChain: ID3FrameCreatorsChain {
+class MockID3FrameCreatorsChain: ID3FrameCreator {
     var createFramesHasBeenCalled = false
     var frames: [UInt8]
 
@@ -16,7 +16,7 @@ class MockID3FrameCreatorsChain: ID3FrameCreatorsChain {
         self.frames = frames
     }
 
-    override func createFrames(id3Tag: ID3Tag, tag: [UInt8]) -> [UInt8] {
+    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         createFramesHasBeenCalled = true
         return frames
     }
