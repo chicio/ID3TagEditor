@@ -13,7 +13,9 @@ class ID3LocalizedFrameParsingOperationTest: XCTestCase {
     func testParsingValidFrame() {
         let expectation = XCTestExpectation(description: "unsynchronised lyrics")
 
-        let lyricsOperation = ID3LocalizedFrameParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics)
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
+            frameName: FrameName.unsynchronizedLyrics
+        )
 
         lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
             XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
@@ -26,7 +28,9 @@ class ID3LocalizedFrameParsingOperationTest: XCTestCase {
     func testParsingInvalidLanguage() {
         let expectation = XCTestExpectation(description: "unsynchronised lyrics")
 
-        let lyricsOperation = ID3LocalizedFrameParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics)
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
+            frameName: FrameName.unsynchronizedLyrics
+        )
 
         lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
             XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
