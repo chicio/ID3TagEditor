@@ -9,9 +9,9 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
+class ID3LocalizedFrameCreatorTest: XCTestCase {
     func testCreatev2() {
-        let creator = ID3UnsynchronisedLyricForLanguageFrameCreator(
+        let creator = ID3LocalizedFrameCreator(
             id3FrameConfiguration: ID3FrameConfiguration(),
             frameHeaderCreator: MockFrameHeaderCreator(),
             paddingAdder: MockPaddingAdder()
@@ -20,7 +20,8 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
         let frame = creator.createFrame(using: ID3FrameWithLocalizedContent(language: .ita,
                                                                             contentDescription: "content description",
                                                                             content: "lyrics"),
-                                        version: .version2)
+                                        version: .version2,
+                                        frameType: .unsyncronisedLyrics)
 
         XCTAssertEqual(frame,
                        [0x01, 0x02, 0x01, 0x69, 0x74, 0x61, 0xFF, 0xFE, 0x63, 0x00, 0x6F, 0x00,
@@ -32,7 +33,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
     }
 
     func testCreatev3() {
-        let creator = ID3UnsynchronisedLyricForLanguageFrameCreator(
+        let creator = ID3LocalizedFrameCreator(
             id3FrameConfiguration: ID3FrameConfiguration(),
             frameHeaderCreator: MockFrameHeaderCreator(),
             paddingAdder: MockPaddingAdder()
@@ -41,7 +42,8 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
         let frame = creator.createFrame(using: ID3FrameWithLocalizedContent(language: .ita,
                                                                             contentDescription: "content description",
                                                                             content: "lyrics"),
-                                        version: .version3)
+                                        version: .version3,
+                                        frameType: .unsyncronisedLyrics)
 
         XCTAssertEqual(frame,
                        [0x01, 0x02, 0x01, 0x69, 0x74, 0x61, 0xFF, 0xFE, 0x63, 0x00, 0x6F, 0x00,
@@ -53,7 +55,7 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
     }
 
     func testCreatev4() {
-        let creator = ID3UnsynchronisedLyricForLanguageFrameCreator(
+        let creator = ID3LocalizedFrameCreator(
             id3FrameConfiguration: ID3FrameConfiguration(),
             frameHeaderCreator: MockFrameHeaderCreator(),
             paddingAdder: MockPaddingAdder()
@@ -62,7 +64,8 @@ class ID3UnsynchronisedLyricForLanguageFrameCreatorTest: XCTestCase {
         let frame = creator.createFrame(using: ID3FrameWithLocalizedContent(language: .ita,
                                                                             contentDescription: "content description",
                                                                             content: "lyrics"),
-                                        version: .version4)
+                                        version: .version4,
+                                        frameType: .unsyncronisedLyrics)
 
         XCTAssertEqual(frame,
                        [0x01, 0x02, 0x01, 0x69, 0x74, 0x61, 0xFF, 0xFE, 0x63, 0x00, 0x6F, 0x00,

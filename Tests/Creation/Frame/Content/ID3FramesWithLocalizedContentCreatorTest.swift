@@ -9,10 +9,11 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
+class ID3FramesWithLocalizedContentCreatorTest: XCTestCase {
     func testNothingIsCreatedWheLyricsDataIsNotSet() {
-        let creator = ID3UnsyncronizedLyricsFrameCreator(
-            unsynchronisedLyricForLanguageFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator()
+        let creator = ID3FramesWithLocalizedContentCreator(
+            localizedFrameNames: frameNamesWithLocalizedContent,
+            localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
         let frame = creator.createFrames(id3Tag: ID32v3TagBuilder().build(), tag: [])
@@ -21,8 +22,9 @@ class ID3UnsyncronizedLyricsFrameCreatorTest: XCTestCase {
     }
 
     func testCreateFrameForValidData() {
-        let creator = ID3UnsyncronizedLyricsFrameCreator(
-            unsynchronisedLyricForLanguageFrameCreator: MockUnsynchronisedLyricForLanguageFrameCreator()
+        let creator = ID3FramesWithLocalizedContentCreator(
+            localizedFrameNames: frameNamesWithLocalizedContent,
+            localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
         let frame = creator.createFrames(id3Tag: aTagWithUnsynchronisedLyrics(), tag: [])

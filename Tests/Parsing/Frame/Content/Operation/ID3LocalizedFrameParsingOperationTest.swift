@@ -1,5 +1,5 @@
 //
-//  ID3UnsynchronisedLyricsFrameContentParsingOperationTest.swift
+//  ID3LocalizedFrameParsingOperationTest.swift
 //  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 14/10/20.
@@ -9,11 +9,13 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
+class ID3LocalizedFrameParsingOperationTest: XCTestCase {
     func testParsingValidFrame() {
         let expectation = XCTestExpectation(description: "unsynchronised lyrics")
 
-        let lyricsOperation = ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make()
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
+            frameName: FrameName.unsynchronizedLyrics
+        )
 
         lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
             XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
@@ -26,7 +28,9 @@ class ID3UnsynchronisedLyricsFrameContentParsingOperationTest: XCTestCase {
     func testParsingInvalidLanguage() {
         let expectation = XCTestExpectation(description: "unsynchronised lyrics")
 
-        let lyricsOperation = ID3UnsynchronisedLyricsFrameContentParsingOperationFactory.make()
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
+            frameName: FrameName.unsynchronizedLyrics
+        )
 
         lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
             XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
