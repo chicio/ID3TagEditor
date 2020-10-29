@@ -2,23 +2,19 @@
 //  FrameName.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 02/10/2019.
+//  Created by Fabrizio Duroni on 02.10.19.
 //  2019 Fabrizio Duroni
 //
 
 import Foundation
 
-func enumeratedLyrics() -> [FrameName] {
-    return ID3FrameContentLanguage.allCases.map({ FrameName.unsynchronizedLyrics($0) })
-}
-
-func enumeratedComments() -> [FrameName] {
-    return ID3FrameContentLanguage.allCases.map({ FrameName.comment($0) })
+func enumerateLocalizedFrameName(frameName: (ID3FrameContentLanguage) -> FrameName) -> [FrameName] {
+    return ID3FrameContentLanguage.allCases.map({ frameName($0) })
 }
 
 let frameNamesWithLocalizedContent = [
-    FrameType.unsyncronisedLyrics: enumeratedLyrics(),
-    FrameType.comment: enumeratedComments()
+    FrameType.unsyncronisedLyrics: enumerateLocalizedFrameName(frameName: FrameName.unsynchronizedLyrics),
+    FrameType.comment: enumerateLocalizedFrameName(frameName: FrameName.comment)
 ]
 
 /// An enum used to identify the different types of frame parsed by the ID3TagEditor.
