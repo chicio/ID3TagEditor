@@ -3,8 +3,7 @@ import XCTest
 #if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
-        testCase(ID3AlbumArtistFrameCreatorTest.allTests),
-        testCase(ID3AlbumFrameCreatorTest.allTests),
+        testCase(ID3FrameWithStringContentCreatorTest.allTests),
         testCase(ID3ArtistFrameCreatorTest.allTests),
         testCase(ID3ComposerFrameCreatorTest.allTests),
         testCase(ID3ConductorFrameCreatorTest.allTests),

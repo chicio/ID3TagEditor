@@ -7,13 +7,21 @@
 
 import Foundation
 
-class ID3AlbumArtistFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+class ID3FrameWithStringContentCreator: ID3FrameCreator {
+    private let frameCreator: FrameFromStringContentCreator
+    private let id3FrameConfiguration: ID3FrameConfiguration
+
+    init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+        self.frameCreator = frameCreator
+        self.id3FrameConfiguration = id3FrameConfiguration
+    }
+
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let albumArtistFrame = id3Tag.frames[.albumArtist] as? ID3FrameWithStringContent {
-            return createFrameUsing(
-                frameType: .albumArtist,
-                content: albumArtistFrame.content,
-                id3Tag: id3Tag
+            return frameCreator.createFrame(
+                frameType: FrameType.albumArtist,
+                version: id3Tag.properties.version,
+                content: albumArtistFrame.content
             )
         }
         return []
