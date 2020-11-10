@@ -32,7 +32,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3TagCreatorTest.allTests),
         testCase(ID3TagPresenceTest.allTests),
         testCase(ID3TimestampCreatorTest.allTests),
-        testCase(ID3TitleFrameCreatorTest.allTests),
         testCase(ID3TrackPositionCreatorTest.allTests),
         testCase(ID3TrackPositionStringAdapterTest.allTests),
         testCase(ID3DiscPositionStringAdapterTest.allTests),
