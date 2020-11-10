@@ -16,14 +16,14 @@ class ID3iTunesFrameCreatorsFactory {
         let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.make()
         let frameConfiguration = ID3FrameConfiguration()
         return [
-            ID3iTunesGroupingFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesMovementNameFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesGrouping, frameType: .iTunesGrouping),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesMovementName, frameType: .iTunesMovementName),
             ID3iTunesMovementIndexFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3iTunesMovementCountFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesPodcastCategoryFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesPodcastDescriptionFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesPodcastIDFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesPodcastKeywordsFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration)
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastCategory, frameType: .iTunesPodcastCategory),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastDescription, frameType: .iTunesPodcastDescription),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastID, frameType: .iTunesPodcastID),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastKeywords, frameType: .iTunesPodcastKeywords)
         ]
     }
 }
