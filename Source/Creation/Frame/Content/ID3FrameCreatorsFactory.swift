@@ -31,9 +31,9 @@ class ID3FrameCreatorsFactory {
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .encoderSettings, frameType: .encoderSettings),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .fileOwner, frameType: .fileOwner),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .lyricist, frameType: .lyricist),
-            ID3MixArtistFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3PublisherFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3SubtitleFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .mixArtist, frameType: .mixArtist),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .publisher, frameType: .publisher),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .subtitle, frameType: .subtitle),
             ID3DiscPositionFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3FramesWithLocalizedContentCreatorFactory.make()
         ]

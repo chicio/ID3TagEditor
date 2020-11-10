@@ -15,7 +15,7 @@ class ID3RecordingTimesFrameCreatorsFactory {
         let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreatorWithISO88591EncodingFactory.make()
         let frameConfiguration = ID3FrameConfiguration()
         return [
-            ID3RecordingYearFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringISO88591ContentCreator, frameName: .recordingYear, frameType: .recordingYear),
             ID3RecordingDayMonthFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3RecordingHourMinuteFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3RecordingDateTimeFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration, timestampCreator: ID3TimestampCreator())
