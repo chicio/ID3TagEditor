@@ -4,10 +4,6 @@ import XCTest
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(ID3FrameWithStringContentCreatorTest.allTests),
-        testCase(ID3ComposerFrameCreatorTest.allTests),
-        testCase(ID3ConductorFrameCreatorTest.allTests),
-        testCase(ID3ContentGroupingFrameCreatorTest.allTests),
-        testCase(ID3CopyrightFrameCreatorTest.allTests),
         testCase(ID3EncodedByFrameCreatorTest.allTests),
         testCase(ID3EncoderSettingsFrameCreatorTest.allTests),
         testCase(ID3FileOwnerFrameCreatorTest.allTests),
