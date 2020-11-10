@@ -4,7 +4,6 @@ import XCTest
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(ID3FrameWithStringContentCreatorTest.allTests),
-        testCase(ID3ArtistFrameCreatorTest.allTests),
         testCase(ID3ComposerFrameCreatorTest.allTests),
         testCase(ID3ConductorFrameCreatorTest.allTests),
         testCase(ID3ContentGroupingFrameCreatorTest.allTests),
@@ -15,7 +14,6 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(ID3LyricistFrameCreatorTest.allTests),
         testCase(ID3MixArtistFrameCreatorTest.allTests),
         testCase(ID3PublisherFrameCreatorTest.allTests),
-        testCase(ID3SubtitleFrameCreatorTest.allTests),
         testCase(ID3DiscPositionFrameCreatorTest.allTests),
         testCase(ID3AttachedPictureFrameContentParsingOperationTest.allTests),
         testCase(ID3AttachedPicturesFramesCreatorTest.allTests),

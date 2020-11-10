@@ -18,8 +18,8 @@ class ID3FrameCreatorsFactory {
         return [
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .album, frameType: .album),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .albumArtist, frameType: .albumArtist),
-            ID3ArtistFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3TitleFrameCreator(frameCreator: frameFromStringUTF16ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .artist, frameType: .artist),
+            ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .title, frameType: .title),
             ID3GenreFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3TrackPositionFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3AttachedPicturesFramesCreatorFactory.make(),
