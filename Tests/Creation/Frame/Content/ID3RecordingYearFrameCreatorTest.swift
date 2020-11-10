@@ -1,8 +1,9 @@
 //
 //  ID3RecordingYearFrameCreatorTest.swift
+//  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 04/03/2018.
-//  2018 Fabrizio Duroni.
+//  Created by Fabrizio Duroni on 10.11.20.
+//  Copyright © 2020 Fabrizio Duroni.
 //
 
 import XCTest

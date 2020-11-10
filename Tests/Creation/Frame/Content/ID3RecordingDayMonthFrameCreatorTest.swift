@@ -45,24 +45,6 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
         XCTAssertEqual(newTagBytes, [])
     }
 
-    func testNoFrameCreationWhenIsMajorThanVersion3() {
-        let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
-            frameCreator: MockFrameFromStringContentCreator(
-                fakeNewFrameAsByte: [2, 2],
-                frameTypeToBeChecked: .recordingDayMonth
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
-        )
-        let id3tag = ID3Tag(
-            version: .version4,
-            frames: [.recordingDayMonth: ID3FrameRecordingDayMonth(day: 1, month: 1)]
-        )
-
-        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag)
-
-        XCTAssertEqual(newTagBytes, [])
-    }
-
     func testFrameCreationWhenThereIsADayAndAMonth() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID3Tag(
@@ -84,7 +66,6 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
 
     static let allTests = [
         ("testFrameCreationWhenThereIsADayAndAMonth", testFrameCreationWhenThereIsADayAndAMonth),
-        ("testNoFrameCreationWhenIsMajorThanVersion3", testNoFrameCreationWhenIsMajorThanVersion3),
         ("testNoFrameCreationWhenThereIsNoDay", testNoFrameCreationWhenThereIsNoDay),
         ("testNoFrameCreationWhenThereIsNoMonth", testNoFrameCreationWhenThereIsNoMonth)
     ]

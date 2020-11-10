@@ -18,8 +18,7 @@ class ID3RecordingDateTimeFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
     }
 
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {
-        if id3Tag.properties.version >= .version4,
-            let recordingDateTimeFrame = id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime,
+        if let recordingDateTimeFrame = id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime,
             let recordingYear = recordingDateTimeFrame.recordingDateTime.date?.year {
             /**
              Fallback case:

@@ -9,8 +9,7 @@ import Foundation
 
 class ID3RecordingDayMonthFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {
-        if id3Tag.properties.version < .version4,
-            let dayMonthFrame = id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth,
+        if let dayMonthFrame = id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth,
             let day = dayMonthFrame.day,
             let month = dayMonthFrame.month {
             let dayAsString = String(format: "%02d", day)
