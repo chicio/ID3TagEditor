@@ -14,8 +14,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
                 frameTypeToBeChecked: .recordingDayMonth
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
+            )
         )
         let tag = ID3Tag(
             version: .version3,
@@ -32,8 +31,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
                 frameTypeToBeChecked: .recordingDayMonth
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
+            )
         )
         let tag = ID3Tag(
             version: .version3,
@@ -55,8 +53,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
                 frameTypeToBeChecked: .recordingDayMonth
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
+            )
         )
 
         let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)

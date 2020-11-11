@@ -15,31 +15,12 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
                         frameTypeToBeChecked: .recordingYear
-                ),
-                id3FrameConfiguration: ID3FrameConfiguration()
+                )
         )
 
         let newTagBytes = id3YearFrameCreator.createFrames(
             id3Tag: ID32v3TagBuilder().build()
         )
-
-        XCTAssertEqual(newTagBytes, [])
-    }
-
-    func testNoFrameCreationWhenIsMajorThanVersion3() {
-        let id3YearFrameCreator = ID3RecordingYearFrameCreator(
-            frameCreator: MockFrameFromStringContentCreator(
-                fakeNewFrameAsByte: [2, 2],
-                frameTypeToBeChecked: .recordingYear
-            ),
-            id3FrameConfiguration: ID3FrameConfiguration()
-        )
-        let recordingDateTime = RecordingDateTime(date: RecordingDate(day: nil, month: nil, year: 2018), time: nil)
-        let id3tag = ID32v4TagBuilder()
-            .recordingDateTime(frame: ID3FrameRecordingDateTime(recordingDateTime: recordingDateTime))
-            .build()
-
-        let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: id3tag)
 
         XCTAssertEqual(newTagBytes, [])
     }
@@ -54,8 +35,7 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
                         frameTypeToBeChecked: .recordingYear
-                ),
-                id3FrameConfiguration: ID3FrameConfiguration()
+                )
         )
 
         let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)
@@ -65,7 +45,6 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
 
     static let allTests = [
         ("testFrameCreationWhenThereIsAnYear", testFrameCreationWhenThereIsAnYear),
-        ("testNoFrameCreationWhenIsMajorThanVersion3", testNoFrameCreationWhenIsMajorThanVersion3),
         ("testNoFrameCreationWhenThereIsNoYear", testNoFrameCreationWhenThereIsNoYear)
     ]
 }

@@ -8,11 +8,21 @@
 
 import Foundation
 
-class ID3RecordingYearFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+class ID3RecordingYearFrameCreator: ID3FrameCreator {
+    private let frameCreator: FrameFromStringContentCreator
+
+    init(frameCreator: FrameFromStringContentCreator) {
+        self.frameCreator = frameCreator
+    }
+
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let yearFrame = id3Tag.frames[.recordingYear] as? ID3FrameRecordingYear,
             let year = yearFrame.year {
-            return createFrameUsing(frameType: .recordingYear, content: String(year), id3Tag: id3Tag)
+            return frameCreator.createFrame(
+                     frameType: .recordingYear,
+                     version: id3Tag.properties.version,
+                     content: String(year)
+             )
         }
         return []
     }
