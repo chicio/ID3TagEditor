@@ -44,7 +44,7 @@ class ID3TagTest: XCTestCase {
                 .discPosition: ID3FramePartOfTotal(part: 1, total: 3),
                 .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
                 .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
-                .recordingYear: ID3FrameRecordingYear(year: 2020),
+                .recordingYear: ID3FrameWithIntegerContent(value: 2020),
                 .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39),
                 .attachedPicture(.frontCover): ID3FrameAttachedPicture(picture: artFront, type: .frontCover, format: .jpeg),
                 .attachedPicture(.backCover): ID3FrameAttachedPicture(picture: artBack, type: .backCover, format: .jpeg),

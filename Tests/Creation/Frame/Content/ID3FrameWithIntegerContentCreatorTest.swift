@@ -9,13 +9,15 @@
 import XCTest
 @testable import ID3TagEditor
 
-class ID3RecordingYearFrameCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoYear() {
-        let id3YearFrameCreator = ID3RecordingYearFrameCreator(
+class ID3FrameWithIntegerContentCreatorTest: XCTestCase {
+    func testNoFrameCreationWhenThereIsNoContent() {
+        let id3YearFrameCreator = ID3FrameWithIntegerContentCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
                         frameTypeToBeChecked: .recordingYear
-                )
+                ),
+                frameName: .recordingYear,
+                frameType: .recordingYear
         )
 
         let newTagBytes = id3YearFrameCreator.createFrames(
@@ -25,17 +27,18 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
         XCTAssertEqual(newTagBytes, [])
     }
 
-    func testFrameCreationWhenThereIsAnYear() {
+    func testFrameCreationWhenThereIsContent() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID32v3TagBuilder()
-            .recordingYear(frame: ID3FrameRecordingYear(year: 2018))
+            .recordingYear(frame: ID3FrameWithIntegerContent(value: 2018))
             .build()
-
-        let id3TitleFrameCreator = ID3RecordingYearFrameCreator(
+        let id3TitleFrameCreator = ID3FrameWithIntegerContentCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
                         frameTypeToBeChecked: .recordingYear
-                )
+                ),
+                frameName: .recordingYear,
+                frameType: .recordingYear
         )
 
         let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)
@@ -44,7 +47,7 @@ class ID3RecordingYearFrameCreatorTest: XCTestCase {
     }
 
     static let allTests = [
-        ("testFrameCreationWhenThereIsAnYear", testFrameCreationWhenThereIsAnYear),
-        ("testNoFrameCreationWhenThereIsNoYear", testNoFrameCreationWhenThereIsNoYear)
+        ("testNoFrameCreationWhenThereIsNoContent", testNoFrameCreationWhenThereIsNoContent),
+        ("testFrameCreationWhenThereIsContent", testFrameCreationWhenThereIsContent)
     ]
 }

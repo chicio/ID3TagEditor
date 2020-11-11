@@ -110,7 +110,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.month, 8)
         XCTAssertEqual(id3Tag?.frames[.recordingYear]?.id3Identifier, "TYER")
         XCTAssertEqual(id3Tag?.frames[.recordingYear]?.size, 16)
-        XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year, 2018)
+        XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value, 2018)
         XCTAssertEqual(id3Tag?.frames[.recordingHourMinute]?.id3Identifier, "TIME")
         XCTAssertEqual(id3Tag?.frames[.recordingHourMinute]?.size, 16)
         XCTAssertEqual((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.hour, 15)
@@ -187,7 +187,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "Om Tryumbacom")
         XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "Laraaji")
         XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "Vision Songs Vol. 1")
-        XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year, 2018)
+        XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value, 2018)
         XCTAssertEqual((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part, 10)
     }
 
@@ -509,7 +509,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                                                                       format: .jpeg),
                 .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
                 .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingYear: ID3FrameRecordingYear(year: 2018),
+                .recordingYear: ID3FrameWithIntegerContent(value: 2018),
                 .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ]
@@ -548,7 +548,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                                                                       format: .jpeg),
                 .genre: ID3FrameGenre(genre: .metal, description: "Metalcore"),
                 .trackPosition: ID3FramePartOfTotal(part: 2, total: 9),
-                .recordingYear: ID3FrameRecordingYear(year: 2018),
+                .recordingYear: ID3FrameWithIntegerContent(value: 2018),
                 .recordingDayMonth: ID3FrameRecordingDayMonth(day: 5, month: 8),
                 .recordingHourMinute: ID3FrameRecordingHourMinute(hour: 15, minute: 39)
             ]
