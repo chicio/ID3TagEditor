@@ -14,12 +14,11 @@ class ID3iTunesFrameCreatorsFactory {
     static func make() -> [ID3FrameCreator] {
         let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreatorWithISO88591EncodingFactory.make()
         let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.make()
-        let frameConfiguration = ID3FrameConfiguration()
         return [
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesGrouping, frameType: .iTunesGrouping),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesMovementName, frameType: .iTunesMovementName),
-            ID3iTunesMovementIndexFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3iTunesMovementCountFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3FrameWithIntegerContentCreator(frameCreator: frameFromStringISO88591ContentCreator, frameName: .iTunesMovementIndex, frameType: .iTunesMovementIndex),
+            ID3FrameWithIntegerContentCreator(frameCreator: frameFromStringISO88591ContentCreator, frameName: .iTunesMovementCount, frameType: .iTunesMovementCount),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastCategory, frameType: .iTunesPodcastCategory),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastDescription, frameType: .iTunesPodcastDescription),
             ID3FrameWithStringContentCreator(frameCreator: frameFromStringUTF16ContentCreator, frameName: .iTunesPodcastID, frameType: .iTunesPodcastID),
