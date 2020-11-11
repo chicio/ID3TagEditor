@@ -13,12 +13,11 @@ import Foundation
 class ID3RecordingTimesFrameCreatorsFactory {
     static func make() -> [ID3FrameCreator] {
         let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreatorWithISO88591EncodingFactory.make()
-        let frameConfiguration = ID3FrameConfiguration()
         return [
             ID3RecordingYearFrameCreator(frameCreator: frameFromStringISO88591ContentCreator),
             ID3RecordingDayMonthFrameCreator(frameCreator: frameFromStringISO88591ContentCreator),
-            ID3RecordingHourMinuteFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
-            ID3RecordingDateTimeFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration, timestampCreator: ID3TimestampCreator())
+            ID3RecordingHourMinuteFrameCreator(frameCreator: frameFromStringISO88591ContentCreator),
+            ID3RecordingDateTimeFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, timestampCreator: ID3TimestampCreator())
         ]
     }
 }

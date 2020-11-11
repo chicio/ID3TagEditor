@@ -7,19 +7,19 @@
 
 import Foundation
 
-class ID3RecordingDateTimeFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+class ID3RecordingDateTimeFrameCreator: ID3FrameCreator {
     private let timestampCreator: TimestampCreator
+    private let frameCreator: FrameFromStringContentCreator
 
     init(frameCreator: FrameFromStringContentCreator,
-         id3FrameConfiguration: ID3FrameConfiguration,
          timestampCreator: TimestampCreator) {
         self.timestampCreator = timestampCreator
-        super.init(frameCreator: frameCreator, id3FrameConfiguration: id3FrameConfiguration)
+        self.frameCreator = frameCreator
     }
 
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {
         if let recordingDateTimeFrame = id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime,
-            let recordingYear = recordingDateTimeFrame.recordingDateTime.date?.year {
+           let recordingYear = recordingDateTimeFrame.recordingDateTime.date?.year {
             /**
              Fallback case:
              Same as of parsing operation. A lot mp3 id3 tag app place just the year inside this field instead of the
@@ -29,7 +29,11 @@ class ID3RecordingDateTimeFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
              */
             let timestamp = timestampCreator
                 .createFrom(recordingDateTime: recordingDateTimeFrame.recordingDateTime) ?? String(recordingYear)
-            return createFrameUsing(frameType: .recordingDateTime, content: timestamp, id3Tag: id3Tag)
+            return frameCreator.createFrame(
+                frameType: .recordingDateTime,
+                version: id3Tag.properties.version,
+                content: timestamp
+            )
         }
         return []
     }

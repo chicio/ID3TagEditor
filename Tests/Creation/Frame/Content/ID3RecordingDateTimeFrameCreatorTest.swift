@@ -24,7 +24,6 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
                 fakeNewFrameAsByte: newFrameBytes,
                 frameTypeToBeChecked: .recordingDateTime
             ),
-            id3FrameConfiguration: ID3FrameConfiguration(),
             timestampCreator: timestampCreator
         )
 
