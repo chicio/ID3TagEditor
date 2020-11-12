@@ -16,12 +16,12 @@ class FrameFromIntegerContentAdapter: FrameContentAdapter {
     }
 
     func createFrames(id3Tag: ID3Tag, frameName: FrameName, frameType: FrameType) -> [UInt8] {
-        if let indexFrame = id3Tag.frames[frameName] as? ID3FrameWithIntegerContent,
-            let index = indexFrame.value {
+        if let frame = id3Tag.frames[frameName] as? ID3FrameWithIntegerContent,
+            let value = frame.value {
             return frameCreator.createFrame(
                 frameType: frameType,
                 version: id3Tag.properties.version,
-                content: String(index)
+                content: String(value)
             )
         }
         return []
