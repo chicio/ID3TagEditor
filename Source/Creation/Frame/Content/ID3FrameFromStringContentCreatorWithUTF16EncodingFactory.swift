@@ -12,7 +12,7 @@ class ID3FrameFromStringContentCreatorWithUTF16EncodingFactory {
     static func make() -> ID3FrameFromStringContentCreator {
         let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
         let frameConfiguration = ID3FrameConfiguration()
-        let frameHeaderCreator = ID3FrameHeaderCreatorChain.make()
+        let frameHeaderCreator = ID3FrameHeaderCreatorFactory.make()
         return ID3FrameFromStringContentCreator(
             frameHeaderCreator: frameHeaderCreator,
             stringToBytesAdapter: ID3UTF16StringToByteAdapter(paddingAdder: paddingAdder,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ID3FrameHeaderCreatorChain {
+class ID3FrameHeaderCreatorFactory {
     static func make() -> ID3FrameHeaderCreator {
         let frameConfiguration = ID3FrameConfiguration()
         let frameContentSizeCalculator = ID3FrameContentSizeCalculator(

@@ -17,7 +17,7 @@ class ID3FramesWithLocalizedContentCreatorFactory {
             localizedFrameNames: frameNamesWithLocalizedContent,
             localizedFrameCreator: ID3LocalizedFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
-                frameHeaderCreator: ID3FrameHeaderCreatorChain.make(),
+                frameHeaderCreator: ID3FrameHeaderCreatorFactory.make(),
                 paddingAdder: paddingAdder
             )
         )

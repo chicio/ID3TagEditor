@@ -37,7 +37,7 @@ class ID3TagToStringAdapter {
         - recordingDateTime: \(
             (id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime)?.recordingDateTime.debugDescription ?? "-"
         )
-        - recordingYear: \((id3Tag.frames[.recordingYear] as? ID3FrameRecordingYear)?.debugDescription ?? "-")
+        - recordingYear: \((id3Tag.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.debugDescription ?? "-")
         - recordingDayMonth: \((id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.debugDescription ?? "-")
         - recordingHourMinute: \((id3Tag.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.debugDescription ?? "-")
         - genre: \((id3Tag.frames[.genre] as? ID3FrameGenre)?.debugDescription ?? "-")

@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 .artist(frame: ID3FrameWithStringContent(content: artistTextField.text ?? ""))
                 .albumArtist(frame: ID3FrameWithStringContent(content: albumArtistField.text ?? ""))
                 .album(frame: ID3FrameWithStringContent(content: albumTextField.text ?? ""))
-                .recordingYear(frame: ID3FrameRecordingYear(year: Int(yearField.text ?? "2019") ?? 2019))
+                .recordingYear(frame: ID3FrameWithIntegerContent(value: Int(yearField.text ?? "2019") ?? 2019))
                 .genre(frame: ID3FrameGenre(genre: ID3Genre(rawValue: genreTextFieldContent) ?? defaultGenre,
                                             description: genreDescriptionField.text ?? "Rock and roll"))
                 .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             // genre is setted only by the
             genreIdentifierField.text = "\((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier?.rawValue ?? -1)"
             genreDescriptionField.text = (id3Tag?.frames[.genre] as? ID3FrameGenre)?.description
-            yearField.text = "\((id3Tag?.frames[.recordingYear] as? ID3FrameRecordingYear)?.year ?? 0)"
+            yearField.text = "\((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value ?? 0)"
             if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
                 attachedPictureImage.image = UIImage(data: attachedPictureFrame.picture)
             } else {

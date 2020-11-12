@@ -40,7 +40,7 @@ public protocol RecordingHourMinuteDayMonthYearFramesBuilder where Self: ID32Tag
      
       - returns: the instance of the builder.
      */
-    func recordingYear(frame: ID3FrameRecordingYear) -> Self
+    func recordingYear(frame: ID3FrameWithIntegerContent) -> Self
 }
 
 public extension RecordingHourMinuteDayMonthYearFramesBuilder {
@@ -75,7 +75,7 @@ public extension RecordingHourMinuteDayMonthYearFramesBuilder {
      
       - returns: the instance of the builder.
      */
-    func recordingYear(frame: ID3FrameRecordingYear) -> Self {
+    func recordingYear(frame: ID3FrameWithIntegerContent) -> Self {
         frames[.recordingYear] = frame
         return self
     }

@@ -9,11 +9,9 @@ import Foundation
 
 class ID3TrackPositionFrameCreator: ID3FrameCreator {
     private let frameCreator: FrameFromStringContentCreator
-    private var id3FrameConfiguration: ID3FrameConfiguration
 
-    init(frameCreator: FrameFromStringContentCreator, id3FrameConfiguration: ID3FrameConfiguration) {
+    init(frameCreator: FrameFromStringContentCreator) {
         self.frameCreator = frameCreator
-        self.id3FrameConfiguration = id3FrameConfiguration
     }
 
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {

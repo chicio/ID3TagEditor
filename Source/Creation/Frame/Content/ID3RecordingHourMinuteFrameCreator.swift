@@ -7,16 +7,25 @@
 
 import Foundation
 
-class ID3RecordingHourMinuteFrameCreator: ID3StringFrameCreator, ID3FrameCreator {
+class ID3RecordingHourMinuteFrameCreator: ID3FrameCreator {
+    private let frameCreator: FrameFromStringContentCreator
+
+    init(frameCreator: FrameFromStringContentCreator) {
+        self.frameCreator = frameCreator
+    }
+
     func createFrames(id3Tag: ID3Tag) -> [UInt8] {
-        if id3Tag.properties.version < .version4,
-            let hourMinuteFrame = id3Tag.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute,
+        if let hourMinuteFrame = id3Tag.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute,
             let hour = hourMinuteFrame.hour,
             let minute = hourMinuteFrame.minute {
             let hourAsString = String(format: "%02d", hour)
             let minuteAsString = String(format: "%02d", minute)
             let recordingHourMinute = hourAsString + minuteAsString
-            return createFrameUsing(frameType: .recordingHourMinute, content: recordingHourMinute, id3Tag: id3Tag)
+            return frameCreator.createFrame(
+                frameType: .recordingHourMinute,
+                version: id3Tag.properties.version,
+                content: recordingHourMinute
+            )
         }
         return []
     }

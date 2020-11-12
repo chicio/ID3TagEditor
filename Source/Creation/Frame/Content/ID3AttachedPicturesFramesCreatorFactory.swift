@@ -15,7 +15,7 @@ class ID3AttachedPicturesFramesCreatorFactory {
             attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
                 id3AttachedPictureFrameConfiguration: ID3AttachedPictureFrameConfiguration(),
-                frameHeaderCreator: ID3FrameHeaderCreatorChain.make()
+                frameHeaderCreator: ID3FrameHeaderCreatorFactory.make()
             )
         )
     }
