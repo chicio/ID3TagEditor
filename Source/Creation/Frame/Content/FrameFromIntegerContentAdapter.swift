@@ -1,25 +1,21 @@
 //
-//  ID3FrameWithIntegerContentCreator.swift
+//  FrameFromIntegerContentAdapter.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 11.11.20.
+//  Created by Fabrizio Duroni on 12.11.20.
 //  2020 Fabrizio Duroni.
 //
 
 import Foundation
 
-class ID3FrameWithIntegerContentCreator: ID3FrameCreator {
+class FrameFromIntegerContentAdapter: FrameContentAdapter {
     private let frameCreator: FrameFromStringContentCreator
-    private let frameName: FrameName
-    private let frameType: FrameType
 
-    init(frameCreator: FrameFromStringContentCreator, frameName: FrameName, frameType: FrameType) {
+    init(frameCreator: FrameFromStringContentCreator) {
         self.frameCreator = frameCreator
-        self.frameName = frameName
-        self.frameType = frameType
     }
 
-    func createFrames(id3Tag: ID3Tag) -> [UInt8] {
+    func createFrames(id3Tag: ID3Tag, frameName: FrameName, frameType: FrameType) -> [UInt8] {
         if let indexFrame = id3Tag.frames[frameName] as? ID3FrameWithIntegerContent,
             let index = indexFrame.value {
             return frameCreator.createFrame(

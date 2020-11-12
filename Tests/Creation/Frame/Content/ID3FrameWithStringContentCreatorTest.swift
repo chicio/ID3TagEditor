@@ -10,11 +10,11 @@ import XCTest
 
 class ID3FrameWithStringContentCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoFrameData() {
-        let id3AlbumFrameCreator = ID3FrameWithStringContentCreator(
-            frameCreator: MockFrameFromStringContentCreator(
+        let id3AlbumFrameCreator = ID3FrameContentCreator(
+            frameCreator: FrameFromStringContentAdapter(frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
                 frameTypeToBeChecked: .album
-            ),
+            )),
             frameName: .album,
             frameType: .album
         )
@@ -31,11 +31,11 @@ class ID3FrameWithStringContentCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .album(frame: ID3FrameWithStringContent(content: "::an example album::"))
             .build()
-        let id3AlbumFrameCreator = ID3FrameWithStringContentCreator(
-            frameCreator: MockFrameFromStringContentCreator(
+        let id3AlbumFrameCreator = ID3FrameContentCreator(
+            frameCreator: FrameFromStringContentAdapter(frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: newFrameBytes,
                 frameTypeToBeChecked: .album
-            ),
+            )),
             frameName: .album,
             frameType: .album
         )

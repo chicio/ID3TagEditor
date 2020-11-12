@@ -11,11 +11,11 @@ import XCTest
 
 class ID3FrameWithIntegerContentCreatorTest: XCTestCase {
     func testNoFrameCreationWhenThereIsNoContent() {
-        let id3YearFrameCreator = ID3FrameWithIntegerContentCreator(
-                frameCreator: MockFrameFromStringContentCreator(
-                        fakeNewFrameAsByte: [],
-                        frameTypeToBeChecked: .recordingYear
-                ),
+        let id3YearFrameCreator = ID3FrameContentCreator(
+                frameCreator: FrameFromIntegerContentAdapter(frameCreator: MockFrameFromStringContentCreator(
+                    fakeNewFrameAsByte: [],
+                    frameTypeToBeChecked: .recordingYear
+                )),
                 frameName: .recordingYear,
                 frameType: .recordingYear
         )
@@ -32,11 +32,11 @@ class ID3FrameWithIntegerContentCreatorTest: XCTestCase {
         let id3Tag = ID32v3TagBuilder()
             .recordingYear(frame: ID3FrameWithIntegerContent(value: 2018))
             .build()
-        let id3TitleFrameCreator = ID3FrameWithIntegerContentCreator(
-                frameCreator: MockFrameFromStringContentCreator(
+        let id3TitleFrameCreator = ID3FrameContentCreator(
+                frameCreator: FrameFromIntegerContentAdapter(frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: newFrameBytes,
                         frameTypeToBeChecked: .recordingYear
-                ),
+                )),
                 frameName: .recordingYear,
                 frameType: .recordingYear
         )
