@@ -12,11 +12,11 @@ import Foundation
 class ID3FrameContentParsingOperationFactory {
     static func make() -> [FrameType: FrameContentParsingOperation] {
         return [
-            .artist: ID3ArtistFrameContentParsingOperationFactory.make(),
-            .albumArtist: ID3AlbumArtistFrameContentParsingOperationFactory.make(),
-            .album: ID3AlbumFrameContentParsingOperationFactory.make(),
-            .composer: ID3ComposerFrameContentParsingOperationFactory.make(),
-            .conductor: ID3ConductorFrameContentParsingOperationFactory.make(),
+            .artist: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .artist),
+            .albumArtist: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .albumArtist),
+            .album: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .album),
+            .composer: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .composer),
+            .conductor: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .conductor),
             .contentGrouping: ID3ContentGroupingFrameContentParsingOperationFactory.make(),
             .copyright: ID3CopyrightFrameContentParsingOperationFactory.make(),
             .discPosition: ID3DiscPositionFrameContentParsingOperationFactory.make(),
