@@ -3,7 +3,7 @@
 //  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 11.11.20.
-//  Copyright © 2020 Fabrizio Duroni.
+//  2020 Fabrizio Duroni.
 //
 
 import Foundation

@@ -5,6 +5,8 @@
 //  2018 Fabrizio Duroni.
 //
 
+// swiftlint:disable line_length
+
 import Foundation
 
 class ID3FrameContentParsingOperationFactory {
@@ -32,7 +34,7 @@ class ID3FrameContentParsingOperationFactory {
             .title: ID3TitleFrameContentParsingOperationFactory.make(),
             .attachedPicture: ID3AttachedPictureFrameContentParsingOperationFactory.make(),
             .recordingDayMonth: ID3RecordingDayMonthFrameContentParsingOperationFactory.make(),
-            .recordingYear: ID3RecordingYearFrameContentParsingOperationFactory.make(),
+            .recordingYear: ID3ParsingOperationForID3FrameWithIntegerFactory.make(frameName: .recordingYear),
             .recordingHourMinute: ID3RecordingHourMinuteFrameContentParsingOperationFactory.make(),
             .recordingDateTime: ID3RecordingTimeFrameContentParsingOperationFactory.make(),
             .genre: ID3GenreFrameContentParsingOperationFactory.make(),
@@ -42,7 +44,7 @@ class ID3FrameContentParsingOperationFactory {
             ),
             .comment: ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.comment),
             .iTunesGrouping: ID3iTunesGroupingFrameContentParsingOperationFactory.make(),
-            .iTunesMovementIndex: ID3iTunesMovementIndexFrameContentParsingOperationFactory.make(),
+            .iTunesMovementIndex: ID3ParsingOperationForID3FrameWithIntegerFactory.make(frameName: .iTunesMovementIndex),
             .iTunesMovementCount: ID3iTunesMovementCountFrameContentParsingOperationFactory.make(),
             .iTunesMovementName: ID3iTunesMovementNameFrameContentParsingOperationFactory.make()
         ]

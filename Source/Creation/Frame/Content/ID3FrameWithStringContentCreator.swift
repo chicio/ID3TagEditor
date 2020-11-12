@@ -1,5 +1,6 @@
 //
 //  ID3FrameWithStringContentCreator.swift
+//  ID3TagEditor
 //
 //  Created by Fabrizio Duroni on 09.11.20.
 //  2020 Fabrizio Duroni.
