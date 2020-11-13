@@ -1180,8 +1180,8 @@
 				452832262044C7BE00458375 /* Mp3 */,
 				4528321C2044C7BE00458375 /* Frame */,
 				452832212044C7BE00458375 /* Tag */,
-				457A8D77255F1F8E00C708F4 /* Write */,
-				457A8E4C255F1FBC00C708F4 /* Read */,
+				457A8D77255F1F8E00C708F4 /* Create */,
+				457A8E4C255F1FBC00C708F4 /* Parse */,
 				457A8D42255F1F1C00C708F4 /* Common */,
 				452831C92044C40700458375 /* Info.plist */,
 			);
@@ -1300,7 +1300,7 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		457A8D77255F1F8E00C708F4 /* Write */ = {
+		457A8D77255F1F8E00C708F4 /* Create */ = {
 			isa = PBXGroup;
 			children = (
 				457A8D78255F1F8E00C708F4 /* ID3TagCreatorFactory.swift */,
@@ -1345,10 +1345,10 @@
 				457A8D9F255F1F8E00C708F4 /* LocalizedFrameCreator.swift */,
 				457A8DA0255F1F8E00C708F4 /* ID3RecordingDayMonthFrameCreator.swift */,
 			);
-			path = Write;
+			path = Create;
 			sourceTree = "<group>";
 		};
-		457A8E4C255F1FBC00C708F4 /* Read */ = {
+		457A8E4C255F1FBC00C708F4 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
 				457A8E4D255F1FBC00C708F4 /* PartOfTotalStringAdapter.swift */,
@@ -1393,7 +1393,7 @@
 				457A8E74255F1FBC00C708F4 /* TagSizeParser.swift */,
 				457A8E75255F1FBC00C708F4 /* ID3CoupleOfNumbersAdapter.swift */,
 			);
-			path = Read;
+			path = Parse;
 			sourceTree = "<group>";
 		};
 		45C286BF24C8CBBB00171A88 /* workflows */ = {
