@@ -204,6 +204,18 @@ public class ID32v3TagBuilder: TagBuilder {
     }
 
     /**
+      Set the original filename frame to be written by ID3TagEditor.
+     
+      - parameter frame: the original filename frame as a ID3FrameWithStringContent instance.
+     
+      - returns: the instance of the builder.
+     */
+    public func originalFilename(frame: ID3FrameWithStringContent) -> Self {
+        frames[.originalFilename] = frame
+        return self
+    }
+
+    /**
       Set the genre frame to be written by ID3TagEditor.
      
       - parameter frame: the genre frame as a ID3FrameGenre instance.

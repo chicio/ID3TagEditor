@@ -40,6 +40,7 @@ class ID3FrameContentParsingOperationFactory {
             .genre: ID3GenreFrameContentParsingOperationFactory.make(),
             .trackPosition: ID3TrackPositionFrameContentParsingOperationFactory.make(),
             .beatsPerMinute: ID3ParsingOperationForID3FrameWithIntegerFactory.make(frameName: .beatsPerMinute),
+            .originalFilename: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .originalFilename),
             .unsyncronisedLyrics: ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics),
             .comment: ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.comment),
             .iTunesGrouping: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .iTunesGrouping),
