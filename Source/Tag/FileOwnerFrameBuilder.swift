@@ -13,7 +13,7 @@ import Foundation
  moment of this writing this frame is supported by ID3Tag version 3 and version 4.
  You should not adopt/use this protocol. Use ID32v4TagBuilder to create a ID3Tag version 4.
  */
-public protocol FileOwnerFrameBuilder where Self: ID32TagCommonStringFramesBuilder {
+public protocol FileOwnerFrameBuilder where Self: ID32TagCommonFramesBuilder {
     /**
       Set the fileOwner frame to be written by ID3TagEditor.
      

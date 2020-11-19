@@ -14,7 +14,7 @@ import Foundation
  by ID3Tag version 2 and version 3. You should not adopt/use this protocol.
  Use ID32v2TagBuilder and ID32v3TagBuilder to create a ID3Tag version 2 or version 3.
  */
-public protocol RecordingHourMinuteDayMonthYearFramesBuilder where Self: ID32TagCommonStringFramesBuilder {
+public protocol RecordingHourMinuteDayMonthYearFramesBuilder where Self: ID32TagCommonFramesBuilder {
     /**
       Set the recordingDayMonth frame to be written by ID3TagEditor.
      

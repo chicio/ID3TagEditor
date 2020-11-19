@@ -49,6 +49,7 @@ class ID3FrameConfiguration {
         .genre: [UInt8]("TCON".utf8),
         .trackPosition: [UInt8]("TRCK".utf8),
         .discPosition: [UInt8]("TPOS".utf8),
+        .beatsPerMinute: [UInt8]("TBPM".utf8),
         .unsyncronisedLyrics: [UInt8]("USLT".utf8),
         .comment: [UInt8]("COMM".utf8),
         .iTunesMovementName: [UInt8]("MVNM".utf8),
@@ -82,6 +83,7 @@ class ID3FrameConfiguration {
             .genre: [UInt8]("TCO".utf8),
             .trackPosition: [UInt8]("TRK".utf8),
             .discPosition: [UInt8]("TPA".utf8),
+            .beatsPerMinute: [UInt8]("TBP".utf8),
             .unsyncronisedLyrics: [UInt8]("ULT".utf8),
             .comment: [UInt8]("COM".utf8)
         ],
@@ -123,7 +125,8 @@ class ID3FrameConfiguration {
         "TGID": .iTunesPodcastID,
         "TKWD": .iTunesPodcastKeywords,
         "USLT": .unsyncronisedLyrics,
-        "COMM": .comment
+        "COMM": .comment,
+        "TBPM": .beatsPerMinute
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
@@ -149,7 +152,8 @@ class ID3FrameConfiguration {
             "TRK": .trackPosition,
             "TPA": .discPosition,
             "ULT": .unsyncronisedLyrics,
-            "COM": .comment
+            "COM": .comment,
+            "TBP": .beatsPerMinute
         ],
         .version3: [
             "TDAT": .recordingDayMonth,

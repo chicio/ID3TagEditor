@@ -108,12 +108,14 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     /// Unsynchronized lyrics frame name.
     /// - language: language of the lyrics, according to the ISO-639-2 standard.
     case unsynchronizedLyrics(_ language: ID3FrameContentLanguage)
+    /// Beats per minute frame name.
+    case beatsPerMinute
     /// Comment frame name.
     /// - language: language of the comment, according to the ISO-639-2 standard.
     case comment(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
-    ///Movement name frame name. . Version 2.3 and 2.4 only.
+    ///Movement name frame name. Version 2.3 and 2.4 only.
     case iTunesMovementName
     /// Movement Index frame name. Version 2.3 and 2.4 only.
     case iTunesMovementIndex

@@ -31,6 +31,7 @@ enum FrameType: String, Equatable {
     case trackPosition = "trackPosition"
     case discPosition = "discPosition"
     case albumArtist = "albumArtist"
+    case beatsPerMinute = "beatsPerMinute"
     case unsyncronisedLyrics = "unsyncronisedLyrics"
     case comment = "comment"
     case iTunesGrouping = "iTunesGrouping"

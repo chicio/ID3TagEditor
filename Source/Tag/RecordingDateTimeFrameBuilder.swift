@@ -13,7 +13,7 @@ import Foundation
  moment of this writing only ID3Tag version 4 support this frame. You should not adopt/use this protocol.
  Use ID32v4TagBuilder to create a ID3Tag version 4.
  */
-public protocol RecordingDateTimeFrameBuilder: ID32TagCommonStringFramesBuilder {
+public protocol RecordingDateTimeFrameBuilder: ID32TagCommonFramesBuilder {
     /**
       Set the recordingDateTime frame to be written by ID3TagEditor.
      

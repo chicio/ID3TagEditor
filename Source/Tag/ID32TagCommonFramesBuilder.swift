@@ -10,11 +10,11 @@ import Foundation
 
 /**
  This is the base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
- ID32v4TagBuilder inherits from this class. It let the user set the string frame that are in
+ ID32v4TagBuilder inherits from this class. It let the user set the basic frame (string or integer) that are in
  common to all the ID3 v2 tag specificiation. This class can't be used in user code.
  Use of ID32v2TagBuilder, ID32v3TagBuilder and ID32v4TagBuilder classes.
  */
-public class ID32TagCommonStringFramesBuilder {
+public class ID32TagCommonFramesBuilder {
     var frames: [FrameName: ID3Frame] = [:]
 
     /**
@@ -182,6 +182,18 @@ public class ID32TagCommonStringFramesBuilder {
      */
     public func subtitle(frame: ID3FrameWithStringContent) -> Self {
         frames[.subtitle] = frame
+        return self
+    }
+
+    /**
+      Set the beats per minute frame to be written by ID3TagEditor.
+     
+      - parameter frame: the beats per minute frame as a ID3FrameWithIntegerContent instance.
+     
+      - returns: the instance of the builder.
+     */
+    public func beatsPerMinute(frame: ID3FrameWithIntegerContent) -> Self {
+        frames[.beatsPerMinute] = frame
         return self
     }
 }

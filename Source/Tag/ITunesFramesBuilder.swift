@@ -13,7 +13,7 @@ import Foundation
  moment of this writing only ID3Tag version 3 and 4 support these frames. You should not adopt/use this protocol.
  Use ID32v3TagBuilder and ID32v4TagBuilder to create an ID3Tag with this frames.
  */
-public protocol ITunesFramesBuilder where Self: ID32TagCommonStringFramesBuilder {
+public protocol ITunesFramesBuilder where Self: ID32TagCommonFramesBuilder {
     /**
       Set the iTunesGrouping frame to be written by ID3TagEditor.
      

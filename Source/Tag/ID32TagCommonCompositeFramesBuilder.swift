@@ -11,10 +11,10 @@ import Foundation
 /**
  This is another base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
  ID32v4TagBuilder inherits from this class. It let the user set frames with structured
- content (images, multiple numbers etc.) that are in common to all the ID3 v2 tag specificiation.
+ content (images, multiple numbers etc.) that are in common to all the ID3 v2 tag specification.
  This class can't be used in user code. Use of ID32v2TagBuilder, ID32v3TagBuilder and ID32v4TagBuilder classes.
  */
-public class ID32TagCommonCompositeFramesBuilder: ID32TagCommonStringFramesBuilder {
+public class ID32TagCommonCompositeFramesBuilder: ID32TagCommonFramesBuilder {
     /**
       Set the genre frame to be written by ID3TagEditor.
      
