@@ -51,6 +51,7 @@ class ID3FrameConfiguration {
         .discPosition: [UInt8]("TPOS".utf8),
         .beatsPerMinute: [UInt8]("TBPM".utf8),
         .originalFilename: [UInt8]("TOFN".utf8),
+        .lengthInMilliseconds: [UInt8]("TLEN".utf8),
         .unsyncronisedLyrics: [UInt8]("USLT".utf8),
         .comment: [UInt8]("COMM".utf8),
         .iTunesMovementName: [UInt8]("MVNM".utf8),
@@ -86,6 +87,7 @@ class ID3FrameConfiguration {
             .discPosition: [UInt8]("TPA".utf8),
             .beatsPerMinute: [UInt8]("TBP".utf8),
             .originalFilename: [UInt8]("TOF".utf8),
+            .lengthInMilliseconds: [UInt8]("TLE".utf8),
             .unsyncronisedLyrics: [UInt8]("ULT".utf8),
             .comment: [UInt8]("COM".utf8)
         ],
@@ -129,7 +131,8 @@ class ID3FrameConfiguration {
         "USLT": .unsyncronisedLyrics,
         "COMM": .comment,
         "TBPM": .beatsPerMinute,
-        "TOFN": .originalFilename
+        "TOFN": .originalFilename,
+        "TLEN": .lengthInMilliseconds
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
@@ -157,7 +160,8 @@ class ID3FrameConfiguration {
             "ULT": .unsyncronisedLyrics,
             "COM": .comment,
             "TBP": .beatsPerMinute,
-            "TOF": .originalFilename
+            "TOF": .originalFilename,
+            "TLE": .lengthInMilliseconds
         ],
         .version3: [
             "TDAT": .recordingDayMonth,

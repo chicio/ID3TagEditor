@@ -92,6 +92,8 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case beatsPerMinute
     /// Original filename.
     case originalFilename
+    /// Length in milliseconds frame.
+    case lengthInMilliseconds
     /// Genre frame name.
     case genre
     /// Disc Position frame name.

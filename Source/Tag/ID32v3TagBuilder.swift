@@ -214,6 +214,18 @@ public class ID32v3TagBuilder: TagBuilder {
         frames[.originalFilename] = frame
         return self
     }
+    
+    /**
+      Set the length in milliseconds frame to be written by ID3TagEditor.
+     
+      - parameter frame: the length in milliseconds  frame as a ID3FrameWithIntegerContent instance.
+     
+      - returns: the instance of the builder.
+     */
+    public func lengthInMilliseconds(frame: ID3FrameWithIntegerContent) -> Self {
+        frames[.lengthInMilliseconds] = frame
+        return self
+    }
 
     /**
       Set the genre frame to be written by ID3TagEditor.

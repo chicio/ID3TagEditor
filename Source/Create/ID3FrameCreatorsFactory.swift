@@ -39,6 +39,7 @@ class ID3FrameCreatorsFactory {
             ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .beatsPerMinute, frameType: .beatsPerMinute),
             ID3DiscPositionFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .originalFilename, frameType: .originalFilename),
+            ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .lengthInMilliseconds, frameType: .lengthInMilliseconds),
             ID3FramesWithLocalizedContentCreatorFactory.make()
         ]
         + ID3RecordingTimesFrameCreatorsFactory.make()
