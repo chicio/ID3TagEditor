@@ -94,7 +94,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the contentGrouping frame to be written by ID3TagEditor.
+      Set the content grouping frame to be written by ID3TagEditor.
      
       - parameter frame: the contentGrouping frame as a ID3FrameWithStringContent instance.
      
@@ -118,7 +118,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the encodedBy frame to be written by ID3TagEditor.
+      Set the encoded by frame to be written by ID3TagEditor.
      
       - parameter frame: the encodedBy frame as a ID3FrameWithStringContent instance.
      
@@ -130,7 +130,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the encoderSettings frame to be written by ID3TagEditor.
+      Set the encoder settings frame to be written by ID3TagEditor.
      
       - parameter frame: the encoderSettings frame as a ID3FrameWithStringContent instance.
      
@@ -154,7 +154,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the mixArtist frame to be written by ID3TagEditor.
+      Set the mix artist frame to be written by ID3TagEditor.
      
       - parameter frame: the mixArtist frame as a ID3FrameWithStringContent instance.
      
@@ -250,7 +250,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the discPosition frame to be written by ID3TagEditor.
+      Set the disc position frame to be written by ID3TagEditor.
      
       - parameter frame: the discPosition frame as a ID3FramePartOfTotal instance.
      
@@ -274,7 +274,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-     Set an attachedPicture frame to be written by ID3TagEditor. You can set multiple
+     Set an attached picture frame to be written by ID3TagEditor. You can set multiple
      attached picture frames per tag, one for each of the picture types contained in ID3PictureType.
      
       - parameter pictureType: the ID3PictureType associated to the attachedPicture frame to be set.
@@ -288,7 +288,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-     Set an unsynchronisedLyrics frame to be written by ID3TagEditor. You can set multiple
+     Set an unsynchronised lyrics frame to be written by ID3TagEditor. You can set multiple
      unsynchronised lyrics frames per tag, one for each of the languages contained in ID3FrameContentLanguage.
      
       - parameter language: the ID3FrameContentLanguage associated to the unsynchronisedLyrics frame to be set.
@@ -303,7 +303,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-     Set an comment frame to be written by ID3TagEditor. You can set multiple
+     Set a comment frame to be written by ID3TagEditor. You can set multiple
      comment frames per tag, one for each of the languages contained in ID3FrameContentLanguage.
      
       - parameter language: the ID3FrameContentLanguage associated to the comment frame to be set.
@@ -318,7 +318,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the recordingDayMonth frame to be written by ID3TagEditor.
+      Set the recording day and month frame to be written by ID3TagEditor.
      
       - parameter frame: the recordingDayMonth frame as a ID3FrameWithStringContent instance.
      
@@ -330,7 +330,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the recordingHourMinute frame to be written by ID3TagEditor.
+      Set the recording hour minute frame to be written by ID3TagEditor.
      
       - parameter frame: the recordingHourMinute frame as a ID3FrameWithStringContent instance.
      
@@ -342,7 +342,7 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
-      Set the recordingYear frame to be written by ID3TagEditor.
+      Set the recording year frame to be written by ID3TagEditor.
      
       - parameter frame: the recordingYear frame as a ID3FrameWithStringContent instance.
      
