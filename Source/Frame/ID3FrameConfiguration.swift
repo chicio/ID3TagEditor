@@ -88,13 +88,15 @@ class ID3FrameConfiguration {
             .beatsPerMinute: [UInt8]("TBP".utf8),
             .originalFilename: [UInt8]("TOF".utf8),
             .lengthInMilliseconds: [UInt8]("TLE".utf8),
+            .sizeInBytes: [UInt8]("TSI".utf8),
             .unsyncronisedLyrics: [UInt8]("ULT".utf8),
             .comment: [UInt8]("COM".utf8)
         ],
         .version3: [
             .recordingDayMonth: [UInt8]("TDAT".utf8),
             .recordingYear: [UInt8]("TYER".utf8),
-            .recordingHourMinute: [UInt8]("TIME".utf8)
+            .recordingHourMinute: [UInt8]("TIME".utf8),
+            .sizeInBytes: [UInt8]("TSIZ".utf8)
         ],
         .version4: [
             .recordingDateTime: [UInt8]("TDRC".utf8)
@@ -161,12 +163,14 @@ class ID3FrameConfiguration {
             "COM": .comment,
             "TBP": .beatsPerMinute,
             "TOF": .originalFilename,
-            "TLE": .lengthInMilliseconds
+            "TLE": .lengthInMilliseconds,
+            "TSI": .sizeInBytes
         ],
         .version3: [
             "TDAT": .recordingDayMonth,
             "TYER": .recordingYear,
-            "TIME": .recordingHourMinute
+            "TIME": .recordingHourMinute,
+            "TSIZ": .sizeInBytes
         ],
         .version4: [
             "TDRC": .recordingDateTime

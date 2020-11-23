@@ -94,6 +94,8 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case originalFilename
     /// Length in milliseconds frame.
     case lengthInMilliseconds
+    /// Size in bytes frame. Valid only for tag version 2.2 and 2.3.
+    case sizeInBytes
     /// Genre frame name.
     case genre
     /// Disc Position frame name.

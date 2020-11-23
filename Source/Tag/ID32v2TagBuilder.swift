@@ -226,6 +226,18 @@ public class ID32v2TagBuilder: TagBuilder {
     }
 
     /**
+      Set the size in bytes frame to be written by ID3TagEditor.
+     
+      - parameter frame: the size in byes  frame as a ID3FrameWithIntegerContent instance.
+     
+      - returns: the instance of the builder.
+     */
+    public func sizeInBytes(frame: ID3FrameWithIntegerContent) -> Self {
+        frames[.sizeInBytes] = frame
+        return self
+    }
+
+    /**
       Set the genre frame to be written by ID3TagEditor.
      
       - parameter frame: the genre frame as a ID3FrameGenre instance.
