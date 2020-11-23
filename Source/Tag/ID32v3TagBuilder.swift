@@ -214,7 +214,7 @@ public class ID32v3TagBuilder: TagBuilder {
         frames[.originalFilename] = frame
         return self
     }
-    
+
     /**
       Set the length in milliseconds frame to be written by ID3TagEditor.
      
