@@ -17,7 +17,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.0.0 Docs</a> (100% documented)</p>
+        <p><a href="index.html">ID3TagEditor 4.1.0 Docs</a> (100% documented)</p>
         <p class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -38,12 +38,6 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Classes/ID32v2TagBuilder.html">ID32v2TagBuilder</a>
               </li>
@@ -73,9 +67,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
@@ -117,23 +108,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/ID3Version.html">ID3Version</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/RecordingDateTimeFrameBuilder.html">RecordingDateTimeFrameBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a>
               </li>
             </ul>
           </li>
@@ -368,35 +342,6 @@ Valid only for ID3 tag version 2.3 and 2.2.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor0A18FrameRecordingYearC"></a>
-                    <a name="//apple_ref/swift/Class/ID3FrameRecordingYear" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor0A18FrameRecordingYearC">ID3FrameRecordingYear</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A class used to represent an ID3 recording year frame to be used in the ID3 tag.
-Valid only for ID3 tag version 2.3 and 2.2.</p>
-
-                        <a href="Classes/ID3FrameRecordingYear.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID3FrameRecordingYear</span> <span class="p">:</span> <span class="kt"><a href="Classes/ID3Frame.html">ID3Frame</a></span><span class="p">,</span> <span class="kt">CustomDebugStringConvertible</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:12ID3TagEditor0A23FrameWithIntegerContentC"></a>
                     <a name="//apple_ref/swift/Class/ID3FrameWithIntegerContent" class="dashAnchor"></a>
                     <a class="token" href="#/s:12ID3TagEditor0A23FrameWithIntegerContentC">ID3FrameWithIntegerContent</a>
@@ -513,68 +458,6 @@ This class is used to represent all the ID3 frames that contains plain string as
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC"></a>
-                    <a name="//apple_ref/swift/Class/ID32TagCommonCompositeFramesBuilder" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor04ID32B28CommonCompositeFramesBuilderC">ID32TagCommonCompositeFramesBuilder</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This is another base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
-ID32v4TagBuilder inherits from this class. It let the user set frames with structured
-content (images, multiple numbers etc.) that are in common to all the ID3 v2 tag specificiation.
-This class can&rsquo;t be used in user code. Use of ID32v2TagBuilder, ID32v3TagBuilder and ID32v4TagBuilder classes.</p>
-
-                        <a href="Classes/ID32TagCommonCompositeFramesBuilder.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32TagCommonCompositeFramesBuilder</span> <span class="p">:</span> <span class="kt"><a href="Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:12ID3TagEditor04ID32B25CommonStringFramesBuilderC"></a>
-                    <a name="//apple_ref/swift/Class/ID32TagCommonStringFramesBuilder" class="dashAnchor"></a>
-                    <a class="token" href="#/s:12ID3TagEditor04ID32B25CommonStringFramesBuilderC">ID32TagCommonStringFramesBuilder</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This is the base common class of all ID3 Tag builder. ID32v2TagBuilder, ID32v3TagBuilder and
-ID32v4TagBuilder inherits from this class. It let the user set the string frame that are in
-common to all the ID3 v2 tag specificiation. This class can&rsquo;t be used in user code.
-Use of ID32v2TagBuilder, ID32v3TagBuilder and ID32v4TagBuilder classes.</p>
-
-                        <a href="Classes/ID32TagCommonStringFramesBuilder.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32TagCommonStringFramesBuilder</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:12ID3TagEditor06ID32v2B7BuilderC"></a>
                     <a name="//apple_ref/swift/Class/ID32v2TagBuilder" class="dashAnchor"></a>
                     <a class="token" href="#/s:12ID3TagEditor06ID32v2B7BuilderC">ID32v2TagBuilder</a>
@@ -595,9 +478,7 @@ ID32TagCommonCompositeFramesBuilder and RecordingHourMinuteDayMonthYearFramesBui
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32v2TagBuilder</span><span class="p">:</span> <span class="kt"><a href="Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a></span><span class="p">,</span>
-                               <span class="kt">TagBuilder</span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32v2TagBuilder</span> <span class="p">:</span> <span class="kt">TagBuilder</span></code></pre>
 
                         </div>
                       </div>
@@ -627,11 +508,7 @@ RecordingHourMinuteDayMonthYearFramesBuilder, FileOwnerFrameBuilder and ITunesFr
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32v3TagBuilder</span><span class="p">:</span> <span class="kt"><a href="Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a></span><span class="p">,</span>
-                               <span class="kt">TagBuilder</span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a></span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a></span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32v3TagBuilder</span> <span class="p">:</span> <span class="kt">TagBuilder</span></code></pre>
 
                         </div>
                       </div>
@@ -661,11 +538,7 @@ RecordingDateTimeFrameBuilder, FileOwnerFrameBuilder and ITunesFramesBuilder.</p
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32v4TagBuilder</span><span class="p">:</span> <span class="kt"><a href="Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a></span><span class="p">,</span>
-                               <span class="kt">TagBuilder</span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a></span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a></span><span class="p">,</span>
-                               <span class="kt"><a href="Protocols/RecordingDateTimeFrameBuilder.html">RecordingDateTimeFrameBuilder</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ID32v4TagBuilder</span> <span class="p">:</span> <span class="kt">TagBuilder</span></code></pre>
 
                         </div>
                       </div>
@@ -705,7 +578,7 @@ RecordingDateTimeFrameBuilder, FileOwnerFrameBuilder and ITunesFramesBuilder.</p
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-10-26)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-11-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

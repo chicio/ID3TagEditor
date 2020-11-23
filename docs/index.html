@@ -16,7 +16,7 @@
     <a title="ID3TagEditor  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.0.0 Docs</a> (100% documented)</p>
+        <p><a href="index.html">ID3TagEditor 4.1.0 Docs</a> (100% documented)</p>
         <p class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -37,12 +37,6 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/ID32TagCommonCompositeFramesBuilder.html">ID32TagCommonCompositeFramesBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ID32TagCommonStringFramesBuilder.html">ID32TagCommonStringFramesBuilder</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Classes/ID32v2TagBuilder.html">ID32v2TagBuilder</a>
               </li>
@@ -72,9 +66,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ID3FrameRecordingHourMinute.html">ID3FrameRecordingHourMinute</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/ID3FrameRecordingYear.html">ID3FrameRecordingYear</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ID3FrameWithIntegerContent.html">ID3FrameWithIntegerContent</a>
@@ -116,23 +107,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/ID3Version.html">ID3Version</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/FileOwnerFrameBuilder.html">FileOwnerFrameBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/ITunesFramesBuilder.html">ITunesFramesBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/RecordingDateTimeFrameBuilder.html">RecordingDateTimeFrameBuilder</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Protocols/RecordingHourMinuteDayMonthYearFramesBuilder.html">RecordingHourMinuteDayMonthYearFramesBuilder</a>
               </li>
             </ul>
           </li>
@@ -185,7 +159,7 @@
 <li>manual installation</li>
 <li>framework</li>
 <li>cocoapods</li>
-<li>Swift Package Manager (support for linux platform)</li>
+<li>Swift Package Manager (with support for linux platform)</li>
 </ul>
 
 <p><strong>Manual installation</strong></p>
@@ -195,9 +169,8 @@ folder inside your project (except for the info.plist file).</p>
 
 <p><strong>Framework</strong></p>
 
-<p>ID3TagEditor is also available as a framework. You can follow the standard procedure to install a custom cocoa touch framework
-(simply drag the ID3TagEditor.xcodeproj inside your project and add it to the Embedded Binaries/Linked Frameworks and Libraries section of your
-project. See the demo project for a complete example of the setup of the framework.</p>
+<p>ID3TagEditor is also available as a framework. You can follow the standard procedure to install a custom Cocoa Touch framework.
+Drag the ID3TagEditor.xcodeproj inside your project and add it to the Embedded Binaries/Linked Frameworks and Libraries section of your project. See the demo project for a complete example of the setup of the framework.</p>
 
 <p><strong>CocoaPods</strong></p>
 
@@ -243,7 +216,7 @@ let package = Package(
 <li>MacOS</li>
 <li>Apple Watch</li>
 <li>Apple TV</li>
-<li>Linux Ubuntu</li>
+<li>Linux (on distros where Swift is available)</li>
 </ul>
 
 <p>ID3TagEditor let you read and write ID3Tag to your mp3 files.</p>
@@ -314,6 +287,10 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
         <span class="o">.</span><span class="nf">mixArtist</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"MixArtist V3"</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">publisher</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"Publisher V3"</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">subtitle</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"Subtitle V3"</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">beatsPerMinute</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithIntegerContent</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">originalFilename</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"filenameV3.mp3"</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">lengthInMilliseconds</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithIntegerContent</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">9000</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">sizeInBytes</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithIntegerContent</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1500</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">genre</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameGenre</span><span class="p">(</span><span class="nv">genre</span><span class="p">:</span> <span class="o">.</span><span class="n">metal</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="s">"Metalcore"</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">discPosition</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FramePartOfTotal</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">total</span><span class="p">:</span> <span class="mi">3</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">trackPosition</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FramePartOfTotal</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">total</span><span class="p">:</span> <span class="mi">9</span><span class="p">))</span>
@@ -362,6 +339,10 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
 <li><code>.mixArtist</code></li>
 <li><code>.publisher</code></li>
 <li><code>.subtitle</code></li>
+<li><code>.beatsPerMinute</code></li>
+<li><code>.originalFilename</code></li>
+<li><code>.lengthInMilliseconds</code></li>
+<li><code>.sizeInBytes</code>,  available only for ID3 v2.2/v2.3</li>
 <li><code>.genre</code></li>
 <li><code>.discPosition</code></li>
 <li><code>.trackPosition</code></li>
@@ -391,17 +372,8 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
 <ul>
 <li>text frames (frames with identifier starting with a capital T) uses UTF-16 to encode text</li>
 <li>frames with ad hoc encoding/formatting are supported (for example recordingDateTime must always be a ISO88591 string)</li>
-<li>frames with localized content (e.g. <code>.unsynchronizedLyrics</code>) support all the languages identifier contained in the ISO-639-2 (see <code><a href="Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a></code> for the complete list of supported languages)
+<li>frames with localized content (e.g. <code>.unsynchronizedLyrics</code>) support all the languages identifier contained in the ISO-639-2 (see <code><a href="Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a></code> for the complete list of supported languages).<br>
 Refer to the <a href="https://id3.org/Developer%20Information" title="id3 specification">id3 specification</a> for additional details.</li>
-</ul>
-
-<hr>
-<h3 id='contributors' class='heading'>Contributors</h3>
-
-<ul>
-<li><a href="https://github.com/NCrusher74">Nolaine Crusher</a> (added 12 official frames + all unofficial non standard frames)</li>
-<li><a href="https://github.com/woko666">woko666</a> (added read from <code>Data</code> API)</li>
-<li><a href="https://github.com/martinjbaker">martinjbaker</a> (minor fixies)</li>
 </ul>
 
 <hr>
@@ -423,10 +395,19 @@ supported target. You can also find more usage example in the <a href="https://g
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/05-example.png">
 </p>
 
+<hr>
+<h3 id='contributors' class='heading'>Contributors</h3>
+
+<ul>
+<li><a href="https://github.com/NCrusher74">Nolaine Crusher</a> (added 12 official frames + all unofficial non standard frames)</li>
+<li><a href="https://github.com/woko666">woko666</a> (added read from <code>Data</code> API)</li>
+<li><a href="https://github.com/martinjbaker">martinjbaker</a> (minor fixies)</li>
+</ul>
+
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-10-26)</p>
+          <p>&copy; 2020 <a class="link" href="https://github.com/chicio/ID3TagEditor" target="_blank" rel="external">chicio</a>. All rights reserved. (Last updated: 2020-11-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
