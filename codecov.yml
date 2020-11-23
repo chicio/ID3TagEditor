@@ -1,5 +1,5 @@
 ignore:
-  - "Tests/Mock/**/*"  # ignore folders and all its contents
+  - "Tests/Mock/**/*"
 
 coverage:
   status:
