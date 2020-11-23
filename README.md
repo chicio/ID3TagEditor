@@ -85,7 +85,7 @@ ID3TagEditor is compatible with the following platforms:
 * MacOS
 * Apple Watch
 * Apple TV
-* Linux Ubuntu
+* Linux (on distros where Swift is available)
 
 ID3TagEditor let you read and write ID3Tag to your mp3 files.
 
@@ -153,6 +153,10 @@ do {
         .mixArtist(frame: ID3FrameWithStringContent(content: "MixArtist V3"))
         .publisher(frame: ID3FrameWithStringContent(content: "Publisher V3"))
         .subtitle(frame: ID3FrameWithStringContent(content: "Subtitle V3"))
+        .beatsPerMinute(frame: ID3FrameWithIntegerContent(value: 50))
+        .originalFilename(frame: ID3FrameWithStringContent(content: "filenameV3.mp3"))
+        .lengthInMilliseconds(frame: ID3FrameWithIntegerContent(value: 9000))
+        .sizeInBytes(frame: ID3FrameWithIntegerContent(value: 1500))
         .genre(frame: ID3FrameGenre(genre: .metal, description: "Metalcore"))
         .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
         .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
@@ -200,6 +204,10 @@ Below you can find the list of the frame support by ID3TagEditor (see the enum `
 * `.mixArtist`
 * `.publisher`
 * `.subtitle`
+* `.beatsPerMinute`
+* `.originalFilename`
+* `.lengthInMilliseconds`
+* `.sizeInBytes`,  available only for ID3 v2.2/v2.3
 * `.genre`
 * `.discPosition`
 * `.trackPosition`
