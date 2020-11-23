@@ -1,2 +1,5 @@
 Demo/**
 docs/**
+Source/Tag/ID32v2TagBuilder.swift
+Source/Tag/ID32v3TagBuilder.swift
+Source/Tag/ID32v4TagBuilder.swift

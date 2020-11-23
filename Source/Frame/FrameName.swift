@@ -88,6 +88,14 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case publisher
     /// Subtitle frame name
     case subtitle
+    /// Beats per minute frame name.
+    case beatsPerMinute
+    /// Original filename.
+    case originalFilename
+    /// Length in milliseconds frame.
+    case lengthInMilliseconds
+    /// Size in bytes frame. Valid only for tag version 2.2 and 2.3.
+    case sizeInBytes
     /// Genre frame name.
     case genre
     /// Disc Position frame name.
@@ -113,7 +121,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case comment(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
-    ///Movement name frame name. . Version 2.3 and 2.4 only.
+    ///Movement name frame name. Version 2.3 and 2.4 only.
     case iTunesMovementName
     /// Movement Index frame name. Version 2.3 and 2.4 only.
     case iTunesMovementIndex

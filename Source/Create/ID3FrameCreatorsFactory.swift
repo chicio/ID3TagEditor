@@ -15,6 +15,7 @@ class ID3FrameCreatorsFactory {
         let frameFromStringUTF16ContentCreator = ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.make()
         let frameFromStringISO88591ContentCreator = ID3FrameFromStringContentCreatorWithISO88591EncodingFactory.make()
         let frameFromStringUTF16ContentAdapter = FrameFromStringContentAdapter(frameCreator: frameFromStringUTF16ContentCreator)
+        let frameFromIntegerContentAdapter = FrameFromIntegerContentAdapter(frameCreator: frameFromStringISO88591ContentCreator)
 
         return [
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .album, frameType: .album),
@@ -35,7 +36,11 @@ class ID3FrameCreatorsFactory {
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .mixArtist, frameType: .mixArtist),
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .publisher, frameType: .publisher),
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .subtitle, frameType: .subtitle),
+            ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .beatsPerMinute, frameType: .beatsPerMinute),
             ID3DiscPositionFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
+            ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .originalFilename, frameType: .originalFilename),
+            ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .lengthInMilliseconds, frameType: .lengthInMilliseconds),
+            ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .sizeInBytes, frameType: .sizeInBytes),
             ID3FramesWithLocalizedContentCreatorFactory.make()
         ]
         + ID3RecordingTimesFrameCreatorsFactory.make()

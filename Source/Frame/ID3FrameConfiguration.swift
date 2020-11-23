@@ -49,6 +49,9 @@ class ID3FrameConfiguration {
         .genre: [UInt8]("TCON".utf8),
         .trackPosition: [UInt8]("TRCK".utf8),
         .discPosition: [UInt8]("TPOS".utf8),
+        .beatsPerMinute: [UInt8]("TBPM".utf8),
+        .originalFilename: [UInt8]("TOFN".utf8),
+        .lengthInMilliseconds: [UInt8]("TLEN".utf8),
         .unsyncronisedLyrics: [UInt8]("USLT".utf8),
         .comment: [UInt8]("COMM".utf8),
         .iTunesMovementName: [UInt8]("MVNM".utf8),
@@ -82,13 +85,18 @@ class ID3FrameConfiguration {
             .genre: [UInt8]("TCO".utf8),
             .trackPosition: [UInt8]("TRK".utf8),
             .discPosition: [UInt8]("TPA".utf8),
+            .beatsPerMinute: [UInt8]("TBP".utf8),
+            .originalFilename: [UInt8]("TOF".utf8),
+            .lengthInMilliseconds: [UInt8]("TLE".utf8),
+            .sizeInBytes: [UInt8]("TSI".utf8),
             .unsyncronisedLyrics: [UInt8]("ULT".utf8),
             .comment: [UInt8]("COM".utf8)
         ],
         .version3: [
             .recordingDayMonth: [UInt8]("TDAT".utf8),
             .recordingYear: [UInt8]("TYER".utf8),
-            .recordingHourMinute: [UInt8]("TIME".utf8)
+            .recordingHourMinute: [UInt8]("TIME".utf8),
+            .sizeInBytes: [UInt8]("TSIZ".utf8)
         ],
         .version4: [
             .recordingDateTime: [UInt8]("TDRC".utf8)
@@ -123,7 +131,10 @@ class ID3FrameConfiguration {
         "TGID": .iTunesPodcastID,
         "TKWD": .iTunesPodcastKeywords,
         "USLT": .unsyncronisedLyrics,
-        "COMM": .comment
+        "COMM": .comment,
+        "TBPM": .beatsPerMinute,
+        "TOFN": .originalFilename,
+        "TLEN": .lengthInMilliseconds
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
@@ -149,12 +160,17 @@ class ID3FrameConfiguration {
             "TRK": .trackPosition,
             "TPA": .discPosition,
             "ULT": .unsyncronisedLyrics,
-            "COM": .comment
+            "COM": .comment,
+            "TBP": .beatsPerMinute,
+            "TOF": .originalFilename,
+            "TLE": .lengthInMilliseconds,
+            "TSI": .sizeInBytes
         ],
         .version3: [
             "TDAT": .recordingDayMonth,
             "TYER": .recordingYear,
-            "TIME": .recordingHourMinute
+            "TIME": .recordingHourMinute,
+            "TSIZ": .sizeInBytes
         ],
         .version4: [
             "TDRC": .recordingDateTime
