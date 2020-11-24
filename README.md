@@ -187,7 +187,7 @@ do {
 }    
 ```  
 
-Below you can find the list of the frame support by ID3TagEditor (see the enum `FrameName` and the builders shown above):
+Below you can find the list of the official ID3 frames supported by ID3TagEditor (see the enum `FrameName` and the builders shown above):
 
 * `.title`
 * `.album`
@@ -220,14 +220,14 @@ Below you can find the list of the frame support by ID3TagEditor (see the enum `
 
 In addition, ID3TagEditor supports the following iTunes unofficial frames:
 
-* `iTunesGrouping`, available only for ID3 v2.3/v2.4
-* `iTunesMovementName`, available only for ID3 v2.3/v2.4
-* `iTunesMovementIndex`, available only for ID3 v2.3/v2.4
-* `iTunesMovementCount`, available only for ID3 v2.3/v2.4
-* `iTunesPodcastCategory`, available only for ID3 v2.3/v2.4
-* `iTunesPodcastDescription`, available only for ID3 v2.3/v2.4
-* `iTunesPodcastID`, available only for ID3 v2.3/v2.4
-* `iTunesPodcastKeyword`, available only for ID3 v2.3/v2.4
+* `.iTunesGrouping`, available only for ID3 v2.3/v2.4
+* `.iTunesMovementName`, available only for ID3 v2.3/v2.4
+* `.iTunesMovementIndex`, available only for ID3 v2.3/v2.4
+* `.iTunesMovementCount`, available only for ID3 v2.3/v2.4
+* `.iTunesPodcastCategory`, available only for ID3 v2.3/v2.4
+* `.iTunesPodcastDescription`, available only for ID3 v2.3/v2.4
+* `.iTunesPodcastID`, available only for ID3 v2.3/v2.4
+* `.iTunesPodcastKeyword`, available only for ID3 v2.3/v2.4
 
 All frames are encoded/formatted following the specification:
 * text frames (frames with identifier starting with a capital T) uses UTF-16 to encode text
