@@ -38,8 +38,7 @@ class ID3LocalizedFrameContentParsingOperation: FrameContentParsingOperation {
 
     private func parseBodyFrom(frame: Data, using headerSize: Int, and encoding: String.Encoding) -> Body {
         let allContent = frame.subdata(in: headerSize + 4..<frame.count)
-        let separator: [UInt8] = encoding == String.Encoding.utf16 ? [0x00, 0x00, 0xFF, 0xFE] : [0x00, 0x00]
-        let separatorRange = allContent.range(of: Data(separator), options: .backwards) ?? Range(0...0)
+        let separatorRange = calculateSeparatorRange(allContent: allContent, encoding: encoding)
         let contentDescriptor = String(
             bytes: allContent.subdata(in: 0..<separatorRange.startIndex),
             encoding: encoding
@@ -50,6 +49,14 @@ class ID3LocalizedFrameContentParsingOperation: FrameContentParsingOperation {
         ) ?? "Invalid content"
 
         return (contentDescriptor: contentDescriptor, content: paddingRemover.removeFrom(string: content))
+    }
+ 
+    private func calculateSeparatorRange(allContent: Data, encoding: String.Encoding) -> Range<Data.Index> {
+        return allContent.range(of: Data(getSeparatorUsing(encoding: encoding)), options: .backwards) ?? Range(0...0)
+    }
+
+    private func getSeparatorUsing(encoding: String.Encoding) -> [UInt8] {
+        return encoding == String.Encoding.utf16 ? [0x00, 0x00, 0xFF, 0xFE] : [0x00, 0x00]
     }
 
     private func contentStartIndexFrom(separatorRange: Range<Int>) -> Int {
