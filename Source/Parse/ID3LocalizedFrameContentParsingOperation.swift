@@ -38,17 +38,22 @@ class ID3LocalizedFrameContentParsingOperation: FrameContentParsingOperation {
 
     private func parseBodyFrom(frame: Data, using headerSize: Int, and encoding: String.Encoding) -> Body {
         let allContent = frame.subdata(in: headerSize + 4..<frame.count)
-        let separatorRange = allContent.range(of: Data([0x00, 0x00, 0xFF, 0xFE]), options: .backwards) ?? Range(0...0)
+        let separator: [UInt8] = encoding == String.Encoding.utf16 ? [0x00, 0x00, 0xFF, 0xFE] : [0x00, 0x00]
+        let separatorRange = allContent.range(of: Data(separator), options: .backwards) ?? Range(0...0)
         let contentDescriptor = String(
             bytes: allContent.subdata(in: 0..<separatorRange.startIndex),
             encoding: encoding
         ) ?? "Invalid content"
         let content = String(
-            bytes: allContent.subdata(in: separatorRange.endIndex - 2..<allContent.count),
+            bytes: allContent.subdata(in: contentStartIndexFrom(separatorRange: separatorRange)..<allContent.count),
             encoding: encoding
         ) ?? "Invalid content"
 
         return (contentDescriptor: contentDescriptor, content: paddingRemover.removeFrom(string: content))
+    }
+
+    private func contentStartIndexFrom(separatorRange: Range<Int>) -> Int {
+        return separatorRange.endIndex >= 2 ? separatorRange.endIndex - 2 : 0
     }
 
     private func parseLanguageFrom(frame: Data, using headerSize: Int) -> ID3FrameContentLanguage {

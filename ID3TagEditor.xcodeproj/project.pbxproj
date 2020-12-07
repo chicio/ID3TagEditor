@@ -96,6 +96,9 @@
 		45541C20205996110025A8BF /* example-v23-png.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C506716F7FACDDFD2CA53425 /* example-v23-png.mp3 */; };
 		45541C21205996110025A8BF /* example-to-be-modified-in-same-path.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C50678CC307C45CBBEE89FF5 /* example-to-be-modified-in-same-path.mp3 */; };
 		45541C22205996110025A8BF /* folder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5067D7E521858122CF4EEB4 /* folder.jpg */; };
+		45577996257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45577995257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 */; };
+		45577997257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45577995257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 */; };
+		45577998257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45577995257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 */; };
 		455787F6204F129C00EE8756 /* MockPictureTypeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50671FC32F01DE3E7FDAB6A /* MockPictureTypeAdapter.swift */; };
 		455787F7204F129C00EE8756 /* MockPictureTypeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50671FC32F01DE3E7FDAB6A /* MockPictureTypeAdapter.swift */; };
 		455F6F2F254B5B29002FC259 /* ID3TagToStringAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */; };
@@ -821,6 +824,7 @@
 		45541B7720598F6C0025A8BF /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45541BE52059954C0025A8BF /* ID3TagEditor tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ID3TagEditor tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45541C25205999A20025A8BF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
+		45577995257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-comment-utf8-no-contentdescription.mp3"; sourceTree = "<group>"; };
 		455CF9862340C14B004C880A /* ID3TagEditor.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ID3TagEditor.podspec; sourceTree = "<group>"; };
 		455CF9872340C31F004C880A /* generate_docs */ = {isa = PBXFileReference; lastKnownFileType = text; path = generate_docs; sourceTree = "<group>"; };
 		455CF9892340C4D7004C880A /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
@@ -1376,6 +1380,7 @@
 		C506746699DCFC84F2A358E5 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				45577995257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 */,
 				45D4C3682538D51E00501417 /* example-write-read-v2.mp3 */,
 				45D4C3672538D51E00501417 /* example-write-read-v3.mp3 */,
 				45D4C3692538D51E00501417 /* example-write-read-v4.mp3 */,
@@ -1769,6 +1774,7 @@
 				C50679A6775695E2E56A5F36 /* example-with-tag-already-setted.mp3 in Resources */,
 				5FAF8DAD21CED88E0049798C /* example-v4-additional-data.mp3 in Resources */,
 				C50672444BF2E5B0AD7DC8B6 /* cover2.jpg in Resources */,
+				45577996257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 in Resources */,
 				457352E921C249C30017B75D /* example-v4-png.mp3 in Resources */,
 				C506774CEC09164E959AF72A /* example.mp3 in Resources */,
 				45D4C36A2538D51E00501417 /* example-write-read-v3.mp3 in Resources */,
@@ -1810,6 +1816,7 @@
 				C506722E2AEE065705B2D8F7 /* example-with-tag-already-setted.mp3 in Resources */,
 				5FAF8DAC21CED88D0049798C /* example-v4-additional-data.mp3 in Resources */,
 				C50677494ED96E785E2A50DE /* cover2.jpg in Resources */,
+				45577997257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 in Resources */,
 				457352EA21C249C30017B75D /* example-v4-png.mp3 in Resources */,
 				C5067249E2E352C2A30A1663 /* example.mp3 in Resources */,
 				45D4C36B2538D51E00501417 /* example-write-read-v3.mp3 in Resources */,
@@ -1851,6 +1858,7 @@
 				45541C1D205996110025A8BF /* example-with-tag-already-setted.mp3 in Resources */,
 				5FAF8DAB21CED88C0049798C /* example-v4-additional-data.mp3 in Resources */,
 				45541C1E205996110025A8BF /* cover2.jpg in Resources */,
+				45577998257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 in Resources */,
 				457352EB21C249C40017B75D /* example-v4-png.mp3 in Resources */,
 				45541C1F205996110025A8BF /* example.mp3 in Resources */,
 				45D4C36C2538D51E00501417 /* example-write-read-v3.mp3 in Resources */,
