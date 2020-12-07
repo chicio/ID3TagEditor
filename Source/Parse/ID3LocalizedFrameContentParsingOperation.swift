@@ -50,7 +50,7 @@ class ID3LocalizedFrameContentParsingOperation: FrameContentParsingOperation {
 
         return (contentDescriptor: contentDescriptor, content: paddingRemover.removeFrom(string: content))
     }
- 
+
     private func calculateSeparatorRange(allContent: Data, encoding: String.Encoding) -> Range<Data.Index> {
         return allContent.range(of: Data(getSeparatorUsing(encoding: encoding)), options: .backwards) ?? Range(0...0)
     }
