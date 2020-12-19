@@ -53,13 +53,14 @@ cd ..
 
 # Increment marketing version
 
+echo "Updating version on Xcode project..."
 agvtool new-marketing-version $VERSION
-
-
+echo ""
 
 # Generate doc
 
+echo "Generate docs..."
 ./Scripts/generate-docs.sh
-
+echo ""
 
 
