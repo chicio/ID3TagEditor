@@ -75,6 +75,7 @@ echo "Create tag..."
 git add .
 git commit -m "Release "$VERSION" :rocket:"
 git tag $VERSION
+git push
 git push --tags
 
 # Publish release on cocoapods
