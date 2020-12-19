@@ -75,6 +75,15 @@ echo "Create tag..."
 git add .
 git commit -m "Release "$VERSION" :rocket:"
 git tag $VERSION
-# git push --tags
+git push --tags
+
+# Publish release on cocoapods
+
+echo "Publish release on cocoapods"
+
+pod lib lint
+pod trunk push ID3TagEditor.podspec
+
+
 
 
