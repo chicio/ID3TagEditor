@@ -1,12 +1,18 @@
 {
   "images" : [
     {
+      "filename" : "icon-logo-background.png",
       "idiom" : "tv",
       "scale" : "1x"
+    },
+    {
+      "filename" : "icon-logo-background-1.png",
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
