@@ -6,24 +6,6 @@
 	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		45F03FA6258E576700BB3869 /* Release */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 45F03FA9258E576800BB3869 /* Build configuration list for PBXAggregateTarget "Release" */;
-			buildPhases = (
-				45F03FD8258E58C400BB3869 /* ShellScript */,
-			);
-			dependencies = (
-				45F03FBB258E583100BB3869 /* PBXTargetDependency */,
-				45F03FBF258E583100BB3869 /* PBXTargetDependency */,
-				45F03FC3258E583100BB3869 /* PBXTargetDependency */,
-				45F03FC7258E583100BB3869 /* PBXTargetDependency */,
-			);
-			name = Release;
-			productName = Release;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
 		450967172100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
@@ -810,34 +792,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 45541B7620598F6C0025A8BF;
 			remoteInfo = "ID3TagEditor tvOS";
-		};
-		45F03FBA258E583100BB3869 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 452831BC2044C40700458375 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 452831E42044C4F500458375;
-			remoteInfo = "ID3TagEditor iOS";
-		};
-		45F03FBE258E583100BB3869 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 452831BC2044C40700458375 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 452831C42044C40700458375;
-			remoteInfo = "ID3TagEditor macOS";
-		};
-		45F03FC2258E583100BB3869 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 452831BC2044C40700458375 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45541B7620598F6C0025A8BF;
-			remoteInfo = "ID3TagEditor tvOS";
-		};
-		45F03FC6258E583100BB3869 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 452831BC2044C40700458375 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45F833E2205904680046C804;
-			remoteInfo = "ID3TagEditor watchOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1771,10 +1725,6 @@
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
-					45F03FA6258E576700BB3869 = {
-						CreatedOnToolsVersion = 12.3;
-						ProvisioningStyle = Automatic;
-					};
 					45F833E2205904680046C804 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1100;
@@ -1802,7 +1752,6 @@
 				45541B7620598F6C0025A8BF /* ID3TagEditor tvOS */,
 				45541BE42059954C0025A8BF /* ID3TagEditor tvOS Tests */,
 				45F833E2205904680046C804 /* ID3TagEditor watchOS */,
-				45F03FA6258E576700BB3869 /* Release */,
 			);
 		};
 /* End PBXProject section */
@@ -2011,23 +1960,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		45F03FD8258E58C400BB3869 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Release\n./Scripts/release.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2770,26 +2702,6 @@
 			target = 45541B7620598F6C0025A8BF /* ID3TagEditor tvOS */;
 			targetProxy = 45541BEB2059954C0025A8BF /* PBXContainerItemProxy */;
 		};
-		45F03FBB258E583100BB3869 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 452831E42044C4F500458375 /* ID3TagEditor iOS */;
-			targetProxy = 45F03FBA258E583100BB3869 /* PBXContainerItemProxy */;
-		};
-		45F03FBF258E583100BB3869 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 452831C42044C40700458375 /* ID3TagEditor macOS */;
-			targetProxy = 45F03FBE258E583100BB3869 /* PBXContainerItemProxy */;
-		};
-		45F03FC3258E583100BB3869 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45541B7620598F6C0025A8BF /* ID3TagEditor tvOS */;
-			targetProxy = 45F03FC2258E583100BB3869 /* PBXContainerItemProxy */;
-		};
-		45F03FC7258E583100BB3869 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45F833E2205904680046C804 /* ID3TagEditor watchOS */;
-			targetProxy = 45F03FC6258E583100BB3869 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -3191,24 +3103,6 @@
 			};
 			name = Release;
 		};
-		45F03FA7258E576700BB3869 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y682K92RZU;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		45F03FA8258E576700BB3869 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y682K92RZU;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		45F833E8205904680046C804 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3324,15 +3218,6 @@
 			buildConfigurations = (
 				45541BEE2059954C0025A8BF /* Debug */,
 				45541BEF2059954C0025A8BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45F03FA9258E576800BB3869 /* Build configuration list for PBXAggregateTarget "Release" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45F03FA7258E576700BB3869 /* Debug */,
-				45F03FA8258E576700BB3869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
