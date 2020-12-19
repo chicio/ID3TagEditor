@@ -57,10 +57,20 @@ echo "Updating version on Xcode project..."
 agvtool new-marketing-version $VERSION
 echo ""
 
+# Increment cocoapods
+
+sed -i '' 's/  s.version      = .*/  s.version      = '$VERSION'/' ID3TagEditor.podspec
+
 # Generate doc
 
 echo "Generate docs..."
 ./Scripts/generate-docs.sh
 echo ""
+
+# Commit, create tag and push
+git add .
+git commit -m "Release "$VERSION" :rocket:"
+git tag $VERSION
+# git push --tags
 
 
