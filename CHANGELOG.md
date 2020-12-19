@@ -1,6 +1,13 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.1.1](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.1)
+Release date: 2020-12-19
+
+#### Fixed
+- Fixed #75: Crash when parsing COMM frame with encoding different from UTF-16 
+
+
 ## [4.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.0)
 Release date: 2020-11-23
 
@@ -10,6 +17,7 @@ Release date: 2020-11-23
 - Added `.lengthInMilliseconds` frame support
 - Added `.sizeInBytes` frame support (available only for ID3 v2.2/v2.3)
 - Improved builders api (now builder docs will be much more clear)
+
 
 ## [4.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.0.0)
 Release date: 2020-10-26
