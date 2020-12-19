@@ -8,6 +8,7 @@
 // swiftlint:disable type_body_length
 // swiftlint:disable file_length
 // swiftlint:disable function_body_length
+// swiftlint:disable line_length
 
 import XCTest
 @testable import ID3TagEditor
@@ -825,6 +826,16 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                     """)
     }
 
+    func testCommentWithUTF8EncodingAndNoContentDescription() throws {
+        let id3Tag = try id3TagEditor.read(
+            from: PathLoader().pathFor(name: "example-comment-utf8-no-contentdescription", fileType: "mp3")
+        )
+
+        XCTAssertEqual((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
+        XCTAssertEqual((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "")
+        XCTAssertEqual((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.content, "ÜberStandard - UberNet.org")
+    }
+
     static let allTests = [
         ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
         ("testReadTagV2", testReadTagV2),
@@ -853,6 +864,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         ("testWriteNewFramesV2", testWriteNewFramesV2),
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
-        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten)
+        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten),
+        ("testCommentWithUTF8EncodingAndNoContentDescription", testCommentWithUTF8EncodingAndNoContentDescription)
     ]
 }
