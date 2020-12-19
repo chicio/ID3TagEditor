@@ -53,26 +53,28 @@ cd ..
 
 # Increment marketing version
 
-# echo "Updating version on Xcode project..."
-# agvtool new-marketing-version $VERSION
-# echo ""
+echo "Updating version on Xcode project..."
+agvtool new-marketing-version $VERSION
+echo ""
 
 # Increment cocoapods
 
+echo "Updating podspec version..."
 sed -i '' 's/  s.version      = .*/  s.version      = "'$VERSION'"/' ID3TagEditor.podspec
+echo ""
 
 # Generate doc
 
 echo "Generate docs..."
-# ./Scripts/generate-docs.sh
+./Scripts/generate-docs.sh
 echo ""
 
 # Commit, create tag and push
 
 echo "Create tag..."
-#git add .
-#git commit -m "Release "$VERSION" :rocket:"
-#git tag $VERSION
+git add .
+git commit -m "Release "$VERSION" :rocket:"
+git tag $VERSION
 # git push --tags
 
 
