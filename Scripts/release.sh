@@ -47,6 +47,10 @@ then
    exit 1
 fi
 
+# Go in root folder
+
+cd ..
+
 # Increment marketing version
 
 agvtool new-marketing-version $VERSION
@@ -55,7 +59,7 @@ agvtool new-marketing-version $VERSION
 
 # Generate doc
 
-./generate-docs.sh
+./Scripts/generate-docs.sh
 
 
 
