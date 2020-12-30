@@ -8,7 +8,6 @@
 
 jazzy \
   --output docs \
-  --clean \
   --module ID3TagEditor \
   --xcodebuild-arguments -workspace,ID3TagEditor.xcworkspace,-scheme,"ID3TagEditor iOS" -x USE_SWIFT_RESPONSE_FILE=NO \
   --author_url https://www.fabrizioduroni.it \
