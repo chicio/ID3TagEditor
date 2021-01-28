@@ -4,6 +4,13 @@ import PackageDescription
 
 let package = Package(
     name: "ID3TagEditor",
+    platforms: [
+           .macOS(.v10_13),
+           .iOS(.v12),
+           .tvOS(.v12),
+           .watchOS(.v5),
+           .linux
+    ],
     products: [
         .library(
             name: "ID3TagEditor",
