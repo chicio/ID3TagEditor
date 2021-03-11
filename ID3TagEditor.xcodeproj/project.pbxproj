@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3704376D25FAAB910011BCA8 /* example-cover-nonStandard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3704376C25FAAB910011BCA8 /* example-cover-nonStandard.mp3 */; };
+		3704376E25FAAB910011BCA8 /* example-cover-nonStandard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3704376C25FAAB910011BCA8 /* example-cover-nonStandard.mp3 */; };
+		3704376F25FAAB910011BCA8 /* example-cover-nonStandard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3704376C25FAAB910011BCA8 /* example-cover-nonStandard.mp3 */; };
 		450967162100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
 		450967172100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
 		450967182100BDC700A9CAA6 /* Mp3FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450967152100BDC700A9CAA6 /* Mp3FileReader.swift */; };
@@ -796,6 +799,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3704376C25FAAB910011BCA8 /* example-cover-nonStandard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-cover-nonStandard.mp3"; sourceTree = "<group>"; };
 		450967152100BDC700A9CAA6 /* Mp3FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReader.swift; sourceTree = "<group>"; };
 		4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReaderTest.swift; sourceTree = "<group>"; };
 		4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileWriter.swift; sourceTree = "<group>"; };
@@ -1381,6 +1385,7 @@
 			isa = PBXGroup;
 			children = (
 				45577995257EDB2D00193323 /* example-comment-utf8-no-contentdescription.mp3 */,
+				3704376C25FAAB910011BCA8 /* example-cover-nonStandard.mp3 */,
 				45D4C3682538D51E00501417 /* example-write-read-v2.mp3 */,
 				45D4C3672538D51E00501417 /* example-write-read-v3.mp3 */,
 				45D4C3692538D51E00501417 /* example-write-read-v4.mp3 */,
@@ -1779,6 +1784,7 @@
 				C506774CEC09164E959AF72A /* example.mp3 in Resources */,
 				45D4C36A2538D51E00501417 /* example-write-read-v3.mp3 in Resources */,
 				C506724A7FBBFA5C694E8B6E /* example-v23-png.mp3 in Resources */,
+				3704376D25FAAB910011BCA8 /* example-cover-nonStandard.mp3 in Resources */,
 				C5067E54FE3A98B1879EDD0B /* example-to-be-modified-in-same-path.mp3 in Resources */,
 				454789382120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
 				4546E7CC21CB86AE008502CF /* cover-v4.png in Resources */,
@@ -1821,6 +1827,7 @@
 				C5067249E2E352C2A30A1663 /* example.mp3 in Resources */,
 				45D4C36B2538D51E00501417 /* example-write-read-v3.mp3 in Resources */,
 				C506739BA111E9B2B8887C97 /* example-v23-png.mp3 in Resources */,
+				3704376E25FAAB910011BCA8 /* example-cover-nonStandard.mp3 in Resources */,
 				C5067617959593C6927B955D /* example-to-be-modified-in-same-path.mp3 in Resources */,
 				454789392120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
 				4546E7CD21CB86AE008502CF /* cover-v4.png in Resources */,
@@ -1863,6 +1870,7 @@
 				45541C1F205996110025A8BF /* example.mp3 in Resources */,
 				45D4C36C2538D51E00501417 /* example-write-read-v3.mp3 in Resources */,
 				45541C20205996110025A8BF /* example-v23-png.mp3 in Resources */,
+				3704376F25FAAB910011BCA8 /* example-cover-nonStandard.mp3 in Resources */,
 				45541C21205996110025A8BF /* example-to-be-modified-in-same-path.mp3 in Resources */,
 				4547893A2120D77F005EFAA1 /* example-v3-corrupted.mp3 in Resources */,
 				4546E7CE21CB86AE008502CF /* cover-v4.png in Resources */,
@@ -2821,11 +2829,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y682K92RZU;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2834,7 +2842,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 4.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.planetbeagle.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2847,11 +2855,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Y682K92RZU;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2860,7 +2868,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 4.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.planetbeagle.ID3TagEditor;
 				PRODUCT_NAME = ID3TagEditor;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -2875,7 +2883,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Y682K92RZU;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditorTests;
@@ -2892,7 +2900,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Y682K92RZU;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.chicio.ID3TagEditorTests;
@@ -2905,11 +2913,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2934,11 +2942,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2967,7 +2975,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = Y682K92RZU;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2989,7 +2997,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = Y682K92RZU;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -3006,10 +3014,10 @@
 		45541B7D20598F6C0025A8BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3031,10 +3039,10 @@
 		45541B7E20598F6C0025A8BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3060,7 +3068,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = EHWT28Q5KK;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-tvOS-tests";
@@ -3079,7 +3087,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = EHWT28Q5KK;
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-tvOS-tests";
@@ -3097,10 +3105,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3123,10 +3131,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9DAT7A9Z28;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

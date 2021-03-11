@@ -11,15 +11,15 @@ import Foundation
  The attached picture format supported by the ID3 tag.
  */
 public enum ID3PictureFormat: Equatable, Hashable, CaseIterable {
-    public typealias AllCases = [ID3PictureFormat]
-    public static var allCases: AllCases {
-        return [.jpeg, .png, .nonStandard(Data([0, 0, 0, 0]))]
-    }
-
+    // Magic file numbers for standard attached picture image formats
+    public static let standardImageFormats: [ID3PictureFormat: Data] = [
+        .jpeg: Data([0xFF, 0xD8, 0xFF, 0xE0]),
+        .png: Data([0x89, 0x50, 0x4E, 0x47])
+    ]
     /// Jpeg image.
     case jpeg
     /// Png image.
     case png
-    /// Any other type of image file; associated value is the 4-byte Magic Number of the file type.
-    case nonStandard(Data)
+    /// Any other type of image file.
+    case nonStandard
 }

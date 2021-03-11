@@ -9,12 +9,6 @@ import Foundation
 
 class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperation {
 
-    // Magic file numbers for standard attached picture image formats
-    private let standardImageFormats: [ID3PictureFormat: Data] = [
-        .jpeg: Data([0xFF, 0xD8, 0xFF, 0xE0]),
-        .png: Data([0x89, 0x50, 0x4E, 0x47])
-    ]
-
     private let id3FrameConfiguration: ID3FrameConfiguration
     private let pictureTypeAdapter: PictureTypeAdapter
 
@@ -25,7 +19,7 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
 
     func parse(frame: Data, version: ID3Version, completed: (FrameName, ID3Frame) -> Void) {
         var imageIsInAStandardFormat = false
-        for imageFormat in standardImageFormats {
+        for imageFormat in ID3PictureFormat.standardImageFormats {
             if parseToCheckIfThereIsAnImageUsing(magicNumber: imageFormat.value,
                                                  format: imageFormat.key,
                                                  frame: frame,
@@ -95,7 +89,7 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
         guard frame.endIndex > headerSize else { return }
 
         // First byte after the header is the text encoding value
-        guard let (textEncoding, terminatorLength): (String.Encoding, Int) = ID3TextEncodings[frame[headerSize]] else {
+        guard let (_, terminatorLength): (String.Encoding, Int) = ID3TextEncodings[frame[headerSize]] else {
             return
         }
 
@@ -123,7 +117,8 @@ class ID3AttachedPictureFrameContentParsingOperation: FrameContentParsingOperati
         let attachedPictureFrame = ID3FrameAttachedPicture(
             picture: frame.subdata(in: indexInFrame..<frame.count),
             type: pictureType,
-            format: .nonStandard(magicNumber)
+            format: .nonStandard,
+            fileMagicNumber: magicNumber
         )
         completed(.attachedPicture(pictureType), attachedPictureFrame)
     }
