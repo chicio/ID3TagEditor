@@ -9,13 +9,11 @@ jobs:
   build:
     name: Build Linux
     runs-on: ubuntu-latest
+    container:
+      image: swift:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install Swift
-        uses: sersoft-gmbh/SwiftyActions@v1
-        with:
-            release-version: 5.3
       - name: Build Linux framework
         run: |
            swift build
