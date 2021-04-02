@@ -251,7 +251,7 @@ supported target. You can also find more usage example in the [read/write accept
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/04-example.png">
-<img width="320" src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/03-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/05-example.png">
