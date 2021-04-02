@@ -14,7 +14,7 @@ class UInt32ToByteArrayAdapterUsingUnsafePointerTest: XCTestCase {
     func testAdapt32BitUnsignedInteger() {
         XCTAssertEqual(
             uiInt32ToByteArrayAdapterUsingUnsafePointer.adapt(uInt32: UInt32(0x11223344)),
-            [0x11, 0x22, 0x33, 0x43]
+            [0x11, 0x22, 0x33, 0x44]
         )
     }
 
