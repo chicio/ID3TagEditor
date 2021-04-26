@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.1.2](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.2)
+Release date: 2021-04-26
+
+#### Fixed
+- PR #85: Kotlin Multiplatform support 
+
 ## [4.1.1](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.1)
 Release date: 2020-12-19
 

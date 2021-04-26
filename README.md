@@ -263,3 +263,4 @@ supported target. You can also find more usage example in the [read/write accept
 * [Nolaine Crusher](https://github.com/NCrusher74) (added 12 official frames + all unofficial non standard frames)
 * [woko666](https://github.com/woko666) (added read from `Data` API)
 * [martinjbaker](https://github.com/martinjbaker) (minor fixies)
+* [Shabinder](https://github.com/Shabinder) (Kotlin Multiplatform support)
