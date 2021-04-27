@@ -17,6 +17,8 @@ public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConv
     public let type: ID3PictureType
     /// The file format. Only Jpeg and Png are supported by the standard (cross compatibility).
     public let format: ID3PictureFormat
+    /// Image file magic number
+    public let magicNumber: Data
     /// ID3FrameAttachedPicture debug description.
     public var debugDescription: String {
         return "\(type) \(format)"
@@ -30,11 +32,22 @@ public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConv
      for a complete list of the available picture types.
      - parameter format: the format of the image. See `ID3PictureFormat`.
      types.
+     - parameter fileMagicNumber: The "magic number" bytes that begin the image file.
+                                  Defined for .nonStandard ID3PictureFormat
      */
-    public init(picture: Data, type: ID3PictureType, format: ID3PictureFormat) {
+    public init(picture: Data, type: ID3PictureType, format: ID3PictureFormat,
+                fileMagicNumber: Data = Data([0x00, 0x00, 0x00, 0x00])) {
         self.picture = picture
         self.type = type
         self.format = format
+        switch self.format {
+        case .jpeg:
+            self.magicNumber = ID3PictureFormat.standardImageFormats[.jpeg]!
+        case .png:
+            self.magicNumber = ID3PictureFormat.standardImageFormats[.png]!
+        default:
+            self.magicNumber = fileMagicNumber
+        }
     }
 
     /**
@@ -46,6 +59,7 @@ public class ID3FrameAttachedPicture: ID3Frame, Equatable, CustomDebugStringConv
      - returns: true if the attached pictures values are the same, else false.
      */
     public static func == (lhs: ID3FrameAttachedPicture, rhs: ID3FrameAttachedPicture) -> Bool {
-        return lhs.picture == rhs.picture && lhs.format == rhs.format && lhs.type == rhs.type
+        return lhs.picture == rhs.picture && lhs.format == rhs.format &&
+               lhs.type == rhs.type && lhs.magicNumber == rhs.magicNumber
     }
 }

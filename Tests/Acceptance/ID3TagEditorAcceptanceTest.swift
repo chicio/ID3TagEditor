@@ -179,6 +179,20 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         XCTAssertThrowsError(try id3TagEditor.read(mp3: mp3))
     }
 
+    func testReadFileWithNonstandardImage() throws {
+        let expectedMagicNumber = Data([0x49, 0x49, 0x2a, 0x00])
+
+        let id3TagEditor = ID3TagEditor()
+        let pathMp3 = PathLoader().pathFor(name: "example-cover-nonStandard", fileType: "mp3")
+        let id3Tag = try id3TagEditor.read(from: pathMp3)
+
+        if let frameAttachedPicture =
+            (id3Tag!.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture) {
+            XCTAssertEqual(frameAttachedPicture.format, .nonStandard)
+            XCTAssertEqual(frameAttachedPicture.magicNumber, expectedMagicNumber)
+        }
+    }
+
     func testReadUtf16String() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3 = PathLoader().pathFor(name: "example-utf16", fileType: "mp3")
@@ -845,6 +859,7 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         ("testReadTagV4WithImage", testReadTagV4WithImage),
         ("testReadAsMp3", testReadAsMp3),
         ("testReadInvalidFile", testReadInvalidFile),
+        ("testReadFileWithNonstandardImage", testReadFileWithNonstandardImage),
         ("testReadUtf16String", testReadUtf16String),
         ("testWriteTagV2", testWriteTagV2),
         ("testWriteTagV3WhenItAlreadyExists", testWriteTagV3WhenItAlreadyExists),
