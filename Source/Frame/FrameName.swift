@@ -121,7 +121,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case comment(_ language: ID3FrameContentLanguage)
     /// Grouping frame name. Version 2.3 and 2.4 only.
     case iTunesGrouping
-    ///Movement name frame name. Version 2.3 and 2.4 only.
+    /// Movement name frame name. Version 2.3 and 2.4 only.
     case iTunesMovementName
     /// Movement Index frame name. Version 2.3 and 2.4 only.
     case iTunesMovementIndex

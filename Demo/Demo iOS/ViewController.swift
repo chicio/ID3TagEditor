@@ -99,7 +99,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
                 attachedPictureImage.image = UIImage(data: attachedPictureFrame.picture)
             } else {
-                //image is removed when the user press the update button
+                // image is removed when the user press the update button
                 attachedPictureImage.image = nil
             }
         } catch {

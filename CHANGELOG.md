@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.1.3](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.3)
+Release date: 2021-10-06
+
+#### Added
+- Xcode 13 support 
+
 ## [4.1.2](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.2)
 Release date: 2021-04-26
 
@@ -135,7 +141,7 @@ Release date: 2018-08-05
 #### Added
 - Renamed `art` property as `picture` on the `ID3Tag` class 
 - Added v2.4 tag support
-    - 2.4 tag and frame configuration (without reverse header support for tag)
+    - 2.4 tag and frame configuration (without reverse header support for tag
     - added "TDRC" instead of deprecated "TYER"(2.3)/"TYE"(2.2): field with timestamp that has a fallback to string content
     - new `RecordingDateTime` inside the `ID3Tag` class
 - Added "TDAT" frame support
