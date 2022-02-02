@@ -112,6 +112,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v2 eng comment")
+
+        let tagReader = ID3TagReader(id3Tag: id3TagWritten!)
+        XCTAssertEqual(tagReader.title(), "title V2")
+        XCTAssertEqual(tagReader.album(), "album V2")
+        XCTAssertEqual(tagReader.albumArtist(), "album artist V2")
+        XCTAssertEqual(tagReader.artist(), "artist V2")
     }
 
     func testReadWritev3() throws {
@@ -224,6 +230,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "PodcastDescription V3")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V3")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V3")
+
+        let tagReader = ID3TagReader(id3Tag: id3TagWritten!)
+        XCTAssertEqual(tagReader.title(), "title V3")
+        XCTAssertEqual(tagReader.album(), "album V3")
+        XCTAssertEqual(tagReader.albumArtist(), "album artist V3")
+        XCTAssertEqual(tagReader.artist(), "artist V3")
     }
 
     func testReadWritev4() throws {
@@ -332,6 +344,12 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "PodcastDescription V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V4")
+
+        let tagReader = ID3TagReader(id3Tag: id3TagWritten!)
+        XCTAssertEqual(tagReader.title(), "title V4")
+        XCTAssertEqual(tagReader.album(), "album V4")
+        XCTAssertEqual(tagReader.albumArtist(), "album artist V4")
+        XCTAssertEqual(tagReader.artist(), "artist V4")
     }
 
     static let allTests = [
