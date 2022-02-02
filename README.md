@@ -127,11 +127,11 @@ To write a new ID3 tag into an mp3 file you can choose between two API contained
 * `public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws`
 * `public func write(tag: ID3Tag, mp3: Data) throws -> Data`
 
-The only way to create a valid `ID3Tag` you can use one of the tag builder available:
+The only way to create a valid `ID3Tag` is by using of the tag builder available:
 
 * `ID32v2TagBuilder`, a builder useful to create ID3 tag version 2.2
 * `ID32v3TagBuilder`, a builder useful to create ID3 tag version 2.3
-* `ID32v4TagBuilder`, a builder useful to create ID3 tag version 2.3
+* `ID32v4TagBuilder`, a builder useful to create ID3 tag version 2.4
 
 You can't create an instance of  `ID3Tag`  without one of the builders above.
 Below you can find a sample code that will write an ID3Tag version 3 with all the frames supported by ID3TagEditor to an mp3 file.
