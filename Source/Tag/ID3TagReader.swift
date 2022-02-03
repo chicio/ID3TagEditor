@@ -2,7 +2,7 @@
 //  ID3TagFramesReader.swift
 //  ID3TagEditor
 //
-//  Created by Fabrizio Duroni on 02/02/22.
+//  Created by Fabrizio Duroni on 02.02.22.
 //  Copyright © 2022 Fabrizio Duroni. All rights reserved.
 //
 
@@ -18,19 +18,109 @@ class ID3TagReader {
     func title() -> String? {
         return (id3Tag.frames[.title] as? ID3FrameWithStringContent)?.content
     }
-    
+
     func album() -> String? {
         return (id3Tag.frames[.album] as? ID3FrameWithStringContent)?.content
     }
-    
+
     func albumArtist() -> String? {
         return (id3Tag.frames[.albumArtist] as? ID3FrameWithStringContent)?.content
     }
-    
+
     func artist() -> String? {
         return (id3Tag.frames[.artist] as? ID3FrameWithStringContent)?.content
     }
+
+    func composer() -> String? {
+        return (id3Tag.frames[.composer] as? ID3FrameWithStringContent)?.content
+    }
+
+    func conductor() -> String? {
+        return (id3Tag.frames[.conductor] as? ID3FrameWithStringContent)?.content
+    }
+
+    func contentGrouping() -> String? {
+        return (id3Tag.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content
+    }
+
+    func encodedBy() -> String? {
+        return (id3Tag.frames[.encodedBy] as? ID3FrameWithStringContent)?.content
+    }
+
+    func encoderSettings() -> String? {
+        return (id3Tag.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content
+    }
+
+    func lyricist() -> String? {
+        return (id3Tag.frames[.lyricist] as? ID3FrameWithStringContent)?.content
+    }
+
+    func mixArtist() -> String? {
+        return (id3Tag.frames[.mixArtist] as? ID3FrameWithStringContent)?.content
+    }
+
+    func publisher() -> String? {
+        return (id3Tag.frames[.publisher] as? ID3FrameWithStringContent)?.content
+    }
+
+    func subtitle() -> String? {
+        return (id3Tag.frames[.subtitle] as? ID3FrameWithStringContent)?.content
+    }
+
+    func beatsPerMinute() -> Int? {
+        return (id3Tag.frames[.beatsPerMinute] as? ID3FrameWithIntegerContent)?.value
+    }
+
+    func originalFilename() -> String? {
+        return (id3Tag.frames[.originalFilename] as? ID3FrameWithStringContent)?.content
+    }
+
+    func lengthInMilliseconds() -> Int? {
+        return (id3Tag.frames[.lengthInMilliseconds] as? ID3FrameWithIntegerContent)?.value
+    }
+
+    func sizeInBytes() -> Int? {
+        return (id3Tag.frames[.sizeInBytes] as? ID3FrameWithIntegerContent)?.value
+    }
+
+    func genre() -> Genre? {
+        guard let genreFrame = (id3Tag.frames[.genre] as? ID3FrameGenre) else {
+            return nil
+        }
+
+        return Genre(identifier: genreFrame.identifier, description: genreFrame.description)
+    }
+
+    func discPosition() -> PartOfTotal? {
+        guard let discPositionFrame = (id3Tag.frames[.discPosition] as? ID3FramePartOfTotal) else {
+            return nil
+        }
+        
+        return PartOfTotal(position: discPositionFrame.part, total: discPositionFrame.total)
+    }
     
+    
+    func trackPosition() -> String? {
+        guard let trackPositionFrame = (id3Tag.frames[.trackPosition] as? ID3FramePartOfTotal) else {
+            return nil
+        }
+        
+        return PartOfTotal(position: trackPositionFrame.part, total: trackPositionFrame.total)
+    }
+    
+    
+//    func recordingDayMonth() -> String? {
+//        
+//    }
+//        
+//    func recordingYear() -> String? {
+//        
+//    }
+//    
+//    func recordingHourMinute() -> String? {
+//        
+//    }
+
 //    /// Composer frame name.
 //    case composer
 //    /// Conductor frame name.
