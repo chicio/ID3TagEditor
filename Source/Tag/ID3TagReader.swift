@@ -95,24 +95,26 @@ class ID3TagReader {
         guard let discPositionFrame = (id3Tag.frames[.discPosition] as? ID3FramePartOfTotal) else {
             return nil
         }
-        
+
         return PartOfTotal(position: discPositionFrame.part, total: discPositionFrame.total)
     }
-    
-    
-    func trackPosition() -> String? {
+
+    func trackPosition() -> PartOfTotal? {
         guard let trackPositionFrame = (id3Tag.frames[.trackPosition] as? ID3FramePartOfTotal) else {
             return nil
         }
-        
+
         return PartOfTotal(position: trackPositionFrame.part, total: trackPositionFrame.total)
     }
-    
-    
-//    func recordingDayMonth() -> String? {
-//        
-//    }
-//        
+
+    func recordingDayMonth() -> DayMonth? {
+        guard let recordingDayMonthFrame = (id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth) else {
+            return nil
+        }
+
+        return DayMonth(day: recordingDayMonthFrame.day, month: recordingDayMonthFrame.month)
+    }
+
 //    func recordingYear() -> String? {
 //        
 //    }

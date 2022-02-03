@@ -15,5 +15,10 @@ struct Genre: Equatable {
 
 struct PartOfTotal: Equatable {
     public let position: Int
-    public let total: Int? 
+    public let total: Int?
+}
+
+struct DayMonth: Equatable {
+    public let day: Int?
+    public let month: Int?
 }
