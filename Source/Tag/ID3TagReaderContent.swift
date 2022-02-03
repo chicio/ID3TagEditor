@@ -22,3 +22,15 @@ struct DayMonth: Equatable {
     public let day: Int?
     public let month: Int?
 }
+
+struct HourMinute: Equatable {
+    public let hour: Int?
+    public let minute: Int?
+}
+
+struct AttachedPicture: Equatable {
+    /// The image bytes as `Data`.
+    public let picture: Data
+    public let format: ID3PictureFormat
+    public let type: ID3PictureType
+}

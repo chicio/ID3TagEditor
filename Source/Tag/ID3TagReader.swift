@@ -115,13 +115,28 @@ class ID3TagReader {
         return DayMonth(day: recordingDayMonthFrame.day, month: recordingDayMonthFrame.month)
     }
 
-//    func recordingYear() -> String? {
-//        
-//    }
-//    
-//    func recordingHourMinute() -> String? {
-//        
-//    }
+    func recordingYear() -> Int? {
+        return (id3Tag.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value
+    }
+
+    func recordingHourMinute() -> HourMinute? {
+        guard let recordingHourMinuteFrame
+                = (id3Tag.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute) else {
+            return nil
+        }
+
+        return HourMinute(hour: recordingHourMinuteFrame.hour, minute: recordingHourMinuteFrame.minute)
+    }
+
+    func attachedPictures() -> [AttachedPicture] {
+        var pictures: [AttachedPicture] = []
+        for type in ID3PictureType.allCases {
+            if let picture = (id3Tag.frames[.attachedPicture(type)] as? ID3FrameAttachedPicture) {
+                pictures.append(AttachedPicture(picture: picture.picture, format: picture.format, type: picture.type))
+            }
+        }
+        return pictures
+    }
 
 //    /// Composer frame name.
 //    case composer

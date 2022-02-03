@@ -135,16 +135,16 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual(tagReader.discPosition(), PartOfTotal(position: 1, total: 3))
         XCTAssertEqual(tagReader.trackPosition(), PartOfTotal(position: 2, total: 9))
         XCTAssertEqual(tagReader.recordingDayMonth(), DayMonth(day: 5, month: 8))
-//        XCTAssertEqual(tagReader.recordingYear(), 2020)
-//        XCTAssertEqual(tagReader.recordingHourMinute(), 15)
-//        XCTAssertEqual(tagReader.recordingHourMinute(), 39)
+        XCTAssertEqual(tagReader.recordingYear(), 2020)
+        XCTAssertEqual(tagReader.recordingHourMinute(), HourMinute(hour: 15, minute: 39))
+        XCTAssertEqual(
+            tagReader.attachedPictures(),
+            [
+                AttachedPicture(picture: artFront, format: .jpeg, type: .frontCover),
+                AttachedPicture(picture: artBack, format: .jpeg, type: .backCover)
+            ]
+        )
 
-//        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, artFront)
-//        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
-//        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .jpeg)
-//        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.picture, artBack)
-//        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.type, .backCover)
-//        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.format, .jpeg)
 //        XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.language, .ita)
 //        XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
 //        XCTAssertEqual((id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)!.content, "v2 ita unsync lyrics")
