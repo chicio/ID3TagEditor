@@ -115,7 +115,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v2 eng comment")
 
-        let tagReader = ID3TagReader(id3Tag: id3TagWritten!)
+        let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
         XCTAssertEqual(tagReader.title(), "title V2")
         XCTAssertEqual(tagReader.album(), "album V2")
         XCTAssertEqual(tagReader.albumArtist(), "album artist V2")
@@ -274,7 +274,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V3")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V3")
 
-        let tagReader = ID3TagReader(id3Tag: id3TagWritten!)
+        let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
         XCTAssertEqual(tagReader.title(), "title V3")
         XCTAssertEqual(tagReader.album(), "album V3")
         XCTAssertEqual(tagReader.albumArtist(), "album artist V3")
@@ -437,7 +437,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V4")
 
-        let tagReader = ID3TagReader(id3Tag: id3TagWritten!)
+        let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
         XCTAssertEqual(tagReader.title(), "title V4")
         XCTAssertEqual(tagReader.album(), "album V4")
         XCTAssertEqual(tagReader.albumArtist(), "album artist V4")
