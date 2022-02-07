@@ -158,6 +158,34 @@ public class ID3TagReader {
         return (id3Tag.frames[.fileOwner] as? ID3FrameWithStringContent)?.content
     }
 
+    public func iTunesMovementName() -> String? {
+        return (id3Tag.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content
+    }
+
+    public func iTunesMovementIndex() -> Int? {
+        return (id3Tag.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value
+    }
+
+    public func iTunesMovementCount() -> Int? {
+        return (id3Tag.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value
+    }
+
+    public func iTunesPodcastCategory() -> String? {
+        return (id3Tag.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content
+    }
+
+    public func iTunesPodcastDescription() -> String? {
+        return (id3Tag.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content
+    }
+
+    public func iTunesPodcastID() -> String? {
+        return (id3Tag.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content
+    }
+
+    public func iTunesPodcastKeywords() -> String? {
+        return (id3Tag.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content
+    }
+
     private func localizedContent(
         getFrame: ((ID3FrameContentLanguage) -> ID3FrameWithLocalizedContent?)
     ) -> [LocalizedContent] {

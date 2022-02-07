@@ -320,14 +320,13 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
                 LocalizedContent(language: .ita, contentDescription: "CD", content: "v3 ita comment")
             ]
         )
-
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V3")
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content, "PodcastCategory V3")
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "PodcastDescription V3")
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V3")
-//        XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V3")
+        XCTAssertEqual(tagReader.iTunesMovementName(), "MovementName V3")
+        XCTAssertEqual(tagReader.iTunesMovementIndex(), 6)
+        XCTAssertEqual(tagReader.iTunesMovementCount(), 13)
+        XCTAssertEqual(tagReader.iTunesPodcastCategory(), "PodcastCategory V3")
+        XCTAssertEqual(tagReader.iTunesPodcastDescription(), "PodcastDescription V3")
+        XCTAssertEqual(tagReader.iTunesPodcastID(), "PodcastID V3")
+        XCTAssertEqual(tagReader.iTunesPodcastKeywords(), "PodcastKeywords V3")
     }
 
     func testReadWritev4() throws {
