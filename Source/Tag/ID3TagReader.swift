@@ -8,82 +8,86 @@
 
 import Foundation
 
-class ID3TagReader {
+public class ID3TagReader {
     private let id3Tag: ID3Tag
 
-    init(id3Tag: ID3Tag) {
+    public init(id3Tag: ID3Tag) {
         self.id3Tag = id3Tag
     }
 
-    func title() -> String? {
+    public func title() -> String? {
         return (id3Tag.frames[.title] as? ID3FrameWithStringContent)?.content
     }
 
-    func album() -> String? {
+    public func album() -> String? {
         return (id3Tag.frames[.album] as? ID3FrameWithStringContent)?.content
     }
 
-    func albumArtist() -> String? {
+    public func albumArtist() -> String? {
         return (id3Tag.frames[.albumArtist] as? ID3FrameWithStringContent)?.content
     }
 
-    func artist() -> String? {
+    public func artist() -> String? {
         return (id3Tag.frames[.artist] as? ID3FrameWithStringContent)?.content
     }
 
-    func composer() -> String? {
+    public func composer() -> String? {
         return (id3Tag.frames[.composer] as? ID3FrameWithStringContent)?.content
     }
 
-    func conductor() -> String? {
+    public func conductor() -> String? {
         return (id3Tag.frames[.conductor] as? ID3FrameWithStringContent)?.content
     }
 
-    func contentGrouping() -> String? {
+    public func contentGrouping() -> String? {
         return (id3Tag.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content
     }
 
-    func encodedBy() -> String? {
+    public func copyright() -> String? {
+        return (id3Tag.frames[.copyright] as? ID3FrameWithStringContent)?.content
+    }
+
+    public func encodedBy() -> String? {
         return (id3Tag.frames[.encodedBy] as? ID3FrameWithStringContent)?.content
     }
 
-    func encoderSettings() -> String? {
+    public func encoderSettings() -> String? {
         return (id3Tag.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content
     }
 
-    func lyricist() -> String? {
+    public func lyricist() -> String? {
         return (id3Tag.frames[.lyricist] as? ID3FrameWithStringContent)?.content
     }
 
-    func mixArtist() -> String? {
+    public func mixArtist() -> String? {
         return (id3Tag.frames[.mixArtist] as? ID3FrameWithStringContent)?.content
     }
 
-    func publisher() -> String? {
+    public func publisher() -> String? {
         return (id3Tag.frames[.publisher] as? ID3FrameWithStringContent)?.content
     }
 
-    func subtitle() -> String? {
+    public func subtitle() -> String? {
         return (id3Tag.frames[.subtitle] as? ID3FrameWithStringContent)?.content
     }
 
-    func beatsPerMinute() -> Int? {
+    public func beatsPerMinute() -> Int? {
         return (id3Tag.frames[.beatsPerMinute] as? ID3FrameWithIntegerContent)?.value
     }
 
-    func originalFilename() -> String? {
+    public func originalFilename() -> String? {
         return (id3Tag.frames[.originalFilename] as? ID3FrameWithStringContent)?.content
     }
 
-    func lengthInMilliseconds() -> Int? {
+    public func lengthInMilliseconds() -> Int? {
         return (id3Tag.frames[.lengthInMilliseconds] as? ID3FrameWithIntegerContent)?.value
     }
 
-    func sizeInBytes() -> Int? {
+    public func sizeInBytes() -> Int? {
         return (id3Tag.frames[.sizeInBytes] as? ID3FrameWithIntegerContent)?.value
     }
 
-    func genre() -> Genre? {
+    public func genre() -> Genre? {
         guard let genreFrame = (id3Tag.frames[.genre] as? ID3FrameGenre) else {
             return nil
         }
@@ -91,7 +95,7 @@ class ID3TagReader {
         return Genre(identifier: genreFrame.identifier, description: genreFrame.description)
     }
 
-    func discPosition() -> PartOfTotal? {
+    public func discPosition() -> PartOfTotal? {
         guard let discPositionFrame = (id3Tag.frames[.discPosition] as? ID3FramePartOfTotal) else {
             return nil
         }
@@ -99,7 +103,7 @@ class ID3TagReader {
         return PartOfTotal(position: discPositionFrame.part, total: discPositionFrame.total)
     }
 
-    func trackPosition() -> PartOfTotal? {
+    public func trackPosition() -> PartOfTotal? {
         guard let trackPositionFrame = (id3Tag.frames[.trackPosition] as? ID3FramePartOfTotal) else {
             return nil
         }
@@ -107,7 +111,7 @@ class ID3TagReader {
         return PartOfTotal(position: trackPositionFrame.part, total: trackPositionFrame.total)
     }
 
-    func recordingDayMonth() -> DayMonth? {
+    public func recordingDayMonth() -> DayMonth? {
         guard let recordingDayMonthFrame = (id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth) else {
             return nil
         }
@@ -115,11 +119,11 @@ class ID3TagReader {
         return DayMonth(day: recordingDayMonthFrame.day, month: recordingDayMonthFrame.month)
     }
 
-    func recordingYear() -> Int? {
+    public func recordingYear() -> Int? {
         return (id3Tag.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value
     }
 
-    func recordingHourMinute() -> HourMinute? {
+    public func recordingHourMinute() -> HourMinute? {
         guard let recordingHourMinuteFrame
                 = (id3Tag.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute) else {
             return nil
@@ -128,7 +132,7 @@ class ID3TagReader {
         return HourMinute(hour: recordingHourMinuteFrame.hour, minute: recordingHourMinuteFrame.minute)
     }
 
-    func attachedPictures() -> [AttachedPicture] {
+    public func attachedPictures() -> [AttachedPicture] {
         var pictures: [AttachedPicture] = []
         for type in ID3PictureType.allCases {
             if let picture = (id3Tag.frames[.attachedPicture(type)] as? ID3FrameAttachedPicture) {
@@ -138,20 +142,37 @@ class ID3TagReader {
         return pictures
     }
 
-    func unsynchronizedLyrics() -> [LocalizedContent] {
-        var unsynchronizedLyrics: [LocalizedContent] = []
+    public func unsynchronizedLyrics() -> [LocalizedContent] {
+        return localizedContent { language in
+            id3Tag.frames[.unsynchronizedLyrics(language)] as? ID3FrameWithLocalizedContent
+        }
+    }
+
+    public func comments() -> [LocalizedContent] {
+        return localizedContent { language in
+            id3Tag.frames[.comment(language)] as? ID3FrameWithLocalizedContent
+        }
+    }
+
+    public func fileOwner() -> String? {
+        return (id3Tag.frames[.fileOwner] as? ID3FrameWithStringContent)?.content
+    }
+
+    private func localizedContent(
+        getFrame: ((ID3FrameContentLanguage) -> ID3FrameWithLocalizedContent?)
+    ) -> [LocalizedContent] {
+        var contents: [LocalizedContent] = []
         for language in ID3FrameContentLanguage.allCases {
-            if let unsynchronizedLyric =
-                (id3Tag.frames[.unsynchronizedLyrics(language)] as? ID3FrameWithLocalizedContent) {
-                unsynchronizedLyrics.append(
+            if let content = getFrame(language) {
+                contents.append(
                     LocalizedContent(
-                        language: unsynchronizedLyric.language,
-                        contentDescription: unsynchronizedLyric.contentDescription,
-                        content: unsynchronizedLyric.content
+                        language: content.language,
+                        contentDescription: content.contentDescription,
+                        content: content.content
                     )
                 )
             }
         }
-        return unsynchronizedLyrics
+        return contents
     }
 }
