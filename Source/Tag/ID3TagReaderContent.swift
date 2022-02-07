@@ -43,3 +43,16 @@ public struct LocalizedContent: Equatable {
     /// The content localized
     public let content: String
 }
+
+public struct DateTime: Equatable {
+    /// Day value.
+    public var day: Int?
+    /// Month value.
+    public var month: Int?
+    /// Year value.
+    public var year: Int?
+    /// Hour value.
+    public var hour: Int?
+    /// Minute value.
+    public var minute: Int?
+}

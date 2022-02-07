@@ -132,6 +132,21 @@ public class ID3TagReader {
         return HourMinute(hour: recordingHourMinuteFrame.hour, minute: recordingHourMinuteFrame.minute)
     }
 
+    public func recordingDateTime() -> DateTime? {
+        guard let recordingDateTime
+                = (id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime) else {
+            return nil
+        }
+
+        return DateTime(
+            day: recordingDateTime.recordingDateTime.date?.day,
+            month: recordingDateTime.recordingDateTime.date?.month,
+            year: recordingDateTime.recordingDateTime.date?.year,
+            hour: recordingDateTime.recordingDateTime.time?.hour,
+            minute: recordingDateTime.recordingDateTime.time?.minute
+        )
+    }
+
     public func attachedPictures() -> [AttachedPicture] {
         var pictures: [AttachedPicture] = []
         for type in ID3PictureType.allCases {
