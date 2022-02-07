@@ -34,3 +34,12 @@ struct AttachedPicture: Equatable {
     public let format: ID3PictureFormat
     public let type: ID3PictureType
 }
+
+struct LocalizedContent: Equatable {
+    /// The language of the localized content
+    public let language: ID3FrameContentLanguage
+    /// A short description of the localized content
+    public let contentDescription: String
+    /// The content localized
+    public let content: String
+}

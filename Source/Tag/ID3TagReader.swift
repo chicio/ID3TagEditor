@@ -138,6 +138,23 @@ class ID3TagReader {
         return pictures
     }
 
+    func unsynchronizedLyrics() -> [LocalizedContent] {
+        var unsynchronizedLyrics: [LocalizedContent] = []
+        for language in ID3FrameContentLanguage.allCases {
+            if let unsynchronizedLyric =
+                (id3Tag.frames[.unsynchronizedLyrics(language)] as? ID3FrameWithLocalizedContent) {
+                unsynchronizedLyrics.append(
+                    LocalizedContent(
+                        language: unsynchronizedLyric.language,
+                        contentDescription: unsynchronizedLyric.contentDescription,
+                        content: unsynchronizedLyric.content
+                    )
+                )
+            }
+        }
+        return unsynchronizedLyrics
+    }
+
 //    /// Composer frame name.
 //    case composer
 //    /// Conductor frame name.
