@@ -57,6 +57,11 @@ public struct DateTime: Equatable {
     public var minute: Int?
 }
 
+/**
+ Class that "makes your life easier" when it comes to read data from the ID3 tag.
+ Create an instance of this class by passing to it a `ID3Tag` instance (obtained from the read methods of `ID3TagEditor`).
+ In this way you will now have access to all the data contained in the ID3 tag by using the methods of this class.
+ */
 public class ID3TagContentReader {
     private let id3Tag: ID3Tag
 
