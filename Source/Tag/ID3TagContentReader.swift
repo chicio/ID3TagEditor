@@ -8,42 +8,73 @@
 
 import Foundation
 
+/**
+ A struct to represent a simplified version of the genre frame and its content. Used only as return type inside `ID3TagContentReader`.
+ */
 public struct Genre: Equatable {
+    /// The genre identifier as reported in the ID3 standard.
     public let identifier: ID3Genre?
+    /// The genre description.
     public let description: String?
 }
 
+/**
+ A struct to represent a simplified version frames that contain a position (disc position, record position etc.). Used only as return type inside `ID3TagContentReader`.
+ */
 public struct PartOfTotal: Equatable {
+    /// The position of the element in the total.
     public let position: Int
+    /// The number of elements.
     public let total: Int?
 }
 
+/**
+ A struct to represent a simplified version of same frames that contain day and month data. Used only as return type inside `ID3TagContentReader`.
+ */
 public struct DayMonth: Equatable {
+    /// Day of the month as number.
     public let day: Int?
+    /// Month as number.
     public let month: Int?
 }
 
+/**
+ A struct to represent a simplified version of same frames that contain hour and minute data. Used only as return type inside `ID3TagContentReader`.
+ */
 public struct HourMinute: Equatable {
+    /// Hour as number.
     public let hour: Int?
+    /// Minute as number.
     public let minute: Int?
 }
 
+/**
+ A struct to represent a simplified version of the attached picture frame and its content. Used only as return type inside `ID3TagContentReader`.
+ */
 public struct AttachedPicture: Equatable {
     /// The image bytes as `Data`.
     public let picture: Data
+    /// The image format.
     public let format: ID3PictureFormat
+    /// The image type as reported in the ID3 tag standard.
     public let type: ID3PictureType
 }
 
+/**
+ A struct to represent a simplified version of frames that contain localized content. Used only as return type inside `ID3TagContentReader`.
+ */
 public struct LocalizedContent: Equatable {
-    /// The language of the localized content
+    /// The language of the localized content.
     public let language: ID3FrameContentLanguage
-    /// A short description of the localized content
+    /// A short description of the localized content.
     public let contentDescription: String
-    /// The content localized
+    /// The content localized.
     public let content: String
 }
 
+/**
+ A struct to represent a simplified version of same frames that contain datetime data. Used only as return type inside `ID3TagContentReader`.
+ */
 public struct DateTime: Equatable {
     /// Day value.
     public var day: Int?
@@ -65,58 +96,128 @@ public struct DateTime: Equatable {
 public class ID3TagContentReader {
     private let id3Tag: ID3Tag
 
+    /**
+     Init the ID3TagContentReader.
+     
+     - parameter id3Tag: the tag to be read.
+     */
     public init(id3Tag: ID3Tag) {
         self.id3Tag = id3Tag
     }
 
+    /**
+      Read the title frame content.
+     
+      - returns: the title, or null.
+     */
     public func title() -> String? {
         return (id3Tag.frames[.title] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the album frame content.
+     
+      - returns: the album, or null.
+     */
     public func album() -> String? {
         return (id3Tag.frames[.album] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the album artist frame content.
+     
+      - returns: the album artist, or null.
+     */
     public func albumArtist() -> String? {
         return (id3Tag.frames[.albumArtist] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the artist frame content.
+     
+      - returns: the artist, or null.
+     */
     public func artist() -> String? {
         return (id3Tag.frames[.artist] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the composer frame content.
+     
+      - returns: the composer, or null.
+     */
     public func composer() -> String? {
         return (id3Tag.frames[.composer] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the conductor frame content.
+     
+      - returns: the conductor, or null.
+     */
     public func conductor() -> String? {
         return (id3Tag.frames[.conductor] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the content grouping frame content.
+     
+      - returns: the content grouping, or null.
+     */
     public func contentGrouping() -> String? {
         return (id3Tag.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the copyright frame content.
+     
+      - returns: the copyright, or null.
+     */
     public func copyright() -> String? {
         return (id3Tag.frames[.copyright] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the encoded by frame content.
+     
+      - returns: the encoded by, or null.
+     */
     public func encodedBy() -> String? {
         return (id3Tag.frames[.encodedBy] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the encoder settings frame content.
+     
+      - returns: the encoder settings, or null.
+     */
     public func encoderSettings() -> String? {
         return (id3Tag.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the lyricist frame content.
+     
+      - returns: the lyricist, or null.
+     */
     public func lyricist() -> String? {
         return (id3Tag.frames[.lyricist] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the mix artist frame content.
+     
+      - returns: the mix artist, or null.
+     */
     public func mixArtist() -> String? {
         return (id3Tag.frames[.mixArtist] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the publisher frame content.
+     
+      - returns: the publisher, or null.
+     */
     public func publisher() -> String? {
         return (id3Tag.frames[.publisher] as? ID3FrameWithStringContent)?.content
     }
