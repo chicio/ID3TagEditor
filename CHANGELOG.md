@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.2.1](https://github.com/chicio/ID3TagEditor/releases/tag/4.2.1)
+Release date: 2022-02-11
+
+#### Fixed
+- Fixed #88: ID3 v2.4 non synchsafe size 
+
 ## [4.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.2.0)
 Release date: 2022-02-11
 
