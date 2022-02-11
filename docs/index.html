@@ -16,7 +16,7 @@
     <a title="ID3TagEditor  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.1.3 Docs</a> (100% documented)</p>
+        <p><a href="index.html">ID3TagEditor 4.2.0 Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/chicio/ID3TagEditor"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right">
           <form role="search" action="search.json">
@@ -258,7 +258,7 @@ let package = Package(
 <p>After getting a <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> from one of the read API above, you have two options to read the content:</p>
 
 <ul>
-<li>if you&rsquo;re interested in reading just the content, you can create an instance of <code><a href="Classes/ID3TagContentReader.html">ID3TagContentReader</a></code> by passing to it the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> received from the read API and then access the frames content by using its methods (see the <a href="">doc</a> to have a list of all the methods available).</li>
+<li>if you&rsquo;re interested in reading just the content, you can create an instance of <code><a href="Classes/ID3TagContentReader.html">ID3TagContentReader</a></code> by passing to it the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> received from the read API and then access the frames content by using its methods (see the <a href="https://id3tageditor.fabrizioduroni.it/Classes/ID3TagContentReader.html" title="id3 tag content reader">doc</a> to have a list of all the methods available).</li>
 </ul>
 <pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">PathLoader</span><span class="p">()</span><span class="o">.</span><span class="nf">pathFor</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"example"</span><span class="p">,</span> <span class="nv">fileType</span><span class="p">:</span> <span class="s">"mp3"</span><span class="p">))</span> <span class="p">{</span>
@@ -428,7 +428,7 @@ Refer to the <a href="https://id3.org/Developer%20Information" title="id3 specif
 <hr>
 <h3 id='documentation' class='heading'>Documentation</h3>
 
-<p>You can find the complete API documentation on <a href="https://www.fabrizioduroni.it/ID3TagEditor/" title="ID3TagEditor doc">fabrizioduroni.it</a>.</p>
+<p>You can find the complete API documentation on <a href="https://id3tageditor.fabrizioduroni.it/index.html" title="ID3TagEditor doc">fabrizioduroni.it</a>.</p>
 
 <hr>
 <h3 id='examples' class='heading'>Examples</h3>
