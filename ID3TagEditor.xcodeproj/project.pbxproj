@@ -630,6 +630,10 @@
 		45B9FE34254809AB00A2B987 /* MockStringToBytesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FE33254809AB00A2B987 /* MockStringToBytesAdapter.swift */; };
 		45B9FE35254809AB00A2B987 /* MockStringToBytesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FE33254809AB00A2B987 /* MockStringToBytesAdapter.swift */; };
 		45B9FE36254809AB00A2B987 /* MockStringToBytesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9FE33254809AB00A2B987 /* MockStringToBytesAdapter.swift */; };
+		45BA663A27AA77D200BABABA /* ID3TagContentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA663927AA77D200BABABA /* ID3TagContentReader.swift */; };
+		45BA663B27AA77D200BABABA /* ID3TagContentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA663927AA77D200BABABA /* ID3TagContentReader.swift */; };
+		45BA663C27AA77D200BABABA /* ID3TagContentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA663927AA77D200BABABA /* ID3TagContentReader.swift */; };
+		45BA663D27AA77D200BABABA /* ID3TagContentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA663927AA77D200BABABA /* ID3TagContentReader.swift */; };
 		45D4C3562538D45F00501417 /* ID3TagEditorWriteReadAcceptanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4C3552538D45F00501417 /* ID3TagEditorWriteReadAcceptanceTest.swift */; };
 		45D4C3572538D45F00501417 /* ID3TagEditorWriteReadAcceptanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4C3552538D45F00501417 /* ID3TagEditorWriteReadAcceptanceTest.swift */; };
 		45D4C3582538D45F00501417 /* ID3TagEditorWriteReadAcceptanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4C3552538D45F00501417 /* ID3TagEditorWriteReadAcceptanceTest.swift */; };
@@ -976,6 +980,7 @@
 		45B4336B21DD0D8A00BE0DC5 /* ID3FrameRecordingDayMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingDayMonth.swift; sourceTree = "<group>"; };
 		45B4337521DD308A00BE0DC5 /* ID3FrameRecordingHourMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3FrameRecordingHourMinute.swift; sourceTree = "<group>"; };
 		45B9FE33254809AB00A2B987 /* MockStringToBytesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStringToBytesAdapter.swift; sourceTree = "<group>"; };
+		45BA663927AA77D200BABABA /* ID3TagContentReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID3TagContentReader.swift; sourceTree = "<group>"; };
 		45C286C024C8CBBB00171A88 /* build-ios.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-ios.yml"; sourceTree = "<group>"; };
 		45C286C124C8CBBB00171A88 /* build-watchos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-watchos.yml"; sourceTree = "<group>"; };
 		45C286C224C8CBBB00171A88 /* build-tvos.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "build-tvos.yml"; sourceTree = "<group>"; };
@@ -1219,6 +1224,7 @@
 				45D551C925446431003347B7 /* ID32v2TagBuilder.swift */,
 				45D551D52544649A003347B7 /* ID32v3TagBuilder.swift */,
 				45D551F625446A1B003347B7 /* ID32v4TagBuilder.swift */,
+				45BA663927AA77D200BABABA /* ID3TagContentReader.swift */,
 				455F6F2E254B5B29002FC259 /* ID3TagToStringAdapter.swift */,
 			);
 			path = Tag;
@@ -1996,6 +2002,7 @@
 				457A8D68255F1F1C00C708F4 /* PaddingRemover.swift in Sources */,
 				457A8E8E255F1FBC00C708F4 /* ID3GenreStringAdapter.swift in Sources */,
 				458A0DF223452F910063DC4A /* FrameName.swift in Sources */,
+				45BA663A27AA77D200BABABA /* ID3TagContentReader.swift in Sources */,
 				457A8EEE255F1FBC00C708F4 /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
 				457A8DA5255F1F8E00C708F4 /* ID3FrameHeaderCreator.swift in Sources */,
 				457A8E29255F1F8E00C708F4 /* ID3AttachedPicturesFramesCreator.swift in Sources */,
@@ -2192,6 +2199,7 @@
 				457A8D69255F1F1C00C708F4 /* PaddingRemover.swift in Sources */,
 				457A8E8F255F1FBC00C708F4 /* ID3GenreStringAdapter.swift in Sources */,
 				458A0DF323452FB80063DC4A /* FrameName.swift in Sources */,
+				45BA663B27AA77D200BABABA /* ID3TagContentReader.swift in Sources */,
 				457A8EEF255F1FBC00C708F4 /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
 				457A8DA6255F1F8E00C708F4 /* ID3FrameHeaderCreator.swift in Sources */,
 				457A8E2A255F1F8E00C708F4 /* ID3AttachedPicturesFramesCreator.swift in Sources */,
@@ -2388,6 +2396,7 @@
 				457A8E90255F1FBC00C708F4 /* ID3GenreStringAdapter.swift in Sources */,
 				457A8D66255F1F1C00C708F4 /* PaddingRemoverUsingTrimming.swift in Sources */,
 				457A8EF0255F1FBC00C708F4 /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
+				45BA663C27AA77D200BABABA /* ID3TagContentReader.swift in Sources */,
 				457A8DA7255F1F8E00C708F4 /* ID3FrameHeaderCreator.swift in Sources */,
 				457A8E2B255F1F8E00C708F4 /* ID3AttachedPicturesFramesCreator.swift in Sources */,
 				457A8DBF255F1F8E00C708F4 /* ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.swift in Sources */,
@@ -2584,6 +2593,7 @@
 				457A8E91255F1FBC00C708F4 /* ID3GenreStringAdapter.swift in Sources */,
 				457A8D67255F1F1C00C708F4 /* PaddingRemoverUsingTrimming.swift in Sources */,
 				457A8EF1255F1FBC00C708F4 /* ID3FrameStringContentParsingOperationFactory.swift in Sources */,
+				45BA663D27AA77D200BABABA /* ID3TagContentReader.swift in Sources */,
 				457A8DA8255F1F8E00C708F4 /* ID3FrameHeaderCreator.swift in Sources */,
 				457A8E2C255F1F8E00C708F4 /* ID3AttachedPicturesFramesCreator.swift in Sources */,
 				457A8DC0255F1F8E00C708F4 /* ID3FrameFromStringContentCreatorWithUTF16EncodingFactory.swift in Sources */,
@@ -3070,7 +3080,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = EHWT28Q5KK;
+				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-tvOS-tests";
@@ -3089,7 +3099,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = EHWT28Q5KK;
+				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.ID3TagEditor-tvOS-tests";

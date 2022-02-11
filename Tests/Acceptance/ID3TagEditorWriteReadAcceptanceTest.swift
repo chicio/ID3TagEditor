@@ -9,6 +9,7 @@
 // swiftlint:disable type_body_length
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
+// swiftlint:disable file_length
 
 import XCTest
 @testable import ID3TagEditor
@@ -73,6 +74,7 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.composer] as? ID3FrameWithStringContent)?.content, "composer V2")
         XCTAssertEqual((id3TagWritten?.frames[.conductor] as? ID3FrameWithStringContent)?.content, "conductor V2")
         XCTAssertEqual((id3TagWritten?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V2")
+        XCTAssertEqual((id3TagWritten?.frames[.copyright] as? ID3FrameWithStringContent)?.content, "Copyright V2")
         XCTAssertEqual((id3TagWritten?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V2")
         XCTAssertEqual((id3TagWritten?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V2")
         XCTAssertEqual((id3TagWritten?.frames[.lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V2")
@@ -112,6 +114,53 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "CD")
         XCTAssertEqual((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content, "v2 eng comment")
+
+        let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
+        XCTAssertEqual(tagReader.title(), "title V2")
+        XCTAssertEqual(tagReader.album(), "album V2")
+        XCTAssertEqual(tagReader.albumArtist(), "album artist V2")
+        XCTAssertEqual(tagReader.artist(), "artist V2")
+        XCTAssertEqual(tagReader.composer(), "composer V2")
+        XCTAssertEqual(tagReader.conductor(), "conductor V2")
+        XCTAssertEqual(tagReader.contentGrouping(), "ContentGrouping V2")
+        XCTAssertEqual(tagReader.copyright(), "Copyright V2")
+        XCTAssertEqual(tagReader.encodedBy(), "EncodedBy V2")
+        XCTAssertEqual(tagReader.encoderSettings(), "EncoderSettings V2")
+        XCTAssertEqual(tagReader.lyricist(), "Lyricist V2")
+        XCTAssertEqual(tagReader.mixArtist(), "MixArtist V2")
+        XCTAssertEqual(tagReader.publisher(), "Publisher V2")
+        XCTAssertEqual(tagReader.subtitle(), "Subtitle V2")
+        XCTAssertEqual(tagReader.beatsPerMinute(), 50)
+        XCTAssertEqual(tagReader.originalFilename(), "filenameV2.mp3")
+        XCTAssertEqual(tagReader.lengthInMilliseconds(), 9000)
+        XCTAssertEqual(tagReader.sizeInBytes(), 1500)
+        XCTAssertEqual(tagReader.genre(), Genre(identifier: .metal, description: "Metalcore"))
+        XCTAssertEqual(tagReader.discPosition(), PartOfTotal(position: 1, total: 3))
+        XCTAssertEqual(tagReader.trackPosition(), PartOfTotal(position: 2, total: 9))
+        XCTAssertEqual(tagReader.recordingDayMonth(), DayMonth(day: 5, month: 8))
+        XCTAssertEqual(tagReader.recordingYear(), 2020)
+        XCTAssertEqual(tagReader.recordingHourMinute(), HourMinute(hour: 15, minute: 39))
+        XCTAssertEqual(
+            tagReader.attachedPictures(),
+            [
+                AttachedPicture(picture: artFront, format: .jpeg, type: .frontCover),
+                AttachedPicture(picture: artBack, format: .jpeg, type: .backCover)
+            ]
+        )
+        XCTAssertEqual(
+            tagReader.unsynchronizedLyrics(),
+            [
+                LocalizedContent(language: .eng, contentDescription: "CD", content: "v2 eng unsync lyrics"),
+                LocalizedContent(language: .ita, contentDescription: "CD", content: "v2 ita unsync lyrics")
+            ]
+        )
+        XCTAssertEqual(
+            tagReader.comments(),
+            [
+                LocalizedContent(language: .eng, contentDescription: "CD", content: "v2 eng comment"),
+                LocalizedContent(language: .ita, contentDescription: "CD", content: "v2 ita comment")
+            ]
+        )
     }
 
     func testReadWritev3() throws {
@@ -224,6 +273,61 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "PodcastDescription V3")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V3")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V3")
+
+        let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
+        XCTAssertEqual(tagReader.title(), "title V3")
+        XCTAssertEqual(tagReader.album(), "album V3")
+        XCTAssertEqual(tagReader.albumArtist(), "album artist V3")
+        XCTAssertEqual(tagReader.artist(), "artist V3")
+        XCTAssertEqual(tagReader.composer(), "composer V3")
+        XCTAssertEqual(tagReader.conductor(), "conductor V3")
+        XCTAssertEqual(tagReader.contentGrouping(), "ContentGrouping V3")
+        XCTAssertEqual(tagReader.copyright(), "Copyright V3")
+        XCTAssertEqual(tagReader.encodedBy(), "EncodedBy V3")
+        XCTAssertEqual(tagReader.encoderSettings(), "EncoderSettings V3")
+        XCTAssertEqual(tagReader.fileOwner(), "FileOwner V3")
+        XCTAssertEqual(tagReader.lyricist(), "Lyricist V3")
+        XCTAssertEqual(tagReader.mixArtist(), "MixArtist V3")
+        XCTAssertEqual(tagReader.publisher(), "Publisher V3")
+        XCTAssertEqual(tagReader.subtitle(), "Subtitle V3")
+        XCTAssertEqual(tagReader.beatsPerMinute(), 50)
+        XCTAssertEqual(tagReader.originalFilename(), "filenameV3.mp3")
+        XCTAssertEqual(tagReader.lengthInMilliseconds(), 9000)
+        XCTAssertEqual(tagReader.sizeInBytes(), 1500)
+        XCTAssertEqual(tagReader.genre(), Genre(identifier: .metal, description: "Metalcore"))
+        XCTAssertEqual(tagReader.discPosition(), PartOfTotal(position: 1, total: 3))
+        XCTAssertEqual(tagReader.trackPosition(), PartOfTotal(position: 2, total: 9))
+        XCTAssertEqual(tagReader.recordingDayMonth(), DayMonth(day: 5, month: 8))
+        XCTAssertEqual(tagReader.recordingYear(), 2020)
+        XCTAssertEqual(tagReader.recordingHourMinute(), HourMinute(hour: 15, minute: 39))
+        XCTAssertEqual(
+            tagReader.attachedPictures(),
+            [
+                AttachedPicture(picture: artFront, format: .jpeg, type: .frontCover),
+                AttachedPicture(picture: artBack, format: .jpeg, type: .backCover)
+            ]
+        )
+        XCTAssertEqual(
+            tagReader.unsynchronizedLyrics(),
+            [
+                LocalizedContent(language: .eng, contentDescription: "CD", content: "v3 eng unsync lyrics"),
+                LocalizedContent(language: .ita, contentDescription: "CD", content: "v3 ita unsync lyrics")
+            ]
+        )
+        XCTAssertEqual(
+            tagReader.comments(),
+            [
+                LocalizedContent(language: .eng, contentDescription: "CD", content: "v3 eng comment"),
+                LocalizedContent(language: .ita, contentDescription: "CD", content: "v3 ita comment")
+            ]
+        )
+        XCTAssertEqual(tagReader.iTunesMovementName(), "MovementName V3")
+        XCTAssertEqual(tagReader.iTunesMovementIndex(), 6)
+        XCTAssertEqual(tagReader.iTunesMovementCount(), 13)
+        XCTAssertEqual(tagReader.iTunesPodcastCategory(), "PodcastCategory V3")
+        XCTAssertEqual(tagReader.iTunesPodcastDescription(), "PodcastDescription V3")
+        XCTAssertEqual(tagReader.iTunesPodcastID(), "PodcastID V3")
+        XCTAssertEqual(tagReader.iTunesPodcastKeywords(), "PodcastKeywords V3")
     }
 
     func testReadWritev4() throws {
@@ -332,6 +436,67 @@ class ID3TagEditorWriteReadAcceptanceTest: XCTestCase {
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content, "PodcastDescription V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V4")
         XCTAssertEqual((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content, "PodcastKeywords V4")
+
+        let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
+        XCTAssertEqual(tagReader.title(), "title V4")
+        XCTAssertEqual(tagReader.album(), "album V4")
+        XCTAssertEqual(tagReader.albumArtist(), "album artist V4")
+        XCTAssertEqual(tagReader.artist(), "artist V4")
+        XCTAssertEqual(tagReader.composer(), "composer V4")
+        XCTAssertEqual(tagReader.conductor(), "conductor V4")
+        XCTAssertEqual(tagReader.contentGrouping(), "ContentGrouping V4")
+        XCTAssertEqual(tagReader.copyright(), "Copyright V4")
+        XCTAssertEqual(tagReader.encodedBy(), "EncodedBy V4")
+        XCTAssertEqual(tagReader.encoderSettings(), "EncoderSettings V4")
+        XCTAssertEqual(tagReader.fileOwner(), "FileOwner V4")
+        XCTAssertEqual(tagReader.lyricist(), "Lyricist V4")
+        XCTAssertEqual(tagReader.mixArtist(), "MixArtist V4")
+        XCTAssertEqual(tagReader.publisher(), "Publisher V4")
+        XCTAssertEqual(tagReader.subtitle(), "Subtitle V4")
+        XCTAssertEqual(tagReader.beatsPerMinute(), 50)
+        XCTAssertEqual(tagReader.originalFilename(), "filenameV4.mp3")
+        XCTAssertEqual(tagReader.lengthInMilliseconds(), 9000)
+        XCTAssertEqual(tagReader.genre(), Genre(identifier: .metal, description: "Metalcore"))
+        XCTAssertEqual(tagReader.discPosition(), PartOfTotal(position: 1, total: 3))
+        XCTAssertEqual(tagReader.trackPosition(), PartOfTotal(position: 2, total: 9))
+        XCTAssertEqual(
+            tagReader.recordingDateTime(),
+            DateTime(
+                day: 15,
+                month: 10,
+                year: 2020,
+                hour: 21,
+                minute: 50
+            )
+        )
+        XCTAssertEqual(
+            tagReader.attachedPictures(),
+            [
+                AttachedPicture(picture: artFront, format: .jpeg, type: .frontCover),
+                AttachedPicture(picture: artBack, format: .jpeg, type: .backCover)
+            ]
+        )
+        XCTAssertEqual(
+            tagReader.unsynchronizedLyrics(),
+            [
+                LocalizedContent(language: .eng, contentDescription: "CD", content: "V4 eng unsync lyrics"),
+                LocalizedContent(language: .ita, contentDescription: "CD", content: "V4 ita unsync lyrics")
+            ]
+        )
+        XCTAssertEqual(
+            tagReader.comments(),
+            [
+                LocalizedContent(language: .eng, contentDescription: "CD", content: "v4 eng comment"),
+                LocalizedContent(language: .ita, contentDescription: "CD", content: "v4 ita comment")
+            ]
+        )
+        XCTAssertEqual(tagReader.iTunesMovementName(), "MovementName V4")
+        XCTAssertEqual(tagReader.iTunesMovementIndex(), 6)
+        XCTAssertEqual(tagReader.iTunesMovementCount(), 13)
+        XCTAssertEqual(tagReader.iTunesPodcastCategory(), "PodcastCategory V4")
+        XCTAssertEqual(tagReader.iTunesPodcastDescription(), "PodcastDescription V4")
+        XCTAssertEqual(tagReader.iTunesPodcastID(), "PodcastID V4")
+        XCTAssertEqual(tagReader.iTunesPodcastKeywords(), "PodcastKeywords V4")
     }
 
     static let allTests = [
