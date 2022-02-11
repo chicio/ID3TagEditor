@@ -8,8 +8,11 @@
 
 import Foundation
 
+// swiftlint:disable file_length
+
 /**
- A struct to represent a simplified version of the genre frame and its content. Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version of the genre frame and its content.
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct Genre: Equatable {
     /// The genre identifier as reported in the ID3 standard.
@@ -19,7 +22,8 @@ public struct Genre: Equatable {
 }
 
 /**
- A struct to represent a simplified version frames that contain a position (disc position, record position etc.). Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version frames that contain a position (disc position, record position etc.).
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct PartOfTotal: Equatable {
     /// The position of the element in the total.
@@ -29,7 +33,8 @@ public struct PartOfTotal: Equatable {
 }
 
 /**
- A struct to represent a simplified version of same frames that contain day and month data. Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version of same frames that contain day and month data.
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct DayMonth: Equatable {
     /// Day of the month as number.
@@ -39,7 +44,8 @@ public struct DayMonth: Equatable {
 }
 
 /**
- A struct to represent a simplified version of same frames that contain hour and minute data. Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version of same frames that contain hour and minute data.
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct HourMinute: Equatable {
     /// Hour as number.
@@ -49,7 +55,8 @@ public struct HourMinute: Equatable {
 }
 
 /**
- A struct to represent a simplified version of the attached picture frame and its content. Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version of the attached picture frame and its content.
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct AttachedPicture: Equatable {
     /// The image bytes as `Data`.
@@ -61,7 +68,8 @@ public struct AttachedPicture: Equatable {
 }
 
 /**
- A struct to represent a simplified version of frames that contain localized content. Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version of frames that contain localized content.
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct LocalizedContent: Equatable {
     /// The language of the localized content.
@@ -73,7 +81,8 @@ public struct LocalizedContent: Equatable {
 }
 
 /**
- A struct to represent a simplified version of same frames that contain datetime data. Used only as return type inside `ID3TagContentReader`.
+ A struct to represent a simplified version of same frames that contain datetime data.
+ Used only as return type inside `ID3TagContentReader`.
  */
 public struct DateTime: Equatable {
     /// Day value.
@@ -90,7 +99,8 @@ public struct DateTime: Equatable {
 
 /**
  Class that "makes your life easier" when it comes to read data from the ID3 tag.
- Create an instance of this class by passing to it a `ID3Tag` instance (obtained from the read methods of `ID3TagEditor`).
+ Create an instance of this class by passing to it a `ID3Tag` instance
+ (obtained from the read methods of `ID3TagEditor`).
  In this way you will now have access to all the data contained in the ID3 tag by using the methods of this class.
  */
 public class ID3TagContentReader {
