@@ -222,26 +222,56 @@ public class ID3TagContentReader {
         return (id3Tag.frames[.publisher] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the subtitle frame content.
+     
+      - returns: the subtitle, or null.
+     */
     public func subtitle() -> String? {
         return (id3Tag.frames[.subtitle] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the beats per minute frame content.
+     
+      - returns: the beats per minute, or null.
+     */
     public func beatsPerMinute() -> Int? {
         return (id3Tag.frames[.beatsPerMinute] as? ID3FrameWithIntegerContent)?.value
     }
 
+    /**
+      Read the original filename frame content.
+     
+      - returns: the original filename, or null.
+     */
     public func originalFilename() -> String? {
         return (id3Tag.frames[.originalFilename] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the lenght in milliseconds frame content.
+     
+      - returns: the lenght in milliseconds, or null.
+     */
     public func lengthInMilliseconds() -> Int? {
         return (id3Tag.frames[.lengthInMilliseconds] as? ID3FrameWithIntegerContent)?.value
     }
 
+    /**
+      Read the size in bytes frame content.
+     
+      - returns: the size in bytes, or null.
+     */
     public func sizeInBytes() -> Int? {
         return (id3Tag.frames[.sizeInBytes] as? ID3FrameWithIntegerContent)?.value
     }
 
+    /**
+      Read the genre frame content.
+     
+      - returns: the `Genre`, or null.
+     */
     public func genre() -> Genre? {
         guard let genreFrame = (id3Tag.frames[.genre] as? ID3FrameGenre) else {
             return nil
@@ -250,6 +280,11 @@ public class ID3TagContentReader {
         return Genre(identifier: genreFrame.identifier, description: genreFrame.description)
     }
 
+    /**
+      Read the disc position frame content.
+     
+      - returns: the disc position as `PartOfTotal`, or null.
+     */
     public func discPosition() -> PartOfTotal? {
         guard let discPositionFrame = (id3Tag.frames[.discPosition] as? ID3FramePartOfTotal) else {
             return nil
@@ -258,6 +293,11 @@ public class ID3TagContentReader {
         return PartOfTotal(position: discPositionFrame.part, total: discPositionFrame.total)
     }
 
+    /**
+      Read the track position frame content.
+     
+      - returns: the track position as `PartOfTotal`, or null.
+     */
     public func trackPosition() -> PartOfTotal? {
         guard let trackPositionFrame = (id3Tag.frames[.trackPosition] as? ID3FramePartOfTotal) else {
             return nil
@@ -266,6 +306,11 @@ public class ID3TagContentReader {
         return PartOfTotal(position: trackPositionFrame.part, total: trackPositionFrame.total)
     }
 
+    /**
+      Read the recording day month frame content.
+     
+      - returns: the recording day month as `DayMonth`, or null.
+     */
     public func recordingDayMonth() -> DayMonth? {
         guard let recordingDayMonthFrame = (id3Tag.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth) else {
             return nil
@@ -274,10 +319,20 @@ public class ID3TagContentReader {
         return DayMonth(day: recordingDayMonthFrame.day, month: recordingDayMonthFrame.month)
     }
 
+    /**
+      Read the recording year frame content.
+     
+      - returns: the recording year, or null.
+     */
     public func recordingYear() -> Int? {
         return (id3Tag.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value
     }
 
+    /**
+      Read the recording hour minute frame content.
+     
+      - returns: the recording hour minute as `HourMinute`, or null.
+     */
     public func recordingHourMinute() -> HourMinute? {
         guard let recordingHourMinuteFrame
                 = (id3Tag.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute) else {
@@ -287,6 +342,11 @@ public class ID3TagContentReader {
         return HourMinute(hour: recordingHourMinuteFrame.hour, minute: recordingHourMinuteFrame.minute)
     }
 
+    /**
+      Read the recording date time frame content.
+     
+      - returns: the recording date time as `DateTime`, or null.
+     */
     public func recordingDateTime() -> DateTime? {
         guard let recordingDateTime
                 = (id3Tag.frames[.recordingDateTime] as? ID3FrameRecordingDateTime) else {
@@ -302,6 +362,11 @@ public class ID3TagContentReader {
         )
     }
 
+    /**
+      Read the attached pictues frames content.
+     
+      - returns: the attached picture list as `[AttachedPicture]`, or null.
+     */
     public func attachedPictures() -> [AttachedPicture] {
         var pictures: [AttachedPicture] = []
         for type in ID3PictureType.allCases {
@@ -312,46 +377,96 @@ public class ID3TagContentReader {
         return pictures
     }
 
+    /**
+      Read the unsynchronized lyrics frames content.
+     
+      - returns: the unsynchronized lyric  list as `[LocalizedContent]`, or null.
+     */
     public func unsynchronizedLyrics() -> [LocalizedContent] {
         return localizedContent { language in
             id3Tag.frames[.unsynchronizedLyrics(language)] as? ID3FrameWithLocalizedContent
         }
     }
 
+    /**
+      Read the comment frames content.
+     
+      - returns: the comment  list as `[LocalizedContent]`, or null.
+     */
     public func comments() -> [LocalizedContent] {
         return localizedContent { language in
             id3Tag.frames[.comment(language)] as? ID3FrameWithLocalizedContent
         }
     }
 
+    /**
+      Read the file owner frame content.
+     
+      - returns: the file owner minute as `String`, or null.
+     */
     public func fileOwner() -> String? {
         return (id3Tag.frames[.fileOwner] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the itunes movement name frame content.
+     
+      - returns: the itunes movement name as `String`, or null.
+     */
     public func iTunesMovementName() -> String? {
         return (id3Tag.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the itunes movement index frame content.
+     
+      - returns: the itunes movement index as `String`, or null.
+     */
     public func iTunesMovementIndex() -> Int? {
         return (id3Tag.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value
     }
 
+    /**
+      Read the itunes movement count frame content.
+     
+      - returns: the itunes movement count as `String`, or null.
+     */
     public func iTunesMovementCount() -> Int? {
         return (id3Tag.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value
     }
 
+    /**
+      Read the itunes podcast category frame content.
+     
+      - returns: the itunes podcast category as `String`, or null.
+     */
     public func iTunesPodcastCategory() -> String? {
         return (id3Tag.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the itunes podcast description frame content.
+     
+      - returns: the itunes podcast description as `String`, or null.
+     */
     public func iTunesPodcastDescription() -> String? {
         return (id3Tag.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the itunes podcast id frame content.
+     
+      - returns: the itunes podcast id as `String`, or null.
+     */
     public func iTunesPodcastID() -> String? {
         return (id3Tag.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content
     }
 
+    /**
+      Read the itunes podcast keywords frame content.
+     
+      - returns: the itunes podcast keywords as `String`, or null.
+     */
     public func iTunesPodcastKeywords() -> String? {
         return (id3Tag.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content
     }
