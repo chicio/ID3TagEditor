@@ -32,6 +32,13 @@ class ViewController: UIViewController {
             if let attachedPictureFrame = id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
                     attachedPictureImage.image = UIImage(data: attachedPictureFrame.picture)
             }
+
+            if let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3")) {
+                let tagContentReader = ID3TagContentReader(id3Tag: id3Tag)
+                print("Tag content reader")
+                print(tagContentReader.title() ?? "")
+                print(tagContentReader.artist() ?? "")
+            }
         } catch {
             print(error)
         }

@@ -88,7 +88,7 @@ ID3TagEditor is compatible with the following platforms:
 * Apple TV
 * Linux (on distros where Swift is available)
 
-ID3TagEditor let you read and write ID3Tag to your mp3 files.
+ID3TagEditor gives you the ability to read and write ID3Tag to your mp3 files.
 
 #### Read
 
@@ -96,7 +96,26 @@ To read the ID3 tag of an mp3 file you can choose between two API contained in t
 * `public func read(from path: String) throws -> ID3Tag?`
 * `public func read(mp3: Data) throws -> ID3Tag?`
 
-Below you can find a sample code of the API usage.
+After getting a `ID3Tag` from one of the read API above, you have two options to read the content:
+
+
+* if you're interested in reading just the content, you can create an instance of `ID3TagContentReader` by passing to it the `ID3Tag` received from the read API and then access the frames content by using its methods (see the [doc]() to have a list of all the methods available).
+
+```swift
+do {
+    if let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3")) {
+        let tagContentReader = ID3TagContentReader(id3Tag: id3Tag)
+        print(tagContentReader.title() ?? "")
+        print(tagContentReader.artist() ?? "")
+        // ...read other stuff...
+    }
+} catch  {
+    print(error)
+}  
+```
+
+* if you need full frame data, you can access to the `frames` property of `ID3Tag` and start to cast/analyze the various frames received.
+ In this way you will have access to all the data contained in the frame, including its content and its features like the size and the ID3 frame identifier.
 
 ```swift
 do {
@@ -122,16 +141,18 @@ do {
 }  
 ```
 
+ #### Write
+
 To write a new ID3 tag into an mp3 file you can choose between two API contained in the `ID3TagEditor` class:
 
 * `public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws`
 * `public func write(tag: ID3Tag, mp3: Data) throws -> Data`
 
-The only way to create a valid `ID3Tag` you can use one of the tag builder available:
+The only way to create a valid `ID3Tag` is by using of the tag builder available:
 
 * `ID32v2TagBuilder`, a builder useful to create ID3 tag version 2.2
 * `ID32v3TagBuilder`, a builder useful to create ID3 tag version 2.3
-* `ID32v4TagBuilder`, a builder useful to create ID3 tag version 2.3
+* `ID32v4TagBuilder`, a builder useful to create ID3 tag version 2.4
 
 You can't create an instance of  `ID3Tag`  without one of the builders above.
 Below you can find a sample code that will write an ID3Tag version 3 with all the frames supported by ID3TagEditor to an mp3 file.
@@ -188,7 +209,9 @@ do {
 }    
 ```  
 
-Below you can find the list of the official ID3 frames supported by ID3TagEditor (see the enum `FrameName` and the builders shown above):
+#### Supported frames
+
+Below you can find the list of the official ID3 frames supported by ID3TagEditor:
 
 * `.title`
 * `.album`
