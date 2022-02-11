@@ -17,7 +17,11 @@ class ID3FrameSizeParser: FrameSizeParser {
     }
 
     func parse(mp3: NSData, framePosition: Int, version: ID3Version) -> Int {
-        return frameContentSizeParser.parse(mp3: mp3, framePosition: framePosition, version: version) +
-                id3FrameConfiguration.headerSizeFor(version: version)
+        return frameContentSizeParser
+            .parse(
+                mp3: mp3,
+                framePosition: framePosition,
+                version: version
+            ) + id3FrameConfiguration.headerSizeFor(version: version)
     }
 }

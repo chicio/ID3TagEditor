@@ -21,12 +21,22 @@ class ID3FramesParser {
     func parse(mp3: NSData, id3Tag: ID3Tag) {
         var currentFramePosition = id3TagConfiguration.headerSize()
         while currentFramePosition < id3Tag.properties.size {
-            let frameSize = frameSizeParser.parse(mp3: mp3,
-                                                  framePosition: currentFramePosition,
-                                                  version: id3Tag.properties.version)
-            let frame = mp3.subdata(with: NSRange(location: currentFramePosition, length: frameSize))
-            id3FrameParser.parse(frame: frame, frameSize: frameSize, id3Tag: id3Tag)
-            currentFramePosition += frame.count
+            let frameSize = frameSizeParser.parse(
+                mp3: mp3,
+                framePosition: currentFramePosition,
+                version: id3Tag.properties.version
+            )
+            /*
+                Fallback added in order to avoid crashing with non standard tag that doesn't support synchsafe size.
+                See https://github.com/chicio/ID3TagEditor/issues/88
+             */
+            if frameSize < id3Tag.properties.size {
+                let frame = mp3.subdata(with: NSRange(location: currentFramePosition, length: frameSize))
+                id3FrameParser.parse(frame: frame, frameSize: frameSize, id3Tag: id3Tag)
+                currentFramePosition += frame.count
+            } else {
+                currentFramePosition = Int(id3Tag.properties.size)
+            }
         }
     }
 }
