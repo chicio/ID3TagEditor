@@ -1,6 +1,13 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.2.0)
+Release date: 2022-02-11
+
+#### Added
+- Added `ID3TagContentReader` to make read content easier 
+
+
 ## [4.1.3](https://github.com/chicio/ID3TagEditor/releases/tag/4.1.3)
 Release date: 2021-10-06
 
