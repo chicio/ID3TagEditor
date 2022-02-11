@@ -99,7 +99,7 @@ To read the ID3 tag of an mp3 file you can choose between two API contained in t
 After getting a `ID3Tag` from one of the read API above, you have two options to read the content:
 
 
-* if you're interested in reading just the content, you can create an instance of `ID3TagContentReader` by passing to it the `ID3Tag` received from the read API and then access the frames content by using its methods (see the [doc]() to have a list of all the methods available).
+* if you're interested in reading just the content, you can create an instance of `ID3TagContentReader` by passing to it the `ID3Tag` received from the read API and then access the frames content by using its methods (see the [doc](https://id3tageditor.fabrizioduroni.it/Classes/ID3TagContentReader.html "id3 tag content reader") to have a list of all the methods available).
 
 ```swift
 do {
@@ -263,7 +263,7 @@ Refer to the [id3 specification](https://id3.org/Developer%20Information "id3 sp
 
 ### Documentation
 
-You can find the complete API documentation on [fabrizioduroni.it](https://www.fabrizioduroni.it/ID3TagEditor/ "ID3TagEditor doc").
+You can find the complete API documentation on [fabrizioduroni.it](https://id3tageditor.fabrizioduroni.it/index.html "ID3TagEditor doc").
 
 ***
 
