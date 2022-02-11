@@ -81,6 +81,9 @@
                 <a href="Classes/ID3Tag.html">ID3Tag</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/ID3TagContentReader.html">ID3TagContentReader</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/ID3TagEditor.html">ID3TagEditor</a>
               </li>
             </ul>
@@ -115,7 +118,28 @@
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Structs/AttachedPicture.html">AttachedPicture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DateTime.html">DateTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DayMonth.html">DayMonth</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Genre.html">Genre</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HourMinute.html">HourMinute</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/ID3TagProperties.html">ID3TagProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LocalizedContent.html">LocalizedContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PartOfTotal.html">PartOfTotal</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/RecordingDate.html">RecordingDate</a>
@@ -221,7 +245,7 @@ let package = Package(
 <li>Linux (on distros where Swift is available)</li>
 </ul>
 
-<p>ID3TagEditor let you read and write ID3Tag to your mp3 files.</p>
+<p>ID3TagEditor gives you the ability to read and write ID3Tag to your mp3 files.</p>
 <h4 id='read' class='heading'>Read</h4>
 
 <p>To read the ID3 tag of an mp3 file you can choose between two API contained in the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class:</p>
@@ -231,7 +255,27 @@ let package = Package(
 <li><code>public func read(mp3: Data) throws -&gt; ID3Tag?</code></li>
 </ul>
 
-<p>Below you can find a sample code of the API usage.</p>
+<p>After getting a <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> from one of the read API above, you have two options to read the content:</p>
+
+<ul>
+<li>if you&rsquo;re interested in reading just the content, you can create an instance of <code><a href="Classes/ID3TagContentReader.html">ID3TagContentReader</a></code> by passing to it the <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> received from the read API and then access the frames content by using its methods (see the <a href="">doc</a> to have a list of all the methods available).</li>
+</ul>
+<pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">PathLoader</span><span class="p">()</span><span class="o">.</span><span class="nf">pathFor</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"example"</span><span class="p">,</span> <span class="nv">fileType</span><span class="p">:</span> <span class="s">"mp3"</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">tagContentReader</span> <span class="o">=</span> <span class="kt">ID3TagContentReader</span><span class="p">(</span><span class="nv">id3Tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">tagContentReader</span><span class="o">.</span><span class="nf">title</span><span class="p">()</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">tagContentReader</span><span class="o">.</span><span class="nf">artist</span><span class="p">()</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="c1">// ...read other stuff...</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">catch</span>  <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="p">}</span>  
+</code></pre>
+
+<ul>
+<li>if you need full frame data, you can access to the <code>frames</code> property of <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> and start to cast/analyze the various frames received.
+In this way you will have access to all the data contained in the frame, including its content and its features like the size and the ID3 frame identifier.</li>
+</ul>
 <pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">id3TagEditor</span> <span class="o">=</span> <span class="kt">ID3TagEditor</span><span class="p">()</span>
 
@@ -255,6 +299,8 @@ let package = Package(
 <span class="p">}</span>  
 </code></pre>
 
+<p>#### Write</p>
+
 <p>To write a new ID3 tag into an mp3 file you can choose between two API contained in the <code><a href="Classes/ID3TagEditor.html">ID3TagEditor</a></code> class:</p>
 
 <ul>
@@ -262,12 +308,12 @@ let package = Package(
 <li><code>public func write(tag: ID3Tag, mp3: Data) throws -&gt; Data</code></li>
 </ul>
 
-<p>The only way to create a valid <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> you can use one of the tag builder available:</p>
+<p>The only way to create a valid <code><a href="Classes/ID3Tag.html">ID3Tag</a></code> is by using of the tag builder available:</p>
 
 <ul>
 <li><code><a href="Classes/ID32v2TagBuilder.html">ID32v2TagBuilder</a></code>, a builder useful to create ID3 tag version 2.2</li>
 <li><code><a href="Classes/ID32v3TagBuilder.html">ID32v3TagBuilder</a></code>, a builder useful to create ID3 tag version 2.3</li>
-<li><code><a href="Classes/ID32v4TagBuilder.html">ID32v4TagBuilder</a></code>, a builder useful to create ID3 tag version 2.3</li>
+<li><code><a href="Classes/ID32v4TagBuilder.html">ID32v4TagBuilder</a></code>, a builder useful to create ID3 tag version 2.4</li>
 </ul>
 
 <p>You can&rsquo;t create an instance of  <code><a href="Classes/ID3Tag.html">ID3Tag</a></code>  without one of the builders above.
@@ -322,8 +368,9 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 <span class="p">}</span>    
 </code></pre>
+<h4 id='supported-frames' class='heading'>Supported frames</h4>
 
-<p>Below you can find the list of the official ID3 frames supported by ID3TagEditor (see the enum <code><a href="Enums/FrameName.html">FrameName</a></code> and the builders shown above):</p>
+<p>Below you can find the list of the official ID3 frames supported by ID3TagEditor:</p>
 
 <ul>
 <li><code>.title</code></li>
