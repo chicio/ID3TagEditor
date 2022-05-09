@@ -183,7 +183,7 @@ do {
         .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
         .trackPosition(frame: ID3FramePartOfTotal(part: 2, total: 9))
         .recordingDayMonth(frame: ID3FrameRecordingDayMonth(day: 5, month: 8))
-        .recordingYear(frame: ID3FrameRecordingYear(year: 2020))
+        .recordingYear(frame: ID3FrameWithIntegerContent(year: 2020))
         .recordingHourMinute(frame: ID3FrameRecordingHourMinute(hour: 15, minute: 39))
         .attachedPicture(pictureType: .frontCover, frame: ID3FrameAttachedPicture(picture: <picture as Data object>, type: .frontCover, format: .jpeg))
         .attachedPicture(pictureType: .backCover, frame: ID3FrameAttachedPicture(picture: <picture as Data object>, type: .backCover, format: .jpeg))
