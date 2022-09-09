@@ -16,19 +16,19 @@
     <a title="ID3TagEditor  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.2.1 Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/chicio/ID3TagEditor"><img src="img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right">
+        <p><a href="index.html">ID3TagEditor 4.3.0 Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/chicio/ID3TagEditor"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html">ID3TagEditor Reference</a>
-        <img id="carat" src="img/carat.png" />
+        <img id="carat" src="img/carat.png" alt=""/>
         ID3TagEditor  Reference
       </p>
     </div>
@@ -343,7 +343,7 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
         <span class="o">.</span><span class="nf">discPosition</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FramePartOfTotal</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">total</span><span class="p">:</span> <span class="mi">3</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">trackPosition</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FramePartOfTotal</span><span class="p">(</span><span class="nv">part</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nv">total</span><span class="p">:</span> <span class="mi">9</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">recordingDayMonth</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameRecordingDayMonth</span><span class="p">(</span><span class="nv">day</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="mi">8</span><span class="p">))</span>
-        <span class="o">.</span><span class="nf">recordingYear</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameRecordingYear</span><span class="p">(</span><span class="nv">year</span><span class="p">:</span> <span class="mi">2020</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">recordingYear</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithIntegerContent</span><span class="p">(</span><span class="nv">year</span><span class="p">:</span> <span class="mi">2020</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">recordingHourMinute</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameRecordingHourMinute</span><span class="p">(</span><span class="nv">hour</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nv">minute</span><span class="p">:</span> <span class="mi">39</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">attachedPicture</span><span class="p">(</span><span class="nv">pictureType</span><span class="p">:</span> <span class="o">.</span><span class="n">frontCover</span><span class="p">,</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameAttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">picture</span> <span class="k">as</span> <span class="kt">Data</span> <span class="n">object</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="n">frontCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="n">jpeg</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">attachedPicture</span><span class="p">(</span><span class="nv">pictureType</span><span class="p">:</span> <span class="o">.</span><span class="n">backCover</span><span class="p">,</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameAttachedPicture</span><span class="p">(</span><span class="nv">picture</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">picture</span> <span class="k">as</span> <span class="kt">Data</span> <span class="n">object</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="n">backCover</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="n">jpeg</span><span class="p">))</span>
@@ -452,16 +452,17 @@ supported target. You can also find more usage example in the <a href="https://g
 <li><a href="https://github.com/woko666">woko666</a> (added read from <code>Data</code> API)</li>
 <li><a href="https://github.com/martinjbaker">martinjbaker</a> (minor fixies)</li>
 <li><a href="https://github.com/Shabinder">Shabinder</a> (Kotlin Multiplatform support)</li>
+<li><a href="https://github.com/Shabinder">Shabinder</a> (Kotlin Multiplatform support)</li>
+<li><a href="https://github.com/BLeeEZ">BLeeEZ</a> (Fix support for framework in Widget extensions)</li>
 </ul>
 
           </section>
         </section>
         <section id="footer">
-          <p>2020 <a class="link" href="https://www.fabrizioduroni.it" target="_blank" rel="external">Fabrizio Duroni</a></p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>2020 <a class="link" href="https://www.fabrizioduroni.it" target="_blank" rel="external noopener">Fabrizio Duroni</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>
