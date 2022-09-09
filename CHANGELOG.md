@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.3.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.3.0)
+Release date: 2022-09-09
+
+#### Fixed
+- Added support for widget extension
+
 ## [4.2.1](https://github.com/chicio/ID3TagEditor/releases/tag/4.2.1)
 Release date: 2022-02-11
 
