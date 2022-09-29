@@ -44,9 +44,9 @@ Drag the ID3TagEditor.xcodeproj inside your project and add it to the Embedded B
 ID3TagEditor is also available as a pod on [CocoaPods](https://cocoapods.org/pods/ID3TagEditor "ID3TagEditor cocoapods").
 Add the dependency to your Podfile (choose the release version you prefer):
 
-```
+```ruby
 target 'MyApp' do
-    pod 'ID3TagEditor', '~> 4.0'
+	pod 'ID3TagEditor', '~> 4.0'
 end
 ```
 
@@ -58,7 +58,7 @@ ID3TagEditor is also available as a Swift Package for the Swift Package Manager.
 After that you can build your project with the command `swift build`, and eventually run you project (if it is an executable target) with the command `swift run`.
 If you want you can also run tests using `swift test`.  
 
-```
+```swift
 // swift-tools-version:5.0
 
 import PackageDescription
@@ -125,17 +125,17 @@ do {
     if let id3Tag = try id3TagEditor.read(from: "<valid path to the mp3 file>") {
         // ...use the tag...
         // For example to read the title, album and artist content you can do something similar
-        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.title] as?  ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.artist] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.album] as? ID3FrameWithStringContent)?.content ?? "")
     }
     
     if let id3Tag = try id3TagEditor.read(mp3: "<valid mp3 file passed as Data>") {
         // ...use the tag...
         // For example to read the title, album and artist content you can do something similar
-        print((id3Tag.frames[.Title] as?  ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Artist] as? ID3FrameWithStringContent)?.content ?? "")
-        print((id3Tag.frames[.Album] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.title] as?  ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.artist] as? ID3FrameWithStringContent)?.content ?? "")
+        print((id3Tag.frames[.album] as? ID3FrameWithStringContent)?.content ?? "")
     }    
 } catch {
     print(error)
