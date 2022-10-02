@@ -803,6 +803,7 @@
 		450967152100BDC700A9CAA6 /* Mp3FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReader.swift; sourceTree = "<group>"; };
 		4509671B2100C0A600A9CAA6 /* Mp3FileReaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileReaderTest.swift; sourceTree = "<group>"; };
 		4509671F2100C3E600A9CAA6 /* Mp3FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mp3FileWriter.swift; sourceTree = "<group>"; };
+		450FB6F328E99C9F00C4A205 /* contributors.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = contributors.yml; sourceTree = "<group>"; };
 		45231DE221DBFFAE008FDCE7 /* ID3FrameAttachedPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameAttachedPicture.swift; sourceTree = "<group>"; };
 		45231DE721DBFFDD008FDCE7 /* ID3FrameWithStringContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3FrameWithStringContent.swift; sourceTree = "<group>"; };
 		45231DE821DBFFDD008FDCE7 /* ID3Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ID3Frame.swift; sourceTree = "<group>"; };
@@ -1365,6 +1366,7 @@
 		45C286BF24C8CBBB00171A88 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
+				450FB6F328E99C9F00C4A205 /* contributors.yml */,
 				45D4C3BF2539D64400501417 /* swiftlint.yml */,
 				45C286C024C8CBBB00171A88 /* build-ios.yml */,
 				45C286C124C8CBBB00171A88 /* build-watchos.yml */,
