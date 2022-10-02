@@ -7,6 +7,7 @@ Release date: 2022-10-02
 #### Fixed
 - PR #93: chore: Fixes documentation for examples
 - PR #92: Wire up iTunesGrouping to the ID3TagContentReader 
+- Added automatic contributors list generation
 
 ## [4.3.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.3.0)
 Release date: 2022-09-09
