@@ -290,3 +290,4 @@ supported target. You can also find more usage example in the [read/write accept
 * [Shabinder](https://github.com/Shabinder) (Kotlin Multiplatform support)
 * [Shabinder](https://github.com/Shabinder) (Kotlin Multiplatform support)
 * [BLeeEZ](https://github.com/BLeeEZ) (Fix support for framework in Widget extensions)
+* [aquaflamingo](https://github.com/aquaflamingo) ()
