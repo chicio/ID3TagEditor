@@ -419,6 +419,15 @@ public class ID3TagContentReader {
     }
 
     /**
+      Read the itunes grouping frame content.
+     
+      - returns: the itunes grouping as `String`, or null.
+     */
+    public func iTunesGrouping() -> String? {
+        return (id3Tag.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content
+    }
+
+    /**
       Read the itunes movement name frame content.
      
       - returns: the itunes movement name as `String`, or null.
