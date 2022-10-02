@@ -16,7 +16,7 @@
     <a title="ID3TagEditor  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.3.0 Docs</a> (100% documented)</p>
+        <p><a href="index.html">ID3TagEditor 4.4.0 Docs</a> (0% documented)</p>
         <p class="header-right"><a href="https://github.com/chicio/ID3TagEditor"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="search.json">
@@ -167,14 +167,15 @@
 <img src="https://github.com/chicio/ID3TagEditor/workflows/Build%20Linux/badge.svg" alt="Build Linux">
 <img src="https://github.com/chicio/ID3TagEditor/workflows/SwiftLint/badge.svg" alt="SwiftLint">
 <a href="https://codebeat.co/projects/github-com-chicio-id3tageditor-master"><img src="https://codebeat.co/badges/cb9699d0-4287-4723-96f9-e1a72fa05406" alt="codebeat badge"></a>
-<a href="https://codecov.io/gh/chicio/ID3TagEditor"><img src="https://codecov.io/gh/chicio/ID3TagEditor/branch/master/graph/badge.svg" alt="codecov"></a>
-<a href="https://img.shields.io/badge/platform-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux%20Ubuntu-orange.svg"><img src="https://img.shields.io/badge/platform-macOS%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux%20Ubuntu-orange.svg" alt="Supported platform"></a>
+<a href="https://codecov.io/gh/chicio/ID3TagEditor"><img src="https://codecov.io/gh/chicio/ID3TagEditor/branch/main/graph/badge.svg" alt="codecov"></a>
 <a href="https://cocoapods.org/pods/ID3TagEditor"><img src="https://img.shields.io/cocoapods/v/ID3TagEditor.svg" alt="CocoaPods Version"></a>
-<a href="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+<a href="https://swiftpackageindex.com/chicio/ID3TagEditor"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fchicio%2FID3TagEditor%2Fbadge%3Ftype%3Dplatforms" alt="swift package index platforms"></a>
+<a href="https://swiftpackageindex.com/chicio/ID3TagEditor"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fchicio%2FID3TagEditor%2Fbadge%3Ftype%3Dswift-versions" alt="swift package index swift version"></a>
+<a href="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
 
 <p>A swift library to read and modify ID3 Tag of any mp3 file. Listed in the implementations section of the <a href="http://id3.org/Implementations" title="id3.org swift">official ID3 standard website id3.org</a>.</p>
 
-<p><img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Assets/icon-logo-background.png" alt="ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file" title="ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file"></p>
+<p><img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Assets/icon-logo-background.png" alt="ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file" title="ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file"></p>
 
 <hr>
 <h3 id='installation' class='heading'>Installation</h3>
@@ -190,7 +191,7 @@
 
 <p><strong>Manual installation</strong></p>
 
-<p>To manually install ID3TagEditor simply drag and drop all the file contained in the <a href="https://github.com/chicio/ID3TagEditor/tree/master/Source" title="Source">Source</a> 
+<p>To manually install ID3TagEditor simply drag and drop all the file contained in the <a href="https://github.com/chicio/ID3TagEditor/tree/main/Source" title="Source">Source</a> 
 folder inside your project (except for the info.plist file).</p>
 
 <p><strong>Framework</strong></p>
@@ -202,9 +203,9 @@ Drag the ID3TagEditor.xcodeproj inside your project and add it to the Embedded B
 
 <p>ID3TagEditor is also available as a pod on <a href="https://cocoapods.org/pods/ID3TagEditor" title="ID3TagEditor cocoapods">CocoaPods</a>.
 Add the dependency to your Podfile (choose the release version you prefer):</p>
-<pre class="highlight plaintext"><code>target 'MyApp' do
-    pod 'ID3TagEditor', '~&gt; 4.0'
-end
+<pre class="highlight ruby"><code><span class="n">target</span> <span class="s1">'MyApp'</span> <span class="k">do</span>
+    <span class="n">pod</span> <span class="s1">'ID3TagEditor'</span><span class="p">,</span> <span class="s1">'~&gt; 4.0'</span>
+<span class="k">end</span>
 </code></pre>
 
 <p>and then run pod install (or pod update).</p>
@@ -214,22 +215,22 @@ end
 <p>ID3TagEditor is also available as a Swift Package for the Swift Package Manager. Add it to your dependecies in your  <code>Package.swift</code> file.
 After that you can build your project with the command <code>swift build</code>, and eventually run you project (if it is an executable target) with the command <code>swift run</code>.
 If you want you can also run tests using <code>swift test</code>.  </p>
-<pre class="highlight plaintext"><code>// swift-tools-version:5.0
+<pre class="highlight swift"><code><span class="c1">// swift-tools-version:5.0</span>
 
-import PackageDescription
+<span class="kd">import</span> <span class="kt">PackageDescription</span>
 
-let package = Package(
-    name: "Demo Ubuntu",
-    dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "4.0.0")
-    ],
-    targets: [
-        .target(
-            name: "Demo Ubuntu",
-            dependencies: ["ID3TagEditor"]
-        )
-    ]
-)
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"Demo Ubuntu"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/chicio/ID3TagEditor.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"4.0.0"</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"Demo Ubuntu"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"ID3TagEditor"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 </code></pre>
 
 <hr>
@@ -282,17 +283,17 @@ In this way you will have access to all the data contained in the frame, includi
     <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file&gt;"</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ...use the tag...</span>
         <span class="c1">// For example to read the title, album and artist content you can do something similar</span>
-        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Title</span><span class="p">]</span> <span class="k">as?</span>  <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Artist</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Album</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="n">title</span><span class="p">]</span> <span class="k">as?</span>  <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="n">artist</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="n">album</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="k">if</span> <span class="k">let</span> <span class="nv">id3Tag</span> <span class="o">=</span> <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="nv">mp3</span><span class="p">:</span> <span class="s">"&lt;valid mp3 file passed as Data&gt;"</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// ...use the tag...</span>
         <span class="c1">// For example to read the title, album and artist content you can do something similar</span>
-        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Title</span><span class="p">]</span> <span class="k">as?</span>  <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Artist</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="kt">Album</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="n">title</span><span class="p">]</span> <span class="k">as?</span>  <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="n">artist</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">((</span><span class="n">id3Tag</span><span class="o">.</span><span class="n">frames</span><span class="p">[</span><span class="o">.</span><span class="n">album</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">)?</span><span class="o">.</span><span class="n">content</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
     <span class="p">}</span>    
 <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
@@ -433,28 +434,84 @@ Refer to the <a href="https://id3.org/Developer%20Information" title="id3 specif
 <hr>
 <h3 id='examples' class='heading'>Examples</h3>
 
-<p>In the following screenshots you can find examples of the data extracted/updated. In the <a href="https://github.com/chicio/ID3TagEditor/tree/master/Demo" title="demo id3tageditor">demo project</a> you will find an example for each 
-supported target. You can also find more usage example in the <a href="https://github.com/chicio/ID3TagEditor/blob/master/Tests/Acceptance/ID3TagEditorWriteReadAcceptanceTest.swift" title="example acceptance tests">read/write acceptance test</a>.</p>
+<p>In the following screenshots you can find examples of the data extracted/updated. In the <a href="https://github.com/chicio/ID3TagEditor/tree/main/Demo" title="demo id3tageditor">demo project</a> you will find an example for each 
+supported target. You can also find more usage example in the <a href="https://github.com/chicio/ID3TagEditor/blob/main/Tests/Acceptance/ID3TagEditorWriteReadAcceptanceTest.swift" title="example acceptance tests">read/write acceptance test</a>.</p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/04-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/03-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/05-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/04-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/01-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/03-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/02-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/05-example.png">
 </p>
 
 <hr>
 <h3 id='contributors' class='heading'>Contributors</h3>
 
-<ul>
-<li><a href="https://github.com/NCrusher74">Nolaine Crusher</a> (added 12 official frames + all unofficial non standard frames)</li>
-<li><a href="https://github.com/woko666">woko666</a> (added read from <code>Data</code> API)</li>
-<li><a href="https://github.com/martinjbaker">martinjbaker</a> (minor fixies)</li>
-<li><a href="https://github.com/Shabinder">Shabinder</a> (Kotlin Multiplatform support)</li>
-<li><a href="https://github.com/Shabinder">Shabinder</a> (Kotlin Multiplatform support)</li>
-<li><a href="https://github.com/BLeeEZ">BLeeEZ</a> (Fix support for framework in Widget extensions)</li>
-</ul>
+<!-- readme: collaborators,contributors,bots -start -->
+
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/bonfa">
+            <img src="https://avatars.githubusercontent.com/u/790990?v=4" width="100;" alt="bonfa"/>
+            <br />
+            <sub><b>bonfa</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/chicio">
+            <img src="https://avatars.githubusercontent.com/u/4048413?v=4" width="100;" alt="chicio"/>
+            <br />
+            <sub><b>chicio</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/martinjbaker">
+            <img src="https://avatars.githubusercontent.com/u/1586504?v=4" width="100;" alt="martinjbaker"/>
+            <br />
+            <sub><b>martinjbaker</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/BLeeEZ">
+            <img src="https://avatars.githubusercontent.com/u/17556018?v=4" width="100;" alt="BLeeEZ"/>
+            <br />
+            <sub><b>BLeeEZ</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/NCrusher74">
+            <img src="https://avatars.githubusercontent.com/u/56804260?v=4" width="100;" alt="NCrusher74"/>
+            <br />
+            <sub><b>NCrusher74</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/aquaflamingo">
+            <img src="https://avatars.githubusercontent.com/u/16901597?v=4" width="100;" alt="aquaflamingo"/>
+            <br />
+            <sub><b>aquaflamingo</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Shabinder">
+            <img src="https://avatars.githubusercontent.com/u/44765050?v=4" width="100;" alt="Shabinder"/>
+            <br />
+            <sub><b>Shabinder</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/jverkoey">
+            <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
+            <br />
+            <sub><b>jverkoey</b></sub>
+        </a>
+    </td></tr>
+</table>
+
+<!-- readme: collaborators,contributors,bots -end -->
 
           </section>
         </section>
