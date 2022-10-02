@@ -282,15 +282,6 @@ supported target. You can also find more usage example in the [read/write accept
 </p>
 
 ***
-### Contributors
-
-* [Nolaine Crusher](https://github.com/NCrusher74) (added 12 official frames + all unofficial non standard frames)
-* [woko666](https://github.com/woko666) (added read from `Data` API)
-* [martinjbaker](https://github.com/martinjbaker) (minor fixies)
-* [Shabinder](https://github.com/Shabinder) (Kotlin Multiplatform support)
-* [Shabinder](https://github.com/Shabinder) (Kotlin Multiplatform support)
-* [BLeeEZ](https://github.com/BLeeEZ) (Fix support for framework in Widget extensions)
-* [aquaflamingo](https://github.com/aquaflamingo) ()
 
 ### Contributors
 
