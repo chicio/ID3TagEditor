@@ -7,15 +7,15 @@
 ![Build Linux](https://github.com/chicio/ID3TagEditor/workflows/Build%20Linux/badge.svg)
 ![SwiftLint](https://github.com/chicio/ID3TagEditor/workflows/SwiftLint/badge.svg)
 [![codebeat badge](https://codebeat.co/badges/cb9699d0-4287-4723-96f9-e1a72fa05406)](https://codebeat.co/projects/github-com-chicio-id3tageditor-master)
-[![codecov](https://codecov.io/gh/chicio/ID3TagEditor/branch/master/graph/badge.svg)](https://codecov.io/gh/chicio/ID3TagEditor)
+[![codecov](https://codecov.io/gh/chicio/ID3TagEditor/branch/main/graph/badge.svg)](https://codecov.io/gh/chicio/ID3TagEditor)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/ID3TagEditor.svg)](https://cocoapods.org/pods/ID3TagEditor)
 [![swift package index platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fchicio%2FID3TagEditor%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/chicio/ID3TagEditor)
 [![swift package index swift version](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fchicio%2FID3TagEditor%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/chicio/ID3TagEditor)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chicio/ID3TagEditor/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chicio/ID3TagEditor/main/LICENSE.md)
 
 A swift library to read and modify ID3 Tag of any mp3 file. Listed in the implementations section of the [official ID3 standard website id3.org](http://id3.org/Implementations "id3.org swift").
 
-![ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file](https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Assets/icon-logo-background.png 
+![ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file](https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Assets/icon-logo-background.png 
 "ID3TagEditor: A swift library to read and modify ID3 Tag of any mp3 file")
 
 ***
@@ -31,7 +31,7 @@ There are four ways to install ID3TagEditor in your project:
 
 **Manual installation**
 
-To manually install ID3TagEditor simply drag and drop all the file contained in the [Source](https://github.com/chicio/ID3TagEditor/tree/master/Source "Source") 
+To manually install ID3TagEditor simply drag and drop all the file contained in the [Source](https://github.com/chicio/ID3TagEditor/tree/main/Source "Source") 
 folder inside your project (except for the info.plist file).
 
 **Framework**
@@ -270,15 +270,15 @@ You can find the complete API documentation on [fabrizioduroni.it](https://id3ta
 
 ### Examples
 
-In the following screenshots you can find examples of the data extracted/updated. In the [demo project]( https://github.com/chicio/ID3TagEditor/tree/master/Demo "demo id3tageditor") you will find an example for each 
-supported target. You can also find more usage example in the [read/write acceptance test](https://github.com/chicio/ID3TagEditor/blob/master/Tests/Acceptance/ID3TagEditorWriteReadAcceptanceTest.swift "example acceptance tests").
+In the following screenshots you can find examples of the data extracted/updated. In the [demo project]( https://github.com/chicio/ID3TagEditor/tree/main/Demo "demo id3tageditor") you will find an example for each 
+supported target. You can also find more usage example in the [read/write acceptance test](https://github.com/chicio/ID3TagEditor/blob/main/Tests/Acceptance/ID3TagEditorWriteReadAcceptanceTest.swift "example acceptance tests").
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/04-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/01-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/03-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/02-example.png">
-<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/master/Screenshots/05-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/04-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/01-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/03-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/02-example.png">
+<img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/05-example.png">
 </p>
 
 ***
