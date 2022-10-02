@@ -295,4 +295,64 @@ supported target. You can also find more usage example in the [read/write accept
 ### Contributors
 
 <!-- readme: collaborators,contributors,bots -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/bonfa">
+            <img src="https://avatars.githubusercontent.com/u/790990?v=4" width="100;" alt="bonfa"/>
+            <br />
+            <sub><b>Ubunfu</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/chicio">
+            <img src="https://avatars.githubusercontent.com/u/4048413?v=4" width="100;" alt="chicio"/>
+            <br />
+            <sub><b>Fabrizio Duroni</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/martinjbaker">
+            <img src="https://avatars.githubusercontent.com/u/1586504?v=4" width="100;" alt="martinjbaker"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/BLeeEZ">
+            <img src="https://avatars.githubusercontent.com/u/17556018?v=4" width="100;" alt="BLeeEZ"/>
+            <br />
+            <sub><b>Maximilian Bauer</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/NCrusher74">
+            <img src="https://avatars.githubusercontent.com/u/56804260?v=4" width="100;" alt="NCrusher74"/>
+            <br />
+            <sub><b>NCrusher</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/aquaflamingo">
+            <img src="https://avatars.githubusercontent.com/u/16901597?v=4" width="100;" alt="aquaflamingo"/>
+            <br />
+            <sub><b>Robert</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Shabinder">
+            <img src="https://avatars.githubusercontent.com/u/44765050?v=4" width="100;" alt="Shabinder"/>
+            <br />
+            <sub><b>Shabinder Singh</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/jverkoey">
+            <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
+            <br />
+            <sub><b>Featherless</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators,contributors,bots -end -->
