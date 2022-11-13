@@ -25,6 +25,11 @@ class ID3TagVersionParserTest: XCTestCase {
         XCTAssertEqual(.version3, id3VersionParser.parse(mp3: mp3WithV2Tag))
     }
 
+    func testShortData() throws {
+        let shortData = Data(capacity: 2)
+        XCTAssertEqual(.version3, id3VersionParser.parse(mp3: shortData))
+    }
+
     func testDefaultVersion() throws {
         let mp3WithV2Tag = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"))
