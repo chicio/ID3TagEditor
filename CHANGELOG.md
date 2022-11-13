@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.4.1](https://github.com/chicio/ID3TagEditor/releases/tag/4.4.1)
+Release date: 2022-11-13
+
+#### Fixed
+- PR #94: chore: Fix an out of bounds crash 
+
 ## [4.4.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.4.0)
 Release date: 2022-10-02
 
