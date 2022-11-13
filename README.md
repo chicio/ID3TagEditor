@@ -310,6 +310,13 @@ supported target. You can also find more usage example in the [read/write accept
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/joeljfischer">
+            <img src="https://avatars.githubusercontent.com/u/1767063?v=4" width="100;" alt="joeljfischer"/>
+            <br />
+            <sub><b>joeljfischer</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/BLeeEZ">
             <img src="https://avatars.githubusercontent.com/u/17556018?v=4" width="100;" alt="BLeeEZ"/>
             <br />
@@ -322,15 +329,15 @@ supported target. You can also find more usage example in the [read/write accept
             <br />
             <sub><b>NCrusher74</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/aquaflamingo">
             <img src="https://avatars.githubusercontent.com/u/16901597?v=4" width="100;" alt="aquaflamingo"/>
             <br />
             <sub><b>aquaflamingo</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Shabinder">
             <img src="https://avatars.githubusercontent.com/u/44765050?v=4" width="100;" alt="Shabinder"/>
@@ -343,6 +350,13 @@ supported target. You can also find more usage example in the [read/write accept
             <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
             <br />
             <sub><b>jverkoey</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/github-actions[bot]">
+            <img src="https://avatars.githubusercontent.com/in/15368?v=4" width="100;" alt="github-actions[bot]"/>
+            <br />
+            <sub><b>github-actions[bot]</b></sub>
         </a>
     </td></tr>
 </table>
