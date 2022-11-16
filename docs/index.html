@@ -16,7 +16,7 @@
     <a title="ID3TagEditor  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ID3TagEditor 4.4.1 Docs</a> (100% documented)</p>
+        <p><a href="index.html">ID3TagEditor 4.4.2 Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/chicio/ID3TagEditor"><img src="img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <div class="header-right">
           <form role="search" action="search.json">
@@ -358,6 +358,8 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
         <span class="o">.</span><span class="nf">iTunesPodcastDescription</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"PodcastDescription V3"</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">iTunesPodcastID</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"PodcastID V3"</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">iTunesPodcastKeywords</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithStringContent</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="s">"PodcastKeywords V3"</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">comment</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="n">ita</span><span class="p">,</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithLocalizedContent</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">ID3FrameContentLanguage</span><span class="o">.</span><span class="n">ita</span><span class="p">,</span> <span class="nv">contentDescription</span><span class="p">:</span> <span class="s">"CD"</span><span class="p">,</span> <span class="nv">content</span><span class="p">:</span> <span class="s">"v2 ita comment"</span><span class="p">))</span>
+        <span class="o">.</span><span class="nf">comment</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="n">eng</span><span class="p">,</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">ID3FrameWithLocalizedContent</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="kt">ID3FrameContentLanguage</span><span class="o">.</span><span class="n">eng</span><span class="p">,</span> <span class="nv">contentDescription</span><span class="p">:</span> <span class="s">"CD"</span><span class="p">,</span> <span class="nv">content</span><span class="p">:</span> <span class="s">"v2 eng comment"</span><span class="p">))</span>
         <span class="o">.</span><span class="nf">build</span><span class="p">()</span>
 
     <span class="k">try</span> <span class="n">id3TagEditor</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">tag</span><span class="p">:</span> <span class="n">id3Tag</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="s">"&lt;valid path to the mp3 file that will be overwritten&gt;"</span><span class="p">)</span>
@@ -402,6 +404,7 @@ Below you can find a sample code that will write an ID3Tag version 3 with all th
 <li><code>.recordingDateTime</code>, available only for ID3 v2.4</li>
 <li><code>.attachedPicture(_ pictureType: ID3PictureType)</code>, with support for multiple frames in the same tag distinguished by <code><a href="Enums/ID3PictureType.html">ID3PictureType</a></code></li>
 <li><code>.unsynchronizedLyrics(_ language: ID3FrameContentLanguage)</code>, with support for multiple frames in the same tag distinguished by <code><a href="Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a></code></li>
+<li><code>.comment(_ language: ID3FrameContentLanguage)</code>, with support for multiple frames in the same tag distinguished by <code><a href="Enums/ID3FrameContentLanguage.html">ID3FrameContentLanguage</a></code></li>
 </ul>
 
 <p>In addition, ID3TagEditor supports the following iTunes unofficial frames:</p>
