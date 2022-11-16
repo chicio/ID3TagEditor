@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.4.2](https://github.com/chicio/ID3TagEditor/releases/tag/4.4.2)
+Release date: 2022-11-16
+
+#### Fixed
+- Updated doc: added comment frame description and usage 
+
 ## [4.4.1](https://github.com/chicio/ID3TagEditor/releases/tag/4.4.1)
 Release date: 2022-11-13
 
