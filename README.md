@@ -198,6 +198,8 @@ do {
         .iTunesPodcastDescription(frame: ID3FrameWithStringContent(content: "PodcastDescription V3"))
         .iTunesPodcastID(frame: ID3FrameWithStringContent(content: "PodcastID V3"))
         .iTunesPodcastKeywords(frame: ID3FrameWithStringContent(content: "PodcastKeywords V3"))
+        .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 ita comment"))
+        .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng comment"))
         .build()
     
     try id3TagEditor.write(tag: id3Tag, to: "<valid path to the mp3 file that will be overwritten>")
@@ -242,6 +244,7 @@ Below you can find the list of the official ID3 frames supported by ID3TagEditor
 * `.recordingDateTime`, available only for ID3 v2.4
 * `.attachedPicture(_ pictureType: ID3PictureType)`, with support for multiple frames in the same tag distinguished by `ID3PictureType`
 * `.unsynchronizedLyrics(_ language: ID3FrameContentLanguage)`, with support for multiple frames in the same tag distinguished by `ID3FrameContentLanguage`
+* `.comment(_ language: ID3FrameContentLanguage)`, with support for multiple frames in the same tag distinguished by `ID3FrameContentLanguage`
 
 In addition, ID3TagEditor supports the following iTunes unofficial frames:
 
