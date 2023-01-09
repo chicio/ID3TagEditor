@@ -8,8 +8,8 @@
 import Foundation
 
 class ID3TagParser {
-    let tagSizeParser: TagSizeParser
-    let id3TagConfiguration: ID3TagConfiguration
+    private let tagSizeParser: TagSizeParser
+    private let id3TagConfiguration: ID3TagConfiguration
     private let tagVersionParser: TagVersionParser
     private let tagPresence: TagPresence
     private let framesParser: ID3FramesParser

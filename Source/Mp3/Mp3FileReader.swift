@@ -46,7 +46,7 @@ class Mp3FileReader {
       - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path, or if the file
      does not contain the entire ID3 header
      */
-    func readID3HeaderFrom(path: String) throws -> Data {
+    func readID3TagFrom(path: String) throws -> Data {
         let validPath = URL(fileURLWithPath: path)
         guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
             throw ID3TagEditorError.invalidFileFormat
@@ -62,10 +62,10 @@ class Mp3FileReader {
         let header = try read(bytesCount: headerSize, fromStream: inputStream)
         let headerData = Data(header) as NSData
 
-        let tagsSize = tagSizeParser.parse(data: headerData)
-        let tags = try read(bytesCount: Int(tagsSize), fromStream: inputStream)
+        let frameSize = tagSizeParser.parse(data: headerData)
+        let frame = try read(bytesCount: Int(frameSize), fromStream: inputStream)
 
-        let mp3 = header + tags
+        let mp3 = header + frame
         return Data(mp3)
     }
 

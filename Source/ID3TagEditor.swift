@@ -21,8 +21,7 @@ public class ID3TagEditor {
      */
     public init() {
         self.id3TagParser = ID3TagParserFactory.make()
-        self.mp3FileReader = Mp3FileReader(tagSizeParser: id3TagParser.tagSizeParser,
-                                           id3TagConfiguration: id3TagParser.id3TagConfiguration)
+        self.mp3FileReader = Mp3FileReaderFactory.make()
         self.mp3FileWriter = Mp3FileWriter()
         self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
                                                          id3TagConfiguration: ID3TagConfiguration())
@@ -39,7 +38,7 @@ public class ID3TagEditor {
      Could throw `CorruptedFile` if the file is corrupted.
      */
     public func read(from path: String) throws -> ID3Tag? {
-        let mp3 = try mp3FileReader.readID3HeaderFrom(path: path)
+        let mp3 = try mp3FileReader.readID3TagFrom(path: path)
         return try self.id3TagParser.parse(mp3: mp3)
     }
 
