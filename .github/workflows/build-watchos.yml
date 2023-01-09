@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Build watchOS framework
         run: |
-           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=watchOS Simulator,name=Apple Watch Series 8 - 45mm,OS=latest" | xcpretty
+           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=watchOS Simulator,name=Apple Watch Series 8 (45mm),OS=9.1" | xcpretty
       - name: Build watchOS Demo
         run: |
           set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO | xcpretty
