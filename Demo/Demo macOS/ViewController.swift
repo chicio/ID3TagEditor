@@ -17,8 +17,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            let mp3 = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3")))
-            let id3Tag = try id3TagEditor.read(mp3: mp3)!
+            let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))!
             if let frameAttachedPicture = id3Tag.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture {
                 attachedPictureImage.image = NSImage(data: frameAttachedPicture.picture)
             }
