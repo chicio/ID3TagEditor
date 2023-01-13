@@ -349,6 +349,13 @@ supported target. You can also find more usage example in the [read/write accept
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/lordzsolt">
+            <img src="https://avatars.githubusercontent.com/u/8976891?v=4" width="100;" alt="lordzsolt"/>
+            <br />
+            <sub><b>lordzsolt</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/jverkoey">
             <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
             <br />
