@@ -17,6 +17,11 @@ class ID3StringContentParsingOperationTest: XCTestCase {
         paddingRemover: PaddingRemoverUsingTrimming(),
         id3FrameConfiguration: ID3FrameConfiguration()
     )
+    
+    func testTooSmallDataValue() {
+        let value = stringContentParser.parse(frame: Data(capacity: 1), version: .version3)
+        XCTAssertNil(value)
+    }
 
     func testFrameContentParsedV2() {
         let expectation = XCTestExpectation(description: "content without padding")
