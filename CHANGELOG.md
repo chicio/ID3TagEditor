@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [4.6.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.6.0)
+Release date: 2023-04-19
+
+#### Added
+- PR #100: ID3FrameStringContentParser crash fix 
+
 ## [4.5.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.5.0)
 Release date: 2023-01-13
 
