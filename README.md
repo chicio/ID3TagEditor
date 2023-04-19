@@ -335,6 +335,13 @@ supported target. You can also find more usage example in the [read/write accept
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/Scytalion">
+            <img src="https://avatars.githubusercontent.com/u/2079490?v=4" width="100;" alt="Scytalion"/>
+            <br />
+            <sub><b>Scytalion</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/aquaflamingo">
             <img src="https://avatars.githubusercontent.com/u/16901597?v=4" width="100;" alt="aquaflamingo"/>
             <br />
