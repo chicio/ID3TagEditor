@@ -52,3 +52,5 @@ class ID3FrameContentParsingOperationFactory {
         ]
     }
 }
+
+// swiftlint:enable line_length

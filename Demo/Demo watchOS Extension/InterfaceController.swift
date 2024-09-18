@@ -31,12 +31,4 @@ class InterfaceController: WKInterfaceController {
             print(error)
         }
     }
-
-    override func willActivate() {
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
 }

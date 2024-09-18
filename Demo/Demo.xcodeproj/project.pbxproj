@@ -978,7 +978,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -997,7 +997,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y682K92RZU;
 				INFOPLIST_FILE = "Demo iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-iOS-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1024,7 +1024,7 @@
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -1044,7 +1044,7 @@
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1105,7 +1105,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -1127,7 +1127,7 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};

@@ -868,3 +868,8 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         ("testCommentWithUTF8EncodingAndNoContentDescription", testCommentWithUTF8EncodingAndNoContentDescription)
     ]
 }
+
+// swiftlint:enable type_body_length
+// swiftlint:enable file_length
+// swiftlint:enable function_body_length
+// swiftlint:enable line_length

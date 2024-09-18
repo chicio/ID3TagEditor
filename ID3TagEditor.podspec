@@ -14,12 +14,12 @@ A swift library to read and modify ID3 Tag of any mp3 file.
   s.social_media_url   = "https://github.com/chicio"
   s.source       = { :git => "https://github.com/chicio/ID3TagEditor.git", :tag => "#{s.version}" }
 
-  s.ios.deployment_target = '12.0'
-  s.osx.deployment_target = '10.13'
-  s.tvos.deployment_target = '12.0'
-  s.watchos.deployment_target = '5.0'
+  s.ios.deployment_target = '15.0'
+  s.osx.deployment_target = '12.0'
+  s.tvos.deployment_target = '15.0'
+  s.watchos.deployment_target = '8.0'
 
   s.source_files  = "Source", "Source/**/*.{h,m}", "Source/**/*.swift"
-  s.swift_version = '5.3'
+  s.swift_version = '6.0'
 
 end

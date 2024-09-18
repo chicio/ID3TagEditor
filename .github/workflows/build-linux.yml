@@ -7,7 +7,9 @@ on:
   pull_request:
     branches:
       - main
-      
+  schedule:
+    - cron: '0 16 15 * *'
+
 jobs:
   build:
     name: Build Linux
