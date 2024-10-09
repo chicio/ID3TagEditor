@@ -100,13 +100,13 @@ public class ID3TagEditor {
             readHandle.seek(toFileOffset: tagSizeWithHeader)
         }
         
-        while true {
-            let chunk = readHandle.readData(ofLength: 65536) // 64 KB
-            guard !chunk.isEmpty else {
-                break
+        var isFinished = false
+        while !isFinished {
+            autoreleasepool {
+                let chunk = readHandle.readData(ofLength: 65536) // 64 KB
+                writeHandle.write(chunk)
+                isFinished = chunk.isEmpty
             }
-            
-            writeHandle.write(chunk)
         }
     }
 
