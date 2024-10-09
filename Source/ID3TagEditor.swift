@@ -101,7 +101,7 @@ public class ID3TagEditor {
         }
         
         while true {
-            let chunk = readHandle.readData(ofLength: 8192)
+            let chunk = readHandle.readData(ofLength: 65536) // 64 KB
             guard !chunk.isEmpty else {
                 break
             }
