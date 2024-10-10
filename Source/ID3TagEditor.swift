@@ -68,46 +68,9 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
-        guard let newPath else {
-            let mp3 = try mp3FileReader.readFileFrom(path: path)
-            let currentTag = try self.id3TagParser.parse(mp3: mp3)
-            let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
-            try mp3FileWriter.write(mp3: mp3WithId3Tag, path: path)
-            return
-        }
-        
-        let currentTag = try read(from: path)
-        let newTag = try ID3TagCreatorFactory.make().create(id3Tag: tag)
-        try mp3FileWriter.write(mp3: newTag, path: newPath)
-        
-        // Create file handles
-        let readHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
-        defer {
-            readHandle.closeFile()
-        }
-        
-        let writeHandle = try FileHandle(forWritingTo: URL(fileURLWithPath: newPath))
-        defer {
-            writeHandle.closeFile()
-        }
-        
-        // Seek over the tag of the existing file, then copy the rest in chunks
-        readHandle.seek(toFileOffset: 0)
-        writeHandle.seekToEndOfFile()
-        
-        if let currentTag {
-            let tagSizeWithHeader = UInt64(currentTag.properties.size) + UInt64(ID3TagConfiguration().headerSize())
-            readHandle.seek(toFileOffset: tagSizeWithHeader)
-        }
-        
-        var isFinished = false
-        while !isFinished {
-            autoreleasepool {
-                let chunk = readHandle.readData(ofLength: 65536) // 64 KB
-                writeHandle.write(chunk)
-                isFinished = chunk.isEmpty
-            }
-        }
+        let newId3TagData = try mp3WithID3TagBuilder.build(mp3: Data(), newId3Tag: tag, currentId3Tag: nil)
+        let currentId3Tag = try read(from: path)
+        try mp3FileWriter.write(newId3TagData: newId3TagData, currentId3Tag: currentId3Tag, fromPath: path, toPath: newPath ?? path)
     }
 
     /**
