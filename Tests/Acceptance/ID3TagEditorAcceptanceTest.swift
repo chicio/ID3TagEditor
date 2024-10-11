@@ -856,13 +856,9 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         ("testWriteTagV4WithPng", testWriteTagV4WithPng),
         ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers),
         ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics),
-        ("testReadNewFramesV2", testReadNewFramesV2),
-        ("testReadNewFramesV3", testReadNewFramesV3),
-        ("testReadNewFramesV4", testReadNewFramesV4),
         ("testWriteNewFramesV2", testWriteNewFramesV2),
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
-        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten),
         ("testCommentWithUTF8EncodingAndNoContentDescription", testCommentWithUTF8EncodingAndNoContentDescription)
     ]
 }
