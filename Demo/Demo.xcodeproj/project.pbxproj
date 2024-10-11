@@ -3,36 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		452833322044D3E300458375 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528332B2044D3E300458375 /* ViewController.swift */; };
-		452833332044D3E300458375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4528332D2044D3E300458375 /* Assets.xcassets */; };
-		452833342044D3E300458375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4528332E2044D3E300458375 /* Main.storyboard */; };
-		452833352044D3E300458375 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452833302044D3E300458375 /* AppDelegate.swift */; };
-		4528334F2044D41300458375 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528334E2044D41300458375 /* ViewController.swift */; };
-		452833522044D41300458375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452833502044D41300458375 /* Main.storyboard */; };
-		452833542044D41300458375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452833532044D41300458375 /* Assets.xcassets */; };
-		452833572044D41300458375 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452833552044D41300458375 /* LaunchScreen.storyboard */; };
 		452833732044D5DD00458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452833652044D47B00458375 /* ID3TagEditor.framework */; };
 		452833742044D5DD00458375 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833652044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		452833832044D76500458375 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4528337F2044D76500458375 /* example.mp3 */; };
 		452833862044D7F400458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; };
 		452833872044D7F400458375 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		45541BCA205990990025A8BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45541BC9205990990025A8BF /* ViewController.swift */; };
-		45541BCD205990990025A8BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45541BCB205990990025A8BF /* Main.storyboard */; };
-		45541BCF205990990025A8BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45541BCE205990990025A8BF /* Assets.xcassets */; };
 		45541BD9205991260025A8BF /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; };
 		45541BDA205991260025A8BF /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		45541BDE205992420025A8BF /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
-		45541BE0205994AB0025A8BF /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45541BDF205994AA0025A8BF /* example.mp3 */; };
-		458BED24209272E5003C2E14 /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 458BED20209272E4003C2E14 /* example.mp3 */; };
-		45AF185F204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
-		45AF1860204C226C00343B25 /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
-		45EEC048205A66E900CEF5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EEC042205A66E900CEF5BF /* AppDelegate.swift */; };
-		45EEC049205A66E900CEF5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EEC042205A66E900CEF5BF /* AppDelegate.swift */; };
-		45F78C3A2CB93B8500AD985F /* PathLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF185E204C226C00343B25 /* PathLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,38 +136,93 @@
 
 /* Begin PBXFileReference section */
 		452832EF2044D28E00458375 /* Demo macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4528332B2044D3E300458375 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4528332C2044D3E300458375 /* Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
-		4528332D2044D3E300458375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4528332F2044D3E300458375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		452833302044D3E300458375 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		452833312044D3E300458375 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4528334A2044D41300458375 /* Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4528334E2044D41300458375 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		452833512044D41300458375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		452833532044D41300458375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		452833562044D41300458375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		452833582044D41300458375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ID3TagEditor.xcodeproj; path = ../ID3TagEditor.xcodeproj; sourceTree = "<group>"; };
-		4528337F2044D76500458375 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45541BC5205990990025A8BF /* Demo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		45541BC9205990990025A8BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		45541BCC205990990025A8BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		45541BCE205990990025A8BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		45541BD0205990990025A8BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45541BDF205994AA0025A8BF /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 		45751DAC2193CDB100627A34 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		45751DAD2193CDB100627A34 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		45751DB02193CDB100627A34 /* example-v3-additional-data.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v3-additional-data.mp3"; sourceTree = "<group>"; };
 		45751DB12193CDB100627A34 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		458BED20209272E4003C2E14 /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
-		45AF185E204C226C00343B25 /* PathLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathLoader.swift; sourceTree = "<group>"; };
-		45EEC042205A66E900CEF5BF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45F78C252CB939C700AD985F /* Demo watchOS Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo watchOS Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		45F78C932CB9411700AD985F /* Exceptions for "Demo macOS" folder in "Demo macOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 452832EE2044D28E00458375 /* Demo macOS */;
+		};
+		45F78CBC2CB9411D00AD985F /* Exceptions for "Demo iOS" folder in "Demo iOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 452833492044D41300458375 /* Demo iOS */;
+		};
+		45F78CBD2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo macOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PathLoader.swift,
+			);
+			target = 452832EE2044D28E00458375 /* Demo macOS */;
+		};
+		45F78CBE2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo watchOS Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PathLoader.swift,
+			);
+			target = 45F78C242CB939C700AD985F /* Demo watchOS Watch App */;
+		};
+		45F78CBF2CB9411D00AD985F /* Exceptions for "Demo tvOS" folder in "Demo tvOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 45541BC4205990990025A8BF /* Demo tvOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		45F78C292CB939C700AD985F /* Demo watchOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Demo watchOS"; sourceTree = "<group>"; };
+		45F78C292CB939C700AD985F /* Demo watchOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Demo watchOS";
+			sourceTree = "<group>";
+		};
+		45F78C8C2CB9411700AD985F /* Demo macOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				45F78C932CB9411700AD985F /* Exceptions for "Demo macOS" folder in "Demo macOS" target */,
+			);
+			path = "Demo macOS";
+			sourceTree = "<group>";
+		};
+		45F78C9A2CB9411D00AD985F /* Demo common */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				45F78CBD2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo macOS" target */,
+				45F78CBE2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo watchOS Watch App" target */,
+			);
+			path = "Demo common";
+			sourceTree = "<group>";
+		};
+		45F78CA92CB9411D00AD985F /* Demo iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				45F78CBC2CB9411D00AD985F /* Exceptions for "Demo iOS" folder in "Demo iOS" target */,
+			);
+			path = "Demo iOS";
+			sourceTree = "<group>";
+		};
+		45F78CB62CB9411D00AD985F /* Demo tvOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				45F78CBF2CB9411D00AD985F /* Exceptions for "Demo tvOS" folder in "Demo tvOS" target */,
+			);
+			path = "Demo tvOS";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,10 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */,
-				4528332A2044D3E300458375 /* Demo macOS */,
-				4528334B2044D41300458375 /* Demo iOS */,
-				45AF185B204C224600343B25 /* Demo common */,
-				45541BC6205990990025A8BF /* Demo tvOS */,
+				45F78C8C2CB9411700AD985F /* Demo macOS */,
+				45F78CA92CB9411D00AD985F /* Demo iOS */,
+				45F78C9A2CB9411D00AD985F /* Demo common */,
+				45F78CB62CB9411D00AD985F /* Demo tvOS */,
 				457517C82193CDAF00627A34 /* Demo Ubuntu */,
 				45F78C292CB939C700AD985F /* Demo watchOS */,
 				452832F02044D28E00458375 /* Products */,
@@ -250,33 +285,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4528332A2044D3E300458375 /* Demo macOS */ = {
-			isa = PBXGroup;
-			children = (
-				4528337F2044D76500458375 /* example.mp3 */,
-				4528332B2044D3E300458375 /* ViewController.swift */,
-				4528332C2044D3E300458375 /* Demo.entitlements */,
-				4528332D2044D3E300458375 /* Assets.xcassets */,
-				4528332E2044D3E300458375 /* Main.storyboard */,
-				452833302044D3E300458375 /* AppDelegate.swift */,
-				452833312044D3E300458375 /* Info.plist */,
-			);
-			path = "Demo macOS";
-			sourceTree = "<group>";
-		};
-		4528334B2044D41300458375 /* Demo iOS */ = {
-			isa = PBXGroup;
-			children = (
-				458BED20209272E4003C2E14 /* example.mp3 */,
-				4528334E2044D41300458375 /* ViewController.swift */,
-				452833502044D41300458375 /* Main.storyboard */,
-				452833532044D41300458375 /* Assets.xcassets */,
-				452833552044D41300458375 /* LaunchScreen.storyboard */,
-				452833582044D41300458375 /* Info.plist */,
-			);
-			path = "Demo iOS";
-			sourceTree = "<group>";
-		};
 		4528335E2044D47B00458375 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,18 +297,6 @@
 				45F834302059061F0046C804 /* ID3TagEditor.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		45541BC6205990990025A8BF /* Demo tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				45541BDF205994AA0025A8BF /* example.mp3 */,
-				45541BC9205990990025A8BF /* ViewController.swift */,
-				45541BCB205990990025A8BF /* Main.storyboard */,
-				45541BCE205990990025A8BF /* Assets.xcassets */,
-				45541BD0205990990025A8BF /* Info.plist */,
-			);
-			path = "Demo tvOS";
 			sourceTree = "<group>";
 		};
 		457517C82193CDAF00627A34 /* Demo Ubuntu */ = {
@@ -330,15 +326,6 @@
 			path = "Demo Ubuntu";
 			sourceTree = "<group>";
 		};
-		45AF185B204C224600343B25 /* Demo common */ = {
-			isa = PBXGroup;
-			children = (
-				45EEC042205A66E900CEF5BF /* AppDelegate.swift */,
-				45AF185E204C226C00343B25 /* PathLoader.swift */,
-			);
-			path = "Demo common";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,6 +342,9 @@
 			);
 			dependencies = (
 				452833762044D5DD00458375 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				45F78C8C2CB9411700AD985F /* Demo macOS */,
 			);
 			name = "Demo macOS";
 			productName = Demo;
@@ -376,6 +366,10 @@
 			dependencies = (
 				452833892044D7F400458375 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				45F78C9A2CB9411D00AD985F /* Demo common */,
+				45F78CA92CB9411D00AD985F /* Demo iOS */,
+			);
 			name = "Demo iOS";
 			productName = "Demo iOS";
 			productReference = 4528334A2044D41300458375 /* Demo iOS.app */;
@@ -394,6 +388,10 @@
 			);
 			dependencies = (
 				45541BDC205991260025A8BF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				45F78C9A2CB9411D00AD985F /* Demo common */,
+				45F78CB62CB9411D00AD985F /* Demo tvOS */,
 			);
 			name = "Demo tvOS";
 			productName = "Demo tvOS";
@@ -453,7 +451,6 @@
 				};
 			};
 			buildConfigurationList = 452832EA2044D28E00458375 /* Build configuration list for PBXProject "Demo" */;
-			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -461,6 +458,7 @@
 				Base,
 			);
 			mainGroup = 452832E62044D28E00458375;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 452832F02044D28E00458375 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -536,9 +534,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				452833332044D3E300458375 /* Assets.xcassets in Resources */,
-				452833832044D76500458375 /* example.mp3 in Resources */,
-				452833342044D3E300458375 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,10 +541,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				452833572044D41300458375 /* LaunchScreen.storyboard in Resources */,
-				458BED24209272E5003C2E14 /* example.mp3 in Resources */,
-				452833542044D41300458375 /* Assets.xcassets in Resources */,
-				452833522044D41300458375 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,9 +548,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45541BE0205994AB0025A8BF /* example.mp3 in Resources */,
-				45541BCF205990990025A8BF /* Assets.xcassets in Resources */,
-				45541BCD205990990025A8BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,9 +565,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				452833352044D3E300458375 /* AppDelegate.swift in Sources */,
-				452833322044D3E300458375 /* ViewController.swift in Sources */,
-				45AF185F204C226C00343B25 /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,9 +572,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45EEC048205A66E900CEF5BF /* AppDelegate.swift in Sources */,
-				4528334F2044D41300458375 /* ViewController.swift in Sources */,
-				45AF1860204C226C00343B25 /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,9 +579,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45EEC049205A66E900CEF5BF /* AppDelegate.swift in Sources */,
-				45541BCA205990990025A8BF /* ViewController.swift in Sources */,
-				45541BDE205992420025A8BF /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +586,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F78C3A2CB93B8500AD985F /* PathLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,41 +608,6 @@
 			targetProxy = 45541BDB205991260025A8BF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4528332E2044D3E300458375 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4528332F2044D3E300458375 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		452833502044D41300458375 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				452833512044D41300458375 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		452833552044D41300458375 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				452833562044D41300458375 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		45541BCB205990990025A8BF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45541BCC205990990025A8BF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		452832FD2044D28E00458375 /* Debug */ = {
