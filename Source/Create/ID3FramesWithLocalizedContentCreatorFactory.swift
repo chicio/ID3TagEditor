@@ -14,7 +14,7 @@ class ID3FramesWithLocalizedContentCreatorFactory {
         let paddingAdder = PaddingAdderToEndOfContentUsingNullChar()
 
         return ID3FramesWithLocalizedContentCreator(
-            localizedFrameNames: frameNamesWithLocalizedContent,
+            localizedFrameNames: FrameNamesWithLocalizedContent().get(),
             localizedFrameCreator: ID3LocalizedFrameCreator(
                 id3FrameConfiguration: frameConfiguration,
                 frameHeaderCreator: ID3FrameHeaderCreatorFactory.make(),

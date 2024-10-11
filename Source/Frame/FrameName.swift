@@ -8,20 +8,26 @@
 
 import Foundation
 
-func enumerateLocalizedFrameName(frameName: (ID3FrameContentLanguage) -> FrameName) -> [FrameName] {
-    return ID3FrameContentLanguage.allCases.map({ frameName($0) })
+struct FrameNamesWithLocalizedContent {
+    func get() -> [FrameType: [FrameName]] {
+        return [
+            FrameType.unsyncronisedLyrics: enumerateLocalizedFrameName(frameName: FrameName.unsynchronizedLyrics),
+            FrameType.comment: enumerateLocalizedFrameName(frameName: FrameName.comment)
+        ]
+    }
+    
+    private func enumerateLocalizedFrameName(frameName: (ID3FrameContentLanguage) -> FrameName) -> [FrameName] {
+        return ID3FrameContentLanguage.allCases.map({ frameName($0) })
+    }
 }
 
-let frameNamesWithLocalizedContent = [
-    FrameType.unsyncronisedLyrics: enumerateLocalizedFrameName(frameName: FrameName.unsynchronizedLyrics),
-    FrameType.comment: enumerateLocalizedFrameName(frameName: FrameName.comment)
-]
 
 /// An enum used to identify the different types of frame parsed by the ID3TagEditor.
 /// This must be used to acces the frame data as identifier inside the dictionary
 /// of frame in the `ID3tag` `frames` properties.
 public enum FrameName: Equatable, Hashable, CaseIterable {
     public static var allCases: [FrameName] {
+        let frameNamesWithLocalizedContent = FrameNamesWithLocalizedContent().get()
         return [
             .title,
             .album,
