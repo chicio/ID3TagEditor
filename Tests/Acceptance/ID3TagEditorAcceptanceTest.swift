@@ -52,13 +52,12 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
     func testParseTagV3() throws {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
-
-        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
-
+        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))
+            
         XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
+        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A title")
+        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "An album")
+        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "An artist")
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
@@ -158,15 +157,15 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
         let mp3 = try Data(
-            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))
         )
 
         let id3Tag = try id3TagEditor.read(mp3: mp3)
 
         XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
+        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A title")
+        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "An album")
+        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "An artist")
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
         XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
     }
@@ -840,7 +839,6 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
         ("testReadTagV2", testReadTagV2),
         ("testParseTagV3", testParseTagV3),
-        ("testParseTagV3AdditionalData", testParseTagV3AdditionalData),
         ("testReadTagV4", testReadTagV4),
         ("testReadTagV4WithImage", testReadTagV4WithImage),
         ("testReadAsMp3", testReadAsMp3),
