@@ -1,6 +1,5 @@
 excluded: 
   - Demo/Demo Ubuntu/.build
-  - Tests/XCTestManifests.swift
   
 type_name:
   min_length: 4
