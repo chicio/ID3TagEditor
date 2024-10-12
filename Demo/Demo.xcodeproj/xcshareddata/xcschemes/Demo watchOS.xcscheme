@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45F78C242CB939C700AD985F"
-               BuildableName = "Demo watchOS Watch App.app"
-               BlueprintName = "Demo watchOS Watch App"
+               BuildableName = "Demo watchOS.app"
+               BlueprintName = "Demo watchOS"
                ReferencedContainer = "container:Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,7 +29,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45F78C1F2CB939C700AD985F"
+               BlueprintIdentifier = "45F78C242CB939C700AD985F"
                BuildableName = "Demo watchOS.app"
                BlueprintName = "Demo watchOS"
                ReferencedContainer = "container:Demo.xcodeproj">
@@ -59,8 +59,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45F78C242CB939C700AD985F"
-            BuildableName = "Demo watchOS Watch App.app"
-            BlueprintName = "Demo watchOS Watch App"
+            BuildableName = "Demo watchOS.app"
+            BlueprintName = "Demo watchOS"
             ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45F78C242CB939C700AD985F"
-            BuildableName = "Demo watchOS Watch App.app"
-            BlueprintName = "Demo watchOS Watch App"
+            BuildableName = "Demo watchOS.app"
+            BlueprintName = "Demo watchOS"
             ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
