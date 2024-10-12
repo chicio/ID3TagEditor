@@ -40,10 +40,13 @@ struct ID3StringContentParsingOperationTest {
         }
 
         await confirmation("content without padding") { fulfill in
-            id3StringContentParsingOperation.parse(frame: frameV2(), version: .version2, completed: {(frameName, frame) in
-                #expect(frameName == .title)
-                #expect((frame as? ID3FrameWithStringContent)?.content == ":: value ::")
-                fulfill()
+            id3StringContentParsingOperation.parse(
+                frame: frameV2(),
+                version: .version2,
+                completed: {(frameName, frame) in
+                    #expect(frameName == .title)
+                    #expect((frame as? ID3FrameWithStringContent)?.content == ":: value ::")
+                    fulfill()
             })
         }
     }
@@ -64,10 +67,13 @@ struct ID3StringContentParsingOperationTest {
         }
 
         await confirmation("content without padding") { fulfill in
-            id3StringContentParsingOperation.parse(frame: frameV3(), version: .version2, completed: {(frameName, frame) in
-                #expect(frameName == .title)
-                #expect((frame as? ID3FrameWithStringContent)?.content == ":: value ::")
-                fulfill()
+            id3StringContentParsingOperation.parse(
+                frame: frameV3(),
+                version: .version2,
+                completed: {(frameName, frame) in
+                    #expect(frameName == .title)
+                    #expect((frame as? ID3FrameWithStringContent)?.content == ":: value ::")
+                    fulfill()
             })
         }
     }

@@ -1,5 +1,7 @@
 excluded: 
   - Demo/Demo Ubuntu/.build
+  - .build
+  - build
   
 type_name:
   min_length: 4

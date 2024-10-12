@@ -7,7 +7,6 @@
 //
 
 // swiftlint:disable line_length
-// swiftlint:disable function_body_length
 
 import Foundation
 
@@ -75,3 +74,5 @@ class ID3TagToStringAdapter {
         })
     }
 }
+
+// swiftlint:enable line_length

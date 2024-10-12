@@ -1,15 +1,15 @@
 //
-//  Demo_watchOSApp.swift
+//  DemoWatchOSApp.swift
 //  Demo watchOS Watch App
 //
 //  Created by Fabrizio Duroni on 11.10.2024.
-//  Copyright © 2024 Fabrizio Duroni. All rights reserved.
+//  2024 Fabrizio Duroni.
 //
 
 import SwiftUI
 
 @main
-struct Demo_watchOS_Watch_AppApp: App {
+struct DemoWatchOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

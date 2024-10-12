@@ -56,7 +56,7 @@ struct ID3TagEditorAcceptanceTest {
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))
-            
+
         #expect(id3Tag?.properties.version == .version3)
         #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "A title")
         #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "An album")
@@ -182,7 +182,7 @@ struct ID3TagEditorAcceptanceTest {
         let mp3 = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-corrupted", fileType: "mp3"))
         )
-        
+
         #expect(throws: ID3TagEditorError.corruptedFile.self) {
             try id3TagEditor.read(mp3: mp3)
         }
@@ -373,8 +373,8 @@ struct ID3TagEditorAcceptanceTest {
             )
         }
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -405,8 +405,8 @@ struct ID3TagEditorAcceptanceTest {
         }
 
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -435,10 +435,10 @@ struct ID3TagEditorAcceptanceTest {
                 andSaveTo: pathMp3Generated
             )
         }
-        
+
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -555,10 +555,10 @@ struct ID3TagEditorAcceptanceTest {
                 andSaveTo: NSHomeDirectory() + "/example-v3-additional-data.mp3"
             )
         }
-        
+
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -597,7 +597,7 @@ struct ID3TagEditorAcceptanceTest {
 
         #expect(
             newMp3 ==
-            (try! Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
+            (try? Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
                                                                             fileType: "mp3"))))
         )
     }
@@ -625,8 +625,8 @@ struct ID3TagEditorAcceptanceTest {
         }
 
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -657,8 +657,8 @@ struct ID3TagEditorAcceptanceTest {
         }
 
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -682,7 +682,7 @@ struct ID3TagEditorAcceptanceTest {
                 .subtitle: ID3FrameWithStringContent(content: "Subtitle V2")
             ]
         )
-        
+
         #expect(throws: Never.self) {
             try id3TagEditor.write(
                 tag: id3Tag,
@@ -692,8 +692,8 @@ struct ID3TagEditorAcceptanceTest {
         }
 
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -735,8 +735,8 @@ struct ID3TagEditorAcceptanceTest {
             )
         }
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -779,8 +779,8 @@ struct ID3TagEditorAcceptanceTest {
         }
 
         #expect(
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
-            (try! Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
@@ -801,11 +801,10 @@ struct ID3TagEditorAcceptanceTest {
         #expect(throws: Never.self) {
             try id3TagEditor.write(
                 tag: id3Tag,
-                to: PathLoader().pathFor(name: "frames-after-attached-picture",fileType: "mp3"),
+                to: PathLoader().pathFor(name: "frames-after-attached-picture", fileType: "mp3"),
                 andSaveTo: pathMp3Generated
             )
         }
-
 
         let tag = try id3TagEditor.read(from: pathMp3Generated)
         #expect((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part == 1)
@@ -924,3 +923,8 @@ struct ID3TagEditorAcceptanceTest {
         ("testCommentWithUTF8EncodingAndNoContentDescription", testCommentWithUTF8EncodingAndNoContentDescription)
     ]
 }
+
+// swiftlint:enable type_body_length
+// swiftlint:enable function_body_length
+// swiftlint:enable line_length
+// swiftlint:enable file_length

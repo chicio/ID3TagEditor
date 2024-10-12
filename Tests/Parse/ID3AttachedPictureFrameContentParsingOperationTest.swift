@@ -16,7 +16,7 @@ struct ID3AttachedPictureFrameContentParsingOperationTest {
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )
-        
+
         await confirmation("attached picture") { parsed in
             attachedPictureFrameContentParsingOperation.parse(
                 frame: Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]),

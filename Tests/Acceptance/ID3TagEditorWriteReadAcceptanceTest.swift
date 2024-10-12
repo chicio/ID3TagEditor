@@ -509,3 +509,8 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         ("testReadWritev4", testReadWritev4)
     ]
 }
+
+// swiftlint:enable type_body_length
+// swiftlint:enable function_body_length
+// swiftlint:enable line_length
+// swiftlint:enable file_length

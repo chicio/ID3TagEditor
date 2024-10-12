@@ -15,7 +15,7 @@ struct FrameNamesWithLocalizedContent {
             FrameType.comment: enumerateLocalizedFrameName(frameName: FrameName.comment)
         ]
     }
-    
+
     private func enumerateLocalizedFrameName(frameName: (ID3FrameContentLanguage) -> FrameName) -> [FrameName] {
         return ID3FrameContentLanguage.allCases.map({ frameName($0) })
     }

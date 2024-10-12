@@ -8,7 +8,6 @@
 
 // swiftlint:disable line_length
 // swiftlint:disable function_body_length
-// swiftlint:disable type_body_length
 
 import Foundation
 import Testing
@@ -239,3 +238,6 @@ struct ID3TagTest {
         ("testDebugDescriptionv4", testDebugDescriptionv4)
     ]
 }
+
+// swiftlint:enable line_length
+// swiftlint:enable function_body_length

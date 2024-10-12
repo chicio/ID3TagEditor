@@ -19,7 +19,7 @@ struct ID3FrameHeaderCreatorTest {
 
         #expect(header == [UInt8]("USLT".utf8) + [0x11, 0x00])
     }
-    
+
     static let allTests = [
         ("create", create)
     ]

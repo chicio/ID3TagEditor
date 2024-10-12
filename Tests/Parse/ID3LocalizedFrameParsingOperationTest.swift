@@ -13,7 +13,9 @@ import Testing
 
 struct ID3LocalizedFrameParsingOperationTest {
     @Test func testParsingValidFrame() async {
-        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics)
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
+            frameName: FrameName.unsynchronizedLyrics
+        )
 
         await confirmation("unsynchronised lyrics") { fulfill in
             lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
@@ -26,7 +28,9 @@ struct ID3LocalizedFrameParsingOperationTest {
     }
 
     @Test func testParsingInvalidLanguage() async {
-        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics)
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
+            frameName: FrameName.unsynchronizedLyrics
+        )
 
         await confirmation("unsynchronised lyrics") { fulfill in
             lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
