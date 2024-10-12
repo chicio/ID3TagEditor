@@ -297,7 +297,6 @@
 				452831C12044C40700458375 /* Frameworks */,
 				452831C22044C40700458375 /* Headers */,
 				452831C32044C40700458375 /* Resources */,
-				45D4C38F2539977B00501417 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -340,11 +339,11 @@
 				452831E12044C4F500458375 /* Frameworks */,
 				452831E22044C4F500458375 /* Headers */,
 				452831E32044C4F500458375 /* Resources */,
-				45D4C390253997A300501417 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				45F60CF22CBAC82E0073BC12 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				45F78D582CB941C200AD985F /* Source */,
@@ -383,7 +382,6 @@
 				45541B7320598F6C0025A8BF /* Frameworks */,
 				45541B7420598F6C0025A8BF /* Headers */,
 				45541B7520598F6C0025A8BF /* Resources */,
-				45D4C391253997B200501417 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -426,7 +424,6 @@
 				45F833DF205904680046C804 /* Frameworks */,
 				45F833E0205904680046C804 /* Headers */,
 				45F833E1205904680046C804 /* Resources */,
-				45D4C392253997BA00501417 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -494,6 +491,9 @@
 				Base,
 			);
 			mainGroup = 452831BB2044C40700458375;
+			packageReferences = (
+				45F60CF02CBAC7FE0073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 452831C62044C40700458375 /* Products */;
 			projectDirPath = "";
@@ -562,92 +562,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		45D4C38F2539977B00501417 /* Run swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Scripts/swiftlint.sh",
-			);
-			name = "Run swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-		};
-		45D4C390253997A300501417 /* Run swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Scripts/swiftlint.sh",
-			);
-			name = "Run swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-		};
-		45D4C391253997B200501417 /* Run swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Scripts/swiftlint.sh",
-			);
-			name = "Run swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-		};
-		45D4C392253997BA00501417 /* Run swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Scripts/swiftlint.sh",
-			);
-			name = "Run swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Scripts/swiftlint.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		452831C02044C40700458375 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -715,6 +629,10 @@
 			isa = PBXTargetDependency;
 			target = 45541B7620598F6C0025A8BF /* ID3TagEditor tvOS */;
 			targetProxy = 45541BEB2059954C0025A8BF /* PBXContainerItemProxy */;
+		};
+		45F60CF22CBAC82E0073BC12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 45F60CF12CBAC82E0073BC12 /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1365,6 +1283,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45F60CF02CBAC7FE0073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.57.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45F60CF12CBAC82E0073BC12 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45F60CF02CBAC7FE0073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 452831BC2044C40700458375 /* Project object */;
 }

@@ -156,3 +156,9 @@ struct ID3AttachedPicturesFramesCreatorTest {
         ("noFrameCreationWhenThereIsNoImage", noFrameCreationWhenThereIsNoImage)
     ]
 }
+
+
+
+
+
+
