@@ -1,6 +1,17 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.0.0)
+Release date: 2024-10-12
+
+#### Added
+- Swift 6 
+- Swift Testing
+- All demo now based on new targets and SwiftUI
+
+#### Fixed
+- Broken isoLatin1 support on Linux platforms, now fallback to utf-8 
+
 ## [4.6.0](https://github.com/chicio/ID3TagEditor/releases/tag/4.6.0)
 Release date: 2023-04-19
 

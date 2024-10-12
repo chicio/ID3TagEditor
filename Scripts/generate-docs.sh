@@ -9,7 +9,7 @@
 jazzy \
   --output docs \
   --module ID3TagEditor \
-  --xcodebuild-arguments -workspace,ID3TagEditor.xcworkspace,-scheme,"ID3TagEditor iOS" -x USE_SWIFT_RESPONSE_FILE=NO \
+  --build-tool-arguments -workspace,ID3TagEditor.xcworkspace,-scheme,"ID3TagEditor iOS",-arch,arm64 \
   --author_url https://www.fabrizioduroni.it \
   --github_url https://github.com/chicio/ID3TagEditor \
-  --copyright "2020 [Fabrizio Duroni](https://www.fabrizioduroni.it)"
+  --copyright "2024 [Fabrizio Duroni](https://www.fabrizioduroni.it)"
