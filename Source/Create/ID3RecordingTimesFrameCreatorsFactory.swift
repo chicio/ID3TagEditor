@@ -25,3 +25,5 @@ class ID3RecordingTimesFrameCreatorsFactory {
         ]
     }
 }
+
+// swiftlint:enable line_length

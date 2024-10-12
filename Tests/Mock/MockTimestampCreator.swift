@@ -17,7 +17,7 @@ class MockTimestampCreator: TimestampCreator {
     }
 
     func createFrom(recordingDateTime: RecordingDateTime) -> String? {
-        createFromRecordingDateTimeHasBeenCalled = true
-        return returnValue
+        self.createFromRecordingDateTimeHasBeenCalled = true
+        return self.returnValue
     }
 }

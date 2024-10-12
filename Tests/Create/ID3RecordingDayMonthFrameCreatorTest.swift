@@ -5,11 +5,11 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoDay() {
+struct ID3RecordingDayMonthFrameCreatorTest {
+    @Test func testNoFrameCreationWhenThereIsNoDay() {
         let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -23,10 +23,10 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
 
         let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: tag)
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testNoFrameCreationWhenThereIsNoMonth() {
+    @Test func testNoFrameCreationWhenThereIsNoMonth() {
         let id3YearFrameCreator = ID3RecordingDayMonthFrameCreator(
             frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -40,10 +40,10 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
 
         let newTagBytes = id3YearFrameCreator.createFrames(id3Tag: tag)
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testFrameCreationWhenThereIsADayAndAMonth() {
+    @Test func testFrameCreationWhenThereIsADayAndAMonth() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID3Tag(
             version: .version3,
@@ -58,7 +58,7 @@ class ID3RecordingDayMonthFrameCreatorTest: XCTestCase {
 
         let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, newFrameBytes)
+        #expect(newTagBytes == newFrameBytes)
     }
 
     static let allTests = [

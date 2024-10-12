@@ -28,3 +28,5 @@ class ID3iTunesFrameCreatorsFactory {
         ]
     }
 }
+
+// swiftlint:enable line_length

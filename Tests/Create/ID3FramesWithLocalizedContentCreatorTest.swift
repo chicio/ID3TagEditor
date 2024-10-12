@@ -6,30 +6,30 @@
 //  2020 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3FramesWithLocalizedContentCreatorTest: XCTestCase {
-    func testNothingIsCreatedWheLyricsDataIsNotSet() {
+struct ID3FramesWithLocalizedContentCreatorTest {
+    @Test func testNothingIsCreatedWheLyricsDataIsNotSet() {
         let creator = ID3FramesWithLocalizedContentCreator(
-            localizedFrameNames: frameNamesWithLocalizedContent,
+            localizedFrameNames: FrameNamesWithLocalizedContent().get(),
             localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
         let frame = creator.createFrames(id3Tag: ID32v3TagBuilder().build())
 
-        XCTAssertEqual(frame, [])
+        #expect(frame == [])
     }
 
-    func testCreateFrameForValidData() {
+    @Test func testCreateFrameForValidData() {
         let creator = ID3FramesWithLocalizedContentCreator(
-            localizedFrameNames: frameNamesWithLocalizedContent,
+            localizedFrameNames: FrameNamesWithLocalizedContent().get(),
             localizedFrameCreator: MockLocalizedFrameCreator()
         )
 
         let frame = creator.createFrames(id3Tag: aTagWithUnsynchronisedLyrics())
 
-        XCTAssertEqual(frame, [0x01])
+        #expect(frame == [0x01])
     }
 
     private func aTagWithUnsynchronisedLyrics() -> ID3Tag {

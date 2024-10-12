@@ -15,6 +15,6 @@ class MockSynchsafeEncoder: SynchsafeEncoder {
         self.encodedValue = encodedValue
     }
     func encode(integer: UInt32) -> UInt32 {
-        return encodedValue
+        return self.encodedValue
     }
 }

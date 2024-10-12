@@ -5,38 +5,36 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3GenreStringAdapterTest: XCTestCase {
-    private let id3GenreStringAdapter = ID3GenreStringAdapter()
+@Suite struct ID3GenreStringAdapterTest {
+    @Test func testAdaptGenreWithDescription() {
+        let genre = ID3GenreStringAdapter().adapt(genre: "(9)Metalcore")
 
-    func testAdaptGenreWithDescription() {
-        let genre = id3GenreStringAdapter.adapt(genre: "(9)Metalcore")
-
-        XCTAssert(genre.identifier == .metal)
-        XCTAssertEqual(genre.description, "Metalcore")
+        #expect(genre.identifier == .metal)
+        #expect(genre.description == "Metalcore")
     }
 
-    func testAdaptGenreWithoutDescription() {
-        let genre = id3GenreStringAdapter.adapt(genre: "(9)")
+    @Test func testAdaptGenreWithoutDescription() {
+        let genre = ID3GenreStringAdapter().adapt(genre: "(9)")
 
-        XCTAssert(genre.identifier == .metal)
-        XCTAssertNil(genre.description)
+        #expect(genre.identifier == .metal)
+        #expect(genre.description == nil)
     }
 
-    func testAdaptGenreWithoutGenreIdentifier() {
-        let genre = id3GenreStringAdapter.adapt(genre: "Rock & Roll")
+    @Test func testAdaptGenreWithoutGenreIdentifier() {
+        let genre = ID3GenreStringAdapter().adapt(genre: "Rock & Roll")
 
-        XCTAssertNil(genre.identifier)
-        XCTAssertEqual(genre.description, "Rock & Roll")
+        #expect(genre.identifier == nil)
+        #expect(genre.description == "Rock & Roll")
     }
 
-    func testAdaptID3v3NewGenresNotNumeric() {
-        XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(RX)").identifier, .remix)
-        XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(CR)").identifier, .cover)
-        XCTAssertNil(id3GenreStringAdapter.adapt(genre: "(XXX)").identifier)
-        XCTAssertEqual(id3GenreStringAdapter.adapt(genre: "(XXX)").description, "(XXX)")
+    @Test func testAdaptID3v3NewGenresNotNumeric() {
+        #expect(ID3GenreStringAdapter().adapt(genre: "(RX)").identifier == .remix)
+        #expect(ID3GenreStringAdapter().adapt(genre: "(CR)").identifier == .cover)
+        #expect(ID3GenreStringAdapter().adapt(genre: "(XXX)").identifier == nil)
+        #expect(ID3GenreStringAdapter().adapt(genre: "(XXX)").description == "(XXX)")
     }
 
     static let allTests = [

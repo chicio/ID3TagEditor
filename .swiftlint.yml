@@ -1,6 +1,7 @@
 excluded: 
   - Demo/Demo Ubuntu/.build
-  - Tests/XCTestManifests.swift
+  - .build
+  - build
   
 type_name:
   min_length: 4
@@ -13,3 +14,4 @@ identifier_name:
   max_length:
     warning: 70
     error: 80
+
