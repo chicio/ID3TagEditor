@@ -10,11 +10,13 @@
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3TagTest: XCTestCase {
-    func testDebugDescriptionv3() throws {
+struct ID3TagTest {
+    @Test func testDebugDescriptionv3() throws {
         let artFront = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -63,8 +65,8 @@ class ID3TagTest: XCTestCase {
             ]
         )
 
-        XCTAssertEqual(
-            id3Tag.debugDescription,
+        #expect(
+            id3Tag.debugDescription ==
                        """
             ID3Tag:
             - size: 0
@@ -125,7 +127,7 @@ class ID3TagTest: XCTestCase {
             """)
     }
 
-    func testDebugDescriptionv4() throws {
+    @Test func testDebugDescriptionv4() throws {
         let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
 
@@ -169,8 +171,8 @@ class ID3TagTest: XCTestCase {
             ]
         )
 
-        XCTAssertEqual(
-            id3Tag.debugDescription,
+        #expect(
+            id3Tag.debugDescription ==
             """
             ID3Tag:
             - size: 0

@@ -5,31 +5,29 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3DiscPositionStringAdapterTest: XCTestCase {
-    let discPositionStringAdapter = ID3PartOfTotalStringAdapter()
+struct ID3DiscPositionStringAdapterTest {
+    @Test func testAdaptDiscPositionWithTotalDiscs() {
+        let discPosition = ID3PartOfTotalStringAdapter().adapt(partOfTotal: "1/3")
 
-    func testAdaptDiscPositionWithTotalDiscs() {
-        let discPosition = discPositionStringAdapter.adapt(partOfTotal: "1/3")
-
-        XCTAssertEqual(discPosition.part, 1)
-        XCTAssertEqual(discPosition.total, 3)
+        #expect(discPosition.part == 1)
+        #expect(discPosition.total == 3)
     }
 
-    func testAdaptDiscPositionWithoutTotalDiscs() {
-        let discPosition = discPositionStringAdapter.adapt(partOfTotal: "1")
+    @Test func testAdaptDiscPositionWithoutTotalDiscs() {
+        let discPosition = ID3PartOfTotalStringAdapter().adapt(partOfTotal: "1")
 
-        XCTAssertEqual(discPosition.part, 1)
-        XCTAssertNil(discPosition.total)
+        #expect(discPosition.part == 1)
+        #expect(discPosition.total == nil)
     }
 
-    func testAdaptNotANumberDiscPosition() {
-        let discPosition = discPositionStringAdapter.adapt(partOfTotal: "::invalid::")
+    @Test func testAdaptNotANumberDiscPosition() {
+        let discPosition = ID3PartOfTotalStringAdapter().adapt(partOfTotal: "::invalid::")
 
-        XCTAssertEqual(discPosition.part, 0)
-        XCTAssertNil(discPosition.total)
+        #expect(discPosition.part == 0)
+        #expect(discPosition.total == nil)
     }
 
     static let allTests = [

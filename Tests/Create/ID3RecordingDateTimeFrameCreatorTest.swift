@@ -5,11 +5,11 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
-    func testFrameCreationWhenThereIsACompleteRecordingDateTime() {
+struct ID3RecordingDateTimeFrameCreatorTest {
+    @Test func testFrameCreationWhenThereIsACompleteRecordingDateTime() {
         let newFrameBytes: [UInt8] = [1, 1]
         let recordingDateTime = RecordingDateTime(date: RecordingDate(day: 28, month: 7, year: 2018),
                                                   time: RecordingTime(hour: 12, minute: 30))
@@ -29,8 +29,8 @@ class ID3RecordingDateTimeFrameCreatorTest: XCTestCase {
 
         let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3tag)
 
-        XCTAssertTrue(timestampCreator.createFromRecordingDateTimeHasBeenCalled)
-        XCTAssertEqual(newTagBytes, newFrameBytes)
+        #expect(timestampCreator.createFromRecordingDateTimeHasBeenCalled)
+        #expect(newTagBytes == newFrameBytes)
     }
 
     static let allTests = [

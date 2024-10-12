@@ -5,52 +5,56 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3AttachedPictureFrameContentParsingOperationTest: XCTestCase {
-    func testSetTagAttachedPicturePng() {
-        let expectation = XCTestExpectation(description: "attached picture")
+struct ID3AttachedPictureFrameContentParsingOperationTest {
+    @Test func testSetTagAttachedPicturePng() async {
         let attachedPictureFrameContentParsingOperation = ID3AttachedPictureFrameContentParsingOperation(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )
-
-        attachedPictureFrameContentParsingOperation.parse(
-            frame: Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]),
-            version: .version3,
-            completed: {(frameName, frame) in
-                    XCTAssertEqual(frameName, .attachedPicture(.frontCover))
-                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.format, .png)
-                    XCTAssertEqual(
-                        (frame as? ID3FrameAttachedPicture)?.picture,
-                        Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11])
-                    )
-                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.type, .frontCover)
-                    expectation.fulfill()
-        })
+        
+        await confirmation("attached picture") { parsed in
+            attachedPictureFrameContentParsingOperation.parse(
+                frame: Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11]),
+                version: .version3,
+                completed: {(frameName, frame) in
+                        #expect(frameName == .attachedPicture(.frontCover))
+                        #expect((frame as? ID3FrameAttachedPicture)?.format == .png)
+                        #expect(
+                            (frame as? ID3FrameAttachedPicture)?.picture ==
+                            Data([0x89, 0x50, 0x4E, 0x47, 0x11, 0x11])
+                        )
+                        #expect((frame as? ID3FrameAttachedPicture)?.type == .frontCover)
+                        parsed()
+            })
+        }
     }
 
-    func testSetTagAttachedPictureJpg() {
-        let expectation = XCTestExpectation(description: "attached picture")
+    @Test func testSetTagAttachedPictureJpg() async {
         let attachedPictureFrameContentParsingOperation = ID3AttachedPictureFrameContentParsingOperation(
                 id3FrameConfiguration: ID3FrameConfiguration(),
                 pictureTypeAdapter: MockPictureTypeAdapter()
         )
 
-        attachedPictureFrameContentParsingOperation.parse(
+        await confirmation("attached picture") { parsed in
+            attachedPictureFrameContentParsingOperation.parse(
                 frame: Data([0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11]),
                 version: .version3,
                 completed: {(frameName, frame) in
-                    XCTAssertEqual(frameName, .attachedPicture(.frontCover))
-                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.format, .jpeg)
-                    XCTAssertEqual(
-                        (frame as? ID3FrameAttachedPicture)?.picture,
+                    #expect(frameName == .attachedPicture(.frontCover))
+                    #expect((frame as? ID3FrameAttachedPicture)?.format == .jpeg)
+                    #expect(
+                        (frame as? ID3FrameAttachedPicture)?.picture ==
                         Data([0xFF, 0xD8, 0xFF, 0xE0, 0x11, 0x11])
                     )
-                    XCTAssertEqual((frame as? ID3FrameAttachedPicture)?.type, .frontCover)
-                    expectation.fulfill()
-        })
+                    #expect((frame as? ID3FrameAttachedPicture)?.type == .frontCover)
+                    parsed()
+                })
+        }
     }
 
     static let allTests = [

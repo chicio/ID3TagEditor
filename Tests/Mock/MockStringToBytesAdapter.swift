@@ -9,7 +9,7 @@
 import Foundation
 @testable import ID3TagEditor
 
-class MockStringToBytesAdapter: StringToBytesAdapter {
+final class MockStringToBytesAdapter: StringToBytesAdapter {
     func adapt(string: String, for version: ID3Version) -> [UInt8] {
         return string.utf16ToBytes
     }

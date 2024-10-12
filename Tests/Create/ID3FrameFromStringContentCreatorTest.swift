@@ -5,11 +5,11 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3FrameFromStringContentCreatorTest: XCTestCase {
-    func testCreatorFrameFromStringContent() {
+struct ID3FrameFromStringContentCreatorTest {
+    @Test func testCreatorFrameFromStringContent() {
         let id3FrameFromStringContentCreator = ID3FrameFromStringContentCreator(
                 frameHeaderCreator: MockFrameHeaderCreator(),
                 stringToBytesAdapter: MockStringToBytesAdapter()
@@ -21,7 +21,7 @@ class ID3FrameFromStringContentCreatorTest: XCTestCase {
                 content: "test"
         )
 
-        XCTAssertEqual(frameBytes, [0x01, 0x02] + "test".utf16ToBytes)
+        #expect(frameBytes == [0x01, 0x02] + "test".utf16ToBytes)
     }
 
     static let allTests = [

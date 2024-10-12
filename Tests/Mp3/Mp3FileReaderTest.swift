@@ -5,51 +5,51 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class Mp3FileReaderTest: XCTestCase {
-    func testNotAnMP3FileWhenReadingEntireFile() {
+struct Mp3FileReaderTest {
+    @Test func testNotAnMP3FileWhenReadingEntireFile() {
         let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let mp3FileReader = Mp3FileReader(tagSizeParser: ID3TagSizeParser(),
                                           id3TagConfiguration: ID3TagConfiguration())
 
-        XCTAssertThrowsError(try mp3FileReader.readFileFrom(path: path))
+        #expect(throws: ID3TagEditorError.invalidFileFormat.self) { try mp3FileReader.readFileFrom(path: path) }
     }
 
-    func testMP3FileWhenReadingEntireFile() {
+    @Test func testMP3FileWhenReadingEntireFile() {
         let path = PathLoader().pathFor(name: "example", fileType: "mp3")
         let mp3FileReader = Mp3FileReader(tagSizeParser: ID3TagSizeParser(),
                                           id3TagConfiguration: ID3TagConfiguration())
 
-        XCTAssertNoThrow(try mp3FileReader.readFileFrom(path: path))
+        #expect(throws: Never.self) { try mp3FileReader.readFileFrom(path: path) }
     }
 
-    func testNotAnMP3fileWhenReadingID3Tag() {
+    @Test func testNotAnMP3fileWhenReadingID3Tag() {
         let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let mp3FileReader = Mp3FileReader(tagSizeParser: ID3TagSizeParser(),
                                           id3TagConfiguration: ID3TagConfiguration())
 
-        XCTAssertThrowsError(try mp3FileReader.readID3TagFrom(path: path))
+        #expect(throws: ID3TagEditorError.invalidFileFormat.self) { try mp3FileReader.readID3TagFrom(path: path) }
     }
 
-    func testMP3fileWhenReadingID3Tag() {
+    @Test func testMP3fileWhenReadingID3Tag() {
         let path = PathLoader().pathFor(name: "example", fileType: "mp3")
         let mp3FileReader = Mp3FileReader(tagSizeParser: ID3TagSizeParser(),
                                           id3TagConfiguration: ID3TagConfiguration())
 
-        XCTAssertNoThrow(try mp3FileReader.readID3TagFrom(path: path))
+        #expect(throws: Never.self) { try mp3FileReader.readID3TagFrom(path: path) }
     }
 
-    func testNonExistentMP3fileWhenReadingID3Tag() {
+    @Test func testNonExistentMP3fileWhenReadingID3Tag() {
         let path = "/non-existent.mp3"
         let mp3FileReader = Mp3FileReader(tagSizeParser: ID3TagSizeParser(),
                                           id3TagConfiguration: ID3TagConfiguration())
 
-        XCTAssertThrowsError(try mp3FileReader.readID3TagFrom(path: path))
+        #expect(throws: ID3TagEditorError.corruptedFile.self) { try mp3FileReader.readID3TagFrom(path: path) }
     }
 
-    func testOnlyReadsID3Tag() throws {
+    @Test func testOnlyReadsID3Tag() throws {
         let path = PathLoader().pathFor(name: "example", fileType: "mp3")
         let mp3FileReader = Mp3FileReader(tagSizeParser: ID3TagSizeParser(),
                                           id3TagConfiguration: ID3TagConfiguration())
@@ -57,7 +57,7 @@ class Mp3FileReaderTest: XCTestCase {
         let id3TagData = try mp3FileReader.readID3TagFrom(path: path)
 
         // 10 bytes Tag + 34213 bytes according to the Tag Size in the file's ID3 Tag
-        XCTAssertEqual(id3TagData.count, 10 + 34213)
+        #expect(id3TagData.count == 10 + 34213)
     }
 
     static let allTests = [

@@ -5,31 +5,29 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3TrackPositionStringAdapterTest: XCTestCase {
-    let trackPositionStringAdapter = ID3PartOfTotalStringAdapter()
+struct ID3TrackPositionStringAdapterTest {
+    @Test func testAdaptTrackPositionWithTotalTrack() {
+        let trackPosition = ID3PartOfTotalStringAdapter().adapt(partOfTotal: "2/9")
 
-    func testAdaptTrackPositionWithTotalTrack() {
-        let trackPosition = trackPositionStringAdapter.adapt(partOfTotal: "2/9")
-
-        XCTAssertEqual(trackPosition.part, 2)
-        XCTAssertEqual(trackPosition.total, 9)
+        #expect(trackPosition.part == 2)
+        #expect(trackPosition.total == 9)
     }
 
-    func testAdaptTrackPositionWithoutTotalTracks() {
-        let trackPosition = trackPositionStringAdapter.adapt(partOfTotal: "2")
+    @Test func testAdaptTrackPositionWithoutTotalTracks() {
+        let trackPosition = ID3PartOfTotalStringAdapter().adapt(partOfTotal: "2")
 
-        XCTAssertEqual(trackPosition.part, 2)
-        XCTAssertNil(trackPosition.total)
+        #expect(trackPosition.part == 2)
+        #expect(trackPosition.total == nil)
     }
 
-    func testAdaptNotANumberTrackPosition() {
-        let trackPosition = trackPositionStringAdapter.adapt(partOfTotal: "::invalid::")
+    @Test func testAdaptNotANumberTrackPosition() {
+        let trackPosition = ID3PartOfTotalStringAdapter().adapt(partOfTotal: "::invalid::")
 
-        XCTAssertEqual(trackPosition.part, 0)
-        XCTAssertNil(trackPosition.total)
+        #expect(trackPosition.part == 0)
+        #expect(trackPosition.total == nil)
     }
 
     static let allTests = [

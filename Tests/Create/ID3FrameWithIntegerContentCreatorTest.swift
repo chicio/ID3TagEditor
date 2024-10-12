@@ -6,11 +6,11 @@
 //  Copyright © 2020 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3FrameWithIntegerContentCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoContent() {
+struct ID3FrameWithIntegerContentCreatorTest {
+    @Test func testNoFrameCreationWhenThereIsNoContent() {
         let id3YearFrameCreator = ID3FrameContentCreator(
                 frameCreator: FrameFromIntegerContentAdapter(frameCreator: MockFrameFromStringContentCreator(
                     fakeNewFrameAsByte: [],
@@ -24,10 +24,10 @@ class ID3FrameWithIntegerContentCreatorTest: XCTestCase {
             id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testFrameCreationWhenThereIsContent() {
+    @Test func testFrameCreationWhenThereIsContent() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID32v3TagBuilder()
             .recordingYear(frame: ID3FrameWithIntegerContent(value: 2018))
@@ -43,7 +43,7 @@ class ID3FrameWithIntegerContentCreatorTest: XCTestCase {
 
         let newTagBytes = id3TitleFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, newFrameBytes)
+        #expect(newTagBytes == newFrameBytes)
     }
 
     static let allTests = [

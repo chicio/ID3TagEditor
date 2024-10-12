@@ -5,36 +5,36 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3TagVersionParserTest: XCTestCase {
-    private let id3VersionParser = ID3TagVersionParser()
-
-    func testExtractVersion2() throws {
+struct ID3TagVersionParserTest {
+    @Test func testExtractVersion2() throws {
         let mp3WithV2Tag = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example", fileType: "mp3"))
         )
-        XCTAssertEqual(.version2, id3VersionParser.parse(mp3: mp3WithV2Tag))
+        #expect(.version2 == ID3TagVersionParser().parse(mp3: mp3WithV2Tag))
     }
 
-    func testExtractVersion3() throws {
+    @Test func testExtractVersion3() throws {
         let mp3WithV2Tag = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))
         )
-        XCTAssertEqual(.version3, id3VersionParser.parse(mp3: mp3WithV2Tag))
+        #expect(.version3 == ID3TagVersionParser().parse(mp3: mp3WithV2Tag))
     }
 
-    func testShortData() throws {
+    @Test func testShortData() throws {
         let shortData = Data(capacity: 2)
-        XCTAssertEqual(.version3, id3VersionParser.parse(mp3: shortData))
+        #expect(.version3 == ID3TagVersionParser().parse(mp3: shortData))
     }
 
-    func testDefaultVersion() throws {
+    @Test func testDefaultVersion() throws {
         let mp3WithV2Tag = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"))
         )
-        XCTAssertEqual(.version3, id3VersionParser.parse(mp3: mp3WithV2Tag))
+        #expect(.version3 == ID3TagVersionParser().parse(mp3: mp3WithV2Tag))
     }
 
     static let allTests = [

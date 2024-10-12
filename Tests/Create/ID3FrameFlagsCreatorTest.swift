@@ -5,18 +5,16 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3FrameFlagsCreatorTest: XCTestCase {
-    private let id3FrameFlagsCreator = ID3FrameFlagsCreator()
-
-    func testFlagsForVersion3() {
-        XCTAssertEqual(id3FrameFlagsCreator.createFor(version: .version3), [0x0, 0x0])
+struct ID3FrameFlagsCreatorTest {
+    @Test func testFlagsForVersion3() {
+        #expect(ID3FrameFlagsCreator().createFor(version: .version3) == [0x0, 0x0])
     }
 
-    func testFlagsForVersion2() {
-        XCTAssertEqual(id3FrameFlagsCreator.createFor(version: .version2), [])
+    @Test func testFlagsForVersion2() {
+        #expect(ID3FrameFlagsCreator().createFor(version: .version2) == [])
     }
 
     static let allTests = [

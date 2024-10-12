@@ -21,7 +21,6 @@ struct FrameNamesWithLocalizedContent {
     }
 }
 
-
 /// An enum used to identify the different types of frame parsed by the ID3TagEditor.
 /// This must be used to acces the frame data as identifier inside the dictionary
 /// of frame in the `ID3tag` `frames` properties.

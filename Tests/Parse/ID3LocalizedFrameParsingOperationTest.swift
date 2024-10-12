@@ -1,42 +1,40 @@
-//
-//  ID3LocalizedFrameParsingOperationTest.swift
-//  ID3TagEditor
-//
-//  Created by Fabrizio Duroni on 14/10/20.
-//  2020 Fabrizio Duroni.
-//
+////
+////  ID3LocalizedFrameParsingOperationTest.swift
+////  ID3TagEditor
+////
+////  Created by Fabrizio Duroni on 14/10/20.
+////  2020 Fabrizio Duroni.
+////
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3LocalizedFrameParsingOperationTest: XCTestCase {
-    func testParsingValidFrame() {
-        let expectation = XCTestExpectation(description: "unsynchronised lyrics")
+struct ID3LocalizedFrameParsingOperationTest {
+    @Test func testParsingValidFrame() async {
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics)
 
-        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
-            frameName: FrameName.unsynchronizedLyrics
-        )
-
-        lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
-            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
-            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.contentDescription, "cd")
-            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.language, .ita)
-            expectation.fulfill()
+        await confirmation("unsynchronised lyrics") { fulfill in
+            lyricsOperation.parse(frame: frameV3Valid(), version: .version3) { (_, frame) in
+                #expect((frame as? ID3FrameWithLocalizedContent)?.content == "c")
+                #expect((frame as? ID3FrameWithLocalizedContent)?.contentDescription == "cd")
+                #expect((frame as? ID3FrameWithLocalizedContent)?.language == .ita)
+                fulfill()
+            }
         }
     }
 
-    func testParsingInvalidLanguage() {
-        let expectation = XCTestExpectation(description: "unsynchronised lyrics")
+    @Test func testParsingInvalidLanguage() async {
+        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(frameName: FrameName.unsynchronizedLyrics)
 
-        let lyricsOperation = ID3LocalizedFrameContentParsingOperationFactory.make(
-            frameName: FrameName.unsynchronizedLyrics
-        )
-
-        lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
-            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.content, "c")
-            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.contentDescription, "cd")
-            XCTAssertEqual((frame as? ID3FrameWithLocalizedContent)?.language, .unknown)
-            expectation.fulfill()
+        await confirmation("unsynchronised lyrics") { fulfill in
+            lyricsOperation.parse(frame: frameV3InvalidLanguage(), version: .version3) { (_, frame) in
+                #expect((frame as? ID3FrameWithLocalizedContent)?.content == "c")
+                #expect((frame as? ID3FrameWithLocalizedContent)?.contentDescription == "cd")
+                #expect((frame as? ID3FrameWithLocalizedContent)?.language == .unknown)
+                fulfill()
+            }
         }
     }
 

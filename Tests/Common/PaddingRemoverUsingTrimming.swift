@@ -5,13 +5,13 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class PaddingRemoverUsingTrimmingTest: XCTestCase {
-    func testRemovePadding() {
-        XCTAssertEqual(
-                "simple string",
+struct PaddingRemoverUsingTrimmingTest {
+    @Test func testRemovePadding() {
+        #expect(
+                "simple string" ==
                 PaddingRemoverUsingTrimming().removeFrom(string: "\0\0\0simple string\0\0\0")
         )
     }
