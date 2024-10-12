@@ -5,7 +5,6 @@
 ![Build watchOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20watchOS/badge.svg)
 ![Build tvOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20tvOS/badge.svg)
 ![Build Linux](https://github.com/chicio/ID3TagEditor/workflows/Build%20Linux/badge.svg)
-![SwiftLint](https://github.com/chicio/ID3TagEditor/workflows/SwiftLint/badge.svg)
 [![codebeat badge](https://codebeat.co/badges/cb9699d0-4287-4723-96f9-e1a72fa05406)](https://codebeat.co/projects/github-com-chicio-id3tageditor-master)
 [![codecov](https://codecov.io/gh/chicio/ID3TagEditor/branch/main/graph/badge.svg)](https://codecov.io/gh/chicio/ID3TagEditor)
 [![CocoaPods](https://img.shields.io/badge/cocoapods-supported-blueviolet)](https://cocoapods.org/pods/ID3TagEditor)
