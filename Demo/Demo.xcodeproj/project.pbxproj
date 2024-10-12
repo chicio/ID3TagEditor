@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		452833862044D7F400458375 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; };
 		452833872044D7F400458375 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833692044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		45541BD9205991260025A8BF /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; };
-		45541BDA205991260025A8BF /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45966CA42CBACFC300F841E7 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; };
+		45966CA52CBACFC300F841E7 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45541BD7205990990025A8BF /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45F60D102CBACB580073BC12 /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452833652044D47B00458375 /* ID3TagEditor.framework */; };
 		45F60D112CBACB580073BC12 /* ID3TagEditor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452833652044D47B00458375 /* ID3TagEditor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45F7914D2CB9465500AD985F /* ID3TagEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F834302059061F0046C804 /* ID3TagEditor.framework */; };
@@ -60,13 +60,6 @@
 			remoteGlobalIDString = 45541B7720598F6C0025A8BF;
 			remoteInfo = "ID3TagEditor tvOS";
 		};
-		45541BDB205991260025A8BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 45541B7620598F6C0025A8BF;
-			remoteInfo = "ID3TagEditor tvOS";
-		};
 		45EEC046205A66E900CEF5BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */;
@@ -95,13 +88,13 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45541BDD205991270025A8BF /* Embed Frameworks */ = {
+		45966CA62CBACFC400F841E7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				45541BDA205991260025A8BF /* ID3TagEditor.framework in Embed Frameworks */,
+				45966CA52CBACFC300F841E7 /* ID3TagEditor.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,16 +136,23 @@
 /* Begin PBXFileReference section */
 		4528334A2044D41300458375 /* Demo iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4528335D2044D47B00458375 /* ID3TagEditor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ID3TagEditor.xcodeproj; path = ../ID3TagEditor.xcodeproj; sourceTree = "<group>"; };
-		45541BC5205990990025A8BF /* Demo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45751DAC2193CDB100627A34 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		45751DAD2193CDB100627A34 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		45751DB02193CDB100627A34 /* example-v3-additional-data.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "example-v3-additional-data.mp3"; sourceTree = "<group>"; };
 		45751DB12193CDB100627A34 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		45966C952CBACF5000F841E7 /* Demo tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F60D002CBACAB80073BC12 /* Demo macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F78C252CB939C700AD985F /* Demo watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		45966CA82CBAD01100F841E7 /* Exceptions for "Demo common" folder in "Demo tvOS" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PathLoader.swift,
+			);
+			target = 45966C942CBACF5000F841E7 /* Demo tvOS */;
+		};
 		45F6115A2CBACC520073BC12 /* Exceptions for "Demo common" folder in "Demo macOS" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -174,16 +174,14 @@
 			);
 			target = 45F78C242CB939C700AD985F /* Demo watchOS */;
 		};
-		45F78CBF2CB9411D00AD985F /* Exceptions for "Demo tvOS" folder in "Demo tvOS" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 45541BC4205990990025A8BF /* Demo tvOS */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		45966C962CBACF5000F841E7 /* Demo tvOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Demo tvOS";
+			sourceTree = "<group>";
+		};
 		45F60D012CBACAB80073BC12 /* Demo macOS */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Demo macOS";
@@ -199,6 +197,7 @@
 			exceptions = (
 				45F78CBE2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo watchOS" target */,
 				45F6115A2CBACC520073BC12 /* Exceptions for "Demo common" folder in "Demo macOS" target */,
+				45966CA82CBAD01100F841E7 /* Exceptions for "Demo common" folder in "Demo tvOS" target */,
 			);
 			path = "Demo common";
 			sourceTree = "<group>";
@@ -209,14 +208,6 @@
 				45F78CBC2CB9411D00AD985F /* Exceptions for "Demo iOS" folder in "Demo iOS" target */,
 			);
 			path = "Demo iOS";
-			sourceTree = "<group>";
-		};
-		45F78CB62CB9411D00AD985F /* Demo tvOS */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				45F78CBF2CB9411D00AD985F /* Exceptions for "Demo tvOS" folder in "Demo tvOS" target */,
-			);
-			path = "Demo tvOS";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -230,11 +221,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45541BC2205990990025A8BF /* Frameworks */ = {
+		45966C922CBACF5000F841E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45541BD9205991260025A8BF /* ID3TagEditor.framework in Frameworks */,
+				45966CA42CBACFC300F841E7 /* ID3TagEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +255,10 @@
 				45F60D012CBACAB80073BC12 /* Demo macOS */,
 				45F78CA92CB9411D00AD985F /* Demo iOS */,
 				45F78C9A2CB9411D00AD985F /* Demo common */,
-				45F78CB62CB9411D00AD985F /* Demo tvOS */,
+				45966C962CBACF5000F841E7 /* Demo tvOS */,
 				457517C82193CDAF00627A34 /* Demo Ubuntu */,
 				45F78C292CB939C700AD985F /* Demo watchOS */,
+				45966CA32CBACFC300F841E7 /* Frameworks */,
 				452832F02044D28E00458375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -275,9 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				4528334A2044D41300458375 /* Demo iOS.app */,
-				45541BC5205990990025A8BF /* Demo tvOS.app */,
 				45F78C252CB939C700AD985F /* Demo watchOS.app */,
 				45F60D002CBACAB80073BC12 /* Demo macOS.app */,
+				45966C952CBACF5000F841E7 /* Demo tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,6 +315,13 @@
 			path = "Demo Ubuntu";
 			sourceTree = "<group>";
 		};
+		45966CA32CBACFC300F841E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,28 +350,27 @@
 			productReference = 4528334A2044D41300458375 /* Demo iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		45541BC4205990990025A8BF /* Demo tvOS */ = {
+		45966C942CBACF5000F841E7 /* Demo tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45541BD8205990990025A8BF /* Build configuration list for PBXNativeTarget "Demo tvOS" */;
+			buildConfigurationList = 45966CA02CBACF5100F841E7 /* Build configuration list for PBXNativeTarget "Demo tvOS" */;
 			buildPhases = (
-				45541BC1205990990025A8BF /* Sources */,
-				45541BC2205990990025A8BF /* Frameworks */,
-				45541BC3205990990025A8BF /* Resources */,
-				45541BDD205991270025A8BF /* Embed Frameworks */,
+				45966C912CBACF5000F841E7 /* Sources */,
+				45966C922CBACF5000F841E7 /* Frameworks */,
+				45966C932CBACF5000F841E7 /* Resources */,
+				45966CA62CBACFC400F841E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				45F60CFB2CBAC9FB0073BC12 /* PBXTargetDependency */,
-				45541BDC205991260025A8BF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				45F78C9A2CB9411D00AD985F /* Demo common */,
-				45F78CB62CB9411D00AD985F /* Demo tvOS */,
+				45966C962CBACF5000F841E7 /* Demo tvOS */,
 			);
 			name = "Demo tvOS";
+			packageProductDependencies = (
+			);
 			productName = "Demo tvOS";
-			productReference = 45541BC5205990990025A8BF /* Demo tvOS.app */;
+			productReference = 45966C952CBACF5000F841E7 /* Demo tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		45F60CFF2CBACAB80073BC12 /* Demo macOS */ = {
@@ -437,10 +435,8 @@
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
-					45541BC4205990990025A8BF = {
-						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
+					45966C942CBACF5000F841E7 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 					45F60CFF2CBACAB80073BC12 = {
 						CreatedOnToolsVersion = 16.0;
@@ -473,9 +469,9 @@
 			projectRoot = "";
 			targets = (
 				452833492044D41300458375 /* Demo iOS */,
-				45541BC4205990990025A8BF /* Demo tvOS */,
 				45F78C242CB939C700AD985F /* Demo watchOS */,
 				45F60CFF2CBACAB80073BC12 /* Demo macOS */,
+				45966C942CBACF5000F841E7 /* Demo tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -540,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45541BC3205990990025A8BF /* Resources */ = {
+		45966C932CBACF5000F841E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -571,7 +567,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45541BC1205990990025A8BF /* Sources */ = {
+		45966C912CBACF5000F841E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -600,11 +596,6 @@
 			name = "ID3TagEditor iOS";
 			targetProxy = 452833882044D7F400458375 /* PBXContainerItemProxy */;
 		};
-		45541BDC205991260025A8BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ID3TagEditor tvOS";
-			targetProxy = 45541BDB205991260025A8BF /* PBXContainerItemProxy */;
-		};
 		45F60CF52CBAC9AD0073BC12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 45F60CF42CBAC9AD0073BC12 /* SwiftLintBuildToolPlugin */;
@@ -612,10 +603,6 @@
 		45F60CF92CBAC9F40073BC12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 45F60CF82CBAC9F40073BC12 /* SwiftLintBuildToolPlugin */;
-		};
-		45F60CFB2CBAC9FB0073BC12 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 45F60CFA2CBAC9FB0073BC12 /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -782,52 +769,76 @@
 			};
 			name = Release;
 		};
-		45541BD1205990990025A8BF /* Debug */ = {
+		45966CA12CBACF5100F841E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Demo tvOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 5Y4K7JX2AU;
-				INFOPLIST_FILE = "Demo tvOS/Info.plist";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 15.0;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
 			};
 			name = Debug;
 		};
-		45541BD2205990990025A8BF /* Release */ = {
+		45966CA22CBACF5100F841E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Demo tvOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 5Y4K7JX2AU;
-				INFOPLIST_FILE = "Demo tvOS/Info.plist";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "it.chicio.Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 15.0;
+				TVOS_DEPLOYMENT_TARGET = 18.0;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -1001,11 +1012,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45541BD8205990990025A8BF /* Build configuration list for PBXNativeTarget "Demo tvOS" */ = {
+		45966CA02CBACF5100F841E7 /* Build configuration list for PBXNativeTarget "Demo tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				45541BD1205990990025A8BF /* Debug */,
-				45541BD2205990990025A8BF /* Release */,
+				45966CA12CBACF5100F841E7 /* Debug */,
+				45966CA22CBACF5100F841E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1048,11 +1059,6 @@
 			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 		45F60CF82CBAC9F40073BC12 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45F60CF32CBAC9A20073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
-		45F60CFA2CBAC9FB0073BC12 /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45F60CF32CBAC9A20073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
