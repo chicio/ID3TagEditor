@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.1.0)
+Release date: 2024-10-13
+
+#### Added
+- documentation is now generated with Swift docc
+
 ## [5.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.0.0)
 Release date: 2024-10-12
 
