@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -129,28 +129,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		45966CA82CBAD01100F841E7 /* Exceptions for "Demo common" folder in "Demo tvOS" target */ = {
+		45966CA82CBAD01100F841E7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				PathLoader.swift,
 			);
 			target = 45966C942CBACF5000F841E7 /* Demo tvOS */;
 		};
-		45966D212CBAD4B000F841E7 /* Exceptions for "Demo common" folder in "Demo iOS" target */ = {
+		45966D212CBAD4B000F841E7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				PathLoader.swift,
 			);
 			target = 45966D0E2CBAD44C00F841E7 /* Demo iOS */;
 		};
-		45F6115A2CBACC520073BC12 /* Exceptions for "Demo common" folder in "Demo macOS" target */ = {
+		45F6115A2CBACC520073BC12 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				PathLoader.swift,
 			);
 			target = 45F60CFF2CBACAB80073BC12 /* Demo macOS */;
 		};
-		45F78CBE2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo watchOS" target */ = {
+		45F78CBE2CB9411D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				PathLoader.swift,
@@ -160,37 +160,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		45966C962CBACF5000F841E7 /* Demo tvOS */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Demo tvOS";
-			sourceTree = "<group>";
-		};
-		45966D102CBAD44C00F841E7 /* Demo iOS */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Demo iOS";
-			sourceTree = "<group>";
-		};
-		45F60D012CBACAB80073BC12 /* Demo macOS */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Demo macOS";
-			sourceTree = "<group>";
-		};
-		45F78C292CB939C700AD985F /* Demo watchOS */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Demo watchOS";
-			sourceTree = "<group>";
-		};
-		45F78C9A2CB9411D00AD985F /* Demo common */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				45966D212CBAD4B000F841E7 /* Exceptions for "Demo common" folder in "Demo iOS" target */,
-				45F78CBE2CB9411D00AD985F /* Exceptions for "Demo common" folder in "Demo watchOS" target */,
-				45F6115A2CBACC520073BC12 /* Exceptions for "Demo common" folder in "Demo macOS" target */,
-				45966CA82CBAD01100F841E7 /* Exceptions for "Demo common" folder in "Demo tvOS" target */,
-			);
-			path = "Demo common";
-			sourceTree = "<group>";
-		};
+		45966C962CBACF5000F841E7 /* Demo tvOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Demo tvOS"; sourceTree = "<group>"; };
+		45966D102CBAD44C00F841E7 /* Demo iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Demo iOS"; sourceTree = "<group>"; };
+		45F60D012CBACAB80073BC12 /* Demo macOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Demo macOS"; sourceTree = "<group>"; };
+		45F78C292CB939C700AD985F /* Demo watchOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Demo watchOS"; sourceTree = "<group>"; };
+		45F78C9A2CB9411D00AD985F /* Demo common */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (45966D212CBAD4B000F841E7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F78CBE2CB9411D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F6115A2CBACC520073BC12 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45966CA82CBAD01100F841E7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Demo common"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +398,7 @@
 				};
 			};
 			buildConfigurationList = 452832EA2044D28E00458375 /* Build configuration list for PBXProject "Demo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -434,7 +409,6 @@
 			packageReferences = (
 				45F60CF32CBAC9A20073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 452832F02044D28E00458375 /* Products */;
 			projectDirPath = "";
 			projectReferences = (

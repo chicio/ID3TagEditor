@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -61,7 +61,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		45F78F5D2CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor macOS" target */ = {
+		45F78F5D2CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -71,7 +71,7 @@
 			);
 			target = 452831C42044C40700458375 /* ID3TagEditor macOS */;
 		};
-		45F78F5E2CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor iOS" target */ = {
+		45F78F5E2CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -81,7 +81,7 @@
 			);
 			target = 452831E42044C4F500458375 /* ID3TagEditor iOS */;
 		};
-		45F78F5F2CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor tvOS" target */ = {
+		45F78F5F2CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -91,7 +91,7 @@
 			);
 			target = 45541B7620598F6C0025A8BF /* ID3TagEditor tvOS */;
 		};
-		45F78F602CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor watchOS" target */ = {
+		45F78F602CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -101,7 +101,7 @@
 			);
 			target = 45F833E2205904680046C804 /* ID3TagEditor watchOS */;
 		};
-		45F791492CB9420D00AD985F /* Exceptions for "Tests" folder in "ID3TagEditor macOS Tests" target */ = {
+		45F791492CB9420D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -109,7 +109,7 @@
 			);
 			target = 452831CD2044C40700458375 /* ID3TagEditor macOS Tests */;
 		};
-		45F7914A2CB9420D00AD985F /* Exceptions for "Tests" folder in "ID3TagEditor iOS Tests" target */ = {
+		45F7914A2CB9420D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -117,7 +117,7 @@
 			);
 			target = 452831EC2044C4F500458375 /* ID3TagEditor iOS Tests */;
 		};
-		45F7914B2CB9420D00AD985F /* Exceptions for "Tests" folder in "ID3TagEditor tvOS Tests" target */ = {
+		45F7914B2CB9420D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -128,38 +128,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		45F78CC32CB9413E00AD985F /* Scripts */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Scripts;
-			sourceTree = "<group>";
-		};
-		45F78CCB2CB9414800AD985F /* workflows */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			name = workflows;
-			path = .github/workflows;
-			sourceTree = "<group>";
-		};
-		45F78D582CB941C200AD985F /* Source */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				45F78F5D2CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor macOS" target */,
-				45F78F5E2CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor iOS" target */,
-				45F78F5F2CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor tvOS" target */,
-				45F78F602CB941C200AD985F /* Exceptions for "Source" folder in "ID3TagEditor watchOS" target */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		45F7903D2CB9420C00AD985F /* Tests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				45F791492CB9420D00AD985F /* Exceptions for "Tests" folder in "ID3TagEditor macOS Tests" target */,
-				45F7914A2CB9420D00AD985F /* Exceptions for "Tests" folder in "ID3TagEditor iOS Tests" target */,
-				45F7914B2CB9420D00AD985F /* Exceptions for "Tests" folder in "ID3TagEditor tvOS Tests" target */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
+		45F78CC32CB9413E00AD985F /* Scripts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Scripts; sourceTree = "<group>"; };
+		45F78CCB2CB9414800AD985F /* workflows */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); name = workflows; path = .github/workflows; sourceTree = "<group>"; };
+		45F78D582CB941C200AD985F /* Source */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (45F78F5D2CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F78F5E2CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F78F5F2CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F78F602CB941C200AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Source; sourceTree = "<group>"; };
+		45F7903D2CB9420C00AD985F /* Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (45F791492CB9420D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F7914A2CB9420D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 45F7914B2CB9420D00AD985F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +458,7 @@
 				};
 			};
 			buildConfigurationList = 452831BF2044C40700458375 /* Build configuration list for PBXProject "ID3TagEditor" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -496,7 +469,6 @@
 			packageReferences = (
 				45F60CF02CBAC7FE0073BC12 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 452831C62044C40700458375 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
