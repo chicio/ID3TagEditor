@@ -21,7 +21,7 @@ A swift library to read and modify ID3 Tag of any mp3 file. Listed in the implem
 
 ### Documentation
 
-You can find the complete API documentation, with the installation guides and some examples at [id3tageditor.fabrizioduroni.it](https://id3tageditor.fabrizioduroni.it/index.html "ID3TagEditor doc").
+You can find the complete API documentation, with the installation guides and some examples at [id3tageditor.fabrizioduroni.it](https://id3tageditor.fabrizioduroni.it/documentation/id3tageditor/ "ID3TagEditor doc").
 
 ***
 
