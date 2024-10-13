@@ -11,3 +11,5 @@ swift package --allow-writing-to-directory docs \
     --disable-indexing \
     --transform-for-static-hosting \
     --output-path docs
+
+echo "id3tageditor.fabrizioduroni.it" > "docs/CNAME" 
