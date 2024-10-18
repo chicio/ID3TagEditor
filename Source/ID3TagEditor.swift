@@ -12,6 +12,7 @@ import Foundation
  */
 public class ID3TagEditor {
     private let id3TagParser: ID3TagParser
+    private let id3TagCreator: ID3TagCreator
     private let mp3FileReader: Mp3FileReader
     private let mp3FileWriter: Mp3FileWriter
     private let mp3WithID3TagBuilder: Mp3WithID3TagBuilder
@@ -21,9 +22,10 @@ public class ID3TagEditor {
      */
     public init() {
         self.id3TagParser = ID3TagParserFactory.make()
+        self.id3TagCreator = ID3TagCreatorFactory.make()
         self.mp3FileReader = Mp3FileReaderFactory.make()
         self.mp3FileWriter = Mp3FileWriter()
-        self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
+        self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: id3TagCreator,
                                                          id3TagConfiguration: ID3TagConfiguration())
     }
 
@@ -68,8 +70,8 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
-        let newId3TagData = try mp3WithID3TagBuilder.build(mp3: Data(), newId3Tag: tag, currentId3Tag: nil)
         let currentId3Tag = try read(from: path)
+        let newId3TagData = try id3TagCreator.create(id3Tag: tag)
         try mp3FileWriter.write(newId3TagData: newId3TagData, currentId3Tag: currentId3Tag, fromPath: path, toPath: newPath ?? path)
     }
 

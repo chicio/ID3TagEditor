@@ -57,6 +57,7 @@ class Mp3FileReader {
         }
 
         inputStream.open()
+        defer { inputStream.close() }
 
         let headerSize = id3TagConfiguration.headerSize()
         let header = try read(bytesCount: headerSize, fromStream: inputStream)
