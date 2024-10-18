@@ -5,11 +5,11 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3DiscPositionFrameCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoDiscPosition() {
+struct ID3DiscPositionFrameCreatorTest {
+    @Test func testNoFrameCreationWhenThereIsNoDiscPosition() {
         let id3DiscPositionFrameCreator = ID3DiscPositionFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -22,10 +22,10 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
             id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testFrameCreationWhenThereIsADiscPosition() {
+    @Test func testFrameCreationWhenThereIsADiscPosition() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID32v3TagBuilder()
             .discPosition(frame: ID3FramePartOfTotal(part: 1, total: 3))
@@ -41,7 +41,7 @@ class ID3DiscPositionFrameCreatorTest: XCTestCase {
 
         let newTagBytes = id3GenreFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, newFrameBytes)
+        #expect(newTagBytes == newFrameBytes)
     }
 
     static let allTests = [

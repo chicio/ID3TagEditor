@@ -1036,3 +1036,6 @@ public enum ID3FrameContentLanguage: String, Equatable, Hashable, CaseIterable {
     /// Invalid/Unknown language.
     case unknown
 }
+
+// swiftlint:enable type_body_length
+// swiftlint:enable file_length

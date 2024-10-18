@@ -5,11 +5,11 @@
 //  2020 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3FrameWithStringContentCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoFrameData() {
+struct ID3FrameWithStringContentCreatorTest {
+    @Test func testNoFrameCreationWhenThereIsNoFrameData() {
         let id3AlbumFrameCreator = ID3FrameContentCreator(
             frameCreator: FrameFromStringContentAdapter(frameCreator: MockFrameFromStringContentCreator(
                 fakeNewFrameAsByte: [],
@@ -23,10 +23,10 @@ class ID3FrameWithStringContentCreatorTest: XCTestCase {
             id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testFrameCreationWhenThereIsFrameData() {
+    @Test func testFrameCreationWhenThereIsFrameData() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID32v3TagBuilder()
             .album(frame: ID3FrameWithStringContent(content: "::an example album::"))
@@ -42,7 +42,7 @@ class ID3FrameWithStringContentCreatorTest: XCTestCase {
 
         let newTagBytes = id3AlbumFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, newFrameBytes)
+        #expect(newTagBytes == newFrameBytes)
     }
 
     static let allTests = [

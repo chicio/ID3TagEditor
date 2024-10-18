@@ -5,16 +5,16 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class PaddingAdderUsingNullCharTest: XCTestCase {
-    func testAddPadding() {
+struct PaddingAdderUsingNullCharTest {
+    @Test func testAddPadding() {
         let paddingAdderUsingNullChar = PaddingAdderToEndOfContentUsingNullChar()
 
         let contentWithPadding = paddingAdderUsingNullChar.addTo(content: [0x1, 0x1], numberOfByte: 1)
 
-        XCTAssertEqual(contentWithPadding, [0x1, 0x1, 0x0])
+        #expect(contentWithPadding == [0x1, 0x1, 0x0])
     }
 
     static let allTests = [

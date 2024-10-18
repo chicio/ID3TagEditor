@@ -10,61 +10,64 @@
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3TagEditorAcceptanceTest: XCTestCase {
-    let id3TagEditor = ID3TagEditor()
-
-    func testFailWrongFilePathFilePath() {
-        XCTAssertThrowsError(try id3TagEditor.read(from: "::a wrong path::"))
-        XCTAssertThrowsError(try id3TagEditor.write(tag: ID32v2TagBuilder().build(), to: ""))
+struct ID3TagEditorAcceptanceTest {
+    @Test func testFailWrongFilePathFilePath() {
+        let id3TagEditor = ID3TagEditor()
+        #expect(throws: ID3TagEditorError.invalidFileFormat.self) { try id3TagEditor.read(from: "::a wrong path::") }
+        #expect(throws: ID3TagEditorError.invalidFileFormat.self) { try id3TagEditor.write(tag: ID32v2TagBuilder().build(), to: "") }
     }
 
     // MARK: read
 
-    func testReadTagV2() throws {
+    @Test func testReadTagV2() throws {
+        let id3TagEditor = ID3TagEditor()
         let path = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
 
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example", fileType: "mp3"))
 
-        XCTAssertEqual(id3Tag?.properties.version, .version2)
-        XCTAssertEqual(id3Tag?.frames[.title]?.id3Identifier, "TT2")
-        XCTAssertEqual(id3Tag?.frames[.title]?.size, 35)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "example song")
-        XCTAssertEqual(id3Tag?.frames[.album]?.id3Identifier, "TAL")
-        XCTAssertEqual(id3Tag?.frames[.album]?.size, 37)
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "example album")
-        XCTAssertEqual(id3Tag?.frames[.albumArtist]?.id3Identifier, "TP2")
-        XCTAssertEqual(id3Tag?.frames[.albumArtist]?.size, 51)
-        XCTAssertEqual((id3Tag?.frames[.albumArtist] as? ID3FrameWithStringContent)?.content, "example album artist")
-        XCTAssertEqual(id3Tag?.frames[.artist]?.id3Identifier, "TP1")
-        XCTAssertEqual(id3Tag?.frames[.artist]?.size, 39)
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "example artist")
-        XCTAssertEqual(id3Tag?.frames[.attachedPicture(.frontCover)]?.id3Identifier, "PIC")
-        XCTAssertEqual(id3Tag?.frames[.attachedPicture(.frontCover)]?.size, 32003)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .jpeg)
+        #expect(id3Tag?.properties.version == .version2)
+        #expect(id3Tag?.frames[.title]?.id3Identifier == "TT2")
+        #expect(id3Tag?.frames[.title]?.size == 35)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "example song")
+        #expect(id3Tag?.frames[.album]?.id3Identifier == "TAL")
+        #expect(id3Tag?.frames[.album]?.size == 37)
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "example album")
+        #expect(id3Tag?.frames[.albumArtist]?.id3Identifier == "TP2")
+        #expect(id3Tag?.frames[.albumArtist]?.size == 51)
+        #expect((id3Tag?.frames[.albumArtist] as? ID3FrameWithStringContent)?.content == "example album artist")
+        #expect(id3Tag?.frames[.artist]?.id3Identifier == "TP1")
+        #expect(id3Tag?.frames[.artist]?.size == 39)
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "example artist")
+        #expect(id3Tag?.frames[.attachedPicture(.frontCover)]?.id3Identifier == "PIC")
+        #expect(id3Tag?.frames[.attachedPicture(.frontCover)]?.size == 32003)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture == cover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type == .frontCover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format == .jpeg)
     }
 
-    func testParseTagV3() throws {
+    @Test func testParseTagV3() throws {
+        let id3TagEditor = ID3TagEditor()
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
+        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))
 
-        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
-
-        XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
+        #expect(id3Tag?.properties.version == .version3)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "A title")
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "An album")
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "An artist")
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture == cover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type == .frontCover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format == .png)
     }
 
-    func testParseTagV3AdditionalData() throws {
+    @Test func testParseTagV3AdditionalData() throws {
+        let id3TagEditor = ID3TagEditor()
         let pathFront = PathLoader().pathFor(name: "example-cover", fileType: "jpg")
         let pathBack = PathLoader().pathFor(name: "cover2", fileType: "jpg")
         let coverFront = try Data(contentsOf: URL(fileURLWithPath: pathFront))
@@ -74,268 +77,278 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             from: PathLoader().pathFor(name: "example-v3-additional-data", fileType: "mp3")
         )
 
-        XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual(id3Tag?.frames[.title]?.id3Identifier, "TIT2")
-        XCTAssertEqual(id3Tag?.frames[.title]?.size, 37)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
-        XCTAssertEqual(id3Tag?.frames[.album]?.id3Identifier, "TALB")
-        XCTAssertEqual(id3Tag?.frames[.album]?.size, 37)
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
-        XCTAssertEqual(id3Tag?.frames[.artist]?.id3Identifier, "TPE1")
-        XCTAssertEqual(id3Tag?.frames[.artist]?.size, 39)
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
-        XCTAssertEqual(id3Tag?.frames[.albumArtist]?.id3Identifier, "TPE2")
-        XCTAssertEqual(id3Tag?.frames[.albumArtist]?.size, 51)
-        XCTAssertEqual((id3Tag?.frames[.albumArtist] as? ID3FrameWithStringContent)?.content, "A New Album Artist")
-        XCTAssertEqual(id3Tag?.frames[.attachedPicture(.frontCover)]?.id3Identifier, "APIC")
-        XCTAssertEqual(id3Tag?.frames[.attachedPicture(.frontCover)]?.size, 32015)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, coverFront)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .jpeg)
-        XCTAssertEqual(id3Tag?.frames[.attachedPicture(.backCover)]?.id3Identifier, "APIC")
-        XCTAssertEqual(id3Tag?.frames[.attachedPicture(.backCover)]?.size, 83384)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.picture, coverBack)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.type, .backCover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.format, .jpeg)
-        XCTAssertEqual(id3Tag?.frames[.genre]?.id3Identifier, "TCON")
-        XCTAssertEqual(id3Tag?.frames[.genre]?.size, 24)
-        XCTAssertEqual((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier, .metal)
-        XCTAssertEqual((id3Tag?.frames[.genre] as? ID3FrameGenre)?.description, "Metalcore")
-        XCTAssertEqual(id3Tag?.frames[.trackPosition]?.id3Identifier, "TRCK")
-        XCTAssertEqual(id3Tag?.frames[.trackPosition]?.size, 15)
-        XCTAssertEqual((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part, 2)
-        XCTAssertEqual((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.total, 9)
-        XCTAssertEqual(id3Tag?.frames[.recordingDayMonth]?.id3Identifier, "TDAT")
-        XCTAssertEqual(id3Tag?.frames[.recordingDayMonth]?.size, 16)
-        XCTAssertEqual((id3Tag?.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.day, 5)
-        XCTAssertEqual((id3Tag?.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.month, 8)
-        XCTAssertEqual(id3Tag?.frames[.recordingYear]?.id3Identifier, "TYER")
-        XCTAssertEqual(id3Tag?.frames[.recordingYear]?.size, 16)
-        XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value, 2018)
-        XCTAssertEqual(id3Tag?.frames[.recordingHourMinute]?.id3Identifier, "TIME")
-        XCTAssertEqual(id3Tag?.frames[.recordingHourMinute]?.size, 16)
-        XCTAssertEqual((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.hour, 15)
-        XCTAssertEqual((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.minute, 39)
+        #expect(id3Tag?.properties.version == .version3)
+        #expect(id3Tag?.frames[.title]?.id3Identifier == "TIT2")
+        #expect(id3Tag?.frames[.title]?.size == 37)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "A New title")
+        #expect(id3Tag?.frames[.album]?.id3Identifier == "TALB")
+        #expect(id3Tag?.frames[.album]?.size == 37)
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "A New Album")
+        #expect(id3Tag?.frames[.artist]?.id3Identifier == "TPE1")
+        #expect(id3Tag?.frames[.artist]?.size == 39)
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "A New Artist")
+        #expect(id3Tag?.frames[.albumArtist]?.id3Identifier == "TPE2")
+        #expect(id3Tag?.frames[.albumArtist]?.size == 51)
+        #expect((id3Tag?.frames[.albumArtist] as? ID3FrameWithStringContent)?.content == "A New Album Artist")
+        #expect(id3Tag?.frames[.attachedPicture(.frontCover)]?.id3Identifier == "APIC")
+        #expect(id3Tag?.frames[.attachedPicture(.frontCover)]?.size == 32015)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture == coverFront)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type == .frontCover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format == .jpeg)
+        #expect(id3Tag?.frames[.attachedPicture(.backCover)]?.id3Identifier == "APIC")
+        #expect(id3Tag?.frames[.attachedPicture(.backCover)]?.size == 83384)
+        #expect((id3Tag?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.picture == coverBack)
+        #expect((id3Tag?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.type == .backCover)
+        #expect((id3Tag?.frames[.attachedPicture(.backCover)] as? ID3FrameAttachedPicture)?.format == .jpeg)
+        #expect(id3Tag?.frames[.genre]?.id3Identifier == "TCON")
+        #expect(id3Tag?.frames[.genre]?.size == 24)
+        #expect((id3Tag?.frames[.genre] as? ID3FrameGenre)?.identifier == .metal)
+        #expect((id3Tag?.frames[.genre] as? ID3FrameGenre)?.description == "Metalcore")
+        #expect(id3Tag?.frames[.trackPosition]?.id3Identifier == "TRCK")
+        #expect(id3Tag?.frames[.trackPosition]?.size == 15)
+        #expect((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part == 2)
+        #expect((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.total == 9)
+        #expect(id3Tag?.frames[.recordingDayMonth]?.id3Identifier == "TDAT")
+        #expect(id3Tag?.frames[.recordingDayMonth]?.size == 16)
+        #expect((id3Tag?.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.day == 5)
+        #expect((id3Tag?.frames[.recordingDayMonth] as? ID3FrameRecordingDayMonth)?.month == 8)
+        #expect(id3Tag?.frames[.recordingYear]?.id3Identifier == "TYER")
+        #expect(id3Tag?.frames[.recordingYear]?.size == 16)
+        #expect((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value == 2018)
+        #expect(id3Tag?.frames[.recordingHourMinute]?.id3Identifier == "TIME")
+        #expect(id3Tag?.frames[.recordingHourMinute]?.size == 16)
+        #expect((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.hour == 15)
+        #expect((id3Tag?.frames[.recordingHourMinute] as? ID3FrameRecordingHourMinute)?.minute == 39)
     }
 
-    func testReadTagV4() throws {
+    @Test func testReadTagV4() throws {
+        let id3TagEditor = ID3TagEditor()
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4", fileType: "mp3"))
 
-        XCTAssertEqual(id3Tag?.properties.version, .version4)
-        XCTAssertEqual(id3Tag?.frames[.title]?.size, 37)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.id3Identifier, "TIT2")
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
-        XCTAssertEqual(id3Tag?.frames[.album]?.size, 37)
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.id3Identifier, "TALB")
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
-        XCTAssertEqual(id3Tag?.frames[.artist]?.size, 39)
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.id3Identifier, "TPE1")
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
+        #expect(id3Tag?.properties.version == .version4)
+        #expect(id3Tag?.frames[.title]?.size == 37)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.id3Identifier == "TIT2")
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "A New title")
+        #expect(id3Tag?.frames[.album]?.size == 37)
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.id3Identifier == "TALB")
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "A New Album")
+        #expect(id3Tag?.frames[.artist]?.size == 39)
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.id3Identifier == "TPE1")
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "A New Artist")
     }
 
-    func testReadTagV4WithImage() throws {
+    @Test func testReadTagV4WithImage() throws {
+        let id3TagEditor = ID3TagEditor()
         let path = PathLoader().pathFor(name: "cover-v4", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
 
         let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v4-png", fileType: "mp3"))
 
-        XCTAssertEqual(id3Tag?.properties.version, .version4)
-        XCTAssertEqual(id3Tag?.frames[.artist]?.id3Identifier, "TPE1")
-        XCTAssertEqual(id3Tag?.frames[.artist]?.size, 19)
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "MATRANG")
-        XCTAssertEqual(id3Tag?.frames[.title]?.id3Identifier, "TIT2")
-        XCTAssertEqual(id3Tag?.frames[.title]?.size, 24)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "Медуза")
-        XCTAssertEqual(id3Tag?.frames[.genre]?.id3Identifier, "TCON")
-        XCTAssertEqual(id3Tag?.frames[.genre]?.size, 19)
-        XCTAssertEqual(id3Tag?.frames[.genre] as? ID3FrameGenre, ID3FrameGenre(genre: nil, description: "Hip-Hop"))
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type, .frontCover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
+        #expect(id3Tag?.properties.version == .version4)
+        #expect(id3Tag?.frames[.artist]?.id3Identifier == "TPE1")
+        #expect(id3Tag?.frames[.artist]?.size == 19)
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "MATRANG")
+        #expect(id3Tag?.frames[.title]?.id3Identifier == "TIT2")
+        #expect(id3Tag?.frames[.title]?.size == 24)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "Медуза")
+        #expect(id3Tag?.frames[.genre]?.id3Identifier == "TCON")
+        #expect(id3Tag?.frames[.genre]?.size == 19)
+        #expect(id3Tag?.frames[.genre] as? ID3FrameGenre == ID3FrameGenre(genre: nil, description: "Hip-Hop"))
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture == cover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type == .frontCover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format == .png)
     }
 
-    func testReadAsMp3() throws {
+    @Test func testReadAsMp3() throws {
+        let id3TagEditor = ID3TagEditor()
         let path = PathLoader().pathFor(name: "example-cover-png", fileType: "png")
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
         let mp3 = try Data(
-            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))
+            contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))
         )
 
         let id3Tag = try id3TagEditor.read(mp3: mp3)
 
-        XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "A New title")
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "A New Album")
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "A New Artist")
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, cover)
-        XCTAssertEqual((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
+        #expect(id3Tag?.properties.version == .version3)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "A title")
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "An album")
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "An artist")
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture == cover)
+        #expect((id3Tag?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format == .png)
     }
 
-    func testReadInvalidFile() throws {
+    @Test func testReadCorruptedFile() throws {
+        let id3TagEditor = ID3TagEditor()
         let mp3 = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-corrupted", fileType: "mp3"))
         )
 
-        XCTAssertThrowsError(try id3TagEditor.read(mp3: mp3))
+        #expect(throws: ID3TagEditorError.corruptedFile.self) {
+            try id3TagEditor.read(mp3: mp3)
+        }
     }
 
-    func testReadUtf16String() throws {
+    @Test func testReadUtf16String() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3 = PathLoader().pathFor(name: "example-utf16", fileType: "mp3")
 
         let id3Tag = try id3TagEditor.read(from: pathMp3)
 
-        XCTAssertEqual((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content, "Om Tryumbacom")
-        XCTAssertEqual((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content, "Laraaji")
-        XCTAssertEqual((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content, "Vision Songs Vol. 1")
-        XCTAssertEqual((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value, 2018)
-        XCTAssertEqual((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part, 10)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "Om Tryumbacom")
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "Laraaji")
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "Vision Songs Vol. 1")
+        #expect((id3Tag?.frames[.recordingYear] as? ID3FrameWithIntegerContent)?.value == 2018)
+        #expect((id3Tag?.frames[.trackPosition] as? ID3FramePartOfTotal)?.part == 10)
     }
 
-    func testReadNewFramesV2() throws {
+    @Test func testReadNewFramesV2() throws {
+        let id3TagEditor = ID3TagEditor()
         let id3Tag = try id3TagEditor.read(
             from: PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
         )
 
-        XCTAssertEqual(id3Tag?.properties.version, .version2)
-        XCTAssertEqual(id3Tag?.frames[.composer]?.id3Identifier, "TCM")
-        XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content, "Composer V2")
-        XCTAssertEqual(id3Tag?.frames[.conductor]?.id3Identifier, "TP3")
-        XCTAssertEqual((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.content, "Conductor V2")
-        XCTAssertEqual(id3Tag?.frames[.contentGrouping]?.id3Identifier, "TT1")
-        XCTAssertEqual((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V2")
-        XCTAssertEqual(id3Tag?.frames[.copyright]?.id3Identifier, "TCR")
-        XCTAssertEqual((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.content, "Copyright V2")
-        XCTAssertEqual(id3Tag?.frames[.encodedBy]?.id3Identifier, "TEN")
-        XCTAssertEqual((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V2")
-        XCTAssertEqual(id3Tag?.frames[.encoderSettings]?.id3Identifier, "TSS")
-        XCTAssertEqual((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V2")
-        XCTAssertEqual(id3Tag?.frames[.lyricist]?.id3Identifier, "TXT")
-        XCTAssertEqual((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V2")
-        XCTAssertEqual(id3Tag?.frames[.mixArtist]?.id3Identifier, "TP4")
-        XCTAssertEqual((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V2")
-        XCTAssertEqual(id3Tag?.frames[.publisher]?.id3Identifier, "TPB")
-        XCTAssertEqual((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.content, "Publisher V2")
-        XCTAssertEqual(id3Tag?.frames[.subtitle]?.id3Identifier, "TT3")
-        XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V2")
-        XCTAssertEqual(id3Tag?.frames[.discPosition]?.id3Identifier, "TPA")
-        XCTAssertEqual((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part, 1)
-        XCTAssertEqual((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total, 3)
+        #expect(id3Tag?.properties.version == .version2)
+        #expect(id3Tag?.frames[.composer]?.id3Identifier == "TCM")
+        #expect((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content == "Composer V2")
+        #expect(id3Tag?.frames[.conductor]?.id3Identifier == "TP3")
+        #expect((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.content == "Conductor V2")
+        #expect(id3Tag?.frames[.contentGrouping]?.id3Identifier == "TT1")
+        #expect((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content == "ContentGrouping V2")
+        #expect(id3Tag?.frames[.copyright]?.id3Identifier == "TCR")
+        #expect((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.content == "Copyright V2")
+        #expect(id3Tag?.frames[.encodedBy]?.id3Identifier == "TEN")
+        #expect((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content == "EncodedBy V2")
+        #expect(id3Tag?.frames[.encoderSettings]?.id3Identifier == "TSS")
+        #expect((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content == "EncoderSettings V2")
+        #expect(id3Tag?.frames[.lyricist]?.id3Identifier == "TXT")
+        #expect((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.content == "Lyricist V2")
+        #expect(id3Tag?.frames[.mixArtist]?.id3Identifier == "TP4")
+        #expect((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content == "MixArtist V2")
+        #expect(id3Tag?.frames[.publisher]?.id3Identifier == "TPB")
+        #expect((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.content == "Publisher V2")
+        #expect(id3Tag?.frames[.subtitle]?.id3Identifier == "TT3")
+        #expect((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content == "Subtitle V2")
+        #expect(id3Tag?.frames[.discPosition]?.id3Identifier == "TPA")
+        #expect((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part == 1)
+        #expect((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total == 3)
     }
 
-    func testReadNewFramesV3() throws {
+    @Test func testReadNewFramesV3() throws {
+        let id3TagEditor = ID3TagEditor()
         let id3Tag = try id3TagEditor.read(
             from: PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
         )
 
-        XCTAssertEqual(id3Tag?.properties.version, .version3)
-        XCTAssertEqual(id3Tag?.frames[.composer]?.id3Identifier, "TCOM")
-        XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content, "Composer V3")
-        XCTAssertEqual(id3Tag?.frames[.conductor]?.id3Identifier, "TPE3")
-        XCTAssertEqual((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.content, "Conductor V3")
-        XCTAssertEqual(id3Tag?.frames[.copyright]?.id3Identifier, "TCOP")
-        XCTAssertEqual((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.content, "Copyright V3")
-        XCTAssertEqual(id3Tag?.frames[.contentGrouping]?.id3Identifier, "TIT1")
-        XCTAssertEqual((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V3")
-        XCTAssertEqual(id3Tag?.frames[.discPosition]?.id3Identifier, "TPOS")
-        XCTAssertEqual((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part, 1)
-        XCTAssertEqual((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total, 3)
-        XCTAssertEqual(id3Tag?.frames[.encodedBy]?.id3Identifier, "TENC")
-        XCTAssertEqual((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V3")
-        XCTAssertEqual(id3Tag?.frames[.encoderSettings]?.id3Identifier, "TSSE")
-        XCTAssertEqual((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V3")
-        XCTAssertEqual(id3Tag?.frames[.iTunesGrouping]?.id3Identifier, "GRP1")
-        XCTAssertEqual((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content, "ItunesGrouping V3")
-        XCTAssertEqual(id3Tag?.frames[.lyricist]?.id3Identifier, "TEXT")
-        XCTAssertEqual((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V3")
-        XCTAssertEqual(id3Tag?.frames[.mixArtist]?.id3Identifier, "TPE4")
-        XCTAssertEqual((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V3")
-        XCTAssertEqual(id3Tag?.frames[.fileOwner]?.id3Identifier, "TOWN")
-        XCTAssertEqual((id3Tag?.frames[.fileOwner] as? ID3FrameWithStringContent)?.content, "FileOwner V3")
-        XCTAssertEqual(id3Tag?.frames[.iTunesMovementName]?.id3Identifier, "MVNM")
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V3")
-        XCTAssertEqual(id3Tag?.frames[.iTunesMovementIndex]?.id3Identifier, "MVIN")
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
-        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastCategory]?.id3Identifier, "TCAT")
-        XCTAssertEqual(
-            (id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content,
+        #expect(id3Tag?.properties.version == .version3)
+        #expect(id3Tag?.frames[.composer]?.id3Identifier == "TCOM")
+        #expect((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content == "Composer V3")
+        #expect(id3Tag?.frames[.conductor]?.id3Identifier == "TPE3")
+        #expect((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.content == "Conductor V3")
+        #expect(id3Tag?.frames[.copyright]?.id3Identifier == "TCOP")
+        #expect((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.content == "Copyright V3")
+        #expect(id3Tag?.frames[.contentGrouping]?.id3Identifier == "TIT1")
+        #expect((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content == "ContentGrouping V3")
+        #expect(id3Tag?.frames[.discPosition]?.id3Identifier == "TPOS")
+        #expect((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part == 1)
+        #expect((id3Tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total == 3)
+        #expect(id3Tag?.frames[.encodedBy]?.id3Identifier == "TENC")
+        #expect((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content == "EncodedBy V3")
+        #expect(id3Tag?.frames[.encoderSettings]?.id3Identifier == "TSSE")
+        #expect((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content == "EncoderSettings V3")
+        #expect(id3Tag?.frames[.iTunesGrouping]?.id3Identifier == "GRP1")
+        #expect((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content == "ItunesGrouping V3")
+        #expect(id3Tag?.frames[.lyricist]?.id3Identifier == "TEXT")
+        #expect((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.content == "Lyricist V3")
+        #expect(id3Tag?.frames[.mixArtist]?.id3Identifier == "TPE4")
+        #expect((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content == "MixArtist V3")
+        #expect(id3Tag?.frames[.fileOwner]?.id3Identifier == "TOWN")
+        #expect((id3Tag?.frames[.fileOwner] as? ID3FrameWithStringContent)?.content == "FileOwner V3")
+        #expect(id3Tag?.frames[.iTunesMovementName]?.id3Identifier == "MVNM")
+        #expect((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content == "MovementName V3")
+        #expect(id3Tag?.frames[.iTunesMovementIndex]?.id3Identifier == "MVIN")
+        #expect((id3Tag?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value == 6)
+        #expect((id3Tag?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value == 13)
+        #expect(id3Tag?.frames[.iTunesPodcastCategory]?.id3Identifier == "TCAT")
+        #expect(
+            (id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content ==
             "PodcastCategory V3"
         )
-        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastDescription]?.id3Identifier, "TDES")
-        XCTAssertEqual(
-            (id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content,
+        #expect(id3Tag?.frames[.iTunesPodcastDescription]?.id3Identifier == "TDES")
+        #expect(
+            (id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content ==
             "PodcastDescription V3"
         )
-        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastID]?.id3Identifier, "TGID")
-        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V3")
-        XCTAssertEqual(id3Tag?.frames[.iTunesPodcastKeywords]?.id3Identifier, "TKWD")
-        XCTAssertEqual(
-            (id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content,
+        #expect(id3Tag?.frames[.iTunesPodcastID]?.id3Identifier == "TGID")
+        #expect((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content == "PodcastID V3")
+        #expect(id3Tag?.frames[.iTunesPodcastKeywords]?.id3Identifier == "TKWD")
+        #expect(
+            (id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content ==
             "PodcastKeywords V3"
         )
-        XCTAssertEqual(id3Tag?.frames[.publisher]?.id3Identifier, "TPUB")
-        XCTAssertEqual((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.content, "Publisher V3")
-        XCTAssertEqual(id3Tag?.frames[.subtitle]?.id3Identifier, "TIT3")
-        XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V3")
+        #expect(id3Tag?.frames[.publisher]?.id3Identifier == "TPUB")
+        #expect((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.content == "Publisher V3")
+        #expect(id3Tag?.frames[.subtitle]?.id3Identifier == "TIT3")
+        #expect((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content == "Subtitle V3")
     }
 
-    func testReadNewFramesV4() throws {
+    @Test func testReadNewFramesV4() throws {
+        let id3TagEditor = ID3TagEditor()
         let id3Tag = try id3TagEditor.read(
             from: PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
         )
 
-        XCTAssertEqual(id3Tag?.properties.version, .version4)
-        XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.id3Identifier, "TCOM")
-        XCTAssertEqual((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content, "Composer V4")
-        XCTAssertEqual((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.id3Identifier, "TPE3")
-        XCTAssertEqual((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.content, "Conductor V4")
-        XCTAssertEqual((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.id3Identifier, "TCOP")
-        XCTAssertEqual((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.content, "Copyright V4")
-        XCTAssertEqual((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "TIT1")
-        XCTAssertEqual((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content, "ContentGrouping V4")
-        XCTAssertEqual((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.id3Identifier, "TENC")
-        XCTAssertEqual((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content, "EncodedBy V4")
-        XCTAssertEqual((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.id3Identifier, "TSSE")
-        XCTAssertEqual((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content, "EncoderSettings V4")
-        XCTAssertEqual((id3Tag?.frames[.fileOwner] as? ID3FrameWithStringContent)?.id3Identifier, "TOWN")
-        XCTAssertEqual((id3Tag?.frames[.fileOwner] as? ID3FrameWithStringContent)?.content, "FileOwner V4")
-        XCTAssertEqual((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.id3Identifier, "GRP1")
-        XCTAssertEqual((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content, "ItunesGrouping V4")
-        XCTAssertEqual((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.id3Identifier, "TEXT")
-        XCTAssertEqual((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.content, "Lyricist V4")
-        XCTAssertEqual((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.id3Identifier, "TPE4")
-        XCTAssertEqual((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content, "MixArtist V4")
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier, "MVNM")
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content, "MovementName V4")
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value, 6)
-        XCTAssertEqual((id3Tag?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value, 13)
-        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.id3Identifier, "TCAT")
-        XCTAssertEqual(
-            (id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content,
+        #expect(id3Tag?.properties.version == .version4)
+        #expect((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.id3Identifier == "TCOM")
+        #expect((id3Tag?.frames[.composer] as? ID3FrameWithStringContent)?.content == "Composer V4")
+        #expect((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.id3Identifier == "TPE3")
+        #expect((id3Tag?.frames[.conductor] as? ID3FrameWithStringContent)?.content == "Conductor V4")
+        #expect((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.id3Identifier == "TCOP")
+        #expect((id3Tag?.frames[.copyright] as? ID3FrameWithStringContent)?.content == "Copyright V4")
+        #expect((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.id3Identifier == "TIT1")
+        #expect((id3Tag?.frames[.contentGrouping] as? ID3FrameWithStringContent)?.content == "ContentGrouping V4")
+        #expect((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.id3Identifier == "TENC")
+        #expect((id3Tag?.frames[.encodedBy] as? ID3FrameWithStringContent)?.content == "EncodedBy V4")
+        #expect((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.id3Identifier == "TSSE")
+        #expect((id3Tag?.frames[.encoderSettings] as? ID3FrameWithStringContent)?.content == "EncoderSettings V4")
+        #expect((id3Tag?.frames[.fileOwner] as? ID3FrameWithStringContent)?.id3Identifier == "TOWN")
+        #expect((id3Tag?.frames[.fileOwner] as? ID3FrameWithStringContent)?.content == "FileOwner V4")
+        #expect((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.id3Identifier == "GRP1")
+        #expect((id3Tag?.frames[.iTunesGrouping] as? ID3FrameWithStringContent)?.content == "ItunesGrouping V4")
+        #expect((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.id3Identifier == "TEXT")
+        #expect((id3Tag?.frames[.lyricist] as? ID3FrameWithStringContent)?.content == "Lyricist V4")
+        #expect((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.id3Identifier == "TPE4")
+        #expect((id3Tag?.frames[.mixArtist] as? ID3FrameWithStringContent)?.content == "MixArtist V4")
+        #expect((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.id3Identifier == "MVNM")
+        #expect((id3Tag?.frames[.iTunesMovementName] as? ID3FrameWithStringContent)?.content == "MovementName V4")
+        #expect((id3Tag?.frames[.iTunesMovementIndex] as? ID3FrameWithIntegerContent)?.value == 6)
+        #expect((id3Tag?.frames[.iTunesMovementCount] as? ID3FrameWithIntegerContent)?.value == 13)
+        #expect((id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.id3Identifier == "TCAT")
+        #expect(
+            (id3Tag?.frames[.iTunesPodcastCategory] as? ID3FrameWithStringContent)?.content ==
             "PodcastCategory V4"
         )
-        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.id3Identifier, "TDES")
-        XCTAssertEqual(
-            (id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content,
+        #expect((id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.id3Identifier == "TDES")
+        #expect(
+            (id3Tag?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content ==
             "PodcastDescription V4"
         )
-        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.id3Identifier, "TGID")
-        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content, "PodcastID V4")
-        XCTAssertEqual((id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.id3Identifier, "TKWD")
-        XCTAssertEqual(
-            (id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content,
+        #expect((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.id3Identifier == "TGID")
+        #expect((id3Tag?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content == "PodcastID V4")
+        #expect((id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.id3Identifier == "TKWD")
+        #expect(
+            (id3Tag?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content ==
             "PodcastKeywords V4"
         )
-        XCTAssertEqual((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.id3Identifier, "TPUB")
-        XCTAssertEqual((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.content, "Publisher V4")
-        XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.id3Identifier, "TIT3")
-        XCTAssertEqual((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content, "Subtitle V4")
+        #expect((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.id3Identifier == "TPUB")
+        #expect((id3Tag?.frames[.publisher] as? ID3FrameWithStringContent)?.content == "Publisher V4")
+        #expect((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.id3Identifier == "TIT3")
+        #expect((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content == "Subtitle V4")
     }
 
     // MARK: write
 
-    func testWriteTagV2() throws {
+    @Test func testWriteTagV2() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -352,18 +365,21 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteTagV3WhenItAlreadyExists() throws {
+    @Test func testWriteTagV3WhenItAlreadyExists() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -380,19 +396,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-with-tag-already-setted", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-with-tag-already-setted", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
 
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteTagV3WithJpg() throws {
+    @Test func testWriteTagV3WithJpg() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -409,18 +428,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
+
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteTagV3WithPng() throws {
+    @Test func testWriteTagV3WithPng() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
         )
@@ -435,14 +458,17 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
+            )
+        }
     }
 
-    func testWriteTagV3WithCustomPathThatDoesNotExists() throws {
+    @Test func testWriteTagV3WithCustomPathThatDoesNotExists() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -458,14 +484,17 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
     }
 
-    func testWriteTagV3WithSamePath() throws {
+    @Test func testWriteTagV3WithSamePath() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -480,13 +509,16 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3")
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified-in-same-path", fileType: "mp3")
+            )
+        }
     }
 
-    func testWriteTagV3WithAdditionalData() throws {
+    @Test func testWriteTagV3WithAdditionalData() throws {
+        let id3TagEditor = ID3TagEditor()
         let artFront: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -516,18 +548,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: NSHomeDirectory() + "/example-v3-additional-data.mp3"
-        ))
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: NSHomeDirectory() + "/example-v3-additional-data.mp3"
+            )
+        }
+
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteTagV3ToMp3AsData() throws {
+    @Test func testWriteTagV3ToMp3AsData() throws {
+        let id3TagEditor = ID3TagEditor()
         let artFront: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
@@ -559,14 +595,15 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
 
         let newMp3 = try id3TagEditor.write(tag: id3Tag, mp3: mp3)
 
-        XCTAssertEqual(
-            newMp3,
-            try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
-                                                                            fileType: "mp3")))
+        #expect(
+            newMp3 ==
+            (try? Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-v3-additional-data",
+                                                                            fileType: "mp3"))))
         )
     }
 
-    func testWriteTagV4() throws {
+    @Test func testWriteTagV4() throws {
+        let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-v4", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4.mp3"
         let id3Tag = ID3Tag(
@@ -579,19 +616,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
 
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteTagV4WithPng() throws {
+    @Test func testWriteTagV4WithPng() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
         )
@@ -608,19 +648,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
 
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteNewFramesV2() throws {
+    @Test func testWriteNewFramesV2() throws {
+        let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v2-generated.mp3"
         let id3Tag = ID3Tag(
@@ -640,18 +683,22 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
+
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteNewFramesV3() throws {
+    @Test func testWriteNewFramesV3() throws {
+        let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v3-generated.mp3"
         let id3Tag = ID3Tag(
@@ -680,18 +727,21 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testWriteNewFramesV4() throws {
+    @Test func testWriteNewFramesV4() throws {
+        let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
         let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v4-generated.mp3"
         let id3Tag = ID3Tag(
@@ -720,19 +770,21 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-newframes", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
 
-        XCTAssertEqual(
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3Generated)),
-            try Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare))
+        #expect(
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3Generated))) ==
+            (try? Data(contentsOf: URL(fileURLWithPath: pathMp3ToCompare)))
         )
     }
 
-    func testFramesAfterAttachdPicturesAreWritten() throws {
+    @Test func testFramesAfterAttachdPicturesAreWritten() throws {
         let path = PathLoader().pathFor(name: "folder", fileType: "jpg")
         let pathMp3Generated = NSHomeDirectory() + "/frames-after-attached-picture.mp3"
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
@@ -746,17 +798,21 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
 
         let id3TagEditor = ID3TagEditor()
 
-        XCTAssertNoThrow(try id3TagEditor.write(tag: id3Tag,
-                                                 to: PathLoader().pathFor(name: "frames-after-attached-picture",
-                                                                          fileType: "mp3"),
-                                                 andSaveTo: pathMp3Generated))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "frames-after-attached-picture", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
 
         let tag = try id3TagEditor.read(from: pathMp3Generated)
-        XCTAssertEqual((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part, 1)
-        XCTAssertEqual((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total, 3)
+        #expect((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.part == 1)
+        #expect((tag?.frames[.discPosition] as? ID3FramePartOfTotal)?.total == 3)
     }
 
-    func testWriteTagV4SynchsafeIntegers() throws {
+    @Test func testWriteTagV4SynchsafeIntegers() throws {
+        let id3TagEditor = ID3TagEditor()
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
         )
@@ -768,24 +824,27 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
             ]
         )
 
-        XCTAssertNoThrow(try id3TagEditor.write(
-            tag: id3Tag,
-            to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-            andSaveTo: pathMp3Generated
-        ))
+        #expect(throws: Never.self) {
+            try id3TagEditor.write(
+                tag: id3Tag,
+                to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
+                andSaveTo: pathMp3Generated
+            )
+        }
 
         let id3TagWritten = try id3TagEditor.read(from: pathMp3Generated)
 
-        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture, art)
-        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format, .png)
-        XCTAssertEqual(
-            (id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type,
+        #expect((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.picture == art)
+        #expect((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.format == .png)
+        #expect(
+            (id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.type ==
             .frontCover
         )
-        XCTAssertEqual((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.size, 243723)
+        #expect((id3TagWritten?.frames[.attachedPicture(.frontCover)] as? ID3FrameAttachedPicture)?.size == 243723)
     }
 
-    func testWriteUnsynchronisedLyrics() throws {
+    @Test func testWriteUnsynchronisedLyrics() throws {
+        let id3TagEditor = ID3TagEditor()
         let pathMp3Generated = NSHomeDirectory() + "/example-write-unsynched-lyrics-v3.mp3"
 
         let id3Tag = ID3Tag(
@@ -809,16 +868,16 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
 
         let id3TagWritten = try id3TagEditor.read(from: pathMp3Generated)
 
-        XCTAssertEqual(
-            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.language,
+        #expect(
+            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.language ==
             .ita
         )
-        XCTAssertEqual(
-            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription,
+        #expect(
+            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)?.contentDescription ==
             "CD"
         )
-        XCTAssertEqual(
-            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)!.content,
+        #expect(
+            (id3TagWritten?.frames[.unsynchronizedLyrics(.ita)] as? ID3FrameWithLocalizedContent)!.content ==
             """
                         Lyrics
                         Multiline
@@ -826,25 +885,25 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
                     """)
     }
 
-    func testCommentWithUTF8EncodingAndNoContentDescription() throws {
+    @Test func testCommentWithUTF8EncodingAndNoContentDescription() throws {
+        let id3TagEditor = ID3TagEditor()
         let id3Tag = try id3TagEditor.read(
             from: PathLoader().pathFor(name: "example-comment-utf8-no-contentdescription", fileType: "mp3")
         )
 
-        XCTAssertEqual((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language, .eng)
-        XCTAssertEqual((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription, "")
-        XCTAssertEqual((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.content, "ÜberStandard - UberNet.org")
+        #expect((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language == .eng)
+        #expect((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription == "")
+        #expect((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.content == "ÜberStandard - UberNet.org")
     }
 
     static let allTests = [
         ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
         ("testReadTagV2", testReadTagV2),
         ("testParseTagV3", testParseTagV3),
-        ("testParseTagV3AdditionalData", testParseTagV3AdditionalData),
         ("testReadTagV4", testReadTagV4),
         ("testReadTagV4WithImage", testReadTagV4WithImage),
         ("testReadAsMp3", testReadAsMp3),
-        ("testReadInvalidFile", testReadInvalidFile),
+        ("testReadCorruptedFile", testReadCorruptedFile),
         ("testReadUtf16String", testReadUtf16String),
         ("testWriteTagV2", testWriteTagV2),
         ("testWriteTagV3WhenItAlreadyExists", testWriteTagV3WhenItAlreadyExists),
@@ -858,13 +917,14 @@ class ID3TagEditorAcceptanceTest: XCTestCase {
         ("testWriteTagV4WithPng", testWriteTagV4WithPng),
         ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers),
         ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics),
-        ("testReadNewFramesV2", testReadNewFramesV2),
-        ("testReadNewFramesV3", testReadNewFramesV3),
-        ("testReadNewFramesV4", testReadNewFramesV4),
         ("testWriteNewFramesV2", testWriteNewFramesV2),
         ("testWriteNewFramesV3", testWriteNewFramesV3),
         ("testWriteNewFramesV4", testWriteNewFramesV4),
-        ("testFramesAfterAttachdPicturesAreWritten", testFramesAfterAttachdPicturesAreWritten),
         ("testCommentWithUTF8EncodingAndNoContentDescription", testCommentWithUTF8EncodingAndNoContentDescription)
     ]
 }
+
+// swiftlint:enable type_body_length
+// swiftlint:enable function_body_length
+// swiftlint:enable line_length
+// swiftlint:enable file_length

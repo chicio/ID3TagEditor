@@ -5,11 +5,11 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Testing
 @testable import ID3TagEditor
 
-class ID3GenreFrameCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoGenre() {
+struct ID3GenreFrameCreatorTest {
+    @Test func testNoFrameCreationWhenThereIsNoGenre() {
         let id3GenreFrameCreator = ID3GenreFrameCreator(
                 frameCreator: MockFrameFromStringContentCreator(
                         fakeNewFrameAsByte: [],
@@ -21,10 +21,10 @@ class ID3GenreFrameCreatorTest: XCTestCase {
             id3Tag: ID32v3TagBuilder().build()
         )
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testFrameCreationWhenThereIsAGenre() {
+    @Test func testFrameCreationWhenThereIsAGenre() {
         let newFrameBytes: [UInt8] = [1, 1]
         let id3Tag = ID32v3TagBuilder()
             .genre(frame: ID3FrameGenre(genre: .metal, description: "Metalcore"))
@@ -39,7 +39,7 @@ class ID3GenreFrameCreatorTest: XCTestCase {
 
         let newTagBytes = id3GenreFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(newTagBytes, newFrameBytes)
+        #expect(newTagBytes == newFrameBytes)
     }
 
     static let allTests = [

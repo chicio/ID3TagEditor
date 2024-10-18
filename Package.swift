@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version: 6.0
 
 import PackageDescription
 
@@ -10,7 +10,9 @@ let package = Package(
             targets: ["ID3TagEditor"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.1.0"),
+    ],
     targets: [
         .target(
             name: "ID3TagEditor",
@@ -25,6 +27,5 @@ let package = Package(
             exclude: ["Utils/PathLoaderXcodeProj.swift", "Info.plist"],
             resources: [.process("Examples")]
         )
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )

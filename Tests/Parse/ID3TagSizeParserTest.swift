@@ -5,24 +5,24 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3TagSizeParserTest: XCTestCase {
-    private let id3TagSizeParser = ID3TagSizeParser()
-
-    func testParseTagSizeV2() {
+struct ID3TagSizeParserTest {
+    @Test func parseTagSizeV2() {
         let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example", fileType: "mp3"))!
-        XCTAssertEqual(id3TagSizeParser.parse(data: mp3), 34213)
+        #expect(ID3TagSizeParser().parse(data: mp3) == 34213)
     }
 
-    func testParseTagSizeV3() {
+    @Test func parseTagSizeV3() {
         let mp3V23 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))!
-        XCTAssertEqual(id3TagSizeParser.parse(data: mp3V23), 245864)
+        #expect(ID3TagSizeParser().parse(data: mp3V23) == 245864)
     }
 
     static let allTests = [
-        ("testParseTagSizeV2", testParseTagSizeV2),
-        ("testParseFrameContentSizeV3", testParseTagSizeV3)
+        ("parseTagSizeV2", parseTagSizeV2),
+        ("parseFrameContentSizeV3", parseTagSizeV3)
     ]
 }

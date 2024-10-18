@@ -47,3 +47,5 @@ class ID3FrameCreatorsFactory {
         + ID3iTunesFrameCreatorsFactory.make()
     }
 }
+
+// swiftlint:enable line_length

@@ -5,11 +5,13 @@
 //  2018 Fabrizio Duroni.
 //
 
-import XCTest
+import Foundation
+import Testing
+
 @testable import ID3TagEditor
 
-class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
-    func testNoFrameCreationWhenThereIsNoImage() {
+struct ID3AttachedPicturesFramesCreatorTest {
+    @Test func noFrameCreationWhenThereIsNoImage() {
         let id3AttachedPictureFrameCreator = ID3AttachedPicturesFramesCreator(
                 attachedPictureFrameCreator: ID3AttachedPictureFrameCreator(
                         id3FrameConfiguration: ID3FrameConfiguration(),
@@ -20,10 +22,10 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: ID32v3TagBuilder().build())
 
-        XCTAssertEqual(newTagBytes, [])
+        #expect(newTagBytes == [])
     }
 
-    func testFrameCreationWithJpgForVersion2() {
+    @Test func frameCreationWithJpgForVersion2() {
         let attachedPictureFrame = ID3FrameAttachedPicture(
             picture: Data([0x10, 0x10]),
             type: .frontCover,
@@ -42,13 +44,10 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(
-                newTagBytes,
-                [0x01, 0x02, 0x00, 0x4A, 0x50, 0x47, 0x03, 0x00, 0x10, 0x10]
-        )
+        #expect(newTagBytes == [0x01, 0x02, 0x00, 0x4A, 0x50, 0x47, 0x03, 0x00, 0x10, 0x10])
     }
 
-    func testFrameCreationWithPngForVersion2() {
+    @Test func frameCreationWithPngForVersion2() {
         let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .frontCover, format: .png)
         let id3Tag = ID32v2TagBuilder()
             .attachedPicture(pictureType: .frontCover, frame: attachedPictureFrame)
@@ -63,13 +62,10 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(
-                newTagBytes,
-                [0x01, 0x02, 0x00, 0x50, 0x4E, 0x47, 0x03, 0x00, 0x10, 0x10]
-        )
+        #expect(newTagBytes == [0x01, 0x02, 0x00, 0x50, 0x4E, 0x47, 0x03, 0x00, 0x10, 0x10])
     }
 
-    func testFrameCreationWithJpgForVersion3() {
+    @Test func frameCreationWithJpgForVersion3() {
         let attachedPictureFrame = ID3FrameAttachedPicture(
             picture: Data([0x10, 0x10]),
             type: .frontCover,
@@ -88,15 +84,14 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(
-                newTagBytes,
-                [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+        #expect(
+            newTagBytes == [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x6A, 0x70, 0x65, 0x67, 0x00, 0x03, 0x00, 0x10,
                  0x10]
         )
     }
 
-    func testFrameCreationWithPngForVersion3() {
+    @Test func frameCreationWithPngForVersion3() {
         let attachedPictureFrame = ID3FrameAttachedPicture(picture: Data([0x10, 0x10]), type: .frontCover, format: .png)
         let id3Tag = ID32v3TagBuilder()
             .attachedPicture(pictureType: .frontCover, frame: attachedPictureFrame)
@@ -111,14 +106,13 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(
-                newTagBytes,
-                [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
+        #expect(
+            newTagBytes == [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10]
         )
     }
 
-    func testFrameCreationWithPngForAnotherTypeOfCover() {
+    @Test func frameCreationWithPngForAnotherTypeOfCover() {
         let attachedPictureFrameFront = ID3FrameAttachedPicture(
             picture: Data([0x10, 0x10]),
             type: .frontCover,
@@ -143,8 +137,8 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
 
         let newTagBytes = id3AttachedPictureFrameCreator.createFrames(id3Tag: id3Tag)
 
-        XCTAssertEqual(
-                newTagBytes,
+        #expect(
+                newTagBytes ==
                 [0x01, 0x02, 0x00, 0x69, 0x6D, 0x61, 0x67, 0x65, 0x2F,
                  0x70, 0x6E, 0x67, 0x00, 0x03, 0x00, 0x10, 0x10,
                  0x01, 0x02, 0x00, 0x69,
@@ -154,11 +148,17 @@ class ID3AttachedPicturesFramesCreatorTest: XCTestCase {
     }
 
     static let allTests = [
-        ("testFrameCreationWithJpgForVersion2", testFrameCreationWithJpgForVersion2),
-        ("testFrameCreationWithJpgForVersion3", testFrameCreationWithJpgForVersion3),
-        ("testFrameCreationWithPngForAnotherTypeOfCover", testFrameCreationWithPngForAnotherTypeOfCover),
-        ("testFrameCreationWithPngForVersion2", testFrameCreationWithPngForVersion2),
-        ("testFrameCreationWithPngForVersion3", testFrameCreationWithPngForVersion3),
-        ("testNoFrameCreationWhenThereIsNoImage", testNoFrameCreationWhenThereIsNoImage)
+        ("frameCreationWithJpgForVersion2", frameCreationWithJpgForVersion2),
+        ("frameCreationWithJpgForVersion3", frameCreationWithJpgForVersion3),
+        ("frameCreationWithPngForAnotherTypeOfCover", frameCreationWithPngForAnotherTypeOfCover),
+        ("frameCreationWithPngForVersion2", frameCreationWithPngForVersion2),
+        ("frameCreationWithPngForVersion3", frameCreationWithPngForVersion3),
+        ("noFrameCreationWhenThereIsNoImage", noFrameCreationWhenThereIsNoImage)
     ]
 }
+
+
+
+
+
+
