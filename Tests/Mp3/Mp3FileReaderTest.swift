@@ -59,13 +59,4 @@ struct Mp3FileReaderTest {
         // 10 bytes Tag + 34213 bytes according to the Tag Size in the file's ID3 Tag
         #expect(id3TagData.count == 10 + 34213)
     }
-
-    static let allTests = [
-        ("testNotAnMP3FileWhenReadingEntireFile", testNotAnMP3FileWhenReadingEntireFile),
-        ("testMP3FileWhenReadingEntireFile", testMP3FileWhenReadingEntireFile),
-        ("testNotAnMP3fileWhenReadingID3Tag", testNotAnMP3fileWhenReadingID3Tag),
-        ("testMP3fileWhenReadingID3Tag", testMP3fileWhenReadingID3Tag),
-        ("testNonExistentMP3fileWhenReadingID3Tag", testNonExistentMP3fileWhenReadingID3Tag),
-        ("testOnlyReadsID3Tag", testOnlyReadsID3Tag)
-    ]
 }
