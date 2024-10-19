@@ -39,9 +39,4 @@ struct ID3FrameContentSizeCalculatorTest {
 
         #expect(size == [0x3, 0x2])
     }
-
-    static let allTests = [
-        ("testContentCalculateSizeForVersion2", testContentCalculateSizeForVersion2),
-        ("testContentCalculateSizeForVersion3", testContentCalculateSizeForVersion3)
-    ]
 }

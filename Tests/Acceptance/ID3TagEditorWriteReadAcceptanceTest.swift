@@ -502,12 +502,6 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         #expect(tagReader.iTunesPodcastID() == "PodcastID V4")
         #expect(tagReader.iTunesPodcastKeywords() == "PodcastKeywords V4")
     }
-
-    static let allTests = [
-        ("testReadWritev2", testReadWritev2),
-        ("testReadWritev3", testReadWritev3),
-        ("testReadWritev4", testReadWritev4)
-    ]
 }
 
 // swiftlint:enable type_body_length
