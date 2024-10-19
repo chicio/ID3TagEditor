@@ -32,9 +32,4 @@ struct ID3RecordingDateTimeFrameCreatorTest {
         #expect(timestampCreator.createFromRecordingDateTimeHasBeenCalled)
         #expect(newTagBytes == newFrameBytes)
     }
-
-    static let allTests = [
-        ("testFrameCreationWhenThereIsACompleteRecordingDateTime",
-         testFrameCreationWhenThereIsACompleteRecordingDateTime)
-    ]
 }

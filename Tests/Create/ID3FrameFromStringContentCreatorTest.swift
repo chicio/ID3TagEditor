@@ -23,8 +23,4 @@ struct ID3FrameFromStringContentCreatorTest {
 
         #expect(frameBytes == [0x01, 0x02] + "test".utf16ToBytes)
     }
-
-    static let allTests = [
-        ("testCreatorFrameFromStringContent", testCreatorFrameFromStringContent)
-    ]
 }

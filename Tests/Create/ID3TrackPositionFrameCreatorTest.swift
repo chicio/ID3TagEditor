@@ -41,9 +41,4 @@ struct ID3TrackPositionCreatorTest {
 
         #expect(newTagBytes == newFrameBytes)
     }
-
-    static let allTests = [
-        ("testFrameCreationWhenThereIsATrackPosition", testFrameCreationWhenThereIsATrackPosition),
-        ("testNoFrameCreationWhenThereIsNoTrackPosition", testNoFrameCreationWhenThereIsNoTrackPosition)
-    ]
 }

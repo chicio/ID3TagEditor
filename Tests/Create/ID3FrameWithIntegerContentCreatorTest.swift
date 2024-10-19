@@ -45,9 +45,4 @@ struct ID3FrameWithIntegerContentCreatorTest {
 
         #expect(newTagBytes == newFrameBytes)
     }
-
-    static let allTests = [
-        ("testNoFrameCreationWhenThereIsNoContent", testNoFrameCreationWhenThereIsNoContent),
-        ("testFrameCreationWhenThereIsContent", testFrameCreationWhenThereIsContent)
-    ]
 }

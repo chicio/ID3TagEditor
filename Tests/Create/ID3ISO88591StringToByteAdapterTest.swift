@@ -21,8 +21,4 @@ struct ID3ISO88591StringToByteAdapterTest {
 
         #expect(bytes == ENCODING + STRING)
     }
-
-    static let allTests = [
-        ("testEncodeStringToISO88591WithEncodingByte", testEncodeStringToISO88591WithEncodingByte)
-    ]
 }

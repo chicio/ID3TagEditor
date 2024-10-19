@@ -15,8 +15,4 @@ struct PaddingRemoverUsingTrimmingTest {
                 PaddingRemoverUsingTrimming().removeFrom(string: "\0\0\0simple string\0\0\0")
         )
     }
-
-    static let allTests = [
-        ("testRemovePadding", testRemovePadding)
-    ]
 }

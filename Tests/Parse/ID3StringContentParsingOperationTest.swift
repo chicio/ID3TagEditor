@@ -190,12 +190,4 @@ struct ID3StringContentParsingOperationTest {
                 [0x03] + [UInt8](":: π value ::".utf8)
         )
     }
-
-    static let allTests = [
-        ("testFrameContentParsedV2", testFrameContentParsedV2),
-        ("testFrameContentParsedV3", testFrameContentParsedV3),
-        ("testFrameContentParsedV2utf16", testFrameContentParsedV2utf16),
-        ("testFrameContentParsedV3utf16", testFrameContentParsedV3utf16),
-        ("testFrameContentParsedV4utf8", testFrameContentParsedV4utf8)
-    ]
 }

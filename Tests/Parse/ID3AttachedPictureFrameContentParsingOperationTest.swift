@@ -56,9 +56,4 @@ struct ID3AttachedPictureFrameContentParsingOperationTest {
                 })
         }
     }
-
-    static let allTests = [
-        ("testSetTagAttachedPictureJpg", testSetTagAttachedPictureJpg),
-        ("testSetTagAttachedPicturePng", testSetTagAttachedPicturePng)
-    ]
 }

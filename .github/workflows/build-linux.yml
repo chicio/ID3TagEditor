@@ -22,6 +22,7 @@ jobs:
       - name: Build Linux framework
         run: |
            swift build
+           swift test
       - name: Build Linux Demo
         run: |
             cd Demo/Demo\ Ubuntu

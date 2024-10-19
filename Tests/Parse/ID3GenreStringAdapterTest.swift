@@ -36,11 +36,4 @@ import Testing
         #expect(ID3GenreStringAdapter().adapt(genre: "(XXX)").identifier == nil)
         #expect(ID3GenreStringAdapter().adapt(genre: "(XXX)").description == "(XXX)")
     }
-
-    static let allTests = [
-        ("testAdaptGenreWithDescription", testAdaptGenreWithDescription),
-        ("testAdaptGenreWithoutDescription", testAdaptGenreWithoutDescription),
-        ("testAdaptGenreWithoutGenreIdentifier", testAdaptGenreWithoutGenreIdentifier),
-        ("testAdaptID3v3NewGenresNotNumeric", testAdaptID3v3NewGenresNotNumeric)
-    ]
 }

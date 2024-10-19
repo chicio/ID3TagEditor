@@ -41,9 +41,4 @@ struct ID3GenreFrameCreatorTest {
 
         #expect(newTagBytes == newFrameBytes)
     }
-
-    static let allTests = [
-        ("testFrameCreationWhenThereIsAGenre", testFrameCreationWhenThereIsAGenre),
-        ("testNoFrameCreationWhenThereIsNoGenre", testNoFrameCreationWhenThereIsNoGenre)
-    ]
 }

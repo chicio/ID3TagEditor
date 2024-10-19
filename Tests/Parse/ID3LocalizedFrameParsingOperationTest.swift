@@ -69,9 +69,4 @@ struct ID3LocalizedFrameParsingOperationTest {
                 + content
         )
     }
-
-    static let allTests = [
-        ("testParsingValidFrame", testParsingValidFrame),
-        ("testParsingInvalidLanguage", testParsingInvalidLanguage)
-    ]
 }

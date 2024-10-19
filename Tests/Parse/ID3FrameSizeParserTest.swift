@@ -42,9 +42,4 @@ struct ID3FrameSizeParserTest {
                 mp3.length + ID3FrameConfiguration().headerSizeFor(version: .version3)
         )
     }
-
-    static let allTests = [
-        ("testParseFrameContentSizeV2", testParseFrameContentSizeV2),
-        ("testParseFrameContentSizeV3", testParseFrameContentSizeV3)
-    ]
 }

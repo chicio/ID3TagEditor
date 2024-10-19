@@ -146,15 +146,6 @@ struct ID3AttachedPicturesFramesCreatorTest {
                  0x00, 0x04, 0x00, 0x10, 0x10]
         )
     }
-
-    static let allTests = [
-        ("frameCreationWithJpgForVersion2", frameCreationWithJpgForVersion2),
-        ("frameCreationWithJpgForVersion3", frameCreationWithJpgForVersion3),
-        ("frameCreationWithPngForAnotherTypeOfCover", frameCreationWithPngForAnotherTypeOfCover),
-        ("frameCreationWithPngForVersion2", frameCreationWithPngForVersion2),
-        ("frameCreationWithPngForVersion3", frameCreationWithPngForVersion3),
-        ("noFrameCreationWhenThereIsNoImage", noFrameCreationWhenThereIsNoImage)
-    ]
 }
 
 

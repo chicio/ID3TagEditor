@@ -64,9 +64,4 @@ struct ID3RecordingTimeFrameContentParsingOperationTest {
                 [0x03] + [UInt8]("2016".utf8)
         )
     }
-
-    static let allTests = [
-        ("testframeContentValidTimestamp", testframeContentValidTimestamp),
-        ("testframeContentWithYearInsteadOfTimestamp", testframeContentWithYearInsteadOfTimestamp)
-    ]
 }

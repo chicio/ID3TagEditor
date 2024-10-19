@@ -75,10 +75,4 @@ struct ID3LocalizedFrameCreatorTest {
                         0xFE, 0x6C, 0x00, 0x79, 0x00, 0x72, 0x00, 0x69, 0x00, 0x63, 0x00, 0x73,
                         0x00])
     }
-
-    static let allTests = [
-        ("testCreatev2", testCreatev2),
-        ("testCreatev3", testCreatev3),
-        ("testCreatev4", testCreatev4)
-    ]
 }

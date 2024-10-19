@@ -29,10 +29,4 @@ struct ID3TrackPositionStringAdapterTest {
         #expect(trackPosition.part == 0)
         #expect(trackPosition.total == nil)
     }
-
-    static let allTests = [
-        ("testAdaptNotANumberTrackPosition", testAdaptNotANumberTrackPosition),
-        ("testAdaptTrackPositionWithoutTotalTracks", testAdaptTrackPositionWithoutTotalTracks),
-        ("testAdaptTrackPositionWithTotalTrack", testAdaptTrackPositionWithTotalTrack)
-    ]
 }

@@ -60,10 +60,4 @@ struct ID3RecordingDayMonthFrameCreatorTest {
 
         #expect(newTagBytes == newFrameBytes)
     }
-
-    static let allTests = [
-        ("testFrameCreationWhenThereIsADayAndAMonth", testFrameCreationWhenThereIsADayAndAMonth),
-        ("testNoFrameCreationWhenThereIsNoDay", testNoFrameCreationWhenThereIsNoDay),
-        ("testNoFrameCreationWhenThereIsNoMonth", testNoFrameCreationWhenThereIsNoMonth)
-    ]
 }

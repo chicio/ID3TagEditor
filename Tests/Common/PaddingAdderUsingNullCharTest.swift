@@ -16,8 +16,4 @@ struct PaddingAdderUsingNullCharTest {
 
         #expect(contentWithPadding == [0x1, 0x1, 0x0])
     }
-
-    static let allTests = [
-        ("testAddPadding", testAddPadding)
-    ]
 }

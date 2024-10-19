@@ -12,8 +12,4 @@ struct ID3FrameConfigurationTest {
     @Test func invalidIdentifierName() {
         #expect(ID3FrameConfiguration().frameTypeFor(identifier: "::not-valid::", version: .version2) == .invalid)
     }
-
-    static let allTests = [
-        ("testInvalidIdentifierName", invalidIdentifierName)
-    ]
 }
