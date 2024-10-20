@@ -40,7 +40,10 @@ public class ID3TagEditor {
      Could throw `CorruptedFile` if the file is corrupted.
      */
     public func read(from path: String) throws -> ID3Tag? {
-        let mp3 = try mp3FileReader.readID3TagFrom(path: path)
+        guard let mp3 = try mp3FileReader.readID3TagFrom(path: path) else {
+            return nil
+        }
+
         return try self.id3TagParser.parse(mp3: mp3)
     }
 
@@ -70,9 +73,9 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
-        let currentId3Tag = try read(from: path)
+        let currentId3TagData = try mp3FileReader.readID3TagFrom(path: path)
         let newId3TagData = try id3TagCreator.create(id3Tag: tag)
-        try mp3FileWriter.write(newId3TagData: newId3TagData, currentId3Tag: currentId3Tag, fromPath: path, toPath: newPath ?? path)
+        try mp3FileWriter.write(newId3TagData: newId3TagData, currentId3TagData: currentId3TagData, fromPath: path, toPath: newPath ?? path)
     }
 
     /**

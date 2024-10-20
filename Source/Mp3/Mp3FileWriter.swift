@@ -8,7 +8,12 @@
 import Foundation
 
 class Mp3FileWriter {
-    func write(newId3TagData: Data, currentId3Tag: ID3Tag?, fromPath: String, toPath: String) throws {
+    func write(newId3TagData: Data, currentId3TagData: Data?, fromPath: String, toPath: String) throws {
+        let validPath = URL(fileURLWithPath: toPath)
+        guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
+            throw ID3TagEditorError.invalidFileFormat
+        }
+
         // Create a temporary file for the new mp3
         let temporaryPath = {
             if toPath != fromPath {
@@ -30,36 +35,63 @@ class Mp3FileWriter {
         // Create file handles
         let readHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: fromPath))
         defer {
-            readHandle.closeFile()
+            if #available(iOS 13.0, *) {
+                try? readHandle.close()
+            } else {
+                readHandle.closeFile()
+            }
         }
-        
+
         let writeHandle = try FileHandle(forWritingTo: URL(fileURLWithPath: temporaryPath))
         defer {
-            writeHandle.closeFile()
+            if #available(iOS 13.0, *) {
+                try? writeHandle.close()
+            } else {
+                writeHandle.closeFile()
+            }
         }
-        
+
         // Seek over the tag of the existing file, then copy the rest in chunks
-        writeHandle.seekToEndOfFile()
-        
-        if let validCurrentId3Tag = currentId3Tag {
-            let tagSizeWithHeader = UInt64(validCurrentId3Tag.properties.size) + UInt64(ID3TagConfiguration().headerSize())
-            readHandle.seek(toFileOffset: tagSizeWithHeader)
+        if #available(iOS 13.4, *) {
+            try writeHandle.seekToEnd()
         } else {
-            readHandle.seek(toFileOffset: 0)
+            writeHandle.seekToEndOfFile()
+        }
+
+        if let currentId3TagData = currentId3TagData {
+            if #available(iOS 13.0, *) {
+                try readHandle.seek(toOffset: UInt64(currentId3TagData.count))
+            } else {
+                readHandle.seek(toFileOffset: UInt64(currentId3TagData.count))
+            }
         }
         
         var isFinished = false
         while !isFinished {
-            autoreleasepool {
-                let chunk = readHandle.readData(ofLength: 65536) // 64 KB
-                writeHandle.write(chunk)
-                isFinished = chunk.isEmpty
+            try autoreleasepool {
+                let chunk = try {
+                    if #available(iOS 13.4, *) {
+                        return try readHandle.read(upToCount: 131072) // 128 KB
+                    } else {
+                        return readHandle.readData(ofLength: 131072) // 128 KB
+                    }
+                }()
+
+                if let chunk, !chunk.isEmpty {
+                    if #available(iOS 13.4, *) {
+                        try writeHandle.write(contentsOf: chunk)
+                    } else {
+                        writeHandle.write(chunk)
+                    }
+                } else {
+                    isFinished = true
+                }
             }
         }
         
         // Replace the file
         if temporaryPath != toPath {
-            _ = try FileManager.default.replaceItemAt(URL(fileURLWithPath: toPath), withItemAt: URL(fileURLWithPath: temporaryPath))
+            _ = try FileManager.default.replaceItemAt(validPath, withItemAt: URL(fileURLWithPath: temporaryPath))
         }
     }
 
