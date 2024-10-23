@@ -12,6 +12,7 @@ import Foundation
  */
 public class ID3TagEditor {
     private let id3TagParser: ID3TagParser
+    private let id3TagCreator: ID3TagCreator
     private let mp3FileReader: Mp3FileReader
     private let mp3FileWriter: Mp3FileWriter
     private let mp3WithID3TagBuilder: Mp3WithID3TagBuilder
@@ -21,9 +22,10 @@ public class ID3TagEditor {
      */
     public init() {
         self.id3TagParser = ID3TagParserFactory.make()
+        self.id3TagCreator = ID3TagCreatorFactory.make()
         self.mp3FileReader = Mp3FileReaderFactory.make()
         self.mp3FileWriter = Mp3FileWriter()
-        self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: ID3TagCreatorFactory.make(),
+        self.mp3WithID3TagBuilder = Mp3WithID3TagBuilder(id3TagCreator: id3TagCreator,
                                                          id3TagConfiguration: ID3TagConfiguration())
     }
 
@@ -38,7 +40,10 @@ public class ID3TagEditor {
      Could throw `CorruptedFile` if the file is corrupted.
      */
     public func read(from path: String) throws -> ID3Tag? {
-        let mp3 = try mp3FileReader.readID3TagFrom(path: path)
+        guard let mp3 = try mp3FileReader.readID3TagFrom(path: path) else {
+            return nil
+        }
+
         return try self.id3TagParser.parse(mp3: mp3)
     }
 
@@ -68,10 +73,9 @@ public class ID3TagEditor {
      ID3 tag).
      */
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
-        let mp3 = try mp3FileReader.readFileFrom(path: path)
-        let currentTag = try self.id3TagParser.parse(mp3: mp3)
-        let mp3WithId3Tag = try mp3WithID3TagBuilder.build(mp3: mp3, newId3Tag: tag, currentId3Tag: currentTag)
-        try mp3FileWriter.write(mp3: mp3WithId3Tag, path: newPath ?? path)
+        let currentId3TagData = try mp3FileReader.readID3TagFrom(path: path)
+        let newId3TagData = try id3TagCreator.create(id3Tag: tag)
+        try mp3FileWriter.write(newId3TagData: newId3TagData, currentId3TagData: currentId3TagData, fromPath: path, toPath: newPath ?? path)
     }
 
     /**

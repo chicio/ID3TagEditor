@@ -10,11 +10,17 @@ import Foundation
 class Mp3FileReader {
     private let tagSizeParser: TagSizeParser
     private let id3TagConfiguration: ID3TagConfiguration
+    private let tagVersionParser: TagVersionParser
+    private let tagPresence: TagPresence
 
     init(tagSizeParser: TagSizeParser,
-         id3TagConfiguration: ID3TagConfiguration) {
+         id3TagConfiguration: ID3TagConfiguration,
+         tagVersionParser: TagVersionParser,
+         tagPresence: TagPresence) {
         self.tagSizeParser = tagSizeParser
         self.id3TagConfiguration = id3TagConfiguration
+        self.tagVersionParser = tagVersionParser
+        self.tagPresence = tagPresence
     }
 
     /**
@@ -41,40 +47,54 @@ class Mp3FileReader {
 
       - parameter path: the path to the mp3 file
 
-      - returns: ID3 header data of the file
+      - returns: ID3 header data or nil, if a tag doesn't exists in the file.
 
-      - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path, or if the file
-     does not contain the entire ID3 header
+      - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path.
+      Could throw `CorruptedFile` if the file is corrupted.
      */
-    func readID3TagFrom(path: String) throws -> Data {
+    func readID3TagFrom(path: String) throws -> Data? {
         let validPath = URL(fileURLWithPath: path)
         guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
             throw ID3TagEditorError.invalidFileFormat
         }
 
-        guard let inputStream = InputStream(fileAtPath: path) else {
-            throw ID3TagEditorError.corruptedFile
+        let readHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
+        defer {
+            if #available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {
+                try? readHandle.close()
+            } else {
+                readHandle.closeFile()
+            }
         }
-
-        inputStream.open()
 
         let headerSize = id3TagConfiguration.headerSize()
-        let header = try read(bytesCount: headerSize, fromStream: inputStream)
-        let headerData = Data(header) as NSData
+        let header = try read(bytesCount: headerSize, from: readHandle)
 
-        let frameSize = tagSizeParser.parse(data: headerData)
-        let frame = try read(bytesCount: Int(frameSize), fromStream: inputStream)
+        // Verify that there is a valid ID3 tag to parse the size from
+        let version = tagVersionParser.parse(mp3: header)
+        guard tagPresence.isTagPresentIn(mp3: header, version: version) else {
+            return nil
+        }
 
-        let mp3 = header + frame
-        return Data(mp3)
+        let frameSize = tagSizeParser.parse(data: header as NSData)
+        let frame = try read(bytesCount: Int(frameSize), from: readHandle)
+
+        return header + frame
     }
 
-    private func read(bytesCount: Int, fromStream stream: InputStream) throws -> [UInt8] {
-        var buffer = [UInt8](repeating: 0, count: bytesCount)
-        let result = stream.read(&buffer, maxLength: bytesCount)
-        if result < bytesCount {
+    private func read(bytesCount: Int, from fileHandle: FileHandle) throws -> Data {
+        let result = try {
+            if #available(macOS 10.15.4, iOS 13.4, watchOS 6.2, tvOS 13.4, *) {
+                return try fileHandle.read(upToCount: bytesCount)
+            } else {
+                return fileHandle.readData(ofLength: bytesCount)
+            }
+        }()
+
+        guard let result, result.count == bytesCount else {
             throw ID3TagEditorError.corruptedFile
         }
-        return buffer
+
+        return result
     }
 }
