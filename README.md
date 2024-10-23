@@ -66,6 +66,13 @@ In the following screenshots you can find examples of the data extracted/updated
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/fabiankr">
+            <img src="https://avatars.githubusercontent.com/u/143137?v=4" width="100;" alt="fabiankr"/>
+            <br />
+            <sub><b>fabiankr</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/joeljfischer">
             <img src="https://avatars.githubusercontent.com/u/1767063?v=4" width="100;" alt="joeljfischer"/>
             <br />
@@ -78,15 +85,15 @@ In the following screenshots you can find examples of the data extracted/updated
             <br />
             <sub><b>BLeeEZ</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/NCrusher74">
             <img src="https://avatars.githubusercontent.com/u/56804260?v=4" width="100;" alt="NCrusher74"/>
             <br />
             <sub><b>NCrusher74</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Scytalion">
             <img src="https://avatars.githubusercontent.com/u/2079490?v=4" width="100;" alt="Scytalion"/>
@@ -121,7 +128,8 @@ In the following screenshots you can find examples of the data extracted/updated
             <br />
             <sub><b>jverkoey</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/github-actions[bot]">
             <img src="https://avatars.githubusercontent.com/in/15368?v=4" width="100;" alt="github-actions[bot]"/>
