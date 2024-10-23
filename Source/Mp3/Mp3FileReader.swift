@@ -60,7 +60,7 @@ class Mp3FileReader {
 
         let readHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
         defer {
-            if #available(iOS 13.0, *) {
+            if #available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {
                 try? readHandle.close()
             } else {
                 readHandle.closeFile()
@@ -84,7 +84,7 @@ class Mp3FileReader {
 
     private func read(bytesCount: Int, from fileHandle: FileHandle) throws -> Data {
         let result = try {
-            if #available(iOS 13.4, *) {
+            if #available(macOS 10.15.4, iOS 13.4, watchOS 6.2, tvOS 13.4, *) {
                 return try fileHandle.read(upToCount: bytesCount)
             } else {
                 return fileHandle.readData(ofLength: bytesCount)
