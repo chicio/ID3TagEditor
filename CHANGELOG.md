@@ -1,6 +1,13 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.2.0)
+Release date: 2024-10-24
+
+#### Added
+- PR #106: Avoid reading the whole file into memory when updating ID3 tag of a file
+- clean up broke docc and allTests static properties
+
 ## [5.1.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.1.0)
 Release date: 2024-10-13
 
