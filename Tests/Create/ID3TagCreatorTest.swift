@@ -48,10 +48,4 @@ struct ID3TagCreatorTest {
                 )
         )
     }
-
-    static let allTests = [
-        ("testGenerateValidData", testGenerateValidData),
-        ("testNoValidFrameData", testNoValidFrameData),
-        ("testTagTooBig", testTagTooBig)
-    ]
 }

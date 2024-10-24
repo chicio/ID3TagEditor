@@ -895,33 +895,6 @@ struct ID3TagEditorAcceptanceTest {
         #expect((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription == "")
         #expect((id3Tag?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.content == "ÜberStandard - UberNet.org")
     }
-
-    static let allTests = [
-        ("testFailWrongFilePathFilePath", testFailWrongFilePathFilePath),
-        ("testReadTagV2", testReadTagV2),
-        ("testParseTagV3", testParseTagV3),
-        ("testReadTagV4", testReadTagV4),
-        ("testReadTagV4WithImage", testReadTagV4WithImage),
-        ("testReadAsMp3", testReadAsMp3),
-        ("testReadCorruptedFile", testReadCorruptedFile),
-        ("testReadUtf16String", testReadUtf16String),
-        ("testWriteTagV2", testWriteTagV2),
-        ("testWriteTagV3WhenItAlreadyExists", testWriteTagV3WhenItAlreadyExists),
-        ("testWriteTagV3WithJpg", testWriteTagV3WithJpg),
-        ("testWriteTagV3WithPng", testWriteTagV3WithPng),
-        ("testWriteTagV3WithCustomPathThatDoesNotExists", testWriteTagV3WithCustomPathThatDoesNotExists),
-        ("testWriteTagV3WithSamePath", testWriteTagV3WithSamePath),
-        ("testWriteTagV3WithAdditionalData", testWriteTagV3WithAdditionalData),
-        ("testWriteTagV3ToMp3AsData", testWriteTagV3ToMp3AsData),
-        ("testWriteTagV4", testWriteTagV4),
-        ("testWriteTagV4WithPng", testWriteTagV4WithPng),
-        ("testWriteTagV4SynchsafeIntegers", testWriteTagV4SynchsafeIntegers),
-        ("testWriteUnsynchronisedLyrics", testWriteUnsynchronisedLyrics),
-        ("testWriteNewFramesV2", testWriteNewFramesV2),
-        ("testWriteNewFramesV3", testWriteNewFramesV3),
-        ("testWriteNewFramesV4", testWriteNewFramesV4),
-        ("testCommentWithUTF8EncodingAndNoContentDescription", testCommentWithUTF8EncodingAndNoContentDescription)
-    ]
 }
 
 // swiftlint:enable type_body_length
