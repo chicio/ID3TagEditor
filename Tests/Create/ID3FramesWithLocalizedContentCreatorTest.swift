@@ -41,9 +41,4 @@ struct ID3FramesWithLocalizedContentCreatorTest {
             ))
             .build()
     }
-
-    static let allTests = [
-        ("testNothingIsCreatedWheLyricsDataIsNotSet", testNothingIsCreatedWheLyricsDataIsNotSet),
-        ("testCreateFrameForValidData", testCreateFrameForValidData)
-    ]
 }

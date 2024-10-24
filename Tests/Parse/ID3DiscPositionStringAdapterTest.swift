@@ -29,10 +29,4 @@ struct ID3DiscPositionStringAdapterTest {
         #expect(discPosition.part == 0)
         #expect(discPosition.total == nil)
     }
-
-    static let allTests = [
-        ("testAdaptNotANumberDiscPosition", testAdaptNotANumberDiscPosition),
-        ("testAdaptDiscPositionWithoutTotalDiscs", testAdaptDiscPositionWithoutTotalDiscs),
-        ("testAdaptDiscPositionWithTotalDiscs", testAdaptDiscPositionWithTotalDiscs)
-    ]
 }

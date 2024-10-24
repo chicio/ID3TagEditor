@@ -20,9 +20,4 @@ struct ID3TagSizeParserTest {
         let mp3V23 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))!
         #expect(ID3TagSizeParser().parse(data: mp3V23) == 245864)
     }
-
-    static let allTests = [
-        ("parseTagSizeV2", parseTagSizeV2),
-        ("parseFrameContentSizeV3", parseTagSizeV3)
-    ]
 }

@@ -64,14 +64,4 @@ struct Mp3FileReaderTest {
         // The file has no ID3 tag
         #expect(id3TagData == nil)
     }
-
-    static let allTests = [
-        ("testNotAnMP3FileWhenReadingEntireFile", testNotAnMP3FileWhenReadingEntireFile),
-        ("testMP3FileWhenReadingEntireFile", testMP3FileWhenReadingEntireFile),
-        ("testNotAnMP3fileWhenReadingID3Tag", testNotAnMP3fileWhenReadingID3Tag),
-        ("testMP3fileWhenReadingID3Tag", testMP3fileWhenReadingID3Tag),
-        ("testNonExistentMP3fileWhenReadingID3Tag", testNonExistentMP3fileWhenReadingID3Tag),
-        ("testOnlyReadsID3Tag", testOnlyReadsID3Tag),
-        ("testIgnoresWhenMissingID3Tag", testIgnoresWhenMissingID3Tag)
-    ]
 }

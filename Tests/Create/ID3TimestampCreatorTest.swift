@@ -56,13 +56,4 @@ struct ID3TimestampCreatorTest {
 
         #expect(timestampCreator.createFrom(recordingDateTime: recordingTime) == nil)
     }
-
-    static let allTests = [
-        ("testCreateTimestampCorrectly", testCreateTimestampCorrectly),
-        ("testNilDay", testNilDay),
-        ("testNilMonth", testNilMonth),
-        ("testNilYear", testNilYear),
-        ("testNilHour", testNilHour),
-        ("testNilMinute", testNilMinute)
-    ]
 }

@@ -30,8 +30,4 @@ struct Mp3FileWriterTest {
         #expect((readTag?.frames[.title] as? ID3FrameWithStringContent)?.content == "Test Title")
         #expect((readTag?.frames[.album] as? ID3FrameWithStringContent)?.content == "Test Album")
     }
-
-    static let allTests = [
-        ("testWritingWithCurrentTag", testWritingWithCurrentTag)
-    ]
 }

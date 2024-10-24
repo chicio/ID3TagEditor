@@ -15,8 +15,4 @@ struct UInt32ToByteArrayAdapterUsingUnsafePointerTest {
             [0x11, 0x22, 0x33, 0x44]
         )
     }
-
-    static let allTests = [
-        ("testAdapt32BitUnsignedInteger", testAdapt32BitUnsignedInteger)
-    ]
 }
