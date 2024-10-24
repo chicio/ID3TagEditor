@@ -232,11 +232,6 @@ struct ID3TagTest {
             """
         )
     }
-
-    static let allTests = [
-        ("testDebugDescriptionv3", testDebugDescriptionv3),
-        ("testDebugDescriptionv4", testDebugDescriptionv4)
-    ]
 }
 
 // swiftlint:enable line_length

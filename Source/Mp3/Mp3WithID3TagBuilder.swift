@@ -22,7 +22,9 @@ class Mp3WithID3TagBuilder {
             tagSizeWithHeader = Int(validCurrentId3Tag.properties.size) + ID3TagConfiguration().headerSize()
         }
         var mp3WithTag = try id3TagCreator.create(id3Tag: newId3Tag)
-        mp3WithTag.append(mp3.subdata(in: tagSizeWithHeader..<mp3.count))
+        if !mp3.isEmpty {
+            mp3WithTag.append(mp3.subdata(in: tagSizeWithHeader..<mp3.count))
+        }
         return mp3WithTag
     }
 }

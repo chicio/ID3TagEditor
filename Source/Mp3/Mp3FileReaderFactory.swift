@@ -13,8 +13,10 @@ class Mp3FileReaderFactory {
         let tagSizeParser = ID3TagSizeParser()
         let id3TagConfiguration = ID3TagConfiguration()
         let fileReader = Mp3FileReader(tagSizeParser: tagSizeParser,
-                                       id3TagConfiguration: id3TagConfiguration)
-
+                                       id3TagConfiguration: id3TagConfiguration,
+                                       tagVersionParser: ID3TagVersionParser(),
+                                       tagPresence: ID3TagPresence(id3TagConfiguration: id3TagConfiguration))
+        
         return fileReader
     }
 }
