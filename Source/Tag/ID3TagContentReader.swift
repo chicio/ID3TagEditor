@@ -417,6 +417,15 @@ public class ID3TagContentReader {
     public func fileOwner() -> String? {
         return (id3Tag.frames[.fileOwner] as? ID3FrameWithStringContent)?.content
     }
+    
+    /**
+      Read the initial key frame content.
+     
+      - returns: the initial key as `String`, or null.
+     */
+    public func initialKey() -> String? {
+        return (id3Tag.frames[.initialKey] as? ID3FrameWithStringContent)?.content
+    }
 
     /**
       Read the itunes grouping frame content.

@@ -36,6 +36,7 @@ class ID3FrameCreatorsFactory {
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .mixArtist, frameType: .mixArtist),
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .publisher, frameType: .publisher),
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .subtitle, frameType: .subtitle),
+            ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .initialKey, frameType: .initialKey),
             ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .beatsPerMinute, frameType: .beatsPerMinute),
             ID3DiscPositionFrameCreator(frameCreator: frameFromStringISO88591ContentCreator, id3FrameConfiguration: frameConfiguration),
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .originalFilename, frameType: .originalFilename),

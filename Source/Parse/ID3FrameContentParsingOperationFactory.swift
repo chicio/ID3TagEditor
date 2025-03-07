@@ -20,6 +20,7 @@ class ID3FrameContentParsingOperationFactory {
             .contentGrouping: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .contentGrouping),
             .copyright: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .copyright),
             .discPosition: ID3DiscPositionFrameContentParsingOperationFactory.make(),
+            .initialKey: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .initialKey),
             .encodedBy: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .encodedBy),
             .encoderSettings: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .encoderSettings),
             .fileOwner: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .fileOwner),

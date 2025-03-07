@@ -136,7 +136,8 @@ class ID3FrameConfiguration {
         "COMM": .comment,
         "TBPM": .beatsPerMinute,
         "TOFN": .originalFilename,
-        "TLEN": .lengthInMilliseconds
+        "TLEN": .lengthInMilliseconds,
+        "TKEY": .initialKey
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
@@ -166,7 +167,8 @@ class ID3FrameConfiguration {
             "TBP": .beatsPerMinute,
             "TOF": .originalFilename,
             "TLE": .lengthInMilliseconds,
-            "TSI": .sizeInBytes
+            "TSI": .sizeInBytes,
+            "TKE": .initialKey
         ],
         .version3: [
             "TDAT": .recordingDayMonth,
