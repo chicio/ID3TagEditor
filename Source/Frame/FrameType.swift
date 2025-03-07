@@ -29,6 +29,7 @@ enum FrameType: String, Equatable {
     case recordingDateTime = "recodingDateTime"
     case genre = "genre"
     case trackPosition = "trackPosition"
+    case initialKey = "initialKey"
     case discPosition = "discPosition"
     case albumArtist = "albumArtist"
     case beatsPerMinute = "beatsPerMinute"

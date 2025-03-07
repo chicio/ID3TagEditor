@@ -75,7 +75,12 @@ public class ID3TagEditor {
     public func write(tag: ID3Tag, to path: String, andSaveTo newPath: String? = nil) throws {
         let currentId3TagData = try mp3FileReader.readID3TagFrom(path: path)
         let newId3TagData = try id3TagCreator.create(id3Tag: tag)
-        try mp3FileWriter.write(newId3TagData: newId3TagData, currentId3TagData: currentId3TagData, fromPath: path, toPath: newPath ?? path)
+        try mp3FileWriter.write(
+            newId3TagData: newId3TagData,
+            currentId3TagData: currentId3TagData,
+            fromPath: path,
+            toPath: newPath ?? path
+        )
     }
 
     /**
