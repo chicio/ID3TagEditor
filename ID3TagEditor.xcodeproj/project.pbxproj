@@ -57,6 +57,7 @@
 		45D4C39B25399ABD00501417 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		45D4C39C25399ABD00501417 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		45F833E3205904680046C804 /* ID3TagEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ID3TagEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F8E73282D7C3D9400944823 /* SECURITY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SECURITY.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -196,6 +197,7 @@
 				45541C25205999A20025A8BF /* CHANGELOG.md */,
 				455CF98A2340C4D7004C880A /* CODE_OF_CONDUCT.md */,
 				455CF98B2340C4E1004C880A /* PULL_REQUEST_TEMPLATE.md */,
+				5F8E73282D7C3D9400944823 /* SECURITY.md */,
 				455CF9892340C4D7004C880A /* CONTRIBUTING.md */,
 				45AB7195204AD842004A2239 /* README.md */,
 				45AB7194204AD842004A2239 /* LICENSE.md */,
