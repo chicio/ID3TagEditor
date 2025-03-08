@@ -47,9 +47,10 @@ then
    exit 1
 fi
 
-# Go in root folder
+# Get root folder of the Git repository
 
-cd ..
+GIT_ROOT=$(git rev-parse --show-toplevel)
+cd "$GIT_ROOT" || { echo "Failed to change directory to project root."; exit 1; }
 
 # Increment marketing version
 
