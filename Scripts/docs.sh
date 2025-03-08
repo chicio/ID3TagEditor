@@ -20,3 +20,5 @@ echo "Push docs..."
 git add .
 
 git commit -m "Updated docs :bulb:"
+
+git push
