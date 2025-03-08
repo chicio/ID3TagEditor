@@ -29,6 +29,7 @@ Below you can find the list of the official ID3 frames supported by ID3TagEditor
 * ``ID3TagEditor/FrameName/encodedBy``
 * ``ID3TagEditor/FrameName/encoderSettings``
 * ``ID3TagEditor/FrameName/fileOwner``
+* ``ID3TagEditor/FrameName/initialKey``
 * ``ID3TagEditor/FrameName/lyricist``
 * ``ID3TagEditor/FrameName/mixArtist``
 * ``ID3TagEditor/FrameName/publisher``
