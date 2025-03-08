@@ -462,7 +462,19 @@ public class ID32v3TagBuilder: TagBuilder {
         frames[.fileOwner] = frame
         return self
     }
-
+    
+    /**
+      Set the Initial Key frame to be written by ID3TagEditor.
+     
+     - parameter frame: the initial key frame as a ID3FrameWithStringContent instance.
+    
+     - returns: the instance of the builder.
+     */
+    public func initialKey(frame: ID3FrameWithStringContent) -> Self {
+        frames[.initialKey] = frame
+        return self
+    }
+    
     /**
      Build and ID3Tag version 3.
      

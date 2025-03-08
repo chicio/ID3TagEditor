@@ -46,6 +46,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
             .genre,
             .discPosition,
             .trackPosition,
+            .initialKey,
             .recordingDayMonth,
             .recordingYear,
             .recordingHourMinute,
@@ -107,6 +108,8 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case discPosition
     /// Track Position frame name.
     case trackPosition
+    /// Initial key frame name.
+    case initialKey
     /// RecordingDayMonth frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.
     case recordingDayMonth
     /// RecordingYear frame name. Valid only for tag version 2.3 and 2.2. For version 2.4 use RecordingDateTime.

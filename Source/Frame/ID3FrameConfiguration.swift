@@ -48,6 +48,7 @@ class ID3FrameConfiguration {
         .attachedPicture: [UInt8]("APIC".utf8),
         .genre: [UInt8]("TCON".utf8),
         .trackPosition: [UInt8]("TRCK".utf8),
+        .initialKey: [UInt8]("TKEY".utf8),
         .discPosition: [UInt8]("TPOS".utf8),
         .beatsPerMinute: [UInt8]("TBPM".utf8),
         .originalFilename: [UInt8]("TOFN".utf8),
@@ -84,6 +85,7 @@ class ID3FrameConfiguration {
             .recordingHourMinute: [UInt8]("TIM".utf8),
             .genre: [UInt8]("TCO".utf8),
             .trackPosition: [UInt8]("TRK".utf8),
+            .initialKey: [UInt8]("TKE".utf8),
             .discPosition: [UInt8]("TPA".utf8),
             .beatsPerMinute: [UInt8]("TBP".utf8),
             .originalFilename: [UInt8]("TOF".utf8),
@@ -134,7 +136,8 @@ class ID3FrameConfiguration {
         "COMM": .comment,
         "TBPM": .beatsPerMinute,
         "TOFN": .originalFilename,
-        "TLEN": .lengthInMilliseconds
+        "TLEN": .lengthInMilliseconds,
+        "TKEY": .initialKey
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
@@ -164,7 +167,8 @@ class ID3FrameConfiguration {
             "TBP": .beatsPerMinute,
             "TOF": .originalFilename,
             "TLE": .lengthInMilliseconds,
-            "TSI": .sizeInBytes
+            "TSI": .sizeInBytes,
+            "TKE": .initialKey
         ],
         .version3: [
             "TDAT": .recordingDayMonth,
