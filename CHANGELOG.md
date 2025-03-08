@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.3.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.3.0)
+Release date: 2025-03-08
+
+#### Added
+- PR #109: Added support for Initial Key (TKEY) frame
+
 ## [5.2.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.2.0)
 Release date: 2024-10-24
 
