@@ -63,12 +63,6 @@ echo "Updating podspec version..."
 sed -i '' 's/  s.version      = .*/  s.version      = "'$VERSION'"/' ID3TagEditor.podspec
 echo ""
 
-# Generate doc
-
-echo "Generate docs..."
-./Scripts/generate-docs.sh
-echo ""
-
 # Commit, create tag and push
 
 echo "Create tag..."
@@ -77,14 +71,3 @@ git commit -m "Release "$VERSION" :rocket:"
 git tag $VERSION
 git push
 git push --tags
-
-# Publish release on cocoapods
-
-echo "Publish release on cocoapods"
-
-pod lib lint
-pod trunk push ID3TagEditor.podspec
-
-
-
-
