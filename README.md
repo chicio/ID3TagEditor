@@ -21,13 +21,17 @@ A swift library to read and modify ID3 Tag of any mp3 file. Listed in the implem
 
 ### Documentation
 
-You can find the complete API documentation, with the installation guides and some examples at [id3tageditor.fabrizioduroni.it](https://id3tageditor.fabrizioduroni.it/documentation/id3tageditor/ "ID3TagEditor doc").
+You can find the complete API documentation, with the installation guides and some examples at [https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/ "ID3TagEditor doc").
+In particular you can find:
+
+* the [installation guide](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/installation "installation")
+* some [examples](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/examples "examples")
 
 ***
 
 ### Examples
 
-In the following screenshots you can find examples of the data extracted/updated from a test mp3 file. In the [demo project]( https://github.com/chicio/ID3TagEditor/tree/main/Demo "demo id3tageditor") you will find an example for each supported target.
+In the following screenshots you can find examples of the data extracted/updated from a test mp3 file. In the [demo project]( https://github.com/chicio/ID3TagEditor/tree/main/Demo "demo id3tageditor") you will find an example for each supported target. You can also find some example in the documentation in the ["Examples"](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/examples) article.
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/chicio/ID3TagEditor/main/Screenshots/04-example.png">
