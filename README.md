@@ -59,6 +59,13 @@ In the following screenshots you can find examples of the data extracted/updated
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/fabrizioduronilastminute">
+            <img src="https://avatars.githubusercontent.com/u/198900986?v=4" width="100;" alt="fabrizioduronilastminute"/>
+            <br />
+            <sub><b>fabrizioduronilastminute</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/martinjbaker">
             <img src="https://avatars.githubusercontent.com/u/1586504?v=4" width="100;" alt="martinjbaker"/>
             <br />
@@ -78,15 +85,15 @@ In the following screenshots you can find examples of the data extracted/updated
             <br />
             <sub><b>joeljfischer</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/BLeeEZ">
             <img src="https://avatars.githubusercontent.com/u/17556018?v=4" width="100;" alt="BLeeEZ"/>
             <br />
             <sub><b>BLeeEZ</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/NCrusher74">
             <img src="https://avatars.githubusercontent.com/u/56804260?v=4" width="100;" alt="NCrusher74"/>
@@ -121,15 +128,15 @@ In the following screenshots you can find examples of the data extracted/updated
             <br />
             <sub><b>lordzsolt</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/jverkoey">
             <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
             <br />
             <sub><b>jverkoey</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/github-actions[bot]">
             <img src="https://avatars.githubusercontent.com/in/15368?v=4" width="100;" alt="github-actions[bot]"/>
