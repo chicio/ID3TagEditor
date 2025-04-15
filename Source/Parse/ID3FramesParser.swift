@@ -30,7 +30,7 @@ class ID3FramesParser {
                 Fallback added in order to avoid crashing with non standard tag that doesn't support synchsafe size.
                 See https://github.com/chicio/ID3TagEditor/issues/88
              */
-            if frameSize < id3Tag.properties.size {
+            if frameSize < id3Tag.properties.size && currentFramePosition + frameSize <= mp3.length {
                 let frame = mp3.subdata(with: NSRange(location: currentFramePosition, length: frameSize))
                 id3FrameParser.parse(frame: frame, frameSize: frameSize, id3Tag: id3Tag)
                 currentFramePosition += frame.count

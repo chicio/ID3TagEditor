@@ -187,6 +187,17 @@ struct ID3TagEditorAcceptanceTest {
             try id3TagEditor.read(mp3: mp3)
         }
     }
+    
+    @Test func testReadTagInvalidFrameSize() throws {
+        let id3TagEditor = ID3TagEditor()
+        let id3Tag = try id3TagEditor.read(from: PathLoader().pathFor(name: "example-v3-invalid-frame-size", fileType: "mp3"))
+
+        #expect(id3Tag?.properties.version == .version3)
+        #expect((id3Tag?.frames[.title] as? ID3FrameWithStringContent)?.content == "A New title")
+        #expect((id3Tag?.frames[.album] as? ID3FrameWithStringContent)?.content == "A New Album")
+        #expect((id3Tag?.frames[.artist] as? ID3FrameWithStringContent)?.content == "A New Artist")
+    }
+
 
     @Test func testReadUtf16String() throws {
         let id3TagEditor = ID3TagEditor()
