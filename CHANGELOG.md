@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.4.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.4.0)
+Release date: 2025-04-15
+
+#### Fixed
+- PR #112: Crash when parsing invalid frame sizes larger than ID3Tag
+
 ## [5.3.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.3.0)
 Release date: 2025-03-08
 
