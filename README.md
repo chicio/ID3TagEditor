@@ -127,13 +127,20 @@ In the following screenshots you can find examples of the data extracted/updated
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/xpereta">
+            <img src="https://avatars.githubusercontent.com/u/21675?v=4" width="100;" alt="xpereta"/>
+            <br />
+            <sub><b>xpereta</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
         <a href="https://github.com/lordzsolt">
             <img src="https://avatars.githubusercontent.com/u/8976891?v=4" width="100;" alt="lordzsolt"/>
             <br />
             <sub><b>lordzsolt</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/jverkoey">
             <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
