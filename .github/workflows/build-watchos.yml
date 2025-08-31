@@ -20,7 +20,7 @@ jobs:
       - name: Select watchOS Simulator
         id: select_sim
         run: |
-          SIMULATOR_ID=$(xcrun simctl list devices available | grep -m1 'Apple Watch' | awk -F '[()]' '{print $2}')
+          SIMULATOR_ID=$(xcrun simctl list devices available | grep -E 'Apple Watch' | grep -Eo '[A-F0-9\-]{36}' | head -n1)
           echo "SIMULATOR_ID=$SIMULATOR_ID" >> $GITHUB_ENV
       - name: Build watchOS framework
         run: |
