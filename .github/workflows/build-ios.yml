@@ -17,11 +17,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Select iOS Simulator
+        id: select_sim
+        run: |
+          SIMULATOR_ID=$(xcrun simctl list devices available | grep -m1 'iPhone' | awk -F '[()]' '{print $2}')
+          echo "SIMULATOR_ID=$SIMULATOR_ID" >> $GITHUB_ENV
       - name: Build iOS framework
         run: |
-           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor iOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 16,OS=18.1" -skipPackagePluginValidation | xcpretty
+           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor iOS Tests" clean test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "id=$SIMULATOR_ID" -skipPackagePluginValidation | xcpretty
       - name: Build iOS Demo
-        run: | 
-           set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS"  clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=iOS Simulator,name=iPhone 16,OS=18.1" -skipPackagePluginValidation | xcpretty
+        run: |
+           set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo iOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "id=$SIMULATOR_ID" -skipPackagePluginValidation | xcpretty
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1

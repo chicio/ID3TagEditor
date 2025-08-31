@@ -42,7 +42,8 @@ class ID3FrameCreatorsFactory {
             ID3FrameContentCreator(frameCreator: frameFromStringUTF16ContentAdapter, frameName: .originalFilename, frameType: .originalFilename),
             ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .lengthInMilliseconds, frameType: .lengthInMilliseconds),
             ID3FrameContentCreator(frameCreator: frameFromIntegerContentAdapter, frameName: .sizeInBytes, frameType: .sizeInBytes),
-            ID3FramesWithLocalizedContentCreatorFactory.make()
+            ID3FramesWithLocalizedContentCreatorFactory.make(),
+            ID3FramesWithUserDefinedTextInformationCreatorFactory.make()
         ]
         + ID3RecordingTimesFrameCreatorsFactory.make()
         + ID3iTunesFrameCreatorsFactory.make()

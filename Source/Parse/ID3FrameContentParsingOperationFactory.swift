@@ -49,7 +49,8 @@ class ID3FrameContentParsingOperationFactory {
             .iTunesGrouping: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .iTunesGrouping),
             .iTunesMovementIndex: ID3ParsingOperationForID3FrameWithIntegerFactory.make(frameName: .iTunesMovementIndex),
             .iTunesMovementCount: ID3ParsingOperationForID3FrameWithIntegerFactory.make(frameName: .iTunesMovementCount),
-            .iTunesMovementName: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .iTunesMovementName)
+            .iTunesMovementName: ID3ParsingOperationForID3FrameWithStringFactory.make(frameName: .iTunesMovementName),
+            .userDefinedTextInformation: ID3UserDefinedTextInformationFrameContentParsingOperationFactory.make()
         ]
     }
 }

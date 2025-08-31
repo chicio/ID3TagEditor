@@ -46,6 +46,7 @@ enum FrameType: String, Equatable {
     case iTunesPodcastDescription = "iTunesPodcastDescription"
     case iTunesPodcastID = "iTunesPodcastID"
     case iTunesPodcastKeywords = "iTunesPodcastKeywords"
+    case userDefinedTextInformation = "userDefinedTextInformation"
     case invalid = ""
 
     static func == (lhs: FrameType, rhs: FrameType) -> Bool {
