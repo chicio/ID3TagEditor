@@ -17,14 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Select watchOS Simulator
-        id: select_sim
-        run: |
-          SIMULATOR_ID=$(xcrun simctl list devices available | grep -E 'Apple Watch' | grep -Eo '[A-F0-9\-]{36}' | head -n1)
-          echo "SIMULATOR_ID=$SIMULATOR_ID" >> $GITHUB_ENV
       - name: Build watchOS framework
         run: |
-           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "id=$SIMULATOR_ID" -skipPackagePluginValidation | xcpretty
+           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=11.2" -skipPackagePluginValidation | xcpretty
       - name: Build watchOS Demo
         run: |
-          set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -destination "id=$SIMULATOR_ID" -skipPackagePluginValidation | xcpretty
+          set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -destination "platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=11.2" -skipPackagePluginValidation | xcpretty
