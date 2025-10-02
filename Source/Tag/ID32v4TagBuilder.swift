@@ -438,6 +438,19 @@ public class ID32v4TagBuilder: TagBuilder {
         frames[.initialKey] = frame
         return self
     }
+    
+    /**
+      Set a user defined text information frame to be written by ID3TagEditor.
+     
+      - parameter description: a description that identifies the type of text information.
+      - parameter frame: the user defined text information frame as a ID3FrameUserDefinedTextInformation instance.
+     
+      - returns: the instance of the builder.
+     */
+    public func userDefinedTextInformation(description: String, frame: ID3FrameUserDefinedTextInformation) -> Self {
+        frames[.userDefinedTextInformation(description)] = frame
+        return self
+    }
 
     /**
      Build and ID3Tag version 4.

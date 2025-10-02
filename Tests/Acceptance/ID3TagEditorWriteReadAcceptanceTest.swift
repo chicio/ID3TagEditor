@@ -61,6 +61,8 @@ struct ID3TagEditorWriteReadAcceptanceTest {
             .unsynchronisedLyrics(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng unsync lyrics"))
             .comment(language: .ita, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.ita, contentDescription: "CD", content: "v2 ita comment"))
             .comment(language: .eng, frame: ID3FrameWithLocalizedContent(language: ID3FrameContentLanguage.eng, contentDescription: "CD", content: "v2 eng comment"))
+            .userDefinedTextInformation(description: "CustomField", frame: ID3FrameUserDefinedTextInformation(description: "CustomField", content: "CustomValue"))
+            .userDefinedTextInformation(description: "AnotherField", frame: ID3FrameUserDefinedTextInformation(description: "AnotherField", content: "AnotherValue"))
             .build()
 
         try id3TagEditor.write(
@@ -117,6 +119,10 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         #expect((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.language == .eng)
         #expect((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)?.contentDescription == "CD")
         #expect((id3TagWritten?.frames[.comment(.eng)] as? ID3FrameWithLocalizedContent)!.content == "v2 eng comment")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("CustomField")] as? ID3FrameUserDefinedTextInformation)?.description == "CustomField")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("CustomField")] as? ID3FrameUserDefinedTextInformation)?.content == "CustomValue")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("AnotherField")] as? ID3FrameUserDefinedTextInformation)?.description == "AnotherField")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("AnotherField")] as? ID3FrameUserDefinedTextInformation)?.content == "AnotherValue")
         #expect((id3TagWritten?.frames[.initialKey] as? ID3FrameWithStringContent)?.content == "Cbm")
 
         let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
@@ -216,6 +222,7 @@ struct ID3TagEditorWriteReadAcceptanceTest {
             .iTunesPodcastDescription(frame: ID3FrameWithStringContent(content: "PodcastDescription V3"))
             .iTunesPodcastID(frame: ID3FrameWithStringContent(content: "PodcastID V3"))
             .iTunesPodcastKeywords(frame: ID3FrameWithStringContent(content: "PodcastKeywords V3"))
+            .userDefinedTextInformation(description: "V3CustomField", frame: ID3FrameUserDefinedTextInformation(description: "V3CustomField", content: "V3CustomValue"))
             .build()
 
         try id3TagEditor.write(
@@ -281,6 +288,8 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         #expect((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content == "PodcastDescription V3")
         #expect((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content == "PodcastID V3")
         #expect((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content == "PodcastKeywords V3")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("V3CustomField")] as? ID3FrameUserDefinedTextInformation)?.description == "V3CustomField")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("V3CustomField")] as? ID3FrameUserDefinedTextInformation)?.content == "V3CustomValue")
 
         let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
         #expect(tagReader.title() == "title V3")
@@ -384,6 +393,7 @@ struct ID3TagEditorWriteReadAcceptanceTest {
             .iTunesPodcastDescription(frame: ID3FrameWithStringContent(content: "PodcastDescription V4"))
             .iTunesPodcastID(frame: ID3FrameWithStringContent(content: "PodcastID V4"))
             .iTunesPodcastKeywords(frame: ID3FrameWithStringContent(content: "PodcastKeywords V4"))
+            .userDefinedTextInformation(description: "V4CustomField", frame: ID3FrameUserDefinedTextInformation(description: "V4CustomField", content: "V4CustomValue 🎵"))
             .build()
 
         try id3TagEditor.write(
@@ -448,6 +458,8 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         #expect((id3TagWritten?.frames[.iTunesPodcastDescription] as? ID3FrameWithStringContent)?.content == "PodcastDescription V4")
         #expect((id3TagWritten?.frames[.iTunesPodcastID] as? ID3FrameWithStringContent)?.content == "PodcastID V4")
         #expect((id3TagWritten?.frames[.iTunesPodcastKeywords] as? ID3FrameWithStringContent)?.content == "PodcastKeywords V4")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("V4CustomField")] as? ID3FrameUserDefinedTextInformation)?.description == "V4CustomField")
+        #expect((id3TagWritten?.frames[.userDefinedTextInformation("V4CustomField")] as? ID3FrameUserDefinedTextInformation)?.content == "V4CustomValue 🎵")
 
         let tagReader = ID3TagContentReader(id3Tag: id3TagWritten!)
         #expect(tagReader.title() == "title V4")

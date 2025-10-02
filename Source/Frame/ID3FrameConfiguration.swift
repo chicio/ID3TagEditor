@@ -61,7 +61,8 @@ class ID3FrameConfiguration {
         .iTunesPodcastCategory: [UInt8]("TCAT".utf8),
         .iTunesPodcastDescription: [UInt8]("TDES".utf8),
         .iTunesPodcastID: [UInt8]("TGID".utf8),
-        .iTunesPodcastKeywords: [UInt8]("TKWD".utf8)
+        .iTunesPodcastKeywords: [UInt8]("TKWD".utf8),
+        .userDefinedTextInformation: [UInt8]("TXXX".utf8)
     ]
     private var identifiers: [ID3Version: [FrameType: [UInt8]]] = [
         .version2: [
@@ -92,7 +93,8 @@ class ID3FrameConfiguration {
             .lengthInMilliseconds: [UInt8]("TLE".utf8),
             .sizeInBytes: [UInt8]("TSI".utf8),
             .unsyncronisedLyrics: [UInt8]("ULT".utf8),
-            .comment: [UInt8]("COM".utf8)
+            .comment: [UInt8]("COM".utf8),
+            .userDefinedTextInformation: [UInt8]("TXX".utf8)
         ],
         .version3: [
             .recordingDayMonth: [UInt8]("TDAT".utf8),
@@ -137,7 +139,8 @@ class ID3FrameConfiguration {
         "TBPM": .beatsPerMinute,
         "TOFN": .originalFilename,
         "TLEN": .lengthInMilliseconds,
-        "TKEY": .initialKey
+        "TKEY": .initialKey,
+        "TXXX": .userDefinedTextInformation
     ]
     private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
         .version2: [
@@ -168,7 +171,8 @@ class ID3FrameConfiguration {
             "TOF": .originalFilename,
             "TLE": .lengthInMilliseconds,
             "TSI": .sizeInBytes,
-            "TKE": .initialKey
+            "TKE": .initialKey,
+            "TXX": .userDefinedTextInformation
         ],
         .version3: [
             "TDAT": .recordingDayMonth,

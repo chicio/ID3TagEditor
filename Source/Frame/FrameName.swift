@@ -143,4 +143,7 @@ public enum FrameName: Equatable, Hashable, CaseIterable {
     case iTunesPodcastID
     /// Podcast keywords frame name, Version 2.3 and 2.4 only.
     case iTunesPodcastKeywords
+    /// User defined text information frame name (TXXX in v2.3/v2.4, TXX in v2.2).
+    /// - description: the description that identifies the type of text information.
+    case userDefinedTextInformation(_ description: String)
 }
