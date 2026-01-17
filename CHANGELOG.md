@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.5.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.5.0)
+Release date: 2026-01-17
+
+#### Fixed
+- PR #115: Fix documentation for recordingYear
+
 ## [5.4.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.4.0)
 Release date: 2025-04-15
 
