@@ -21,13 +21,13 @@ jobs:
 
       - name: Select watchOS Simulator
         run: |
-            echo "Listing all available devices:"
-            xcrun simctl list devices available
+            echo "Listing all watchOS devices:"
+            xcrun simctl list devices | grep -A 20 "watchOS"
 
-            echo -e "\nSearching for watchOS simulators:"
-            WATCH_SIMULATOR_ID=$(xcrun simctl list devices available | \
-              grep -i "watchOS" | \
-              grep -i "Apple Watch" | \
+            echo -e "\nSearching for watchOS simulator:"
+            WATCH_SIMULATOR_ID=$(xcrun simctl list devices | \
+              grep "Apple Watch" | \
+              grep -v "Unavailable" | \
               head -1 | \
               grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}')
 
