@@ -24,7 +24,7 @@ jobs:
             WATCH_SIMULATOR_ID=$(xcrun simctl list devices available | \
               grep "Apple Watch" | \
               grep "watchOS Simulator" | \
-              grep -m1 -oE '[A-F0-9-]{36}')
+              grep -m1 -oE '[a-fA-F0-9-]{36}')
             
             echo "WATCH_SIMULATOR_ID=$WATCH_SIMULATOR_ID" >> $GITHUB_ENV
             echo "Using watchOS simulator: $WATCH_SIMULATOR_ID"
