@@ -27,6 +27,7 @@ jobs:
             head -n 1 | \
             awk -F '[()]' '{print $2}')
           echo "WATCH_SIMULATOR_ID=$WATCH_SIMULATOR_ID" >> $GITHUB_ENV
+          echo "Using watchOS simulator: $WATCH_SIMULATOR_ID"
       - name: Build watchOS framework
         run: |
           set -o pipefail && \
