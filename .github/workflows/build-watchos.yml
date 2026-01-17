@@ -21,16 +21,21 @@ jobs:
 
       - name: Select watchOS Simulator
         run: |
+            echo "Listing all available devices:"
+            xcrun simctl list devices available
+
+            echo -e "\nSearching for watchOS simulators:"
             WATCH_SIMULATOR_ID=$(xcrun simctl list devices available | \
-              grep "Apple Watch" | \
-              grep "watchOS Simulator" | \
-              grep -m1 -oE '[a-fA-F0-9-]{36}')
-              
+              grep -i "watchOS" | \
+              grep -i "Apple Watch" | \
+              head -1 | \
+              grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}')
+
             if [ -z "$WATCH_SIMULATOR_ID" ]; then
               echo "No watchOS simulator found"
               exit 1
             fi
-            
+
             echo "WATCH_SIMULATOR_ID=$WATCH_SIMULATOR_ID" >> $GITHUB_ENV
             echo "Using watchOS simulator: $WATCH_SIMULATOR_ID"
       - name: Build watchOS framework
