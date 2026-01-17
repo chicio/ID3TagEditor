@@ -18,7 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Select iOS Simulator
-        id: select_sim
         run: |
           SIMULATOR_ID=$(xcrun simctl list devices available | grep -m1 'iPhone' | awk -F '[()]' '{print $2}')
           echo "SIMULATOR_ID=$SIMULATOR_ID" >> $GITHUB_ENV

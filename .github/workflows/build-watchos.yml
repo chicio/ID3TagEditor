@@ -2,7 +2,7 @@ name: Build watchOS
 
 on:
   push:
-    branches: 
+    branches:
       - '*'
   pull_request:
     branches:
@@ -11,15 +11,42 @@ on:
     - cron: '0 16 15 * *'
 
 jobs:
-  build:      
+  build:
     name: Build watchOS
     runs-on: macos-15
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Select watchOS Simulator
+        run: |
+          WATCH_SIMULATOR_ID=$(xcrun simctl list devices available | \
+            grep "Apple Watch" | \
+            grep "watchOS" | \
+            head -n 1 | \
+            awk -F '[()]' '{print $2}')
+          echo "WATCH_SIMULATOR_ID=$WATCH_SIMULATOR_ID" >> $GITHUB_ENV
       - name: Build watchOS framework
         run: |
-           set -o pipefail && xcodebuild -project ID3TagEditor.xcodeproj -scheme "ID3TagEditor watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination "platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=11.2" -skipPackagePluginValidation | xcpretty
+          set -o pipefail && \
+          xcodebuild \
+            -project ID3TagEditor.xcodeproj \
+            -scheme "ID3TagEditor watchOS" \
+            clean build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            -destination "id=$WATCH_SIMULATOR_ID" \
+            -skipPackagePluginValidation | xcpretty
       - name: Build watchOS Demo
         run: |
-          set -o pipefail && xcodebuild -project Demo/Demo.xcodeproj -scheme "Demo watchOS" clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -destination "platform=watchOS Simulator,name=Apple Watch SE (40mm) (2nd generation),OS=11.2" -skipPackagePluginValidation | xcpretty
+          set -o pipefail && \
+          xcodebuild \
+            -project Demo/Demo.xcodeproj \
+            -scheme "Demo watchOS" \
+            clean build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            -destination "id=$WATCH_SIMULATOR_ID" \
+            -skipPackagePluginValidation | xcpretty
