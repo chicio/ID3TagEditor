@@ -44,7 +44,7 @@ In the following screenshots you can find examples of the data extracted/updated
 
 ### Contributors
 
-<!-- readme: collaborators,contributors,bots -start -->
+<!-- readme: collaborators,contributors,Anrufliste,bots -start -->
 <table>
 <tr>
     <td align="center">
