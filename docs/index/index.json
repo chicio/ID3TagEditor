@@ -1249,7 +1249,12 @@
                 "type": "groupMarker"
               },
               {
-                "path": "/documentation/id3tageditor/id3tageditor/read(from:)",
+                "path": "/documentation/id3tageditor/id3tageditor/read(from:)-3rvvo",
+                "title": "func read(from: URL) throws -> ID3Tag?",
+                "type": "method"
+              },
+              {
+                "path": "/documentation/id3tageditor/id3tageditor/read(from:)-5l8iv",
                 "title": "func read(from: String) throws -> ID3Tag?",
                 "type": "method"
               },

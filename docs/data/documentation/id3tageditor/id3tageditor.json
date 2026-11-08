@@ -179,7 +179,73 @@
       "type": "topic",
       "url": "/documentation/id3tageditor/id3tageditor/init()"
     },
-    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)": {
+    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-3rvvo": {
+      "abstract": [
+        {
+          "text": "Read the ID3 tag contained in the mp3 file.",
+          "type": "text"
+        }
+      ],
+      "fragments": [
+        {
+          "kind": "keyword",
+          "text": "func"
+        },
+        {
+          "kind": "text",
+          "text": " "
+        },
+        {
+          "kind": "identifier",
+          "text": "read"
+        },
+        {
+          "kind": "text",
+          "text": "("
+        },
+        {
+          "kind": "externalParam",
+          "text": "from"
+        },
+        {
+          "kind": "text",
+          "text": ": "
+        },
+        {
+          "kind": "typeIdentifier",
+          "preciseIdentifier": "s:10Foundation3URLV",
+          "text": "URL"
+        },
+        {
+          "kind": "text",
+          "text": ") "
+        },
+        {
+          "kind": "keyword",
+          "text": "throws"
+        },
+        {
+          "kind": "text",
+          "text": " -> "
+        },
+        {
+          "kind": "typeIdentifier",
+          "preciseIdentifier": "s:12ID3TagEditor0aB0C",
+          "text": "ID3Tag"
+        },
+        {
+          "kind": "text",
+          "text": "?"
+        }
+      ],
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-3rvvo",
+      "kind": "symbol",
+      "role": "symbol",
+      "title": "read(from:)",
+      "type": "topic",
+      "url": "/documentation/id3tageditor/id3tageditor/read(from:)-3rvvo"
+    },
+    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-5l8iv": {
       "abstract": [
         {
           "text": "Read the ID3 tag contained in the mp3 file.",
@@ -238,12 +304,12 @@
           "text": "?"
         }
       ],
-      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)",
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-5l8iv",
       "kind": "symbol",
       "role": "symbol",
       "title": "read(from:)",
       "type": "topic",
-      "url": "/documentation/id3tageditor/id3tageditor/read(from:)"
+      "url": "/documentation/id3tageditor/id3tageditor/read(from:)-5l8iv"
     },
     "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(mp3:)": {
       "abstract": [
@@ -513,7 +579,8 @@
       "anchor": "Instance-Methods",
       "generated": true,
       "identifiers": [
-        "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)",
+        "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-3rvvo",
+        "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-5l8iv",
         "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(mp3:)",
         "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/write(tag:mp3:)",
         "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/write(tag:to:andSaveTo:)"

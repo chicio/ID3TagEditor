@@ -15,7 +15,7 @@
   },
   "identifier": {
     "interfaceLanguage": "swift",
-    "url": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)"
+    "url": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-5l8iv"
   },
   "kind": "symbol",
   "metadata": {
@@ -359,7 +359,7 @@
       "type": "topic",
       "url": "/documentation/id3tageditor/id3tageditor"
     },
-    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)": {
+    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-5l8iv": {
       "abstract": [
         {
           "text": "Read the ID3 tag contained in the mp3 file.",
@@ -418,12 +418,12 @@
           "text": "?"
         }
       ],
-      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)",
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-5l8iv",
       "kind": "symbol",
       "role": "symbol",
       "title": "read(from:)",
       "type": "topic",
-      "url": "/documentation/id3tageditor/id3tageditor/read(from:)"
+      "url": "/documentation/id3tageditor/id3tageditor/read(from:)-5l8iv"
     }
   },
   "schemaVersion": {
@@ -435,7 +435,7 @@
   "variants": [
     {
       "paths": [
-        "/documentation/id3tageditor/id3tageditor/read(from:)"
+        "/documentation/id3tageditor/id3tageditor/read(from:)-5l8iv"
       ],
       "traits": [
         {

@@ -4,14 +4,15 @@ Let's see how you can use `ID3TagEditor` to read and write ID3 tags.
 
 #### Read
 
-To read the ID3 tag of an mp3 file you can choose between two API contained in the ``ID3TagEditor`` class:
-* ``ID3TagEditor/ID3TagEditor/read(from:)``
+To read the ID3 tag of an mp3 file you can choose among three API contained in the ``ID3TagEditor`` class:
+* ``ID3TagEditor/ID3TagEditor/read(from:)-5l8iv`` with a path
+* ``ID3TagEditor/ID3TagEditor/read(from:)-3rvvo`` with a URL
 * ``ID3TagEditor/ID3TagEditor/read(mp3:)``
 
-After getting a ``ID3Tag`` from one of the read API above, you have two options to read the content:
+After getting an ``ID3Tag`` from one of the read API above, you have two options to read the content:
 
 
-* if you're interested in reading just the content of the frames, you can create an instance of ``ID3TagContentReader`` by passing to it the ``ID3Tag`` received from the read API and then access the frames content by using its methods.
+* If you're interested in reading just the content of the frames, you can create an instance of ``ID3TagContentReader`` by passing to it the ``ID3Tag`` received from the read API and then access the frames content by using its methods.
 
 ```swift
 do {
@@ -26,7 +27,7 @@ do {
 }  
 ```
 
-* if you need full frames data, you can access to the ``ID3TagEditor/ID3Tag/frames`` property.
+* If you need full frames data, you can access to the ``ID3TagEditor/ID3Tag/frames`` property.
  In this way you will have access to all the data contained in them, including their content and its features like the size and the ID3 frame identifier.
 
 ```swift
