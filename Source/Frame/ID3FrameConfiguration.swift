@@ -8,7 +8,9 @@
 import Foundation
 
 class ID3FrameConfiguration {
-    private let commonFourLetterIdentifiers: [FrameType: [UInt8]] = [
+    private typealias Identifiers = [FrameType: [UInt8]]
+    private typealias NamesForIdentifiers = [UInt32: FrameType]
+    private let commonFourLetterIdentifiers: Identifiers = [
         .artist: [UInt8]("TPE1".utf8),
         .composer: [UInt8]("TCOM".utf8),
         .conductor: [UInt8]("TPE3".utf8),
@@ -43,48 +45,48 @@ class ID3FrameConfiguration {
         .iTunesPodcastID: [UInt8]("TGID".utf8),
         .iTunesPodcastKeywords: [UInt8]("TKWD".utf8)
     ]
-    private var identifiers: [ID3Version: [FrameType: [UInt8]]] = [
-        .version2: [
-            .artist: [UInt8]("TP1".utf8),
-            .composer: [UInt8]("TCM".utf8),
-            .conductor: [UInt8]("TP3".utf8),
-            .contentGrouping: [UInt8]("TT1".utf8),
-            .copyright: [UInt8]("TCR".utf8),
-            .encodedBy: [UInt8]("TEN".utf8),
-            .encoderSettings: [UInt8]("TSS".utf8),
-            .lyricist: [UInt8]("TXT".utf8),
-            .mixArtist: [UInt8]("TP4".utf8),
-            .publisher: [UInt8]("TPB".utf8),
-            .subtitle: [UInt8]("TT3".utf8),
-            .albumArtist: [UInt8]("TP2".utf8),
-            .title: [UInt8]("TT2".utf8),
-            .album: [UInt8]("TAL".utf8),
-            .attachedPicture: [UInt8]("PIC".utf8),
-            .recordingDayMonth: [UInt8]("TDA".utf8),
-            .recordingYear: [UInt8]("TYE".utf8),
-            .recordingHourMinute: [UInt8]("TIM".utf8),
-            .genre: [UInt8]("TCO".utf8),
-            .trackPosition: [UInt8]("TRK".utf8),
-            .initialKey: [UInt8]("TKE".utf8),
-            .discPosition: [UInt8]("TPA".utf8),
-            .beatsPerMinute: [UInt8]("TBP".utf8),
-            .originalFilename: [UInt8]("TOF".utf8),
-            .lengthInMilliseconds: [UInt8]("TLE".utf8),
-            .sizeInBytes: [UInt8]("TSI".utf8),
-            .unsyncronisedLyrics: [UInt8]("ULT".utf8),
-            .comment: [UInt8]("COM".utf8)
-        ],
-        .version3: [
-            .recordingDayMonth: [UInt8]("TDAT".utf8),
-            .recordingYear: [UInt8]("TYER".utf8),
-            .recordingHourMinute: [UInt8]("TIME".utf8),
-            .sizeInBytes: [UInt8]("TSIZ".utf8)
-        ],
-        .version4: [
-            .recordingDateTime: [UInt8]("TDRC".utf8)
-        ]
+    private let identifiersVersion2: Identifiers = [
+        .artist: [UInt8]("TP1".utf8),
+        .composer: [UInt8]("TCM".utf8),
+        .conductor: [UInt8]("TP3".utf8),
+        .contentGrouping: [UInt8]("TT1".utf8),
+        .copyright: [UInt8]("TCR".utf8),
+        .encodedBy: [UInt8]("TEN".utf8),
+        .encoderSettings: [UInt8]("TSS".utf8),
+        .lyricist: [UInt8]("TXT".utf8),
+        .mixArtist: [UInt8]("TP4".utf8),
+        .publisher: [UInt8]("TPB".utf8),
+        .subtitle: [UInt8]("TT3".utf8),
+        .albumArtist: [UInt8]("TP2".utf8),
+        .title: [UInt8]("TT2".utf8),
+        .album: [UInt8]("TAL".utf8),
+        .attachedPicture: [UInt8]("PIC".utf8),
+        .recordingDayMonth: [UInt8]("TDA".utf8),
+        .recordingYear: [UInt8]("TYE".utf8),
+        .recordingHourMinute: [UInt8]("TIM".utf8),
+        .genre: [UInt8]("TCO".utf8),
+        .trackPosition: [UInt8]("TRK".utf8),
+        .initialKey: [UInt8]("TKE".utf8),
+        .discPosition: [UInt8]("TPA".utf8),
+        .beatsPerMinute: [UInt8]("TBP".utf8),
+        .originalFilename: [UInt8]("TOF".utf8),
+        .lengthInMilliseconds: [UInt8]("TLE".utf8),
+        .sizeInBytes: [UInt8]("TSI".utf8),
+        .unsyncronisedLyrics: [UInt8]("ULT".utf8),
+        .comment: [UInt8]("COM".utf8)
     ]
-    private let commonNamesForIdentifiers: [UInt32: FrameType] = [
+    private let identifiersVersion3: Identifiers
+    private let identifiersVersion3Init: Identifiers = [
+        .recordingDayMonth: [UInt8]("TDAT".utf8),
+        .recordingYear: [UInt8]("TYER".utf8),
+        .recordingHourMinute: [UInt8]("TIME".utf8),
+        .sizeInBytes: [UInt8]("TSIZ".utf8)
+    ]
+    private let identifiersVersion4: Identifiers
+    private let identifiersVersion4Init: Identifiers = [
+        .recordingDateTime: [UInt8]("TDRC".utf8)
+    ]
+    private let commonNamesForIdentifiers: NamesForIdentifiers = [
         "TPE1".uint32: .artist,
         "TCOM".uint32: .composer,
         "TPE3".uint32: .conductor,
@@ -119,54 +121,54 @@ class ID3FrameConfiguration {
         "TLEN".uint32: .lengthInMilliseconds,
         "TKEY".uint32: .initialKey
     ]
-    private var nameForIdentifier: [ID3Version: [UInt32: FrameType]] = [
-        .version2: [
-            "TP1".uint32: .artist,
-            "TCM".uint32: .composer,
-            "TP3".uint32: .conductor,
-            "TT1".uint32: .contentGrouping,
-            "TCR".uint32: .copyright,
-            "TEN".uint32: .encodedBy,
-            "TSS".uint32: .encoderSettings,
-            "TXT".uint32: .lyricist,
-            "TP4".uint32: .mixArtist,
-            "TPB".uint32: .publisher,
-            "TT3".uint32: .subtitle,
-            "TP2".uint32: .albumArtist,
-            "TT2".uint32: .title,
-            "TAL".uint32: .album,
-            "PIC".uint32: .attachedPicture,
-            "TDA".uint32: .recordingDayMonth,
-            "TYE".uint32: .recordingYear,
-            "TIM".uint32: .recordingHourMinute,
-            "TCO".uint32: .genre,
-            "TRK".uint32: .trackPosition,
-            "TPA".uint32: .discPosition,
-            "ULT".uint32: .unsyncronisedLyrics,
-            "COM".uint32: .comment,
-            "TBP".uint32: .beatsPerMinute,
-            "TOF".uint32: .originalFilename,
-            "TLE".uint32: .lengthInMilliseconds,
-            "TSI".uint32: .sizeInBytes,
-            "TKE".uint32: .initialKey
-        ],
-        .version3: [
-            "TDAT".uint32: .recordingDayMonth,
-            "TYER".uint32: .recordingYear,
-            "TIME".uint32: .recordingHourMinute,
-            "TSIZ".uint32: .sizeInBytes
-        ],
-        .version4: [
-            "TDRC".uint32: .recordingDateTime
-        ]
+    private let nameForIdentifierVersion2: NamesForIdentifiers = [
+        "TP1".uint32: .artist,
+        "TCM".uint32: .composer,
+        "TP3".uint32: .conductor,
+        "TT1".uint32: .contentGrouping,
+        "TCR".uint32: .copyright,
+        "TEN".uint32: .encodedBy,
+        "TSS".uint32: .encoderSettings,
+        "TXT".uint32: .lyricist,
+        "TP4".uint32: .mixArtist,
+        "TPB".uint32: .publisher,
+        "TT3".uint32: .subtitle,
+        "TP2".uint32: .albumArtist,
+        "TT2".uint32: .title,
+        "TAL".uint32: .album,
+        "PIC".uint32: .attachedPicture,
+        "TDA".uint32: .recordingDayMonth,
+        "TYE".uint32: .recordingYear,
+        "TIM".uint32: .recordingHourMinute,
+        "TCO".uint32: .genre,
+        "TRK".uint32: .trackPosition,
+        "TPA".uint32: .discPosition,
+        "ULT".uint32: .unsyncronisedLyrics,
+        "COM".uint32: .comment,
+        "TBP".uint32: .beatsPerMinute,
+        "TOF".uint32: .originalFilename,
+        "TLE".uint32: .lengthInMilliseconds,
+        "TSI".uint32: .sizeInBytes,
+        "TKE".uint32: .initialKey
+    ]
+    private let nameForIdentifierVersion3: NamesForIdentifiers
+    private let nameForIdentifierVersion3Init: NamesForIdentifiers = [
+        "TDAT".uint32: .recordingDayMonth,
+        "TYER".uint32: .recordingYear,
+        "TIME".uint32: .recordingHourMinute,
+        "TSIZ".uint32: .sizeInBytes
+    ]
+    private let nameForIdentifierVersion4: NamesForIdentifiers
+    private let nameForIdentifierVersion4Init: NamesForIdentifiers = [
+        "TDRC".uint32: .recordingDateTime
     ]
     private let encodingSizeInBytes: Int = 1
 
     init() {
-        self.identifiers[.version3] = self.identifiers[.version3]?.merging(commonFourLetterIdentifiers) { $1 }
-        self.identifiers[.version4] = self.identifiers[.version4]?.merging(commonFourLetterIdentifiers) { $1 }
-        self.nameForIdentifier[.version3] = self.nameForIdentifier[.version3]?.merging(commonNamesForIdentifiers) { $1 }
-        self.nameForIdentifier[.version4] = self.nameForIdentifier[.version4]?.merging(commonNamesForIdentifiers) { $1 }
+        self.identifiersVersion3 = self.identifiersVersion3Init.merging(commonFourLetterIdentifiers) { $1 }
+        self.identifiersVersion4 = self.identifiersVersion4Init.merging(commonFourLetterIdentifiers) { $1 }
+        self.nameForIdentifierVersion3 = self.nameForIdentifierVersion3Init.merging(commonNamesForIdentifiers) { $1 }
+        self.nameForIdentifierVersion4 = self.nameForIdentifierVersion4Init.merging(commonNamesForIdentifiers) { $1 }
     }
 
     func headerSizeFor(version: ID3Version) -> Int {
@@ -202,11 +204,24 @@ class ID3FrameConfiguration {
     }
 
     func identifierFor(frameType: FrameType, version: ID3Version) -> [UInt8] {
-        return identifiers[version]![frameType]!
+        let identifiers = switch version {
+        case .version2: identifiersVersion2
+        case .version3: identifiersVersion3
+        case .version4: identifiersVersion4
+        }
+
+        return identifiers[frameType]!
     }
 
     func frameTypeFor(identifierNumeric: UInt32, version: ID3Version) -> FrameType {
-        return nameForIdentifier[version]![identifierNumeric] ?? .invalid
+        let nameForIdentifier = switch version {
+        case .version2: nameForIdentifierVersion2
+        case .version3: nameForIdentifierVersion3
+        case .version4: nameForIdentifierVersion4
+        }
+
+        let frameType = nameForIdentifier[identifierNumeric]
+        return frameType ?? .invalid
     }
 
     func encodingSize() -> Int {
