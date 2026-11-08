@@ -103,7 +103,7 @@ class Mp3FileReader {
             return nil
         }
 
-        let frameSize = tagSizeParser.parse(data: header as NSData)
+        let frameSize = tagSizeParser.parse(data: header)
         let frame = try read(bytesCount: Int(frameSize), from: readHandle)
 
         return header + frame

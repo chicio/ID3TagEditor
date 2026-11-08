@@ -16,16 +16,17 @@ class ID3FrameContentSizeParser: FrameContentSizeParser {
         self.synchsafeIntegerDecoder = synchsafeIntegerDecoder
     }
 
-    func parse(mp3: NSData, framePosition: Int, version: ID3Version) -> Int {
+    func parse(mp3: Data, framePosition: Int, version: ID3Version) -> Int {
         var frameSize: UInt32 = getFrameSizeFrom(mp3: mp3, framePosition: framePosition, version: version)
         frameSize = decodeIfIsASynchsafeInteger(frameSize: frameSize, for: version)
         return Int(frameSize)
     }
 
-    private func getFrameSizeFrom(mp3: NSData, framePosition: Int, version: ID3Version) -> UInt32 {
+    private func getFrameSizeFrom(mp3: Data, framePosition: Int, version: ID3Version) -> UInt32 {
         let frameSizePosition = framePosition + id3FrameConfiguration.sizeOffsetFor(version: version)
-        var frameSize: UInt32 = 0
-        mp3.getBytes(&frameSize, range: NSRange(location: frameSizePosition, length: 4))
+        var frameSize: UInt32 = mp3.withUnsafeBytes { buffer in
+            buffer.loadUnaligned(fromByteOffset: frameSizePosition, as: UInt32.self)
+        }
         frameSize = frameSize.bigEndian & id3FrameConfiguration.sizeMaskFor(version: version)
         return frameSize
     }
