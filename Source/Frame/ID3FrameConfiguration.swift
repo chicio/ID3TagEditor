@@ -84,80 +84,80 @@ class ID3FrameConfiguration {
             .recordingDateTime: [UInt8]("TDRC".utf8)
         ]
     ]
-    private let commonNamesForIdentifiers: [String: FrameType] = [
-        "TPE1": .artist,
-        "TCOM": .composer,
-        "TPE3": .conductor,
-        "TIT1": .contentGrouping,
-        "TCOP": .copyright,
-        "TENC": .encodedBy,
-        "TSSE": .encoderSettings,
-        "TOWN": .fileOwner,
-        "GRP1": .iTunesGrouping,
-        "TEXT": .lyricist,
-        "TPE4": .mixArtist,
-        "TPUB": .publisher,
-        "TIT3": .subtitle,
-        "TPE2": .albumArtist,
-        "TIT2": .title,
-        "TALB": .album,
-        "APIC": .attachedPicture,
-        "TCON": .genre,
-        "TRCK": .trackPosition,
-        "TPOS": .discPosition,
-        "MVNM": .iTunesMovementName,
-        "MVIN": .iTunesMovementIndex,
-        "MVCN": .iTunesMovementCount,
-        "TCAT": .iTunesPodcastCategory,
-        "TDES": .iTunesPodcastDescription,
-        "TGID": .iTunesPodcastID,
-        "TKWD": .iTunesPodcastKeywords,
-        "USLT": .unsyncronisedLyrics,
-        "COMM": .comment,
-        "TBPM": .beatsPerMinute,
-        "TOFN": .originalFilename,
-        "TLEN": .lengthInMilliseconds,
-        "TKEY": .initialKey
+    private let commonNamesForIdentifiers: [UInt32: FrameType] = [
+        "TPE1".uint32: .artist,
+        "TCOM".uint32: .composer,
+        "TPE3".uint32: .conductor,
+        "TIT1".uint32: .contentGrouping,
+        "TCOP".uint32: .copyright,
+        "TENC".uint32: .encodedBy,
+        "TSSE".uint32: .encoderSettings,
+        "TOWN".uint32: .fileOwner,
+        "GRP1".uint32: .iTunesGrouping,
+        "TEXT".uint32: .lyricist,
+        "TPE4".uint32: .mixArtist,
+        "TPUB".uint32: .publisher,
+        "TIT3".uint32: .subtitle,
+        "TPE2".uint32: .albumArtist,
+        "TIT2".uint32: .title,
+        "TALB".uint32: .album,
+        "APIC".uint32: .attachedPicture,
+        "TCON".uint32: .genre,
+        "TRCK".uint32: .trackPosition,
+        "TPOS".uint32: .discPosition,
+        "MVNM".uint32: .iTunesMovementName,
+        "MVIN".uint32: .iTunesMovementIndex,
+        "MVCN".uint32: .iTunesMovementCount,
+        "TCAT".uint32: .iTunesPodcastCategory,
+        "TDES".uint32: .iTunesPodcastDescription,
+        "TGID".uint32: .iTunesPodcastID,
+        "TKWD".uint32: .iTunesPodcastKeywords,
+        "USLT".uint32: .unsyncronisedLyrics,
+        "COMM".uint32: .comment,
+        "TBPM".uint32: .beatsPerMinute,
+        "TOFN".uint32: .originalFilename,
+        "TLEN".uint32: .lengthInMilliseconds,
+        "TKEY".uint32: .initialKey
     ]
-    private var nameForIdentifier: [ID3Version: [String: FrameType]] = [
+    private var nameForIdentifier: [ID3Version: [UInt32: FrameType]] = [
         .version2: [
-            "TP1": .artist,
-            "TCM": .composer,
-            "TP3": .conductor,
-            "TT1": .contentGrouping,
-            "TCR": .copyright,
-            "TEN": .encodedBy,
-            "TSS": .encoderSettings,
-            "TXT": .lyricist,
-            "TP4": .mixArtist,
-            "TPB": .publisher,
-            "TT3": .subtitle,
-            "TP2": .albumArtist,
-            "TT2": .title,
-            "TAL": .album,
-            "PIC": .attachedPicture,
-            "TDA": .recordingDayMonth,
-            "TYE": .recordingYear,
-            "TIM": .recordingHourMinute,
-            "TCO": .genre,
-            "TRK": .trackPosition,
-            "TPA": .discPosition,
-            "ULT": .unsyncronisedLyrics,
-            "COM": .comment,
-            "TBP": .beatsPerMinute,
-            "TOF": .originalFilename,
-            "TLE": .lengthInMilliseconds,
-            "TSI": .sizeInBytes,
-            "TKE": .initialKey
+            "TP1".uint32: .artist,
+            "TCM".uint32: .composer,
+            "TP3".uint32: .conductor,
+            "TT1".uint32: .contentGrouping,
+            "TCR".uint32: .copyright,
+            "TEN".uint32: .encodedBy,
+            "TSS".uint32: .encoderSettings,
+            "TXT".uint32: .lyricist,
+            "TP4".uint32: .mixArtist,
+            "TPB".uint32: .publisher,
+            "TT3".uint32: .subtitle,
+            "TP2".uint32: .albumArtist,
+            "TT2".uint32: .title,
+            "TAL".uint32: .album,
+            "PIC".uint32: .attachedPicture,
+            "TDA".uint32: .recordingDayMonth,
+            "TYE".uint32: .recordingYear,
+            "TIM".uint32: .recordingHourMinute,
+            "TCO".uint32: .genre,
+            "TRK".uint32: .trackPosition,
+            "TPA".uint32: .discPosition,
+            "ULT".uint32: .unsyncronisedLyrics,
+            "COM".uint32: .comment,
+            "TBP".uint32: .beatsPerMinute,
+            "TOF".uint32: .originalFilename,
+            "TLE".uint32: .lengthInMilliseconds,
+            "TSI".uint32: .sizeInBytes,
+            "TKE".uint32: .initialKey
         ],
         .version3: [
-            "TDAT": .recordingDayMonth,
-            "TYER": .recordingYear,
-            "TIME": .recordingHourMinute,
-            "TSIZ": .sizeInBytes
+            "TDAT".uint32: .recordingDayMonth,
+            "TYER".uint32: .recordingYear,
+            "TIME".uint32: .recordingHourMinute,
+            "TSIZ".uint32: .sizeInBytes
         ],
         .version4: [
-            "TDRC": .recordingDateTime
+            "TDRC".uint32: .recordingDateTime
         ]
     ]
     private let encodingSizeInBytes: Int = 1
@@ -205,8 +205,8 @@ class ID3FrameConfiguration {
         return identifiers[version]![frameType]!
     }
 
-    func frameTypeFor(identifier: String, version: ID3Version) -> FrameType {
-        return nameForIdentifier[version]![identifier] ?? .invalid
+    func frameTypeFor(identifierNumeric: UInt32, version: ID3Version) -> FrameType {
+        return nameForIdentifier[version]![identifierNumeric] ?? .invalid
     }
 
     func encodingSize() -> Int {
@@ -232,5 +232,21 @@ class ID3FrameConfiguration {
         case (.version4, .UTF8): [0x03]
         default: fatalError()
         }
+    }
+}
+
+fileprivate extension String {
+    var uint32: UInt32 {
+        let prefix = self.prefix(MemoryLayout<UInt32>.size)
+        let bytes = [UInt8](prefix.utf8)
+        var value: UInt32 = 0
+
+        // "reversed()" for little-endian.
+        for byte in bytes.reversed() {
+            value <<= 8
+            value |= UInt32(byte)
+        }
+
+        return value
     }
 }
