@@ -8,26 +8,6 @@
 import Foundation
 
 class ID3FrameConfiguration {
-    private let headerSizesInBytes: [ID3Version: Int] = [
-        .version2: 6,
-        .version3: 10,
-        .version4: 10
-    ]
-    private let sizeOffsetInBytes: [ID3Version: Int] = [
-        .version2: 2,
-        .version3: 4,
-        .version4: 4
-    ]
-    private let sizeMask: [ID3Version: UInt32] = [
-        .version2: 0x00FFFFFF,
-        .version3: 0xFFFFFFFF,
-        .version4: 0xFFFFFFFF
-    ]
-    private let identifierSizeInBytes: [ID3Version: Int] = [
-        .version2: 3,
-        .version3: 4,
-        .version4: 4
-    ]
     private let commonFourLetterIdentifiers: [FrameType: [UInt8]] = [
         .artist: [UInt8]("TPE1".utf8),
         .composer: [UInt8]("TCOM".utf8),
@@ -180,27 +160,7 @@ class ID3FrameConfiguration {
             "TDRC": .recordingDateTime
         ]
     ]
-    private let encodingPositionInBytes: [ID3Version: Int] = [
-        .version2: 6,
-        .version3: 10,
-        .version4: 10
-    ]
     private let encodingSizeInBytes: Int = 1
-    private let encodingByte: [ID3Version: [ID3StringEncoding: [UInt8]]] = [
-        .version2: [
-            .ISO88591: [0x00],
-            .UTF16: [0x01]
-        ],
-        .version3: [
-            .ISO88591: [0x00],
-            .UTF16: [0x01]
-        ],
-        .version4: [
-            .ISO88591: [0x00],
-            .UTF16: [0x01],
-            .UTF8: [0x03]
-        ]
-    ]
 
     init() {
         self.identifiers[.version3] = self.identifiers[.version3]?.merging(commonFourLetterIdentifiers) { $1 }
@@ -210,19 +170,35 @@ class ID3FrameConfiguration {
     }
 
     func headerSizeFor(version: ID3Version) -> Int {
-        return headerSizesInBytes[version]!
+        switch version {
+        case .version2: 6
+        case .version3: 10
+        case .version4: 10
+        }
     }
 
     func sizeOffsetFor(version: ID3Version) -> Int {
-        return sizeOffsetInBytes[version]!
+        switch version {
+        case .version2: 2
+        case .version3: 4
+        case .version4: 4
+        }
     }
 
     func sizeMaskFor(version: ID3Version) -> UInt32 {
-        return sizeMask[version]!
+        switch version {
+        case .version2: 0x00FFFFFF
+        case .version3: 0xFFFFFFFF
+        case .version4: 0xFFFFFFFF
+        }
     }
 
     func identifierSizeFor(version: ID3Version) -> Int {
-        return identifierSizeInBytes[version]!
+        switch version {
+        case .version2: 3
+        case .version3: 4
+        case .version4: 4
+        }
     }
 
     func identifierFor(frameType: FrameType, version: ID3Version) -> [UInt8] {
@@ -238,10 +214,23 @@ class ID3FrameConfiguration {
     }
 
     func encodingPositionFor(version: ID3Version) -> Int {
-        return encodingPositionInBytes[version]!
+        switch version {
+        case .version2: 6
+        case .version3: 10
+        case .version4: 10
+        }
     }
 
     func encodingByteFor(version: ID3Version, encoding: ID3StringEncoding) -> [UInt8] {
-        return encodingByte[version]![encoding]!
+        switch (version, encoding) {
+        case (.version2, .ISO88591): [0x00]
+        case (.version2, .UTF16): [0x01]
+        case (.version3, .ISO88591): [0x00]
+        case (.version3, .UTF16): [0x01]
+        case (.version4, .ISO88591): [0x00]
+        case (.version4, .UTF16): [0x01]
+        case (.version4, .UTF8): [0x03]
+        default: fatalError()
+        }
     }
 }
