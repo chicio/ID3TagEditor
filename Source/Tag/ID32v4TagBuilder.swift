@@ -426,7 +426,7 @@ public class ID32v4TagBuilder: TagBuilder {
         frames[.fileOwner] = frame
         return self
     }
-    
+
     /**
       Set the Initial Key frame to be written by ID3TagEditor.
      

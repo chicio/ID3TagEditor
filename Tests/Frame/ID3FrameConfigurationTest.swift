@@ -10,6 +10,6 @@ import Testing
 
 struct ID3FrameConfigurationTest {
     @Test func invalidIdentifierName() {
-        #expect(ID3FrameConfiguration().frameTypeFor(identifier: "::not-valid::", version: .version2) == .invalid)
+        #expect(ID3FrameConfiguration().frameTypeFor(identifierNumeric: 0x1A2B3C4D, version: .version2) == .invalid)
     }
 }

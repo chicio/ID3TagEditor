@@ -16,7 +16,7 @@ import Testing
             id3FrameConfiguration: ID3FrameConfiguration(),
             synchsafeIntegerDecoder: SynchsafeIntegerDecoder()
         )
-        let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example", fileType: "mp3"))!
+        let mp3 = loadMP3(name: "example")
         #expect(
             id3FrameContentSizeParser.parse(
                     mp3: mp3,
@@ -32,7 +32,7 @@ import Testing
             id3FrameConfiguration: ID3FrameConfiguration(),
             synchsafeIntegerDecoder: SynchsafeIntegerDecoder()
         )
-        let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23-png", fileType: "mp3"))!
+        let mp3 = loadMP3(name: "example-v23-png")
         #expect(
             id3FrameContentSizeParser.parse(
                     mp3: mp3,
@@ -48,7 +48,7 @@ import Testing
             id3FrameConfiguration: ID3FrameConfiguration(),
             synchsafeIntegerDecoder: SynchsafeIntegerDecoder()
         )
-        let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v4-png", fileType: "mp3"))!
+        let mp3 = loadMP3(name: "example-v4-png")
         #expect(
             id3FrameContentSizeParser.parse(
                 mp3: mp3,
@@ -57,5 +57,12 @@ import Testing
             ) ==
             14
         )
+    }
+
+    private func loadMP3(name: String) -> Data {
+        let path = PathLoader().pathFor(name: name, fileType: "mp3")
+        let url = URL(fileURLWithPath: path)
+        let mp3 = try! Data(contentsOf: url)
+        return mp3
     }
 }

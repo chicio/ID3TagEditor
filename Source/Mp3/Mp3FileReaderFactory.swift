@@ -16,7 +16,7 @@ class Mp3FileReaderFactory {
                                        id3TagConfiguration: id3TagConfiguration,
                                        tagVersionParser: ID3TagVersionParser(),
                                        tagPresence: ID3TagPresence(id3TagConfiguration: id3TagConfiguration))
-        
+
         return fileReader
     }
 }
