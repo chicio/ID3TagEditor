@@ -217,7 +217,7 @@ class ID3FrameConfiguration {
         return identifiers[frameType]!
     }
 
-    func frameTypeFor(identifierNumeric: UInt32, version: ID3Version) -> FrameType {
+    func frameTypeFor(identifierNumeric: UInt32, version: ID3Version) -> FrameType? {
         let nameForIdentifier = switch version {
         case .version2: nameForIdentifierVersion2
         case .version3: nameForIdentifierVersion3
@@ -225,7 +225,7 @@ class ID3FrameConfiguration {
         }
 
         let frameType = nameForIdentifier[identifierNumeric]
-        return frameType ?? .invalid
+        return frameType
     }
 
     func encodingSize() -> Int {

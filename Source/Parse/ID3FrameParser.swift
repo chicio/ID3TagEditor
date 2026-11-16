@@ -8,6 +8,7 @@
 import Foundation
 
 class ID3FrameParser {
+    private typealias Identifier = (string: String, numeric: UInt32)
     private let frameContentParsingOperations: [FrameType: FrameContentParsingOperation]
     private var id3FrameConfiguration: ID3FrameConfiguration
 
@@ -18,25 +19,28 @@ class ID3FrameParser {
     }
 
     func parse(frame: Data, frameSize: Int, id3Tag: ID3Tag) {
-        let (frameIdentifier, frameIdentifierNumeric) = getFrameIdentifier(frame: frame,
-                                                                           version: id3Tag.properties.version)
-        let frameType = id3FrameConfiguration.frameTypeFor(identifierNumeric: frameIdentifierNumeric,
-                                                           version: id3Tag.properties.version)
-        if isAValid(frameType: frameType) {
-            frameContentParsingOperations[frameType]?.parse(frame: frame,
-                                                            version: id3Tag.properties.version,
-                                                            completed: { frameName, frame in
-                frame.id3Identifier = frameIdentifier
-                frame.size = frameSize
-                id3Tag.frames[frameName] = frame
-            })
+        let version = id3Tag.properties.version
+        guard let identifier = getFrameIdentifier(frame: frame, version: version),
+              let frameType = id3FrameConfiguration.frameTypeFor(identifierNumeric: identifier.numeric,
+                                                                 version: version) else {
+            return
         }
+
+        frameContentParsingOperations[frameType]?.parse(frame: frame,
+                                                        version: version,
+                                                        completed: { frameName, frame in
+            frame.id3Identifier = identifier.string
+            frame.size = frameSize
+            id3Tag.frames[frameName] = frame
+        })
     }
 
-    private func getFrameIdentifier(frame: Data, version: ID3Version) -> (String, UInt32) {
+    private func getFrameIdentifier(frame: Data, version: ID3Version) -> Identifier? {
         let frameIdentifierSize = id3FrameConfiguration.identifierSizeFor(version: version)
         let subdata = frame.subdata(in: 0 ..< frameIdentifierSize)
-        let frameIdentifier = String(data: subdata, encoding: .utf8)!
+        guard let frameIdentifier = String(data: subdata, encoding: .utf8) else {
+            return nil
+        }
 
         let frameIdentifierNumeric: UInt32
         switch version {
@@ -49,9 +53,5 @@ class ID3FrameParser {
             }
         }
         return (frameIdentifier, frameIdentifierNumeric)
-    }
-
-    private func isAValid(frameType: FrameType) -> Bool {
-        return frameType != .invalid
     }
 }
