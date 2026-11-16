@@ -76,14 +76,14 @@ class ID3FrameConfiguration {
         .comment: [UInt8]("COM".utf8)
     ]
     private let identifiersVersion3: Identifiers
-    private let identifiersVersion3Init: Identifiers = [
+    private let identifiersExclusiveToVersion3: Identifiers = [
         .recordingDayMonth: [UInt8]("TDAT".utf8),
         .recordingYear: [UInt8]("TYER".utf8),
         .recordingHourMinute: [UInt8]("TIME".utf8),
         .sizeInBytes: [UInt8]("TSIZ".utf8)
     ]
     private let identifiersVersion4: Identifiers
-    private let identifiersVersion4Init: Identifiers = [
+    private let identifiersExclusiveToVersion4: Identifiers = [
         .recordingDateTime: [UInt8]("TDRC".utf8)
     ]
     private let commonNamesForIdentifiers: NamesForIdentifiers = [
@@ -152,23 +152,27 @@ class ID3FrameConfiguration {
         "TKE".uint32: .initialKey
     ]
     private let nameForIdentifierVersion3: NamesForIdentifiers
-    private let nameForIdentifierVersion3Init: NamesForIdentifiers = [
+    private let nameForIdentifierExclusiveToVersion3: NamesForIdentifiers = [
         "TDAT".uint32: .recordingDayMonth,
         "TYER".uint32: .recordingYear,
         "TIME".uint32: .recordingHourMinute,
         "TSIZ".uint32: .sizeInBytes
     ]
     private let nameForIdentifierVersion4: NamesForIdentifiers
-    private let nameForIdentifierVersion4Init: NamesForIdentifiers = [
+    private let nameForIdentifierExclusiveToVersion4: NamesForIdentifiers = [
         "TDRC".uint32: .recordingDateTime
     ]
     private let encodingSizeInBytes: Int = 1
 
     init() {
-        self.identifiersVersion3 = self.identifiersVersion3Init.merging(commonFourLetterIdentifiers) { $1 }
-        self.identifiersVersion4 = self.identifiersVersion4Init.merging(commonFourLetterIdentifiers) { $1 }
-        self.nameForIdentifierVersion3 = self.nameForIdentifierVersion3Init.merging(commonNamesForIdentifiers) { $1 }
-        self.nameForIdentifierVersion4 = self.nameForIdentifierVersion4Init.merging(commonNamesForIdentifiers) { $1 }
+        self.identifiersVersion3 = self.identifiersExclusiveToVersion3
+            .merging(commonFourLetterIdentifiers) { $1 }
+        self.identifiersVersion4 = self.identifiersExclusiveToVersion4
+            .merging(commonFourLetterIdentifiers) { $1 }
+        self.nameForIdentifierVersion3 = self.nameForIdentifierExclusiveToVersion3
+            .merging(commonNamesForIdentifiers) { $1 }
+        self.nameForIdentifierVersion4 = self.nameForIdentifierExclusiveToVersion4
+            .merging(commonNamesForIdentifiers) { $1 }
     }
 
     func headerSizeFor(version: ID3Version) -> Int {
