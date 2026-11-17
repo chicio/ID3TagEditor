@@ -257,7 +257,7 @@ class ID3FrameConfiguration {
 fileprivate extension String {
     var uint32: UInt32 {
         let data = Data(self.utf8)
-        let value = getFrameIdentifierNumeric(data: data, size: data.count)!
+        let value = NumericFrameIdentifier.read(data: data, size: data.count)!
         return value
     }
 }
