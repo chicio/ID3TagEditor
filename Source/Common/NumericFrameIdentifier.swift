@@ -18,7 +18,7 @@ struct NumericFrameIdentifier {
        - 3 for version-2 tags
        - 4 for version-3 or version-4 tags
 
-     - returns: A `UInt32` with the characters of the identifier packed little-endian, or `nil` if the identifier is invalid.
+     - returns: A `UInt32` with the characters packed little-endian, or `nil` if the identifier is invalid.
      */
     static func read(data: Data, size: Int) -> UInt32? {
         guard size <= data.count else {
@@ -30,17 +30,17 @@ struct NumericFrameIdentifier {
         // Performance note:
         // This switch is 20% faster than the loop "for index in (0 ..< frameIdentifierSize).reversed()"
         switch size {
-            case 4:
-                guard validateAndApplyByte(index: 3, data: data, numeric: &frameIdentifierNumeric) else { return nil }
-                fallthrough
+        case 4:
+            guard validateAndApplyByte(index: 3, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+            fallthrough
 
-            case 3:
-                guard validateAndApplyByte(index: 2, data: data, numeric: &frameIdentifierNumeric) else { return nil }
-                guard validateAndApplyByte(index: 1, data: data, numeric: &frameIdentifierNumeric) else { return nil }
-                guard validateAndApplyByte(index: 0, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+        case 3:
+            guard validateAndApplyByte(index: 2, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+            guard validateAndApplyByte(index: 1, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+            guard validateAndApplyByte(index: 0, data: data, numeric: &frameIdentifierNumeric) else { return nil }
 
-            default:
-                return nil
+        default:
+            return nil
         }
 
         return frameIdentifierNumeric
