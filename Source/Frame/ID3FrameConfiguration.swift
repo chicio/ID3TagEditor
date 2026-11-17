@@ -256,16 +256,8 @@ class ID3FrameConfiguration {
 
 fileprivate extension String {
     var uint32: UInt32 {
-        let prefix = self.prefix(MemoryLayout<UInt32>.size)
-        let bytes = [UInt8](prefix.utf8)
-        var value: UInt32 = 0
-
-        // "reversed()" for little-endian.
-        for byte in bytes.reversed() {
-            value <<= 8
-            value |= UInt32(byte)
-        }
-
+        let data = Data(self.utf8)
+        let value = getFrameIdentifierNumeric(data: data, size: data.count)!
         return value
     }
 }

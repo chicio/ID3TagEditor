@@ -37,21 +37,63 @@ class ID3FrameParser {
 
     private func getFrameIdentifier(frame: Data, version: ID3Version) -> Identifier? {
         let frameIdentifierSize = id3FrameConfiguration.identifierSizeFor(version: version)
-        let subdata = frame.subdata(in: 0 ..< frameIdentifierSize)
-        guard let frameIdentifier = String(data: subdata, encoding: .utf8) else {
+
+        guard let frameIdentifierNumeric = getFrameIdentifierNumeric(data: frame, size: frameIdentifierSize) else {
             return nil
         }
 
-        let frameIdentifierNumeric: UInt32
-        switch version {
-        case .version2:
-            frameIdentifierNumeric = UInt32(subdata[2]) << 16 | UInt32(subdata[1]) << 8 | UInt32(subdata[0])
-
-        case .version3, .version4:
-            frameIdentifierNumeric = subdata.withUnsafeBytes { buffer in
-                buffer.loadUnaligned(as: UInt32.self).littleEndian
-            }
+        let subdata = frame.subdata(in: 0 ..< frameIdentifierSize)
+        guard let frameIdentifier = String(data: subdata, encoding: .ascii) else {
+            return nil
         }
-        return (frameIdentifier, frameIdentifierNumeric)
+
+        return (string: frameIdentifier, numeric: frameIdentifierNumeric)
+    }
+}
+
+func getFrameIdentifierNumeric(data: Data, size: Int) -> UInt32? {
+    guard size <= data.count else {
+        return nil
+    }
+
+    var frameIdentifierNumeric: UInt32 = 0
+
+    // Performance note:
+    // This switch is 20% faster than the loop "for index in (0 ..< frameIdentifierSize).reversed()"
+    switch size {
+    case 4:
+        guard validateAndApplyByte(index: 3, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+        fallthrough
+
+    case 3:
+        guard validateAndApplyByte(index: 2, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+        guard validateAndApplyByte(index: 1, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+        guard validateAndApplyByte(index: 0, data: data, numeric: &frameIdentifierNumeric) else { return nil }
+
+    default:
+        return nil
+    }
+
+    return frameIdentifierNumeric
+
+    func validateAndApplyByte(index: Int, data: Data, numeric: inout UInt32) -> Bool {
+        let byte = data[index]
+
+        // Accept ASCII codes for characters 0-9, A-Z, a-z.
+        // Performance note: Defining the constants here is 8% faster than using a static enum.
+        let zero = 0x30
+        let nine = 0x39
+        let capA = 0x41
+        let capZ = 0x5A
+        let lowA = 0x61
+        let lowZ = 0x7A
+        guard (zero <= byte && byte <= nine) || (capA <= byte && byte <= capZ) || (lowA <= byte && byte <= lowZ) else {
+            return false
+        }
+
+        let shifted = UInt32(byte) << (index * 8)
+        numeric |= shifted
+
+        return true
     }
 }
