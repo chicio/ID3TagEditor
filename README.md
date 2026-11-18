@@ -158,6 +158,13 @@ In the following screenshots you can find examples of the data extracted/updated
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/lardieri">
+                    <img src="https://avatars.githubusercontent.com/u/13347439?v=4" width="100;" alt="lardieri"/>
+                    <br />
+                    <sub><b>lardieri</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/github-actions[bot]">
                     <img src="https://avatars.githubusercontent.com/in/15368?v=4" width="100;" alt="github-actions[bot]"/>
                     <br />
