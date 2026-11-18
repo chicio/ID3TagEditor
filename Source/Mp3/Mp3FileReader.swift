@@ -33,12 +33,25 @@ class Mp3FileReader {
       - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path.
      */
     func readFileFrom(path: String) throws -> Data {
-        let validPath = URL(fileURLWithPath: path)
-        guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
+        let url = URL(fileURLWithPath: path)
+        return try readFileFrom(url: url)
+    }
+
+    /**
+      Read the entire mp3 file at URL
+
+      - parameter url: the URL to the mp3 file
+
+      - returns: mp3 data of the file
+
+      - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified URL.
+     */
+    func readFileFrom(url: URL) throws -> Data {
+        guard url.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
             throw ID3TagEditorError.invalidFileFormat
         }
 
-        let mp3 = try Data(contentsOf: validPath)
+        let mp3 = try Data(contentsOf: url)
         return mp3
     }
 
@@ -53,12 +66,26 @@ class Mp3FileReader {
       Could throw `CorruptedFile` if the file is corrupted.
      */
     func readID3TagFrom(path: String) throws -> Data? {
-        let validPath = URL(fileURLWithPath: path)
-        guard validPath.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
+        let url = URL(fileURLWithPath: path)
+        return try readID3TagFrom(url: url)
+    }
+
+    /**
+      Read only the ID3 header of the mp3 file at URL
+
+      - parameter url: the URL to the mp3 file
+
+      - returns: ID3 header data or nil, if a tag doesn't exists in the file.
+
+      - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified URL.
+      Could throw `CorruptedFile` if the file is corrupted.
+     */
+    func readID3TagFrom(url: URL) throws -> Data? {
+        guard url.pathExtension.caseInsensitiveCompare("mp3") == ComparisonResult.orderedSame else {
             throw ID3TagEditorError.invalidFileFormat
         }
 
-        let readHandle = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
+        let readHandle = try FileHandle(forReadingFrom: url)
         defer {
             if #available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *) {
                 try? readHandle.close()
@@ -76,7 +103,7 @@ class Mp3FileReader {
             return nil
         }
 
-        let frameSize = tagSizeParser.parse(data: header as NSData)
+        let frameSize = tagSizeParser.parse(data: header)
         let frame = try read(bytesCount: Int(frameSize), from: readHandle)
 
         return header + frame

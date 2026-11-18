@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TagSizeParser {
-    func parse(data: NSData) -> UInt32
+    func parse(data: Data) -> UInt32
 }

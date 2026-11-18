@@ -1,0 +1,447 @@
+{
+  "abstract": [
+    {
+      "text": "Read the ID3 tag contained in the mp3 file.",
+      "type": "text"
+    }
+  ],
+  "hierarchy": {
+    "paths": [
+      [
+        "doc://ID3TagEditor/documentation/ID3TagEditor",
+        "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor"
+      ]
+    ]
+  },
+  "identifier": {
+    "interfaceLanguage": "swift",
+    "url": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-3rvvo"
+  },
+  "kind": "symbol",
+  "metadata": {
+    "externalID": "s:12ID3TagEditorAAC4read4fromAA0aB0CSg10Foundation3URLV_tKF",
+    "fragments": [
+      {
+        "kind": "keyword",
+        "text": "func"
+      },
+      {
+        "kind": "text",
+        "text": " "
+      },
+      {
+        "kind": "identifier",
+        "text": "read"
+      },
+      {
+        "kind": "text",
+        "text": "("
+      },
+      {
+        "kind": "externalParam",
+        "text": "from"
+      },
+      {
+        "kind": "text",
+        "text": ": "
+      },
+      {
+        "kind": "typeIdentifier",
+        "preciseIdentifier": "s:10Foundation3URLV",
+        "text": "URL"
+      },
+      {
+        "kind": "text",
+        "text": ") "
+      },
+      {
+        "kind": "keyword",
+        "text": "throws"
+      },
+      {
+        "kind": "text",
+        "text": " -> "
+      },
+      {
+        "kind": "typeIdentifier",
+        "preciseIdentifier": "s:12ID3TagEditor0aB0C",
+        "text": "ID3Tag"
+      },
+      {
+        "kind": "text",
+        "text": "?"
+      }
+    ],
+    "modules": [
+      {
+        "name": "ID3TagEditor"
+      }
+    ],
+    "role": "symbol",
+    "roleHeading": "Instance Method",
+    "symbolKind": "method",
+    "title": "read(from:)"
+  },
+  "primaryContentSections": [
+    {
+      "declarations": [
+        {
+          "languages": [
+            "swift"
+          ],
+          "platforms": [
+            "macOS"
+          ],
+          "tokens": [
+            {
+              "kind": "keyword",
+              "text": "func"
+            },
+            {
+              "kind": "text",
+              "text": " "
+            },
+            {
+              "kind": "identifier",
+              "text": "read"
+            },
+            {
+              "kind": "text",
+              "text": "("
+            },
+            {
+              "kind": "externalParam",
+              "text": "from"
+            },
+            {
+              "kind": "text",
+              "text": " "
+            },
+            {
+              "kind": "internalParam",
+              "text": "url"
+            },
+            {
+              "kind": "text",
+              "text": ": "
+            },
+            {
+              "kind": "typeIdentifier",
+              "preciseIdentifier": "s:10Foundation3URLV",
+              "text": "URL"
+            },
+            {
+              "kind": "text",
+              "text": ") "
+            },
+            {
+              "kind": "keyword",
+              "text": "throws"
+            },
+            {
+              "kind": "text",
+              "text": " -> "
+            },
+            {
+              "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3Tag",
+              "kind": "typeIdentifier",
+              "preciseIdentifier": "s:12ID3TagEditor0aB0C",
+              "text": "ID3Tag"
+            },
+            {
+              "kind": "text",
+              "text": "?"
+            }
+          ]
+        }
+      ],
+      "kind": "declarations"
+    },
+    {
+      "kind": "parameters",
+      "parameters": [
+        {
+          "content": [
+            {
+              "inlineContent": [
+                {
+                  "text": "URL of the mp3 file to be parsed.",
+                  "type": "text"
+                }
+              ],
+              "type": "paragraph"
+            }
+          ],
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "anchor": "return-value",
+          "level": 2,
+          "text": "Return Value",
+          "type": "heading"
+        },
+        {
+          "inlineContent": [
+            {
+              "text": "An ID3 tag or nil, if a tag doesn’t exists in the file.",
+              "type": "text"
+            }
+          ],
+          "type": "paragraph"
+        }
+      ],
+      "kind": "content"
+    },
+    {
+      "kind": "mentions",
+      "mentions": [
+        "doc://ID3TagEditor/documentation/ID3TagEditor/Examples"
+      ]
+    },
+    {
+      "content": [
+        {
+          "anchor": "discussion",
+          "level": 2,
+          "text": "Discussion",
+          "type": "heading"
+        },
+        {
+          "content": [
+            {
+              "inlineContent": [
+                {
+                  "text": "Could throw ",
+                  "type": "text"
+                },
+                {
+                  "code": "InvalidFileFormat",
+                  "type": "codeVoice"
+                },
+                {
+                  "text": " if an mp3 file doesn’t exists at the specified URL.",
+                  "type": "text"
+                },
+                {
+                  "text": " ",
+                  "type": "text"
+                },
+                {
+                  "text": "Could throw ",
+                  "type": "text"
+                },
+                {
+                  "code": "CorruptedFile",
+                  "type": "codeVoice"
+                },
+                {
+                  "text": " if the file is corrupted.",
+                  "type": "text"
+                }
+              ],
+              "type": "paragraph"
+            }
+          ],
+          "name": "Throws",
+          "style": "note",
+          "type": "aside"
+        }
+      ],
+      "kind": "content"
+    }
+  ],
+  "references": {
+    "doc://ID3TagEditor/documentation/ID3TagEditor": {
+      "abstract": [
+        {
+          "text": "A swift library to read and modify ID3 Tag of any mp3 file. Listed in the implementations section of the official ID3 standard website id3.org.",
+          "type": "text"
+        }
+      ],
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor",
+      "kind": "symbol",
+      "role": "collection",
+      "title": "ID3TagEditor",
+      "type": "topic",
+      "url": "/documentation/id3tageditor"
+    },
+    "doc://ID3TagEditor/documentation/ID3TagEditor/Examples": {
+      "abstract": [
+        {
+          "text": "Let’s see how you can use ",
+          "type": "text"
+        },
+        {
+          "code": "ID3TagEditor",
+          "type": "codeVoice"
+        },
+        {
+          "text": " to read and write ID3 tags.",
+          "type": "text"
+        }
+      ],
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/Examples",
+      "kind": "article",
+      "role": "article",
+      "title": "Examples",
+      "type": "topic",
+      "url": "/documentation/id3tageditor/examples"
+    },
+    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3Tag": {
+      "abstract": [
+        {
+          "text": "A class used to represent an ID3 tag.",
+          "type": "text"
+        }
+      ],
+      "fragments": [
+        {
+          "kind": "keyword",
+          "text": "class"
+        },
+        {
+          "kind": "text",
+          "text": " "
+        },
+        {
+          "kind": "identifier",
+          "text": "ID3Tag"
+        }
+      ],
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3Tag",
+      "kind": "symbol",
+      "navigatorTitle": [
+        {
+          "kind": "identifier",
+          "text": "ID3Tag"
+        }
+      ],
+      "role": "symbol",
+      "title": "ID3Tag",
+      "type": "topic",
+      "url": "/documentation/id3tageditor/id3tag"
+    },
+    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor": {
+      "abstract": [
+        {
+          "text": "A class to edit the ID3 tag of an mp3 file.",
+          "type": "text"
+        }
+      ],
+      "fragments": [
+        {
+          "kind": "keyword",
+          "text": "class"
+        },
+        {
+          "kind": "text",
+          "text": " "
+        },
+        {
+          "kind": "identifier",
+          "text": "ID3TagEditor"
+        }
+      ],
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor",
+      "kind": "symbol",
+      "navigatorTitle": [
+        {
+          "kind": "identifier",
+          "text": "ID3TagEditor"
+        }
+      ],
+      "role": "symbol",
+      "title": "ID3TagEditor",
+      "type": "topic",
+      "url": "/documentation/id3tageditor/id3tageditor"
+    },
+    "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-3rvvo": {
+      "abstract": [
+        {
+          "text": "Read the ID3 tag contained in the mp3 file.",
+          "type": "text"
+        }
+      ],
+      "fragments": [
+        {
+          "kind": "keyword",
+          "text": "func"
+        },
+        {
+          "kind": "text",
+          "text": " "
+        },
+        {
+          "kind": "identifier",
+          "text": "read"
+        },
+        {
+          "kind": "text",
+          "text": "("
+        },
+        {
+          "kind": "externalParam",
+          "text": "from"
+        },
+        {
+          "kind": "text",
+          "text": ": "
+        },
+        {
+          "kind": "typeIdentifier",
+          "preciseIdentifier": "s:10Foundation3URLV",
+          "text": "URL"
+        },
+        {
+          "kind": "text",
+          "text": ") "
+        },
+        {
+          "kind": "keyword",
+          "text": "throws"
+        },
+        {
+          "kind": "text",
+          "text": " -> "
+        },
+        {
+          "kind": "typeIdentifier",
+          "preciseIdentifier": "s:12ID3TagEditor0aB0C",
+          "text": "ID3Tag"
+        },
+        {
+          "kind": "text",
+          "text": "?"
+        }
+      ],
+      "identifier": "doc://ID3TagEditor/documentation/ID3TagEditor/ID3TagEditor/read(from:)-3rvvo",
+      "kind": "symbol",
+      "role": "symbol",
+      "title": "read(from:)",
+      "type": "topic",
+      "url": "/documentation/id3tageditor/id3tageditor/read(from:)-3rvvo"
+    }
+  },
+  "schemaVersion": {
+    "major": 0,
+    "minor": 3,
+    "patch": 0
+  },
+  "sections": [],
+  "variants": [
+    {
+      "paths": [
+        "/documentation/id3tageditor/id3tageditor/read(from:)-3rvvo"
+      ],
+      "traits": [
+        {
+          "interfaceLanguage": "swift"
+        }
+      ]
+    }
+  ]
+}

@@ -417,7 +417,7 @@ public class ID3TagContentReader {
     public func fileOwner() -> String? {
         return (id3Tag.frames[.fileOwner] as? ID3FrameWithStringContent)?.content
     }
-    
+
     /**
       Read the initial key frame content.
      

@@ -12,12 +12,19 @@ import Testing
 
 struct ID3TagSizeParserTest {
     @Test func parseTagSizeV2() {
-        let mp3 = NSData(contentsOfFile: PathLoader().pathFor(name: "example", fileType: "mp3"))!
+        let mp3 = loadMP3(name: "example")
         #expect(ID3TagSizeParser().parse(data: mp3) == 34213)
     }
 
     @Test func parseTagSizeV3() {
-        let mp3V23 = NSData(contentsOfFile: PathLoader().pathFor(name: "example-v23", fileType: "mp3"))!
+        let mp3V23 = loadMP3(name: "example-v23")
         #expect(ID3TagSizeParser().parse(data: mp3V23) == 245864)
+    }
+
+    private func loadMP3(name: String) -> Data {
+        let path = PathLoader().pathFor(name: name, fileType: "mp3")
+        let url = URL(fileURLWithPath: path)
+        let mp3 = try! Data(contentsOf: url)
+        return mp3
     }
 }

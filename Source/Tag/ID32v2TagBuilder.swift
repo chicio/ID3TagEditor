@@ -352,7 +352,7 @@ public class ID32v2TagBuilder: TagBuilder {
         frames[.recordingYear] = frame
         return self
     }
-    
+
     /**
       Set the Initial Key frame to be written by ID3TagEditor.
      

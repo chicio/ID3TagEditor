@@ -9,7 +9,7 @@ import Foundation
 @testable import ID3TagEditor
 
 class MockFrameContentSizeParser: FrameContentSizeParser {
-    func parse(mp3: NSData, framePosition: Int, version: ID3Version) -> Int {
-        return mp3.length
+    func parse(mp3: Data, framePosition: Int, version: ID3Version) -> Int {
+        return mp3.count
     }
 }

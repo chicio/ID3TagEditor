@@ -35,12 +35,30 @@ public class ID3TagEditor {
      - parameter path: path of the mp3 file to be parsed.
 
      - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
-     
+
      - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified path.
      Could throw `CorruptedFile` if the file is corrupted.
      */
     public func read(from path: String) throws -> ID3Tag? {
         guard let mp3 = try mp3FileReader.readID3TagFrom(path: path) else {
+            return nil
+        }
+
+        return try self.id3TagParser.parse(mp3: mp3)
+    }
+
+    /**
+     Read the ID3 tag contained in the mp3 file.
+
+     - parameter url: URL of the mp3 file to be parsed.
+
+     - returns: an ID3 tag or nil, if a tag doesn't exists in the file.
+     
+     - throws: Could throw `InvalidFileFormat` if an mp3 file doesn't exists at the specified URL.
+     Could throw `CorruptedFile` if the file is corrupted.
+     */
+    public func read(from url: URL) throws -> ID3Tag? {
+        guard let mp3 = try mp3FileReader.readID3TagFrom(url: url) else {
             return nil
         }
 

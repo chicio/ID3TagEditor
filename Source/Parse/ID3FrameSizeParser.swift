@@ -16,7 +16,7 @@ class ID3FrameSizeParser: FrameSizeParser {
         self.id3FrameConfiguration = id3FrameConfiguration
     }
 
-    func parse(mp3: NSData, framePosition: Int, version: ID3Version) -> Int {
+    func parse(mp3: Data, framePosition: Int, version: ID3Version) -> Int {
         return frameContentSizeParser
             .parse(
                 mp3: mp3,

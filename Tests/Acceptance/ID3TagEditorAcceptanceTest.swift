@@ -356,6 +356,21 @@ struct ID3TagEditorAcceptanceTest {
         #expect((id3Tag?.frames[.subtitle] as? ID3FrameWithStringContent)?.content == "Subtitle V4")
     }
 
+    @Test func testSkipFrameWithNonUTF8Identifier() throws {
+        let title: [UInt8] = [0x00] + Array("Hello".utf8)
+        let junk: [UInt8] = [0x01, 0x02, 0x03, 0x04]
+        var frames: [UInt8] = []
+        frames += Array("TIT2".utf8) + [0x00, 0x00, 0x00, UInt8(title.count), 0x00, 0x00] + title
+        frames += [0xFF, 0xFE, 0xFD, 0xFC] + [0x00, 0x00, 0x00, UInt8(junk.count), 0x00, 0x00] + junk
+        frames += [UInt8](repeating: 0x00, count: 20)
+        let header: [UInt8] = Array("ID3".utf8) + [0x03, 0x00, 0x00, 0x00, 0x00, 0x00, UInt8(frames.count)]
+        let mp3 = Data(header + frames + [UInt8](repeating: 0xAB, count: 64))
+
+        let id3Tag = try #require(try ID3TagEditor().read(mp3: mp3))
+
+        #expect(ID3TagContentReader(id3Tag: id3Tag).title() == "Hello")
+    }
+
     // MARK: write
 
     @Test func testWriteTagV2() throws {
