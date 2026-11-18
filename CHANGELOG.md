@@ -1,6 +1,12 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [5.6.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.6.0)
+Release date: 2026-11-18
+
+#### Added
+- PR #117: Performance improvements (read tags from a URL, faster frame parsing, less contention when parsing on many threads)
+
 ## [5.5.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.5.0)
 Release date: 2026-01-17
 
