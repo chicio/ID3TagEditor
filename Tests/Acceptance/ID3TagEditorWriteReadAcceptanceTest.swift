@@ -27,7 +27,7 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         let artBack = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg"))
         )
-        let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/\(filename).mp3"
 
         let id3Tag = ID32v2TagBuilder()
             .title(frame: ID3FrameWithStringContent(content: "title V2"))
@@ -173,7 +173,7 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         let filename = "example-write-read-v3"
         let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
-        let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/\(filename).mp3"
 
         let id3Tag = ID32v3TagBuilder()
             .title(frame: ID3FrameWithStringContent(content: "title V3"))
@@ -344,7 +344,7 @@ struct ID3TagEditorWriteReadAcceptanceTest {
         let filename = "example-write-read-v4"
         let artFront: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg")))
         let artBack: Data = try Data(contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg")))
-        let pathMp3Generated = NSHomeDirectory() + "/\(filename).mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/\(filename).mp3"
 
         let id3Tag = ID32v4TagBuilder()
             .title(frame: ID3FrameWithStringContent(content: "title V4"))

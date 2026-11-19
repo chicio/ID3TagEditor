@@ -379,7 +379,7 @@ struct ID3TagEditorAcceptanceTest {
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
         let pathMp3ToCompare = PathLoader().pathFor(name: "example", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-v2.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-v2.mp3"
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
@@ -410,7 +410,7 @@ struct ID3TagEditorAcceptanceTest {
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-with-tag-jpg-v3", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-tag-already-exists.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-tag-already-exists.mp3"
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -442,7 +442,7 @@ struct ID3TagEditorAcceptanceTest {
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-with-tag-jpg-v3", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-v3-jpg.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-v3-jpg.mp3"
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -488,7 +488,7 @@ struct ID3TagEditorAcceptanceTest {
             try id3TagEditor.write(
                 tag: id3Tag,
                 to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-                andSaveTo: NSHomeDirectory() + "/example-v3-png.mp3"
+                andSaveTo: TestOutputDirectory.path + "/example-v3-png.mp3"
             )
         }
     }
@@ -498,7 +498,7 @@ struct ID3TagEditorAcceptanceTest {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover", fileType: "jpg"))
         )
-        let pathMp3Generated = NSHomeDirectory() + "/ID3TagEditor/example-v3-custom-path.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/ID3TagEditor/example-v3-custom-path.mp3"
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -552,7 +552,7 @@ struct ID3TagEditorAcceptanceTest {
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "cover2", fileType: "jpg"))
         )
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-v3-additional-data", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-v3-additional-data.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-v3-additional-data.mp3"
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -578,7 +578,7 @@ struct ID3TagEditorAcceptanceTest {
             try id3TagEditor.write(
                 tag: id3Tag,
                 to: PathLoader().pathFor(name: "example-to-be-modified", fileType: "mp3"),
-                andSaveTo: NSHomeDirectory() + "/example-v3-additional-data.mp3"
+                andSaveTo: TestOutputDirectory.path + "/example-v3-additional-data.mp3"
             )
         }
 
@@ -631,7 +631,7 @@ struct ID3TagEditorAcceptanceTest {
     @Test func testWriteTagV4() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-v4", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-tag-v4.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
@@ -662,7 +662,7 @@ struct ID3TagEditorAcceptanceTest {
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
         )
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-v4-additional-data", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4-with-png.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-tag-v4-with-png.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
@@ -691,7 +691,7 @@ struct ID3TagEditorAcceptanceTest {
     @Test func testWriteNewFramesV2() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v2-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v2-generated.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-newframes-v2-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version2,
             frames: [
@@ -726,7 +726,7 @@ struct ID3TagEditorAcceptanceTest {
     @Test func testWriteNewFramesV3() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v3-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v3-generated.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-newframes-v3-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version3,
             frames: [
@@ -769,7 +769,7 @@ struct ID3TagEditorAcceptanceTest {
     @Test func testWriteNewFramesV4() throws {
         let id3TagEditor = ID3TagEditor()
         let pathMp3ToCompare = PathLoader().pathFor(name: "example-newframes-v4-written", fileType: "mp3")
-        let pathMp3Generated = NSHomeDirectory() + "/example-newframes-v4-generated.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-newframes-v4-generated.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
@@ -812,7 +812,7 @@ struct ID3TagEditorAcceptanceTest {
 
     @Test func testFramesAfterAttachdPicturesAreWritten() throws {
         let path = PathLoader().pathFor(name: "folder", fileType: "jpg")
-        let pathMp3Generated = NSHomeDirectory() + "/frames-after-attached-picture.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/frames-after-attached-picture.mp3"
         let cover = try Data(contentsOf: URL(fileURLWithPath: path))
         let id3Tag = ID3Tag(
             version: .version3,
@@ -842,7 +842,7 @@ struct ID3TagEditorAcceptanceTest {
         let art: Data = try Data(
             contentsOf: URL(fileURLWithPath: PathLoader().pathFor(name: "example-cover-png", fileType: "png"))
         )
-        let pathMp3Generated = NSHomeDirectory() + "/example-tag-v4-synchsafe.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-tag-v4-synchsafe.mp3"
         let id3Tag = ID3Tag(
             version: .version4,
             frames: [
@@ -871,7 +871,7 @@ struct ID3TagEditorAcceptanceTest {
 
     @Test func testWriteUnsynchronisedLyrics() throws {
         let id3TagEditor = ID3TagEditor()
-        let pathMp3Generated = NSHomeDirectory() + "/example-write-unsynched-lyrics-v3.mp3"
+        let pathMp3Generated = TestOutputDirectory.path + "/example-write-unsynched-lyrics-v3.mp3"
 
         let id3Tag = ID3Tag(
             version: .version3,

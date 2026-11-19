@@ -23,7 +23,7 @@ struct Mp3FileWriterTest {
         let fromPath = PathLoader().pathFor(name: "example", fileType: "mp3")
         let currentId3TagData = try Mp3FileReaderFactory.make().readID3TagFrom(path: fromPath)
 
-        let pathMp3Generated =  NSHomeDirectory() + "/testWritingWithCurrentTagAndEqualToPath.mp3"
+        let pathMp3Generated =  TestOutputDirectory.path + "/testWritingWithCurrentTagAndEqualToPath.mp3"
         #expect(throws: Never.self) { try Mp3FileWriter().write(newId3TagData: newId3TagData, currentId3TagData: currentId3TagData, fromPath: fromPath, toPath: pathMp3Generated) }
 
         let readTag = try ID3TagEditor().read(from: pathMp3Generated)
