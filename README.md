@@ -70,6 +70,13 @@ In the following screenshots you can find examples of the data extracted/updated
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/lardieri">
+                    <img src="https://avatars.githubusercontent.com/u/13347439?v=4" width="100;" alt="lardieri"/>
+                    <br />
+                    <sub><b>lardieri</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/martinjbaker">
                     <img src="https://avatars.githubusercontent.com/u/1586504?v=4" width="100;" alt="martinjbaker"/>
                     <br />
@@ -83,6 +90,8 @@ In the following screenshots you can find examples of the data extracted/updated
                     <sub><b>Anrufliste</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/fabiankr">
                     <img src="https://avatars.githubusercontent.com/u/143137?v=4" width="100;" alt="fabiankr"/>
@@ -90,8 +99,6 @@ In the following screenshots you can find examples of the data extracted/updated
                     <sub><b>fabiankr</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/joeljfischer">
                     <img src="https://avatars.githubusercontent.com/u/1767063?v=4" width="100;" alt="joeljfischer"/>
@@ -127,6 +134,8 @@ In the following screenshots you can find examples of the data extracted/updated
                     <sub><b>aquaflamingo</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Shabinder">
                     <img src="https://avatars.githubusercontent.com/u/44765050?v=4" width="100;" alt="Shabinder"/>
@@ -134,8 +143,6 @@ In the following screenshots you can find examples of the data extracted/updated
                     <sub><b>Shabinder</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/xpereta">
                     <img src="https://avatars.githubusercontent.com/u/21675?v=4" width="100;" alt="xpereta"/>
@@ -155,13 +162,6 @@ In the following screenshots you can find examples of the data extracted/updated
                     <img src="https://avatars.githubusercontent.com/u/45670?v=4" width="100;" alt="jverkoey"/>
                     <br />
                     <sub><b>jverkoey</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/lardieri">
-                    <img src="https://avatars.githubusercontent.com/u/13347439?v=4" width="100;" alt="lardieri"/>
-                    <br />
-                    <sub><b>lardieri</b></sub>
                 </a>
             </td>
             <td align="center">
