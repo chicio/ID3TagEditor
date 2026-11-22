@@ -151,6 +151,13 @@ In the following screenshots you can find examples of the data extracted/updated
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/yuminn-k">
+                    <img src="https://avatars.githubusercontent.com/u/55650732?v=4" width="100;" alt="yuminn-k"/>
+                    <br />
+                    <sub><b>yuminn-k</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/lordzsolt">
                     <img src="https://avatars.githubusercontent.com/u/8976891?v=4" width="100;" alt="lordzsolt"/>
                     <br />
