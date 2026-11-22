@@ -1,6 +1,17 @@
 # Change Log
 All changes to ID3TagEditor will be documented in this file.
 
+## [6.0.0](https://github.com/chicio/ID3TagEditor/releases/tag/6.0.0)
+Release date: 2026-11-22
+
+#### Removed
+- CocoaPods support. ID3TagEditor is now distributed only through the Swift Package Manager (or manual installation). The last version available on CocoaPods is 5.6.0.
+
+#### Changed
+- Minimum watchOS deployment target of the Xcode project raised to 9.0 (Xcode 27 no longer supports watchOS 8.0)
+- PR #118: Isolate the test output files in a dedicated directory for each test run
+- PR #119: Add tests for ID3RecordingHourMinuteFrameCreator
+
 ## [5.6.0](https://github.com/chicio/ID3TagEditor/releases/tag/5.6.0)
 Release date: 2026-11-18
 

@@ -1,10 +1,11 @@
 # Installation
 
-There are three ways to install ID3TagEditor in your project:
+There are two ways to install ID3TagEditor in your project:
 
 - Swift Package Manager (with support for linux platform)
 - manual installation
-- cocoapods
+
+CocoaPods is no longer supported: see the "CocoaPods (no longer supported)" section at the end of this page.
 
 ### Swift Package Manager
 
@@ -20,7 +21,7 @@ import PackageDescription
 let package = Package(
     name: "Demo Ubuntu",
     dependencies: [
-        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "5.0.0")
+        .package(url: "https://github.com/chicio/ID3TagEditor.git", from: "6.0.0")
     ],
     targets: [
         .target(
@@ -31,20 +32,20 @@ let package = Package(
 )
 ```
 
-### CocoaPods
-
-ID3TagEditor is also available as a pod on [CocoaPods](https://cocoapods.org/pods/ID3TagEditor "ID3TagEditor cocoapods").
-Add the dependency to your Podfile (choose the release version you prefer):
-
-```ruby
-target 'MyApp' do
-    pod 'ID3TagEditor', '~> 5.0'
-end
-```
-
-and then run pod install (or pod update).
-
 ### Manual installation
 
 To manually install ID3TagEditor simply drag and drop all the file contained in the [Source](https://github.com/chicio/ID3TagEditor/tree/main/Source "Source") 
 folder inside your project (except for the info.plist file).
+
+### CocoaPods (no longer supported)
+
+Starting from version 6.0.0, ID3TagEditor is no longer published on [CocoaPods](https://cocoapods.org/pods/ID3TagEditor "ID3TagEditor cocoapods").
+The last version available there is 5.6.0. If your project still uses CocoaPods, pin that version in your Podfile:
+
+```ruby
+target 'MyApp' do
+    pod 'ID3TagEditor', '5.6.0'
+end
+```
+
+New features and fixes are only released through the Swift Package Manager, so we recommend migrating to it.
