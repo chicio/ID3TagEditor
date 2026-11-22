@@ -58,12 +58,6 @@ echo "Updating version on Xcode project..."
 agvtool new-marketing-version $VERSION
 echo ""
 
-# Increment cocoapods
-
-echo "Updating podspec version..."
-sed -i '' 's/  s.version      = .*/  s.version      = "'$VERSION'"/' ID3TagEditor.podspec
-echo ""
-
 # Commit, create tag and push
 
 echo "Create tag..."

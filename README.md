@@ -6,7 +6,6 @@
 ![Build tvOS](https://github.com/chicio/ID3TagEditor/workflows/Build%20tvOS/badge.svg)
 ![Build Linux](https://github.com/chicio/ID3TagEditor/workflows/Build%20Linux/badge.svg)
 [![codecov](https://codecov.io/gh/chicio/ID3TagEditor/branch/main/graph/badge.svg)](https://codecov.io/gh/chicio/ID3TagEditor)
-[![CocoaPods](https://img.shields.io/badge/cocoapods-supported-blueviolet)](https://cocoapods.org/pods/ID3TagEditor)
 [![swift package index platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fchicio%2FID3TagEditor%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/chicio/ID3TagEditor)
 [![swift package index swift version](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fchicio%2FID3TagEditor%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/chicio/ID3TagEditor)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chicio/ID3TagEditor/main/LICENSE.md)
@@ -25,6 +24,8 @@ In particular you can find:
 
 * the [installation guide](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/installation "installation")
 * some [examples](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/examples "examples")
+
+CocoaPods is no longer supported: the last version available there is 5.6.0. See the [installation guide](https://chicio.github.io/ID3TagEditor/documentation/id3tageditor/installation "installation") for details.
 
 ***
 
